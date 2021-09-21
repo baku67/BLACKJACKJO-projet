@@ -117,7 +117,7 @@ figure {
 	margin: 2em auto;
 }
 figure:hover {
-	transform: scale(1.35);
+	transform: scale(1.25);
 }
 
 
