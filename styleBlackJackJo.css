@@ -133,7 +133,7 @@ figure:hover {
 }
 .img:hover {
 	opacity: 1;
-	border: 4px solid rgb(4, 11, 119);
+	border: 3px solid rgb(4, 11, 119);
 	border-radius: 16px;
 }
 
@@ -142,7 +142,7 @@ figure:hover {
 	width: 11.8em;
 }
 .special:hover {
-		border: 4px solid rgb(146, 21, 21);
+		border: 3px solid rgb(146, 21, 21);
 		border-radius: 25px;
 }
 
@@ -174,7 +174,7 @@ footer {
 	font-size: 1em;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	color: rgb(223, 204, 204);
-	text-shadow: rgb(5, 2, 39) 2px 5px;
+	text-shadow: rgb(5, 2, 39) 2px 3px;
 	text-align: center;
 
 

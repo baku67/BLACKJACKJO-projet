@@ -1,6 +1,19 @@
 
     window.onload = function(){
         
+        // INSERTION CSS (tentative 2) -------------------------
+        // var css = document.createElement("style1");
+        // css.type = "text/css";
+        // css.innerHTML = "#title { color: red !important}";
+        // document.body.appendChild(css);
+        // -----------------------------------------------------
+      
+
+        // INSERTION CSS (tentative 1) -------------------------
+        //var style = document.getElementById('stylesheet_1');
+        // -----------------------------------------------------
+
+        
         //#region  Var Compteurs
         var c2 = 0;
         var c3 = 0;
@@ -39,72 +52,140 @@
         //#region  OnClick --> Incr
         document.getElementById('nbrProc2').addEventListener("click", incr2);
         function incr2() {
-          c2 += 1;
-          document.getElementById('c2').innerHTML = c2;
+          if (c2 < maxCards) {
+            c2 += 1;
+            document.getElementById('c2').innerHTML = c2;
+          }
+          else {
+            document.getElementById('c2').innerHTML = c2;
+            // INSERTION CSS (tentative 1)
+            //style.insertRule("#c2 {color: blue;}", 0);
+          }
         }
         document.getElementById('nbrProc3').addEventListener("click", incr3);
         function incr3() {
-          c3 += 1;
-          document.getElementById('c3').innerHTML = c3;
+          if (c3 < maxCards) {
+            c3 += 1;
+            document.getElementById('c3').innerHTML = c3;
+          }
+          else {
+            document.getElementById('c3').innerHTML = c3;
+          }
         }
         document.getElementById('nbrProc4').addEventListener("click", incr4);
         function incr4() {
-          c4 += 1;
-          document.getElementById('c4').innerHTML = c4;
+          if (c4 < maxCards) {
+            c4 += 1;
+            document.getElementById('c4').innerHTML = c4;
+          }
+          else {
+            document.getElementById('c4').innerHTML = c4;
+          }
         }
         document.getElementById('nbrProc5').addEventListener("click", incr5);
         function incr5() {
-          c5 += 1;
-          document.getElementById('c5').innerHTML = c5;
+          if (c5 < maxCards) {
+            c5 += 1;
+            document.getElementById('c5').innerHTML = c5;
+          }
+          else {
+            document.getElementById('c5').innerHTML = c5;
+          }
         }
         document.getElementById('nbrProc6').addEventListener("click", incr6);
         function incr6() {
-          c6 += 1;
-          document.getElementById('c6').innerHTML = c6;
+          if (c6 < maxCards) {
+            c6 += 1;
+            document.getElementById('c6').innerHTML = c6;
+          }
+          else {
+            document.getElementById('c6').innerHTML = c6;
+          }
         }
         document.getElementById('nbrProc7').addEventListener("click", incr7);
         function incr7() {
-          c7 += 1;
-          document.getElementById('c7').innerHTML = c7;
+          if (c7 < maxCards) {
+            c7 += 1;
+            document.getElementById('c7').innerHTML = c7;
+          }
+          else {
+            document.getElementById('c7').innerHTML = c7;
+          }
         }
         document.getElementById('nbrProc8').addEventListener("click", incr8);
         function incr8() {
-          c8 += 1;
-          document.getElementById('c8').innerHTML = c8;
+          if (c8 < maxCards) {
+            c8 += 1;
+            document.getElementById('c8').innerHTML = c8;
+          }
+          else {
+            document.getElementById('c8').innerHTML = c8;
+          }
         }
         document.getElementById('nbrProc9').addEventListener("click", incr9);
         function incr9() {
-          c9 += 1;
-          document.getElementById('c9').innerHTML = c9;
+          if (c9 < maxCards) {
+            c9 += 1;
+            document.getElementById('c9').innerHTML = c9;
+          }
+          else {
+            document.getElementById('c9').innerHTML = c9;
+          }
         }
         document.getElementById('nbrProc10').addEventListener("click", incr10);
         function incr10() {
-          c10 += 1;
-          document.getElementById('c10').innerHTML = c10;
+          if (c10 < maxCards) {
+            c10 += 1;
+            document.getElementById('c10').innerHTML = c10;
+          }
+          else {
+            document.getElementById('c10').innerHTML = c10;
+          }
         }
         document.getElementById('nbrProc11').addEventListener("click", incr11);
         function incr11() {
-          c11 += 1;
-          document.getElementById('c11').innerHTML = c11;
+          if (c11 < maxCards) {
+            c11 += 1;
+            document.getElementById('c11').innerHTML = c11;
+          }
+          else {
+            document.getElementById('c11').innerHTML = c11;
+          }
         }
         document.getElementById('nbrProc12').addEventListener("click", incr12);
         function incr12() {
-          c12 += 1;
-          document.getElementById('c12').innerHTML = c12;
+          if (c12 < maxCards) {
+            c12 += 1;
+            document.getElementById('c12').innerHTML = c12;
+          }
+          else {
+            document.getElementById('c12').innerHTML = c12;
+          }
         }
         document.getElementById('nbrProc13').addEventListener("click", incr13);
         function incr13() {
-          c13 += 1;
-          document.getElementById('c13').innerHTML = c13;
+          if (c13 < maxCards) {
+            c13 += 1;
+            document.getElementById('c13').innerHTML = c13;
+          }
+          else {
+            document.getElementById('c13').innerHTML = c13;
+          }
         }
         document.getElementById('nbrProc14').addEventListener("click", incr14);
         function incr14() {
-          c14 += 1;
-          document.getElementById('c14').innerHTML = c14;
+          if (c14 < maxCards) {
+            c14 += 1;
+            document.getElementById('c14').innerHTML = c14;
+          }
+          else {
+            document.getElementById('c14').innerHTML = c14;
+          }
         }
         //#endregion
 
-        
+
+
     }
 
 
@@ -115,26 +196,6 @@
     
     
 
-
-
-
-
-
-
-
-
-
-
-
-    
-    /*  EXAMPLE JS
-    function my_code()
-    {
-		alert(" Alert inside my_code function");
-    }
-	
-	  window.onload=my_code();
-    */
 
 
 
@@ -159,9 +220,7 @@
   </body>
 </html>
 
-
 OU   
-
 
   var audio = new Audio("C:\Users\basil\OneDrive\Documents\~~ DEV Blackjack repo~~\BlackJackJooo\sons\DEAL.mp3");
   audio.oncanplaythrough = function(){audio.play();} 
