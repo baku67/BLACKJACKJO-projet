@@ -13,7 +13,7 @@
         //var style = document.getElementById('stylesheet_1');
         // -----------------------------------------------------
 
-        
+
         //#region  Var Compteurs
         var c2 = 0;
         var c3 = 0;
@@ -53,10 +53,14 @@
         document.getElementById('nbrProc2').addEventListener("click", incr2);
         function incr2() {
           if (c2 < maxCards) {
+            // Ajoute la classe 'classname' sous le nom 'classname'(html) à l'Element(id)   [Cas ou on incrémente] A RENOMMER (1er: classname = CSS, 2eme = HTMLadd)
+          document.getElementById("nbrProc2").classList.add('classname') = 'className';
             c2 += 1;
             document.getElementById('c2').innerHTML = c2;
           }
           else {
+            // Ajoute la classe 'classname' sous le nom 'classname'(html) à l'Element(id)   [Cas ou on est au max] A RENOMMER  (1er: classname = CSS, 2eme = HTMLadd)
+            document.getElementById("nbrProc2").classList.add('classname') = 'className00';
             document.getElementById('c2').innerHTML = c2;
             // INSERTION CSS (tentative 1)
             //style.insertRule("#c2 {color: blue;}", 0);
@@ -186,7 +190,11 @@
 
 
 
+
     }
+
+
+
 
 
 
