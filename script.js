@@ -1,18 +1,8 @@
-
+    
+    // Single App Application (No Framework) BON TUTO:    https://dev.to/dcodeyt/building-a-single-page-app-without-frameworks-hl9
+    
+    
     window.onload = function(){
-        
-        // INSERTION CSS (tentative 2) -------------------------
-        // var css = document.createElement("style1");
-        // css.type = "text/css";
-        // css.innerHTML = "#title { color: red !important}";
-        // document.body.appendChild(css);
-        // -----------------------------------------------------
-      
-
-        // INSERTION CSS (tentative 1) -------------------------
-        //var style = document.getElementById('stylesheet_1');
-        // -----------------------------------------------------
-
 
         //#region  Var Compteurs
         var c2 = 0;
@@ -189,8 +179,6 @@
         //#endregion
 
 
-
-
     }
 
 
@@ -208,6 +196,8 @@
 
 
 /* 
+SON discret sur ONGLET: HOVER et CARTES
+
 <!doctype html>
 <html>
   <head>

@@ -1,12 +1,45 @@
 #header {
 	height: auto;
 	width: 100%;
-	padding: 4em 0em;
+	padding: 3em 0em;
 	background: rgb(130,14,39);
 	background: -moz-linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%);
 	background: -webkit-linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%);
 	background: linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#820e27",endColorstr="#1a2039",GradientType=1);
+}
+
+#onglets {
+	position: relative;
+	text-align: right;
+	bottom: -35px;
+	width: 100%;
+
+	display: flex;
+}
+.onglet {
+	margin: 0 auto;
+	list-style: none;
+}
+.onglet a {
+	color:rgb(212, 189, 189);
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size:1.7em;
+	opacity: 0.85;
+	letter-spacing: 2.5px;
+	text-decoration: none;
+
+	/* Les <a></a> n'acceptent pas les "transform{}" ducoup inline-block */
+	display:inline-block;
+	transition: all .2s; /* ZOOM HOVER Animation */
+}
+.onglet a:hover {
+	opacity: 1;
+	color:rgb(238, 226, 226);
+	text-decoration: underline overline rgba(238, 226, 226, 0.85);
+
+	transform: scale(1.5);
+
 }
 
 
@@ -67,30 +100,18 @@ ul#list li {
 	font-size: 1.3em;
 	font-weight: bold;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	letter-spacing: 0.3px;
 
 	margin-block-start: 0em;
     margin-block-end: 0em;
 }
-a {
+#container1 a {
 	text-decoration: none;
 	color: rgba(5, 2, 39, 0.7);
 }
-
-a:hover {
-	text-decoration: underline overline #490d0b;
+#container1 a:hover {
+	text-decoration: underline overline rgba(5, 2, 39, 0.7);
 }
-
-
-/*  NOUVELLE PARTIE SCALE (ZOOM ON HOVER)
-span#newGame {
-	transition: transform .2s; 
-}
-span#newGame:hover {
-	text-decoration: underline overline #46100e;
-	transform: scale(1.65);
-} 
-*/
-
 
 
 
