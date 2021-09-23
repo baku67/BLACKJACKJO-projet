@@ -15,7 +15,13 @@
 	bottom: -35px;
 	width: 100%;
 
-	display: flex;
+	display:inline-flex;
+
+	margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
 }
 .onglet {
 	margin: 0 auto;
@@ -124,7 +130,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	padding: 0.6em;
 	border: 3px solid rgba(34, 10, 141, 0.08);
 	border-radius: 4px;
-	transition: 0.7s;
+	transition: all 0.7s;
 }
 #newGame:hover {
 	border: 2.7px solid rgba(34, 10, 141, 0.8);
