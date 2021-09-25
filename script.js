@@ -21,7 +21,7 @@
         //#endregion
 
         //#region MaxCards
-        var nbrSabots = prompt("Combien de sabots? (0.5, 1, 2, 3,..)");
+        //var nbrSabots = prompt("Combien de sabots? (0.5, 1, 2, 3,..)");
         document.getElementById("nbrSabotVar").innerHTML = nbrSabots;
         var maxCards = nbrSabots*4;
         document.getElementById('max1').innerHTML = maxCards;

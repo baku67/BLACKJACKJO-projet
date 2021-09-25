@@ -37,22 +37,32 @@
 
 	/* Les <a></a> n'acceptent pas les "transform{}" ducoup inline-block */
 	display:inline-block;
-	transition: all .2s; /* ZOOM HOVER Animation */
+	transition: all 0.4s; 
 }
 #jouer{
+	position: relative;
+	bottom: 20px;
 	font-size: 2.1em;
 }
+
 
 .onglet a:hover {
 	opacity: 1;
 	color:rgb(238, 226, 226);
-	text-decoration: underline overline rgba(238, 226, 226, 0.85);
 
 	transform: scale(1.5);
 }
 #jouer:hover{
-	transform: scale(1.9) !important;
+	transform: scale(1.75) !important;
+	text-decoration: underline overline rgba(224, 211, 211, 0.85);
 }
+#Hi-Lo:hover {
+	text-decoration: underline overline rgb(206, 209, 221);
+}
+#Compteur:hover {
+	text-decoration: underline overline rgba(226, 214, 214, 0.85);
+}
+
 
 
 
@@ -133,7 +143,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	transition: all 0.7s;
 }
 #newGame:hover {
-	border: 2.7px solid rgba(34, 10, 141, 0.8);
+	border: 3px solid rgba(34, 10, 141, 0.8);
 	color: rgb(223, 204, 204) !important;
 }
 
@@ -169,6 +179,7 @@ figure {
 }
 figure:hover {
 	transform: scale(1.25);
+
 }
 
 
@@ -181,11 +192,14 @@ figure:hover {
 		box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		-webkit-box-sizing: border-box;
+	
+	transition: all 0.5s,
 }
 .img:hover {
 	opacity: 1;
 	border: 3px solid rgb(4, 11, 119);
 	border-radius: 16px;
+
 }
 
 
@@ -311,3 +325,30 @@ footer {
 	  	-webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(100px);
 	}
   }
+
+
+
+#flecheAfter, #flecheBefore {
+	display:inline-block;
+	transition: all 0.3s;
+}
+
+#flecheBefore:hover {
+	transform: scale(1.35) rotate(-8deg);
+}
+#flecheAfter:hover{
+	transform: scale(1.35) rotate(8deg);
+} 
+
+
+/* FLECHE TRICKS 720° ROTATE /*
+----------------------------
+/* #flecheAfter, #flecheBefore {
+	display:inline-block;
+	transition: all 0.5s;
+}
+#flecheAfter:hover{
+	transform: scale(1.35) rotate(720deg);
+}  
+------------------------------
+*/
