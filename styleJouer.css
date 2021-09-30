@@ -1,3 +1,7 @@
+html {
+	height: 100%;
+}
+
 #header {
 	height: auto;
 	width: 100%;
@@ -83,6 +87,7 @@ body {
 	background-image: url("background1.png");
 	/* background-color: rgb(232, 241, 241); */
 	margin: 0px;
+	height: 100%;
 
 
 	/*  FLASH ONLOAD   */
@@ -156,14 +161,24 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 
 
 
-
+.champs {
+	width: 100%;
+	height: 175px;
+	text-align: center;
+}
 #container2 {
     height: auto;
+	display: flex wrap;
 }
 #trait {
-    color: black;
-    height: 20px;
-    text-align: center;
+    background: rgba(130,14,39,0.8);
+	background: -moz-linear-gradient(67deg, rgba(130,14,39,0.8) 47%, rgba(26,32,57,0.8) 53%);
+	background: -webkit-linear-gradient(67deg, rgba(130,14,39,0.8) 47%, rgba(26,32,57,0.8) 53%);
+	background: linear-gradient(67deg, rgba(130,14,39,0.8) 47%, rgba(26,32,57,0.8) 53%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#820e27",endColorstr="#1a2039",GradientType=1);
+
+    height: 5px;
+	width: 100%;
 }
 #adversaire {
     height: 49%;
@@ -206,7 +221,8 @@ figure:hover {
 
 
 .img {
-	width: 9.5em;
+
+	width: 8em;
 	opacity: 0.8;
 
 		/*  Les px de border ne compte pas en plus de la div  (pas de mess) */
@@ -219,17 +235,16 @@ figure:hover {
 .img:hover {
 	opacity: 1;
 	border: 3px solid rgb(4, 11, 119);
-	border-radius: 16px;
+	border-radius: 12px;
 
 }
 
 
 .special {
-	width: 11.8em;
 }
 .special:hover {
 		border: 3px solid rgb(146, 21, 21);
-		border-radius: 25px;
+		border-radius: 12px;
 }
 
 
@@ -260,7 +275,7 @@ footer {
     /* bottom: 0px: IMPORTANT FIX EN BAS */
   	bottom: 0px;
 	width: 100%;
-	height: 30%;
+	height: 25%;
     margin-block-start: 0em;
     margin-block-end: 0em;
 
@@ -392,4 +407,28 @@ h3 {
     width: 30%;
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+	/* FLEX WRAP AVEC WIDTH 100% des elements inside pour retour ligne et center */
+	display: flex wrap;
+}
+
+.scoreElem {
+	width: 100%;
+}
+
+#scoreVar {
+	font-size: 4em;
+}
+
+
+
+
+ul {
+	display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
 }
