@@ -43,7 +43,6 @@
 	position: relative;
 	bottom: 15px;
 	font-size: 2.1em;
-	margin: 0 0 0 55px;
 }
 
 
@@ -56,9 +55,6 @@
 #jouer:hover{
 	transform: scale(1.75) !important;
 	text-decoration: underline overline rgba(224, 211, 211, 0.85);
-}
-#Hi-Lo {
-	margin: 0 0 0 50px;
 }
 #Hi-Lo:hover {
 	text-decoration: underline overline rgb(206, 209, 221);
@@ -161,11 +157,24 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 
 
 
-
-
-
-
 #container2 {
+    height: auto;
+}
+#trait {
+    color: black;
+    height: 20px;
+    text-align: center;
+}
+#adversaire {
+    height: 49%;
+}
+#joueur {
+    height: 49%;
+}
+
+
+
+#container3 {
 	display: flex;
 	/* flex-wrap: wrap; ANCIENNE*/
 	flex-flow: row wrap;
@@ -180,6 +189,14 @@ break {
 figure {
 	transition: transform .2s; /* ZOOM HOVER Animation */
 	margin: 2em auto;
+    height: 20%;
+    
+
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
 }
 figure:hover {
 	transform: scale(1.25);
@@ -216,7 +233,7 @@ figure:hover {
 }
 
 
-.cardFooter {
+.cardTopper {
 	text-align: center;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -239,25 +256,28 @@ figure:hover {
 }
 
 footer {
-	position: relative;
-  	bottom: -15px;
+	position: fixed;
+    /* bottom: 0px: IMPORTANT FIX EN BAS */
+  	bottom: 0px;
 	width: 100%;
-	height: 1.5em;
+	height: 30%;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+
 	font-size: 1em;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	color: rgb(223, 204, 204);
 	text-shadow: rgb(5, 2, 39) 2px 3px;
 	text-align: center;
-
-	margin-block-start: 0em;
-    margin-block-end: 0em;
-
+    letter-spacing: 1px;
 
 	background: rgb(130,14,39);
 	background: -moz-linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%);
 	background: -webkit-linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%);
 	background: linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#820e27",endColorstr="#1a2039",GradientType=1);
+}
+h3 {  
 }
 
 
@@ -365,4 +385,11 @@ footer {
 }
 #hidedHover:hover + #hided {
 	display: block;
+}
+
+
+#scoreContainer {
+    width: 30%;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
