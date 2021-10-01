@@ -205,7 +205,8 @@ break {
 }
 
 figure {
-	transition: transform .2s; /* ZOOM HOVER Animation */
+	/* transition: transform .2s;       VA AVEC FIGURE:HOVER */
+	transition: transform .3s; /* ZOOM HOVER Animation */
 	margin: 0em auto;
     height: 20%;
     
@@ -216,9 +217,11 @@ figure {
     margin-inline-start: 40px;
     margin-inline-end: 40px;
 }
-figure:hover {
+/* figure:hover {
 	transform: scale(1.18);
-
+} */
+figure:active {
+	transform: scale(1.25);
 }
 
 
