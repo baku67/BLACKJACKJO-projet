@@ -2,6 +2,7 @@
 
 <html>
 	<head>
+		<title>BlackJack Jo' - Jouer</title>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="styleJouer.css" id="stylesheet_1">
 		<script type="text/javascript" src="scriptJouer.js"></script>
@@ -17,7 +18,7 @@
 				<ul id="onglets">
 					<li class="onglet"><a href="Hi-Lo.html" id="Hi-Lo">Hi-Lo</a></li>
 					<li class="onglet" ><a href="jouer.html" id="jouer">JOUER !</a></li>
-					<li class="onglet"><a href="BlackJackJo.html" id="Compteur">Compteur</a></li>
+					<li class="onglet"><a href="index.html" id="Compteur">Compteur</a></li>
 				</ul>
 			</div>
 		</header>
@@ -34,20 +35,20 @@
 
 				<li class="module-border-wrap"><a href="javascript:location.reload(true)"><span id="newGame" id="hover">Nouvelle Partie</span></a></li>
 				<br><br>
-				<li style="font-size: 2.5em;">&#8630;</li>
+				<li style="font-size: 2.5em;"><a href="" id="flecheBefore">&#8630;</a></li>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<li style="font-size: 2.5em;">&#8631;</li>
+				<li style="font-size: 2.5em;"><a href="" id="flecheAfter">&#8631;</a></li>
 			</ul>
 		</div>
 
 
 		<div id="container2">
 			<div class="champs">
-				<p>Telooo</p>
+				<p>\__________/</p>
 			</div>
 			<div id="trait"></div>
 			<div class="champs">
-				<p>heooloo</p>
+				<p>------------</p>
 			</div>
 		</div>
 
@@ -56,7 +57,7 @@
 
 		<footer>
 
-			<h3>Compteur</h3>
+			<h3>-----{ Compteur }-----</h3>
 			<break></break>
 	
 			<div id="container3">
@@ -66,7 +67,7 @@
 						<p>
 							<span>2, 3, 4, 5, 6</span>
 							<br>
-							<span>(+1)</span>
+							<span class="modifier">+1</span>
 						</p>
 					</figcaption>
 					<img class="img special AS" id="scoreAdd" src="cartes\2C.png">
@@ -77,7 +78,7 @@
 						<p>
 							<span>7, 8, 9</span>
 							<br>
-							<span>(0)</span>
+							<span class="modifier">&#177;0</span>
 						</p>
 					</figcaption>
 					<img class="img special AS" id="score0" src="cartes\7D.png">
@@ -86,9 +87,9 @@
 				<figure>
 					<figcaption>
 						<p>
-							<span>10, J, Q, K</span>
+							<span>B&#219;CHE</span>
 							<br>
-							<span>(-1)</span>
+							<span class="modifier">-1</span>
 						</p>
 					</figcaption>
 					<img class="img special AS" id="scoreRem" src="cartes\AS.png">
@@ -98,10 +99,12 @@
 					<h2 class="scoreElem">SCORE</h2>
 					<p class="scoreElem"><span id="scoreVar"></span></p>
 				</div>
-	
+
 			</div>
 	
 		</footer>
+
+
 
     </body>
 
