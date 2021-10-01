@@ -29,29 +29,9 @@
         //#region  OnClick --> Incr
         document.getElementById('scoreAdd').addEventListener("click", plus1);
         function plus1() {
-          alert('hello');
+          alert("hello");
           score += 1;
-          document.getElementById('scoreVar').innerHTML = score + 1;
-        }
-        document.getElementById('nbrProc4').addEventListener("click", incr4);
-        function incr4() {
-          if (c4 < maxCards) {
-            c4 += 1;
-            document.getElementById('c4').innerHTML = c4;
-          }
-          else {
-            document.getElementById('c4').innerHTML = c4;
-          }
-        }
-        document.getElementById('nbrProc5').addEventListener("click", incr5);
-        function incr5() {
-          if (c5 < maxCards) {
-            c5 += 1;
-            document.getElementById('c5').innerHTML = c5;
-          }
-          else {
-            document.getElementById('c5').innerHTML = c5;
-          }
+          document.getElementById('scoreVar').innerHTML = score;
         }
         //#endregion
 

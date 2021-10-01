@@ -43,10 +43,15 @@ html {
 	display:inline-block;
 	transition: all 0.4s; 
 }
-#jouer{
+#jouer {
 	position: relative;
 	bottom: 15px;
+	left: 34px;
 	font-size: 2.1em;
+}
+#Hi-Lo {
+	position: relative;
+	left: 15px;
 }
 
 
