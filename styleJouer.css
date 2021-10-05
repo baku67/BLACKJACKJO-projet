@@ -246,8 +246,6 @@ figure:active {
 }
 
 
-.special {
-}
 .special:hover {
 		border: 3px solid rgb(146, 21, 21);
 		border-radius: 12px;
@@ -459,3 +457,13 @@ p {
 
 
 /* ONHOVER IMG DISPLAY +1 0 -1 */
+
+.positive {
+	color: green !important;
+}
+.neutral {
+	color: rgb(223, 204, 204) !important;
+}
+.negative {
+	color: red !important;
+}

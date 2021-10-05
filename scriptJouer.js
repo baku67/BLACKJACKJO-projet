@@ -4,37 +4,44 @@
     
     window.onload = function(){
 
-        //#region  Var Compteurs
+      var score = 0;
 
-        var score = 0;
+        
 
-        var c2 = 0;
-        var c3 = 0;
-
-        //#endregion
-
-        //#region MaxCards
-        var mise = prompt("MISE : ");
-        document.getElementById("miseVar").innerHTML = mise;
-        document.getElementById("scoreVar").innerHTML = score;
-
-        document.getElementById('max1').innerHTML = maxCards;
-
-        //#endregion
-
-
-
-
-
-        //#region  OnClick --> Incr
-        document.getElementById('scoreAdd').addEventListener("click", plus1);
-        function plus1() {
-          alert("hello");
-          score += 1;
-          document.getElementById('scoreVar').innerHTML = score;
+      function scoreState() {
+        if (score > 0) {
+          document.getElementById("scoreVar").classList.remove('neutral');
+          document.getElementById("scoreVar").classList.remove('negative');
+          document.getElementById("scoreVar").classList.add('positive') = 'positive';
         }
-        //#endregion
+        else if (score == 0) {
+          document.getElementById("scoreVar").classList.remove('positive');
+          document.getElementById("scoreVar").classList.remove('negative');
+          document.getElementById("scoreVar").classList.add('neutral') = 'neutral';
+        }
+        else {
+          document.getElementById("scoreVar").classList.remove('positive');
+          document.getElementById("scoreVar").classList.remove('neutral');
+          document.getElementById("scoreVar").classList.add('negative') = 'negative';
+        }
+      }
 
+      var mise = prompt("MISE : ");
+      document.getElementById("miseVar").innerHTML = mise;
+      document.getElementById("scoreVar").innerHTML = score;
+
+      document.getElementById('scoreAdd').addEventListener("click", plus1);
+      function plus1() {
+        score += 1;
+        document.getElementById("scoreVar").innerHTML = score;
+        scoreState();
+      }
+      document.getElementById('scoreRem').addEventListener("click", minus1);
+      function minus1() {
+        score -= 1;
+        document.getElementById("scoreVar").innerHTML = score;
+        scoreState();
+      }
 
     }
 

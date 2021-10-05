@@ -44,7 +44,7 @@
         function incr2() {
           if (c2 < maxCards) {
             // Ajoute la classe 'classname' sous le nom 'classname'(html) à l'Element(id)   [Cas ou on incrémente] A RENOMMER (1er: classname = CSS, 2eme = HTMLadd)
-          document.getElementById("nbrProc2").classList.add('classname') = 'className';
+            document.getElementById("nbrProc2").classList.add('classname') = 'className';
             c2 += 1;
             document.getElementById('c2').innerHTML = c2;
           }
