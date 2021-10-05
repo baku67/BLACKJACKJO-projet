@@ -6,23 +6,27 @@
 
       var score = 0;
 
-        
+
+      function scorePop() {
+        document.getElementById("scoreContainer").classList.toggle('scorePop');
+      }
+      
 
       function scoreState() {
         if (score > 0) {
           document.getElementById("scoreVar").classList.remove('neutral');
           document.getElementById("scoreVar").classList.remove('negative');
-          document.getElementById("scoreVar").classList.add('positive') = 'positive';
+          document.getElementById("scoreVar").classList.add('positive');
         }
         else if (score == 0) {
           document.getElementById("scoreVar").classList.remove('positive');
           document.getElementById("scoreVar").classList.remove('negative');
-          document.getElementById("scoreVar").classList.add('neutral') = 'neutral';
+          document.getElementById("scoreVar").classList.add('neutral');
         }
         else {
           document.getElementById("scoreVar").classList.remove('positive');
           document.getElementById("scoreVar").classList.remove('neutral');
-          document.getElementById("scoreVar").classList.add('negative') = 'negative';
+          document.getElementById("scoreVar").classList.add('negative');
         }
       }
 
@@ -32,12 +36,14 @@
 
       document.getElementById('scoreAdd').addEventListener("click", plus1);
       function plus1() {
+        scorePop();
         score += 1;
         document.getElementById("scoreVar").innerHTML = score;
         scoreState();
       }
       document.getElementById('scoreRem').addEventListener("click", minus1);
       function minus1() {
+        scorePop();
         score -= 1;
         document.getElementById("scoreVar").innerHTML = score;
         scoreState();

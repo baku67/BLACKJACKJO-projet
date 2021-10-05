@@ -456,7 +456,7 @@ p {
 }
 
 
-/* ONHOVER IMG DISPLAY +1 0 -1 */
+/* ONHOVER IMG DISPLAY +1 0 -1  !!!!!!!!!!!!!!!!!!!!!!!!!*/
 
 .positive {
 	color: green !important;
@@ -467,3 +467,33 @@ p {
 .negative {
 	color: red !important;
 }
+
+
+.scorePop {
+	animation-name: cssAnimation;
+	-webkit-animation-name: cssAnimation;
+	animation-iteration-count: 1;
+	animation-duration: 0.5s;
+	-webkit-animation-duration: 0.5s;
+	-webkit-animation-iteration-count: 1;
+	animation-timing-function: ease;
+	-webkit-animation-timing-function: ease;
+	/* Pushai sur la droite (de maniere permanente, sans ça ça push aussi mais juste le temps de l'anim
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards; 
+	*/
+}
+  @keyframes cssAnimation {
+	0% {
+		transform: scale(1.0);
+	   	-webkit-transform: scale(1.0);
+	}
+	50% {
+		transform: scale(1.30);
+		-webkit-transform: scale(1.30);
+	}
+	100% {
+		transform: scale(1.0);
+		-webkit-transform: scale(1.0);
+	}
+  }
