@@ -40,6 +40,10 @@
         score += 1;
         document.getElementById("scoreVar").innerHTML = score;
         scoreState();
+        // Suppression de la classe togglé "scorePop" apres x temps
+        setTimeout(function scoreDepop() {
+          document.getElementById("scoreContainer").classList.toggle('scorePop');
+        }, 500);
       }
       document.getElementById('scoreRem').addEventListener("click", minus1);
       function minus1() {
@@ -47,6 +51,10 @@
         score -= 1;
         document.getElementById("scoreVar").innerHTML = score;
         scoreState();
+        // Suppression de la classe togglé "scorePop" apres x temps
+        setTimeout(function scoreDepop() {
+          document.getElementById("scoreContainer").classList.toggle('scorePop');
+        }, 500);
       }
 
     }
