@@ -434,7 +434,7 @@ h3 {
 
 .modifier {
 	font-weight: bold;
-	font-size: 20px;
+	font-size: 25px;
 
 }
 
@@ -456,7 +456,7 @@ p {
 }
 
 
-/* ONHOVER IMG DISPLAY +1 0 -1  !!!!!!!!!!!!!!!!!!!!!!!!!*/
+
 
 .positive {
 	color: green !important;
@@ -497,3 +497,10 @@ p {
 		-webkit-transform: scale(1.0);
 	}
   }
+
+#score0 {
+	opacity: 0.5;
+}
+
+
+  /* ONHOVER IMG DISPLAY +1 0 -1  !!!!!!!!!!!!!!!!!!!!!!!!!*/
