@@ -5,7 +5,16 @@
     window.onload = function(){
 
       var score = 0;
-
+      var mise = 0;
+      
+      $(document).ready(function(){
+        $("#lancerPartie").click(function(){
+            $("#container1").load("jouerPartie.html");
+            setTimeout( function lancerPartie() {
+                mise = prompt("{Manche 1} Entrez votre mise: ")
+            }, 1000)
+        });
+      });
 
       function scorePop() {
         document.getElementById("scoreContainer").classList.toggle('scorePop');
@@ -31,9 +40,13 @@
         }
       }
 
-      var mise = prompt("MISE : ");
-      document.getElementById("miseVar").innerHTML = mise;
+      
+
+      // var mise = prompt("MISE : ");
+      // document.getElementById("miseVar").innerHTML = mise;
       document.getElementById("scoreVar").innerHTML = score;
+
+      
 
       document.getElementById('scoreAdd').addEventListener("click", plus1);
       function plus1() {
@@ -57,6 +70,8 @@
           document.getElementById("scoreContainer").classList.toggle('scorePop');
         }, 500);
       }
+
+      
 
     }
 

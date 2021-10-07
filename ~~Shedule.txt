@@ -1,2 +1,4 @@
 form mise: Nouvelle partie Submit (grisé si aucun form, must be int)
 Solde = solde - mise (-=mise)
+
+FAIRE UN MODALE stylé POUR LA MISE chaque manche

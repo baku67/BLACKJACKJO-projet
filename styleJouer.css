@@ -3,7 +3,8 @@ html {
 }
 
 #header {
-	height: auto;
+	/* height: auto; */
+	height: 15%;
 	width: 100%;
 	padding: 3em 0em;
 	background: rgb(130,14,39);
@@ -122,7 +123,7 @@ ul#list li {
 	-webkit-box-sizing: border-box;
 }
 
-#container1 {
+/* #container1 {
 	height: auto;
 	width: auto;
 
@@ -140,28 +141,54 @@ ul#list li {
 #container1 a {
 	text-decoration: none;
 	color: rgba(5, 2, 39, 0.7);
-}
+} */
+
 /* 
 EXPLICATION TRANSITION: "transition: transition xs;" c'est que pour 
 le machin: hover {transition: scale(2);} par ex, 
 mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};    
 !!! */
+
+#container1 {
+	position: relative;
+	height: 50%;
+}
+
+#container1 a {
+	color: rgba(5, 2, 39, 1);
+	font-size: 2em;
+	font-weight: bold;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	letter-spacing: 0.3px;
+	text-shadow: 0 0 3px rgba(223, 204, 204, 1);
+}
 #newGame {
-	padding: 0.6em;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+
+	padding: 30px 70px;
 	border: 3px solid rgba(34, 10, 141, 0.08);
 	border-radius: 4px;
 	transition: all 0.7s;
 }
 #newGame:hover {
-	border: 3px solid rgba(34, 10, 141, 0.8);
+	border: 7px solid rgba(34, 10, 141, 0.6);
 	color: rgb(223, 204, 204) !important;
+	text-shadow: 0 0 5px rgba(223, 204, 204, 0.9);
 }
 
-.module-border-wrap:hover {
-	max-width: 250px;
+
+.module-border-wrap {
+	max-width: 280px;
 	position: relative;
 	background: linear-gradient(to right, rgba(153, 7, 7, 0.8), rgba(13, 1, 56, 0.8));
 	padding: 15px 0px;
+  }.module-border-wrap:hover {
+	background: linear-gradient(to right, rgba(153, 7, 7, 0.87), rgba(13, 1, 56, 0.87));
   }
 
 
@@ -528,3 +555,31 @@ p {
 
 
   /* ONHOVER IMG DISPLAY +1 0 -1  !!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.background {
+	background-image: url("backgroundPartie.png");
+}
