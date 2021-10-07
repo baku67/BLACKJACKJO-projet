@@ -14,6 +14,7 @@
 
       function scoreState() {
         if (score > 0) {
+          document.getElementById("scoreVar").innerHTML = "+" + score;
           document.getElementById("scoreVar").classList.remove('neutral');
           document.getElementById("scoreVar").classList.remove('negative');
           document.getElementById("scoreVar").classList.add('positive');
