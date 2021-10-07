@@ -2,3 +2,13 @@ form mise: Nouvelle partie Submit (grisé si aucun form, must be int)
 Solde = solde - mise (-=mise)
 
 FAIRE UN MODALE stylé POUR LA MISE chaque manche
+
+
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+.onclick next round  OU  setTimeOut2200 :  add <li>NewCard<li> (inline)
+tableau JS avec cartes déclaré et random dedans avec suppression
+
+https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild  :  "JS add child element" pour ajouter des <li>cards</li> !!!!!!!!!!!!!!!
