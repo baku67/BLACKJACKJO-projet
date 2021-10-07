@@ -439,11 +439,19 @@ h3 {
 }
 #modifierPlus1 {
 	color: green !important;
+<<<<<<< HEAD
 	text-shadow: 0px 0px 8px rgba(223, 204, 204, 0.3);
 }
 #modifierMinus1 {
 	color: red !important;
 	text-shadow: 0px 0px 8px rgba(223, 204, 204, 0.4);
+=======
+	text-shadow: 0px 0px 8px rgba(223, 204, 204, 0.7);
+}
+#modifierMinus1 {
+	color: red !important;
+	text-shadow: 0px 0px 8px rgba(223, 204, 204, 1);
+>>>>>>> master
 }
 
 .traitBlanc {
