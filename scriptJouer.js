@@ -12,7 +12,8 @@
             $("#container1").load("jouerPartie.html");
             setTimeout( function lancerPartie() {
                 mise = prompt("{Manche 1} Entrez votre mise: ")
-            }, 1000)
+                document.getElementById("miseVar").innerHTML = mise;
+            }, 500)
         });
       });
 
@@ -42,7 +43,6 @@
 
       
 
-      // var mise = prompt("MISE : ");
       // document.getElementById("miseVar").innerHTML = mise;
       document.getElementById("scoreVar").innerHTML = score;
 

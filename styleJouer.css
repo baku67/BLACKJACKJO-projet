@@ -151,7 +151,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 
 #container1 {
 	position: relative;
-	height: 50%;
+	height: 58%;
 }
 
 #container1 a {
@@ -581,9 +581,17 @@ p {
 
 
 .background {
-	background-image: url("backgroundPartie.png");
+	/* background-image: url("backgroundPartie.png"); */
 	height: 100%;
 	width: 100;
 	background-position: center;
 	background-repeat: no-repeat;
+}
+.JouerContainer {
+	text-align: center;
+	font-weight: bold;
+	color: rgba(5, 2, 39, 0.7);
+	font-size: 1.3em;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 0.3px;
 }
