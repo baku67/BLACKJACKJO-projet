@@ -6,16 +6,37 @@
 
       var score = 0;
       var mise = 0;
+
+      // Partie
+      var cards = ["2","3","4","5","6","7","8","9","10","1"];
+      var createCardLi = document.createElement("li")
+      var createCardImg = document.createElement("img")
       
-      $(document).ready(function(){
+      
+      $(document).ready(function(){    
         $("#lancerPartie").click(function(){
             $("#container1").load("jouerPartie.html");
             setTimeout( function lancerPartie() {
                 mise = prompt("{Manche 1} Entrez votre mise: ")
                 document.getElementById("miseVar").innerHTML = mise;
+
+                // APPEL NOUVELLE CARTE ONCLICK
+                document.getElementById('newCard').addEventListener("click", addCardImage);
             }, 500)
         });
       });
+
+
+
+      // NOUVELLE CARTE
+      function addCardImage() {
+        var img = document.createElement('img');
+        img.src = "cartes\\2C.png";
+        img.className = "imgPartie";
+        document.getElementById("croupier").appendChild(img);
+      }
+      // FIN
+
 
       function scorePop() {
         document.getElementById("scoreContainer").classList.toggle('scorePop');

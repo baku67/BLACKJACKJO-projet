@@ -123,6 +123,12 @@ ul#list li {
 	-webkit-box-sizing: border-box;
 }
 
+
+ul.list2 li {
+	display: inline;
+
+}
+
 /* #container1 {
 	height: auto;
 	width: auto;
@@ -254,22 +260,27 @@ figure:active {
 
 
 .img {
-
 	width: 8em;
 	opacity: 0.8;
-
 		/*  Les px de border ne compte pas en plus de la div  (pas de mess) */
 		box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		-webkit-box-sizing: border-box;
-	
 	transition: all 0.5s,
 }
 .img:hover {
 	opacity: 1;
 	border: 3px solid rgb(4, 11, 119);
 	border-radius: 12px;
-
+}
+.imgPartie {
+	width: 8em;
+	opacity: 0.8;
+		/*  Les px de border ne compte pas en plus de la div  (pas de mess) */
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+	transition: all 0.5s,
 }
 
 
