@@ -7,12 +7,62 @@
       var score = 0;
       var mise = 0;
 
-      // Partie
-      var cards = ["2","3","4","5","6","7","8","9","10","1"];
-      var createCardLi = document.createElement("li")
-      var createCardImg = document.createElement("img")
+      // Tableau d'objets cards
+      let cards = {
+        C2 : {
+          "id": 2,
+          "cardImageURL": "cartes\\2C.png",
+          "cardValue": 2
+        },
+        C3 : {
+          "id": 3,
+          "cardImageURL": "cartes\\3D.png",
+          "cardValue": 3
+        },
+        C4 : {
+          "id": 4,
+          "cardImageURL": "cartes\\4H.png",
+          "cardValue": 4
+        },
+        C5 : {
+          "id": 5,
+          "cardImageURL": "cartes\\5S.png",
+          "cardValue": 5
+        },
+        C6 : {
+          "id": 6,
+          "cardImageURL": "cartes\\6C.png",
+          "cardValue": 6
+        }
+      };
+
+
+
+
+      // random pick of array  https://www.geeksforgeeks.org/how-to-select-a-random-element-from-array-in-javascript/
       
+      //                            var cards = ["GFG_1", "GeeksForGeeks",
+      //                                         "Geeks", "Computer Science Portal"];
+      // Chope l'objet :            cards[Math.floor(Math.random() * cards.length)];
+
+      //
+      // Object.values(object1)
+      // WIP: Object.values(C2[2])     //index 2 = url       (check indexStart en JS)
+      //      Object.Values(C2[3])     //index 3 = valeur
+
+
+      // chope l'objet selon critères(values) Inutil ici?
+      // https://www.freecodecamp.org/news/javascript-array-of-objects-tutorial-how-to-create-update-and-loop-through-objects-using-js-array-methods/
+      // let car = cars.find(car => car.color === "red");
+
+
+
       
+
+
+
+
+
       $(document).ready(function(){    
         $("#lancerPartie").click(function(){
             $("#container1").load("jouerPartie.html");
@@ -20,22 +70,41 @@
                 mise = prompt("{Manche 1} Entrez votre mise: ")
                 document.getElementById("miseVar").innerHTML = mise;
 
-                // APPEL NOUVELLE CARTE ONCLICK
-                document.getElementById('newCard').addEventListener("click", addCardImage);
+                // APPEL NOUVELLE CARTE ONCLICK (ici pour joueur)
+                document.getElementById('newCard').addEventListener("click", addCardJoueur);
             }, 500)
         });
       });
 
 
 
-      // NOUVELLE CARTE
-      function addCardImage() {
+      // NOUVELLE CARTE  > CROUPIER
+      function addCardCroupier() {
+
+        // Créer l'élément <img/>
         var img = document.createElement('img');
+
+        // URL doit etre une var random du arrayCards ET AJOUTER Array.del (pour retirer la carte du pool)
         img.src = "cartes\\2C.png";
+
+        // Ajoute une class à img
         img.className = "imgPartie";
+
+        // Ajoute la var img à l'<ul> "#croupier"
         document.getElementById("croupier").appendChild(img);
       }
       // FIN
+
+
+      // NOUVELLE CARTE  > JOUEUR
+      function addCardJoueur() {
+        var img = document.createElement('img');
+        img.src = "cartes\\5S.png";
+        img.className = "imgPartie";
+        document.getElementById("joueur").appendChild(img);
+      }
+      // FIN
+
 
 
       function scorePop() {
