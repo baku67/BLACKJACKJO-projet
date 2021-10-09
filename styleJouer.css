@@ -312,7 +312,7 @@ figure:active {
 	font-size: 1.65em;
 }
 
-footer {
+.footer {
 	position: fixed;
     /* bottom: 0px: IMPORTANT FIX EN BAS */
   	bottom: 0px;
@@ -338,9 +338,6 @@ h3 {
 	padding-bottom: 1em;
 }
 
-#footer2 {
-	width: 100%;
-}
 
 
 
