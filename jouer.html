@@ -14,113 +14,117 @@
 
 
 	<body>
-		<header id="header">
-			<h1 id="title">Black Jack Jo'</h1>
-			<br/>
-			<div>
-				<ul id="onglets">
-					<li class="onglet"><a href="Hi-Lo.html" id="Hi-Lo">Hi-Lo</a></li>
-					<li class="onglet" ><a href="jouer.html" id="jouer">JOUER !</a></li>
-					<li class="onglet"><a href="index.html" id="Compteur">Compteur</a></li>
+
+		<div class="containerMaster">
+
+
+
+			<header id="header">
+				<h1 id="title">Black Jack Jo'</h1>
+				<br/>
+				<div>
+					<ul id="onglets">
+						<li class="onglet"><a href="Hi-Lo.html" id="Hi-Lo">Hi-Lo</a></li>
+						<li class="onglet" ><a href="jouer.html" id="jouer">JOUER !</a></li>
+						<li class="onglet"><a href="index.html" id="Compteur">Compteur</a></li>
+					</ul>
+				</div>
+			</header>
+			
+			
+
+			<!-- <div id ="container1">
+				<ul id="list">
+					<li>Solde: <span id=""></span>500</li>
+					<span id="barre">&nbsp;|&nbsp;</span>
+					<li>Mise: <span id="miseVar"></span></li>
+
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+					<li class="module-border-wrap"><a href="javascript:location.reload(true)"><span id="newGame" id="hover">Nouvelle Partie</span></a></li>
+					<br><br>
+					<li style="font-size: 2.5em;"><a href="" id="flecheBefore">&#8630;</a></li>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<li style="font-size: 2.5em;"><a href="" id="flecheAfter">&#8631;</a></li>
 				</ul>
 			</div>
-		</header>
-		
-		
-
-		<!-- <div id ="container1">
-			<ul id="list">
-				<li>Solde: <span id=""></span>500</li>
-				<span id="barre">&nbsp;|&nbsp;</span>
-				<li>Mise: <span id="miseVar"></span></li>
-
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-				<li class="module-border-wrap"><a href="javascript:location.reload(true)"><span id="newGame" id="hover">Nouvelle Partie</span></a></li>
-				<br><br>
-				<li style="font-size: 2.5em;"><a href="" id="flecheBefore">&#8630;</a></li>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<li style="font-size: 2.5em;"><a href="" id="flecheAfter">&#8631;</a></li>
-			</ul>
-		</div>
-
-		<div id="container2">
-			<div class="champs">
-				<p>\__________/</p>
-			</div>
-			<div id="trait"></div>
-			<div class="champs">
-				<p>------------</p>
-			</div>
-		</div> -->
-
-		<div id="container1">
-			<div id="newGame" class="module-border-wrap">
-				<a href="#" style="text-decoration: none;" id="lancerPartie">Nouvelle Partie !</a>
-			</div>
-		</div>
-
-
-
-
-		<div class="footer">
-
-			<h3>-----{ Compteur }-----</h3>
-
-			<div class="traitBlanc"></div>
-
-			<break></break>
-	
-			<div id="container3">
-	
-				<figure>
-					<figcaption>
-						<p>
-							<span>{ 2, 3, 4, 5, 6 }</span>
-							<br>
-							<span class="modifier" id="modifierPlus1">+1</span>
-						</p>
-					</figcaption>
-					<div class="petitTraitBlanc"></div>
-					<img class="img" id="scoreAdd" src="cartes\2C.png">
-					
-				</figure>
-	
-				<figure>
-					<figcaption>
-						<p>
-							<span>{ 7, 8, 9 }</span>
-							<br>
-							
-							<span class="modifier">&#177;0</span>
-						</p>
-					</figcaption>
-					<div class="petitTraitBlanc"></div>
-					<img class="img" id="score0" src="cartes\7D.png">
-				</figure>
-	
-				<figure>
-					<figcaption>
-						<p>
-							<span>{ B&#219;CHE }</span>
-							<br>
-							<span class="modifier" id="modifierMinus1">-1</span>
-						</p>
-					</figcaption>
-					<div class="petitTraitBlanc"></div>
-					<img class="img" id="scoreRem" src="cartes\AS.png">
-				</figure>
-	
-				<div id="scoreContainer">
-					<h2 class="scoreElem">SCORE</h2>
-					<p class="scoreElem"><span id="scoreVar">0</span></p>
+			<div id="container2">
+				<div class="champs">
+					<p>\__________/</p>
 				</div>
+				<div id="trait"></div>
+				<div class="champs">
+					<p>------------</p>
+				</div>
+			</div> -->
 
+			
+			<div id="container1">
+				<div id="newGame" class="module-border-wrap">
+					<a href="#" style="text-decoration: none;" id="lancerPartie">Nouvelle Partie !</a>
+				</div>
 			</div>
-	
+
+
+
+
+			<div class="footer">
+
+				<h3>-----{ Compteur }-----</h3>
+
+				<div class="traitBlanc"></div>
+
+				<break></break>
+		
+				<div id="container3">
+		
+					<figure>
+						<figcaption>
+							<p>
+								<span>{ 2, 3, 4, 5, 6 }</span>
+								<br>
+								<span class="modifier" id="modifierPlus1">+1</span>
+							</p>
+						</figcaption>
+						<div class="petitTraitBlanc"></div>
+						<img class="img" id="scoreAdd" src="cartes\2C.png">
+						
+					</figure>
+		
+					<figure>
+						<figcaption>
+							<p>
+								<span>{ 7, 8, 9 }</span>
+								<br>
+								
+								<span class="modifier">&#177;0</span>
+							</p>
+						</figcaption>
+						<div class="petitTraitBlanc"></div>
+						<img class="img" id="score0" src="cartes\7D.png">
+					</figure>
+		
+					<figure>
+						<figcaption>
+							<p>
+								<span>{ B&#219;CHE }</span>
+								<br>
+								<span class="modifier" id="modifierMinus1">-1</span>
+							</p>
+						</figcaption>
+						<div class="petitTraitBlanc"></div>
+						<img class="img" id="scoreRem" src="cartes\AS.png">
+					</figure>
+		
+					<div id="scoreContainer">
+						<h2 class="scoreElem">SCORE</h2>
+						<p class="scoreElem"><span id="scoreVar">0</span></p>
+					</div>
+
+				</div>
+		
+			</div>
 		</div>
-
-
 
     </body>
 
