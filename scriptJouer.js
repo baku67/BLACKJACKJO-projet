@@ -15,9 +15,11 @@
       coll.addEventListener("click", function() {
         if (content.style.display === "block") {
           content.style.display = "none";
+          document.getElementById("arrowPng").setAttribute("src", "arrowUp.png")
         }
         else {
           content.style.display = "block";
+          document.getElementById("arrowPng").setAttribute("src", "arrowDown.png")
         }
       });
       // FIN
