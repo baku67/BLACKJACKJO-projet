@@ -4,6 +4,7 @@ Solde = solde - mise (-=mise)
 FAIRE UN MODALE stylé POUR LA MISE chaque manche
 
 
+background-size : cover
 
 
 
@@ -12,3 +13,7 @@ FAIRE UN MODALE stylé POUR LA MISE chaque manche
 tableau JS avec cartes déclaré et random dedans avec suppression
 
 https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild  :  "JS add child element" pour ajouter des <li>cards</li> !!!!!!!!!!!!!!!
+
+
+
+Methode simple: si url de la carte pick = "2C.png" alors var value=2

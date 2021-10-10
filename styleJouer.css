@@ -2,6 +2,16 @@ html {
 	height: 100%;
 }
 
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
 #header {
 	/* height: auto; */
 	height: 15%;
@@ -303,7 +313,9 @@ figure:active {
 
 
 
-
+#collapseContent {
+	padding-bottom: 2em;
+}
 
 
 
@@ -311,12 +323,12 @@ figure:active {
 	font-size: 1.65em;
 }
 
-.footer {
+#footer {
 	position: fixed;
     /* bottom: 0px: IMPORTANT FIX EN BAS */
   	bottom: 0px;
 	width: 100%;
-	height: 27%;
+
     margin-block-start: 0em;
     margin-block-end: 0em;
 
@@ -333,12 +345,17 @@ figure:active {
 	background: linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#820e27",endColorstr="#1a2039",GradientType=1);
 }
-h3 {  
-	padding-bottom: 1em;
+
+
+
+h3 {
+	padding: 1em 0;
+	margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
 }
-
-
-
 
 
 
@@ -484,9 +501,7 @@ h3 {
 	height: 2px;
 	width: 100%;
 	background-color: rgba(223, 204, 204, 0.5);
-
-	position: relative;
-	bottom: 20px;
+	margin-bottom: 10px;
 }
 .petitTraitBlanc {
 	height: 2px;

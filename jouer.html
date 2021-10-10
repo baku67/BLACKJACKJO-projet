@@ -68,59 +68,64 @@
 
 
 
-			<div class="footer">
+			<div id="footer">
 
-				<h3>-----{ Compteur }-----</h3>
+				<div style="display:inline-flex;">
+					<h3>-----{ Compteur }-----</h3>
+					<button style="position:absolute;right:0;padding:1.3em 1.3em 1.3em 0;" type="button" id="collapsible"><img src="arrow.png" style="height:1em;"></button>
+				</div>
 
-				<div class="traitBlanc"></div>
+				<div id=collapseContent style="display: block;">
+					<div class="traitBlanc"></div>
 
-				<break></break>
-		
-				<div id="container3">
-		
-					<figure>
-						<figcaption>
-							<p>
-								<span>{ 2, 3, 4, 5, 6 }</span>
-								<br>
-								<span class="modifier" id="modifierPlus1">+1</span>
-							</p>
-						</figcaption>
-						<div class="petitTraitBlanc"></div>
-						<img class="img" id="scoreAdd" src="cartes\2C.png">
-						
-					</figure>
-		
-					<figure>
-						<figcaption>
-							<p>
-								<span>{ 7, 8, 9 }</span>
-								<br>
-								
-								<span class="modifier">&#177;0</span>
-							</p>
-						</figcaption>
-						<div class="petitTraitBlanc"></div>
-						<img class="img" id="score0" src="cartes\7D.png">
-					</figure>
-		
-					<figure>
-						<figcaption>
-							<p>
-								<span>{ B&#219;CHE }</span>
-								<br>
-								<span class="modifier" id="modifierMinus1">-1</span>
-							</p>
-						</figcaption>
-						<div class="petitTraitBlanc"></div>
-						<img class="img" id="scoreRem" src="cartes\AS.png">
-					</figure>
-		
-					<div id="scoreContainer">
-						<h2 class="scoreElem">SCORE</h2>
-						<p class="scoreElem"><span id="scoreVar">0</span></p>
+					<break></break>
+			
+					<div id="container3">
+			
+						<figure>
+							<figcaption>
+								<p>
+									<span>{ 2, 3, 4, 5, 6 }</span>
+									<br>
+									<span class="modifier" id="modifierPlus1">+1</span>
+								</p>
+							</figcaption>
+							<div class="petitTraitBlanc"></div>
+							<img class="img" id="scoreAdd" src="cartes\2C.png">
+							
+						</figure>
+			
+						<figure>
+							<figcaption>
+								<p>
+									<span>{ 7, 8, 9 }</span>
+									<br>
+									
+									<span class="modifier">&#177;0</span>
+								</p>
+							</figcaption>
+							<div class="petitTraitBlanc"></div>
+							<img class="img" id="score0" src="cartes\7D.png">
+						</figure>
+			
+						<figure>
+							<figcaption>
+								<p>
+									<span>{ B&#219;CHE }</span>
+									<br>
+									<span class="modifier" id="modifierMinus1">-1</span>
+								</p>
+							</figcaption>
+							<div class="petitTraitBlanc"></div>
+							<img class="img" id="scoreRem" src="cartes\AS.png">
+						</figure>
+			
+						<div id="scoreContainer">
+							<h2 class="scoreElem">SCORE</h2>
+							<p class="scoreElem"><span id="scoreVar">0</span></p>
+						</div>
+
 					</div>
-
 				</div>
 		
 			</div>

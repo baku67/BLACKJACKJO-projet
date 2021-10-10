@@ -7,6 +7,21 @@
       var score = 0;
       var mise = 0;
 
+      //  Collapse Footer
+      var coll = document.getElementById("collapsible");
+      var i;
+      var content = document.getElementById("collapseContent");
+
+      coll.addEventListener("click", function() {
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        }
+        else {
+          content.style.display = "block";
+        }
+      });
+      // FIN
+
       // Tableau d'objets cards
       let cards = {
         C2 : {
@@ -67,7 +82,7 @@
         $("#lancerPartie").click(function(){
             $("#container1").load("jouerPartie.html");
             setTimeout( function lancerPartie() {
-                mise = prompt("{Manche 1} Entrez votre mise: ")
+                mise = prompt("{MANCHE 1} ENTREZ VOTRE MISE: ")
                 document.getElementById("miseVar").innerHTML = mise;
 
                 // APPEL NOUVELLE CARTE ONCLICK (ici pour joueur)
