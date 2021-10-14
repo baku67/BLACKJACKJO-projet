@@ -1,10 +1,10 @@
+
+
 form mise: Nouvelle partie Submit (grisé si aucun form, must be int)
 Solde = solde - mise (-=mise)
 
 FAIRE UN MODALE stylé POUR LA MISE chaque manche  (+blur background(html) while prompt)
 
-
-background-size : cover
 
 
 
@@ -17,3 +17,6 @@ https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild  :  "JS add ch
 
 
 Methode simple: si url de la carte pick = "2C.png" alors var value=2
+
+
+flash Onload -> affect body background
