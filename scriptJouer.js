@@ -26,33 +26,35 @@
 
       
       // Tableau d'objets cards
-      let cards = {
-        C2 : {
-          "id": 2,
-          "cardImageURL": "cartes\\2C.png",
-          "cardValue": 2
+      let cards = [
+        C2 = {
+          id: 2,
+          cardImageURL: "cartes\\2C.png",
+          cardValue: 2
         },
-        C3 : {
-          "id": 3,
-          "cardImageURL": "cartes\\3D.png",
-          "cardValue": 3
+        C3 = {
+          id: 3,
+          cardImageURL: "cartes\\3D.png",
+          cardValue: 3
         },
-        C4 : {
-          "id": 4,
-          "cardImageURL": "cartes\\4H.png",
-          "cardValue": 4
+        C4 = {
+          id: 4,
+          cardImageURL: "cartes\\4H.png",
+          cardValue: 4
         },
-        C5 : {
-          "id": 5,
-          "cardImageURL": "cartes\\5S.png",
-          "cardValue": 5
+        C5 = {
+          id: 5,
+          cardImageURL: "cartes\\5S.png",
+          cardValue: 5
         },
-        C6 : {
-          "id": 6,
-          "cardImageURL": "cartes\\6C.png",
-          "cardValue": 6
+        C6 = {
+          id: 6,
+          cardImageURL: "cartes\\6C.png",
+          cardValue: 6
         }
-      };
+      ];
+
+      //Object.value
 
 
 
@@ -89,7 +91,7 @@
                 document.getElementById("miseVar").innerHTML = mise;
 
                 // APPEL NOUVELLE CARTE ONCLICK (ici pour joueur)
-                document.getElementById('newCard').addEventListener("click", addCardJoueur);
+                document.getElementById('newCard').addEventListener("click", addCardCroupier);
             }, 500)
         });
       });
@@ -143,7 +145,10 @@
         var img = document.createElement('img');
 
         // URL doit etre une var random du arrayCards ET AJOUTER Array.del (pour retirer la carte du pool)
-        img.src = "cartes\\2C.png";
+        
+        //let pickedCardObject = cards[Math.floor(Math.random()*cards.length)]
+        img.src = cards[Math.floor(Math.random()*cards.length)].cardImageURL;
+        // img.src = C3.cardImageURL;
 
         // Ajoute une class à img
         img.className = "imgPartie";
@@ -157,7 +162,7 @@
       // NOUVELLE CARTE  > JOUEUR
       function addCardJoueur() {
         var img = document.createElement('img');
-        img.src = "cartes\\5S.png";
+        img.src = cards[Math.floor(Math.random()*cards.length)].cardImageURL;
         img.className = "imgPartie";
         document.getElementById("joueur").appendChild(img);
       }
