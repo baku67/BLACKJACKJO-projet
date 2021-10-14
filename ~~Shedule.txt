@@ -4,9 +4,16 @@ TO DO (Intéressant + Commenté): Delete Card by "id"
 TO DO (CSS): Revoir Bouton "Nouvelle Partie" + les OnClick()/OnHover
 TO DO (NoBrain): Ajuster CSS de index.html avec StyleJouer.css    +    mettre JouerPartie.html en index
 
+
+
+
+
 TO DO (calme-toi): Pop module "MISE" avec pré-défini: 0.5, 1, 2, 5, 10, 25, 100
 TO DO (calme-toi): FAIRE UN MODALE stylé POUR LA MISE chaque manche  (+blur background(html) while prompt)
 
 
 TO DO (HotFix): Le Score PopUp() scale sur la base d'une ligne et non globalement
 TO DO (HotFix): flash Onload -> affect body background
+
+
+TO DO (MILESTONE): Media Queries
