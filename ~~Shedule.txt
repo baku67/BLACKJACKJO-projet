@@ -1,31 +1,12 @@
 TO DO (insupportable + NoBrain):  Rescale/Redim (standardiser) taille cartes (prendre la plus faible)
-TO DO (noBrain): Ajouter TOUTES les Cards (pour le random) !
+TO DO (NoBrain): Ajouter TOUTES les Cards (POUR LE RANDOM + esthétique affichage non répétitif) !
+TO DO (Intéressant + Commenté): Delete Card by "id"
+TO DO (CSS): Revoir Bouton "Nouvelle Partie" + les OnClick()/OnHover
+TO DO (NoBrain): Ajuster CSS de index.html avec StyleJouer.css    +    mettre JouerPartie.html en index
+
+TO DO (calme-toi): Pop module "MISE" avec pré-défini: 0.5, 1, 2, 5, 10, 25, 100
+TO DO (calme-toi): FAIRE UN MODALE stylé POUR LA MISE chaque manche  (+blur background(html) while prompt)
 
 
-
-
-TO DO (calme toi): Pop module "MISE" avec pré-défini: 0.5, 1, 2, 5, 10, 25, 100
-
-
-
-
-form mise: Nouvelle partie Submit (grisé si aucun form, must be int)
-Solde = solde - mise (-=mise)
-
-FAIRE UN MODALE stylé POUR LA MISE chaque manche  (+blur background(html) while prompt)
-
-
-
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-.onclick next round  OU  setTimeOut2200 :  add <li>NewCard<li> (inline)
-tableau JS avec cartes déclaré et random dedans avec suppression
-
-https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild  :  "JS add child element" pour ajouter des <li>cards</li> !!!!!!!!!!!!!!!
-
-
-
-Methode simple: si url de la carte pick = "2C.png" alors var value=2
-
-
-flash Onload -> affect body background
+TO DO (HotFix): Le Score PopUp() scale sur la base d'une ligne et non globalement
+TO DO (HotFix): flash Onload -> affect body background

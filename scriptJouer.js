@@ -54,32 +54,6 @@
         }
       ];
 
-      //Object.value
-
-
-
-
-      // random pick of array  https://www.geeksforgeeks.org/how-to-select-a-random-element-from-array-in-javascript/
-      
-      //                            var cards = ["GFG_1", "GeeksForGeeks",
-      //                                         "Geeks", "Computer Science Portal"];
-      // Chope l'objet :            cards[Math.floor(Math.random() * cards.length)];
-
-      //
-      // Object.values(object1)
-      // WIP: Object.values(C2[2])     //index 2 = url       (check indexStart en JS)
-      //      Object.Values(C2[3])     //index 3 = valeur
-
-
-      // chope l'objet selon critères(values) Inutil ici?
-      // https://www.freecodecamp.org/news/javascript-array-of-objects-tutorial-how-to-create-update-and-loop-through-objects-using-js-array-methods/
-      // let car = cars.find(car => car.color === "red");
-
-
-
-      
-
-
 
 
       // JQUERY JAX : load.Contenu (partie)
@@ -144,15 +118,27 @@
         // Créer l'élément <img/>
         var img = document.createElement('img');
 
-        // URL doit etre une var random du arrayCards ET AJOUTER Array.del (pour retirer la carte du pool)
+        // AJOUTER Array.del 
         
+        // Pick l'objet et le stock dans une VAR
         let pickedCardObject = cards[Math.floor(Math.random()*cards.length)]
+        // Associe la VALUE de la KEY "cardImageUrl", à l'attribut HTML de l'<img> créé
         img.src = pickedCardObject.cardImageURL;
+        // Stock la VALUE de la KEY "cardValue" à une var
         var pickedCardValue = pickedCardObject.cardValue;
+        // {Suppression de l'objet}
+        // - https://stackoverflow.com/questions/10024866/remove-object-from-array-using-javascript?rq=1
+        // - Library "Sugar.js": 
+        //      HTML: https://raw.githubusercontent.com/andrewplummer/Sugar/2.0.4/dist/sugar.min.js
+        //      JS:   someArray.remove(function(el) { return el.Name === "Kristian"; });
+        //.......................
+
+        // Affichage Valeur card pickée
         console.log(pickedCardValue);
         // img.src = C3.cardImageURL;
+        // FIN
 
-        // Ajoute une class à img
+        // Ajoute class à img pour CSS
         img.className = "imgPartie";
 
         // Ajoute la var img à l'<ul> "#croupier"
@@ -169,6 +155,15 @@
         document.getElementById("joueur").appendChild(img);
       }
       // FIN
+
+
+
+
+
+
+
+
+
 
 
 
