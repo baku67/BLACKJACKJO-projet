@@ -24,6 +24,7 @@
       });
       // FIN
 
+      
       // Tableau d'objets cards
       let cards = {
         C2 : {
@@ -79,28 +80,12 @@
 
 
 
-      // // JQUERY JAX : load.Contenu (partie)
-      // $(document).ready(function(){    
-      //   $("#lancerPartie").click(function(){
-      //       $("#container1").load("jouerPartie.html");
-      //       setTimeout( function lancerPartie() {
-      //           mise = prompt("{MANCHE 1} ENTREZ VOTRE MISE: ")
-      //           document.getElementById("miseVar").innerHTML = mise;
-
-      //           // APPEL NOUVELLE CARTE ONCLICK (ici pour joueur)
-      //           document.getElementById('newCard').addEventListener("click", addCardJoueur);
-      //       }, 500)
-      //   });
-      // });
+      // JQUERY JAX : load.Contenu (partie)
       $(document).ready(function(){    
         $("#lancerPartie").click(function(){
-            
-          $("#container1").load("Wait.html");
+            $("#container1").load("jouerPartie.html");
             setTimeout( function lancerPartie() {
-                
-                mise = prompt("{MANCHE 1} ENTREZ VOTRE MISE: ")
-                $("#container1").load("jouerPartie.html");
-
+                mise = prompt("{MANCHE 1} ENTREZ VOTRE MISE: ");
                 document.getElementById("miseVar").innerHTML = mise;
 
                 // APPEL NOUVELLE CARTE ONCLICK (ici pour joueur)
@@ -108,6 +93,46 @@
             }, 500)
         });
       });
+
+
+      // // TEST Wait 1
+      // $(document).ready(function(){    
+      //   $("#lancerPartie").click(function(){
+            
+      //     $("#container1").load("Wait.html");
+      //       setTimeout( function lancerPartie() {
+                
+      //           mise = prompt("{MANCHE 1} ENTREZ VOTRE MISE: ");
+      //           $("#container1").load("jouerPartie.html");
+
+      //           document.getElementById("miseVar").innerHTML = mise;
+
+      //           document.getElementById('newCard').addEventListener("click", addCardJoueur);
+      //       }, 500)
+      //   });
+      // });
+      // // FIN
+      
+      // // TEST Wait 2: CALLBACK
+      // $(document).ready(function(){    
+      //   $("#lancerPartie").click(function(){
+      //       first(second);
+      //       document.getElementById("miseVar").innerHTML = mise;
+      //       document.getElementById('newCard').addEventListener("click", addCardJoueur);
+      //   });
+      // });
+      // function first(callback) {
+      //   $("#container1").load("Wait.html");
+      //   mise = prompt("{MANCHE 1} ENTREZ VOTRE MISE: ");
+      //   callback();
+      // }
+      // function second() {
+      //   $("#container1").load("jouerPartie.html");
+      // }
+      // // FIN
+
+
+
 
 
 

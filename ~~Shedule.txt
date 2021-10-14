@@ -1,4 +1,4 @@
-
+TO DO: Pop module "MISE" avec pré-défini: 0.5, 1, 2, 5, 10, 25, 100
 
 form mise: Nouvelle partie Submit (grisé si aucun form, must be int)
 Solde = solde - mise (-=mise)
