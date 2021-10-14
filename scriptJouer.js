@@ -146,8 +146,10 @@
 
         // URL doit etre une var random du arrayCards ET AJOUTER Array.del (pour retirer la carte du pool)
         
-        //let pickedCardObject = cards[Math.floor(Math.random()*cards.length)]
-        img.src = cards[Math.floor(Math.random()*cards.length)].cardImageURL;
+        let pickedCardObject = cards[Math.floor(Math.random()*cards.length)]
+        img.src = pickedCardObject.cardImageURL;
+        var pickedCardValue = pickedCardObject.cardValue;
+        console.log(pickedCardValue);
         // img.src = C3.cardImageURL;
 
         // Ajoute une class à img
