@@ -254,10 +254,11 @@
               document.getElementById("miseVar").innerHTML = mise;
 
               // BOUTON "CARTE"
-              document.getElementById('newCard').addEventListener("click", addCardCroupier);
+              document.getElementById('newCard').addEventListener("click", addCardJoueur);
 
-              // DEROULEMENT: 1ere carte visible pour croupier
-              setTimeout( addCardCroupier(), 2000 ) ;
+              // DEROULEMENT: SETTIMEOUT non fonctionnel !!!!!!!
+              setTimeout( addCardCroupier(), 2000);
+              setTimeout( addCardJoueur(), 100000);
 
 
           }, 500)
