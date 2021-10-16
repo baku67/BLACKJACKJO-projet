@@ -285,7 +285,8 @@ figure:active {
 		box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		-webkit-box-sizing: border-box;
-	transition: all 0.5s,
+	transition: all 0.5s;
+	padding: 0 0.4em 0 0.4em;
 }
 
 
