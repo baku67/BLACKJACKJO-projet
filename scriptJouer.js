@@ -24,6 +24,10 @@
       });
       // FIN
 
+
+
+
+      // REGION ARRAY CARDS OBJECT
       //#region array of objects: "cards"
       // Tableau d'objets cards
       let cards = [
@@ -108,22 +112,18 @@
           cardValue: 6
         },
         C7a = {
-          id: 7,
           cardImageURL: "cartes\\7C.png",
           cardValue: 7
         },
         C7b = {
-          id: 7,
           cardImageURL: "cartes\\7D.png",
           cardValue: 7
         },
         C7c = {
-          id: 7,
           cardImageURL: "cartes\\7H.png",
           cardValue: 7
         },
         C7d = {
-          id: 7,
           cardImageURL: "cartes\\7S.png",
           cardValue: 7
         },
@@ -244,19 +244,25 @@
 
 
 
-      // JQUERY JAX : load.Contenu (partie)
-      $(document).ready(function(){    
-        $("#lancerPartie").click(function(){
-            $("#container1").load("jouerPartie.html");
-            setTimeout( function lancerPartie() {
-                mise = prompt("{MANCHE 1} ENTREZ VOTRE MISE: ");
-                document.getElementById("miseVar").innerHTML = mise;
 
-                // APPEL NOUVELLE CARTE ONCLICK (ici pour joueur)
-                document.getElementById('newCard').addEventListener("click", addCardCroupier);
-            }, 500)
-        });
+
+      // JQUERY JAX : load.Contenu (partie)  
+      $("#lancerPartie").click(function(){
+          $("#container1").load("jouerPartie.html");
+          setTimeout( function lancerPartie() {
+              mise = prompt("{MANCHE 1} ENTREZ VOTRE MISE: ");
+              document.getElementById("miseVar").innerHTML = mise;
+
+              // BOUTON "CARTE"
+              document.getElementById('newCard').addEventListener("click", addCardCroupier);
+
+              // DEROULEMENT: 1ere carte visible pour croupier
+              setTimeout( addCardCroupier(), 2000 ) ;
+
+
+          }, 500)
       });
+
 
 
       // // TEST Wait 1
