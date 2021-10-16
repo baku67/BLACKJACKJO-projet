@@ -256,9 +256,8 @@
               // BOUTON "CARTE"
               document.getElementById('newCard').addEventListener("click", addCardJoueur);
 
-              // DEROULEMENT: SETTIMEOUT non fonctionnel !!!!!!!
+              // DEROULEMENT: 1ere carte visible pour croupier
               setTimeout( addCardCroupier(), 2000);
-              setTimeout( addCardJoueur(), 100000);
 
 
           }, 500)
