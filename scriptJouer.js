@@ -254,7 +254,7 @@
               document.getElementById("miseVar").innerHTML = mise;
 
               // BOUTON "CARTE"
-              document.getElementById('newCard').addEventListener("click", addCardJoueur);
+              document.getElementById('newCard').addEventListener("click", addCardCroupier);
 
               // DEROULEMENT: 1ere carte visible pour croupier
               setTimeout( addCardCroupier(), 2000);
@@ -327,8 +327,17 @@
         //      JS:   someArray.remove(function(el) { return el.Name === "Kristian"; });
         //.......................
 
+        // Index de la pickedCard pou Splice() {càd remove from array by id}
+        var picketCardIndex = cards.indexOf(pickedCardObject);
+        console.log(pickedCardObject);
+        console.log("pickedCardIndex: " + picketCardIndex);
+        cards.splice(picketCardIndex, 1);
+        // fin
+
+        // cards.splice(picketCardIndex, 1);
+
         // Affichage Valeur card pickée
-        console.log(pickedCardValue);
+        console.log("pickedCardValue: " + pickedCardValue);
         // img.src = C3.cardImageURL;
         // FIN
 
