@@ -6,19 +6,23 @@ TO DO (Intéressant + Commenté): Delete Card by "id"
 TO DO (CSS): Revoir Bouton "Nouvelle Partie" + les OnClick()/OnHover
 TO DO (NoBrain): Ajuster CSS de index.html avec StyleJouer.css    +    mettre JouerPartie.html en index
 
+bouton active (jouer): blanc
+collapse smooth
 
 
-
-
-TO DO (calme-toi): Pop module "MISE" avec pré-défini: 0.5, 1, 2, 5, 10, 25, 100
-TO DO (calme-toi): FAIRE UN MODALE stylé POUR LA MISE chaque manche  (+blur background(html) while prompt)
+TO DO (calme-toi + fun): Load remplacer compteur (cartes - laisser score) par Mise (html): <li>jetons  !(+while mise: blur container(jeu) !)
+TO DO (calme-toi + fun): Pour le compteur cartes (footer): switch (booleen) auto scoring
 TO DO (calme-toi + fun): Lorsque une Card Pop, fleche et highlight la carte du compteur correspondante
+
+
+
+
 
 TO DO (HotFix): Le Score PopUp() scale sur la base d'une ligne et non globalement
 TO DO (HotFix): flash Onload -> affect body background
 
 
-TO DO (MILESTONE): Media Queries
+TO DO (MILESTONE): Media Queries      //(ez: just les font-size et cards deja ça)
 
 
 

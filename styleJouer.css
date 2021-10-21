@@ -198,10 +198,18 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	position: relative;
 	background: linear-gradient(to right, rgba(153, 7, 7, 0.8), rgba(13, 1, 56, 0.8));
 	padding: 15px 0px;
-  }.module-border-wrap:hover {
+}.module-border-wrap:hover {
 	background: linear-gradient(to right, rgba(153, 7, 7, 0.87), rgba(13, 1, 56, 0.87));
-  }
+}
 
+.scores 
+{
+	font-size: 2em;
+}
+.scoresBorder {
+border: 1px solid rgba(153, 7, 7, 0.8);
+border-radius: 1px;
+}
 
 
 .champs {

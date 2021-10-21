@@ -2,10 +2,20 @@
     // Single App Application (No Framework) BON TUTO:    https://dev.to/dcodeyt/building-a-single-page-app-without-frameworks-hl9
     
     
+    
+    
     window.onload = function(){
 
+      
       var score = 0;
       var mise = 0;
+      var scoreTotalJoueur = 0;
+      var scoreTotalCroupier = 0;
+
+
+
+
+      
 
       //  Collapse Footer
       var coll = document.getElementById("collapsible");
@@ -246,15 +256,17 @@
 
 
 
-      // JQUERY JAX : load.Contenu (partie)  
+      // JQUERY JAX : load Partie
       $("#lancerPartie").click(function(){
           $("#container1").load("jouerPartie.html");
           setTimeout( function lancerPartie() {
               mise = prompt("{MANCHE 1} ENTREZ VOTRE MISE: ");
               document.getElementById("miseVar").innerHTML = mise;
+              
 
               // BOUTON "CARTE"
-              document.getElementById('newCard').addEventListener("click", addCardCroupier);
+              document.getElementById('newCardCroupier').addEventListener("click", addCardCroupier);
+              document.getElementById('newCardJoueur').addEventListener("click", addCardJoueur);
 
               // DEROULEMENT: 1ere carte visible pour croupier
               setTimeout( addCardCroupier(), 2000);
@@ -306,40 +318,30 @@
 
 
 
-      // NOUVELLE CARTE  > CROUPIER
+      // NOUVELLE CARTE  > CROUPIER (+ScoreTOTAL)
       function addCardCroupier() {
 
         // Créer l'élément <img/>
         var img = document.createElement('img');
-
-        // AJOUTER Array.del 
-        
         // Pick l'objet et le stock dans une VAR
         let pickedCardObject = cards[Math.floor(Math.random()*cards.length)]
         // Associe la VALUE de la KEY "cardImageUrl", à l'attribut HTML de l'<img> créé
         img.src = pickedCardObject.cardImageURL;
-        // Stock la VALUE de la KEY "cardValue" à une var
-        var pickedCardValue = pickedCardObject.cardValue;
+
+        // Scores Total Croupier
+        scoreTotalCroupier += pickedCardObject.cardValue;
+        document.getElementById('scoreCroupier').innerHTML = scoreTotalCroupier;
+
         // {Suppression de l'objet}
         // - https://stackoverflow.com/questions/10024866/remove-object-from-array-using-javascript?rq=1
-        // - Library "Sugar.js": 
-        //      HTML: https://raw.githubusercontent.com/andrewplummer/Sugar/2.0.4/dist/sugar.min.js
-        //      JS:   someArray.remove(function(el) { return el.Name === "Kristian"; });
-        //.......................
 
-        // Index de la pickedCard pou Splice() {càd remove from array by id}
+        // Index de la pickedCard pour Splice() {càd remove from array by id}
         var picketCardIndex = cards.indexOf(pickedCardObject);
         console.log(pickedCardObject);
         console.log("pickedCardIndex: " + picketCardIndex);
         cards.splice(picketCardIndex, 1);
         // fin
-
         // cards.splice(picketCardIndex, 1);
-
-        // Affichage Valeur card pickée
-        console.log("pickedCardValue: " + pickedCardValue);
-        // img.src = C3.cardImageURL;
-        // FIN
 
         // Ajoute class à img pour CSS
         img.className = "imgPartie";
@@ -350,17 +352,20 @@
       // FIN
 
 
-      // NOUVELLE CARTE  > JOUEUR
+
+
+      // NOUVELLE CARTE  > JOUEUR (+ScoreTOTAL)
       function addCardJoueur() {
         var img = document.createElement('img');
-        img.src = cards[Math.floor(Math.random()*cards.length)].cardImageURL;
+        let pickedCardObject = cards[Math.floor(Math.random()*cards.length)]
+        img.src = pickedCardObject.cardImageURL;
+
+        scoreTotalJoueur += pickedCardObject.cardValue;
+        document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;
+
         img.className = "imgPartie";
         document.getElementById("joueur").appendChild(img);
       }
-      // FIN
-
-
-
 
 
 
