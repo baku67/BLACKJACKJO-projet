@@ -242,6 +242,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	animation: fadeInAnimationPartieScore ease 2s; 
 	animation-iteration-count: 1; 
 	animation-fill-mode: forwards; 
+	display: inline-flex;
 }
 #scoreContainer {
 	animation: fadeInAnimationPartieScore ease 2s; 
@@ -250,8 +251,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 }
 
 .pokerChips {
-	height: 20%; 
-	width: 4em;
+	width: 6.3em; 
 	padding: 1em;
 }
 
