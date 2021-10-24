@@ -350,12 +350,10 @@
         document.getElementById("croupier").appendChild(img);
 
 
-        // Refresh Animation Score NON FONCTIONNEL
+        // Refresh Animation Score
         var elementScore = document.getElementById("scoreCroupier");
         elementScore.classList.remove("scores");
-
         void elementScore.offsetWidth;
-
         elementScore.classList.add("scores");
 
       }
@@ -375,6 +373,12 @@
 
         img.className = "imgPartie";
         document.getElementById("joueur").appendChild(img);
+
+
+        var elementScore = document.getElementById("scoreJoueur");
+        elementScore.classList.remove("scores");
+        void elementScore.offsetWidth;
+        elementScore.classList.add("scores");
       }
 
 

@@ -37,3 +37,4 @@ TO DO (insupportable + NoBrain):  Rescale/Redim (standardiser) taille cartes (pr
 TO DO (NoBrain): Ajouter TOUTES les Cards (POUR LE RANDOM + esthétique affichage non répétitif) !
 TO DO (Intéressant): Ajouter compteur 'valeurTotale' JOUEUR/CROUPIER  /!\
 mettre JouerPartie.html en index
+FADE Cards et compteur 
