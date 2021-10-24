@@ -276,6 +276,7 @@
               , 500);
               setTimeout( function() {
                 $("#container3").load("footerMiseModul.html");
+                document.getElementById("footerTitle").innerHTML = " - MISE -";
               }, 500);
 
           }, 500)

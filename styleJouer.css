@@ -423,7 +423,9 @@ figure:active {
 }
 
 
-
+h3#scoreHighLow {
+	padding: 0 0 0.2em 0;
+}
 h3 {
 	padding: 0.5em 0;
 	margin-block-start: 0em;
