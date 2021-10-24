@@ -9,7 +9,7 @@ TO DO (CSS): Revoir style Bouton "Nouvelle Partie" + les OnClick()/OnHover
 collapse smooth: https://jsbin.com/xihawedasa/edit?html,output (réalisable)
 
 TO DO (calme-toi + fun): Load remplacer compteur (cartes - laisser score) par Mise (html): <li>jetons  !(+while mise: blur container(jeu) !)
-TO DO (calme-toi + fun): Pour le compteur cartes (footer): switch (booleen) auto scoring
+TO DO (calme-toi + fun): Pour le compteur cartes (footer): switch (booleen) auto scoring [IMPORTANT CAR PAS LE TEMPS DE FAIRE MANUELLEMNT]
 TO DO (calme-toi + fun): Lorsque une Card Pop, fleche et highlight la carte du compteur correspondante
 
 

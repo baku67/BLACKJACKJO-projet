@@ -227,7 +227,11 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 }
 
 
-
+.pokerChips {
+	height: 20%; 
+	width: 4em;
+	padding: 1em;
+}
 
 .champs {
 	width: 100%;

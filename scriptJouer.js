@@ -268,9 +268,13 @@
               document.getElementById('newCardCroupier').addEventListener("click", addCardCroupier);
               document.getElementById('newCardJoueur').addEventListener("click", addCardJoueur);
 
+
+              // ATTENTION: 1)"Joueur mise",  2)"Première carte croupier"  (A VERIFIER)
               // DEROULEMENT: 1ere carte visible pour croupier
               setTimeout(addCardCroupier, 500);
-
+              setTimeout( function() {
+                $("#container3").load("footerMiseModul.html");
+              }, 750);
 
           }, 500)
       });
