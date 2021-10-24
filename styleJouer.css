@@ -226,6 +226,18 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 
 }
 
+.deckContainer {
+	position: absolute; 
+	bottom: 50%; left: 12%; 
+	border: 2px solid rgba(36, 54, 128, 0.3); 
+	border-radius: 5px;
+
+	animation: fadeInAnimationPartieScore ease 2s; 
+	animation-iteration-count: 1; 
+	animation-fill-mode: forwards; 
+}
+
+
 
 .pokerChips {
 	height: 20%; 
@@ -255,8 +267,11 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 #adversaire {
     height: 49%;
 }
+#croupier {
+	height: auto;
+}
 #joueur {
-    height: 49%;
+	height: auto;
 }
 
 
