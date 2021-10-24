@@ -1,6 +1,7 @@
 
 TO DO (OMG)!: "JE VEINS DE VOIR QU'IL Y A UNE CESURE (horizontale + verticale) "background.png" {Rsolution+COMRPESSION! à voir)}
 
+TO DO (fun): Indicateur sous le deck: chances de Buche
 TO DO /!\ :  Height flex sur container1 (partie)
 
 TO DO (Intéressant + Commenté): Delete Card by "id"

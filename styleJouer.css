@@ -238,6 +238,16 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 }
 
 
+#chipsContainer {
+	animation: fadeInAnimationPartieScore ease 2s; 
+	animation-iteration-count: 1; 
+	animation-fill-mode: forwards; 
+}
+#scoreContainer {
+	animation: fadeInAnimationPartieScore ease 2s; 
+	animation-iteration-count: 1; 
+	animation-fill-mode: forwards; 
+}
 
 .pokerChips {
 	height: 20%; 
