@@ -1,12 +1,11 @@
 
-TO DO (OMG)!: "JE VEINS DE VOIR QU'IL Y A UNE CESURE (horizontale + verticale) "background.png" {Rsolution+COMRPESSION! à voir)}
-
+TO DO: Garder la meme height de Footer quand load Mise
 TO DO (fun): checkMiseWarning: actif = titre footer border jaune (avec animation itération infinite et loop opacity up and down) genre clignotement border jaune assez lent
 TO DO (fun): Indicateur sous le deck: chances de Buche
 TO DO /!\ :  Height flex sur container1 (partie)
 
+TO DO (UX): Collapse button sur toute la barre 
 TO DO: Mettre dans l'ordre: Mise PUIS addCardCroupier (validateur pour mise?)
-TO DO (Intéressant + Commenté): Delete Card by "id"
 TO DO (CSS): Revoir style Bouton "Nouvelle Partie" + les OnClick()/OnHover
 TO DO: Ajouter Deck à gauche (garder fight centré), avec nbrCardsRestantes dessus (cards.length)
 
@@ -19,7 +18,7 @@ TO DO (calme-toi + fun): Lorsque une Card Pop, fleche et highlight la carte du c
 
 
 
-
+TO DO (hotfix-css): "JE VEINS DE VOIR QU'IL Y A UNE CESURE (horizontale + verticale) "background.png" {Rsolution+COMRPESSION! à voir)}
 TO DO (HotFix): Le Score PopUp() scale sur la base d'une ligne et non globalement
 TO DO (HotFix): flash Onload -> affect body background
 
@@ -40,5 +39,6 @@ TO DO (MILESTONE): Media Queries      //(ez: just les font-size et cards deja ç
 TO DO (insupportable + NoBrain):  Rescale/Redim (standardiser) taille cartes (prendre la plus faible)
 TO DO (NoBrain): Ajouter TOUTES les Cards (POUR LE RANDOM + esthétique affichage non répétitif) !
 TO DO (Intéressant): Ajouter compteur 'valeurTotale' JOUEUR/CROUPIER  /!\
+TO DO (Intéressant + Commenté): Delete Card by "id"
 mettre JouerPartie.html en index
 FADE Cards et compteur 

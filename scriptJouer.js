@@ -31,11 +31,13 @@
           content.style.display = "none";
           document.getElementById("arrowPng").setAttribute("src", "arrowUp.png")
           isCollapsed = true;
+          checkMiseWarning();
         }
         else {
           content.style.display = "block";
           document.getElementById("arrowPng").setAttribute("src", "arrowDown.png")
           isCollapsed = false;
+          checkMiseWarning();
         }
       });
       // FIN
@@ -338,6 +340,9 @@
         if ((isCollapsed == true) && (isPhaseMise == true)) {
             document.getElementById("footerTitle").innerHTML = "- MISE -  /!\\";
         }
+        else {
+        document.getElementById("footerTitle").innerHTML = "- MISE -";
+        }
     }
 
 
@@ -355,9 +360,6 @@
         // Scores Total Croupier
         scoreTotalCroupier += pickedCardObject.cardValue;
         document.getElementById('scoreCroupier').innerHTML = scoreTotalCroupier;
-
-        // {Suppression de l'objet}
-        // - https://stackoverflow.com/questions/10024866/remove-object-from-array-using-javascript?rq=1
 
         // Index de la pickedCard pour Splice() {càd remove from array by id}
         var picketCardIndex = cards.indexOf(pickedCardObject);
