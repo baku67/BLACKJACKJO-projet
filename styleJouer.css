@@ -206,10 +206,27 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 {
 	font-size: 2em;
 }
-.scoresBorder {
-border: 1px solid rgba(153, 7, 7, 0.8);
-border-radius: 1px;
+
+.scores {
+	animation: fadeInAnimationPartieScore ease 2s; 
+	animation-iteration-count: 1; 
+	animation-fill-mode: forwards; 
+} 
+@keyframes fadeInAnimationPartieScore { 
+	0% { 
+		opacity: 0; 
+	}
+	50% {
+		opacity: 0.5;
+	}
+	100% { 
+		opacity: 1; 
+	} 
+	/* FIN FLASH    */
+
 }
+
+
 
 
 .champs {
@@ -295,7 +312,23 @@ figure:active {
 		-webkit-box-sizing: border-box;
 	transition: all 0.5s;
 	padding: 0 0.4em 0 0.4em;
+
+	/* Carte Fade */
+	animation: fadeInAnimationPartie ease 2.5s; 
+	animation-iteration-count: 1; 
+	animation-fill-mode: forwards; 
+} 
+@keyframes fadeInAnimationPartie { 
+	0% { 
+		opacity: 0; 
+	}
+	100% { 
+		opacity: 1; 
+	} 
+	/* FIN FLASH    */
+
 }
+
 
 
 .special:hover {

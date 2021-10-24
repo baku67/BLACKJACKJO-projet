@@ -260,7 +260,7 @@
       $("#lancerPartie").click(function(){
           $("#container1").load("jouerPartie.html");
           setTimeout( function lancerPartie() {
-              mise = prompt("{MANCHE 1} ENTREZ VOTRE MISE: ");
+              // mise = prompt("{MANCHE 1} ENTREZ VOTRE MISE: ");  // A remplacer par load.footer(mise)
               document.getElementById("miseVar").innerHTML = mise;
               
 
@@ -269,7 +269,7 @@
               document.getElementById('newCardJoueur').addEventListener("click", addCardJoueur);
 
               // DEROULEMENT: 1ere carte visible pour croupier
-              setTimeout( addCardCroupier(), 2000);
+              setTimeout(addCardCroupier, 500);
 
 
           }, 500)
@@ -348,6 +348,16 @@
 
         // Ajoute la var img à l'<ul> "#croupier"
         document.getElementById("croupier").appendChild(img);
+
+
+        // Refresh Animation Score NON FONCTIONNEL
+        var elementScore = document.getElementById("scoreCroupier");
+        elementScore.classList.remove("scores");
+
+        void elementScore.offsetWidth;
+
+        elementScore.classList.add("scores");
+
       }
       // FIN
 

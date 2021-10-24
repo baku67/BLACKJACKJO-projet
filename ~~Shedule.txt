@@ -1,10 +1,9 @@
 
 TO DO (OMG)!: "JE VEINS DE VOIR QU'IL Y A UNE CESURE (horizontale + verticale) "background.png" {Rsolution+COMRPESSION! à voir)}
-TO DO (Intéressant): Ajouter compteur 'valeurTotale' JOUEUR/CROUPIER  /!\
+
 
 TO DO (Intéressant + Commenté): Delete Card by "id"
-TO DO (CSS): Revoir Bouton "Nouvelle Partie" + les OnClick()/OnHover
-TO DO (NoBrain): Ajuster CSS de index.html avec StyleJouer.css    +    mettre JouerPartie.html en index
+TO DO (CSS): Revoir style Bouton "Nouvelle Partie" + les OnClick()/OnHover
 
 
 collapse smooth: https://jsbin.com/xihawedasa/edit?html,output (réalisable)
@@ -36,3 +35,5 @@ TO DO (MILESTONE): Media Queries      //(ez: just les font-size et cards deja ç
 
 TO DO (insupportable + NoBrain):  Rescale/Redim (standardiser) taille cartes (prendre la plus faible)
 TO DO (NoBrain): Ajouter TOUTES les Cards (POUR LE RANDOM + esthétique affichage non répétitif) !
+TO DO (Intéressant): Ajouter compteur 'valeurTotale' JOUEUR/CROUPIER  /!\
+mettre JouerPartie.html en index
