@@ -11,6 +11,9 @@
       var mise = 0;
       var scoreTotalJoueur = 0;
       var scoreTotalCroupier = 0;
+      var isPhaseMise = false;
+
+      
 
 
 
@@ -21,20 +24,25 @@
       var coll = document.getElementById("collapsible");
       var i;
       var content = document.getElementById("collapseContent");
+      var isCollapsed = false;
 
       coll.addEventListener("click", function() {
         if (content.style.display === "block") {
           content.style.display = "none";
           document.getElementById("arrowPng").setAttribute("src", "arrowUp.png")
+          isCollapsed = true;
         }
         else {
           content.style.display = "block";
           document.getElementById("arrowPng").setAttribute("src", "arrowDown.png")
+          isCollapsed = false;
         }
       });
       // FIN
 
+      
 
+      
 
 
       // REGION ARRAY CARDS OBJECT
@@ -254,14 +262,15 @@
 
 
 
-
+      
 
       // JQUERY JAX : load Partie
-      $("#lancerPartie").click(function(){
+      $("#newGame").click(function(){
           $("#container1").load("jouerPartie.html");
           setTimeout( function lancerPartie() {
               // mise = prompt("{MANCHE 1} ENTREZ VOTRE MISE: ");  // A remplacer par load.footer(mise)
               document.getElementById("miseVar").innerHTML = mise;
+              
               
 
               // BOUTON "CARTE"
@@ -276,7 +285,9 @@
               , 500);
               setTimeout( function() {
                 $("#container3").load("footerMiseModul.html");
+                isPhaseMise = true;
                 document.getElementById("footerTitle").innerHTML = " - MISE -";
+                checkMiseWarning();
               }, 500);
 
           }, 500)
@@ -322,6 +333,12 @@
 
 
 
+      // WARNING si footerMise collapsed quand phase de Mise
+      function checkMiseWarning() {
+        if ((isCollapsed == true) && (isPhaseMise == true)) {
+            document.getElementById("footerTitle").innerHTML = "- MISE -  /!\\";
+        }
+    }
 
 
 
@@ -363,6 +380,8 @@
         void elementScore.offsetWidth;
         elementScore.classList.add("scores");
 
+        checkMiseWarning();
+
       }
       // FIN
 
@@ -386,6 +405,8 @@
         elementScore.classList.remove("scores");
         void elementScore.offsetWidth;
         elementScore.classList.add("scores");
+
+        checkMiseWarning();
       }
 
 

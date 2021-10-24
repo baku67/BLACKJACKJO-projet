@@ -1,6 +1,7 @@
 
 TO DO (OMG)!: "JE VEINS DE VOIR QU'IL Y A UNE CESURE (horizontale + verticale) "background.png" {Rsolution+COMRPESSION! à voir)}
 
+TO DO (fun): checkMiseWarning: actif = titre footer border jaune (avec animation itération infinite et loop opacity up and down) genre clignotement border jaune assez lent
 TO DO (fun): Indicateur sous le deck: chances de Buche
 TO DO /!\ :  Height flex sur container1 (partie)
 

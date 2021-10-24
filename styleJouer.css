@@ -181,7 +181,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	-ms-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 
-	padding: 20px 50px;
+	padding: 20px 40px;
 	border: 3px solid rgba(34, 10, 141, 0.08);
 	border-radius: 4px;
 	transition: all 0.7s;
