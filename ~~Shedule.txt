@@ -4,6 +4,7 @@ TO DO (OMG)!: "JE VEINS DE VOIR QU'IL Y A UNE CESURE (horizontale + verticale) "
 TO DO (fun): Indicateur sous le deck: chances de Buche
 TO DO /!\ :  Height flex sur container1 (partie)
 
+TO DO: Mettre dans l'ordre: Mise PUIS addCardCroupier (validateur pour mise?)
 TO DO (Intéressant + Commenté): Delete Card by "id"
 TO DO (CSS): Revoir style Bouton "Nouvelle Partie" + les OnClick()/OnHover
 TO DO: Ajouter Deck à gauche (garder fight centré), avec nbrCardsRestantes dessus (cards.length)
