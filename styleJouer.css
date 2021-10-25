@@ -166,7 +166,8 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 }
 
 #container1 a {
-	color: rgba(5, 2, 39, 1);
+	/* color: rgba(5, 2, 39, 1); */
+	color: rgb(212, 184, 184);
 	font-size: 1.3em;
 	font-weight: bold;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -174,6 +175,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	text-shadow: 0 0 3px rgba(223, 204, 204, 1);
 }
 #newGame {
+	cursor: pointer;
 	margin: 0;
 	position: absolute;
 	top: 40%;
@@ -319,6 +321,7 @@ figure:active {
 
 
 .img {
+	cursor: pointer;
 	width: 6em;
 	opacity: 0.8;
 		/*  Les px de border ne compte pas en plus de la div  (pas de mess) */
@@ -549,13 +552,17 @@ p {
 
 
 #scoreContainer {
-	padding: 0 75px;
+	padding: 0 25px;
+	margin: 0 50px;
     width: 30%;
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 	/* FLEX WRAP AVEC WIDTH 100% des elements inside pour retour ligne et center */
 	display: flex wrap;
+
+	border: 3px solid rgba(255,255,255,0.5);
+	border-radius: 10px;
 }
 
 .scoreElem {

@@ -430,16 +430,20 @@
           document.getElementById("scoreVar").classList.remove('neutral');
           document.getElementById("scoreVar").classList.remove('negative');
           document.getElementById("scoreVar").classList.add('positive');
+          const scoreContainer = document.querySelector("#scoreContainer");
+          scoreContainer.style.border = "3px solid green";
         }
         else if (score == 0) {
           document.getElementById("scoreVar").classList.remove('positive');
           document.getElementById("scoreVar").classList.remove('negative');
           document.getElementById("scoreVar").classList.add('neutral');
+          scoreContainer.style.border = "3px solid rgba(255,255,255,0.5)";
         }
         else {
           document.getElementById("scoreVar").classList.remove('positive');
           document.getElementById("scoreVar").classList.remove('neutral');
           document.getElementById("scoreVar").classList.add('negative');
+          scoreContainer.style.border = "3px solid red";
         }
       }
 

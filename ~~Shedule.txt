@@ -1,3 +1,7 @@
+Ce soir: border blanc autour des mises et du score high low (jouer sur les padding/margin)
+Quand jouer.html load footer collapsed (ou le retirer!)
+
+
 
 TO DO: Garder la meme height de Footer quand load Mise
 TO DO (fun): checkMiseWarning: actif = titre footer border jaune (avec animation itération infinite et loop opacity up and down) genre clignotement border jaune assez lent
@@ -42,3 +46,4 @@ TO DO (Intéressant): Ajouter compteur 'valeurTotale' JOUEUR/CROUPIER  /!\
 TO DO (Intéressant + Commenté): Delete Card by "id"
 mettre JouerPartie.html en index
 FADE Cards et compteur 
+scoreContainer border change color quand positif ou negatif
