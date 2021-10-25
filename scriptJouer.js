@@ -1,9 +1,4 @@
     
-    // Single App Application (No Framework) BON TUTO:    https://dev.to/dcodeyt/building-a-single-page-app-without-frameworks-hl9
-    
-    
-    
-    
     window.onload = function(){
 
       
@@ -13,11 +8,9 @@
       var scoreTotalCroupier = 0;
       var isPhaseMise = false;
 
-      
+      var miseEnCours;
 
-
-
-
+    
       
 
       //  Collapse Footer
@@ -44,7 +37,19 @@
 
       
 
-      
+      // OnClick Tokens
+      $("redToken").click(function() {
+        miseEnCours += 1;
+      })
+      $("greenToken").click(function() {
+        miseEnCours += 2;
+      })
+      $("blueToken").click(function() {
+        miseEnCours += 5;
+      })
+      $("blackToken").click(function() {
+        miseEnCours += 25;
+      })
 
 
       // REGION ARRAY CARDS OBJECT
@@ -286,14 +291,22 @@
                 addCardCroupier
               , 500);
               setTimeout( function() {
-                $("#container3").load("footerMiseModul.html");
-                isPhaseMise = true;
+                $("#container3").load("footerMiseModul.html", phaseMise());
+                
                 document.getElementById("footerTitle").innerHTML = " - MISE -";
                 checkMiseWarning();
               }, 500);
 
           }, 500)
       });
+
+
+      // Phase mise
+      function phaseMise() {
+        isPhaseMise = true;
+        miseEnCours = 0;
+        // document.getElementById("miseEnCours").innerHTML = "hello";
+      }
 
 
 
