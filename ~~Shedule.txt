@@ -1,8 +1,9 @@
 Ce soir: border blanc autour des mises et du score high low (jouer sur les padding/margin)
 Quand jouer.html load footer collapsed (ou le retirer!)
 
+IMPRTANT: SCOREPOP sur le container? (bugué)
 
-
+TO DO (CSS+Photoshop): Redesign background bouton "LancerPartie" (EX: ajout de ~dentellesPNG~ blancs sur les 2 cotés en plus du gradient)
 TO DO: Garder la meme height de Footer quand load Mise
 TO DO (fun): checkMiseWarning: actif = titre footer border jaune (avec animation itération infinite et loop opacity up and down) genre clignotement border jaune assez lent
 TO DO (fun): Indicateur sous le deck: chances de Buche
@@ -31,6 +32,18 @@ TO DO (MILESTONE): Media Queries      //(ez: just les font-size et cards deja ç
 
 
 
+EFFET STYLEE SUR LE BOUTON
+#newGame:hover {
+	border: 4px solid rgba(34, 10, 141, 0.6);
+
+	padding: 0px 1000px;
+	/* padding: 16px 49px; */
+	/* font-size: 1.4em !important; */
+}
+
+#lancerPartie {
+	display: inline-flex;
+}
 
 
 

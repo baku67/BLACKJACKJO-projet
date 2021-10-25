@@ -284,13 +284,13 @@
               // DEROULEMENT: 1ere carte visible pour croupier
               setTimeout(
                 addCardCroupier
-              , 500);
+              , 1);
               setTimeout( function() {
                 $("#container3").load("footerMiseModul.html");
                 isPhaseMise = true;
                 document.getElementById("footerTitle").innerHTML = " - MISE -";
                 checkMiseWarning();
-              }, 500);
+              }, 1);
 
           }, 500)
       });
