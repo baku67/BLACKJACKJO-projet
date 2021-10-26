@@ -720,3 +720,55 @@ p {
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     letter-spacing: 0.3px;
 }
+
+
+
+
+
+
+
+#boutonMiser {
+	font-size: 0.8em !important; 
+	padding: 5px 25px; 
+	border: 3px solid rgba(230, 211, 211, 0.7); 
+	border-radius: 5px;
+}
+
+.miserActif {
+	animation-name: borderClignotement;
+	-webkit-animation-name: borderClignotement;
+	animation-iteration-count: 1000;
+	animation-duration: 2s;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1000;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-timing-function: ease-in-out;
+	/* Pushai sur la droite (de maniere permanente, sans ça ça push aussi mais juste le temps de l'anim
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards; 
+	*/
+}
+  @keyframes borderClignotement {
+	0% {
+		border: 3px solid rgb(24, 219, 219);
+		border-radius: 5px;
+		/* transform: scale(1.0);
+	   	-webkit-transform: scale(1.0); */
+	}
+	25% {
+		border: 4px solid rgb(24, 219, 219);
+		border-radius: 5px;
+	}
+	50% {
+		border: 5px solid greenyellow;
+		border-radius: 5px;
+	}
+	75% {
+		border: 4px solid greenyellow;
+		border-radius: 5px;
+	}
+	100% {
+		border: 3px solid rgb(24, 219, 219);
+		border-radius: 5px;
+	}
+  };
