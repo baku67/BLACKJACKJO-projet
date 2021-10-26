@@ -36,24 +36,7 @@
       // FIN
 
       
-
-      // OnClick Tokens
-      $("redToken").click(function() {
-        miseEnCours += 1;
-        console.log(miseEnCours);
-      })
-      $("greenToken").click(function() {
-        miseEnCours += 2;
-        console.log(miseEnCours);
-      })
-      $("blueToken").click(function() {
-        miseEnCours += 5;
-        console.log(miseEnCours);
-      })
-      $("blackToken").click(function() {
-        miseEnCours += 25;
-        console.log(miseEnCours);
-      })
+      
 
 
       // REGION ARRAY CARDS OBJECT
@@ -272,21 +255,15 @@
       //#endregion
 
 
-      // Phase mise
-      function phaseMise() {
-        isPhaseMise = true;
-        miseEnCours = 100;
-        // document.getElementById("miseEnCours").innerHTML = "hello";
-      }
-
       
 
       // JQUERY JAX : load Partie
       $("#newGame").click(function(){
+
           $("#container1").load("jouerPartie.html");
+
           setTimeout( function lancerPartie() {
 
-            
               // BOUTON "CARTE"
               document.getElementById('newCardCroupier').addEventListener("click", addCardCroupier);
               document.getElementById('newCardJoueur').addEventListener("click", addCardJoueur);
@@ -295,66 +272,48 @@
                 //   addCardCroupier
                 // , 1);
              
-                // $("#container3").load("footerMiseModul.html", phaseMise);
-                $.ajax({
-                  async: false,
-                  url: "footerMiseModul.html",
-                  dataType: "html",
-                  success: function(response) {
-                    $("#container3").html(response);
-                    phaseMise();
-                    console.log(miseEnCours);
-                  }
-                });
-                
-                document.getElementById("footerTitle").innerHTML = " - MISE -";
-                checkMiseWarning();
+              // $("#container3").load("footerMiseModul.html", phaseMise);
+              $.ajax({
+                async: false,
+                url: "footerMiseModul.html",
+                dataType: "html",
+                success: function(response) {
+                  $("#container3").html(response);
+                  phaseMise();
+                  document.getElementById("footerTitle").innerHTML = " - MISE -";
+                  window.onload = tokensClick();
+                  checkMiseWarning();
+                }
+              });
               
-
+              
           }, 500)
       });
 
 
+      function tokensClick() {
+        document.getElementById("redToken").addEventListener("click", function() {
+          miseEnCours += 1;
+          console.log(miseEnCours);
+          document.getElementById("miseEnCours").innerHTML = miseEnCours;
+        })
+        document.getElementById("greenToken").addEventListener("click", function() {
+          miseEnCours += 2;
+          console.log(miseEnCours);
+          document.getElementById("miseEnCours").innerHTML = miseEnCours;
+        })
+        document.getElementById("blueToken").addEventListener("click", function() {
+          miseEnCours += 5;
+          console.log(miseEnCours);
+          document.getElementById("miseEnCours").innerHTML = miseEnCours;
+        })
+        document.getElementById("blackToken").addEventListener("click", function() {
+          miseEnCours += 25;
+          console.log(miseEnCours);
+          document.getElementById("miseEnCours").innerHTML = miseEnCours;
+        })
+      }
       
-
-
-
-      // // TEST Wait 1
-      // $(document).ready(function(){    
-      //   $("#lancerPartie").click(function(){
-            
-      //     $("#container1").load("Wait.html");
-      //       setTimeout( function lancerPartie() {
-                
-      //           mise = prompt("{MANCHE 1} ENTREZ VOTRE MISE: ");
-      //           $("#container1").load("jouerPartie.html");
-
-      //           document.getElementById("miseVar").innerHTML = mise;
-
-      //           document.getElementById('newCard').addEventListener("click", addCardJoueur);
-      //       }, 500)
-      //   });
-      // });
-      // // FIN
-      
-      // // TEST Wait 2: CALLBACK
-      // $(document).ready(function(){    
-      //   $("#lancerPartie").click(function(){
-      //       first(second);
-      //       document.getElementById("miseVar").innerHTML = mise;
-      //       document.getElementById('newCard').addEventListener("click", addCardJoueur);
-      //   });
-      // });
-      // function first(callback) {
-      //   $("#container1").load("Wait.html");
-      //   mise = prompt("{MANCHE 1} ENTREZ VOTRE MISE: ");
-      //   callback();
-      // }
-      // function second() {
-      //   $("#container1").load("jouerPartie.html");
-      // }
-      // // FIN
-
 
 
       // WARNING si footerMise collapsed quand phase de Mise
@@ -365,7 +324,16 @@
         else {
         document.getElementById("footerTitle").innerHTML = "- MISE -";
         }
-    }
+      }
+
+
+      // Phase mise
+      function phaseMise() {
+        isPhaseMise = true;
+        miseEnCours = 0;
+        console.log(miseEnCours);
+        document.getElementById("miseEnCours").innerHTML = miseEnCours;
+      }
 
 
 
@@ -398,7 +366,7 @@
         document.getElementById("croupier").appendChild(img);
 
 
-        // Refresh Animation Score
+        // Refresh FadeInAnimation Score
         var elementScore = document.getElementById("scoreCroupier");
         elementScore.classList.remove("scores");
         void elementScore.offsetWidth;
