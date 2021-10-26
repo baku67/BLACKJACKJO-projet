@@ -40,15 +40,19 @@
       // OnClick Tokens
       $("redToken").click(function() {
         miseEnCours += 1;
+        console.log(miseEnCours);
       })
       $("greenToken").click(function() {
         miseEnCours += 2;
+        console.log(miseEnCours);
       })
       $("blueToken").click(function() {
         miseEnCours += 5;
+        console.log(miseEnCours);
       })
       $("blackToken").click(function() {
         miseEnCours += 25;
+        console.log(miseEnCours);
       })
 
 
@@ -268,6 +272,12 @@
       //#endregion
 
 
+      // Phase mise
+      function phaseMise() {
+        isPhaseMise = true;
+        miseEnCours = 100;
+        // document.getElementById("miseEnCours").innerHTML = "hello";
+      }
 
       
 
@@ -275,38 +285,37 @@
       $("#newGame").click(function(){
           $("#container1").load("jouerPartie.html");
           setTimeout( function lancerPartie() {
-              // mise = prompt("{MANCHE 1} ENTREZ VOTRE MISE: ");  // A remplacer par load.footer(mise)
-              document.getElementById("miseVar").innerHTML = mise;
-              
-              
 
+            
               // BOUTON "CARTE"
               document.getElementById('newCardCroupier').addEventListener("click", addCardCroupier);
               document.getElementById('newCardJoueur').addEventListener("click", addCardJoueur);
 
-
-              // ATTENTION: 1)"Joueur mise",  2)"Première carte croupier"  (A VERIFIER)
-              // DEROULEMENT: 1ere carte visible pour croupier
-              setTimeout(
-                addCardCroupier
-              , 1);
-              setTimeout( function() {
-                $("#container3").load("footerMiseModul.html", phaseMise());
+                // setTimeout(
+                //   addCardCroupier
+                // , 1);
+             
+                // $("#container3").load("footerMiseModul.html", phaseMise);
+                $.ajax({
+                  async: false,
+                  url: "footerMiseModul.html",
+                  dataType: "html",
+                  success: function(response) {
+                    $("#container3").html(response);
+                    phaseMise();
+                    console.log(miseEnCours);
+                  }
+                });
                 
                 document.getElementById("footerTitle").innerHTML = " - MISE -";
                 checkMiseWarning();
-              }, 1);
+              
 
           }, 500)
       });
 
 
-      // Phase mise
-      function phaseMise() {
-        isPhaseMise = true;
-        miseEnCours = 0;
-        // document.getElementById("miseEnCours").innerHTML = "hello";
-      }
+      
 
 
 
