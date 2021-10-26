@@ -166,14 +166,17 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 }
 
 #container1 a {
-	color: rgba(5, 2, 39, 1);
+	/* color: rgba(5, 2, 39, 1); */
+	color: rgb(230, 211, 211);
 	font-size: 1.3em;
 	font-weight: bold;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	letter-spacing: 0.3px;
-	text-shadow: 0 0 3px rgba(223, 204, 204, 1);
+	/* text-shadow: 0 0 3px rgba(223, 204, 204, 1); */
+	text-shadow: 0 0 3px rgb(43, 39, 39);
 }
 #newGame {
+	cursor: pointer;
 	margin: 0;
 	position: absolute;
 	top: 40%;
@@ -187,10 +190,16 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	transition: all 0.7s;
 }
 #newGame:hover {
-	border: 7px solid rgba(34, 10, 141, 0.6);
-	color: rgb(223, 204, 204) !important;
-	text-shadow: 0 0 5px rgba(223, 204, 204, 0.9);
+	border: 4px solid rgba(34, 10, 141, 0.6);
+
+	/* padding: 0px 1000px; */
+	padding: 25px 49px; 
+	font-size: 1.2em !important;
 }
+
+/* #lancerPartie {
+	display: inline-flex;
+} */
 
 
 .module-border-wrap {
@@ -200,6 +209,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	padding: 15px 0px;
 }.module-border-wrap:hover {
 	background: linear-gradient(to right, rgba(153, 7, 7, 0.87), rgba(13, 1, 56, 0.87));
+
 }
 
 .scores 
@@ -320,6 +330,7 @@ figure:active {
 
 
 .img {
+	cursor: pointer;
 	width: 6em;
 	opacity: 0.8;
 		/*  Les px de border ne compte pas en plus de la div  (pas de mess) */
@@ -550,13 +561,17 @@ p {
 
 
 #scoreContainer {
-	padding: 0 75px;
+	padding: 0 25px;
+	margin: 0 50px;
     width: 30%;
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 	/* FLEX WRAP AVEC WIDTH 100% des elements inside pour retour ligne et center */
 	display: flex wrap;
+
+	border: 3px solid rgba(255,255,255,0.5);
+	border-radius: 10px;
 }
 
 .scoreElem {
