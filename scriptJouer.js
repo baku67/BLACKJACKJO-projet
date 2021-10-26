@@ -295,7 +295,7 @@
         document.getElementById("redToken").addEventListener("click", function() {
           miseEnCours += 1;
           console.log(miseEnCours);
-          document.getElementById("miseEnCours").innerHTML = miseEnCours;
+          document.getElementById("miseEnCours").innerHTML = miseEnCours + " $";
           misePop();
           setTimeout(function scoreDepop() {
             document.getElementById("miseEnCours").classList.toggle('scorePop');
@@ -303,27 +303,27 @@
   
         })
         document.getElementById("greenToken").addEventListener("click", function() {
-          miseEnCours += 2;
+          miseEnCours += 5;
           console.log(miseEnCours);
-          document.getElementById("miseEnCours").innerHTML = miseEnCours;
+          document.getElementById("miseEnCours").innerHTML = miseEnCours + " $";
           misePop();
           setTimeout(function scoreDepop() {
             document.getElementById("miseEnCours").classList.toggle('scorePop');
           }, 500);
         })
         document.getElementById("blueToken").addEventListener("click", function() {
-          miseEnCours += 5;
+          miseEnCours += 25;
           console.log(miseEnCours);
-          document.getElementById("miseEnCours").innerHTML = miseEnCours;
+          document.getElementById("miseEnCours").innerHTML = miseEnCours + " $";
           misePop();
           setTimeout(function scoreDepop() {
             document.getElementById("miseEnCours").classList.toggle('scorePop');
           }, 500);
         })
         document.getElementById("blackToken").addEventListener("click", function() {
-          miseEnCours += 25;
+          miseEnCours += 100;
           console.log(miseEnCours);
-          document.getElementById("miseEnCours").innerHTML = miseEnCours;
+          document.getElementById("miseEnCours").innerHTML = miseEnCours + " $";
           misePop();
           setTimeout(function scoreDepop() {
             document.getElementById("miseEnCours").classList.toggle('scorePop');

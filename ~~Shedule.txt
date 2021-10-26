@@ -1,7 +1,11 @@
 Ce soir: border blanc autour des mises et du score high low (jouer sur les padding/margin)
 Quand jouer.html load footer collapsed (ou le retirer!)
 
-IMPRTANT: SCOREPOP sur le container? (bugué)
+IMPORTANT: SCOREPOP et MISEPOP sur le container ? (bugué)
+
+--> TO DO (fun): Clignotement lent/infini du border bouton Miser! quand ajout de mise
+TO DO: Miser! Submit
+TO DO: Bouton Miser! grisé+nonClickable quand aucun mise
 
 TO DO (CSS+Photoshop): Redesign background bouton "LancerPartie" (EX: ajout de ~dentellesPNG~ blancs sur les 2 cotés en plus du gradient)
 TO DO: Garder la meme height de Footer quand load Mise
