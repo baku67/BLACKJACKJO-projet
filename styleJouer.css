@@ -266,6 +266,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 
 .pokerChips {
 	width: 6.3em; 
+	height: 6.3em;
 	margin: 1em;
 	cursor: pointer;
 	opacity: 0.75;

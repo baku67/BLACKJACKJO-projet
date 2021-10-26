@@ -415,6 +415,11 @@
         scoreTotalJoueur += pickedCardObject.cardValue;
         document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;
 
+        var picketCardIndex = cards.indexOf(pickedCardObject);
+        console.log(pickedCardObject);
+        console.log("pickedCardIndex: " + picketCardIndex);
+        cards.splice(picketCardIndex, 1);
+
         img.className = "imgPartie";
         document.getElementById("joueur").appendChild(img);
 
