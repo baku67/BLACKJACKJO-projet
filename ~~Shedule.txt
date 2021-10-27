@@ -1,8 +1,11 @@
+Le Score High-Low est contenu dans "#container3" ducoup il est rechargé à chaque ajax (mise/HiLo):
+
 Ce soir: border blanc autour des mises et du score high low (jouer sur les padding/margin)
 Quand jouer.html load footer collapsed (ou le retirer!)
 
 IMPORTANT: SCOREPOP et MISEPOP sur le container ? (bugué)
 
+background.png : reprendre l'original -> moins transparent (pas de opacity ici)
 --> TO DO (fun): Clignotement lent/infini du border bouton Miser! quand ajout de mise
 TO DO: Miser! Submit
 TO DO: Bouton Miser! grisé+nonClickable quand aucun mise
