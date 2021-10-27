@@ -11,7 +11,6 @@
       var miseEnCours;
       var miseLocked;
 
-    
       
 
       //  Collapse Footer
@@ -19,24 +18,30 @@
       var i;
       var content = document.getElementById("collapseContent");
       var isCollapsed = false;
+      document.getElementById("arrowPng").setAttribute("src", "arrowUp.png");
 
       coll.addEventListener("click", function() {
         if (content.style.display === "block") {
-          content.style.display = "none";
-          document.getElementById("arrowPng").setAttribute("src", "arrowUp.png")
-          isCollapsed = true;
-          checkMiseWarning();
+          footerCollapse();
         }
         else {
-          content.style.display = "block";
-          document.getElementById("arrowPng").setAttribute("src", "arrowDown.png")
-          isCollapsed = false;
-          checkMiseWarning();
+          footerShow();
         }
       });
       // FIN
 
-      
+      function footerCollapse() {
+        content.style.display = "none";
+        document.getElementById("arrowPng").setAttribute("src", "arrowUp.png");
+        isCollapsed = true;
+        checkMiseWarning();
+      }
+      function footerShow() {
+        content.style.display = "block";
+        document.getElementById("arrowPng").setAttribute("src", "arrowDown.png");
+        isCollapsed = false;
+        checkMiseWarning();
+      }
       
 
 
@@ -280,6 +285,7 @@
                 dataType: "html",
                 success: function(response) {
                   $("#container3").html(response);
+                  footerShow();
                   phaseMise();
                   document.getElementById("footerTitle").innerHTML = " - MISE -";
                   window.onload = tokensClick();
@@ -324,6 +330,10 @@
               document.getElementById("footerTitle").innerHTML = " - High-Low -";
             }
           });
+
+          setTimeout(function() {
+            addCardCroupier();
+          }, 1500);
         })
       }
 

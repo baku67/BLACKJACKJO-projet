@@ -1,5 +1,7 @@
 Le Score High-Low est contenu dans "#container3" ducoup il est rechargé à chaque ajax (mise/HiLo):
 
+Refaire les tailles (css: zoom ne marche pas sur FireFox)
+
 Ce soir: border blanc autour des mises et du score high low (jouer sur les padding/margin)
 Quand jouer.html load footer collapsed (ou le retirer!)
 
