@@ -287,9 +287,7 @@
                 }
               });
               miseBoutonStyle();
-              miseLock();
-              
-              
+              miseLock();  
           }, 500)
       });
 
@@ -307,6 +305,26 @@
           button.disabled = true;
           // Label "Entrez d'abord une mise"
         }
+      }
+      
+      // Lock de la mise
+      function miseLock() {
+        document.getElementById("boutonMiser").addEventListener("click", function() {
+          miseLocked = miseEnCours;
+          // afficher miseLocked
+          document.getElementById("miseLocked").innerHTML = "Mise: " + miseLocked + "&#8364;";
+          // reload le high-low
+
+          $.ajax({
+            async: false,
+            url: "footerHiLoModul.html",
+            dataType: "html",
+            success: function(response) {
+              $("#container3").html(response);
+              document.getElementById("footerTitle").innerHTML = " - High-Low -";
+            }
+          });
+        })
       }
 
       function tokensClick() {
@@ -354,6 +372,7 @@
       }
       
 
+      
 
       // WARNING si footerMise collapsed quand phase de Mise
       function checkMiseWarning() {
@@ -447,22 +466,9 @@
 
 
 
-
-      // Lock de la mise
-      function miseLock() {
-        document.getElementById("boutonMiser").addEventListener("click", function() {
-          miseLocked = miseEnCours;
-          // afficher miseLocked
-          document.getElementById("miseLocked").innerHTML = "Mise: " + miseLocked + "&#8364;";
-          // reload le high-low
-        })
-      }
-
-
       function misePop() {
         document.getElementById("miseEnCours").classList.toggle('scorePop');
       }
-
       function scorePop() {
         document.getElementById("scoreContainer").classList.toggle('scorePop');
       }
@@ -492,8 +498,6 @@
       }
 
       
-
-      // document.getElementById("miseVar").innerHTML = mise;
       document.getElementById("scoreVar").innerHTML = score;
 
       

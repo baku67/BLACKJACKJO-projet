@@ -229,16 +229,13 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 }
 
 .scores {
-	animation: fadeInAnimationPartieScore ease 2s; 
+	animation: fadeInAnimationPartieScore ease 1s; 
 	animation-iteration-count: 1; 
 	animation-fill-mode: forwards; 
 } 
 @keyframes fadeInAnimationPartieScore { 
 	0% { 
 		opacity: 0; 
-	}
-	50% {
-		opacity: 0.5;
 	}
 	100% { 
 		opacity: 1; 
@@ -257,6 +254,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	animation-iteration-count: 1; 
 	animation-fill-mode: forwards; 
 }
+
 
 
 #chipsContainer {
@@ -315,6 +313,9 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 
 #container3 {
 	display:inline-flex;
+	animation: fadeInAnimationPartieScore ease 1s; 
+	animation-iteration-count: 1; 
+	animation-fill-mode: forwards; 
 }
 break {
 	flex-basis: 100%;
@@ -329,6 +330,9 @@ figure {
 	margin: 0em auto;
     height: 20%;
     
+	animation: fadeInAnimationPartieScore ease 1s; 
+	animation-iteration-count: 1; 
+	animation-fill-mode: forwards;
 
     display: block;
     margin-block-start: 0em;
