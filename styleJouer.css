@@ -429,7 +429,6 @@ figure:active {
 }
 
 
-
 #barre {
 	font-size: 1.2em;
 }
@@ -445,7 +444,7 @@ figure:active {
 
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	color: rgb(223, 204, 204);
-	text-shadow: rgb(5, 2, 39) 2px 3px;
+	/* text-shadow: rgb(5, 2, 39) 2px 3px; */
 	text-align: center;
     letter-spacing: 1px;
 
