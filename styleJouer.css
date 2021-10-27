@@ -741,6 +741,7 @@ p {
 	-webkit-box-sizing: border-box;
 }
 
+
 .miserActif {
 	animation-name: borderClignotement;
 	-webkit-animation-name: borderClignotement;
@@ -792,3 +793,71 @@ p {
 		color: rgb(24, 219, 219);
 	}
   };
+
+/* .miserActif:hover {
+	animation-name: borderClignotement2;
+	-webkit-animation-name: borderClignotement2;
+	animation-iteration-count: 1000;
+	animation-duration: 2s;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1000;
+	animation-timing-function: ease;
+	-webkit-animation-timing-function: ease;
+}
+@keyframes borderClignotement2 {
+	0% {
+		border: 8px solid rgb(24, 219, 219);
+		border-radius: 5px;
+
+		background-color: rgba(255,255,255,0.02);
+		color: rgb(24, 219, 219);
+	}
+	25% {
+		border: 8px solid rgb(24, 219, 219);
+		border-radius: 5px;
+
+		background-color: rgba(255,255,255,0.04);
+		color: rgb(24, 219, 219);
+	}
+	50% {
+		border: 8px solid greenyellow;
+		border-radius: 5px;
+
+		background-color: rgba(255,255,255,0.06);
+		color: greenyellow;
+	}
+	75% {
+		border: 8px solid greenyellow;
+		border-radius: 5px;
+
+		background-color: rgba(255,255,255,0.04);
+		color: greenyellow;
+	}
+	100% {
+		border: 8px solid rgb(24, 219, 219);
+		border-radius: 5px;
+
+		background-color: rgba(255,255,255,0.02);
+		color: rgb(24, 219, 219);
+	}
+  }; */
+
+
+  /* Supprime le highlight bleu quand click sur mobile */
+  input,
+  textarea,
+  button,
+  select,
+  a {
+	  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  }
+
+
+  /* // MEDIA QUERIES */
+
+  @media screen and (max-device-width:480px) {
+	.pokerChips {
+		width: 4em;
+		height: 4em;
+	}
+  }
