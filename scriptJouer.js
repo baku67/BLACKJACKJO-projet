@@ -18,6 +18,7 @@
       var i;
       var content = document.getElementById("collapseContent");
       var isCollapsed = false;
+      footerCollapse();
       document.getElementById("arrowPng").setAttribute("src", "arrowUp.png");
 
       coll.addEventListener("click", function() {
