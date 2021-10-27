@@ -186,7 +186,8 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 !!! */
 
 #container1 {
-	height: 58%;
+	height: 100%;
+	/* height: 58%; */
 }
 
 #container1 a {
@@ -203,7 +204,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	cursor: pointer;
 	margin: 0;
 	position: absolute;
-	top: 40%;
+	top: 50%;
 	left: 50%;
 	-ms-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
@@ -242,16 +243,30 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	top: 8px;
 }
 
+
+.scoreBorder {
+	padding: 1px 6px;
+	border: solid 0.5px rgba(13, 1, 56, 0.2);
+	border-radius: 5px;
+}
 .scores 
 {
 	font-size: 2em;
 }
 
 .scores {
-	animation: fadeInAnimationPartieScore ease 1s; 
+	animation: fadeInAnimationPartieScore1 ease 1s; 
 	animation-iteration-count: 1; 
 	animation-fill-mode: forwards; 
 } 
+@keyframes fadeInAnimationPartieScore1 { 
+	0% { 
+		opacity: 0; 
+	}
+	100% { 
+		opacity: 0.7; 
+	} 
+}
 @keyframes fadeInAnimationPartieScore { 
 	0% { 
 		opacity: 0; 
@@ -259,9 +274,8 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	100% { 
 		opacity: 1; 
 	} 
-	/* FIN FLASH    */
-
 }
+
 
 .deckContainer {
 	position: absolute; 
@@ -274,7 +288,15 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	animation-fill-mode: forwards; 
 }
 
-
+/* C'est IMMONDE !  */
+#scoreCroupier {
+	position: relative;
+	top: 4px;
+}
+#scoreJoueur {
+	position: relative;
+	bottom: 8px;
+}
 
 #chipsContainer {
 	animation: fadeInAnimationPartieScore ease 2s; 
@@ -291,7 +313,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 .pokerChips {
 	width: 6.3em; 
 	height: 6.3em;
-	margin: 1em;
+	margin: 1em 1.7em;
 	cursor: pointer;
 	opacity: 0.75;
 }

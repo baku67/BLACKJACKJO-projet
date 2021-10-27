@@ -447,6 +447,7 @@
           void elementScore.offsetWidth;
           elementScore.classList.add("scores");
           document.getElementById('scoreCroupier').innerHTML = scoreTotalCroupier;
+          document.getElementById('scoreCroupier').classList.add("scoreBorder");
         }, 400);
       
         // Index de la pickedCard pour Splice() {càd remove from array by id}
@@ -487,6 +488,7 @@
           void elementScore.offsetWidth;
           elementScore.classList.add("scores");
           document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;
+          document.getElementById('scoreJoueur').classList.add("scoreBorder");
         }, 400);
 
         var picketCardIndex = cards.indexOf(pickedCardObject);

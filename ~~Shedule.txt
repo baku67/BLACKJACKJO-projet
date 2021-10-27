@@ -9,6 +9,8 @@ DEROULEMENT:
 
 
 
+Formalité (UX + sympa): IMPORTANT: fadeInAnimationPartieScore1 (le refresh du scoreJoueur/Croupier) devrait etre moins eblouissant (opacity pas à O pour animation{0%})
+   L'effet est super stylé pour le premier Pop des scores mais apres c'est pas beau le refresh (0! -> 0.7)
 
 
 PENDANT PHASE MISE: TOUT LE FOOTER clignote faiblement/ouPas (blanc ou m^mes couleurs que bouton)
