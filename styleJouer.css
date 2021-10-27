@@ -238,6 +238,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 
 .scores 
 {
+	opacity: 0.3;
 	font-size: 2em;
 }
 

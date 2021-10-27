@@ -439,8 +439,16 @@
 
         // Scores Total Croupier
         scoreTotalCroupier += pickedCardObject.cardValue;
-        document.getElementById('scoreCroupier').innerHTML = scoreTotalCroupier;
 
+        setTimeout (function() {
+          // Refresh FadeInAnimation Score
+          var elementScore = document.getElementById("scoreCroupier");
+          elementScore.classList.remove("scores");
+          void elementScore.offsetWidth;
+          elementScore.classList.add("scores");
+          document.getElementById('scoreCroupier').innerHTML = scoreTotalCroupier;
+        }, 380);
+      
         // Index de la pickedCard pour Splice() {càd remove from array by id}
         var picketCardIndex = cards.indexOf(pickedCardObject);
         console.log(pickedCardObject);
@@ -454,13 +462,6 @@
 
         // Ajoute la var img à l'<ul> "#croupier"
         document.getElementById("croupier").appendChild(img);
-
-
-        // Refresh FadeInAnimation Score
-        var elementScore = document.getElementById("scoreCroupier");
-        elementScore.classList.remove("scores");
-        void elementScore.offsetWidth;
-        elementScore.classList.add("scores");
 
         checkMiseWarning();
 
@@ -477,7 +478,16 @@
         img.src = pickedCardObject.cardImageURL;
 
         scoreTotalJoueur += pickedCardObject.cardValue;
-        document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;
+        
+
+        // MàJ score avec petit delai (et refresh CSS)
+        setTimeout(function() {
+          var elementScore = document.getElementById("scoreJoueur");
+          elementScore.classList.remove("scores");
+          void elementScore.offsetWidth;
+          elementScore.classList.add("scores");
+          document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;
+        }, 380);
 
         var picketCardIndex = cards.indexOf(pickedCardObject);
         console.log(pickedCardObject);
@@ -486,12 +496,6 @@
 
         img.className = "imgPartie";
         document.getElementById("joueur").appendChild(img);
-
-
-        var elementScore = document.getElementById("scoreJoueur");
-        elementScore.classList.remove("scores");
-        void elementScore.offsetWidth;
-        elementScore.classList.add("scores");
 
         checkMiseWarning();
       }
