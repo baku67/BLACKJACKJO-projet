@@ -9,6 +9,7 @@
       var isPhaseMise = false;
 
       var miseEnCours;
+      var miseLocked;
 
     
       
@@ -285,14 +286,26 @@
                   checkMiseWarning();
                 }
               });
+              miseBoutonStyle();
+              miseLock();
               
               
           }, 500)
       });
 
       function miseBoutonStyle() {
+        let button = document.querySelector("#boutonMiser");
         if (miseEnCours > 0) {
           document.getElementById("boutonMiser").classList.add("miserActif");
+          document.getElementById("boutonMiser").style.opacity = "1";
+          document.getElementById("boutonMiser").style.cursor = "pointer";
+          button.disabled = false;
+        }
+        else {
+          document.getElementById("boutonMiser").style.opacity = "0.5";
+          document.getElementById("boutonMiser").style.cursor = "default";
+          button.disabled = true;
+          // Label "Entrez d'abord une mise"
         }
       }
 
@@ -300,7 +313,7 @@
         document.getElementById("redToken").addEventListener("click", function() {
           miseEnCours += 1;
           console.log(miseEnCours);
-          document.getElementById("miseEnCours").innerHTML = miseEnCours + " $";
+          document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
           miseBoutonStyle();
           misePop();
           setTimeout(function scoreDepop() {
@@ -311,7 +324,7 @@
         document.getElementById("greenToken").addEventListener("click", function() {
           miseEnCours += 5;
           console.log(miseEnCours);
-          document.getElementById("miseEnCours").innerHTML = miseEnCours + " $";
+          document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
           miseBoutonStyle();
           misePop();
           setTimeout(function scoreDepop() {
@@ -321,7 +334,7 @@
         document.getElementById("blueToken").addEventListener("click", function() {
           miseEnCours += 25;
           console.log(miseEnCours);
-          document.getElementById("miseEnCours").innerHTML = miseEnCours + " $";
+          document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
           miseBoutonStyle();
           misePop();
           setTimeout(function scoreDepop() {
@@ -331,7 +344,7 @@
         document.getElementById("blackToken").addEventListener("click", function() {
           miseEnCours += 100;
           console.log(miseEnCours);
-          document.getElementById("miseEnCours").innerHTML = miseEnCours + " $";
+          document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
           miseBoutonStyle();
           misePop();
           setTimeout(function scoreDepop() {
@@ -435,7 +448,15 @@
 
 
 
-
+      // Lock de la mise
+      function miseLock() {
+        document.getElementById("boutonMiser").addEventListener("click", function() {
+          miseLocked = miseEnCours;
+          // afficher miseLocked
+          document.getElementById("miseLocked").innerHTML = "Mise: " + miseLocked + "&#8364;";
+          // reload le high-low
+        })
+      }
 
 
       function misePop() {

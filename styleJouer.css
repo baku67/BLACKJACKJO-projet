@@ -1,3 +1,10 @@
+#miseLocked {
+	color: rgba(5, 2, 39, 1);
+	font-weight: bold;
+	font-size: 1.5em;
+	text-align: center;
+}
+
 
 button, input[type="submit"], input[type="reset"] {
 	background: none;
@@ -735,6 +742,7 @@ p {
 	padding: 5px 25px; 
 	border: 3px solid rgba(230, 211, 211, 0.7); 
 	border-radius: 5px;
+	opacity: 1;
 
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -794,6 +802,8 @@ p {
 	}
   };
 
+
+
 /* .miserActif:hover {
 	animation-name: borderClignotement2;
 	-webkit-animation-name: borderClignotement2;
@@ -849,7 +859,7 @@ p {
   button,
   select,
   a {
-	  -webkit-tap-highlight-color: rgba(0,0,0,0);
+	  -webkit-tap-highlight-color: transparent;
   }
 
 
