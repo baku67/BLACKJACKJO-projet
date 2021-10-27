@@ -1,5 +1,5 @@
 #miseLocked {
-	color: rgba(5, 2, 39, 1);
+	color: rgba(5, 2, 39, 0.7);
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	font-weight: bold;
 	font-size: 1.5em;
@@ -15,6 +15,17 @@ button, input[type="submit"], input[type="reset"] {
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
+}
+
+.fadeOut {
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s 0.6s, opacity 0.6s linear;
+}
+.fadeIn {
+	visibility: visible;
+	opacity: 1;
+	transition: opacity 2s linear;
 }
 
 #header {
@@ -349,7 +360,14 @@ figure:active {
 	transform: scale(1.25);
 }
 
-
+#miseEnCours {
+	position: relative;
+	bottom: 5px;
+}
+/* Class ajoutée si miseEnCours > 0 pour centrer propre */
+.miseEnCours {
+	left: 10px;
+}
 
 .img {
 	cursor: pointer;
@@ -377,7 +395,7 @@ figure:active {
 	padding: 0 0.4em 0 0.4em;
 
 	/* Carte Fade */
-	animation: fadeInAnimationPartie ease 2.5s; 
+	animation: fadeInAnimationPartie ease 1.5s; 
 	animation-iteration-count: 1; 
 	animation-fill-mode: forwards; 
 } 

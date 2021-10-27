@@ -1,3 +1,8 @@
+PENDANT PHASE MISE: TOUT LE FOOTER clignote faiblement/ouPas (blanc ou m^mes couleurs que bouton)
+S'ARRETE QUAND MISE LOCKED
+
+
+
 Le Score High-Low est contenu dans "#container3" ducoup il est rechargé à chaque ajax (mise/HiLo):
 
 Refaire les tailles (css: zoom ne marche pas sur FireFox)

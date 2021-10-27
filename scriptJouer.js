@@ -10,7 +10,6 @@
 
       var miseEnCours;
       var miseLocked;
-
       
 
       //  Collapse Footer
@@ -20,6 +19,7 @@
       var isCollapsed = false;
       footerCollapse();
       document.getElementById("arrowPng").setAttribute("src", "arrowUp.png");
+      
 
       coll.addEventListener("click", function() {
         if (content.style.display === "block") {
@@ -307,35 +307,53 @@
           button.disabled = false;
         }
         else {
-          document.getElementById("boutonMiser").style.opacity = "0.5";
+          document.getElementById("boutonMiser").style.opacity = "0.4";
           document.getElementById("boutonMiser").style.cursor = "default";
           button.disabled = true;
           // Label "Entrez d'abord une mise"
         }
       }
       
+
       // Lock de la mise
       function miseLock() {
         document.getElementById("boutonMiser").addEventListener("click", function() {
+          document.querySelector("#boutonMiser").style.opacity = "0.4";
+          
           miseLocked = miseEnCours;
-          // afficher miseLocked
           document.getElementById("miseLocked").innerHTML = "Mise: " + miseLocked + "&#8364;";
-          // reload le high-low
+    
 
-          $.ajax({
-            async: false,
-            url: "footerHiLoModul.html",
-            dataType: "html",
-            success: function(response) {
-              $("#container3").html(response);
-              document.getElementById("footerTitle").innerHTML = " - High-Low -";
-            }
-          });
+          // DELETE MiseEnCours du Footer onClick (OK)
+          // let parent = document.getElementById("infanticide");
+          // let child = document.getElementById("miseEnCours");
+          // parent.removeChild(child);
+
+          document.getElementById("miseEnCours").classList.add("fadeOut");
+          
+          document.getElementById("boutonMiser").classList.remove("miserActif");
+          setTimeout(function() {
+            $.ajax({
+              async: false,
+              url: "footerHiLoModul.html",
+              dataType: "html",
+              success: function(response) {
+                $("#container3").html(response);
+                document.getElementById("footerTitle").innerHTML = " - High-Low -";
+              }
+            });
+          }, 2000);
 
           setTimeout(function() {
             addCardCroupier();
           }, 1500);
         })
+      }
+
+      function cssMiseEnCours() {
+        if (miseEnCours > 0) {
+          document.getElementById("miseEnCours").className ="miseEnCours";
+        }
       }
 
       function tokensClick() {
@@ -348,7 +366,7 @@
           setTimeout(function scoreDepop() {
             document.getElementById("miseEnCours").classList.toggle('scorePop');
           }, 500);
-  
+          cssMiseEnCours();
         })
         document.getElementById("greenToken").addEventListener("click", function() {
           miseEnCours += 5;
@@ -359,6 +377,7 @@
           setTimeout(function scoreDepop() {
             document.getElementById("miseEnCours").classList.toggle('scorePop');
           }, 500);
+          cssMiseEnCours();
         })
         document.getElementById("blueToken").addEventListener("click", function() {
           miseEnCours += 25;
@@ -369,6 +388,7 @@
           setTimeout(function scoreDepop() {
             document.getElementById("miseEnCours").classList.toggle('scorePop');
           }, 500);
+          cssMiseEnCours();
         })
         document.getElementById("blackToken").addEventListener("click", function() {
           miseEnCours += 100;
@@ -379,6 +399,7 @@
           setTimeout(function scoreDepop() {
             document.getElementById("miseEnCours").classList.toggle('scorePop');
           }, 500);
+          cssMiseEnCours();
         })
       }
       
