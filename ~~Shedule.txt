@@ -1,14 +1,30 @@
+DEROULEMENT:
+- Mise
+- 2 cartes JOUEUR / 1 carte CROUPIER
+- Phase "Hit"/"Stand" until STAND(phase suivante) ou BUST(>21: loose)
+    - Sauf si (condition = carte = x): "Doubler" (mise x 2)   ->   +1 carte ET "Stand" 
+
+- Comparaison des scores si JOUEUR pas BUST avant (push(=), win(J>C), lose(C>J)) !
+
+
+
+
+
+
 PENDANT PHASE MISE: TOUT LE FOOTER clignote faiblement/ouPas (blanc ou m^mes couleurs que bouton)
 S'ARRETE QUAND MISE LOCKED
 
 
 
+Virer les cards High-Low (pas de load ducoup :/  )
+
+ScorePop sur le MiseLocked
+
 Le Score High-Low est contenu dans "#container3" ducoup il est rechargé à chaque ajax (mise/HiLo):
 
 Refaire les tailles (css: zoom ne marche pas sur FireFox)
 
-Ce soir: border blanc autour des mises et du score high low (jouer sur les padding/margin)
-Quand jouer.html load footer collapsed (ou le retirer!)
+CALME TOI (super FUN): png de la carte face caché -> rotate + collapse avec fade out vers le camp approprié !
 
 IMPORTANT: SCOREPOP et MISEPOP sur le container ? (bugué)
 
@@ -71,6 +87,8 @@ TO DO (insupportable + NoBrain):  Rescale/Redim (standardiser) taille cartes (pr
 TO DO (NoBrain): Ajouter TOUTES les Cards (POUR LE RANDOM + esthétique affichage non répétitif) !
 TO DO (Intéressant): Ajouter compteur 'valeurTotale' JOUEUR/CROUPIER  /!\
 TO DO (Intéressant + Commenté): Delete Card by "id"
-mettre JouerPartie.html en index
+Mettre JouerPartie.html en index
 FADE Cards et compteur 
 scoreContainer border change color quand positif ou negatif
+Border blanc autour des mises et du score high low (jouer sur les padding/margin)
+Quand jouer.html load footer collapsed (ou le retirer!)
