@@ -345,8 +345,15 @@
           }, 2000);
 
           setTimeout(function() {
-            addCardCroupier();
+            addCardJoueur();
           }, 1500);
+          setTimeout(function() {
+            addCardCroupier();
+          }, 3000);
+          setTimeout(function() {
+            addCardJoueur();
+          }, 4500);
+
         })
       }
 

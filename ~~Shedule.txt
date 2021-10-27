@@ -3,22 +3,20 @@ DEROULEMENT:
 - 2 cartes JOUEUR / 1 carte CROUPIER
 - Phase "Hit"/"Stand" until STAND(phase suivante) ou BUST(>21: loose)
     - Sauf si (condition = carte = x): "Doubler" (mise x 2)   ->   +1 carte ET "Stand" 
-
 - Comparaison des scores si JOUEUR pas BUST avant (push(=), win(J>C), lose(C>J)) !
 
+-----------------------------------------------------------------------------------------
 
 
+- TO DO: Changer Colorborder ou Colorscore quand BUST
 
-Formalité (UX + sympa): IMPORTANT: fadeInAnimationPartieScore1 (le refresh du scoreJoueur/Croupier) devrait etre moins eblouissant (opacity pas à O pour animation{0%})
+- Formalité (UX + sympa): IMPORTANT: fadeInAnimationPartieScore1 (le refresh du scoreJoueur/Croupier) devrait etre moins eblouissant (opacity pas à O pour animation{0%})
    L'effet est super stylé pour le premier Pop des scores mais apres c'est pas beau le refresh (0! -> 0.7)
 
+- PENDANT PHASE MISE: TOUT LE FOOTER clignote faiblement/ouPas (blanc ou m^mes couleurs que bouton)
+        S'ARRETE QUAND MISE LOCKED
 
-PENDANT PHASE MISE: TOUT LE FOOTER clignote faiblement/ouPas (blanc ou m^mes couleurs que bouton)
-S'ARRETE QUAND MISE LOCKED
-
-
-
-Virer les cards High-Low (pas de load ducoup :/  )
+- Virer les cards High-Low (pas de load ducoup :/  )
 
 ScorePop sur le MiseLocked
 
