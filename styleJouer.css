@@ -236,9 +236,14 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 
 }
 
+
+#infanticide {
+	position: relative;
+	top: 8px;
+}
+
 .scores 
 {
-	opacity: 0.3;
 	font-size: 2em;
 }
 
