@@ -275,11 +275,6 @@
               document.getElementById('newCardCroupier').addEventListener("click", addCardCroupier);
               document.getElementById('newCardJoueur').addEventListener("click", addCardJoueur);
 
-                // setTimeout(
-                //   addCardCroupier
-                // , 1);
-             
-              // $("#container3").load("footerMiseModul.html", phaseMise);
               $.ajax({
                 async: false,
                 url: "footerMiseModul.html",
@@ -558,28 +553,28 @@
 
       
 
-      document.getElementById('scoreAdd').addEventListener("click", plus1);
-      function plus1() {
-        scorePop();
-        score += 1;
-        document.getElementById("scoreVar").innerHTML = score;
-        scoreState();
-        // Suppression de la classe togglé "scorePop" apres x temps
-        setTimeout(function scoreDepop() {
-          document.getElementById("scoreContainer").classList.toggle('scorePop');
-        }, 500);
-      }
-      document.getElementById('scoreRem').addEventListener("click", minus1);
-      function minus1() {
-        scorePop();
-        score -= 1;
-        document.getElementById("scoreVar").innerHTML = score;
-        scoreState();
-        // Suppression de la classe togglé "scorePop" apres x temps
-        setTimeout(function scoreDepop() {
-          document.getElementById("scoreContainer").classList.toggle('scorePop');
-        }, 500);
-      }
+      // document.getElementById('scoreAdd').addEventListener("click", plus1);
+      // function plus1() {
+      //   scorePop();
+      //   score += 1;
+      //   document.getElementById("scoreVar").innerHTML = score;
+      //   scoreState();
+      //   // Suppression de la classe togglé "scorePop" apres x temps
+      //   setTimeout(function scoreDepop() {
+      //     document.getElementById("scoreContainer").classList.toggle('scorePop');
+      //   }, 500);
+      // }
+      // document.getElementById('scoreRem').addEventListener("click", minus1);
+      // function minus1() {
+      //   scorePop();
+      //   score -= 1;
+      //   document.getElementById("scoreVar").innerHTML = score;
+      //   scoreState();
+      //   // Suppression de la classe togglé "scorePop" apres x temps
+      //   setTimeout(function scoreDepop() {
+      //     document.getElementById("scoreContainer").classList.toggle('scorePop');
+      //   }, 500);
+      // }
 
       
 

@@ -4,7 +4,7 @@ DEROULEMENT:
 - Phase "Hit"/"Stand" until STAND(phase suivante) ou BUST(>21: loose)
     - Sauf si (condition = carte = x): "Doubler" (mise x 2)   ->   +1 carte ET "Stand" 
 - Comparaison des scores si JOUEUR pas BUST avant (push(=), win(J>C), lose(C>J)) !
-
+___________________________________________________________________________________________
 -----------------------------------------------------------------------------------------
 
 - TO DO: Scores(J/C)-apparition deforme height responsive inexistante (lourd)
@@ -14,25 +14,21 @@ DEROULEMENT:
 - Formalité (UX + sympa): IMPORTANT: fadeInAnimationPartieScore1 (le refresh du scoreJoueur/Croupier) devrait etre moins eblouissant (opacity pas à O pour animation{0%})
    L'effet est super stylé pour le premier Pop des scores mais apres c'est pas beau le refresh (0! -> 0.7)
 
-- PENDANT PHASE MISE: TOUT LE FOOTER clignote faiblement/ouPas (blanc ou m^mes couleurs que bouton)
+- PENDANT PHASE MISE: TOUT LE FOOTER clignote faiblement/ouPas (blanc ou mêmes couleurs que bouton)
         S'ARRETE QUAND MISE LOCKED
 
 - Virer les cards High-Low (pas de load ducoup :/  )
 
-ScorePop sur le MiseLocked
+ScorePop sur le MiseLocked + SCOREPOP et MISEPOP sur le container ? (bugué)
 
 Le Score High-Low est contenu dans "#container3" ducoup il est rechargé à chaque ajax (mise/HiLo):
 
 Refaire les tailles (css: zoom ne marche pas sur FireFox)
 
-CALME TOI (super FUN): png de la carte face caché -> rotate + collapse avec fade out vers le camp approprié !
-
-IMPORTANT: SCOREPOP et MISEPOP sur le container ? (bugué)
+CALME TOI (super FUN): png de la carte face caché -> rotate + translate avec fade out vers le camp approprié !
 
 background.png : reprendre l'original -> moins transparent (pas de opacity ici)
 --> TO DO (fun): Clignotement lent/infini du border bouton Miser! quand ajout de mise
-TO DO: Miser! Submit
-TO DO: Bouton Miser! grisé+nonClickable quand aucun mise
 
 TO DO (CSS+Photoshop): Redesign background bouton "LancerPartie" (EX: ajout de ~dentellesPNG~ blancs sur les 2 cotés en plus du gradient)
 TO DO: Garder la meme height de Footer quand load Mise
@@ -63,7 +59,7 @@ TO DO (MILESTONE): Media Queries      //(ez: just les font-size et cards deja ç
 
 
 
-EFFET STYLEE SUR LE BOUTON
+EFFET STYLEE SUR LE BOUTON (hover = anim horizontale)
 #newGame:hover {
 	border: 4px solid rgba(34, 10, 141, 0.6);
 
@@ -71,7 +67,6 @@ EFFET STYLEE SUR LE BOUTON
 	/* padding: 16px 49px; */
 	/* font-size: 1.4em !important; */
 }
-
 #lancerPartie {
 	display: inline-flex;
 }
@@ -93,3 +88,5 @@ FADE Cards et compteur
 scoreContainer border change color quand positif ou negatif
 Border blanc autour des mises et du score high low (jouer sur les padding/margin)
 Quand jouer.html load footer collapsed (ou le retirer!)
+TO DO: Miser! Submit
+TO DO: Bouton Miser! grisé+nonClickable quand aucun mise
