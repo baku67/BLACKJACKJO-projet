@@ -7,6 +7,8 @@ DEROULEMENT:
 ___________________________________________________________________________________________
 -----------------------------------------------------------------------------------------
 
+- Contour des cartes plus foncé
+
 - TO DO: Scores(J/C)-apparition deforme height responsive inexistante (lourd)
 
 - TO DO: Changer Colorborder ou Colorscore quand BUST 

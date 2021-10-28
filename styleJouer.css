@@ -246,7 +246,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 
 .scoreBorder {
 	padding: 1px 6px;
-	border: solid 0.5px rgba(13, 1, 56, 0.2);
+	border: solid 0.5px rgba(13, 1, 56, 0.3);
 	border-radius: 5px;
 }
 .scores 
@@ -413,6 +413,8 @@ figure:active {
 	border-radius: 12px;
 }
 .imgPartie {
+	border: 1px solid rgba(0,0,0,0.15);
+	border-radius: 7px;
 	width: 7em;
 	opacity: 0.8;
 		/*  Les px de border ne compte pas en plus de la div  (pas de mess) */
@@ -420,7 +422,7 @@ figure:active {
 		-moz-box-sizing: border-box;
 		-webkit-box-sizing: border-box;
 	transition: all 0.5s;
-	padding: 0 0.4em 0 0.4em;
+	margin: 0 0.4em 0 0.4em;
 
 	/* Carte Fade */
 	animation: fadeInAnimationPartie ease 1.5s; 
@@ -630,7 +632,7 @@ p {
 #scoreContainer {
 	padding: 0 25px;
 	margin: 0 50px;
-    width: 30%;
+    /* width: 30%; */
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
