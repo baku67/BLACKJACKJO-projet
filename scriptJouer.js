@@ -364,7 +364,7 @@
       }
 
       function tokensClick() {
-        document.getElementById("redToken").addEventListener("click", function() {
+        document.getElementById("whiteToken").addEventListener("click", function() {
           miseEnCours += 1;
           console.log(miseEnCours);
           document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
@@ -375,8 +375,19 @@
           }, 500);
           cssMiseEnCours();
         })
-        document.getElementById("greenToken").addEventListener("click", function() {
+        document.getElementById("redToken").addEventListener("click", function() {
           miseEnCours += 5;
+          console.log(miseEnCours);
+          document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
+          miseBoutonStyle();
+          misePop();
+          setTimeout(function scoreDepop() {
+            document.getElementById("miseEnCours").classList.toggle('scorePop');
+          }, 500);
+          cssMiseEnCours();
+        })
+        document.getElementById("greenToken").addEventListener("click", function() {
+          miseEnCours += 10;
           console.log(miseEnCours);
           document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
           miseBoutonStyle();
