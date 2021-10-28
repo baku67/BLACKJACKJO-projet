@@ -316,7 +316,7 @@
           document.querySelector("#boutonMiser").style.opacity = "0.4";
           
           miseLocked = miseEnCours;
-          document.getElementById("miseLocked").innerHTML = "Mise: " + miseLocked + "&#8364;";
+          document.getElementById("miseLocked").innerHTML = "Mise: " + "&nbsp;" + miseLocked + "&nbsp;" + "&#8364;";
     
 
           // DELETE MiseEnCours du Footer onClick (OK)
@@ -330,24 +330,24 @@
           setTimeout(function() {
             $.ajax({
               async: false,
-              url: "footerHiLoModul.html",
+              url: "footerPhase2Modul.html",
               dataType: "html",
               success: function(response) {
                 $("#container3").html(response);
                 document.getElementById("footerTitle").innerHTML = " - High-Low -";
               }
             });
-          }, 2000);
+          }, 6500);
 
           setTimeout(function() {
             addCardJoueur();
-          }, 1500);
+          }, 2000);
           setTimeout(function() {
             addCardCroupier();
-          }, 3000);
+          }, 4000);
           setTimeout(function() {
             addCardJoueur();
-          }, 4500);
+          }, 6000);
 
         })
       }
