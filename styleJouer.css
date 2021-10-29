@@ -344,10 +344,10 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
     height: 49%;
 }
 #croupier {
-	height: auto;
+	height: 180px;
 }
 #joueur {
-	height: auto;
+	height: 180px;
 }
 
 
@@ -786,7 +786,45 @@ p {
 
 
 
-
+#double {
+	color: rgba(252, 227, 3, 0.8);
+	font-size: 3.5em;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	height: 90%; 
+	width: 150px; 
+	margin: 5px 8px; 
+	border: 1px solid rgba(252, 227, 3, 0.8); 
+	border-radius: 8px;
+}
+#double:hover {
+	background: rgba(255,255,255,0.1);
+}
+#hit {
+	color: rgba(44, 252, 3, 0.8);
+	font-size: 5em;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	height: 90%; 
+	width: 150px; 
+	margin: 5px 8px; 
+	border: 1px solid rgba(44, 252, 3, 0.8); 
+	border-radius: 8px;
+}
+#hit:hover {
+	background: rgba(255,255,255,0.1);
+}
+#stand {
+	color: rgba(252, 0, 0, 1);
+	font-size: 7em;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	height: 90%; 
+	width: 150px; 
+	margin: 5px 8px; 
+	border: 1px solid rgba(252, 0, 0, 1); 
+	border-radius: 8px;
+}
+#stand:hover {
+	background: rgba(255,255,255,0.1);
+}
 
 
 
@@ -920,7 +958,11 @@ p {
 
   @media screen and (max-device-width:480px) {
 	.pokerChips {
-		width: 4em;
-		height: 4em;
+		width: 2em;
+		height: 2em;
+	}
+	.choices {
+		width: 2em;
+		height: 2em;
 	}
   }

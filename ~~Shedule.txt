@@ -7,6 +7,8 @@ DEROULEMENT:
 ___________________________________________________________________________________________
 -----------------------------------------------------------------------------------------
 
+- TO DO: http://jsfiddle.net/gaby/Bek9L/1779/ (agrandir le footer sur PC)
+
 - Contour des cartes plus foncé
 
 - TO DO: Scores(J/C)-apparition deforme height responsive inexistante (lourd)
