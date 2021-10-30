@@ -280,8 +280,6 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 .deckContainer {
 	position: absolute; 
 	bottom: 50%; left: 12%; 
-	border: 2px solid rgba(36, 54, 128, 0.3); 
-	border-radius: 5px;
 
 	animation: fadeInAnimationPartieScore ease 2s; 
 	animation-iteration-count: 1; 
@@ -787,6 +785,7 @@ p {
 
 
 #double {
+	opacity: 0.4;
 	color: rgba(252, 227, 3, 0.8);
 	font-size: 3.5em;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -960,9 +959,11 @@ p {
 	.pokerChips {
 		width: 2em;
 		height: 2em;
+		margin: 1em 0.3em;
 	}
 	.choices {
-		width: 2em;
-		height: 2em;
+		width: 1.5em !important;
+		height: 2em !important;
+		margin: 1em 0.3em !important;
 	}
   }
