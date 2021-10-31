@@ -10,6 +10,8 @@
 
       var miseEnCours;
       var miseLocked;
+
+      var burstJoueur = false;
       
 
       //  Collapse Footer
@@ -188,7 +190,7 @@
         },
         C10c = {
           cardImageURL: "cartes\\10H.png",
-          cardValue: 2
+          cardValue: 10
         },
         C10d = {
           cardImageURL: "cartes\\10S.png",
@@ -327,6 +329,7 @@
           document.getElementById("miseEnCours").classList.add("fadeOut");
           
           document.getElementById("boutonMiser").classList.remove("miserActif");
+
           setTimeout(function() {
             $.ajax({
               async: false,
@@ -334,7 +337,13 @@
               dataType: "html",
               success: function(response) {
                 $("#container3").html(response);
-                document.getElementById("footerTitle").innerHTML = " - High-Low -";
+                document.getElementById("footerTitle").innerHTML = " - Choix -";
+                document.getElementById("hit").addEventListener("click", function() {
+                  addCardJoueur();
+                });
+                document.getElementById("stand").addEventListener("click", function() {
+                  lancerPhaseCroupier();
+                });
               }
             });
           }, 6500);
@@ -351,6 +360,27 @@
 
         })
       }
+
+
+      function lancerPhaseCroupier() {
+          // while (scoreTotalCroupier <= 17) {
+          //   setInterval(function() {
+          //     addCardCroupier()
+          //   }, 1500);
+          // }
+
+          setInterval (function() {
+
+            while (scoreTotalCroupier <= 17) {
+              
+              addCardCroupier();
+            }
+
+          }, 1000);
+
+  
+      }
+
 
       function cssMiseEnCours() {
         if (miseEnCours > 0) {
@@ -513,6 +543,44 @@
         document.getElementById("joueur").appendChild(img);
 
         checkMiseWarning();
+
+        checkBurstJoueur();
+        checkBJjoueur();
+      }
+
+
+      function checkBurstJoueur() {
+        if (scoreTotalJoueur > 21) {
+
+            setTimeout(function() {
+              $.ajax({
+                async: false,
+                url: "footerBurstJoueur.html",
+                dataType: "html",
+                success: function(response) {
+                  $("#container3").html(response);
+                  document.getElementById("footerTitle").innerHTML = " - Perdu -";
+                }
+              });
+            }, 1000);
+        }
+      }
+      function checkBJjoueur() {
+        if (scoreTotalJoueur == 21) {
+          //      "|| nbrOfJoueurCards == 2"     (pour le vrai BJ)
+
+            setTimeout(function() {
+              $.ajax({
+                async: false,
+                url: "footerBJjoueur.html",
+                dataType: "html",
+                success: function(response) {
+                  $("#container3").html(response);
+                  document.getElementById("footerTitle").innerHTML = " - Perdu -";
+                }
+              });
+            }, 1000);
+        }
       }
 
 
@@ -622,7 +690,6 @@ OU
   var audio = new Audio("C:\Users\basil\OneDrive\Documents\~~ DEV Blackjack repo~~\BlackJackJooo\sons\DEAL.mp3");
   audio.oncanplaythrough = function(){audio.play();} 
   */
-
 
 
 

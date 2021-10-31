@@ -1,6 +1,6 @@
 Je sais pas ou est ma chemise rouge et mon manteau noir 
 
-
+Bouton rejouer (onclick fait pareil que NewGame")
 
 DEROULEMENT:
 - Mise
