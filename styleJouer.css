@@ -342,10 +342,10 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
     height: 49%;
 }
 #croupier {
-	height: 180px;
+	height: 169.05px;
 }
 #joueur {
-	height: 180px;
+	height: 169.05px;
 }
 
 
@@ -962,8 +962,8 @@ p {
 		margin: 1em 0.3em;
 	}
 	.choices {
-		width: 1.5em !important;
-		height: 2em !important;
+		/* width: 1.5em !important;
+		height: 2em !important; */
 		margin: 1em 0.3em !important;
 	}
   }

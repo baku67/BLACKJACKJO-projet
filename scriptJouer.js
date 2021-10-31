@@ -363,22 +363,121 @@
 
 
       function lancerPhaseCroupier() {
-          // while (scoreTotalCroupier <= 17) {
-          //   setInterval(function() {
-          //     addCardCroupier()
-          //   }, 1500);
-          // }
-
+      
+          // Bug: toutes les cartes popent en meme temps
           setInterval (function() {
-
             while (scoreTotalCroupier <= 17) {
-              
               addCardCroupier();
             }
-
           }, 1000);
 
   
+          setTimeout(function() {
+            if (scoreTotalCroupier > scoreTotalJoueur && scoreTotalCroupier < 22) {
+              $.ajax({
+                async: false,
+                url: "footerCroupierWin.html",
+                dataType: "html",
+                success: function(response) {
+                  $("#container3").html(response);
+                  console.log(scoreTotalCroupier);
+                  document.getElementById("footerTitle").innerHTML = " - Perdu -";
+
+                  document.getElementById("scoreCroupier").style.border = "solid 3px rgba(61,255,1,1)";
+                  document.getElementById("scoreJoueur").style.border = "solid 3px rgba(255,1,49,1)";
+
+                  document.getElementById("croupier").style.backgroundColor = "rgba(61,255,1,0.1)";
+                  document.getElementById("joueur").style.backgroundColor = "rgba(255,1,49,0.1)";
+
+                  document.getElementById("croupier").style.border = "1px solid rgba(61,255,1,0.5)";
+                  document.getElementById("joueur").style.border = "1px solid rgba(255,1,49,0.5)";
+
+                  document.getElementById("scoreCroupier").style.color = "rgba(61,255,1,1)"
+                  document.getElementById("scoreJoueur").style.color = "rgba(255,1,49,1)"
+                }
+              });
+            }
+
+            if (scoreTotalCroupier > 21) {
+              $.ajax({
+                async: false,
+                url: "footerCroupierBurst.html",
+                dataType: "html",
+                success: function(response) {
+                  $("#container3").html(response);
+                  console.log(scoreTotalCroupier);
+                  document.getElementById("footerTitle").innerHTML = " - Gagné -";
+
+                  document.getElementById("scoreCroupier").style.border = "solid 3px red";
+                  document.getElementById("scoreJoueur").style.border = "solid 3px green";
+
+                  document.getElementById("croupier").style.backgroundColor = "rgba(255,1,49,0.1)";
+                  document.getElementById("joueur").style.backgroundColor = "rgba(61,255,1,0.1)";
+
+                  document.getElementById("croupier").style.border = "1px solid rgba(255,1,49,0.5)";
+                  document.getElementById("joueur").style.border = "1px solid rgba(61,255,1,0.5)";
+
+                  document.getElementById("scoreCroupier").style.color = "rgba(255,1,49,1)"
+                  document.getElementById("scoreJoueur").style.color = "rgba(61,255,1,1)"
+                }
+              });
+            }
+
+            if (scoreTotalJoueur > scoreTotalCroupier) {
+              $.ajax({
+                async: false,
+                url: "footerJoueurGagne.html",
+                dataType: "html",
+                success: function(response) {
+                  $("#container3").html(response);
+                  console.log(scoreTotalCroupier);
+                  document.getElementById("footerTitle").innerHTML = " - Gagné -";
+
+                  document.getElementById("scoreCroupier").style.border = "solid 3px red";
+                  document.getElementById("scoreJoueur").style.border = "solid 3px green";
+
+                  document.getElementById("croupier").style.backgroundColor = "rgba(255,1,49,0.1)";
+                  document.getElementById("joueur").style.backgroundColor = "rgba(61,255,1,0.1)";
+
+                  document.getElementById("croupier").style.border = "1px solid rgba(255,1,49,0.5)";
+                  document.getElementById("joueur").style.border = "1px solid rgba(61,255,1,0.5)";
+
+                  document.getElementById("scoreCroupier").style.color = "rgba(255,1,49,1)"
+                  document.getElementById("scoreJoueur").style.color = "rgba(61,255,1,1)"
+                }
+              });
+            }
+
+            if (scoreTotalJoueur == scoreTotalCroupier) {
+              $.ajax({
+                async: false,
+                url: "footerPush.html",
+                dataType: "html",
+                success: function(response) {
+                  $("#container3").html(response);
+                  console.log(scoreTotalCroupier);
+                  document.getElementById("footerTitle").innerHTML = " - Egualité -";
+
+                  document.getElementById("scoreCroupier").style.border = "solid 3px yellow";
+                  document.getElementById("scoreJoueur").style.border = "solid 3px yellow";
+
+                  document.getElementById("croupier").style.backgroundColor = "rgba(255,246,1,0.8)";
+                  document.getElementById("joueur").style.backgroundColor = "rgba(255,246,1,0.8)";
+
+                  document.getElementById("croupier").style.border = "1px solid rgba(255,246,1,0.7)";
+                  document.getElementById("joueur").style.border = "1px solid rgba(255,246,1,0.7)";
+
+                  document.getElementById("scoreCroupier").style.color = "rgba(255,246,1,1)"
+                  document.getElementById("scoreJoueur").style.color = "rgba(255,246,1,1)"
+                }
+              });
+            }
+
+          
+
+          }, 1800);
+
+
       }
 
 
@@ -560,6 +659,19 @@
                 success: function(response) {
                   $("#container3").html(response);
                   document.getElementById("footerTitle").innerHTML = " - Perdu -";
+
+                  document.getElementById("scoreCroupier").style.border = "solid 3px rgba(61,255,1,1)";
+                  document.getElementById("scoreJoueur").style.border = "solid 3px rgba(255,1,49,1)";
+
+                  document.getElementById("croupier").style.backgroundColor = "rgba(61,255,1,0.1)";
+                  document.getElementById("joueur").style.backgroundColor = "rgba(255,1,49,0.1)";
+
+                  document.getElementById("croupier").style.border = "1px solid rgba(61,255,1,0.5)";
+                  document.getElementById("joueur").style.border = "1px solid rgba(255,1,49,0.5)";
+
+                  document.getElementById("scoreCroupier").style.color = "rgba(61,255,1,1)"
+                  document.getElementById("scoreJoueur").style.color = "rgba(255,1,49,1)"
+                  
                 }
               });
             }, 1000);
@@ -577,6 +689,18 @@
                 success: function(response) {
                   $("#container3").html(response);
                   document.getElementById("footerTitle").innerHTML = " - Perdu -";
+                  
+                  document.getElementById("scoreCroupier").style.border = "solid 3px red";
+                  document.getElementById("scoreJoueur").style.border = "solid 3px green";
+
+                  document.getElementById("croupier").style.backgroundColor = "rgba(255,1,49,0.1)";
+                  document.getElementById("joueur").style.backgroundColor = "rgba(61,255,1,0.1)";
+
+                  document.getElementById("croupier").style.border = "1px solid rgba(255,1,49,0.5)";
+                  document.getElementById("joueur").style.border = "1px solid rgba(61,255,1,0.5)";
+
+                  document.getElementById("scoreCroupier").style.color = "rgba(255,1,49,1)"
+                  document.getElementById("scoreJoueur").style.color = "rgba(61,255,1,1)"
                 }
               });
             }, 1000);
