@@ -355,6 +355,21 @@
                 document.getElementById("stand").addEventListener("click", function() {
                   lancerPhaseCroupier();
                 });
+                document.getElementById("double").addEventListener("click", function() {
+
+                  miseLocked = miseLocked * 2;
+                  document.getElementById("miseLocked").innerHTML = "Mise: " + "&nbsp;" + miseLocked + "&nbsp;" + "&#8364;";
+
+                  setTimeout(function() {
+                    addCardJoueur();
+                  }, 1000);
+
+                  setTimeout(function() {
+                    lancerPhaseCroupier();
+                  }, 2000);
+
+                });
+
               }
             });
           }, 6500);
