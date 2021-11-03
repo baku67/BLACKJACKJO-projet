@@ -333,6 +333,18 @@
           setTimeout(function() {
             $.ajax({
               async: false,
+              url: "footerNone.html",
+              dataType: "html",
+              success: function(response) {
+                $("#container3").html(response);
+                document.getElementById("footerTitle").innerHTML = " - Distribution... -";
+              }
+            });
+          }, 700);
+
+          setTimeout(function() {
+            $.ajax({
+              async: false,
               url: "footerPhase2Modul.html",
               dataType: "html",
               success: function(response) {
@@ -461,8 +473,8 @@
                   document.getElementById("scoreCroupier").style.border = "solid 3px yellow";
                   document.getElementById("scoreJoueur").style.border = "solid 3px yellow";
 
-                  document.getElementById("croupier").style.backgroundColor = "rgba(255,246,1,0.8)";
-                  document.getElementById("joueur").style.backgroundColor = "rgba(255,246,1,0.8)";
+                  document.getElementById("croupier").style.backgroundColor = "rgba(255,246,1,0.5)";
+                  document.getElementById("joueur").style.backgroundColor = "rgba(255,246,1,0.5)";
 
                   document.getElementById("croupier").style.border = "1px solid rgba(255,246,1,0.7)";
                   document.getElementById("joueur").style.border = "1px solid rgba(255,246,1,0.7)";
