@@ -323,6 +323,9 @@
           // parent.removeChild(child);
 
           document.getElementById("miseEnCours").classList.add("fadeOut");
+
+          document.getElementById("boutonMiser").disabled = true;
+          document.getElementById("boutonMiser").style.cursor = "default";
           
           document.getElementById("boutonMiser").classList.remove("miserActif");
 
