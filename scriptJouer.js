@@ -364,6 +364,14 @@
                     addCardJoueur();
                   }, 1000);
 
+                  // checkBurstJoueur();
+                  // if (burstJoueur == true) {
+                  // }
+                  // else {
+                  //   setTimeout(function() {
+                  //     lancerPhaseCroupier();
+                  //   }, 2000);
+                  // }
                   setTimeout(function() {
                     lancerPhaseCroupier();
                   }, 2000);
@@ -412,8 +420,8 @@
                   document.getElementById("scoreCroupier").style.border = "solid 3px rgba(61,255,1,1)";
                   document.getElementById("scoreJoueur").style.border = "solid 3px rgba(255,1,49,1)";
 
-                  document.getElementById("croupier").style.backgroundColor = "rgba(61,255,1,0.1)";
-                  document.getElementById("joueur").style.backgroundColor = "rgba(255,1,49,0.1)";
+                  document.getElementById("croupier").style.backgroundColor = "rgba(61,255,1,0.3)";
+                  document.getElementById("joueur").style.backgroundColor = "rgba(255,1,49,0.3)";
 
                   document.getElementById("croupier").style.border = "1px solid rgba(61,255,1,0.5)";
                   document.getElementById("joueur").style.border = "1px solid rgba(255,1,49,0.5)";
@@ -437,8 +445,8 @@
                   document.getElementById("scoreCroupier").style.border = "solid 3px red";
                   document.getElementById("scoreJoueur").style.border = "solid 3px green";
 
-                  document.getElementById("croupier").style.backgroundColor = "rgba(255,1,49,0.1)";
-                  document.getElementById("joueur").style.backgroundColor = "rgba(61,255,1,0.1)";
+                  document.getElementById("croupier").style.backgroundColor = "rgba(255,1,49,0.3)";
+                  document.getElementById("joueur").style.backgroundColor = "rgba(61,255,1,0.3)";
 
                   document.getElementById("croupier").style.border = "1px solid rgba(255,1,49,0.5)";
                   document.getElementById("joueur").style.border = "1px solid rgba(61,255,1,0.5)";
@@ -462,8 +470,8 @@
                   document.getElementById("scoreCroupier").style.border = "solid 3px red";
                   document.getElementById("scoreJoueur").style.border = "solid 3px green";
 
-                  document.getElementById("croupier").style.backgroundColor = "rgba(255,1,49,0.1)";
-                  document.getElementById("joueur").style.backgroundColor = "rgba(61,255,1,0.1)";
+                  document.getElementById("croupier").style.backgroundColor = "rgba(255,1,49,0.3)";
+                  document.getElementById("joueur").style.backgroundColor = "rgba(61,255,1,0.3)";
 
                   document.getElementById("croupier").style.border = "1px solid rgba(255,1,49,0.5)";
                   document.getElementById("joueur").style.border = "1px solid rgba(61,255,1,0.5)";
@@ -487,8 +495,8 @@
                   document.getElementById("scoreCroupier").style.border = "solid 3px yellow";
                   document.getElementById("scoreJoueur").style.border = "solid 3px yellow";
 
-                  document.getElementById("croupier").style.backgroundColor = "rgba(255,246,1,0.5)";
-                  document.getElementById("joueur").style.backgroundColor = "rgba(255,246,1,0.5)";
+                  document.getElementById("croupier").style.backgroundColor = "rgba(255,246,1,0.3)";
+                  document.getElementById("joueur").style.backgroundColor = "rgba(255,246,1,0.3)";
 
                   document.getElementById("croupier").style.border = "1px solid rgba(255,246,1,0.7)";
                   document.getElementById("joueur").style.border = "1px solid rgba(255,246,1,0.7)";
@@ -710,6 +718,7 @@
 
       function checkBurstJoueur() {
         if (scoreTotalJoueur > 21) {
+            burstJoueur = true;
 
             setTimeout(function() {
               $.ajax({
@@ -723,8 +732,8 @@
                   document.getElementById("scoreCroupier").style.border = "solid 3px rgba(61,255,1,1)";
                   document.getElementById("scoreJoueur").style.border = "solid 3px rgba(255,1,49,1)";
 
-                  document.getElementById("croupier").style.backgroundColor = "rgba(61,255,1,0.1)";
-                  document.getElementById("joueur").style.backgroundColor = "rgba(255,1,49,0.1)";
+                  document.getElementById("croupier").style.backgroundColor = "rgba(61,255,1,0.3)";
+                  document.getElementById("joueur").style.backgroundColor = "rgba(255,1,49,0.3)";
 
                   document.getElementById("croupier").style.border = "1px solid rgba(61,255,1,0.5)";
                   document.getElementById("joueur").style.border = "1px solid rgba(255,1,49,0.5)";
@@ -755,8 +764,8 @@
                   document.getElementById("scoreCroupier").style.border = "solid 3px red";
                   document.getElementById("scoreJoueur").style.border = "solid 3px green";
 
-                  document.getElementById("croupier").style.backgroundColor = "rgba(255,1,49,0.1)";
-                  document.getElementById("joueur").style.backgroundColor = "rgba(61,255,1,0.1)";
+                  document.getElementById("croupier").style.backgroundColor = "rgba(255,1,49,0.3)";
+                  document.getElementById("joueur").style.backgroundColor = "rgba(61,255,1,0.3)";
 
                   document.getElementById("croupier").style.border = "1px solid rgba(255,1,49,0.5)";
                   document.getElementById("joueur").style.border = "1px solid rgba(61,255,1,0.5)";
