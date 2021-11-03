@@ -351,6 +351,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 
 
 #container3 {
+	height: 183px;
 	display:inline-flex;
 	animation: fadeInAnimationPartieScore ease 1s; 
 	animation-iteration-count: 1; 
