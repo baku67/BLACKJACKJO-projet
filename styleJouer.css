@@ -627,6 +627,12 @@ p {
 }
 
 
+/* Empeche le line-breaking des Jetons (lors de zoom/ Mobile) */
+#tokenChipsContainer {
+	flex-shrink: 0;
+}
+
+
 #scoreContainer {
 	padding: 0 25px;
 	margin: 0 50px;

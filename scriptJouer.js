@@ -273,10 +273,6 @@
 
           setTimeout( function lancerPartie() {
 
-              // BOUTON "CARTE"
-              document.getElementById('newCardCroupier').addEventListener("click", addCardCroupier);
-              document.getElementById('newCardJoueur').addEventListener("click", addCardJoueur);
-
               $.ajax({
                 async: false,
                 url: "footerMiseModul.html",
@@ -620,6 +616,22 @@
 
         checkMiseWarning();
 
+
+        // Mise a jour du score High-Low
+        if (pickedCardObject.cardValue < 7) {
+          setTimeout(function() {
+            plus1();
+          }, 500);
+        }
+        else if (pickedCardObject.cardValue > 9) {
+          setTimeout(function() {
+            minus1();
+          }, 500);
+        }
+        else {
+          // ScoePop quand même (ou au moins un truc, genre rafraichissement)
+        }
+
       }
       // FIN
 
@@ -657,6 +669,22 @@
 
         checkBurstJoueur();
         checkBJjoueur();
+
+        // Mise a jour du score High-Low
+        if (pickedCardObject.cardValue < 7) {
+          setTimeout(function() {
+            plus1();
+          }, 500);
+        }
+        else if (pickedCardObject.cardValue > 9) {
+          setTimeout(function() {
+            minus1();
+          }, 500);
+        }
+        else {
+          // ScoePop quand même (ou au moins un truc, genre rafraichissement)
+        }
+        
       }
 
 
@@ -792,5 +820,13 @@
         }, 500);
       }
       //*** FIN
+
+      // dans addCardCroupier(joueur croupier les 2) ajouter
+      // if scoreCard
+      //   plus1();
+      // else if scorecard
+      //   minus1();
+      // else (aucun changement)
+      //   rien
 
     }
