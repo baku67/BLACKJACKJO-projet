@@ -336,7 +336,7 @@
               url: "footerNone.html",
               dataType: "html",
               success: function(response) {
-                $("#container3").html(response);
+                $("#chipsContainer").html(response);
                 document.getElementById("footerTitle").innerHTML = " - Distribution... -";
               }
             });
@@ -348,7 +348,7 @@
               url: "footerPhase2Modul.html",
               dataType: "html",
               success: function(response) {
-                $("#container3").html(response);
+                $("#chipsContainer").html(response);
                 document.getElementById("footerTitle").innerHTML = " - Choix -";
                 document.getElementById("hit").addEventListener("click", function() {
                   addCardJoueur();
@@ -660,6 +660,8 @@
       }
 
 
+
+
       function checkBurstJoueur() {
         if (scoreTotalJoueur > 21) {
 
@@ -689,6 +691,8 @@
             }, 1000);
         }
       }
+
+      
       function checkBJjoueur() {
         if (scoreTotalJoueur == 21) {
           //      "|| nbrOfJoueurCards == 2"     (pour le vrai BJ)
