@@ -350,7 +350,11 @@
                 $("#chipsContainer").html(response);
                 document.getElementById("footerTitle").innerHTML = " - Choix -";
                 document.getElementById("hit").addEventListener("click", function() {
-                  addCardJoueur();
+                  setTimeout(function() {
+                    addCardJoueur();
+                  }, 1000);
+                  // désactiver les boutons durant le setTimeoute
+
                 });
                 document.getElementById("stand").addEventListener("click", function() {
                   lancerPhaseCroupier();
