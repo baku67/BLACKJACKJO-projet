@@ -51,7 +51,6 @@
       
 
 
-      // REGION ARRAY CARDS OBJECT
       //#region array of objects: "cards"
       // Tableau d'objets cards
       let cards = [
@@ -271,8 +270,6 @@
       // JQUERY JAX : load Partie
       $("#newGame").click(function(){
 
-          
-
           $("#container1").load("jouerPartie.html");
 
           setTimeout( function lancerPartie() {
@@ -297,6 +294,49 @@
               miseLock();  
           }, 500)
       });
+
+
+      //***   WIP: Relancer    ***\\
+
+      function relancer() {
+      //   $("#relancer").click(function(){
+      //     $("#container1").load("jouerPartie.html");
+      //     scoreTotalJoueur = 0;
+      //     scoreTotalCroupier = 0;
+      //     setTimeout( function lancerPartie() {
+      //         document.getElementById("compteurDeck").innerHTML = compteurDeck;
+      //         document.getElementById("compteurDeckMax").innerHTML = compteurDeckMax;
+      //         $.ajax({
+      //           async: false,
+      //           url: "footerMiseModul.html",
+      //           dataType: "html",
+      //           success: function(response) {
+      //             $("#container3").html(response);
+      //             footerShow();
+      //             phaseMise();
+      //             document.getElementById("footerTitle").innerHTML = " - MISE -";
+      //             window.onload = tokensClick();
+      //             checkMiseWarning();
+      //           }
+      //         });
+      //         miseBoutonStyle();
+      //         miseLock();  
+      //     }, 500)
+      //   });
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       function miseBoutonStyle() {
         let button = document.querySelector("#boutonMiser");
@@ -373,14 +413,6 @@
                     addCardJoueur();
                   }, 1000);
 
-                  // checkBurstJoueur();
-                  // if (burstJoueur == true) {
-                  // }
-                  // else {
-                  //   setTimeout(function() {
-                  //     lancerPhaseCroupier();
-                  //   }, 2000);
-                  // }
                   setTimeout(function() {
                     lancerPhaseCroupier();
                   }, 2000);
@@ -420,7 +452,6 @@
         setTimeout(function() {
           addCardJoueur();
         }, 1000);
-        // désactiver les boutons durant le setTimeoute
 
         setTimeout(function() {
           $.ajax({
@@ -435,6 +466,23 @@
                 hit();
 
               });
+              document.getElementById("stand").addEventListener("click", function() {
+                lancerPhaseCroupier();
+              });
+              document.getElementById("double").addEventListener("click", function() {
+
+                miseLocked = miseLocked * 2;
+                document.getElementById("miseLocked").innerHTML = "Mise: " + "&nbsp;" + miseLocked + "&nbsp;" + "&#8364;";
+
+                setTimeout(function() {
+                  addCardJoueur();
+                }, 1000);
+
+                setTimeout(function() {
+                  lancerPhaseCroupier();
+                }, 2000);
+
+              });
             }
           });
         }, 1250);
@@ -443,6 +491,17 @@
 
 
       function lancerPhaseCroupier() {
+
+          $.ajax({
+            async: false,
+            url: "footerNone.html",
+            dataType: "html",
+            success: function(response) {
+              $("#chipsContainer").html(response);
+              document.getElementById("footerTitle").innerHTML = " - Distribution... -";
+            }
+          });
+
       
           // Bug: toutes les cartes popent en meme temps
           setInterval (function() {
@@ -474,6 +533,8 @@
 
                   document.getElementById("scoreCroupier").style.color = "rgba(61,255,1,1)"
                   document.getElementById("scoreJoueur").style.color = "rgba(255,1,49,1)"
+
+                  relancer();
                 }
               });
             }
@@ -499,6 +560,8 @@
 
                   document.getElementById("scoreCroupier").style.color = "rgba(255,1,49,1)"
                   document.getElementById("scoreJoueur").style.color = "rgba(61,255,1,1)"
+
+                  relancer();
                 }
               });
             }
@@ -524,6 +587,8 @@
 
                   document.getElementById("scoreCroupier").style.color = "rgba(255,1,49,1)"
                   document.getElementById("scoreJoueur").style.color = "rgba(61,255,1,1)"
+
+                  relancer();
                 }
               });
             }
@@ -549,6 +614,8 @@
 
                   document.getElementById("scoreCroupier").style.color = "rgba(255,246,1,1)"
                   document.getElementById("scoreJoueur").style.color = "rgba(255,246,1,1)"
+
+                  relancer();
                 }
               });
             }
@@ -556,7 +623,6 @@
           
 
           }, 1800);
-
 
       }
 
@@ -794,7 +860,8 @@
 
                   document.getElementById("scoreCroupier").style.color = "rgba(61,255,1,1)"
                   document.getElementById("scoreJoueur").style.color = "rgba(255,1,49,1)"
-                  
+
+                  relancer();
                 }
               });
             }, 1000);
@@ -826,6 +893,8 @@
 
                   document.getElementById("scoreCroupier").style.color = "rgba(255,1,49,1)"
                   document.getElementById("scoreJoueur").style.color = "rgba(61,255,1,1)"
+
+                  relancer();
                 }
               });
             }, 1000);
