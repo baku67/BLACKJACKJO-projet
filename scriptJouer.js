@@ -11,6 +11,9 @@
       var miseEnCours;
       var miseLocked;
 
+      var compteurDeck = 52;
+      var compteurDeckMax = 52;
+
       var burstJoueur = false;
       
 
@@ -263,15 +266,19 @@
       ];
       //#endregion
 
-
       
 
       // JQUERY JAX : load Partie
       $("#newGame").click(function(){
 
+          
+
           $("#container1").load("jouerPartie.html");
 
           setTimeout( function lancerPartie() {
+
+              document.getElementById("compteurDeck").innerHTML = compteurDeck;
+              document.getElementById("compteurDeckMax").innerHTML = compteurDeckMax;
 
               $.ajax({
                 async: false,
@@ -679,6 +686,8 @@
         // Ajoute la var img à l'<ul> "#croupier"
         document.getElementById("croupier").appendChild(img);
 
+        decrementCompteurDeck()
+
         checkMiseWarning();
 
 
@@ -730,6 +739,8 @@
         img.className = "imgPartie";
         document.getElementById("joueur").appendChild(img);
 
+        decrementCompteurDeck()
+
         checkMiseWarning();
 
         checkBurstJoueur();
@@ -753,6 +764,10 @@
       }
 
 
+      function decrementCompteurDeck() {
+        compteurDeck = compteurDeck - 1;
+        document.getElementById("compteurDeck").innerHTML = compteurDeck;
+      }
 
 
       function checkBurstJoueur() {

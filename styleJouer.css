@@ -3,7 +3,16 @@
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	font-weight: bold;
 	font-size: 1.5em;
-	text-align: center;
+}
+#compteurDeck {
+	color: rgba(43, 39, 95, 0.55);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.3em;
+}
+#compteurDeckMax {
+	color: rgba(43, 39, 95, 0.55);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.37em;
 }
 
 
