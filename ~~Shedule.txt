@@ -1,3 +1,4 @@
+delay(TimeOut) quand on burst trop long
 
 WIP: hover choix
 Mediaqueries: juste baisser un max les boutons choix et hilo
