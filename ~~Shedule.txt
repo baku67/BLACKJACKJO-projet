@@ -1,4 +1,4 @@
-Je sais pas ou est ma chemise rouge et mon manteau noir 
+Footer en clignotement pdt phase de mise
 
 Bouton rejouer (onclick fait pareil que NewGame")
 

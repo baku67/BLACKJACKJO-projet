@@ -340,7 +340,7 @@
               }
             });
           }, 700);
-
+          
           setTimeout(function() {
             $.ajax({
               async: false,
@@ -350,10 +350,8 @@
                 $("#chipsContainer").html(response);
                 document.getElementById("footerTitle").innerHTML = " - Choix -";
                 document.getElementById("hit").addEventListener("click", function() {
-                  setTimeout(function() {
-                    addCardJoueur();
-                  }, 1000);
-                  // désactiver les boutons durant le setTimeoute
+
+                  hit();
 
                 });
                 document.getElementById("stand").addEventListener("click", function() {
@@ -398,6 +396,43 @@
 
         })
       }
+
+
+      function hit() {
+
+        $.ajax({
+          async: false,
+          url: "footerNone.html",
+          dataType: "html",
+          success: function(response) {
+            $("#chipsContainer").html(response);
+            document.getElementById("footerTitle").innerHTML = " - Distribution... -";
+          }
+        });
+
+        setTimeout(function() {
+          addCardJoueur();
+        }, 1000);
+        // désactiver les boutons durant le setTimeoute
+
+        setTimeout(function() {
+          $.ajax({
+            async: false,
+            url: "footerPhase2Modul.html",
+            dataType: "html",
+            success: function(response) {
+              $("#chipsContainer").html(response);
+              document.getElementById("footerTitle").innerHTML = " - Choix... -";
+              document.getElementById("hit").addEventListener("click", function() {
+
+                hit();
+
+              });
+            }
+          });
+        }, 1250);
+      }
+
 
 
       function lancerPhaseCroupier() {
@@ -588,12 +623,12 @@
 
       // WARNING si footerMise collapsed quand phase de Mise
       function checkMiseWarning() {
-        if ((isCollapsed == true) && (isPhaseMise == true)) {
-            document.getElementById("footerTitle").innerHTML = "- MISE -  /!\\";
-        }
-        else {
-        document.getElementById("footerTitle").innerHTML = "- MISE -";
-        }
+        // if ((isCollapsed == true) && (isPhaseMise == true)) {
+        //     document.getElementById("footerTitle").innerHTML = "- MISE -  /!\\";
+        // }
+        // else {
+        // document.getElementById("footerTitle").innerHTML = "- MISE -";
+        // }
       }
 
 
