@@ -1,15 +1,12 @@
+
+WIP: hover choix
+Mediaqueries: juste baisser un max les boutons choix et hilo
+
 Footer en clignotement pdt phase de mise
 
-Bouton rejouer (onclick fait pareil que NewGame")
+WIP: Bouton rejouer (onclick fait pareil que NewGame")
 
-DEROULEMENT:
-- Mise
-- 2 cartes JOUEUR / 1 carte CROUPIER
-- Phase "Hit"/"Stand" until STAND(phase suivante) ou BUST(>21: loose)
-    - Sauf si (condition = carte = x): "Doubler" (mise x 2)   ->   +1 carte ET "Stand" 
-- Comparaison des scores si JOUEUR pas BUST avant (push(=), win(J>C), lose(C>J)) !
-___________________________________________________________________________________________
------------------------------------------------------------------------------------------
+- MILESTONE: BDD -> compte(id,identifiant,mdp,solde) + historique(win/loose)   + [petit module qui affiche les dernieres Win/Loose en bas a droite]
 
 - TO DO: http://jsfiddle.net/gaby/Bek9L/1779/ (agrandir le footer sur PC)
 
@@ -98,3 +95,12 @@ Border blanc autour des mises et du score high low (jouer sur les padding/margin
 Quand jouer.html load footer collapsed (ou le retirer!)
 TO DO: Miser! Submit
 TO DO: Bouton Miser! grisé+nonClickable quand aucun mise
+___________________________________________________________________________________________
+DEROULEMENT:
+- Mise
+- 2 cartes JOUEUR / 1 carte CROUPIER
+- Phase "Hit"/"Stand" until STAND(phase suivante) ou BUST(>21: loose)
+    - Sauf si (condition = carte = x): "Doubler" (mise x 2)   ->   +1 carte ET "Stand" 
+- Comparaison des scores si JOUEUR pas BUST avant (push(=), win(J>C), lose(C>J)) !
+___________________________________________________________________________________________
+-----------------------------------------------------------------------------------------
