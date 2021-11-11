@@ -422,7 +422,7 @@ figure:active {
 }
 .imgPartie {
 	border: 1px solid rgba(0,0,0,0.1);
-	border-radius: 7px;
+	border-radius: 9px;
 	width: 7em;
 	opacity: 0.8;
 		/*  Les px de border ne compte pas en plus de la div  (pas de mess) */
@@ -810,9 +810,12 @@ p {
 	margin: 5px 8px; 
 	border: 1px solid rgba(252, 227, 3, 0.8); 
 	border-radius: 8px;
+	transition-property: font-size;
+	transition-duration: 0.3s;
 }
 #double:hover {
 	background: rgba(252, 227, 3, 0.2); 
+	font-size: 5em;
 }
 #hit {
 	color: rgba(44, 252, 3, 0.8);
@@ -823,22 +826,28 @@ p {
 	margin: 5px 8px; 
 	border: 1px solid rgba(44, 252, 3, 0.8); 
 	border-radius: 8px;
+	transition-property: font-size;
+	transition-duration: 0.3s;
 }
 #hit:hover {
 	background: rgba(44, 252, 3, 0.2);
+	font-size: 8.5em;
 }
 #stand {
 	color: rgba(252, 0, 0, 1);
-	font-size: 7em;
+	font-size: 6.5em;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	height: 90%; 
 	width: 150px; 
 	margin: 5px 8px; 
 	border: 1px solid rgba(252, 0, 0, 1); 
 	border-radius: 8px;
+	transition-property: font-size;
+	transition-duration: 0.3s;
 }
 #stand:hover {
 	background: rgba(253, 0, 0, 0.2);
+	font-size: 9em;
 }
 
 
