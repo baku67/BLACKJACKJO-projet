@@ -396,6 +396,11 @@
               success: function(response) {
                 $("#chipsContainer").html(response);
                 document.getElementById("footerTitle").innerHTML = " - Choix -";
+
+                  if (scoreTotalJoueur > 8 && scoreTotalJoueur < 12) {
+                    document.getElementById("double").style.opacity = 1;
+                  }
+
                 document.getElementById("hit").addEventListener("click", function() {
 
                   hit();

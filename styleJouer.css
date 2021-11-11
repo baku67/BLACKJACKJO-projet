@@ -852,9 +852,9 @@ p {
 #hit:hover {
 	color: rgba(44, 252, 3, 1);
 	background: rgb(14,121,9);
-	background: -moz-radial-gradient(circle, rgba(14,121,9,0.788953081232493) 50%, rgba(255,255,255,0) 100%);
-	background: -webkit-radial-gradient(circle, rgba(14,121,9,0.788953081232493) 50%, rgba(255,255,255,0) 100%);
-	background: radial-gradient(circle, rgba(14,121,9,0.788953081232493) 50%, rgba(255,255,255,0) 100%);
+	background: -moz-radial-gradient(circle, rgba(14,121,9,0.85) 50%, rgba(255,255,255,0) 100%);
+	background: -webkit-radial-gradient(circle, rgba(14,121,9,0.85) 50%, rgba(255,255,255,0) 100%);
+	background: radial-gradient(circle, rgba(14,121,9,0.85) 50%, rgba(255,255,255,0) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0e7909",endColorstr="#ffffff",GradientType=1);
 
 	border-width: 3px;
@@ -882,7 +882,7 @@ p {
 	background-repeat: no-repeat;
 	background-position: left 5%;
 	background-size: 75%; */
-	
+
 	/**** Gradient circle hover (simple efficace) *****/
 	background: rgb(126,2,16);
 	/* background: -moz-radial-gradient(circle, rgba(126,2,16,0.7413340336134453) 50%, rgba(255,255,255,0) 100%);
