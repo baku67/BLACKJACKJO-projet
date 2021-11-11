@@ -118,7 +118,7 @@ button, input[type="submit"], input[type="reset"] {
 	text-shadow: rgb(5, 2, 39) 8px 5px;
 
 	/* IMPORTANT */
-	margin-block-start: 0em;
+	margin-block-start: 10px;
     margin-block-end: 0em;
 }
 
@@ -322,10 +322,10 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	height: 6.3em;
 	margin: 1em 1.7em;
 	cursor: pointer;
-	opacity: 0.75;
+	opacity: 1;
 }
 .pokerChips:hover {
-	opacity: 1;
+	opacity: 0.80;
 }
 
 .champs {
@@ -362,7 +362,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 #container3 {
 	height: 183px;
 	display:inline-flex;
-	animation: fadeInAnimationPartieScore ease 1s; 
+	animation: fadeInAnimationPartieScore ease 2s; 
 	animation-iteration-count: 1; 
 	animation-fill-mode: forwards; 
 }
@@ -812,7 +812,7 @@ p {
 	border-radius: 8px;
 }
 #double:hover {
-	background: rgba(255,255,255,0.1);
+	background: rgba(252, 227, 3, 0.2); 
 }
 #hit {
 	color: rgba(44, 252, 3, 0.8);
@@ -825,7 +825,7 @@ p {
 	border-radius: 8px;
 }
 #hit:hover {
-	background: rgba(255,255,255,0.1);
+	background: rgba(44, 252, 3, 0.2);
 }
 #stand {
 	color: rgba(252, 0, 0, 1);
@@ -838,7 +838,7 @@ p {
 	border-radius: 8px;
 }
 #stand:hover {
-	background: rgba(255,255,255,0.1);
+	background: rgba(253, 0, 0, 0.2);
 }
 
 
