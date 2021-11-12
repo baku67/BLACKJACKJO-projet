@@ -512,13 +512,13 @@
 
       
           // Bug: toutes les cartes popent en meme temps
-          // setInterval (function() {
-          //   while (scoreTotalCroupier <= 17) {
-          //     addCardCroupier();
-          //   }
-          // }, 1000);
+          setInterval (function() {
+            while (scoreTotalCroupier <= 17) {
+              addCardCroupier();
+            }
+          }, 1000);
 
-          addCardCroupierRecursive();
+          // addCardCroupierRecursive();
 
           function addCardCroupierRecursive() {
             if (scoreTotalCroupier < 17) {
@@ -531,7 +531,7 @@
 
   
           setTimeout(function() {
-            if (scoreTotalCroupier > scoreTotalJoueur && scoreTotalCroupier > 16 && scoreTotalCroupier < 22) {
+            if (scoreTotalCroupier > scoreTotalJoueur && scoreTotalCroupier < 22) {
               $.ajax({
                 async: false,
                 url: "footerCroupierWin.html",
@@ -617,7 +617,7 @@
               });
             }
 
-            if (scoreTotalJoueur > scoreTotalCroupier && scoreTotalJoueur > 16) {
+            if (scoreTotalJoueur > scoreTotalCroupier) {
               $.ajax({
                 async: false,
                 url: "footerJoueurGagne.html",
