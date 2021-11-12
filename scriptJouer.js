@@ -292,6 +292,9 @@
               });
               miseBoutonStyle();
               miseLock();  
+
+              // document.getElementById("scoreJoueur").style.visibility = "visible";
+              // document.getElementById("scoreCroupier").style.visibility = "visible";
           }, 500)
       });
 
@@ -756,6 +759,7 @@
           elementScore.classList.add("scores");
           document.getElementById('scoreCroupier').innerHTML = scoreTotalCroupier;
           document.getElementById('scoreCroupier').classList.add("scoreBorder");
+          document.getElementById("scoreCroupier").style.visibility = "visible";
         }, 400);
       
         // Index de la pickedCard pour Splice() {càd remove from array by id}
@@ -805,6 +809,7 @@
         img.src = pickedCardObject.cardImageURL;
 
         scoreTotalJoueur += pickedCardObject.cardValue;
+
         
 
         // MàJ score avec petit delai (et refresh CSS)
@@ -815,6 +820,7 @@
           elementScore.classList.add("scores");
           document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;
           document.getElementById('scoreJoueur').classList.add("scoreBorder");
+          document.getElementById("scoreJoueur").style.visibility = "visible";
         }, 400);
 
         var picketCardIndex = cards.indexOf(pickedCardObject);
@@ -884,7 +890,7 @@
                   relancer();
                 }
               });
-            }, 2000);
+            }, 600);
         }
       }
 
@@ -917,7 +923,7 @@
                   relancer();
                 }
               });
-            }, 2000);
+            }, 600);
         }
       }
 
