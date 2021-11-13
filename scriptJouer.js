@@ -553,7 +553,7 @@
                     document.getElementById("scoreJoueur").style.backgroundColor = "rgba(215,31,48,1)"
 
                     document.getElementById("scoreCroupier").style.color = "rgba(255,245,0,1)"
-                    document.getElementById("scoreJoueur").style.color = "rgba(230,211,211,1)"
+                    document.getElementById("scoreJoueur").style.color = "rgba(239,230,230,1)"
 
                     document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)"
                     document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)"
@@ -584,7 +584,7 @@
                     document.getElementById("scoreCroupier").style.backgroundColor = "rgba(215,31,48,1)"
                     document.getElementById("scoreJoueur").style.backgroundColor = "rgba(59,217,10,1)"
 
-                    document.getElementById("scoreCroupier").style.color = "rgba(230,211,211,1)"
+                    document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)"
                     document.getElementById("scoreJoueur").style.color = "rgba(255,245,0,1)"
 
                     document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)"
@@ -616,7 +616,7 @@
                     document.getElementById("scoreCroupier").style.backgroundColor = "rgba(215,31,48,1)"
                     document.getElementById("scoreJoueur").style.backgroundColor = "rgba(59,217,10,1)"
 
-                    document.getElementById("scoreCroupier").style.color = "rgba(230,211,211,1)"
+                    document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)"
                     document.getElementById("scoreJoueur").style.color = "rgba(255,245,0,1)"
 
                     document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)"
@@ -907,7 +907,7 @@
                   document.getElementById("scoreJoueur").style.backgroundColor = "rgba(215,31,48,1)"
 
                   document.getElementById("scoreCroupier").style.color = "rgba(255,245,0,1)"
-                  document.getElementById("scoreJoueur").style.color = "rgba(230,211,211,1)"
+                  document.getElementById("scoreJoueur").style.color = "rgba(239,230,230,1)"
 
                   document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)"
                   document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)"
@@ -942,7 +942,7 @@
                   document.getElementById("scoreCroupier").style.backgroundColor = "rgba(215,31,48,1)"
                   document.getElementById("scoreJoueur").style.backgroundColor = "rgba(59,217,10,1)"
 
-                  document.getElementById("scoreCroupier").style.color = "rgba(230,211,211,1)"
+                  document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)"
                   document.getElementById("scoreJoueur").style.color = "rgba(255,245,0,1)"
 
                   document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)"
