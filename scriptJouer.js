@@ -441,10 +441,10 @@
           }, 2000);
           setTimeout(function() {
             addCardCroupier();
-          }, 4000);
+          }, 3750);
           setTimeout(function() {
             addCardJoueur();
-          }, 6000);
+          }, 5500);
 
         })
       }
@@ -530,7 +530,7 @@
               setTimeout(function() {
                 addCardCroupier();
                 addCardCroupierRecursive();
-              }, 1750)
+              }, 2000)
             }
             else {
               resultat();
