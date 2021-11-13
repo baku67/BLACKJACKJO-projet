@@ -15,6 +15,9 @@
       var compteurDeckMax = 52;
 
       var burstJoueur = false;
+
+      var asJoueur = new Boolean;
+      var asCroupier = new Boolean;
       
 
       //  Collapse Footer
@@ -276,6 +279,7 @@
 
               document.getElementById("compteurDeck").innerHTML = compteurDeck;
               document.getElementById("compteurDeckMax").innerHTML = compteurDeckMax;
+              
 
               $.ajax({
                 async: false,
@@ -680,7 +684,6 @@
       function tokensClick() {
         document.getElementById("whiteToken").addEventListener("click", function() {
           miseEnCours += 1;
-          console.log(miseEnCours);
           document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
           miseBoutonStyle();
           misePop();
@@ -691,7 +694,6 @@
         })
         document.getElementById("redToken").addEventListener("click", function() {
           miseEnCours += 5;
-          console.log(miseEnCours);
           document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
           miseBoutonStyle();
           misePop();
@@ -702,7 +704,6 @@
         })
         document.getElementById("greenToken").addEventListener("click", function() {
           miseEnCours += 10;
-          console.log(miseEnCours);
           document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
           miseBoutonStyle();
           misePop();
@@ -713,7 +714,6 @@
         })
         document.getElementById("blueToken").addEventListener("click", function() {
           miseEnCours += 25;
-          console.log(miseEnCours);
           document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
           miseBoutonStyle();
           misePop();
@@ -724,7 +724,7 @@
         })
         document.getElementById("blackToken").addEventListener("click", function() {
           miseEnCours += 100;
-          console.log(miseEnCours);
+
           document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
           miseBoutonStyle();
           misePop();
@@ -753,7 +753,6 @@
       function phaseMise() {
         isPhaseMise = true;
         miseEnCours = 0;
-        console.log(miseEnCours);
         document.getElementById("miseEnCours").innerHTML = miseEnCours;
       }
 
@@ -769,6 +768,12 @@
         // Associe la VALUE de la KEY "cardImageUrl", à l'attribut HTML de l'<img> créé
         img.src = pickedCardObject.cardImageURL;
 
+        // Choix du AS non affiché pour le croupier (titre)
+        // if (pickedCardObject.cardValue == 1) {
+        //   asCroupier = true;
+        // }
+        //FIN
+
         // Scores Total Croupier
         scoreTotalCroupier += pickedCardObject.cardValue;
 
@@ -778,15 +783,24 @@
           elementScore.classList.remove("scores");
           void elementScore.offsetWidth;
           elementScore.classList.add("scores");
+
+          // Choix du AS non affiché pour le croupier (titre)
+          // if (asCroupier == true) {
+          //   document.getElementById('scoreCroupier').style.letterSpacing = 0;
+          //   document.getElementById('scoreCroupier').innerHTML = scoreTotalCroupier + " / " + (scoreTotalCroupier + 10);
+          // }
+          // else {
+          //   document.getElementById('scoreCroupier').innerHTML = scoreTotalCroupier;
+          // }
+          //FIN
           document.getElementById('scoreCroupier').innerHTML = scoreTotalCroupier;
+
           document.getElementById('scoreCroupier').classList.add("scoreBorder");
           document.getElementById("scoreCroupier").style.visibility = "visible";
         }, 400);
       
         // Index de la pickedCard pour Splice() {càd remove from array by id}
         var picketCardIndex = cards.indexOf(pickedCardObject);
-        console.log(pickedCardObject);
-        console.log("pickedCardIndex: " + picketCardIndex);
         cards.splice(picketCardIndex, 1);
         // fin
         // cards.splice(picketCardIndex, 1);
@@ -826,8 +840,16 @@
       // NOUVELLE CARTE  > JOUEUR (+ScoreTOTAL)
       function addCardJoueur() {
         var img = document.createElement('img');
-        let pickedCardObject = cards[Math.floor(Math.random()*cards.length)]
+        let pickedCardObject = cards[Math.floor(Math.random()*cards.length)];
         img.src = pickedCardObject.cardImageURL;
+        
+
+        //WIP AS
+        if (pickedCardObject.cardValue == 1) {
+          asJoueur = true;
+          console.log(asJoueur + " TRUE!");
+        }
+        //FIN
 
         scoreTotalJoueur += pickedCardObject.cardValue;
 
@@ -839,14 +861,27 @@
           elementScore.classList.remove("scores");
           void elementScore.offsetWidth;
           elementScore.classList.add("scores");
-          document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;
+
+          //WIP AS 
+          if (asJoueur == true) {
+            if ((scoreTotalJoueur + 10) > 21) {
+              document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;
+            }
+            else {
+              document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur + " / " + (scoreTotalJoueur + 10);
+            }
+          }
+          else {
+            document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;
+          }
+          //FIN
+
+          // document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;  // Avec if bool AS , innerHTML = ... / ....
           document.getElementById('scoreJoueur').classList.add("scoreBorder");
           document.getElementById("scoreJoueur").style.visibility = "visible";
         }, 400);
 
         var picketCardIndex = cards.indexOf(pickedCardObject);
-        console.log(pickedCardObject);
-        console.log("pickedCardIndex: " + picketCardIndex);
         cards.splice(picketCardIndex, 1);
 
         img.className = "imgPartie";
