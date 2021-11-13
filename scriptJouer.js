@@ -287,6 +287,7 @@
                 dataType: "html",
                 success: function(response) {
                   $("#container3").html(response);
+                  // document.getElementById("collapsible").style.visibility = "visible";
                   footerShow();
                   phaseMise();
                   document.getElementById("footerTitle").innerHTML = " - MISE -";
