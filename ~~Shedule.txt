@@ -5,7 +5,7 @@
 
 !!!!!!!!!!!!!!!!!!!!!!!!
 
-Footer en clignotement pdt phase de mise: Pendant footerMiseModul.html clignotement 
+(EZ + important UX) Footer en clignotement pdt phase de mise: Pendant footerMiseModul.html clignotement 
 Container des cards Joueur/Croupier pour border lord du Resultat()
 La Phase AS se joue avant lancerPhaseCroupier()
 
