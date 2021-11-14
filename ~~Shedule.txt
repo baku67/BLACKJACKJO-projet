@@ -1,4 +1,3 @@
-
 !!!!!!!!!!!!!!!!!!!!!!!!
 
 - Formalité (UX + sympa): IMPORTANT: fadeInAnimationPartieScore1 (le refresh du scoreJoueur/Croupier) devrait etre moins eblouissant (opacity pas à O pour animation{0%})
@@ -7,10 +6,24 @@
 !!!!!!!!!!!!!!!!!!!!!!!!
 
 Footer en clignotement pdt phase de mise: Pendant footerMiseModul.html clignotement 
+Container des cards Joueur/Croupier pour border lord du Resultat()
+La Phase AS se joue avant lancerPhaseCroupier()
+
+!!!!!!!!!!!!!!!!!!!!!!!!
+
+Ajouter le Button Footer "Continuer!" (qui prend tout le footer load) avec border highlight  [genre massif]  //prérequis: coriger la relance
 
 !!!!!!!!!!!!!!!!!!!!!!!!
 
 
+
+
+
+
+
+
+
+Translate Card.png du Deck vers la droite avec un FadeOut  
 
 Quand Joueur/Croupier bust: boom.png en arriere-plan des cartes (index?) *Demerde-toi en gros*
 Mediaqueries: juste baisser un max les boutons choix et hilo

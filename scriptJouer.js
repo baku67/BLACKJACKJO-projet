@@ -530,7 +530,7 @@
               setTimeout(function() {
                 addCardCroupier();
                 addCardCroupierRecursive();
-              }, 2000)
+              }, 2150)
             }
             else {
               resultat();
