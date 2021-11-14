@@ -1,59 +1,43 @@
-delay(TimeOut) quand on burst trop long
 
-WIP: hover choix
-Mediaqueries: juste baisser un max les boutons choix et hilo
-
-Footer en clignotement pdt phase de mise
-
-WIP: Bouton rejouer (onclick fait pareil que NewGame")
-
-- MILESTONE: BDD -> compte(id,identifiant,mdp,solde) + historique(win/loose)   + [petit module qui affiche les dernieres Win/Loose en bas a droite]
-
-- TO DO: http://jsfiddle.net/gaby/Bek9L/1779/ (agrandir le footer sur PC)
-
-- Contour des cartes plus foncé
-
-- TO DO: Scores(J/C)-apparition deforme height responsive inexistante (lourd)
-
-- TO DO: Changer Colorborder ou Colorscore quand BUST 
+!!!!!!!!!!!!!!!!!!!!!!!!
 
 - Formalité (UX + sympa): IMPORTANT: fadeInAnimationPartieScore1 (le refresh du scoreJoueur/Croupier) devrait etre moins eblouissant (opacity pas à O pour animation{0%})
    L'effet est super stylé pour le premier Pop des scores mais apres c'est pas beau le refresh (0! -> 0.7)
 
+!!!!!!!!!!!!!!!!!!!!!!!!
+
+Footer en clignotement pdt phase de mise: Pendant footerMiseModul.html clignotement 
+
+!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+Quand Joueur/Croupier bust: boom.png en arriere-plan des cartes (index?) *Demerde-toi en gros*
+Mediaqueries: juste baisser un max les boutons choix et hilo
+WIP: Bouton rejouer (onclick fait pareil que NewGame")
+
+- MILESTONE: BDD -> compte(id,identifiant,mdp,solde) + historique(win/loose)   + [petit module qui affiche les dernieres Win/Loose en bas a droite]
+
 - PENDANT PHASE MISE: TOUT LE FOOTER clignote faiblement/ouPas (blanc ou mêmes couleurs que bouton)
         S'ARRETE QUAND MISE LOCKED
 
-- Virer les cards High-Low (pas de load ducoup :/  )
-
 ScorePop sur le MiseLocked + SCOREPOP et MISEPOP sur le container ? (bugué)
 
-Le Score High-Low est contenu dans "#container3" ducoup il est rechargé à chaque ajax (mise/HiLo):
 
-Refaire les tailles (css: zoom ne marche pas sur FireFox)
 
 CALME TOI (super FUN): png de la carte face caché -> rotate + translate avec fade out vers le camp approprié !
 
 background.png : reprendre l'original -> moins transparent (pas de opacity ici)
---> TO DO (fun): Clignotement lent/infini du border bouton Miser! quand ajout de mise
 
 TO DO (CSS+Photoshop): Redesign background bouton "LancerPartie" (EX: ajout de ~dentellesPNG~ blancs sur les 2 cotés en plus du gradient)
 TO DO: Garder la meme height de Footer quand load Mise
 TO DO (fun): checkMiseWarning: actif = titre footer border jaune (avec animation itération infinite et loop opacity up and down) genre clignotement border jaune assez lent
-TO DO (fun): Indicateur sous le deck: chances de Buche
 TO DO /!\ :  Height flex sur container1 (partie)
 
 TO DO (UX): Collapse button sur toute la barre 
-TO DO: Mettre dans l'ordre: Mise PUIS addCardCroupier (validateur pour mise?)
 TO DO (CSS): Revoir style Bouton "Nouvelle Partie" + les OnClick()/OnHover
-TO DO: Ajouter Deck à gauche (garder fight centré), avec nbrCardsRestantes dessus (cards.length)
 
 collapse smooth: https://jsbin.com/xihawedasa/edit?html,output (réalisable)
-
-TO DO (calme-toi + fun): Load remplacer compteur (cartes - laisser score) par Mise (html): <li>jetons  !(+while mise: blur container(jeu) !)
-TO DO (calme-toi + fun): Pour le compteur cartes (footer): switch (booleen) auto scoring [IMPORTANT CAR PAS LE TEMPS DE FAIRE MANUELLEMNT]
-TO DO (calme-toi + fun): Lorsque une Card Pop, fleche et highlight la carte du compteur correspondante
-
-
 
 
 TO DO (hotfix-css): "JE VEINS DE VOIR QU'IL Y A UNE CESURE (horizontale + verticale) "background.png" {Rsolution+COMRPESSION! à voir)}
@@ -93,9 +77,20 @@ Mettre JouerPartie.html en index
 FADE Cards et compteur 
 scoreContainer border change color quand positif ou negatif
 Border blanc autour des mises et du score high low (jouer sur les padding/margin)
+TO DO (calme-toi + fun): Load remplacer compteur (cartes - laisser score) par Mise (html): <li>jetons  !(+while mise: blur container(jeu) !)
+TO DO (calme-toi + fun): Pour le compteur cartes (footer): switch (booleen) auto scoring [IMPORTANT CAR PAS LE TEMPS DE FAIRE MANUELLEMNT]
 Quand jouer.html load footer collapsed (ou le retirer!)
+TO DO: Mettre dans l'ordre: Mise PUIS addCardCroupier 
 TO DO: Miser! Submit
 TO DO: Bouton Miser! grisé+nonClickable quand aucun mise
+- Virer les cards High-Low 
+TO DO: Nouveau module: Tokens
+Hover: choix(hit/stand/double)
+ TO DO: Scores(J/C)- apparition deforme height responsive
+ Le Score High-Low est contenu dans "#container3" ducoup il est rechargé à chaque ajax (mise/HiLo)
+ --> TO DO (fun): Clignotement lent/infini du border bouton Miser! quand ajout de mise
+ TO DO: Garder la meme height de Footer quand load Mise
+ TO DO: Ajouter Deck à gauche (garder fight centré), avec nbrCardsRestantes dessus 
 ___________________________________________________________________________________________
 DEROULEMENT:
 - Mise
