@@ -1,3 +1,6 @@
+Ajouter carteCroupier face cachée lors ditribution afterMise (plus compréhensible), puis los de phase Stand: l'enlever AU MOMENT de la boucle While  (gérer transition propre)
+
+
 !!!!!!!!!!!!!!!!!!!!!!!!
 
 - Formalité (UX + sympa): IMPORTANT: fadeInAnimationPartieScore1 (le refresh du scoreJoueur/Croupier) devrait etre moins eblouissant (opacity pas à O pour animation{0%})
@@ -7,7 +10,7 @@
 
 (EZ + important UX) Footer en clignotement pdt phase de mise: Pendant footerMiseModul.html clignotement 
 Container des cards Joueur/Croupier pour border lord du Resultat()
-La Phase AS se joue avant lancerPhaseCroupier()
+La Phase AS se joue avant lancerPhaseCroupier() ...
 
 !!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -16,14 +19,9 @@ Ajouter le Button Footer "Continuer!" (qui prend tout le footer load) avec borde
 !!!!!!!!!!!!!!!!!!!!!!!!
 
 
-
-
-
-
-
-
-
 Translate Card.png du Deck vers la droite avec un FadeOut  
+
+
 
 Quand Joueur/Croupier bust: boom.png en arriere-plan des cartes (index?) *Demerde-toi en gros*
 Mediaqueries: juste baisser un max les boutons choix et hilo

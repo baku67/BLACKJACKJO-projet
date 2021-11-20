@@ -434,7 +434,7 @@
 
               }
             });
-          }, 6500);
+          }, 8000);
 
           setTimeout(function() {
             addCardJoueur();
@@ -445,8 +445,19 @@
           setTimeout(function() {
             addCardJoueur();
           }, 5500);
+          setTimeout(function() {
+            addBackCardCroupier();
+          }, 7000);
 
         })
+      }
+
+
+      function addBackCardCroupier() {
+        var img = document.createElement('img');
+        img.src = "deck2.png";
+        document.getElementById("croupier").appendChild(img);
+
       }
 
 
