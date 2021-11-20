@@ -1,26 +1,35 @@
-Ajouter carteCroupier face cachée lors ditribution afterMise (plus compréhensible), puis los de phase Stand: l'enlever AU MOMENT de la boucle IF récursive  (gérer transition propre)
+
+*Refonte: Rejouer et Mise vont de paire (intérêt)*
+
+
+*********** Zone d'idées mediaQueries ************
+ L'espace séparateur Croupier/Jouer devient une div avec une height 
+ Les cartes et le texte/titres sont plus petits (tester!)
+**************************************************
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!
 
-- Formalité (UX + sympa): IMPORTANT: fadeInAnimationPartieScore1 (le refresh du scoreJoueur/Croupier) devrait etre moins eblouissant (opacity pas à O pour animation{0%})
-   L'effet est super stylé pour le premier Pop des scores mais apres c'est pas beau le refresh (0! -> 0.7)
+{
+fadeInAnimationPartieScore1 (le refresh du scoreJoueur/Croupier) devrait etre moins eblouissant (opacity pas à O pour animation{0%}) ////// OU ALORS: Ajouter un fadeOut() *rapide* avant la Màj du score  
+  -> L'effet est super stylé pour le premier Pop des scores mais apres c'est pas beau le refresh (0! -> 0.7)
+}
 
 !!!!!!!!!!!!!!!!!!!!!!!!
 
-(EZ + important UX) Footer en clignotement pdt phase de mise: Pendant footerMiseModul.html clignotement 
-Container des cards Joueur/Croupier pour border lord du Resultat()
-La Phase AS se joue avant lancerPhaseCroupier() ...
+- (EZ + important UX) Footer en clignotement (SOBRE:blanc pour commencer) pdt phase de mise: Pendant footerMiseModul.html clignotement 
+- Container des cards Joueur/Croupier pour border lord du Resultat()
+- La Phase AS se joue avant lancerPhaseCroupier() ...
 
 !!!!!!!!!!!!!!!!!!!!!!!!
 
-Ajouter le Button Footer "Continuer!" (qui prend tout le footer load) avec border highlight  [genre massif]  //prérequis: coriger la relance
+- Ajouter le Button Footer "Continuer!" (qui prend tout le footer load) avec border highlight  [genre massif]  //prérequis: coriger la relance
 
 !!!!!!!!!!!!!!!!!!!!!!!!
 
+- Translate Card.png du Deck vers la droite avec un FadeOut  
 
-Translate Card.png du Deck vers la droite avec un FadeOut  
-
+!!!!!!!!!!!!!!!!!!!!!!!!
 
 
 Quand Joueur/Croupier bust: boom.png en arriere-plan des cartes (index?) *Demerde-toi en gros*
@@ -28,9 +37,6 @@ Mediaqueries: juste baisser un max les boutons choix et hilo
 WIP: Bouton rejouer (onclick fait pareil que NewGame")
 
 - MILESTONE: BDD -> compte(id,identifiant,mdp,solde) + historique(win/loose)   + [petit module qui affiche les dernieres Win/Loose en bas a droite]
-
-- PENDANT PHASE MISE: TOUT LE FOOTER clignote faiblement/ouPas (blanc ou mêmes couleurs que bouton)
-        S'ARRETE QUAND MISE LOCKED
 
 ScorePop sur le MiseLocked + SCOREPOP et MISEPOP sur le container ? (bugué)
 
@@ -102,6 +108,8 @@ Hover: choix(hit/stand/double)
  --> TO DO (fun): Clignotement lent/infini du border bouton Miser! quand ajout de mise
  TO DO: Garder la meme height de Footer quand load Mise
  TO DO: Ajouter Deck à gauche (garder fight centré), avec nbrCardsRestantes dessus 
+ Ajouter carteCroupier face cachée lors ditribution afterMise (plus compréhensible), puis los de phase Stand: l'enlever AU MOMENT de la boucle IF récursive  (gérer transition propre)
+
 ___________________________________________________________________________________________
 DEROULEMENT:
 - Mise

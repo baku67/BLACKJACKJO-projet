@@ -535,7 +535,6 @@
 
             setTimeout(function() {
               document.getElementById("backCardCroupier").remove();
-              document.getElementById("backCardCroupier").remove();
             }, 2150)
             
             if (scoreTotalCroupier < 17) {
