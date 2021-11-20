@@ -455,9 +455,10 @@
 
       function addBackCardCroupier() {
         var img = document.createElement('img');
+        img.id = "backCardCroupier";
+        img.className = "imgPartie";
         img.src = "deck2.png";
         document.getElementById("croupier").appendChild(img);
-
       }
 
 
@@ -515,7 +516,6 @@
 
 
       function lancerPhaseCroupier() {
-
           $.ajax({
             async: false,
             url: "footerNone.html",
@@ -537,6 +537,11 @@
           addCardCroupierRecursive();
 
           function addCardCroupierRecursive() {
+
+            setTimeout(function() {
+              document.getElementById("backCardCroupier").remove();
+            }, 2150)
+            
             if (scoreTotalCroupier < 17) {
               setTimeout(function() {
                 addCardCroupier();

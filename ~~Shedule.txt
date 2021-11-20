@@ -1,4 +1,4 @@
-Ajouter carteCroupier face cachée lors ditribution afterMise (plus compréhensible), puis los de phase Stand: l'enlever AU MOMENT de la boucle While  (gérer transition propre)
+Ajouter carteCroupier face cachée lors ditribution afterMise (plus compréhensible), puis los de phase Stand: l'enlever AU MOMENT de la boucle IF récursive  (gérer transition propre)
 
 
 !!!!!!!!!!!!!!!!!!!!!!!!
