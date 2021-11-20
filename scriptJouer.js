@@ -526,19 +526,15 @@
             }
           });
 
-      
-          // Bug: toutes les cartes popent en meme temps
-          // setInterval (function() {
-          //   while (scoreTotalCroupier <= 17) {
-          //     addCardCroupier();
-          //   }
-          // }, 1000);
-
           addCardCroupierRecursive();
 
           function addCardCroupierRecursive() {
+            setTimeout(function() {
+              document.getElementById("backCardCroupier").classList.add("fadeOut2");
+            }, 1550)
 
             setTimeout(function() {
+              document.getElementById("backCardCroupier").remove();
               document.getElementById("backCardCroupier").remove();
             }, 2150)
             

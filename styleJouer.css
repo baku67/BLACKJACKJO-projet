@@ -26,6 +26,8 @@ button, input[type="submit"], input[type="reset"] {
 	outline: inherit;
 }
 
+
+
 .fadeOut {
 	visibility: hidden;
 	opacity: 0;
@@ -35,6 +37,11 @@ button, input[type="submit"], input[type="reset"] {
 	visibility: visible;
 	opacity: 1;
 	transition: opacity 2s linear;
+}
+
+.fadeOut2 {
+	opacity: 0;
+	transition: opacity 0.6s linear;
 }
 
 #header {
@@ -1005,16 +1012,7 @@ p {
 	}
   };
 
-  /* #backCardCroupier {
-	  width: 7em;
 
-	  margin: 0 0.4em 0 0.4em;
-
-	  transition: all 0.5s;
-	  animation: fadeInAnimationPartie ease 1.5s;
-		animation-iteration-count: 1;
-		animation-fill-mode: forwards;
-  } */
 
 
 
