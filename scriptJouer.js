@@ -959,11 +959,11 @@
 
                   // Perdu BURST (Ajouter icone boom.png (assez grand) dans le séparateur)
                     // Rubans Gagné/Perdu 
-                  document.getElementById("croupier").style.backgroundColor = "rgba(61,255,1,0.3)";
-                  document.getElementById("joueur").style.backgroundColor = "rgba(255,1,49,0.3)";
+                  // document.getElementById("croupier").style.backgroundColor = "rgba(61,255,1,0.3)";
+                  // document.getElementById("joueur").style.backgroundColor = "rgba(255,1,49,0.3)";
 
-                  document.getElementById("croupier").style.border = "1px solid rgba(61,255,1,0.5)";
-                  document.getElementById("joueur").style.border = "1px solid rgba(255,1,49,0.5)";
+                  // document.getElementById("croupier").style.border = "1px solid rgba(61,255,1,0.5)";
+                  // document.getElementById("joueur").style.border = "1px solid rgba(255,1,49,0.5)";
                     // Fin rubans
 
                   document.getElementById("scoreCroupier").style.backgroundColor = "rgba(59,217,10,1)"
@@ -979,6 +979,27 @@
                   document.getElementById("scoreJoueur").style.border = "1px solid rgba(255,1,49,0.5)";
                   // Fin Perdu BURST
 
+
+
+                  // WIP separateur avec résultat
+                  // Animation scale() qui pop avec fadeIn()
+
+                  document.getElementById("separateur").classList.add("fadeInResultat");
+                  
+                  document.getElementById("separateur").style.backgroundColor = "rgba(142,0,27,0.80)";
+                  document.getElementById("separateur").style.border = "5px solid rgba(255,139,164,0.5)";
+                  document.getElementById("separateur").style.borderRadius = "14px";
+                  document.getElementById("separateur").style.margin = "margin: 60px auto 60px auto";
+
+
+                  document.getElementById("resultatText").innerText = "BUST";
+
+                  // Fin separateur
+
+
+
+
+
                   // Bouton Rejouer
                   relancer();
                 }
@@ -989,6 +1010,9 @@
 
       
       function checkBJjoueur() {
+        // ATTENTION: Bugued à cause du WIP AS (pour l'instant la valeur de l'AS est 1, deuxième score (21) juste affiché)
+        // Proc lors de faux BlackJack (Add condition nbrCardJoueur == 2)
+
         if (scoreTotalJoueur == 21) {
           //      "|| nbrOfJoueurCards == 2"     (pour le vrai BJ)
 

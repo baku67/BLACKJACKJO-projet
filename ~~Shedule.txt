@@ -1,6 +1,7 @@
 
 Séparateur: Div avec Strong "Gagné"/"Perdu" avec background color Rouge/Vert correspondant (Virer les anciens backgroundColor résultat)
  -> Footer "Bank win",etc devient "Gain: 200E"
+ -> Avec bouton relancer intégré dans le séparateur !
 
 
 API Youtube: <iframe> Lofi HipHop (sans video grace à height et width: 0 )
