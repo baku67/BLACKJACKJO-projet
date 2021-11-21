@@ -1,6 +1,17 @@
 
+Séparateur: Div avec Strong "Gagné"/"Perdu" avec background color Rouge/Vert correspondant (Virer les anciens backgroundColor résultat)
+ -> Footer "Bank win",etc devient "Gain: 200E"
+
+
+API Youtube: <iframe> Lofi HipHop (sans video grace à height et width: 0 )
+
+Ajouter petits sons sympas pour distribution et résultat ! (+hover boutonChoix?)
+
+FIX: Le x2 proc pas le footer "Distribution..." 
+
 *Refonte: Rejouer et Mise vont de paire (intérêt)*
 
+//Millestones: Après AS ok, tableau des conseils Choix
 
 *********** Zone d'idées mediaQueries ************
  L'espace séparateur Croupier/Jouer devient une div avec une height 

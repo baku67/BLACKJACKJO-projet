@@ -560,11 +560,12 @@
                     console.log(scoreTotalCroupier);
                     document.getElementById("footerTitle").innerHTML = " - Perdu -";
 
-                    // rubans de Win/Loose
+                    // Perdu
+                      // rubans de Win/Loose
                     document.getElementById("croupier").style.backgroundColor = "rgba(61,255,1,0.3)";
                     document.getElementById("joueur").style.backgroundColor = "rgba(255,1,49,0.3)";
+                      // Fin rubans
                     
-                    // WIP
                     document.getElementById("scoreCroupier").style.backgroundColor = "rgba(59,217,10,1)"
                     document.getElementById("scoreJoueur").style.backgroundColor = "rgba(215,31,48,1)"
 
@@ -576,7 +577,9 @@
 
                     document.getElementById("scoreCroupier").style.border = "1px solid rgba(58,157,32,0.5)";
                     document.getElementById("scoreJoueur").style.border = "1px solid rgba(255,1,49,0.5)";                  
-
+                    // Fin Perdu
+                  
+                    // Bouton Rejouer
                     relancer();
                   }
                 });
@@ -592,10 +595,11 @@
                     console.log(scoreTotalCroupier);
                     document.getElementById("footerTitle").innerHTML = " - Gagné -";
 
-                    // WIP: Gagné
-                    // rubans de Win/Loose
+                    // Gagné
+                      // rubans de Win/Loose
                     document.getElementById("croupier").style.backgroundColor = "rgba(255,1,49,0.3)";
                     document.getElementById("joueur").style.backgroundColor = "rgba(61,255,1,0.3)";
+                      // Fin rubans
                     
                     document.getElementById("scoreCroupier").style.backgroundColor = "rgba(215,31,48,1)"
                     document.getElementById("scoreJoueur").style.backgroundColor = "rgba(59,217,10,1)"
@@ -608,7 +612,9 @@
 
                     document.getElementById("scoreCroupier").style.border = "1px solid rgba(255,1,49,0.5)";
                     document.getElementById("scoreJoueur").style.border = "1px solid rgba(58,157,32,0.5)";
-
+                    // Fin Gagné
+                  
+                    // Bouton Rejouer
                     relancer();
                   }
                 });
@@ -624,11 +630,12 @@
                     console.log(scoreTotalCroupier);
                     document.getElementById("footerTitle").innerHTML = " - Gagné -";
 
-                    // WIP: Gagné
-                    // rubans de Win/Loose
+                    // Gagné
+                      // rubans de Win/Loose
                     document.getElementById("croupier").style.backgroundColor = "rgba(255,1,49,0.3)";
                     document.getElementById("joueur").style.backgroundColor = "rgba(61,255,1,0.3)";
-                    
+                      // Fin rubans
+
                     document.getElementById("scoreCroupier").style.backgroundColor = "rgba(215,31,48,1)"
                     document.getElementById("scoreJoueur").style.backgroundColor = "rgba(59,217,10,1)"
 
@@ -640,7 +647,9 @@
 
                     document.getElementById("scoreCroupier").style.border = "1px solid rgba(255,1,49,0.5)";
                     document.getElementById("scoreJoueur").style.border = "1px solid rgba(58,157,32,0.5)";
-
+                    // Fin Gagné
+                  
+                    // Bouton Rejouer
                     relancer();
                   }
                 });
@@ -656,8 +665,11 @@
                     console.log(scoreTotalCroupier);
                     document.getElementById("footerTitle").innerHTML = " - Egualité -";
 
+                    // Égalité
+                      // rubans jaunes
                     document.getElementById("scoreCroupier").style.border = "solid 2px rgba(0,0,0,0.5)";
                     document.getElementById("scoreJoueur").style.border = "solid 2px rgba(0,0,0,0.5)";
+                      // Fin rubans
 
                     document.getElementById("croupier").style.backgroundColor = "rgba(255,246,1,0.5)";
                     document.getElementById("joueur").style.backgroundColor = "rgba(255,246,1,0.5)";
@@ -673,7 +685,9 @@
 
                     document.getElementById("scoreCroupier").style.backgroundColor = "rgba(255,246,1,1)";
                     document.getElementById("scoreJoueur").style.backgroundColor = "rgba(255,246,1,1)";
-
+                    // Fin Égalité
+                  
+                    // Bouton Rejouer
                     relancer();
                   }
                 });
@@ -943,13 +957,15 @@
                   $("#container3").html(response);
                   document.getElementById("footerTitle").innerHTML = " - Perdu -";
 
-                  document.getElementById("croupier").style.border = "1px solid rgba(61,255,1,0.5)";
-                  document.getElementById("joueur").style.border = "1px solid rgba(255,1,49,0.5)";
-
+                  // Perdu BURST (Ajouter icone boom.png (assez grand) dans le séparateur)
+                    // Rubans Gagné/Perdu 
                   document.getElementById("croupier").style.backgroundColor = "rgba(61,255,1,0.3)";
                   document.getElementById("joueur").style.backgroundColor = "rgba(255,1,49,0.3)";
 
-                  // WIP
+                  document.getElementById("croupier").style.border = "1px solid rgba(61,255,1,0.5)";
+                  document.getElementById("joueur").style.border = "1px solid rgba(255,1,49,0.5)";
+                    // Fin rubans
+
                   document.getElementById("scoreCroupier").style.backgroundColor = "rgba(59,217,10,1)"
                   document.getElementById("scoreJoueur").style.backgroundColor = "rgba(215,31,48,1)"
 
@@ -961,7 +977,9 @@
 
                   document.getElementById("scoreCroupier").style.border = "1px solid rgba(58,157,32,0.5)";
                   document.getElementById("scoreJoueur").style.border = "1px solid rgba(255,1,49,0.5)";
+                  // Fin Perdu BURST
 
+                  // Bouton Rejouer
                   relancer();
                 }
               });
@@ -981,10 +999,13 @@
                 dataType: "html",
                 success: function(response) {
                   $("#container3").html(response);
-                  document.getElementById("footerTitle").innerHTML = " - Perdu -";
+                  document.getElementById("footerTitle").innerHTML = " - BlackJack! -";
                   
+                  // Gagné BLACKJACK (Ajouter icone BJ.png (assez grand) dans le séparateur)
+                    // Rubans Gagné/Perdu
                   document.getElementById("croupier").style.backgroundColor = "rgba(255,1,49,0.3)";
                   document.getElementById("joueur").style.backgroundColor = "rgba(61,255,1,0.3)";
+                    // Fin rubans
                   
                   document.getElementById("scoreCroupier").style.backgroundColor = "rgba(215,31,48,1)"
                   document.getElementById("scoreJoueur").style.backgroundColor = "rgba(59,217,10,1)"
@@ -997,7 +1018,9 @@
 
                   document.getElementById("scoreCroupier").style.border = "1px solid rgba(255,1,49,0.5)";
                   document.getElementById("scoreJoueur").style.border = "1px solid rgba(58,157,32,0.5)";
+                  // Fin Gagné BLACKJACK
 
+                  // Bouton Rejouer
                   relancer();
                 }
               });
