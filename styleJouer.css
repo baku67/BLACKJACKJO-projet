@@ -314,12 +314,15 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 }
 
 
+.marginFix {
+	margin: 60px auto 45px auto !important;
+}
+
 #separateur {
 	height: 80px;
 	width: 30%;
 	text-align: center; 
 
-	/* margin: 25px auto 20px auto; */
 	margin: 60px auto 55px auto;
 }
 

@@ -985,14 +985,11 @@
                   // Animation scale() qui pop avec fadeIn()
 
                   document.getElementById("separateur").classList.add("fadeInResultat");
+                  document.getElementById("separateur").classList.add("marginFix");
 
-                  // document.getElementById("separateur").style.backgroundColor = "rgba(142,0,27,0.80)";
-                  document.getElementById("separateur").style.background = "rgba(142,0,27,0.80) url(\"boom2.png\") no-repeat scroll 50% 50%";
-                  document.getElementById("separateur").style.border = "5px solid rgba(255,139,164,0.5)";
-                  document.getElementById("separateur").style.borderRadius = "14px";
-                  document.getElementById("separateur").style.margin = "margin: 60px auto 50px auto";
-
-                  // document.getElementsByClassName("imgPartie").style.border = "4px solid red"; mettre un add("borderResultat")
+                  document.getElementById("separateur").style.background = "rgba(142,0,27,0.80) url(\"boomPng.png\") no-repeat scroll 50% 50%";
+                  document.getElementById("separateur").style.border = "5px solid rgba(215,31,48, 0.85)";
+                  document.getElementById("separateur").style.borderRadius = "10px";
 
                   document.getElementById("resultatText").innerText = "BUST";
 
