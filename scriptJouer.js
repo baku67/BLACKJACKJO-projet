@@ -958,6 +958,7 @@
                   document.getElementById("footerTitle").innerHTML = " - Perdu -";
 
                   // Perdu BURST (Ajouter icone boom.png (assez grand) dans le séparateur)
+
                     // Rubans Gagné/Perdu 
                   // document.getElementById("croupier").style.backgroundColor = "rgba(61,255,1,0.3)";
                   // document.getElementById("joueur").style.backgroundColor = "rgba(255,1,49,0.3)";
@@ -987,8 +988,9 @@
                   document.getElementById("separateur").classList.add("fadeInResultat");
                   document.getElementById("separateur").classList.add("marginFix");
 
+
                   document.getElementById("separateur").style.background = "rgba(142,0,27,0.80) url(\"boomPng.png\") no-repeat scroll 50% 50%";
-                  document.getElementById("separateur").style.border = "5px solid rgba(215,31,48, 0.85)";
+                  document.getElementById("separateur").style.border = "4px solid rgba(215,31,48, 0.80)";
                   document.getElementById("separateur").style.borderRadius = "10px";
 
                   document.getElementById("resultatText").innerText = "BUST";

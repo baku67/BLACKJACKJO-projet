@@ -1,4 +1,10 @@
 
+
+
+!*!*!*!* ULTIME: https://html-css-js.com/css/generator/background/ *!*!*!*!
+
+Idée: OnClick ou Hover Tokens -> aura/flame de la couleur correspondante
+
 Séparateur: Div avec Strong "Gagné"/"Perdu" avec background color Rouge/Vert correspondant (Virer les anciens backgroundColor résultat)
  -> Footer "Bank win",etc devient "Gain: 200E"
  -> Avec bouton relancer intégré dans le séparateur !
@@ -15,7 +21,10 @@ FIX: Le x2 proc pas le footer "Distribution..."
 //Millestones: Après AS ok, tableau des conseils Choix
 
 *********** Zone d'idées mediaQueries ************
- L'espace séparateur Croupier/Jouer devient une div avec une height 
+ http://responsivetesttool.com
+  -> INDICE: {Problème: responsive bugué sur mon pcPortable(1366x768) par rapport à responsivetesttool.com(1366x768)}
+    => SOLUTION: Sur mon pcPortable F11/FullScreen
+ https://stackoverflow.com/questions/49894991/windows-screen-scale-messing-up-css-sizes
  Les cartes et le texte/titres sont plus petits (tester!)
 **************************************************
 

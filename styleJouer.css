@@ -319,8 +319,8 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 }
 
 #separateur {
-	height: 80px;
-	width: 30%;
+	height: 100px;
+	width: 45%;
 	text-align: center; 
 
 	margin: 60px auto 55px auto;
@@ -329,12 +329,12 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 #resultatText {
 	color:rgb(110, 37, 37);
 	 	/* Text Shadow blanc? */
-	font-size: 3em;
+	font-size: 3.5em;
 	letter-spacing: 2px;
 
 	/* Dégueulasse mais OK */
 	position: relative;
-	top: 18%;
+	top: 20%;
 	/* text-shadow: 0px 0px 5px rgba(184, 0, 0, 1); */
 	text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00, 2px 2px 4px rgba(206,89,55,0);
 }
