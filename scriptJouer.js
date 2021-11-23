@@ -251,19 +251,23 @@
         },
         C1a = {
           cardImageURL: "cartes\\AC.png",
-          cardValue: 1
+          cardValue: 1,
+          cardValue2: 10
         },
         C1b = {
           cardImageURL: "cartes\\AD.png",
-          cardValue: 1
+          cardValue: 1,
+          cardValue2: 10
         },
         C1c = {
           cardImageURL: "cartes\\AH.png",
-          cardValue: 1
+          cardValue: 1,
+          cardValue2: 10
         },
         C1d = {
           cardImageURL: "cartes\\AS.png",
-          cardValue: 1
+          cardValue: 1,
+          cardValue2: 10
         }
       ];
       //#endregion
@@ -990,7 +994,11 @@
 
 
                   document.getElementById("separateur").style.background = "rgba(142,0,27,0.80) url(\"boomPng.png\") no-repeat scroll 50% 50%";
-                  document.getElementById("separateur").style.border = "4px solid rgba(215,31,48, 0.80)";
+                  // document.getElementById("separateur").style.border = "4px solid rgba(215,31,48, 0.80)";
+                  document.getElementById("separateur").style.borderTop = "1px solid rgba(130,14,39, 0.70)"
+                  document.getElementById("separateur").style.borderBottom = "1px solid rgba(130,14,39, 0.70)"
+                  document.getElementById("separateur").style.borderRight = "6px solid rgba(130,14,39, 0.80)";
+                  document.getElementById("separateur").style.borderLeft = "6px solid rgba(130,14,39, 0.80)"
                   document.getElementById("separateur").style.borderRadius = "10px";
 
                   document.getElementById("resultatText").innerText = "BUST";
