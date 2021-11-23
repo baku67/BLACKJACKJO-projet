@@ -981,7 +981,7 @@
                   document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)"
 
                   document.getElementById("scoreCroupier").style.border = "1px solid rgba(58,157,32,0.5)";
-                  document.getElementById("scoreJoueur").style.border = "1px solid rgba(255,1,49,0.5)";
+                  document.getElementById("scoreJoueur").style.border = "3px solid rgba(130,14,39, 0.8)";
                   // Fin Perdu BURST
 
 
