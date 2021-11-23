@@ -292,6 +292,14 @@
                 success: function(response) {
                   $("#container3").html(response);
                   // document.getElementById("collapsible").style.visibility = "visible";
+
+                    //*** Zone FooterBorder Clignotement
+                    document.getElementById("footer").style.border = "10px solid Yellow";
+                    document.getElementById("footer").style.borderRadius = "10px";
+                      // Fix border englobante qui overflow
+                    document.getElementById("footer").style.boxSizing = "border-box";
+                    //*** Fin
+
                   footerShow();
                   phaseMise();
                   document.getElementById("footerTitle").innerHTML = " - MISE -";
