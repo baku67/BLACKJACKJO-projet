@@ -595,6 +595,7 @@ figure:active {
 }
 
 #footer {
+	box-sizing: border-box;
 	position: fixed;
     /* bottom: 0px: IMPORTANT FIX EN BAS */
   	bottom: 0px;
@@ -609,17 +610,23 @@ figure:active {
 	text-align: center;
     letter-spacing: 1px;
 
-	/* background: rgb(130,14,39);
-	background: -moz-linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%);
-	background: -webkit-linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%);
-	background: linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#820e27",endColorstr="#1a2039",GradientType=1); */
 
 	background: rgb(130,16,40);
 	background: -moz-linear-gradient(180deg, rgba(130,16,40,1) 49%, rgba(26,31,57,1) 100%);
 	background: -webkit-linear-gradient(180deg, rgba(130,16,40,1) 49%, rgba(26,31,57,1) 100%);
 	background: linear-gradient(180deg, rgba(130,16,40,1) 49%, rgba(26,31,57,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#821028",endColorstr="#1a1f39",GradientType=1);}
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#821028",endColorstr="#1a1f39",GradientType=1);
+}
+.footerBorderWhite {
+	/* Ajout Border pour eviter mess-up du BorderClignotement qui dépop */
+	border: 10px solid rgba(130,16,40,1);
+	/* border-radius: 5px; */
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	/* FIN */	
+}
 
 
 
@@ -1014,6 +1021,65 @@ p {
 }
 
 
+
+.miserActif2 {
+	animation-name: footerClignotement;
+	-webkit-animation-name: footerClignotement;
+	animation-iteration-count: 1000;
+	animation-duration: 1s;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-iteration-count: 1000;
+	animation-timing-function: ease-out;
+	-webkit-animation-timing-function: ease-out;
+	/* Pushai sur la droite (de maniere permanente, sans ça ça push aussi mais juste le temps de l'anim
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards; 
+	*/
+}
+  @keyframes footerClignotement {
+	0% {
+		border: 10px solid rgba(24, 219, 219);
+		border-radius: 15px;
+		border-bottom-left-radius: 0px;
+		border-bottom-right-radius: 0px;
+	}
+	25% {
+		border: 10px solid rgba(24, 219, 219);
+		border-radius: 15px;
+		border-bottom-left-radius: 0px;
+		border-bottom-right-radius: 0px;
+	}
+	50% {
+		border: 10px solid greenyellow;
+		border-radius: 15px;
+		border-bottom-left-radius: 0px;
+		border-bottom-right-radius: 0px;
+	}
+	75% {
+		border: 10px solid greenyellow;
+		border-radius: 15px;
+		border-bottom-left-radius: 0px;
+		border-bottom-right-radius: 0px;
+	}
+	100% {
+		border: 10px solid rgba(24, 219, 219);
+		border-radius: 15px;
+		border-bottom-left-radius: 0px;
+		border-bottom-right-radius: 0px;
+	}
+  };
+
+
+
+
+
+
+
+
+
+
+
+
 .miserActif {
 	animation-name: borderClignotement;
 	-webkit-animation-name: borderClignotement;
@@ -1065,58 +1131,11 @@ p {
 		color: rgb(24, 219, 219);
 	}
   };
+  
 
 
 
 
-
-/* .miserActif:hover {
-	animation-name: borderClignotement2;
-	-webkit-animation-name: borderClignotement2;
-	animation-iteration-count: 1000;
-	animation-duration: 2s;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1000;
-	animation-timing-function: ease;
-	-webkit-animation-timing-function: ease;
-}
-@keyframes borderClignotement2 {
-	0% {
-		border: 8px solid rgb(24, 219, 219);
-		border-radius: 5px;
-
-		background-color: rgba(255,255,255,0.02);
-		color: rgb(24, 219, 219);
-	}
-	25% {
-		border: 8px solid rgb(24, 219, 219);
-		border-radius: 5px;
-
-		background-color: rgba(255,255,255,0.04);
-		color: rgb(24, 219, 219);
-	}
-	50% {
-		border: 8px solid greenyellow;
-		border-radius: 5px;
-
-		background-color: rgba(255,255,255,0.06);
-		color: greenyellow;
-	}
-	75% {
-		border: 8px solid greenyellow;
-		border-radius: 5px;
-
-		background-color: rgba(255,255,255,0.04);
-		color: greenyellow;
-	}
-	100% {
-		border: 8px solid rgb(24, 219, 219);
-		border-radius: 5px;
-
-		background-color: rgba(255,255,255,0.02);
-		color: rgb(24, 219, 219);
-	}
-  }; */
 
 
   /* Supprime le highlight bleu quand click sur mobile */

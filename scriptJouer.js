@@ -293,12 +293,15 @@
                   $("#container3").html(response);
                   // document.getElementById("collapsible").style.visibility = "visible";
 
-                    //*** Zone FooterBorder Clignotement
-                    document.getElementById("footer").style.border = "10px solid Yellow";
-                    document.getElementById("footer").style.borderRadius = "10px";
-                      // Fix border englobante qui overflow
-                    document.getElementById("footer").style.boxSizing = "border-box";
+
+                    //*** Zone FooterBorder Clignotement      
+                    document.querySelector("#footer").classList.add("miserActif2");  
+                    setTimeout( function() {
+                      document.querySelector("#footer").classList.remove("miserActif2"); 
+                      document.querySelector("#footer").classList.add("footerBorderWhite");  
+                    }, 2000);
                     //*** Fin
+
 
                   footerShow();
                   phaseMise();

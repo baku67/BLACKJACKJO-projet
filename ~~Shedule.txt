@@ -1,4 +1,4 @@
-
+Bosser un peu le CSS anim "FooterborderClignotement" + "borderClignotement"
 
 
 !*!*!*!* ULTIME: https://html-css-js.com/css/generator/background/ *!*!*!*!
@@ -102,7 +102,9 @@ EFFET STYLEE SUR LE BOUTON (hover = anim horizontale)
 
 
 
+/////////////////       A retenir      \\\\\\\\\\\\\\\\\
 
+box-sizing: border-box;  Pour border contenu dans la box (pas de dépassement ou modif de "taille")
 
 
 /////////////////         DONE         \\\\\\\\\\\\\\\\\
