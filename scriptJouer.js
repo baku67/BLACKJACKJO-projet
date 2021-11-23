@@ -570,14 +570,14 @@
                     document.getElementById("joueur").style.backgroundColor = "rgba(255,1,49,0.3)";
                       // Fin rubans
                     
-                    document.getElementById("scoreCroupier").style.backgroundColor = "rgba(59,217,10,1)"
-                    document.getElementById("scoreJoueur").style.backgroundColor = "rgba(215,31,48,1)"
+                    document.getElementById("scoreCroupier").style.backgroundColor = "rgba(59,217,10,1)";
+                    document.getElementById("scoreJoueur").style.backgroundColor = "rgba(215,31,48,1)";
 
-                    document.getElementById("scoreCroupier").style.color = "rgba(255,245,0,1)"
-                    document.getElementById("scoreJoueur").style.color = "rgba(239,230,230,1)"
+                    document.getElementById("scoreCroupier").style.color = "rgba(255,245,0,1)";
+                    document.getElementById("scoreJoueur").style.color = "rgba(239,230,230,1)";
 
-                    document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)"
-                    document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)"
+                    document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)";
+                    document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)";
 
                     document.getElementById("scoreCroupier").style.border = "1px solid rgba(58,157,32,0.5)";
                     document.getElementById("scoreJoueur").style.border = "1px solid rgba(255,1,49,0.5)";                  
@@ -605,14 +605,14 @@
                     document.getElementById("joueur").style.backgroundColor = "rgba(61,255,1,0.3)";
                       // Fin rubans
                     
-                    document.getElementById("scoreCroupier").style.backgroundColor = "rgba(215,31,48,1)"
-                    document.getElementById("scoreJoueur").style.backgroundColor = "rgba(59,217,10,1)"
+                    document.getElementById("scoreCroupier").style.backgroundColor = "rgba(215,31,48,1)";
+                    document.getElementById("scoreJoueur").style.backgroundColor = "rgba(59,217,10,1)";
 
-                    document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)"
-                    document.getElementById("scoreJoueur").style.color = "rgba(255,245,0,1)"
+                    document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)";
+                    document.getElementById("scoreJoueur").style.color = "rgba(255,245,0,1)";
 
-                    document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)"
-                    document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)"
+                    document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)";
+                    document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)";
 
                     document.getElementById("scoreCroupier").style.border = "1px solid rgba(255,1,49,0.5)";
                     document.getElementById("scoreJoueur").style.border = "1px solid rgba(58,157,32,0.5)";
@@ -640,14 +640,14 @@
                     document.getElementById("joueur").style.backgroundColor = "rgba(61,255,1,0.3)";
                       // Fin rubans
 
-                    document.getElementById("scoreCroupier").style.backgroundColor = "rgba(215,31,48,1)"
-                    document.getElementById("scoreJoueur").style.backgroundColor = "rgba(59,217,10,1)"
+                    document.getElementById("scoreCroupier").style.backgroundColor = "rgba(215,31,48,1)";
+                    document.getElementById("scoreJoueur").style.backgroundColor = "rgba(59,217,10,1)";
 
-                    document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)"
-                    document.getElementById("scoreJoueur").style.color = "rgba(255,245,0,1)"
+                    document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)";
+                    document.getElementById("scoreJoueur").style.color = "rgba(255,245,0,1)";
 
-                    document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)"
-                    document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)"
+                    document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)";
+                    document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)";
 
                     document.getElementById("scoreCroupier").style.border = "1px solid rgba(255,1,49,0.5)";
                     document.getElementById("scoreJoueur").style.border = "1px solid rgba(58,157,32,0.5)";
@@ -684,8 +684,8 @@
                     document.getElementById("scoreCroupier").style.color = "rgba(0,0,0,0.6)";
                     document.getElementById("scoreJoueur").style.color = "rgba(0,0,0,0.6)";
 
-                    document.getElementById("scoreCroupier").style.textShadow = "0px 0px 2px white"
-                    document.getElementById("scoreJoueur").style.textShadow = "0px 0px 2px white"
+                    document.getElementById("scoreCroupier").style.textShadow = "0px 0px 2px white";
+                    document.getElementById("scoreJoueur").style.textShadow = "0px 0px 2px white";
 
                     document.getElementById("scoreCroupier").style.backgroundColor = "rgba(255,246,1,1)";
                     document.getElementById("scoreJoueur").style.backgroundColor = "rgba(255,246,1,1)";
@@ -974,14 +974,14 @@
                   document.getElementById("scoreCroupier").style.backgroundColor = "rgba(59,217,10,1)"
                   document.getElementById("scoreJoueur").style.backgroundColor = "rgba(215,31,48,1)"
 
-                  document.getElementById("scoreCroupier").style.color = "rgba(255,245,0,1)"
-                  document.getElementById("scoreJoueur").style.color = "rgba(239,230,230,1)"
+                  document.getElementById("scoreCroupier").style.color = "rgba(255,245,0, 1)"
+                  document.getElementById("scoreJoueur").style.color = "rgba(239,230,230, 1)"
 
-                  document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)"
-                  document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)"
+                  document.getElementById("scoreCroupier").style.textShadow = "1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, -1px -1px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, -1px 0px 0 #000000, 0px -1px 0 #000000";
+                  document.getElementById("scoreJoueur").style.textShadow = "1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, -1px -1px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, -1px 0px 0 #000000, 0px -1px 0 #000000";
 
-                  document.getElementById("scoreCroupier").style.border = "1px solid rgba(58,157,32,0.5)";
-                  document.getElementById("scoreJoueur").style.border = "3px solid rgba(130,14,39, 0.8)";
+                  document.getElementById("scoreCroupier").style.border = "3px solid rgba(58,157,32, 1)";
+                  document.getElementById("scoreJoueur").style.border = "3px solid rgba(130,14,39, 1)";
                   // Fin Perdu BURST
 
 
@@ -995,10 +995,10 @@
 
                   document.getElementById("separateur").style.background = "rgba(142,0,27,0.80) url(\"boomPng.png\") no-repeat scroll 50% 50%";
                   // document.getElementById("separateur").style.border = "4px solid rgba(215,31,48, 0.80)";
-                  document.getElementById("separateur").style.borderTop = "1px solid rgba(130,14,39, 0.70)"
-                  document.getElementById("separateur").style.borderBottom = "1px solid rgba(130,14,39, 0.70)"
+                  document.getElementById("separateur").style.borderTop = "1px solid rgba(130,14,39, 0.70)";
+                  document.getElementById("separateur").style.borderBottom = "1px solid rgba(130,14,39, 0.70)";
                   document.getElementById("separateur").style.borderRight = "6px solid rgba(130,14,39, 0.80)";
-                  document.getElementById("separateur").style.borderLeft = "6px solid rgba(130,14,39, 0.80)"
+                  document.getElementById("separateur").style.borderLeft = "6px solid rgba(130,14,39, 0.80)";
                   document.getElementById("separateur").style.borderRadius = "10px";
 
                   document.getElementById("resultatText").innerText = "BUST";
@@ -1040,14 +1040,14 @@
                   document.getElementById("joueur").style.backgroundColor = "rgba(61,255,1,0.3)";
                     // Fin rubans
                   
-                  document.getElementById("scoreCroupier").style.backgroundColor = "rgba(215,31,48,1)"
-                  document.getElementById("scoreJoueur").style.backgroundColor = "rgba(59,217,10,1)"
+                  document.getElementById("scoreCroupier").style.backgroundColor = "rgba(215,31,48,1)";
+                  document.getElementById("scoreJoueur").style.backgroundColor = "rgba(59,217,10,1)";
 
-                  document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)"
-                  document.getElementById("scoreJoueur").style.color = "rgba(255,245,0,1)"
+                  document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)";
+                  document.getElementById("scoreJoueur").style.color = "rgba(255,245,0,1)";
 
-                  document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)"
-                  document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)"
+                  document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)";
+                  document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)";
 
                   document.getElementById("scoreCroupier").style.border = "1px solid rgba(255,1,49,0.5)";
                   document.getElementById("scoreJoueur").style.border = "1px solid rgba(58,157,32,0.5)";

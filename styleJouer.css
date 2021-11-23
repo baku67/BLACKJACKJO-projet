@@ -265,7 +265,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 
 .scoreBorder {
 	padding: 1px 6px;
-	border: solid 0.5px rgba(13, 1, 56, 0.3);
+	border: solid 0.5px rgba(13, 1, 56, 0.5);
 	border-radius: 5px;
 }
 .scores 
@@ -526,7 +526,7 @@ figure:active {
 	border-radius: 12px;
 }
 .imgPartie {
-	border: 1px solid rgba(0,0,0,0.1);
+	border: 1px solid rgba(0,0,0,0.2);
 	border-radius: 9px;
 	width: 7em;
 	opacity: 0.8;
@@ -764,7 +764,7 @@ p {
 	/* FLEX WRAP AVEC WIDTH 100% des elements inside pour retour ligne et center */
 	display: flex wrap;
 
-	border: 3px solid rgba(255,255,255,0.5);
+	border: 5px solid rgba(255,255,255,0.5);
 	border-radius: 10px;
 }
 
