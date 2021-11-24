@@ -1,5 +1,7 @@
+Taille des cartes (voir MediaQueies)
+Réduire espaces spérarateur dans le DeckContainer et les polices
 Bosser un peu le CSS anim "FooterborderClignotement" + "borderClignotement" (enlever border coté et réduire epaisseur, mettre le clignotement sur fooerTitle)
-
+deplacer le deck et tout vite fait en haut a gauche (et réduit MEDIA QUERIES)
 
 !*!*!*!* ULTIME: https://html-css-js.com/css/generator/background/ *!*!*!*!
 
@@ -21,6 +23,8 @@ FIX: Le x2 proc pas le footer "Distribution..."
 //Millestones: Après AS ok, tableau des conseils Choix
 
 *********** Zone d'idées mediaQueries ************
+ Plus espacé entre Séparateur et Cartes J/C (SUR PC)
+ Taille des cartes à augmenter sur PC (normal) et à baisser sur smartphone (mediaQueries)
  http://responsivetesttool.com
   -> INDICE: {Problème: responsive bugué sur mon pcPortable(1366x768) par rapport à responsivetesttool.com(1366x768)}
     => SOLUTION: Sur mon pcPortable F11/FullScreen

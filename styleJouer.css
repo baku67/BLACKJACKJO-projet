@@ -346,7 +346,7 @@ p {
 }
 
 
-.deckContainer {
+#deckContainer {
 	position: absolute; 
 	bottom: 50%; left: 12%; 
 
@@ -455,8 +455,11 @@ p {
     height: 49%;
 }
 #croupier {
+	/* A MODIFIE DANS MEDIAQUERIES (Height-responsive) */
+	margin-top: 100px;
+	/* FIN */
+
 	height: 169.05px;
-	/* width: auto; */
 }
 #joueur {
 	height: 169.05px;
@@ -551,6 +554,22 @@ figure:active {
 	} 
 	/* FIN FLASH    */
 
+}
+
+
+.styleSeparateur {
+	/* // METTRE UN GRADIENT CHARTE GRAPHIQUE OMG */
+	background: rgba(142,0,27,0.90);
+	background-image: url("boomPng.png");
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position-x: 50%;
+	background-position-y: 50%;
+	border-top: 1px solid rgba(130,14,39, 0.70);
+	border-bottom: 1px solid rgba(130,14,39, 0.70);
+	border-right: 6px solid rgba(130,14,39, 0.80);
+	border-left: 6px solid rgba(130,14,39, 0.80);
+	border-radius: 10px;
 }
 
 
@@ -1176,6 +1195,17 @@ p {
 	}
 
 	#separateur {
-		width: 90%;
+		width: 70%;
+		background-size: 300px 300px;
 	}
-  }
+
+	#croupier {
+		/* A MODIFIE DANS MEDIAQUERIES (Height-responsive) */
+		margin-top: 10px;
+		/* FIN */
+	}
+
+	#imgCardDeck {
+		width: 5em;
+	}
+}

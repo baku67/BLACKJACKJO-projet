@@ -973,6 +973,9 @@
                   $("#container3").html(response);
                   document.getElementById("footerTitle").innerHTML = " - Perdu -";
 
+                  document.getElementById("deckContainer").remove();
+                  // document.getElementById("deckContainer").classList.add("fadeOut");
+
                   // Perdu BURST (Ajouter icone boom.png (assez grand) dans le séparateur)
 
                     // Rubans Gagné/Perdu 
@@ -996,25 +999,17 @@
                   document.getElementById("scoreJoueur").style.border = "3px solid rgba(130,14,39, 1)";
                   // Fin Perdu BURST
 
-
-
                   // WIP separateur avec résultat
+                  // Style du séparateur (= Apparition)
+                  document.getElementById("separateur").classList.add("styleSeparateur");
+
                   // Animation scale() qui pop avec fadeIn()
-
                   document.getElementById("separateur").classList.add("fadeInResultat");
+                  document.getElementById("separateur").classList.add("scaleBoom");
                   document.getElementById("separateur").classList.add("marginFix");
-
-
-                  document.getElementById("separateur").style.background = "rgba(142,0,27,0.80) url(\"boomPng.png\") no-repeat scroll 50% 50%";
-                  // document.getElementById("separateur").style.border = "4px solid rgba(215,31,48, 0.80)";
-                  document.getElementById("separateur").style.borderTop = "1px solid rgba(130,14,39, 0.70)";
-                  document.getElementById("separateur").style.borderBottom = "1px solid rgba(130,14,39, 0.70)";
-                  document.getElementById("separateur").style.borderRight = "6px solid rgba(130,14,39, 0.80)";
-                  document.getElementById("separateur").style.borderLeft = "6px solid rgba(130,14,39, 0.80)";
-                  document.getElementById("separateur").style.borderRadius = "10px";
-
+                
+                  // TEXT
                   document.getElementById("resultatText").innerText = "BUST";
-
                   // Fin separateur
 
 
