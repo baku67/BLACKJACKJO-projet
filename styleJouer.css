@@ -322,7 +322,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 }
 
 #separateur {
-	height: 100px;
+	height: 115px;
 	width: 45%;
 	text-align: center; 
 
@@ -558,18 +558,20 @@ figure:active {
 
 
 .styleSeparateur {
-	/* // METTRE UN GRADIENT CHARTE GRAPHIQUE OMG */
-	background: rgba(142,0,27,0.90);
-	background-image: url("boomPng.png");
+	/* background: linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%); */
+	background-image: url("boomPng.png"), linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%);
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position-x: 50%;
 	background-position-y: 50%;
 	border-top: 1px solid rgba(130,14,39, 0.70);
 	border-bottom: 1px solid rgba(130,14,39, 0.70);
-	border-right: 6px solid rgba(130,14,39, 0.80);
-	border-left: 6px solid rgba(130,14,39, 0.80);
+	border-right: 8px solid rgba(130,14,39, 0.80);
+	border-left: 8px solid rgba(130,14,39, 0.80);
 	border-radius: 10px;
+}
+.scaleBoom {
+
 }
 
 
@@ -1193,10 +1195,13 @@ p {
 		width: 100px;
 		height: 100px;
 	}
-
 	#separateur {
 		width: 70%;
-		background-size: 300px 300px;
+	}
+
+	.styleSeparateur {
+		/* Resizer l'image (add autre URL) */
+		background-image: url("boomPngMobile.png"), linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%);
 	}
 
 	#croupier {
