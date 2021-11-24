@@ -559,6 +559,8 @@ figure:active {
 
 .styleSeparateur {
 	/* background: linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%); */
+	box-sizing: border-box;
+	overflow: hidden;
 	background-image: url("boomPng.png"), linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%);
 	background-repeat: no-repeat;
 	background-attachment: scroll;
@@ -566,8 +568,8 @@ figure:active {
 	background-position-y: 50%;
 	border-top: 1px solid rgba(130,14,39, 0.70);
 	border-bottom: 1px solid rgba(130,14,39, 0.70);
-	border-right: 8px solid rgba(130,14,39, 0.80);
-	border-left: 8px solid rgba(130,14,39, 0.80);
+	/* border-right: 8px solid rgba(130,14,39, 0.80);
+	border-left: 9px solid rgba(130,14,39, 0.80); */
 	border-radius: 10px;
 }
 .scaleBoom {
