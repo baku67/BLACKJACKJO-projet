@@ -1,4 +1,4 @@
-Bosser un peu le CSS anim "FooterborderClignotement" + "borderClignotement"
+Bosser un peu le CSS anim "FooterborderClignotement" + "borderClignotement" (enlever border coté et réduire epaisseur, mettre le clignotement sur fooerTitle)
 
 
 !*!*!*!* ULTIME: https://html-css-js.com/css/generator/background/ *!*!*!*!

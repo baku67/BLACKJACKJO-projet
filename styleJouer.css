@@ -619,7 +619,7 @@ figure:active {
 }
 .footerBorderWhite {
 	/* Ajout Border pour eviter mess-up du BorderClignotement qui dépop */
-	border: 10px solid rgba(130,16,40,1);
+	border: 5px solid rgba(130,16,40,1);
 	/* border-radius: 5px; */
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
@@ -1026,11 +1026,11 @@ p {
 	animation-name: footerClignotement;
 	-webkit-animation-name: footerClignotement;
 	animation-iteration-count: 1000;
-	animation-duration: 1s;
-	-webkit-animation-duration: 1s;
+	animation-duration: 3s;
+	-webkit-animation-duration: 3s;
 	-webkit-animation-iteration-count: 1000;
-	animation-timing-function: ease-out;
-	-webkit-animation-timing-function: ease-out;
+	animation-timing-function: ease;
+	-webkit-animation-timing-function: ease;
 	/* Pushai sur la droite (de maniere permanente, sans ça ça push aussi mais juste le temps de l'anim
 	animation-fill-mode: forwards;
 	-webkit-animation-fill-mode: forwards; 
@@ -1038,31 +1038,32 @@ p {
 }
   @keyframes footerClignotement {
 	0% {
-		border: 10px solid rgba(24, 219, 219);
+		border: 5px solid rgba(130,16,40,1);
 		border-radius: 15px;
 		border-bottom-left-radius: 0px;
 		border-bottom-right-radius: 0px;
 	}
 	25% {
-		border: 10px solid rgba(24, 219, 219);
+		border: 5px solid rgba(221, 190, 16, 0.6);
 		border-radius: 15px;
 		border-bottom-left-radius: 0px;
 		border-bottom-right-radius: 0px;
 	}
 	50% {
-		border: 10px solid greenyellow;
+		border: 5px solid rgba(130,16,40,1);
 		border-radius: 15px;
 		border-bottom-left-radius: 0px;
 		border-bottom-right-radius: 0px;
 	}
 	75% {
-		border: 10px solid greenyellow;
+		border: 5px solid rgba(221, 190, 16, 0.6);
+		/* rgba(26,32,57,1) */
 		border-radius: 15px;
 		border-bottom-left-radius: 0px;
 		border-bottom-right-radius: 0px;
 	}
 	100% {
-		border: 10px solid rgba(24, 219, 219);
+		border: 5px solid rgba(130,16,40,1);
 		border-radius: 15px;
 		border-bottom-left-radius: 0px;
 		border-bottom-right-radius: 0px;

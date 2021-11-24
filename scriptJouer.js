@@ -296,10 +296,11 @@
 
                     //*** Zone FooterBorder Clignotement      
                     document.querySelector("#footer").classList.add("miserActif2");  
-                    setTimeout( function() {
-                      document.querySelector("#footer").classList.remove("miserActif2"); 
-                      document.querySelector("#footer").classList.add("footerBorderWhite");  
-                    }, 2000);
+                    // IF Click sur footer: remove Miser Actif2 et add footerBorderWhite (ci dessous sans le timeOut)
+                    // setTimeout( function() {
+                    //   document.querySelector("#footer").classList.remove("miserActif2"); 
+                    //   document.querySelector("#footer").classList.add("footerBorderWhite");  
+                    // }, 2500);
                     //*** Fin
 
 
