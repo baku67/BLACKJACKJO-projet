@@ -1,3 +1,5 @@
+Footer: quand Resultat: $mise -> $mise décrémentée/incrémentée hypervite jusqu'au gain ou 0
+
 Taille des cartes (voir MediaQueies)
 Réduire espaces spérarateur dans le DeckContainer et les polices
 Bosser un peu le CSS anim "FooterborderClignotement" + "borderClignotement" (enlever border coté et réduire epaisseur, mettre le clignotement sur fooerTitle)

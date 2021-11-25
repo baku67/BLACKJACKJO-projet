@@ -407,7 +407,7 @@
               dataType: "html",
               success: function(response) {
                 $("#chipsContainer").html(response);
-                document.getElementById("footerTitle").innerHTML = " - Distribution... -";
+                document.getElementById("footerTitle").innerHTML = " - En attente... -";
               }
             });
           }, 700);
@@ -574,7 +574,7 @@
                   success: function(response) {
                     $("#container3").html(response);
                     console.log(scoreTotalCroupier);
-                    document.getElementById("footerTitle").innerHTML = " - Perdu -";
+                    document.getElementById("footerTitle").innerHTML = " - Résultat -";
 
                     // Perdu
                       // rubans de Win/Loose
@@ -609,7 +609,7 @@
                   success: function(response) {
                     $("#container3").html(response);
                     console.log(scoreTotalCroupier);
-                    document.getElementById("footerTitle").innerHTML = " - Gagné -";
+                    document.getElementById("footerTitle").innerHTML = " - Résultat -";
 
                     // Gagné
                       // rubans de Win/Loose
@@ -644,7 +644,7 @@
                   success: function(response) {
                     $("#container3").html(response);
                     console.log(scoreTotalCroupier);
-                    document.getElementById("footerTitle").innerHTML = " - Gagné -";
+                    document.getElementById("footerTitle").innerHTML = " - Résultat -";
 
                     // Gagné
                       // rubans de Win/Loose
@@ -679,7 +679,7 @@
                   success: function(response) {
                     $("#container3").html(response);
                     console.log(scoreTotalCroupier);
-                    document.getElementById("footerTitle").innerHTML = " - Egualité -";
+                    document.getElementById("footerTitle").innerHTML = " - Résultat -";
 
                     // Égalité
                       // rubans jaunes
@@ -971,7 +971,11 @@
                 dataType: "html",
                 success: function(response) {
                   $("#container3").html(response);
-                  document.getElementById("footerTitle").innerHTML = " - Perdu -";
+                  document.getElementById("footerTitle").innerHTML = " - Résultat -";
+
+                  // WIP footerResultat
+                  document.getElementById("miseLockedFooter").innerHTML = miseLocked;
+
 
                   document.getElementById("deckContainer").remove();
                   // document.getElementById("deckContainer").classList.add("fadeOut");
@@ -1006,7 +1010,7 @@
                   // Animation scale() qui pop avec fadeIn()
                   document.getElementById("separateur").classList.add("fadeInResultat");
                   document.getElementById("separateur").classList.add("scaleBoom");
-                  document.getElementById("separateur").classList.add("marginFix");
+                  // document.getElementById("separateur").classList.add("marginFix");
                 
                   // TEXT
                   document.getElementById("resultatText").innerText = "BUST";
@@ -1039,7 +1043,7 @@
                 dataType: "html",
                 success: function(response) {
                   $("#container3").html(response);
-                  document.getElementById("footerTitle").innerHTML = " - BlackJack! -";
+                  document.getElementById("footerTitle").innerHTML = " - Résultat -";
                   
                   // Gagné BLACKJACK (Ajouter icone BJ.png (assez grand) dans le séparateur)
                     // Rubans Gagné/Perdu
