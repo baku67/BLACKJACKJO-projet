@@ -140,6 +140,7 @@ body {
 	/* zoom: 65%;
 	-ms-zoom: 0.65;
 	-webkit-zoom: 0.65; */
+	
 	zoom: 53%;
 	-ms-zoom: 0.53;
 	-webkit-zoom: 0.53;
@@ -388,6 +389,8 @@ p {
 .container {
 	position: relative;
 	width: 50%;
+	margin-top: auto;
+	margin-bottom: auto;
 }
 .pokerChips {
 	/* display: block;
@@ -645,8 +648,8 @@ figure:active {
 	/* Ajout Border pour eviter mess-up du BorderClignotement qui dépop */
 	border: 5px solid rgba(130,16,40,1);
 	/* border-radius: 5px; */
-	border-top-left-radius: 8px;
-	border-top-right-radius: 8px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
 	border-bottom-left-radius: 0px;
 	border-bottom-right-radius: 0px;
 	/* FIN */	
@@ -786,8 +789,10 @@ p {
 
 
 #scoreContainer {
-	padding: 0 25px;
-	margin: 0 50px;
+	padding: 0 25px 30px 25px;
+	/* margin: 0 50px; */
+	position: absolute;
+	right: 20px;
     /* width: 30%; */
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -795,8 +800,8 @@ p {
 	/* FLEX WRAP AVEC WIDTH 100% des elements inside pour retour ligne et center */
 	display: flex wrap;
 
-	border: 5px solid rgba(255,255,255,0.5);
-	border-radius: 10px;
+	border: 3px solid rgba(255,255,255,0.5);
+	border-radius: 7px;
 }
 
 .scoreElem {
@@ -1063,32 +1068,32 @@ p {
   @keyframes footerClignotement {
 	0% {
 		border: 5px solid rgba(130,16,40,1);
-		border-radius: 15px;
+		border-radius: 10px;
 		border-bottom-left-radius: 0px;
 		border-bottom-right-radius: 0px;
 	}
 	25% {
 		border: 5px solid rgba(221, 190, 16, 0.6);
-		border-radius: 15px;
+		border-radius: 10px;
 		border-bottom-left-radius: 0px;
 		border-bottom-right-radius: 0px;
 	}
 	50% {
 		border: 5px solid rgba(130,16,40,1);
-		border-radius: 15px;
+		border-radius: 10px;
 		border-bottom-left-radius: 0px;
 		border-bottom-right-radius: 0px;
 	}
 	75% {
 		border: 5px solid rgba(221, 190, 16, 0.6);
 		/* rgba(26,32,57,1) */
-		border-radius: 15px;
+		border-radius: 10px;
 		border-bottom-left-radius: 0px;
 		border-bottom-right-radius: 0px;
 	}
 	100% {
 		border: 5px solid rgba(130,16,40,1);
-		border-radius: 15px;
+		border-radius: 10px;
 		border-bottom-left-radius: 0px;
 		border-bottom-right-radius: 0px;
 	}
@@ -1177,8 +1182,8 @@ p {
 
   @media screen and (max-device-width:480px) {
 	.pokerChips {
-		width: 3em;
-		height: 3em;
+		width: 4em;
+		height: 4em;
 		margin: 1em 0.3em;
 	}
 	.choices {
@@ -1215,5 +1220,33 @@ p {
 
 	#imgCardDeck {
 		width: 5em;
+	}
+
+	#scoreContainer {
+		padding: 0 10px 20px 10px;
+		/* margin: 0 50px; */
+		position: absolute;
+		right: 10px;
+		/* width: 30%; */
+		text-align: center;
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	
+		/* FLEX WRAP AVEC WIDTH 100% des elements inside pour retour ligne et center */
+		display: flex wrap;
+	
+		border: 2px solid rgba(255,255,255,0.5);
+		border-radius: 7px;
+	}
+	h2 {
+		font-size: 1em;
+	}
+
+	#container3 {
+		height: 140px;
+	}
+
+	.container {
+		/* margin-left: 7px;
+		margin-left: 7px; */
 	}
 }

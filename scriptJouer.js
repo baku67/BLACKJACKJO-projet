@@ -974,7 +974,35 @@
                   document.getElementById("footerTitle").innerHTML = " - Résultat -";
 
                   // WIP footerResultat
-                  document.getElementById("miseLockedFooter").innerHTML = miseLocked;
+
+                    // Mise lockée
+                    document.getElementById("miseLockedFooter").innerHTML = miseLocked;
+                    // fin
+
+                    // Résultat Gains (en partant de la mise vers le gains réel)
+                    document.getElementById("miseResultat").innerHTML = miseLocked;
+                    setTimeout( function() {
+                      decrementGain();
+                    }, 2500);
+                    // fin
+
+                  // FIN WIP
+
+                  function decrementGain() {
+                    setTimeout( function() {
+                        if (miseLocked > 0) {
+                        miseLocked = miseLocked - 1;
+                        document.getElementById("miseResultat").innerHTML = miseLocked;
+                        decrementGain();
+                        }
+                    }, 20);
+                    // if (miseLocked > 0) {
+                    //   miseLocked = miseLocked - 1;
+                    //   document.getElementById("miseResultat").innerHTML = miseLocked;
+                    //   decrementGain();
+                    // }
+                  } 
+                  
 
 
                   document.getElementById("deckContainer").remove();
