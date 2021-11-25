@@ -937,7 +937,13 @@ p {
 }
 #arrowResultat {
 	font-size: 4em;
-	
+	position: relative;
+	bottom: 17px;
+}
+
+.addColorToResultat {
+	color: red;
+	text-shadow: 0 0 3px black;
 }
 
 

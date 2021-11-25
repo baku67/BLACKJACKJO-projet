@@ -990,6 +990,7 @@
                           if (miseLocked > 0) {
                           miseLocked = miseLocked - 1;
                           document.getElementById("miseResultat").innerHTML = miseLocked;
+                          document.getElementById("miseResultat").classList.add("addColorToResultat");
                           decrementGain();
                           }
                       }, 20);
