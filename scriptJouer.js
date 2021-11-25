@@ -983,25 +983,20 @@
                     document.getElementById("miseResultat").innerHTML = miseLocked;
                     setTimeout( function() {
                       decrementGain();
-                    }, 2500);
+                    }, 2000);
+                    
+                    function decrementGain() {
+                      setTimeout( function() {
+                          if (miseLocked > 0) {
+                          miseLocked = miseLocked - 1;
+                          document.getElementById("miseResultat").innerHTML = miseLocked;
+                          decrementGain();
+                          }
+                      }, 20);
+                    } 
                     // fin
 
                   // FIN WIP
-
-                  function decrementGain() {
-                    setTimeout( function() {
-                        if (miseLocked > 0) {
-                        miseLocked = miseLocked - 1;
-                        document.getElementById("miseResultat").innerHTML = miseLocked;
-                        decrementGain();
-                        }
-                    }, 20);
-                    // if (miseLocked > 0) {
-                    //   miseLocked = miseLocked - 1;
-                    //   document.getElementById("miseResultat").innerHTML = miseLocked;
-                    //   decrementGain();
-                    // }
-                  } 
                   
 
 
