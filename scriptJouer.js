@@ -974,28 +974,34 @@
                   document.getElementById("footerTitle").innerHTML = " - Résultat -";
 
                   // WIP footerResultat
+                    // WIP: Fade In du résultat
+                      // document.getElementById("container3").visibility = "hidden";
+                      // document.getElementById("container3").classList.add("fadeIn2");
+                    // Fin WIP: Fade In du résultat
 
                     // Mise lockée
                     document.getElementById("miseLockedFooter").innerHTML = miseLocked;
                     // fin
 
-                    // Résultat Gains (en partant de la mise vers le gains réel)
+                    // Résultat Gains 
                     document.getElementById("miseResultat").innerHTML = miseLocked;
                     setTimeout( function() {
                       decrementGain();
-                    }, 2000);
+                    }, 1500);
                     
-                    function decrementGain() {
-                      setTimeout( function() {
-                          if (miseLocked > 0) {
-                          miseLocked = miseLocked - 1;
-                          document.getElementById("miseResultat").innerHTML = miseLocked;
-                          document.getElementById("miseResultat").classList.add("addColorToResultat");
-                          decrementGain();
-                          }
-                      }, 20);
-                    } 
-                    // fin
+                      // function: (en partant de la mise vers le gains réel)
+                      function decrementGain() {
+                        setTimeout( function() {
+                            if (miseLocked > 0) {
+                            miseLocked = miseLocked - 1;
+                            document.getElementById("miseResultat").innerHTML = miseLocked;
+                            document.getElementById("miseResultat").classList.add("addColorToResultat");
+                            decrementGain();
+                            }
+                        }, 20);
+                      } 
+                      // fin fonction
+                    // Fin résultat Gains
 
                   // FIN WIP
                   

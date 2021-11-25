@@ -1,3 +1,5 @@
+POUR NOEL: patcher les autre résultats + AS 
+
 Footer: quand Resultat: $mise -> $mise décrémentée/incrémentée hypervite jusqu'au gain ou 0
 
 Taille des cartes (voir MediaQueies)
