@@ -1172,13 +1172,4 @@
         }, 500);
       }
       //*** FIN
-
-      // dans addCardCroupier(joueur croupier les 2) ajouter
-      // if scoreCard
-      //   plus1();
-      // else if scorecard
-      //   minus1();
-      // else (aucun changement)
-      //   rien
-
     }

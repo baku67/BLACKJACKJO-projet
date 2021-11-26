@@ -470,7 +470,7 @@ p {
 }
 #croupier {
 	/* A MODIFIE DANS MEDIAQUERIES (Height-responsive) */
-	margin-top: 100px;
+	margin-top: 70px;
 	/* FIN */
 
 	height: 169.05px;
@@ -585,9 +585,6 @@ figure:active {
 	/* border-right: 8px solid rgba(130,14,39, 0.80);
 	border-left: 9px solid rgba(130,14,39, 0.80); */
 	border-radius: 10px;
-}
-.scaleBoom {
-
 }
 
 

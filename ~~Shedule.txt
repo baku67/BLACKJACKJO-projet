@@ -1,6 +1,10 @@
 POUR NOEL: patcher les autre résultats + AS 
 
-Footer: quand Resultat: $mise -> $mise décrémentée/incrémentée hypervite jusqu'au gain ou 0
+
+Clignotement de la flèche Résultat + Png fleche 
+
+Footer: Ajouter le boomPng.png en background avec delay pour proc en meme temps que le decrement?
+WIP: Footer: quand Resultat: $mise -> $mise décrémentée/incrémentée hypervite jusqu'au gain ou 0
 
 Taille des cartes (voir MediaQueies)
 Réduire espaces spérarateur dans le DeckContainer et les polices
