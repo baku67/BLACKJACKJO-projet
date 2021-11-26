@@ -659,6 +659,9 @@ figure:active {
 	border-top-right-radius: 5px;
 	border-bottom-left-radius: 0px;
 	border-bottom-right-radius: 0px;
+
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
 	/* FIN */	
 }
 
@@ -1084,8 +1087,8 @@ p {
 	animation-name: footerClignotement;
 	-webkit-animation-name: footerClignotement;
 	animation-iteration-count: 1000;
-	animation-duration: 3s;
-	-webkit-animation-duration: 3s;
+	animation-duration: 7s;
+	-webkit-animation-duration: 7s;
 	-webkit-animation-iteration-count: 1000;
 	animation-timing-function: ease;
 	-webkit-animation-timing-function: ease;
@@ -1098,33 +1101,33 @@ p {
 	0% {
 		border: 5px solid rgba(130,16,40,1);
 		border-radius: 10px;
-		border-bottom-left-radius: 0px;
-		border-bottom-right-radius: 0px;
+		border-bottom-left-radius: 1px;
+		border-bottom-right-radius: 1px;
 	}
 	25% {
 		border: 5px solid rgba(221, 190, 16, 0.6);
 		border-radius: 10px;
-		border-bottom-left-radius: 0px;
-		border-bottom-right-radius: 0px;
+		border-bottom-left-radius: 1px;
+		border-bottom-right-radius: 1px;
 	}
 	50% {
 		border: 5px solid rgba(130,16,40,1);
 		border-radius: 10px;
-		border-bottom-left-radius: 0px;
-		border-bottom-right-radius: 0px;
+		border-bottom-left-radius: 1px;
+		border-bottom-right-radius: 1px;
 	}
 	75% {
 		border: 5px solid rgba(221, 190, 16, 0.6);
 		/* rgba(26,32,57,1) */
 		border-radius: 10px;
-		border-bottom-left-radius: 0px;
-		border-bottom-right-radius: 0px;
+		border-bottom-left-radius: 1px;
+		border-bottom-right-radius: 1px;
 	}
 	100% {
 		border: 5px solid rgba(130,16,40,1);
 		border-radius: 10px;
-		border-bottom-left-radius: 0px;
-		border-bottom-right-radius: 0px;
+		border-bottom-left-radius: 1px;
+		border-bottom-right-radius: 1px;
 	}
   };
 
@@ -1263,7 +1266,7 @@ p {
 	}
 
 	#scoreContainer {
-		padding: 0 5px 10px 5px;
+		padding: 10px 5px 15px 5px;
 		/* margin: 0 50px; */
 		position: absolute;
 		right: 10px;

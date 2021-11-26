@@ -1137,7 +1137,7 @@
           document.getElementById("scoreVar").classList.remove('positive');
           document.getElementById("scoreVar").classList.remove('negative');
           document.getElementById("scoreVar").classList.add('neutral');
-          scoreContainer.style.border = "3px solid rgba(255,255,255,0.5)";
+          // scoreContainer.style.border = "3px solid rgba(255,255,255,0.5)";
         }
         else {
           document.getElementById("scoreVar").classList.remove('positive');
