@@ -544,6 +544,7 @@
 
           addCardCroupierRecursive();
 
+            
           function addCardCroupierRecursive() {
             setTimeout(function() {
               document.getElementById("backCardCroupier").classList.add("fadeOut2");
