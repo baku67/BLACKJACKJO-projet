@@ -1,7 +1,9 @@
     
     window.onload = function(){
 
-      
+      var audioCardSound = new Audio("addCardSound.mp3");
+      audioCardSound.volume = 0.6;
+
       var score = 0;
       var mise = 0;
       var scoreTotalJoueur = 0;
@@ -474,6 +476,7 @@
         img.id = "backCardCroupier";
         img.className = "imgPartie";
         img.src = "deck2.png";
+        audioCardSound.play();
         document.getElementById("croupier").appendChild(img);
       }
 
@@ -908,6 +911,7 @@
         img.className = "imgPartie";
 
         // Ajoute la var img à l'<ul> "#croupier"
+        audioCardSound.play();
         document.getElementById("croupier").appendChild(img);
 
         if (burstJoueur = false) {
@@ -987,6 +991,7 @@
         cards.splice(picketCardIndex, 1);
 
         img.className = "imgPartie";
+        audioCardSound.play();
         document.getElementById("joueur").appendChild(img);
 
         decrementCompteurDeck()

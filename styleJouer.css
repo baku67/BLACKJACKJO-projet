@@ -1097,7 +1097,7 @@ p {
 	-webkit-animation-fill-mode: forwards; 
 	*/
 }
-  @keyframes footerClignotement {
+@keyframes footerClignotement {
 	0% {
 		border: 5px solid rgba(130,16,40,1);
 		border-radius: 10px;
@@ -1129,7 +1129,7 @@ p {
 		border-bottom-left-radius: 1px;
 		border-bottom-right-radius: 1px;
 	}
-  };
+}
 
 
 
@@ -1156,7 +1156,7 @@ p {
 	-webkit-animation-fill-mode: forwards; 
 	*/
 }
-  @keyframes borderClignotement {
+@keyframes borderClignotement {
 	0% {
 		border: 5px solid rgb(24, 219, 219);
 		border-radius: 5px;
@@ -1192,7 +1192,7 @@ p {
 		background-color: rgba(255,255,255,0.02);
 		color: rgb(24, 219, 219);
 	}
-  };
+}
   
 
 
