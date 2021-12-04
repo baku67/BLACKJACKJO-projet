@@ -531,6 +531,62 @@
 
 
 
+
+      function lancerPhaseCroupierAfterBurst() {
+        // $.ajax({
+        //   async: false,
+        //   url: "footerNone.html",
+        //   dataType: "html",
+        //   success: function(response) {
+        //     $("#chipsContainer").html(response);
+        //     document.getElementById("footerTitle").innerHTML = " - Distribution... -";
+        //   }
+        // });
+
+
+        addCardCroupierRecursiveAfterBurst();
+
+        function addCardCroupierRecursiveAfterBurst() {
+          setTimeout(function() {
+            document.getElementById("backCardCroupier").classList.add("fadeOut2");
+          }, 1550)
+  
+          setTimeout(function() {
+            document.getElementById("backCardCroupier").remove();
+          }, 2150)
+          
+          if (scoreTotalCroupier < 17) {
+            setTimeout(function() {
+              addCardCroupier();
+              addCardCroupierRecursiveAfterBurst();
+            }, 2150)
+          }
+          else {
+            // resultat();
+            if ((scoreTotalCroupier > 16) && (scoreTotalCroupier < 22)) {
+              setTimeout(function() {
+                document.getElementById("scoreCroupier").style.backgroundColor = "rgba(59,217,10,1)"
+                document.getElementById("scoreCroupier").style.color = "rgba(255,245,0, 1)"
+                document.getElementById("scoreCroupier").style.textShadow = "1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, -1px -1px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, -1px 0px 0 #000000, 0px -1px 0 #000000";
+                document.getElementById("scoreCroupier").style.border = "3px solid rgba(58,157,32, 1)";
+              }, 400);
+            }
+            else if (scoreTotalCroupier > 21) {
+              setTimeout(function() {
+                document.getElementById("scoreCroupier").style.backgroundColor = "rgba(215,31,48,1)"
+                document.getElementById("scoreCroupier").style.color = "rgba(239,230,230, 1)"
+                document.getElementById("scoreCroupier").style.textShadow = "1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, -1px -1px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, -1px 0px 0 #000000, 0px -1px 0 #000000";
+                document.getElementById("scoreCroupier").style.border = "3px solid rgba(130,14,39, 1)";
+              }, 400);
+            }
+          }
+        };
+
+        
+      }
+
+
+
       function lancerPhaseCroupier() {
           $.ajax({
             async: false,
@@ -854,7 +910,10 @@
         // Ajoute la var img à l'<ul> "#croupier"
         document.getElementById("croupier").appendChild(img);
 
-        decrementCompteurDeck()
+        if (burstJoueur = false) {
+          decrementCompteurDeck();
+        }
+        // decrementCompteurDeck()
 
         checkMiseWarning();
 
@@ -1021,16 +1080,17 @@
                   // document.getElementById("joueur").style.border = "1px solid rgba(255,1,49,0.5)";
                     // Fin rubans
 
-                  document.getElementById("scoreCroupier").style.backgroundColor = "rgba(59,217,10,1)"
+
+                  // document.getElementById("scoreCroupier").style.backgroundColor = "rgba(59,217,10,1)"
                   document.getElementById("scoreJoueur").style.backgroundColor = "rgba(215,31,48,1)"
 
-                  document.getElementById("scoreCroupier").style.color = "rgba(255,245,0, 1)"
+                  // document.getElementById("scoreCroupier").style.color = "rgba(255,245,0, 1)"
                   document.getElementById("scoreJoueur").style.color = "rgba(239,230,230, 1)"
 
-                  document.getElementById("scoreCroupier").style.textShadow = "1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, -1px -1px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, -1px 0px 0 #000000, 0px -1px 0 #000000";
+                  // document.getElementById("scoreCroupier").style.textShadow = "1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, -1px -1px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, -1px 0px 0 #000000, 0px -1px 0 #000000";
                   document.getElementById("scoreJoueur").style.textShadow = "1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, -1px -1px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, -1px 0px 0 #000000, 0px -1px 0 #000000";
 
-                  document.getElementById("scoreCroupier").style.border = "3px solid rgba(58,157,32, 1)";
+                  // document.getElementById("scoreCroupier").style.border = "3px solid rgba(58,157,32, 1)";
                   document.getElementById("scoreJoueur").style.border = "3px solid rgba(130,14,39, 1)";
                   // Fin Perdu BURST
 
@@ -1048,7 +1108,9 @@
                   // Fin separateur
 
 
-
+                  setTimeout(function() {
+                    lancerPhaseCroupierAfterBurst();
+                  }, 750)
 
 
                   // Bouton Rejouer
