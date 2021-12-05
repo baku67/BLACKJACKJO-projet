@@ -639,7 +639,7 @@ figure:active {
 	box-sizing: border-box;
 	overflow: hidden;
 	background-image: url("cash.png"), linear-gradient(27deg, rgba(0,255,94,0.9) 0%, rgba(0,212,255,0.9) 100%);
-	/* background-image: url("cash.png"), linear-gradient(166deg, rgba(0,0,0,1) 0%, rgba(0,187,255,1) 99%); */
+	/* background-image: url("cash2.png"), linear-gradient(166deg, rgba(0,0,0,1) 0%, rgba(0,187,255,1) 99%); */
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position-x: 40%;
@@ -650,8 +650,56 @@ figure:active {
 	border-left: 9px solid rgba(130,14,39, 0.20); */
 	border-radius: 10px;
 }
+.styleSeparateurBlackJack {
+	box-sizing: border-box;
+	overflow: hidden;
+	background-image: url("https://toppng.com/pile-of-gold-png-PNG-free-PNG-Images_114875"), linear-gradient(144deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+	background-size: 128px;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position-x: 40%;
+	background-position-y: 38%;
+	border-top: 1px solid rgba(130,14,39, 0.10);
+	border-bottom: 1px solid rgba(130,14,39, 0.20);
+	/* border-right: 8px solid rgba(130,14,39, 0.20);
+	border-left: 9px solid rgba(130,14,39, 0.20); */
+	border-radius: 10px;
+}
+/* Gradient(triple) BlackJack ?  */
+/* background: rgb(131,58,180);
+background: -moz-linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+background: -webkit-linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#833ab4",endColorstr="#fcb045",GradientType=1); */
 
+/* Gradient(double) BlackJack ? */
+/* background: rgb(63,94,251);
+background: -moz-radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+background: -webkit-radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3f5efb",endColorstr="#fc466b",GradientType=1); */
 
+.styleSeparateurPush {
+	box-sizing: border-box;
+	overflow: hidden;
+	background-image: url("pushArrows.png"), linear-gradient(144deg, rgba(51,104,108,1) 0%, rgba(228,255,0,1) 100%);
+	background-size: 128px;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position-x: 40%;
+	background-position-y: 38%;
+	border-top: 1px solid rgba(130,14,39, 0.10);
+	border-bottom: 1px solid rgba(130,14,39, 0.20);
+	/* border-right: 8px solid rgba(130,14,39, 0.20);
+	border-left: 9px solid rgba(130,14,39, 0.20); */
+	border-radius: 10px;
+}
+/* Grandient(double) Push ? */
+/* background: rgb(51,104,108);
+background: -moz-linear-gradient(144deg, rgba(51,104,108,1) 0%, rgba(228,255,0,1) 100%);
+background: -webkit-linear-gradient(144deg, rgba(51,104,108,1) 0%, rgba(228,255,0,1) 100%);
+background: linear-gradient(144deg, rgba(51,104,108,1) 0%, rgba(228,255,0,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#33686c",endColorstr="#e4ff00",GradientType=1); */
 
 
 
