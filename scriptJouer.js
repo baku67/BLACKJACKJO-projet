@@ -741,38 +741,80 @@
             }
 
               if (scoreTotalJoueur > scoreTotalCroupier) {
-                $.ajax({
-                  async: false,
-                  url: "footerJoueurGagne.html",
-                  dataType: "html",
-                  success: function(response) {
-                    $("#container3").html(response);
-                    console.log(scoreTotalCroupier);
-                    document.getElementById("footerTitle").innerHTML = " - Résultat -";
-
-                    // Gagné
-                      // rubans de Win/Loose
-                    document.getElementById("croupier").style.backgroundColor = "rgba(255,1,49,0.3)";
-                    document.getElementById("joueur").style.backgroundColor = "rgba(61,255,1,0.3)";
-                      // Fin rubans
-
-                    document.getElementById("scoreCroupier").style.backgroundColor = "rgba(215,31,48,1)";
-                    document.getElementById("scoreJoueur").style.backgroundColor = "rgba(59,217,10,1)";
-
-                    document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)";
-                    document.getElementById("scoreJoueur").style.color = "rgba(255,245,0,1)";
-
-                    document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)";
-                    document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)";
-
-                    document.getElementById("scoreCroupier").style.border = "1px solid rgba(255,1,49,0.5)";
-                    document.getElementById("scoreJoueur").style.border = "1px solid rgba(58,157,32,0.5)";
-                    // Fin Gagné
-                  
-                    // Bouton Rejouer
-                    relancer();
-                  }
-                });
+                setTimeout(function() {
+                  $.ajax({
+                    async: false,
+                    url: "footerJoueurGagne.html",
+                    dataType: "html",
+                    success: function(response) {
+                      $("#container3").html(response);
+                      document.getElementById("footerTitle").innerHTML = " - Résultat -";
+    
+                        // Mise lockée
+                        document.getElementById("miseLockedFooter").innerHTML = miseLocked;
+                        // fin
+    
+                        // Résultat Gains 
+                        document.getElementById("miseResultat").innerHTML = miseLocked;
+                        setTimeout( function() {
+                          IncrementGain();
+                        }, 1500);
+  
+                        
+                          // function: (en partant de la mise vers le gains réel)
+                          var miseLockedMultiplied = miseLocked * 1.5;
+                          function IncrementGain() {
+                            setTimeout( function() {
+                                if (miseLocked < miseLockedMultiplied) {
+                                miseLocked = miseLocked + 1;
+                                document.getElementById("miseResultat").innerHTML = miseLocked;
+                                document.getElementById("miseResultat").classList.add("addColorToResultatGreen");
+                                IncrementGain();
+                                }
+                            }, 30);
+                          } 
+                          // fin fonction
+                        // Fin résultat Gains
+    
+                      // FIN WIP
+                      
+  
+                      document.getElementById("deckContainer").remove();
+                      // document.getElementById("deckContainer").classList.add("fadeOut");
+    
+                      document.getElementById("scoreCroupier").style.backgroundColor = "rgba(215,31,48,1)";
+                      document.getElementById("scoreJoueur").style.backgroundColor = "rgba(59,217,10,1)";
+  
+                      document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)";
+                      document.getElementById("scoreJoueur").style.color = "rgba(255,245,0,1)";
+  
+                      document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)";
+                      document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)";
+  
+                      document.getElementById("scoreCroupier").style.border = "1px solid rgba(255,1,49,0.5)";
+                      document.getElementById("scoreJoueur").style.border = "1px solid rgba(58,157,32,0.5)";
+  
+  
+                      // WIP separateur avec résultat
+                      // Style du séparateur (= Apparition)
+                      document.getElementById("resultatText").classList.add("resultatTextWin");
+                      document.getElementById("separateur").classList.add("styleSeparateurWin");
+    
+                      // Animation scale() qui pop avec fadeIn()
+                      document.getElementById("separateur").classList.add("fadeInResultat");
+                      document.getElementById("separateur").classList.add("scaleBoom");
+                      // document.getElementById("separateur").classList.add("marginFix");
+                    
+                      // TEXT
+                      document.getElementById("resultatText").innerText = "BIG WIN";
+                      // Fin separateur
+    
+  
+                      // Bouton Rejouer
+                      relancer();
+                    }
+                  });
+                }, 0);
               }
 
               if (scoreTotalJoueur == scoreTotalCroupier) {

@@ -601,7 +601,7 @@ figure:active {
     top: 22%;
 	left: 12%;
     /* text-shadow: 0px 0px 5px rgb(184 0 0); */
-    text-shadow: 0 -1px 4px #000, 0 -2px 10px rgb(109 143 107), 0 -10px 20px #e4ff02, 0 -18px 40px #f2ff00, 2px 2px 4px rgb(206 89 55 / 0%);
+    text-shadow:0 -1px 4px #ff00f2de, 0 -2px 10px rgb(126 111 127), 0 -10px 20px #e4ff02, 0 -18px 40px #f2ff00, 2px 2px 4px rgb(206 89 55 / 0%);
 }
 .resultatTextBust {
 	color:rgba(110, 37, 37, 0.9);
@@ -1048,7 +1048,7 @@ p {
 	text-shadow: 0 0 3px black;
 }
 .addColorToResultatGreen {
-	color: rgb(0, 255, 64);
+	color: rgba(0, 255, 127, 0.9);
 	text-shadow: 0 0 3px black;
 }
 
