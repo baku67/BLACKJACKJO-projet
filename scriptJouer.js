@@ -694,7 +694,7 @@
                               document.getElementById("miseResultat").classList.add("addColorToResultatGreen");
                               IncrementGain();
                               }
-                          }, 30);
+                          }, 20);
                         } 
                         // fin fonction
                       // Fin résultat Gains
@@ -771,7 +771,7 @@
                                 document.getElementById("miseResultat").classList.add("addColorToResultatGreen");
                                 IncrementGain();
                                 }
-                            }, 30);
+                            }, 20);
                           } 
                           // fin fonction
                         // Fin résultat Gains
@@ -818,21 +818,42 @@
               }
 
               if (scoreTotalJoueur == scoreTotalCroupier) {
+
                 $.ajax({
                   async: false,
-                  url: "footerPush.html",
+                  url: "footerBurstJoueur.html",
                   dataType: "html",
                   success: function(response) {
                     $("#container3").html(response);
-                    console.log(scoreTotalCroupier);
                     document.getElementById("footerTitle").innerHTML = " - Résultat -";
+  
+                    // WIP footerResultat
+                      // WIP: Fade In du résultat
+                        // document.getElementById("container3").visibility = "hidden";
+                        // document.getElementById("container3").classList.add("fadeIn2");
+                      // Fin WIP: Fade In du résultat
+  
+                      // Mise lockée
+                      document.getElementById("miseLockedFooter").innerHTML = miseLocked;
+                      // fin
+  
+                      // Résultat Gains 
+                      document.getElementById("miseResultat").innerHTML = miseLocked;
+                      
+                      document.getElementById("miseResultat").classList.add("addColorToResultatYellow");
 
-                    // Égalité
-                      // rubans jaunes
-                    document.getElementById("scoreCroupier").style.border = "solid 2px rgba(0,0,0,0.5)";
-                    document.getElementById("scoreJoueur").style.border = "solid 2px rgba(0,0,0,0.5)";
-                      // Fin rubans
-
+                      // Fin résultat Gains
+  
+                    // FIN WIP
+                    
+  
+  
+                    document.getElementById("deckContainer").remove();
+                    // document.getElementById("deckContainer").classList.add("fadeOut");
+  
+                    //*** Perdu BURST (Ajouter icone boom.png (assez grand) dans le séparateur)
+  
+  
                     document.getElementById("croupier").style.backgroundColor = "rgba(255,246,1,0.5)";
                     document.getElementById("joueur").style.backgroundColor = "rgba(255,246,1,0.5)";
 
@@ -846,20 +867,34 @@
                     document.getElementById("scoreJoueur").style.textShadow = "0px 0px 2px white";
 
                     document.getElementById("scoreCroupier").style.backgroundColor = "rgba(255,246,1,1)";
-                    document.getElementById("scoreJoueur").style.backgroundColor = "rgba(255,246,1,1)";
-                    // Fin Égalité
+                    document.getElementById("scoreJoueur").style.backgroundColor = "rgba(255,246,1,1)"; 
+
+                    // WIP separateur avec résultat
+                    // Style du séparateur (= Apparition)
+                    document.getElementById("resultatText").classList.add("resultatTextBust");
+                    document.getElementById("separateur").classList.add("styleSeparateurPush");
+  
+                    // Animation scale() qui pop avec fadeIn()
+                    document.getElementById("separateur").classList.add("fadeInResultat");
+                    document.getElementById("separateur").classList.add("scaleBoom");
+                    // document.getElementById("separateur").classList.add("marginFix");
                   
+                    // TEXT
+                    document.getElementById("resultatText").innerText = "Push";
+                    // Fin separateur
+  
+  
                     // Bouton Rejouer
                     relancer();
                   }
                 });
+  
+
+
               }
-
-            
-
             }, 1300);
-          }
 
+          }  
       }
 
 
@@ -1149,7 +1184,7 @@
                             document.getElementById("miseResultat").classList.add("addColorToResultatRed");
                             decrementGain();
                             }
-                        }, 30);
+                        }, 20);
                       } 
                       // fin fonction
                     // Fin résultat Gains
@@ -1216,7 +1251,8 @@
           setTimeout(function() {
             $.ajax({
               async: false,
-              url: "footerBurstJoueur.html",
+              // url: "footerBurstJoueur.html",
+              url: "footerJoueurGagne.html",
               dataType: "html",
               success: function(response) {
                 $("#container3").html(response);
@@ -1245,10 +1281,10 @@
                           if (miseLocked < miseLockedMultiplied) {
                           miseLocked = miseLocked + 1;
                           document.getElementById("miseResultat").innerHTML = miseLocked;
-                          document.getElementById("miseResultat").classList.add("addColorToResultatGreen");
+                          document.getElementById("miseResultat").classList.add("addColorToResultatBJ");
                           IncrementGain();
                           }
-                      }, 30);
+                      }, 20);
                     } 
                     // fin fonction
                   // Fin résultat Gains
@@ -1278,7 +1314,7 @@
 
                 // WIP separateur avec résultat
                 // Style du séparateur (= Apparition)
-                document.getElementById("resultatText").classList.add("resultatTextWin");
+                document.getElementById("resultatText").classList.add("resultatTextBJ");
                 document.getElementById("separateur").classList.add("styleSeparateurBlackJack");
 
                 // Animation scale() qui pop avec fadeIn()
