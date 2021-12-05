@@ -341,7 +341,16 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	margin: 60px auto 55px auto;
 }
 
-#resultatText {
+.resultatTextWin {
+	color: rgb(225 187 50);
+    font-size: 3.5em;
+    letter-spacing: 2px;
+    position: relative;
+    top: 22%;
+    /* text-shadow: 0px 0px 5px rgb(184 0 0); */
+    text-shadow: 0 -1px 4px #000, 0 -2px 10px rgb(109 143 107), 0 -10px 20px #ffc600, 0 -18px 40px #ffbc00, 2px 2px 4px rgb(206 89 55 / 0%);
+}
+.resultatTextBust {
 	color:rgb(110, 37, 37);
 	 	/* Text Shadow blanc? */
 	font-size: 3.5em;
@@ -353,6 +362,10 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	/* text-shadow: 0px 0px 5px rgba(184, 0, 0, 1); */
 	text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00, 2px 2px 4px rgba(206,89,55,0);
 }
+
+
+
+
 p {
 	margin-block-end: 0em;
 }
@@ -576,6 +589,21 @@ figure:active {
 	box-sizing: border-box;
 	overflow: hidden;
 	background-image: url("boomPng.png"), linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%);
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position-x: 50%;
+	background-position-y: 50%;
+	border-top: 1px solid rgba(130,14,39, 0.70);
+	border-bottom: 1px solid rgba(130,14,39, 0.70);
+	/* border-right: 8px solid rgba(130,14,39, 0.80);
+	border-left: 9px solid rgba(130,14,39, 0.80); */
+	border-radius: 10px;
+}
+.styleSeparateurWin {
+	box-sizing: border-box;
+	overflow: hidden;
+	background-image: url("cash.png"), linear-gradient(27deg, rgba(0,255,94,1) 0%, rgba(0,212,255,1) 100%);
+	/* background-image: url("cash.png"), linear-gradient(166deg, rgba(0,0,0,1) 0%, rgba(0,187,255,1) 99%); */
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position-x: 50%;
@@ -825,7 +853,6 @@ p {
 .modifier {
 	font-weight: bold;
 	font-size: 17px;
-
 }
 #modifierPlus1 {
 	color: green !important;
@@ -1254,6 +1281,9 @@ p {
 		/* Resizer l'image (add autre URL) */
 		background-image: url("boomPngMobile.png"), linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%);
 	}
+	.styleSeparateurWin {
+		background-image: url("cash.png"), linear-gradient(166deg, rgba(0,0,0,1) 0%, rgba(0,187,255,1) 99%);
+	}
 
 	#croupier {
 		/* A MODIFIE DANS MEDIAQUERIES (Height-responsive) */
@@ -1311,10 +1341,11 @@ p {
 
 	}
 
-	.container {
-		/* margin-left: 7px;
-		margin-left: 7px; */
-	}
+	/* .container {
+		margin-left: 7px;
+		margin-left: 7px; 
+	} 
+	*/
 
 	
 	#textDistribution {
