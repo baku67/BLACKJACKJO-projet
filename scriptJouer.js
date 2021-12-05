@@ -845,33 +845,25 @@
                       // Fin résultat Gains
   
                     // FIN WIP
-                    
-  
+                  
   
                     document.getElementById("deckContainer").remove();
-                    // document.getElementById("deckContainer").classList.add("fadeOut");
   
-                    //*** Perdu BURST (Ajouter icone boom.png (assez grand) dans le séparateur)
-  
-  
-                    document.getElementById("croupier").style.backgroundColor = "rgba(255,246,1,0.5)";
-                    document.getElementById("joueur").style.backgroundColor = "rgba(255,246,1,0.5)";
 
-                    document.getElementById("croupier").style.border = "1px solid rgba(255,246,1,0.7)";
-                    document.getElementById("joueur").style.border = "1px solid rgba(255,246,1,0.7)";
 
-                    document.getElementById("scoreCroupier").style.color = "rgba(0,0,0,0.6)";
-                    document.getElementById("scoreJoueur").style.color = "rgba(0,0,0,0.6)";
+                    document.getElementById("scoreCroupier").style.color = "rgb(11 136 6)";
+                    document.getElementById("scoreJoueur").style.color = "rgb(11 136 6)";
 
-                    document.getElementById("scoreCroupier").style.textShadow = "0px 0px 2px white";
-                    document.getElementById("scoreJoueur").style.textShadow = "0px 0px 2px white";
+                    document.getElementById("scoreCroupier").style.textShadow = "#0d0d0d 0px 0px 1px";
+                    document.getElementById("scoreJoueur").style.textShadow = "#0d0d0d 0px 0px 1px";
 
-                    document.getElementById("scoreCroupier").style.backgroundColor = "rgba(255,246,1,1)";
-                    document.getElementById("scoreJoueur").style.backgroundColor = "rgba(255,246,1,1)"; 
+                    document.getElementById("scoreCroupier").style.backgroundColor = "rgb(252 176 69)";
+                    document.getElementById("scoreJoueur").style.backgroundColor = "rgb(252 176 69)"; 
+
 
                     // WIP separateur avec résultat
                     // Style du séparateur (= Apparition)
-                    document.getElementById("resultatText").classList.add("resultatTextBust");
+                    document.getElementById("resultatText").classList.add("resultatTextPush");
                     document.getElementById("separateur").classList.add("styleSeparateurPush");
   
                     // Animation scale() qui pop avec fadeIn()
