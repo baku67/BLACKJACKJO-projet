@@ -1,5 +1,7 @@
 POUR NOEL: patcher les autre résultats + AS 
 
+Mode accéléré (juste un button html avec JS: var bool qui change la var timeOutVar (global))
+Mode Mute (juste un button html avec JS: var bool avec condition fonction audio.play();)
 
 Clignotement de la flèche Résultat + Png fleche 
 

@@ -1267,7 +1267,7 @@
                   }, 1500);
                   
                     // function: (en partant de la mise vers le gains réel)
-                    var miseLockedMultiplied = miseLocked * 2.5;
+                    var miseLockedMultiplied = miseLocked * 3;
                     function IncrementGain() {
                       setTimeout( function() {
                           if (miseLocked < miseLockedMultiplied) {
