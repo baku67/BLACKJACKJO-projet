@@ -610,7 +610,7 @@ figure:active {
     position: relative;
     top: 22%;
 	left: 12%;
-	text-shadow: -5px 5px 0px #e600dd, -10px 10px 0px #01cccc, -15px 15px 0px #bd0000;
+	text-shadow: -3px 3px 0px #e600dd, -6px 6px 0px #01cccc, -9px 9px 0px #bd0000;
 }
 .resultatTextBust {
 	color:rgba(110, 37, 37, 0.9);
@@ -702,7 +702,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3f5efb",endCo
 .styleSeparateurPush {
 	box-sizing: border-box;
 	overflow: hidden;
-	background-image: url("pushArrows2.png"), linear-gradient(144deg, rgb(253 128 128) 0%, rgb(247 254 91) 100%);
+	background-image: url("pushArrow7_opacity.png"), linear-gradient(144deg, rgb(253 128 128) 0%, rgb(247 254 91) 100%);
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position-x: 40%;
