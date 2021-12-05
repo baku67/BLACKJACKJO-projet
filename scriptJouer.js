@@ -2,7 +2,7 @@
     window.onload = function(){
 
       var audioCardSound = new Audio("addCardSound.mp3");
-      audioCardSound.volume = 0.6;
+      audioCardSound.volume = 0.5;
 
       var score = 0;
       var mise = 0;
@@ -691,7 +691,7 @@
                               if (miseLocked < miseLockedMultiplied) {
                               miseLocked = miseLocked + 1;
                               document.getElementById("miseResultat").innerHTML = miseLocked;
-                              document.getElementById("miseResultat").classList.add("addColorToResultat");
+                              document.getElementById("miseResultat").classList.add("addColorToResultatGreen");
                               IncrementGain();
                               }
                           }, 30);
@@ -1104,7 +1104,7 @@
                             if (miseLocked > 0) {
                             miseLocked = miseLocked - 1;
                             document.getElementById("miseResultat").innerHTML = miseLocked;
-                            document.getElementById("miseResultat").classList.add("addColorToResultat");
+                            document.getElementById("miseResultat").classList.add("addColorToResultatRed");
                             decrementGain();
                             }
                         }, 30);
