@@ -1416,6 +1416,19 @@ p {
 		height: 100px;
 	}
 
+	#soundToggleButton {
+		left: 2% !important;
+		font-size: 1.5em !important;
+	}
+
+	#speedToggleButton {
+		left: 7% !important;
+		font-size: 1.5em !important;
+	}
+
+	#list {
+		margin-top: 17px;
+	}
 
 
 

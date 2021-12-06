@@ -23,33 +23,41 @@
       
 
 
+      
+
+      var setTimeOutMultiplierBool = false;
+      var setTimeOutMultiplier = 1;
+      
+      // Template utilisé dans le NewGame load
+      // function toggleSpeed() {
+      //   if (setTimeOutMultiplierBool == true) {
+      //     setTimeOutMultiplierBool = false;
+      //     setTimeOutMultiplier = 1;
+      //   }
+      //   else {
+      //     setTimeOutMultiplierBool = true;
+      //     setTimeOutMultiplier = 0.5;
+      //   }
+      // }
+
+
+
+
+
+
       var SoundMuteBool = false;
 
-
-
-      var setTimeOutMultiplier = 1;
-      var setTimeOutMultiplierBool = false;
-
-      
-      function toggleSpeed() {
-        if (setTimeOutMultiplierBool == true) {
-          setTimeOutMultiplier = 0.5;
-        }
-        else {
-          setTimeOutMultiplier = 1;
-        }
-      }
-
-      function toggleMute() {
-        if (SoundMuteBool == true) {
-          SoundMuteBool = false;
-          audioCardSound.volume = 0.5;
-        }
-        else {
-          SoundMuteBool = true;
-          audioCardSound.volume = 0;
-        }
-      }
+      // Template utilisé dans le NewGame load
+      // function toggleMute() {
+      //   if (SoundMuteBool == true) {
+      //     SoundMuteBool = false;
+      //     audioCardSound.volume = 0.5;
+      //   }
+      //   else {
+      //     SoundMuteBool = true;
+      //     audioCardSound.volume = 0;
+      //   }
+      // }
       
 
 
@@ -324,6 +332,10 @@
               document.getElementById("compteurDeck").innerHTML = compteurDeck;
               document.getElementById("compteurDeckMax").innerHTML = compteurDeckMax;
               
+
+              
+              // ******************************** *
+              // BOUTON TOGGLE SON
               document.getElementById("soundToggleButton").addEventListener("click", function() {
                 if (SoundMuteBool == true) {
                   SoundMuteBool = false;
@@ -334,6 +346,25 @@
                   audioCardSound.volume = 0;
                 }
               });
+              // FIN bouton toggle sons
+              // ******************************** *
+
+
+              // ******************************** *
+              // BOUTON TOGGLE SPEED
+              document.getElementById("speedToggleButton").addEventListener("click", function() {
+                if (setTimeOutMultiplierBool == true) {
+                  setTimeOutMultiplierBool = false;
+                  setTimeOutMultiplier = 1;
+                }
+                else {
+                  setTimeOutMultiplierBool = true;
+                  setTimeOutMultiplier = 0.2;
+                }
+              });
+              // FIN bouton toggle speed
+              // ******************************** *
+
 
               $.ajax({
                 async: false,
@@ -504,16 +535,16 @@
 
           setTimeout(function() {
             addCardJoueur();
-          }, 2000 * setTimeOutMultiplier);
+          }, (2000 * setTimeOutMultiplier));
           setTimeout(function() {
             addCardCroupier();
-          }, 3750 * setTimeOutMultiplier);
+          }, (3750 * setTimeOutMultiplier));
           setTimeout(function() {
             addCardJoueur();
-          }, 5500 * setTimeOutMultiplier);
+          }, (5500 * setTimeOutMultiplier));
           setTimeout(function() {
             addBackCardCroupier();
-          }, 7250 * setTimeOutMultiplier);
+          }, (7250 * setTimeOutMultiplier));
 
         })
       }
