@@ -22,6 +22,44 @@
       var asCroupier = new Boolean;
       
 
+
+      var SoundMuteBool = false;
+
+
+
+      var setTimeOutMultiplier = 1;
+      var setTimeOutMultiplierBool = false;
+
+      
+      function toggleSpeed() {
+        if (setTimeOutMultiplierBool == true) {
+          setTimeOutMultiplier = 0.5;
+        }
+        else {
+          setTimeOutMultiplier = 1;
+        }
+      }
+
+      function toggleMute() {
+        if (SoundMuteBool == true) {
+          SoundMuteBool = false;
+          audioCardSound.volume = 0.5;
+        }
+        else {
+          SoundMuteBool = true;
+          audioCardSound.volume = 0;
+        }
+      }
+      
+
+
+
+
+
+
+
+
+
       //  Collapse Footer
       var coll = document.getElementById("collapsible");
       var i;
@@ -286,6 +324,16 @@
               document.getElementById("compteurDeck").innerHTML = compteurDeck;
               document.getElementById("compteurDeckMax").innerHTML = compteurDeckMax;
               
+              document.getElementById("soundToggleButton").addEventListener("click", function() {
+                if (SoundMuteBool == true) {
+                  SoundMuteBool = false;
+                  audioCardSound.volume = 0.5;
+                }
+                else {
+                  SoundMuteBool = true;
+                  audioCardSound.volume = 0;
+                }
+              });
 
               $.ajax({
                 async: false,
@@ -456,16 +504,16 @@
 
           setTimeout(function() {
             addCardJoueur();
-          }, 2000);
+          }, 2000 * setTimeOutMultiplier);
           setTimeout(function() {
             addCardCroupier();
-          }, 3750);
+          }, 3750 * setTimeOutMultiplier);
           setTimeout(function() {
             addCardJoueur();
-          }, 5500);
+          }, 5500 * setTimeOutMultiplier);
           setTimeout(function() {
             addBackCardCroupier();
-          }, 7000);
+          }, 7250 * setTimeOutMultiplier);
 
         })
       }
