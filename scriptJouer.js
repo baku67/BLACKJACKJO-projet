@@ -13,6 +13,8 @@
       var audioPush = new Audio("pushSound.mp3");
       audioPush.volume = 0.4;
 
+      // réinitialisé dans le NewGame (tableau des valeurs derniers jetons ajoutés en vue de retour arriere)
+      let logTokenValues = [];
 
       var score = 0;
       var mise = 0;
@@ -341,11 +343,10 @@
 
           setTimeout( function lancerPartie() {
 
+              logTokenValues = [];
               document.getElementById("compteurDeck").innerHTML = compteurDeck;
               document.getElementById("compteurDeckMax").innerHTML = compteurDeckMax;
-              
 
-              
               // ******************************** *
               // BOUTON TOGGLE SON
               document.getElementById("soundToggleButton").addEventListener("click", function() {
@@ -399,6 +400,22 @@
                   ChoixActif = false;
                   // document.getElementById("collapsible").style.visibility = "visible";
 
+                  document.getElementById("retourArriereButton").addEventListener("click", function() {
+                    // fonction de rafraichissement de la mise en cours (Si il y a matière)
+                    if (miseEnCours != 0) {
+                      miseEnCours = miseEnCours - logTokenValues[0];
+                      document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
+
+                      // fonction qui remove le premier var du tableau
+                    logTokenValues.shift();
+                    } 
+                  });
+                  // document.getElementById("retourArriereButton").addEventListener('mouseenter', function() {
+                  //   document.getElementById("retourArriereImg").src = "retourArriere2.png";
+                  // });
+                  $('#retourArriereButton').hover(function() {
+                    document.getElementById("retourArriereImg").src = "retourArriere2.png";
+                  });
 
                     //*** Zone FooterBorder Clignotement      
                     document.querySelector("#footer").classList.add("miserActif2");  
@@ -1132,8 +1149,31 @@
         }
       }
 
+      function addLastTokenClickToTab(value) {
+        logTokenValues.unshift(value);
+        console.log(logTokenValues);
+      }
+
+
+      // document.getElementById("retourArriereButton").addEventListener("click", function() {
+      //   // fonction de rafraichissement de la mise en cours
+      //   miseEnCours = miseEnCours - logTokenValues[1];
+      //   document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
+
+      //   // fonction qui remove le premier var du tableau
+      //   logTokenValues.shift();
+      // });
+
+      // document.getElementById("retourArriereButton").addEventListener('mouseover', function() {
+      //   document.getElementById("retourArriereImg").src = "retourArriereWhiteRed.png";
+      // });
+
+
       function tokensClick() {
         document.getElementById("whiteToken").addEventListener("click", function() {
+          
+          addLastTokenClickToTab(1);
+
           miseEnCours += 1;
           document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
           miseBoutonStyle();
@@ -1144,6 +1184,9 @@
           cssMiseEnCours();
         })
         document.getElementById("redToken").addEventListener("click", function() {
+
+          addLastTokenClickToTab(5);
+
           miseEnCours += 5;
           document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
           miseBoutonStyle();
@@ -1154,6 +1197,9 @@
           cssMiseEnCours();
         })
         document.getElementById("greenToken").addEventListener("click", function() {
+
+          addLastTokenClickToTab(10);
+
           miseEnCours += 10;
           document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
           miseBoutonStyle();
@@ -1164,6 +1210,9 @@
           cssMiseEnCours();
         })
         document.getElementById("blueToken").addEventListener("click", function() {
+
+          addLastTokenClickToTab(25);
+
           miseEnCours += 25;
           document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
           miseBoutonStyle();
@@ -1174,8 +1223,10 @@
           cssMiseEnCours();
         })
         document.getElementById("blackToken").addEventListener("click", function() {
-          miseEnCours += 100;
 
+          addLastTokenClickToTab(100);
+
+          miseEnCours += 100;
           document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
           miseBoutonStyle();
           misePop();

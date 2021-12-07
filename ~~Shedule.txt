@@ -2,7 +2,12 @@ POUR NOEL: patcher les autre résultats + AS
            Vrai / Faux BlackJack
 
 
-Bruit de tirelire quand win / bruit d'eplosion quand bust
+Faire Pop-FadeIn (ajouter le DOM: appenchild?) le bouton "Nouvelle Partie !" avec SetTimeOut OnloadWindow pour effet décalé stylé (je suppose?)
+
++Bruits de pieces pendant Increment/decrement (decompteSound.wav dans Backup Dir A DECOMPRESSER en mp3 (site fav))
+
++Rendre le bouton SoundMute vraiment png
+
 
 Icone Mise en cours // Images background du footer Win/Loose/BJ (fond de pièces, etc...)
 Animation: BigWin/BlackJack/Bust (pop ou slide lent vers la droite avec soulignage qui pop de la droite et glisse vers la droite)
@@ -154,6 +159,7 @@ Hover: choix(hit/stand/double)
  TO DO: Garder la meme height de Footer quand load Mise
  TO DO: Ajouter Deck à gauche (garder fight centré), avec nbrCardsRestantes dessus 
  Ajouter carteCroupier face cachée lors ditribution afterMise (plus compréhensible), puis los de phase Stand: l'enlever AU MOMENT de la boucle IF récursive  (gérer transition propre)
+Bruit de tirelire quand win / bruit d'eplosion quand bust
 
 ___________________________________________________________________________________________
 DEROULEMENT:
