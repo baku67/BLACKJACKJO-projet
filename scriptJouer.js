@@ -1315,9 +1315,10 @@
                     // fin
 
                     // Résultat Gains 
+                    
                     document.getElementById("miseResultat").innerHTML = miseLocked;
                     setTimeout( function() {
-                      decrementGain();
+                      DecrementGain();
                     }, 1500 * setTimeOutMultiplier);
                     
                       
