@@ -1455,7 +1455,12 @@ p {
 
 
 
-
+	#retourArriereImg {
+		width: 30px !important;
+		position: relative;
+		right: 82px;
+		margin-top: 3px !important;
+	}
 
 
 

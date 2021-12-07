@@ -8,11 +8,18 @@
       audioCoinWin.volume = 0.4;
 
       var audioExplosionBust = new Audio("explosionSound.mp3");
-      audioExplosionBust.volume = 0.25;
+      audioExplosionBust.volume = 0.15;
 
       var audioPush = new Audio("pushSound.mp3");
       audioPush.volume = 0.4;
 
+      var audioToken = new Audio("tokenSound.mp3");
+      audioToken.volume = 0.7;
+
+      var audioDecompte = new Audio("decompteSound.mp3");
+      audioDecompte.volume = 0.2;
+
+      
       // réinitialisé dans le NewGame (tableau des valeurs derniers jetons ajoutés en vue de retour arriere)
       let logTokenValues = [];
 
@@ -356,6 +363,8 @@
                   audioCoinWin.volume = 0.5;
                   audioExplosionBust.volume = 0.5;
                   audioPush.volume = 0.5;
+                  audioDecompte.volume = 0.5;
+                  audioToken.volume = 0.5;
                   document.getElementById("speakerSrc").src = 'speakerMax_sourceMax.png';
                   // document.getElementById("speakerSrc").setAttribute('src','speakerMax_sourceMax.png');
                 }
@@ -365,6 +374,8 @@
                   audioCoinWin.volume = 0;
                   audioExplosionBust.volume = 0;
                   audioPush.volume = 0;
+                  audioDecompte.volume = 0;
+                  audioToken.volume = 0;
                   document.getElementById("speakerSrc").src = 'speakerMute_sourceMaxPng2.png';
                   // document.getElementById("speakerSrc").setAttribute('src','speakerMute_sourceMaxPng.png');
                 }
@@ -410,12 +421,9 @@
                     logTokenValues.shift();
                     } 
                   });
-                  // document.getElementById("retourArriereButton").addEventListener('mouseenter', function() {
+                  // $('#retourArriereButton').hover(function() {
                   //   document.getElementById("retourArriereImg").src = "retourArriere2.png";
                   // });
-                  $('#retourArriereButton').hover(function() {
-                    document.getElementById("retourArriereImg").src = "retourArriere2.png";
-                  });
 
                     //*** Zone FooterBorder Clignotement      
                     document.querySelector("#footer").classList.add("miserActif2");  
@@ -475,7 +483,11 @@
 
       // function: (en partant de la mise vers le gains réel)
       function DecrementGain() {
-        
+
+        // adapter la longueur du son: calculer le temps pris pour decrement/increment du miseResultat (((110/miseLocked) * setTimeOutMultiplier) * miseLocked)   (en ms)
+        // provoquer un fadeOut du son à partir d'avant ce moment
+        audioDecompte.play();
+
         setTimeout( function() {
             if (miseLocked > 0) {
             miseLocked = miseLocked - 1;
@@ -489,6 +501,8 @@
 
       // function (en partant de la mise vers le gains réel)
       function IncrementGain(miseLockedMultiplied) {
+        audioDecompte.play();
+
         misesResultatDiff = miseLockedMultiplied - miseLocked;
 
         setTimeout( function() {
@@ -1155,24 +1169,14 @@
       }
 
 
-      // document.getElementById("retourArriereButton").addEventListener("click", function() {
-      //   // fonction de rafraichissement de la mise en cours
-      //   miseEnCours = miseEnCours - logTokenValues[1];
-      //   document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
-
-      //   // fonction qui remove le premier var du tableau
-      //   logTokenValues.shift();
-      // });
-
-      // document.getElementById("retourArriereButton").addEventListener('mouseover', function() {
-      //   document.getElementById("retourArriereImg").src = "retourArriereWhiteRed.png";
-      // });
 
 
       function tokensClick() {
         document.getElementById("whiteToken").addEventListener("click", function() {
           
           addLastTokenClickToTab(1);
+
+          audioToken.play();
 
           miseEnCours += 1;
           document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
@@ -1187,6 +1191,8 @@
 
           addLastTokenClickToTab(5);
 
+          audioToken.play();
+
           miseEnCours += 5;
           document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
           miseBoutonStyle();
@@ -1199,6 +1205,8 @@
         document.getElementById("greenToken").addEventListener("click", function() {
 
           addLastTokenClickToTab(10);
+
+          audioToken.play();
 
           miseEnCours += 10;
           document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
@@ -1213,6 +1221,8 @@
 
           addLastTokenClickToTab(25);
 
+          audioToken.play();
+
           miseEnCours += 25;
           document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
           miseBoutonStyle();
@@ -1225,6 +1235,8 @@
         document.getElementById("blackToken").addEventListener("click", function() {
 
           addLastTokenClickToTab(100);
+
+          audioToken.play();
 
           miseEnCours += 100;
           document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
