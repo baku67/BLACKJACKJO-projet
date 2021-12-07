@@ -4,6 +4,13 @@
       var audioCardSound = new Audio("addCardSound.mp3");
       audioCardSound.volume = 0.5;
 
+      var audioCoinWin = new Audio("winCoinSound.mp3");
+      audioCoinWin.volume = 0.5;
+
+      var audioExplosionBust = new Audio("explosionSound.mp3");
+      audioExplosionBust.volume = 0.5;
+
+
       var score = 0;
       var mise = 0;
       var scoreTotalJoueur = 0;
@@ -340,12 +347,16 @@
                 if (SoundMuteBool == true) {
                   SoundMuteBool = false;
                   audioCardSound.volume = 0.5;
+                  audioCoinWin.volume = 0.5;
+                  audioExplosionBust.volume = 0.5;
                   document.getElementById("speakerSrc").src = 'speakerMax_sourceMax.png';
                   // document.getElementById("speakerSrc").setAttribute('src','speakerMax_sourceMax.png');
                 }
                 else {
                   SoundMuteBool = true;
                   audioCardSound.volume = 0;
+                  audioCoinWin.volume = 0;
+                  audioExplosionBust.volume = 0;
                   document.getElementById("speakerSrc").src = 'speakerMute_sourceMaxPng2.png';
                   // document.getElementById("speakerSrc").setAttribute('src','speakerMute_sourceMaxPng.png');
                 }
@@ -834,6 +845,9 @@
             }
           };
 
+
+
+
           function resultat() {
             setTimeout(function() {
               if (scoreTotalCroupier > scoreTotalJoueur && scoreTotalCroupier < 22) {
@@ -947,6 +961,8 @@
                     // Style du séparateur (= Apparition)
                     document.getElementById("resultatText").classList.add("resultatTextWin");
                     document.getElementById("separateur").classList.add("styleSeparateurWin");
+
+                    audioCoinWin.play();
   
                     // Animation scale() qui pop avec fadeIn()
                     document.getElementById("separateur").classList.add("fadeInResultat");
@@ -1025,6 +1041,8 @@
                       // Style du séparateur (= Apparition)
                       document.getElementById("resultatText").classList.add("resultatTextWin");
                       document.getElementById("separateur").classList.add("styleSeparateurWin");
+
+                      audioCoinWin.play();
     
                       // Animation scale() qui pop avec fadeIn()
                       document.getElementById("separateur").classList.add("fadeInResultat");
@@ -1428,6 +1446,8 @@
                   document.getElementById("resultatText").classList.add("resultatTextBust");
                   document.getElementById("separateur").classList.add("styleSeparateur");
 
+                  audioExplosionBust.play();
+
                   // Animation scale() qui pop avec fadeIn()
                   document.getElementById("separateur").classList.add("fadeInResultat");
                   document.getElementById("separateur").classList.add("scaleBoom");
@@ -1519,6 +1539,8 @@
                 // Style du séparateur (= Apparition)
                 document.getElementById("resultatText").classList.add("resultatTextBJ");
                 document.getElementById("separateur").classList.add("styleSeparateurBlackJack");
+
+                audioCoinWin.play();  // A changer
 
                 // Animation scale() qui pop avec fadeIn()
                 document.getElementById("separateur").classList.add("fadeInResultat");
