@@ -21,7 +21,7 @@
       var asJoueur = new Boolean;
       var asCroupier = new Boolean;
       
-
+      var ChoixActif = false;
 
       
 
@@ -378,6 +378,7 @@
                 dataType: "html",
                 success: function(response) {
                   $("#container3").html(response);
+                  ChoixActif = false;
                   // document.getElementById("collapsible").style.visibility = "visible";
 
 
@@ -500,6 +501,7 @@
           dataType: "html",
           success: function(response) {
             $("#chipsContainer").html(response);
+            ChoixActif = false;
             document.getElementById("footerTitle").innerHTML = " - Distribution... -";
           }
         });
@@ -545,6 +547,7 @@
               dataType: "html",
               success: function(response) {
                 $("#chipsContainer").html(response);
+                ChoixActif = false;
                 document.getElementById("footerTitle").innerHTML = " - En attente... -";
               }
             });
@@ -557,6 +560,8 @@
               dataType: "html",
               success: function(response) {
                 $("#chipsContainer").html(response);
+
+                ChoixActif = true;
                 document.getElementById("footerTitle").innerHTML = " - Choix -";
 
                   if (scoreTotalJoueur > 8 && scoreTotalJoueur < 12) {
@@ -573,7 +578,7 @@
                   function doc_keyHit(e) {
 
                     // this would test for whichever key is 40 (down arrow) and the ctrl key at the same time
-                    if (e.key === '+') {
+                    if ((e.key === '+') && (ChoixActif == true)) {
                         // call your function to do the thing
                         hit();
                     }
@@ -587,11 +592,11 @@
                   lancerPhaseCroupier();
                 });
 
-                //*** */ WIP shortcut Hit
+                //*** */ WIP shortcut Stand
                   function doc_keyStand(e) {
 
                     // this would test for whichever key is 40 (down arrow) and the ctrl key at the same time
-                    if (e.key === '-') {
+                    if ((e.key === '-') && (ChoixActif == true)) {
                         // call your function to do the thing
                         lancerPhaseCroupier();
                     }
@@ -604,18 +609,18 @@
                   double();
                 });
 
-                //*** */ WIP shortcut Hit
-                function doc_keyStand(e) {
+                //*** */ WIP shortcut Double
+                function doc_keyDouble(e) {
 
                   // this would test for whichever key is 40 (down arrow) and the ctrl key at the same time
-                  if (e.key === '*') {
+                  if ((e.key === '*') && (ChoixActif == true)){
                       // call your function to do the thing
                       double();
                   }
                 }
                 // register the handler 
-                document.addEventListener('keyup', doc_keyStand, false);
-              //*** FIN Wip
+                document.addEventListener('keyup', doc_keyDouble, false);
+                //*** FIN Wip
 
               }
             });
@@ -656,6 +661,7 @@
           dataType: "html",
           success: function(response) {
             $("#chipsContainer").html(response);
+            ChoixActif = false;
             document.getElementById("footerTitle").innerHTML = " - Distribution... -";
           }
         });
@@ -670,6 +676,8 @@
             url: "footerPhase2Modul.html",
             dataType: "html",
             success: function(response) {
+              ChoixActif = true;
+
               $("#chipsContainer").html(response);
               document.getElementById("footerTitle").innerHTML = " - Choix... -";
               document.getElementById("hit").addEventListener("click", function() {
@@ -677,12 +685,53 @@
                 hit();
 
               });
+              //*** */ WIP shortcut Hit
+              function doc_keyHit(e) {
+
+                // this would test for whichever key is 40 (down arrow) and the ctrl key at the same time
+                if ((e.key === '+') && (ChoixActif == true)) {
+                    // call your function to do the thing
+                    hit();
+                }
+              }
+              // register the handler 
+              document.addEventListener('keyup', doc_keyHit, false);
+              // *** FIN Wip
+              
+
               document.getElementById("stand").addEventListener("click", function() {
                 lancerPhaseCroupier();
               });
+              //*** */ WIP shortcut Stand
+              function doc_keyStand(e) {
+
+                // this would test for whichever key is 40 (down arrow) and the ctrl key at the same time
+                if ((e.key === '-') && (ChoixActif == true)) {
+                    // call your function to do the thing
+                    lancerPhaseCroupier();
+                }
+              }
+              // register the handler 
+              document.addEventListener('keyup', doc_keyStand, false);
+              //*** FIN Wip
+
               document.getElementById("double").addEventListener("click", function() {
                 double();
               });
+              //*** */ WIP shortcut Double
+              function doc_keyDouble(e) {
+
+                // this would test for whichever key is 40 (down arrow) and the ctrl key at the same time
+                if ((e.key === '*') && (ChoixActif == true)){
+                    // call your function to do the thing
+                    double();
+                }
+              }
+              // register the handler 
+              document.addEventListener('keyup', doc_keyDouble, false);
+              //*** FIN Wip
+
+
             }
           });
         }, 1250);
@@ -753,6 +802,7 @@
             dataType: "html",
             success: function(response) {
               $("#chipsContainer").html(response);
+              ChoixActif = false;
               document.getElementById("footerTitle").innerHTML = " - Distribution... -";
             }
           });
@@ -776,6 +826,10 @@
               }, 2150 * setTimeOutMultiplier)
             }
             else {
+              //Ajouter un if avec bool BurstJoueur (si burstJoueur)?
+              // if (burstJoueur = false) {
+              //   resultat();
+              // }
               resultat();
             }
           };
@@ -790,6 +844,7 @@
                   success: function(response) {
                     $("#container3").html(response);
                     console.log(scoreTotalCroupier);
+                    ChoixActif = false;
                     document.getElementById("footerTitle").innerHTML = " - Résultat -";
 
                     // Mise lockée
@@ -840,6 +895,7 @@
                   dataType: "html",
                   success: function(response) {
                     $("#container3").html(response);
+                    ChoixActif = false;
                     document.getElementById("footerTitle").innerHTML = " - Résultat -";
   
                       // Mise lockée
@@ -917,6 +973,7 @@
                     dataType: "html",
                     success: function(response) {
                       $("#container3").html(response);
+                      ChoixActif = false;
                       document.getElementById("footerTitle").innerHTML = " - Résultat -";
     
                         // Mise lockée
@@ -994,6 +1051,7 @@
                   dataType: "html",
                   success: function(response) {
                     $("#container3").html(response);
+                    ChoixActif = false;
                     document.getElementById("footerTitle").innerHTML = " - Résultat -";
   
                     // WIP footerResultat
@@ -1319,6 +1377,7 @@
                 dataType: "html",
                 success: function(response) {
                   $("#container3").html(response);
+                  ChoixActif = false;
                   document.getElementById("footerTitle").innerHTML = " - Résultat -";
 
                   // WIP footerResultat
@@ -1408,6 +1467,7 @@
               dataType: "html",
               success: function(response) {
                 $("#container3").html(response);
+                ChoixActif = false;
                 document.getElementById("footerTitle").innerHTML = " - Résultat -";
 
                 // WIP footerResultat

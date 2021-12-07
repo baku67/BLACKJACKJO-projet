@@ -1,6 +1,8 @@
 POUR NOEL: patcher les autre résultats + AS 
            Vrai / Faux BlackJack
 
+Icone Mise en cours // Images background du footer Win/Loose/BJ (fond de pièces, etc...)
+Animation: BigWin/BlackJack/Bust (pop ou slide lent vers la droite avec soulignage qui pop de la droite et glisse vers la droite)
 Animation bouton Speed/Volume
 
 Mode accéléré (juste un button html avec JS: var bool qui change la var timeOutVar (global))

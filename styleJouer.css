@@ -218,7 +218,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 #container1 a {
 	/* color: rgba(5, 2, 39, 1); */
 	color: rgb(230, 211, 211);
-	font-size: 1.3em;
+	font-size: 1.6em;
 	font-weight: bold;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	letter-spacing: 0.3px;
@@ -672,7 +672,7 @@ figure:active {
 .styleSeparateurBlackJack {
 	box-sizing: border-box;
 	overflow: hidden;
-	background-image: url("cashBJ.png"), linear-gradient(144deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+	background-image: url("cashBJ.png"), linear-gradient(144deg, rgba(131,58,180,0.9) 0%, rgba(253,29,29,0.9) 50%, rgba(252,176,69,0.9) 100%);
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position-x: 40%;
@@ -1422,8 +1422,8 @@ p {
 	}
 
 	#speedToggleButton {
-		left: 7% !important;
-		font-size: 1.5em !important;
+		left: 9% !important;
+		font-size: 1.3em !important;
 	}
 
 	#list {
