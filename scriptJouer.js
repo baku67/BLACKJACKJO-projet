@@ -5,10 +5,13 @@
       audioCardSound.volume = 0.5;
 
       var audioCoinWin = new Audio("winCoinSound.mp3");
-      audioCoinWin.volume = 0.5;
+      audioCoinWin.volume = 0.4;
 
       var audioExplosionBust = new Audio("explosionSound.mp3");
-      audioExplosionBust.volume = 0.5;
+      audioExplosionBust.volume = 0.3;
+
+      var audioPush = new Audio("pushSound.mp3");
+      audioPush.volume = 0.4;
 
 
       var score = 0;
@@ -349,6 +352,7 @@
                   audioCardSound.volume = 0.5;
                   audioCoinWin.volume = 0.5;
                   audioExplosionBust.volume = 0.5;
+                  audioPush.volume = 0.5;
                   document.getElementById("speakerSrc").src = 'speakerMax_sourceMax.png';
                   // document.getElementById("speakerSrc").setAttribute('src','speakerMax_sourceMax.png');
                 }
@@ -357,6 +361,7 @@
                   audioCardSound.volume = 0;
                   audioCoinWin.volume = 0;
                   audioExplosionBust.volume = 0;
+                  audioPush.volume = 0;
                   document.getElementById("speakerSrc").src = 'speakerMute_sourceMaxPng2.png';
                   // document.getElementById("speakerSrc").setAttribute('src','speakerMute_sourceMaxPng.png');
                 }
@@ -585,53 +590,41 @@
 
                 });
                 
-                //*** */ WIP shortcut Hit
+                //***  shortcut Hit
                   function doc_keyHit(e) {
-
-                    // this would test for whichever key is 40 (down arrow) and the ctrl key at the same time
                     if ((e.key === '+') && (ChoixActif == true)) {
-                        // call your function to do the thing
                         hit();
                     }
                   }
-                  // register the handler 
                   document.addEventListener('keyup', doc_keyHit, false);
-                // *** FIN Wip
+                // *** FIN
 
 
                 document.getElementById("stand").addEventListener("click", function() {
                   lancerPhaseCroupier();
                 });
 
-                //*** */ WIP shortcut Stand
+                //***  shortcut Stand
                   function doc_keyStand(e) {
-
-                    // this would test for whichever key is 40 (down arrow) and the ctrl key at the same time
                     if ((e.key === '-') && (ChoixActif == true)) {
-                        // call your function to do the thing
                         lancerPhaseCroupier();
                     }
                   }
-                  // register the handler 
                   document.addEventListener('keyup', doc_keyStand, false);
-                //*** FIN Wip
+                //*** FIN
 
                 document.getElementById("double").addEventListener("click", function() {
                   double();
                 });
 
-                //*** */ WIP shortcut Double
+                //***  shortcut Double
                 function doc_keyDouble(e) {
-
-                  // this would test for whichever key is 40 (down arrow) and the ctrl key at the same time
                   if ((e.key === '*') && (ChoixActif == true)){
-                      // call your function to do the thing
                       double();
                   }
                 }
-                // register the handler 
                 document.addEventListener('keyup', doc_keyDouble, false);
-                //*** FIN Wip
+                //*** FIN 
 
               }
             });
@@ -691,56 +684,47 @@
 
               $("#chipsContainer").html(response);
               document.getElementById("footerTitle").innerHTML = " - Choix... -";
+
+
               document.getElementById("hit").addEventListener("click", function() {
 
                 hit();
 
               });
-              //*** */ WIP shortcut Hit
+              //***  shortcut Hit
               function doc_keyHit(e) {
-
-                // this would test for whichever key is 40 (down arrow) and the ctrl key at the same time
                 if ((e.key === '+') && (ChoixActif == true)) {
-                    // call your function to do the thing
                     hit();
                 }
               }
-              // register the handler 
               document.addEventListener('keyup', doc_keyHit, false);
-              // *** FIN Wip
+              // *** FIN 
               
 
               document.getElementById("stand").addEventListener("click", function() {
                 lancerPhaseCroupier();
               });
-              //*** */ WIP shortcut Stand
+              //***  shortcut Stand
               function doc_keyStand(e) {
-
-                // this would test for whichever key is 40 (down arrow) and the ctrl key at the same time
                 if ((e.key === '-') && (ChoixActif == true)) {
-                    // call your function to do the thing
                     lancerPhaseCroupier();
                 }
               }
-              // register the handler 
               document.addEventListener('keyup', doc_keyStand, false);
-              //*** FIN Wip
+              //*** FIN
+
 
               document.getElementById("double").addEventListener("click", function() {
                 double();
               });
-              //*** */ WIP shortcut Double
+              //***  shortcut Double
               function doc_keyDouble(e) {
-
-                // this would test for whichever key is 40 (down arrow) and the ctrl key at the same time
                 if ((e.key === '*') && (ChoixActif == true)){
-                    // call your function to do the thing
                     double();
                 }
               }
-              // register the handler 
               document.addEventListener('keyup', doc_keyDouble, false);
-              //*** FIN Wip
+              //*** FIN 
 
 
             }
@@ -1110,6 +1094,8 @@
                     // Style du séparateur (= Apparition)
                     document.getElementById("resultatText").classList.add("resultatTextPush");
                     document.getElementById("separateur").classList.add("styleSeparateurPush");
+
+                    audioPush.play();
   
                     // Animation scale() qui pop avec fadeIn()
                     document.getElementById("separateur").classList.add("fadeInResultat");
