@@ -1,6 +1,8 @@
 POUR NOEL: patcher les autre résultats + AS 
            Vrai / Faux BlackJack
 
+Animation bouton Speed/Volume
+
 Mode accéléré (juste un button html avec JS: var bool qui change la var timeOutVar (global))
 Mode Mute (juste un button html avec JS: var bool avec condition fonction audio.play();)
 

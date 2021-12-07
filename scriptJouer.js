@@ -340,26 +340,32 @@
                 if (SoundMuteBool == true) {
                   SoundMuteBool = false;
                   audioCardSound.volume = 0.5;
+                  document.getElementById("speakerSrc").src = 'speakerMax_sourceMax.png';
+                  // document.getElementById("speakerSrc").setAttribute('src','speakerMax_sourceMax.png');
                 }
                 else {
                   SoundMuteBool = true;
                   audioCardSound.volume = 0;
+                  document.getElementById("speakerSrc").src = 'speakerMute_sourceMaxPng2.png';
+                  // document.getElementById("speakerSrc").setAttribute('src','speakerMute_sourceMaxPng.png');
                 }
               });
               // FIN bouton toggle sons
               // ******************************** *
 
-
+ 
               // ******************************** *
               // BOUTON TOGGLE SPEED
               document.getElementById("speedToggleButton").addEventListener("click", function() {
                 if (setTimeOutMultiplierBool == true) {
                   setTimeOutMultiplierBool = false;
                   setTimeOutMultiplier = 1;
+                  document.getElementById("fastForwardSrc").src = 'fastForwardGrey.png';
                 }
                 else {
                   setTimeOutMultiplierBool = true;
-                  setTimeOutMultiplier = 0.2;
+                  setTimeOutMultiplier = 0.5;
+                  document.getElementById("fastForwardSrc").src = 'fastForwardActif4.png';
                 }
               });
               // FIN bouton toggle speed
@@ -686,17 +692,17 @@
           function addCardCroupierRecursive() {
             setTimeout(function() {
               document.getElementById("backCardCroupier").classList.add("fadeOut2");
-            }, 1550)
+            }, 1550 * setTimeOutMultiplier)
 
             setTimeout(function() {
               document.getElementById("backCardCroupier").remove();
-            }, 2150)
+            }, 2150 * setTimeOutMultiplier)
             
             if (scoreTotalCroupier < 17) {
               setTimeout(function() {
                 addCardCroupier();
                 addCardCroupierRecursive();
-              }, 2150)
+              }, 2150 * setTimeOutMultiplier)
             }
             else {
               resultat();
