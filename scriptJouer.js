@@ -33,6 +33,8 @@
       
       var ChoixActif = false;
 
+      var misesResultatDiff;
+
       
 
       var setTimeOutMultiplierBool = false;
@@ -456,6 +458,7 @@
 
       // function: (en partant de la mise vers le gains réel)
       function DecrementGain() {
+        
         setTimeout( function() {
             if (miseLocked > 0) {
             miseLocked = miseLocked - 1;
@@ -463,12 +466,14 @@
             document.getElementById("miseResultat").classList.add("addColorToResultatRed");
             DecrementGain();
             }
-        }, 20 * setTimeOutMultiplier);
+        }, (110/miseLocked) * setTimeOutMultiplier);
       } 
       // fin fonction
 
       // function (en partant de la mise vers le gains réel)
       function IncrementGain(miseLockedMultiplied) {
+        misesResultatDiff = miseLockedMultiplied - miseLocked;
+
         setTimeout( function() {
             if (miseLocked < miseLockedMultiplied) {
             miseLocked = miseLocked + 1;
@@ -476,7 +481,7 @@
             document.getElementById("miseResultat").classList.add("addColorToResultatBJ");
             IncrementGain(miseLockedMultiplied);
             }
-        }, 20 * setTimeOutMultiplier);
+        }, (110/misesResultatDiff) * setTimeOutMultiplier);
       } 
       // fin fonction
 
