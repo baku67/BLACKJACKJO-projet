@@ -489,6 +489,32 @@
           // Label "Entrez d'abord une mise"
         }
       }
+
+      function double() {
+        // Le double fonctionne normalement, mais à la toute fin, le ("miselocked" -> "miseResultat")  devient (0 -> 0)
+        // Comparer loadFooters Hit() et double() car double pas assez réactif
+
+        $.ajax({
+          async: false,
+          url: "footerNone.html",
+          dataType: "html",
+          success: function(response) {
+            $("#chipsContainer").html(response);
+            document.getElementById("footerTitle").innerHTML = " - Distribution... -";
+          }
+        });
+
+        miseLocked = miseLocked * 2;
+        document.getElementById("miseLocked").innerHTML = "Mise: " + "&nbsp;" + miseLocked + "&nbsp;" + "&#8364;";
+
+        setTimeout(function() {
+          addCardJoueur();
+        }, 1000);
+
+        setTimeout(function() {
+          lancerPhaseCroupier();
+        }, 2000);
+      }
       
 
       // Lock de la mise
@@ -547,7 +573,7 @@
                   function doc_keyHit(e) {
 
                     // this would test for whichever key is 40 (down arrow) and the ctrl key at the same time
-                    if (e.key === 'ArrowDown') {
+                    if (e.key === '+') {
                         // call your function to do the thing
                         hit();
                     }
@@ -565,7 +591,7 @@
                   function doc_keyStand(e) {
 
                     // this would test for whichever key is 40 (down arrow) and the ctrl key at the same time
-                    if (e.key === 'ArrowUp') {
+                    if (e.key === '-') {
                         // call your function to do the thing
                         lancerPhaseCroupier();
                     }
@@ -575,19 +601,21 @@
                 //*** FIN Wip
 
                 document.getElementById("double").addEventListener("click", function() {
-
-                  miseLocked = miseLocked * 2;
-                  document.getElementById("miseLocked").innerHTML = "Mise: " + "&nbsp;" + miseLocked + "&nbsp;" + "&#8364;";
-
-                  setTimeout(function() {
-                    addCardJoueur();
-                  }, 1000);
-
-                  setTimeout(function() {
-                    lancerPhaseCroupier();
-                  }, 2000);
-
+                  double();
                 });
+
+                //*** */ WIP shortcut Hit
+                function doc_keyStand(e) {
+
+                  // this would test for whichever key is 40 (down arrow) and the ctrl key at the same time
+                  if (e.key === '*') {
+                      // call your function to do the thing
+                      double();
+                  }
+                }
+                // register the handler 
+                document.addEventListener('keyup', doc_keyStand, false);
+              //*** FIN Wip
 
               }
             });
@@ -653,18 +681,7 @@
                 lancerPhaseCroupier();
               });
               document.getElementById("double").addEventListener("click", function() {
-
-                miseLocked = miseLocked * 2;
-                document.getElementById("miseLocked").innerHTML = "Mise: " + "&nbsp;" + miseLocked + "&nbsp;" + "&#8364;";
-
-                setTimeout(function() {
-                  addCardJoueur();
-                }, 1000);
-
-                setTimeout(function() {
-                  lancerPhaseCroupier();
-                }, 2000);
-
+                double();
               });
             }
           });
