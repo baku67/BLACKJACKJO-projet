@@ -406,7 +406,6 @@
           }, 500)
       });
 
-
       //***   WIP: Relancer    ***\\
 
       function relancer() {
@@ -437,6 +436,32 @@
       }
 
 
+
+      // function: (en partant de la mise vers le gains réel)
+      function DecrementGain() {
+        setTimeout( function() {
+            if (miseLocked > 0) {
+            miseLocked = miseLocked - 1;
+            document.getElementById("miseResultat").innerHTML = miseLocked;
+            document.getElementById("miseResultat").classList.add("addColorToResultatRed");
+            DecrementGain();
+            }
+        }, 20 * setTimeOutMultiplier);
+      } 
+      // fin fonction
+
+      // function (en partant de la mise vers le gains réel)
+      function IncrementGain(miseLockedMultiplied) {
+        setTimeout( function() {
+            if (miseLocked < miseLockedMultiplied) {
+            miseLocked = miseLocked + 1;
+            document.getElementById("miseResultat").innerHTML = miseLocked;
+            document.getElementById("miseResultat").classList.add("addColorToResultatBJ");
+            IncrementGain(miseLockedMultiplied);
+            }
+        }, 20 * setTimeOutMultiplier);
+      } 
+      // fin fonction
 
 
 
@@ -497,7 +522,7 @@
                 document.getElementById("footerTitle").innerHTML = " - En attente... -";
               }
             });
-          }, 700);
+          }, 700 * setTimeOutMultiplier);
           
           setTimeout(function() {
             $.ajax({
@@ -517,9 +542,38 @@
                   hit();
 
                 });
+                
+                //*** */ WIP shortcut Hit
+                  function doc_keyHit(e) {
+
+                    // this would test for whichever key is 40 (down arrow) and the ctrl key at the same time
+                    if (e.key === 'ArrowDown') {
+                        // call your function to do the thing
+                        hit();
+                    }
+                  }
+                  // register the handler 
+                  document.addEventListener('keyup', doc_keyHit, false);
+                // *** FIN Wip
+
+
                 document.getElementById("stand").addEventListener("click", function() {
                   lancerPhaseCroupier();
                 });
+
+                //*** */ WIP shortcut Hit
+                  function doc_keyStand(e) {
+
+                    // this would test for whichever key is 40 (down arrow) and the ctrl key at the same time
+                    if (e.key === 'ArrowUp') {
+                        // call your function to do the thing
+                        lancerPhaseCroupier();
+                    }
+                  }
+                  // register the handler 
+                  document.addEventListener('keyup', doc_keyStand, false);
+                //*** FIN Wip
+
                 document.getElementById("double").addEventListener("click", function() {
 
                   miseLocked = miseLocked * 2;
@@ -537,7 +591,7 @@
 
               }
             });
-          }, 8000);
+          }, 8000 * setTimeOutMultiplier);
 
           setTimeout(function() {
             addCardJoueur();
@@ -580,7 +634,7 @@
 
         setTimeout(function() {
           addCardJoueur();
-        }, 1000);
+        }, 1000 * setTimeOutMultiplier);
 
         setTimeout(function() {
           $.ajax({
@@ -721,6 +775,17 @@
                     console.log(scoreTotalCroupier);
                     document.getElementById("footerTitle").innerHTML = " - Résultat -";
 
+                    // Mise lockée
+                    document.getElementById("miseLockedFooter").innerHTML = miseLocked;
+                    // fin
+
+                    // Résultat Gains 
+                    document.getElementById("miseResultat").innerHTML = miseLocked;
+                    setTimeout( function() {
+                      DecrementGain();
+                    }, 1500 * setTimeOutMultiplier);
+                    
+
                     // Perdu
                       // rubans de Win/Loose
                     document.getElementById("croupier").style.backgroundColor = "rgba(61,255,1,0.3)";
@@ -741,6 +806,8 @@
                     // Fin Perdu
                   
                     // Bouton Rejouer
+
+
                     relancer();
                   }
                 });
@@ -765,22 +832,22 @@
                       // Résultat Gains 
                       document.getElementById("miseResultat").innerHTML = miseLocked;
                       setTimeout( function() {
-                        IncrementGain();
-                      }, 1500);
+                        IncrementGain(miseLockedMultiplied);
+                      }, 1500 * setTimeOutMultiplier);
 
                       
                         // function: (en partant de la mise vers le gains réel)
                         var miseLockedMultiplied = miseLocked * 2;
-                        function IncrementGain() {
-                          setTimeout( function() {
-                              if (miseLocked < miseLockedMultiplied) {
-                              miseLocked = miseLocked + 1;
-                              document.getElementById("miseResultat").innerHTML = miseLocked;
-                              document.getElementById("miseResultat").classList.add("addColorToResultatGreen");
-                              IncrementGain();
-                              }
-                          }, 20);
-                        } 
+                        // function IncrementGain() {
+                        //   setTimeout( function() {
+                        //       if (miseLocked < miseLockedMultiplied) {
+                        //       miseLocked = miseLocked + 1;
+                        //       document.getElementById("miseResultat").innerHTML = miseLocked;
+                        //       document.getElementById("miseResultat").classList.add("addColorToResultatGreen");
+                        //       IncrementGain();
+                        //       }
+                        //   }, 20);
+                        // } 
                         // fin fonction
                       // Fin résultat Gains
   
@@ -842,22 +909,22 @@
                         // Résultat Gains 
                         document.getElementById("miseResultat").innerHTML = miseLocked;
                         setTimeout( function() {
-                          IncrementGain();
-                        }, 1500);
+                          IncrementGain(miseLockedMultiplied);
+                        }, 1500 * setTimeOutMultiplier);
   
                         
                           // function: (en partant de la mise vers le gains réel)
                           var miseLockedMultiplied = miseLocked * 2;
-                          function IncrementGain() {
-                            setTimeout( function() {
-                                if (miseLocked < miseLockedMultiplied) {
-                                miseLocked = miseLocked + 1;
-                                document.getElementById("miseResultat").innerHTML = miseLocked;
-                                document.getElementById("miseResultat").classList.add("addColorToResultatGreen");
-                                IncrementGain();
-                                }
-                            }, 20);
-                          } 
+                          // function IncrementGain() {
+                          //   setTimeout( function() {
+                          //       if (miseLocked < miseLockedMultiplied) {
+                          //       miseLocked = miseLocked + 1;
+                          //       document.getElementById("miseResultat").innerHTML = miseLocked;
+                          //       document.getElementById("miseResultat").classList.add("addColorToResultatGreen");
+                          //       IncrementGain();
+                          //       }
+                          //   }, 20);
+                          // } 
                           // fin fonction
                         // Fin résultat Gains
     
@@ -1222,6 +1289,7 @@
         document.getElementById("compteurDeck").innerHTML = compteurDeck;
       }
 
+      
 
       function checkBurstJoueur() {
         if (scoreTotalJoueur > 21) {
@@ -1250,20 +1318,9 @@
                     document.getElementById("miseResultat").innerHTML = miseLocked;
                     setTimeout( function() {
                       decrementGain();
-                    }, 1500);
+                    }, 1500 * setTimeOutMultiplier);
                     
-                      // function: (en partant de la mise vers le gains réel)
-                      function decrementGain() {
-                        setTimeout( function() {
-                            if (miseLocked > 0) {
-                            miseLocked = miseLocked - 1;
-                            document.getElementById("miseResultat").innerHTML = miseLocked;
-                            document.getElementById("miseResultat").classList.add("addColorToResultatRed");
-                            decrementGain();
-                            }
-                        }, 20);
-                      } 
-                      // fin fonction
+                      
                     // Fin résultat Gains
 
                   // FIN WIP
@@ -1346,24 +1403,15 @@
                   // fin
 
                   // Résultat Gains 
+                  var miseLockedMultiplied = 3 * miseLocked;
                   document.getElementById("miseResultat").innerHTML = miseLocked;
                   setTimeout( function() {
-                    IncrementGain();
-                  }, 1500);
+                    IncrementGain(miseLockedMultiplied);
+                  }, 1500 * setTimeOutMultiplier);
                   
                     // function: (en partant de la mise vers le gains réel)
                     var miseLockedMultiplied = miseLocked * 3;
-                    function IncrementGain() {
-                      setTimeout( function() {
-                          if (miseLocked < miseLockedMultiplied) {
-                          miseLocked = miseLocked + 1;
-                          document.getElementById("miseResultat").innerHTML = miseLocked;
-                          document.getElementById("miseResultat").classList.add("addColorToResultatBJ");
-                          IncrementGain();
-                          }
-                      }, 20);
-                    } 
-                    // fin fonction
+                    
                   // Fin résultat Gains
 
                 // FIN WIP
