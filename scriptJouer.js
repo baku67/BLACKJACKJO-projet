@@ -8,7 +8,7 @@
       audioCoinWin.volume = 0.4;
 
       var audioExplosionBust = new Audio("explosionSound.mp3");
-      audioExplosionBust.volume = 0.3;
+      audioExplosionBust.volume = 0.25;
 
       var audioPush = new Audio("pushSound.mp3");
       audioPush.volume = 0.4;
@@ -734,7 +734,7 @@
 
             }
           });
-        }, 1250);
+        }, 2250);
       }
 
 
