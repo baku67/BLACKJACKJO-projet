@@ -8,7 +8,7 @@
       audioCoinWin.volume = 0.4;
 
       var audioExplosionBust = new Audio("explosionSound.mp3");
-      audioExplosionBust.volume = 0.15;
+      audioExplosionBust.volume = 0.1;
 
       var audioPush = new Audio("pushSound.mp3");
       audioPush.volume = 0.4;
@@ -17,7 +17,10 @@
       audioToken.volume = 0.7;
 
       var audioDecompte = new Audio("decompteSound.mp3");
-      audioDecompte.volume = 0.2;
+      audioDecompte.volume = 0.5;
+
+      var audioMiser = new Audio("soundMise.wav");
+      audioMiser.volume = 0.4;
 
       
       // réinitialisé dans le NewGame (tableau des valeurs derniers jetons ajoutés en vue de retour arriere)
@@ -574,6 +577,9 @@
       // Lock de la mise
       function miseLock() {
         document.getElementById("boutonMiser").addEventListener("click", function() {
+
+          audioMiser.play();
+
           document.querySelector("#boutonMiser").style.opacity = "0.4";
           
           miseLocked = miseEnCours;
@@ -892,10 +898,12 @@
                     }, 1500 * setTimeOutMultiplier);
                     
 
+                    document.getElementById("deckContainer").remove();
+
                     // Perdu
                       // rubans de Win/Loose
-                    document.getElementById("croupier").style.backgroundColor = "rgba(61,255,1,0.3)";
-                    document.getElementById("joueur").style.backgroundColor = "rgba(255,1,49,0.3)";
+                      // document.getElementById("croupier").style.backgroundColor = "rgba(61,255,1,0.3)";
+                      // document.getElementById("joueur").style.backgroundColor = "rgba(255,1,49,0.3)";
                       // Fin rubans
                     
                     document.getElementById("scoreCroupier").style.backgroundColor = "rgba(59,217,10,1)";
@@ -910,10 +918,24 @@
                     document.getElementById("scoreCroupier").style.border = "1px solid rgba(58,157,32,0.5)";
                     document.getElementById("scoreJoueur").style.border = "1px solid rgba(255,1,49,0.5)";                  
                     // Fin Perdu
+
+                    // Style du séparateur (= Apparition)
+                    document.getElementById("resultatText").classList.add("resultatTextBust");
+                    document.getElementById("separateur").classList.add("styleSeparateur");
+
+                    audioExplosionBust.play();
+
+                    // Animation scale() qui pop avec fadeIn()
+                    document.getElementById("separateur").classList.add("fadeInResultat");
+                    document.getElementById("separateur").classList.add("scaleBoom");
+                    // document.getElementById("separateur").classList.add("marginFix");
                   
+                    // TEXT
+                    document.getElementById("resultatText").innerText = "WASTED";
+                    // Fin separateur
+
+
                     // Bouton Rejouer
-
-
                     relancer();
                   }
                 });
@@ -1475,23 +1497,14 @@
                   // FIN WIP
                   
 
-
                   document.getElementById("deckContainer").remove();
                   // document.getElementById("deckContainer").classList.add("fadeOut");
 
+
                   //*** Perdu BURST (Ajouter icone boom.png (assez grand) dans le séparateur)
-
-
-                  // document.getElementById("scoreCroupier").style.backgroundColor = "rgba(59,217,10,1)"
                   document.getElementById("scoreJoueur").style.backgroundColor = "rgba(215,31,48,1)"
-
-                  // document.getElementById("scoreCroupier").style.color = "rgba(255,245,0, 1)"
                   document.getElementById("scoreJoueur").style.color = "rgba(239,230,230, 1)"
-
-                  // document.getElementById("scoreCroupier").style.textShadow = "1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, -1px -1px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, -1px 0px 0 #000000, 0px -1px 0 #000000";
                   document.getElementById("scoreJoueur").style.textShadow = "1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, -1px -1px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, -1px 0px 0 #000000, 0px -1px 0 #000000";
-
-                  // document.getElementById("scoreCroupier").style.border = "3px solid rgba(58,157,32, 1)";
                   document.getElementById("scoreJoueur").style.border = "3px solid rgba(130,14,39, 1)";
                   // Fin Perdu BURST
 

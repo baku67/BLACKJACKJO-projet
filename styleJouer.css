@@ -1119,7 +1119,7 @@ p {
 	text-shadow: 0 0 3px black;
 }
 .addColorToResultatYellow {
-	color: linear-gradient(144deg, rgba(51,104,108,1) 0%, rgba(228,255,0,1) 100%);
+	color: rgb(250, 250, 212);
 	/* color: #e4ff00; */
 	text-shadow: 0 0 3px black;
 }
