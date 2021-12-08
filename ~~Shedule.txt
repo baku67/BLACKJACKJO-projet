@@ -1,5 +1,9 @@
+UN JOUR: Clean l'arborescence   +   Simplifier le JS (surtout les ajout de style random, y'a les id)
+
 POUR NOEL: patcher les autre résultats + AS 
            Vrai / Faux BlackJack
+
+SE LANCER DANS LES ANIMATIONS (genre slide, taclé-glissé, en opposition, gauche-droite, tmtc)
 
 
 (lourd) Son audioDecompte: prendre le début/fin du son (genre précisément), et créer une fonction d'ajout incrémentale||while:decompte  d'ajout de "séquence" du son de dropCoin x1

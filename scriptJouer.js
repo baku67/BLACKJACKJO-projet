@@ -921,20 +921,23 @@
                     document.getElementById("scoreJoueur").style.border = "1px solid rgba(255,1,49,0.5)";                  
                     // Fin Perdu
 
-                    // Style du séparateur (= Apparition)
-                    document.getElementById("resultatText").classList.add("resultatTextBust");
-                    document.getElementById("separateur").classList.add("styleSeparateur");
+                    // Séparateur
+                    setTimeout(function() {
+                      //Apparition
+                      document.getElementById("resultatText").classList.add("resultatTextBust");
+                      document.getElementById("separateur").classList.add("styleSeparateur");
 
-                    audioExplosionBust.play();
+                      audioExplosionBust.play();
 
-                    // Animation scale() qui pop avec fadeIn()
-                    document.getElementById("separateur").classList.add("fadeInResultat");
-                    document.getElementById("separateur").classList.add("scaleBoom");
-                    // document.getElementById("separateur").classList.add("marginFix");
-                  
-                    // TEXT
-                    document.getElementById("resultatText").innerText = "WASTED";
-                    // Fin separateur
+                      // Animation scale() qui pop avec fadeIn()
+                      document.getElementById("separateur").classList.add("fadeInResultat");
+                      document.getElementById("separateur").classList.add("scaleBoom");
+                      // document.getElementById("separateur").classList.add("marginFix");
+
+                      // TEXT
+                      document.getElementById("resultatText").innerText = "WASTED";
+                    }, 250);
+                    // Fin séparateur
 
 
                     // Bouton Rejouer
@@ -1001,21 +1004,23 @@
                     document.getElementById("scoreJoueur").style.border = "1px solid rgba(58,157,32,0.5)";
 
 
-                    // WIP separateur avec résultat
-                    // Style du séparateur (= Apparition)
-                    document.getElementById("resultatText").classList.add("resultatTextWin");
-                    document.getElementById("separateur").classList.add("styleSeparateurWin");
+                    // Séparateur
+                    setTimeout(function() {
+                      //Apparition
+                      document.getElementById("resultatText").classList.add("resultatTextWin");
+                      document.getElementById("separateur").classList.add("styleSeparateurWin");
 
-                    audioCoinWin.play();
-  
-                    // Animation scale() qui pop avec fadeIn()
-                    document.getElementById("separateur").classList.add("fadeInResultat");
-                    document.getElementById("separateur").classList.add("scaleBoom");
-                    // document.getElementById("separateur").classList.add("marginFix");
-                  
-                    // TEXT
-                    document.getElementById("resultatText").innerText = "BIG WIN";
-                    // Fin separateur
+                      audioCoinWin.play();
+
+                      // Animation scale() qui pop avec fadeIn()
+                      document.getElementById("separateur").classList.add("fadeInResultat");
+                      document.getElementById("separateur").classList.add("scaleBoom");
+                      // document.getElementById("separateur").classList.add("marginFix");
+
+                      // TEXT
+                      document.getElementById("resultatText").innerText = "BIG WIN";
+                    }, 250);
+                    // Fin séparateur
   
 
                     // Bouton Rejouer
@@ -1080,22 +1085,24 @@
                       document.getElementById("scoreCroupier").style.border = "1px solid rgba(255,1,49,0.5)";
                       document.getElementById("scoreJoueur").style.border = "1px solid rgba(58,157,32,0.5)";
   
-  
-                      // WIP separateur avec résultat
-                      // Style du séparateur (= Apparition)
-                      document.getElementById("resultatText").classList.add("resultatTextWin");
-                      document.getElementById("separateur").classList.add("styleSeparateurWin");
+                      
+                      // Séparateur
+                      setTimeout(function() {
+                        //Apparition
+                        document.getElementById("resultatText").classList.add("resultatTextWin");
+                        document.getElementById("separateur").classList.add("styleSeparateurWin");
 
-                      audioCoinWin.play();
-    
-                      // Animation scale() qui pop avec fadeIn()
-                      document.getElementById("separateur").classList.add("fadeInResultat");
-                      document.getElementById("separateur").classList.add("scaleBoom");
-                      // document.getElementById("separateur").classList.add("marginFix");
-                    
-                      // TEXT
-                      document.getElementById("resultatText").innerText = "BIG WIN";
-                      // Fin separateur
+                        audioCoinWin.play();
+
+                        // Animation scale() qui pop avec fadeIn()
+                        document.getElementById("separateur").classList.add("fadeInResultat");
+                        document.getElementById("separateur").classList.add("scaleBoom");
+                        // document.getElementById("separateur").classList.add("marginFix");
+
+                        // TEXT
+                        document.getElementById("resultatText").innerText = "BIG WIN";
+                      }, 250);
+                      // Fin séparateur
     
   
                       // Bouton Rejouer
@@ -1149,22 +1156,24 @@
                     document.getElementById("scoreCroupier").style.backgroundColor = "rgb(252 176 69)";
                     document.getElementById("scoreJoueur").style.backgroundColor = "rgb(252 176 69)"; 
 
+                    
+                    // Séparateur
+                    setTimeout(function() {
+                      //Apparition
+                      document.getElementById("resultatText").classList.add("resultatTextPush");
+                      document.getElementById("separateur").classList.add("styleSeparateurPush");
 
-                    // WIP separateur avec résultat
-                    // Style du séparateur (= Apparition)
-                    document.getElementById("resultatText").classList.add("resultatTextPush");
-                    document.getElementById("separateur").classList.add("styleSeparateurPush");
+                      audioPush.play();
 
-                    audioPush.play();
-  
-                    // Animation scale() qui pop avec fadeIn()
-                    document.getElementById("separateur").classList.add("fadeInResultat");
-                    document.getElementById("separateur").classList.add("scaleBoom");
-                    // document.getElementById("separateur").classList.add("marginFix");
-                  
-                    // TEXT
-                    document.getElementById("resultatText").innerText = "Push";
-                    // Fin separateur
+                      // Animation scale() qui pop avec fadeIn()
+                      document.getElementById("separateur").classList.add("fadeInResultat");
+                      document.getElementById("separateur").classList.add("scaleBoom");
+                      // document.getElementById("separateur").classList.add("marginFix");
+
+                      // TEXT
+                      document.getElementById("resultatText").innerText = "Push";
+                    }, 250);
+                    // Fin séparateur
   
   
                     // Bouton Rejouer
@@ -1510,11 +1519,10 @@
                   document.getElementById("scoreJoueur").style.border = "3px solid rgba(130,14,39, 1)";
                   // Fin Perdu BURST
 
-                  // WIP separateur avec résultat
-                  // Style du séparateur (= Apparition)
-
-
+                  
+                  // Séparateur
                   setTimeout(function() {
+                    //Apparition
                     document.getElementById("resultatText").classList.add("resultatTextBust");
                     document.getElementById("separateur").classList.add("styleSeparateur");
   
@@ -1528,21 +1536,7 @@
                     // TEXT
                     document.getElementById("resultatText").innerText = "BUST";
                   }, 250);
-
-                  // document.getElementById("resultatText").classList.add("resultatTextBust");
-                  // document.getElementById("separateur").classList.add("styleSeparateur");
-
-                  // audioExplosionBust.play();
-
-                  // // Animation scale() qui pop avec fadeIn()
-                  // document.getElementById("separateur").classList.add("fadeInResultat");
-                  // document.getElementById("separateur").classList.add("scaleBoom");
-                  // // document.getElementById("separateur").classList.add("marginFix");
-                
-                  // // TEXT
-                  // document.getElementById("resultatText").innerText = "BUST";
-                  // Fin separateur
-
+                  // Fin séparateur
 
                   setTimeout(function() {
                     lancerPhaseCroupierAfterBurst();
@@ -1622,39 +1616,22 @@
                 // Fin Perdu BURST
 
 
-                // setTimeout(function() {
-                //   document.getElementById("resultatText").classList.add("resultatTextBJ");
-                //   document.getElementById("separateur").classList.add("styleSeparateurBlackJack");
+                // Séparateur
+                setTimeout(function() {
+                  document.getElementById("resultatText").classList.add("resultatTextBJ");
+                  document.getElementById("separateur").classList.add("styleSeparateurBlackJack");
 
-                //   audioExplosionBust.play();
+                  audioCoinWin.play();
 
-                //   // Animation scale() qui pop avec fadeIn()
-                //   document.getElementById("separateur").classList.add("fadeInResultat");
-                //   document.getElementById("separateur").classList.add("scaleBoom");
-                //   // document.getElementById("separateur").classList.add("marginFix");
+                  // Animation scale() qui pop avec fadeIn()
+                  document.getElementById("separateur").classList.add("fadeInResultat");
+                  document.getElementById("separateur").classList.add("scaleBoom");
+                  // document.getElementById("separateur").classList.add("marginFix");
                 
-                //   // TEXT
-                //   document.getElementById("resultatText").innerText = "BlackJack !";
-                // }, 250);
-
-
-
-
-                // WIP separateur avec résultat
-                // Style du séparateur (= Apparition)
-                document.getElementById("resultatText").classList.add("resultatTextBJ");
-                document.getElementById("separateur").classList.add("styleSeparateurBlackJack");
-
-                audioCoinWin.play();  // A changer
-
-                // Animation scale() qui pop avec fadeIn()
-                document.getElementById("separateur").classList.add("fadeInResultat");
-                document.getElementById("separateur").classList.add("scaleBoom");
-                // document.getElementById("separateur").classList.add("marginFix");
-              
-                // TEXT
-                document.getElementById("resultatText").innerText = "BlackJack !";
-                // Fin separateur
+                  // TEXT
+                  document.getElementById("resultatText").innerText = "BlackJack !";
+                }, 250);
+                // Fin Séparateur
 
 
                 // Bouton Rejouer
