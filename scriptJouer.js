@@ -8,7 +8,7 @@
       audioCoinWin.volume = 0.4;
 
       var audioExplosionBust = new Audio("explosionSound.mp3");
-      audioExplosionBust.volume = 0.1;
+      audioExplosionBust.volume = 0.05;
 
       var audioPush = new Audio("pushSound.mp3");
       audioPush.volume = 0.4;
@@ -17,7 +17,7 @@
       audioToken.volume = 0.7;
 
       var audioDecompte = new Audio("decompteSound.mp3");
-      audioDecompte.volume = 0.07;
+      audioDecompte.volume = 0.1;
 
       var audioMiser = new Audio("soundMise.wav");
       audioMiser.volume = 0.3;
@@ -369,8 +369,7 @@
                   audioDecompte.volume = 0.5;
                   audioToken.volume = 0.5;
                   audioMiser.volume = 0.5;
-                  document.getElementById("speakerSrc").src = 'speakerMax_sourceMax.png';
-                  // document.getElementById("speakerSrc").setAttribute('src','speakerMax_sourceMax.png');
+                  document.getElementById("speakerSrc").src = 'speakerMax_sourceMax2.png';
                 }
                 else {
                   SoundMuteBool = true;
@@ -382,7 +381,6 @@
                   audioToken.volume = 0;
                   audioMiser.volume = 0;
                   document.getElementById("speakerSrc").src = 'speakerMute_sourceMaxPng2.png';
-                  // document.getElementById("speakerSrc").setAttribute('src','speakerMute_sourceMaxPng.png');
                 }
               });
               // FIN bouton toggle sons
@@ -399,7 +397,7 @@
                 }
                 else {
                   setTimeOutMultiplierBool = true;
-                  setTimeOutMultiplier = 0.5;
+                  setTimeOutMultiplier = 0.68;
                   document.getElementById("fastForwardSrc").src = 'fastForwardActif.png';
                 }
               });
@@ -773,7 +771,7 @@
 
             }
           });
-        }, 2250);
+        }, 2250 * (setTimeOutMultiplier*1.1));
       }
 
 
