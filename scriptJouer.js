@@ -17,10 +17,10 @@
       audioToken.volume = 0.7;
 
       var audioDecompte = new Audio("decompteSound.mp3");
-      audioDecompte.volume = 0.5;
+      audioDecompte.volume = 0.07;
 
       var audioMiser = new Audio("soundMise.wav");
-      audioMiser.volume = 0.4;
+      audioMiser.volume = 0.3;
 
       
       // réinitialisé dans le NewGame (tableau des valeurs derniers jetons ajoutés en vue de retour arriere)
@@ -368,6 +368,7 @@
                   audioPush.volume = 0.5;
                   audioDecompte.volume = 0.5;
                   audioToken.volume = 0.5;
+                  audioMiser.volume = 0.5;
                   document.getElementById("speakerSrc").src = 'speakerMax_sourceMax.png';
                   // document.getElementById("speakerSrc").setAttribute('src','speakerMax_sourceMax.png');
                 }
@@ -379,6 +380,7 @@
                   audioPush.volume = 0;
                   audioDecompte.volume = 0;
                   audioToken.volume = 0;
+                  audioMiser.volume = 0;
                   document.getElementById("speakerSrc").src = 'speakerMute_sourceMaxPng2.png';
                   // document.getElementById("speakerSrc").setAttribute('src','speakerMute_sourceMaxPng.png');
                 }
@@ -398,7 +400,7 @@
                 else {
                   setTimeOutMultiplierBool = true;
                   setTimeOutMultiplier = 0.5;
-                  document.getElementById("fastForwardSrc").src = 'fastForwardActif4.png';
+                  document.getElementById("fastForwardSrc").src = 'fastForwardActif.png';
                 }
               });
               // FIN bouton toggle speed
@@ -1510,18 +1512,35 @@
 
                   // WIP separateur avec résultat
                   // Style du séparateur (= Apparition)
-                  document.getElementById("resultatText").classList.add("resultatTextBust");
-                  document.getElementById("separateur").classList.add("styleSeparateur");
 
-                  audioExplosionBust.play();
 
-                  // Animation scale() qui pop avec fadeIn()
-                  document.getElementById("separateur").classList.add("fadeInResultat");
-                  document.getElementById("separateur").classList.add("scaleBoom");
-                  // document.getElementById("separateur").classList.add("marginFix");
+                  setTimeout(function() {
+                    document.getElementById("resultatText").classList.add("resultatTextBust");
+                    document.getElementById("separateur").classList.add("styleSeparateur");
+  
+                    audioExplosionBust.play();
+  
+                    // Animation scale() qui pop avec fadeIn()
+                    document.getElementById("separateur").classList.add("fadeInResultat");
+                    document.getElementById("separateur").classList.add("scaleBoom");
+                    // document.getElementById("separateur").classList.add("marginFix");
+                  
+                    // TEXT
+                    document.getElementById("resultatText").innerText = "BUST";
+                  }, 250);
+
+                  // document.getElementById("resultatText").classList.add("resultatTextBust");
+                  // document.getElementById("separateur").classList.add("styleSeparateur");
+
+                  // audioExplosionBust.play();
+
+                  // // Animation scale() qui pop avec fadeIn()
+                  // document.getElementById("separateur").classList.add("fadeInResultat");
+                  // document.getElementById("separateur").classList.add("scaleBoom");
+                  // // document.getElementById("separateur").classList.add("marginFix");
                 
-                  // TEXT
-                  document.getElementById("resultatText").innerText = "BUST";
+                  // // TEXT
+                  // document.getElementById("resultatText").innerText = "BUST";
                   // Fin separateur
 
 
@@ -1601,6 +1620,25 @@
                 document.getElementById("scoreCroupier").style.border = "1px solid rgba(255,1,49,0.5)";
                 document.getElementById("scoreJoueur").style.border = "1px solid rgba(58,157,32,0.5)";
                 // Fin Perdu BURST
+
+
+                // setTimeout(function() {
+                //   document.getElementById("resultatText").classList.add("resultatTextBJ");
+                //   document.getElementById("separateur").classList.add("styleSeparateurBlackJack");
+
+                //   audioExplosionBust.play();
+
+                //   // Animation scale() qui pop avec fadeIn()
+                //   document.getElementById("separateur").classList.add("fadeInResultat");
+                //   document.getElementById("separateur").classList.add("scaleBoom");
+                //   // document.getElementById("separateur").classList.add("marginFix");
+                
+                //   // TEXT
+                //   document.getElementById("resultatText").innerText = "BlackJack !";
+                // }, 250);
+
+
+
 
                 // WIP separateur avec résultat
                 // Style du séparateur (= Apparition)

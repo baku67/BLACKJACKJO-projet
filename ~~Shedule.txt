@@ -2,6 +2,8 @@ POUR NOEL: patcher les autre résultats + AS
            Vrai / Faux BlackJack
 
 
+(lourd) Son audioDecompte: prendre le début/fin du son (genre précisément), et créer une fonction d'ajout incrémentale||while:decompte  d'ajout de "séquence" du son de dropCoin x1
+
 Dans decrement/increment gains:
   // adapter la longueur du son: calculer le temps pris pour decrement/increment du miseResultat (((110/miseLocked) * setTimeOutMultiplier) * miseLocked)   (en ms)
   // provoquer un fadeOut du son à partir d'avant ce moment
