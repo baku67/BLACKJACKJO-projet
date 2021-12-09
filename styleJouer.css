@@ -135,7 +135,7 @@ button, input[type="submit"], input[type="reset"] {
 
 
 body {
-	background-image: url("background1.png");
+	background-image: url("Images/background1.png");
 	/* background-color: rgb(232, 241, 241); */
 	margin: 0px;
 	height: 100%;
@@ -643,7 +643,7 @@ figure:active {
 	/* background: linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%); */
 	box-sizing: border-box;
 	overflow: hidden;
-	background-image: url("boomPng.png"), linear-gradient(67deg, rgba(130,14,39,0.9) 47%, rgba(26,32,57,0.9) 53%);
+	background-image: url("Images/boomPng.png"), linear-gradient(67deg, rgba(130,14,39,0.9) 47%, rgba(26,32,57,0.9) 53%);
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position-x: 50%;
@@ -657,8 +657,8 @@ figure:active {
 .styleSeparateurWin {
 	box-sizing: border-box;
 	overflow: hidden;
-	background-image: url("cash.png"), linear-gradient(27deg, rgba(0,255,94,0.9) 0%, rgba(0,212,255,0.9) 100%);
-	/* background-image: url("cash2.png"), linear-gradient(166deg, rgba(0,0,0,1) 0%, rgba(0,187,255,1) 99%); */
+	background-image: url("Images/cash.png"), linear-gradient(27deg, rgba(0,255,94,0.9) 0%, rgba(0,212,255,0.9) 100%);
+	/* background-image: url("Images/cash2.png"), linear-gradient(166deg, rgba(0,0,0,1) 0%, rgba(0,187,255,1) 99%); */
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position-x: 40%;
@@ -672,7 +672,7 @@ figure:active {
 .styleSeparateurBlackJack {
 	box-sizing: border-box;
 	overflow: hidden;
-	background-image: url("cashBJ.png"), linear-gradient(144deg, rgba(131,58,180,0.9) 0%, rgba(253,29,29,0.9) 50%, rgba(252,176,69,0.9) 100%);
+	background-image: url("Images/cashBJ.png"), linear-gradient(144deg, rgba(131,58,180,0.9) 0%, rgba(253,29,29,0.9) 50%, rgba(252,176,69,0.9) 100%);
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position-x: 40%;
@@ -702,7 +702,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3f5efb",endCo
 .styleSeparateurPush {
 	box-sizing: border-box;
 	overflow: hidden;
-	background-image: url("pushArrow7_opacity.png"), linear-gradient(144deg, rgb(253 128 128) 0%, rgb(247 254 91) 100%);
+	background-image: url("Images/pushArrows.png"), linear-gradient(144deg, rgb(253 128 128) 0%, rgb(247 254 91) 100%);
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position-x: 40%;
@@ -1472,10 +1472,10 @@ p {
 
 	.styleSeparateur {
 		/* Resizer l'image (add autre URL) */
-		background-image: url("boomPngMobile.png"), linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%);
+		background-image: url("Images/boomPngMobile.png"), linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%);
 	}
 	.styleSeparateurWin {
-		background-image: url("cash.png"), linear-gradient(27deg, rgba(0,255,94,1) 0%, rgba(0,212,255,1) 100%);
+		background-image: url("Images/cash.png"), linear-gradient(27deg, rgba(0,255,94,1) 0%, rgba(0,212,255,1) 100%);
 	}
 
 

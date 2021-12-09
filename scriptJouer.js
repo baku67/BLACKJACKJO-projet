@@ -1,25 +1,25 @@
     
     window.onload = function(){
 
-      var audioCardSound = new Audio("addCardSound.mp3");
+      var audioCardSound = new Audio("Audio/addCardSound.mp3");
       audioCardSound.volume = 0.5;
 
-      var audioCoinWin = new Audio("winCoinSound.mp3");
+      var audioCoinWin = new Audio("Audio/winCoinSound.mp3");
       audioCoinWin.volume = 0.4;
 
-      var audioExplosionBust = new Audio("explosionSound.mp3");
+      var audioExplosionBust = new Audio("Audio/explosionSound.mp3");
       audioExplosionBust.volume = 0.1;
 
-      var audioPush = new Audio("pushSound.mp3");
+      var audioPush = new Audio("Audio/pushSound.mp3");
       audioPush.volume = 0.4;
 
-      var audioToken = new Audio("tokenSound.mp3");
+      var audioToken = new Audio("Audio/tokenSound.mp3");
       audioToken.volume = 0.7;
 
-      var audioDecompte = new Audio("decompteSound.mp3");
+      var audioDecompte = new Audio("Audio/decompteSound.mp3");
       audioDecompte.volume = 0.1;
 
-      var audioMiser = new Audio("soundMise.wav");
+      var audioMiser = new Audio("Audio/soundMise.wav");
       audioMiser.volume = 0.3;
 
       
@@ -98,7 +98,7 @@
       var content = document.getElementById("collapseContent");
       var isCollapsed = false;
       footerCollapse();
-      document.getElementById("arrowPng").setAttribute("src", "arrowUp.png");
+      document.getElementById("arrowPng").setAttribute("src", "Images/arrowUp.png");
       
 
       coll.addEventListener("click", function() {
@@ -113,13 +113,13 @@
 
       function footerCollapse() {
         content.style.display = "none";
-        document.getElementById("arrowPng").setAttribute("src", "arrowUp.png");
+        document.getElementById("arrowPng").setAttribute("src", "Images/arrowUp.png");
         isCollapsed = true;
         checkMiseWarning();
       }
       function footerShow() {
         content.style.display = "block";
-        document.getElementById("arrowPng").setAttribute("src", "arrowDown.png");
+        document.getElementById("arrowPng").setAttribute("src", "Images/arrowDown.png");
         isCollapsed = false;
         checkMiseWarning();
       }
@@ -369,7 +369,7 @@
                   audioDecompte.volume = 0.5;
                   audioToken.volume = 0.5;
                   audioMiser.volume = 0.5;
-                  document.getElementById("speakerSrc").src = 'speakerMax_sourceMax2.png';
+                  document.getElementById("speakerSrc").src = 'Images/speakerMax_sourceMax2.png';
                 }
                 else {
                   SoundMuteBool = true;
@@ -380,7 +380,7 @@
                   audioDecompte.volume = 0;
                   audioToken.volume = 0;
                   audioMiser.volume = 0;
-                  document.getElementById("speakerSrc").src = 'speakerMute_sourceMaxPng2.png';
+                  document.getElementById("speakerSrc").src = 'Images/speakerMute_sourceMaxPng2.png';
                 }
               });
               // FIN bouton toggle sons
@@ -393,12 +393,12 @@
                 if (setTimeOutMultiplierBool == true) {
                   setTimeOutMultiplierBool = false;
                   setTimeOutMultiplier = 1;
-                  document.getElementById("fastForwardSrc").src = 'fastForwardGrey.png';
+                  document.getElementById("fastForwardSrc").src = 'Images/fastForwardGrey.png';
                 }
                 else {
                   setTimeOutMultiplierBool = true;
                   setTimeOutMultiplier = 0.6;
-                  document.getElementById("fastForwardSrc").src = 'fastForwardActif.png';
+                  document.getElementById("fastForwardSrc").src = 'Images/fastForwardActif.png';
                 }
               });
               // FIN bouton toggle speed
@@ -407,7 +407,7 @@
 
               $.ajax({
                 async: false,
-                url: "footerMiseModul.html",
+                url: "Footers/footerMiseModul.html",
                 dataType: "html",
                 success: function(response) {
                   $("#container3").html(response);
@@ -487,7 +487,7 @@
             //     audioDecompte.volume = 0.5;
             //     audioToken.volume = 0.5;
             //     audioMiser.volume = 0.5;
-            //     document.getElementById("speakerSrc").src = 'speakerMax_sourceMax2.png';
+            //     document.getElementById("speakerSrc").src = 'Images/speakerMax_sourceMax2.png';
             //   }
             //   else {
             //     SoundMuteBoolTransition = true;
@@ -498,7 +498,7 @@
             //     audioDecompte.volume = 0;
             //     audioToken.volume = 0;
             //     audioMiser.volume = 0;
-            //     document.getElementById("speakerSrc").src = 'speakerMute_sourceMaxPng2.png';
+            //     document.getElementById("speakerSrc").src = 'Images/speakerMute_sourceMaxPng2.png';
             //   }
             // // FIN bouton toggle sons
             // // ******************************** *
@@ -509,12 +509,12 @@
             //   if (setTimeOutMultiplierBoolTransition == true) {
             //     setTimeOutMultiplierBoolTransition = false;
             //     setTimeOutMultiplier = 1;
-            //     document.getElementById("fastForwardSrc").src = 'fastForwardGrey.png';
+            //     document.getElementById("fastForwardSrc").src = 'Images/fastForwardGrey.png';
             //   }
             //   else {
             //     setTimeOutMultiplierBoolTransition = true;
             //     setTimeOutMultiplier = 0.68;
-            //     document.getElementById("fastForwardSrc").src = 'fastForwardActif.png';
+            //     document.getElementById("fastForwardSrc").src = 'Images/fastForwardActif.png';
             //   }
             // // FIN bouton toggle speed
             // // ******************************** *
@@ -534,7 +534,7 @@
               document.getElementById("compteurDeckMax").innerHTML = compteurDeckMax;
               $.ajax({
                 async: false,
-                url: "footerMiseModul.html",
+                url: "Footers/footerMiseModul.html",
                 dataType: "html",
                 success: function(response) {
                   $("#container3").html(response);
@@ -622,7 +622,7 @@
 
         $.ajax({
           async: false,
-          url: "footerNone.html",
+          url: "Footers/footerDistribution.html",
           dataType: "html",
           success: function(response) {
             $("#chipsContainer").html(response);
@@ -671,7 +671,7 @@
           setTimeout(function() {
             $.ajax({
               async: false,
-              url: "footerNone.html",
+              url: "Footers/footerDistribution.html",
               dataType: "html",
               success: function(response) {
                 $("#chipsContainer").html(response);
@@ -684,7 +684,7 @@
           setTimeout(function() {
             $.ajax({
               async: false,
-              url: "footerPhase2Modul.html",
+              url: "Footers/footerPhaseChoix.html",
               dataType: "html",
               success: function(response) {
                 $("#chipsContainer").html(response);
@@ -763,7 +763,7 @@
         var img = document.createElement('img');
         img.id = "backCardCroupier";
         img.className = "imgPartie";
-        img.src = "deck2.png";
+        img.src = "Images/deck2.png";
         audioCardSound.play();
         document.getElementById("croupier").appendChild(img);
       }
@@ -773,7 +773,7 @@
 
         $.ajax({
           async: false,
-          url: "footerNone.html",
+          url: "Footers/footerDistribution.html",
           dataType: "html",
           success: function(response) {
             $("#chipsContainer").html(response);
@@ -789,7 +789,7 @@
         setTimeout(function() {
           $.ajax({
             async: false,
-            url: "footerPhase2Modul.html",
+            url: "Footers/footerPhaseChoix.html",
             dataType: "html",
             success: function(response) {
               ChoixActif = true;
@@ -850,7 +850,7 @@
       function lancerPhaseCroupierAfterBurst() {
         // $.ajax({
         //   async: false,
-        //   url: "footerNone.html",
+        //   url: "Footers/footerDistribution.html",
         //   dataType: "html",
         //   success: function(response) {
         //     $("#chipsContainer").html(response);
@@ -905,7 +905,7 @@
       function lancerPhaseCroupier() {
           $.ajax({
             async: false,
-            url: "footerNone.html",
+            url: "Footers/footerDistribution.html",
             dataType: "html",
             success: function(response) {
               $("#chipsContainer").html(response);
@@ -949,7 +949,7 @@
               if (scoreTotalCroupier > scoreTotalJoueur && scoreTotalCroupier < 22) {
                 $.ajax({
                   async: false,
-                  url: "footerCroupierWin.html",
+                  url: "Footers/footerCroupierWin.html",
                   dataType: "html",
                   success: function(response) {
                     $("#container3").html(response);
@@ -1020,7 +1020,7 @@
               setTimeout(function() {
                 $.ajax({
                   async: false,
-                  url: "footerJoueurGagne.html",
+                  url: "Footers/footerJoueurGagne.html",
                   dataType: "html",
                   success: function(response) {
                     $("#container3").html(response);
@@ -1102,7 +1102,7 @@
                 setTimeout(function() {
                   $.ajax({
                     async: false,
-                    url: "footerJoueurGagne.html",
+                    url: "Footers/footerJoueurGagne.html",
                     dataType: "html",
                     success: function(response) {
                       $("#container3").html(response);
@@ -1184,7 +1184,7 @@
 
                 $.ajax({
                   async: false,
-                  url: "footerBurstJoueur.html",
+                  url: "Footers/footerBurstJoueur.html",
                   dataType: "html",
                   success: function(response) {
                     $("#container3").html(response);
@@ -1546,7 +1546,7 @@
             setTimeout(function() {
               $.ajax({
                 async: false,
-                url: "footerBurstJoueur.html",
+                url: "Footers/footerBurstJoueur.html",
                 dataType: "html",
                 success: function(response) {
                   $("#container3").html(response);
@@ -1580,7 +1580,7 @@
                   // document.getElementById("deckContainer").classList.add("fadeOut");
 
 
-                  //*** Perdu BURST (Ajouter icone boom.png (assez grand) dans le séparateur)
+                  //*** Perdu BURST 
                   document.getElementById("scoreJoueur").style.backgroundColor = "rgba(215,31,48,1)"
                   document.getElementById("scoreJoueur").style.color = "rgba(239,230,230, 1)"
                   document.getElementById("scoreJoueur").style.textShadow = "1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, -1px -1px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, -1px 0px 0 #000000, 0px -1px 0 #000000";
@@ -1635,8 +1635,7 @@
           setTimeout(function() {
             $.ajax({
               async: false,
-              // url: "footerBurstJoueur.html",
-              url: "footerJoueurGagne.html",
+              url: "Footers/footerJoueurGagne.html",
               dataType: "html",
               success: function(response) {
                 $("#container3").html(response);
@@ -1672,9 +1671,7 @@
                 document.getElementById("deckContainer").remove();
                 // document.getElementById("deckContainer").classList.add("fadeOut");
 
-                //*** Perdu BURST (Ajouter icone boom.png (assez grand) dans le séparateur)
-
-
+                //*** Perdu BURST 
                 document.getElementById("scoreCroupier").style.backgroundColor = "rgba(215,31,48,1)";
                 document.getElementById("scoreJoueur").style.backgroundColor = "rgba(59,217,10,1)";
 
