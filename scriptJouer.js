@@ -8,7 +8,7 @@
       audioCoinWin.volume = 0.4;
 
       var audioExplosionBust = new Audio("explosionSound.mp3");
-      audioExplosionBust.volume = 0.05;
+      audioExplosionBust.volume = 0.1;
 
       var audioPush = new Audio("pushSound.mp3");
       audioPush.volume = 0.4;
@@ -397,7 +397,7 @@
                 }
                 else {
                   setTimeOutMultiplierBool = true;
-                  setTimeOutMultiplier = 0.68;
+                  setTimeOutMultiplier = 0.6;
                   document.getElementById("fastForwardSrc").src = 'fastForwardActif.png';
                 }
               });
@@ -864,17 +864,17 @@
         function addCardCroupierRecursiveAfterBurst() {
           setTimeout(function() {
             document.getElementById("backCardCroupier").classList.add("fadeOut2");
-          }, 1550)
+          }, 1550 * setTimeOutMultiplier)
   
           setTimeout(function() {
             document.getElementById("backCardCroupier").remove();
-          }, 2150)
+          }, 2150 * setTimeOutMultiplier)
           
           if (scoreTotalCroupier < 17) {
             setTimeout(function() {
               addCardCroupier();
               addCardCroupierRecursiveAfterBurst();
-            }, 2150)
+            }, 2150 * setTimeOutMultiplier)
           }
           else {
             // resultat();
