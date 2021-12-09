@@ -369,7 +369,7 @@
                   audioDecompte.volume = 0.5;
                   audioToken.volume = 0.5;
                   audioMiser.volume = 0.5;
-                  document.getElementById("speakerSrc").src = 'Images/speakerMax_sourceMax2.png';
+                  document.getElementById("soundToggleImg").src = 'Images/speakerMax_sourceMax2.png';
                 }
                 else {
                   SoundMuteBool = true;
@@ -380,7 +380,7 @@
                   audioDecompte.volume = 0;
                   audioToken.volume = 0;
                   audioMiser.volume = 0;
-                  document.getElementById("speakerSrc").src = 'Images/speakerMute_sourceMaxPng2.png';
+                  document.getElementById("soundToggleImg").src = 'Images/speakerMute_sourceMaxPng2.png';
                 }
               });
               // FIN bouton toggle sons
@@ -393,12 +393,12 @@
                 if (setTimeOutMultiplierBool == true) {
                   setTimeOutMultiplierBool = false;
                   setTimeOutMultiplier = 1;
-                  document.getElementById("fastForwardSrc").src = 'Images/fastForwardGrey.png';
+                  document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
                 }
                 else {
                   setTimeOutMultiplierBool = true;
                   setTimeOutMultiplier = 0.6;
-                  document.getElementById("fastForwardSrc").src = 'Images/fastForwardActif.png';
+                  document.getElementById("speedToggleImage").src = 'Images/fastForwardActif.png';
                 }
               });
               // FIN bouton toggle speed
@@ -490,7 +490,7 @@
             //     audioDecompte.volume = 0.5;
             //     audioToken.volume = 0.5;
             //     audioMiser.volume = 0.5;
-            //     document.getElementById("speakerSrc").src = 'Images/speakerMax_sourceMax2.png';
+            //     document.getElementById("soundToggleImg").src = 'Images/speakerMax_sourceMax2.png';
             //   }
             //   else {
             //     SoundMuteBoolTransition = true;
@@ -501,7 +501,7 @@
             //     audioDecompte.volume = 0;
             //     audioToken.volume = 0;
             //     audioMiser.volume = 0;
-            //     document.getElementById("speakerSrc").src = 'Images/speakerMute_sourceMaxPng2.png';
+            //     document.getElementById("soundToggleImg").src = 'Images/speakerMute_sourceMaxPng2.png';
             //   }
             // // FIN bouton toggle sons
             // // ******************************** *
@@ -512,12 +512,12 @@
             //   if (setTimeOutMultiplierBoolTransition == true) {
             //     setTimeOutMultiplierBoolTransition = false;
             //     setTimeOutMultiplier = 1;
-            //     document.getElementById("fastForwardSrc").src = 'Images/fastForwardGrey.png';
+            //     document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
             //   }
             //   else {
             //     setTimeOutMultiplierBoolTransition = true;
             //     setTimeOutMultiplier = 0.68;
-            //     document.getElementById("fastForwardSrc").src = 'Images/fastForwardActif.png';
+            //     document.getElementById("speedToggleImage").src = 'Images/fastForwardActif.png';
             //   }
             // // FIN bouton toggle speed
             // // ******************************** *

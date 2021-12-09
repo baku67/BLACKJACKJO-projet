@@ -428,6 +428,27 @@ p {
 
 
 
+#soundToggleButton {
+	font-size: 2em; 
+	position: absolute; 
+	left: 1%;
+}
+#soundToggleImg {
+	width: 60px;
+}
+
+#speedToggleButton {
+	position: absolute; 
+	left: 4%;
+}
+#speedToggleImage {
+	width: 60px;
+}
+
+
+
+
+
 
 
 .champs {
