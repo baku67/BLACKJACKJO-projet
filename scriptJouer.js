@@ -422,6 +422,9 @@
 
                       // fonction qui remove le premier var du tableau
                     logTokenValues.shift();
+
+                    // Rafraichit l'état style du bouton (par exemple si denouveau = 0)
+                    miseBoutonStyle();
                     } 
                   });
                   // $('#retourArriereButton').hover(function() {
@@ -609,6 +612,7 @@
           button.disabled = false;
         }
         else {
+          document.getElementById("boutonMiser").classList.remove("miserActif");
           document.getElementById("boutonMiser").style.opacity = "0.4";
           document.getElementById("boutonMiser").style.cursor = "default";
           button.disabled = true;
@@ -1007,6 +1011,17 @@
                     }, 250);
                     // Fin séparateur
 
+                    // Apparition bouton (après PhaseCroupier sinon MessUp si cliqué trop tot)
+                    setTimeout(function() { 
+                      document.getElementById("relancer").classList.add("fadeInResultat");
+                      document.getElementById("relancer").style.visibility = "visible";
+
+                      // Disparition boutton onClick
+                      document.getElementById("relancer").addEventListener("click", function() {
+                        // document.getElementById("relancer").classList.add("fadeOut");
+                        document.getElementById("relancer").style.visibility = "hidden";
+                      })
+                    }, 2000)
 
                     // Bouton Rejouer
                     relancer();
@@ -1090,6 +1105,17 @@
                     }, 250);
                     // Fin séparateur
   
+                    // Apparition bouton (après PhaseCroupier sinon MessUp si cliqué trop tot)
+                    setTimeout(function() { 
+                      document.getElementById("relancer").classList.add("fadeInResultat");
+                      document.getElementById("relancer").style.visibility = "visible";
+
+                      // Disparition boutton onClick
+                      document.getElementById("relancer").addEventListener("click", function() {
+                        // document.getElementById("relancer").classList.add("fadeOut");
+                        document.getElementById("relancer").style.visibility = "hidden";
+                      })
+                    }, 2000)
 
                     // Bouton Rejouer
                     relancer();
@@ -1172,7 +1198,18 @@
                       }, 250);
                       // Fin séparateur
     
-  
+                      // Apparition bouton (après PhaseCroupier sinon MessUp si cliqué trop tot)
+                      setTimeout(function() { 
+                        document.getElementById("relancer").classList.add("fadeInResultat");
+                        document.getElementById("relancer").style.visibility = "visible";
+
+                        // Disparition boutton onClick
+                        document.getElementById("relancer").addEventListener("click", function() {
+                          // document.getElementById("relancer").classList.add("fadeOut");
+                          document.getElementById("relancer").style.visibility = "hidden";
+                        })
+                      }, 2000)
+      
                       // Bouton Rejouer
                       relancer();
                     }
@@ -1243,6 +1280,17 @@
                     }, 250);
                     // Fin séparateur
   
+                    // Apparition bouton (après PhaseCroupier sinon MessUp si cliqué trop tot)
+                    setTimeout(function() { 
+                      document.getElementById("relancer").classList.add("fadeInResultat");
+                      document.getElementById("relancer").style.visibility = "visible";
+
+                      // Disparition boutton onClick
+                    document.getElementById("relancer").addEventListener("click", function() {
+                      // document.getElementById("relancer").classList.add("fadeOut");
+                      document.getElementById("relancer").style.visibility = "hidden";
+                    })
+                    }, 2000)
   
                     // Bouton Rejouer
                     relancer();
@@ -1614,6 +1662,12 @@
                   setTimeout(function() { 
                     document.getElementById("relancer").classList.add("fadeInResultat");
                     document.getElementById("relancer").style.visibility = "visible";
+
+                    // Disparition boutton onClick
+                    document.getElementById("relancer").addEventListener("click", function() {
+                      // document.getElementById("relancer").classList.add("fadeOut");
+                      document.getElementById("relancer").style.visibility = "hidden";
+                    })
                   }, 2000)
 
                   // Bouton Rejouer
@@ -1703,6 +1757,17 @@
                 }, 250);
                 // Fin Séparateur
 
+                // Apparition bouton (après PhaseCroupier sinon MessUp si cliqué trop tot)
+                setTimeout(function() { 
+                  document.getElementById("relancer").classList.add("fadeInResultat");
+                  document.getElementById("relancer").style.visibility = "visible";
+
+                  // Disparition boutton onClick
+                  document.getElementById("relancer").addEventListener("click", function() {
+                    // document.getElementById("relancer").classList.add("fadeOut");
+                    document.getElementById("relancer").style.visibility = "hidden";
+                  })
+                }, 2000)
 
                 // Bouton Rejouer
                 relancer();
