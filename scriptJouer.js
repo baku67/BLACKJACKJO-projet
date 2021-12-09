@@ -453,13 +453,82 @@
           }, 500)
       });
 
-      //***   WIP: Relancer    ***\\
+      // Fonctions Mute/Speed
 
+
+
+      //***   WIP: Relancer    ***\\
       function relancer() {
+        // Récupération des états ToggleButton avant rafraichissement
+          var soundMuteBoolTransition = SoundMuteBool;
+          var setTimeOutMultiplierBoolTransition = setTimeOutMultiplierBool;
+        // Fin 
+
         $("#relancer").click(function(){
-          $("#container1").load("jouerPartie.html");
+          // Mettre un ajax load (pour succes et enchainement)
+          // $("#container1").load("jouerPartie.html");
+
+          $.ajax({
+            async: false,
+            url: "jouerPartie.html",
+            dataType: "html",
+            success: function(response) {
+              $("#container1").html(response);
+
+            //   // REPETITION DE CODE: à revoir
+            //   // ******************************** *
+            //   // BOUTON TOGGLE SON
+            //   if (soundMuteBoolTransition == true) {
+            //     SoundMuteBoolTransition = false;
+            //     audioCardSound.volume = 0.5;
+            //     audioCoinWin.volume = 0.5;
+            //     audioExplosionBust.volume = 0.5;
+            //     audioPush.volume = 0.5;
+            //     audioDecompte.volume = 0.5;
+            //     audioToken.volume = 0.5;
+            //     audioMiser.volume = 0.5;
+            //     document.getElementById("speakerSrc").src = 'speakerMax_sourceMax2.png';
+            //   }
+            //   else {
+            //     SoundMuteBoolTransition = true;
+            //     audioCardSound.volume = 0;
+            //     audioCoinWin.volume = 0;
+            //     audioExplosionBust.volume = 0;
+            //     audioPush.volume = 0;
+            //     audioDecompte.volume = 0;
+            //     audioToken.volume = 0;
+            //     audioMiser.volume = 0;
+            //     document.getElementById("speakerSrc").src = 'speakerMute_sourceMaxPng2.png';
+            //   }
+            // // FIN bouton toggle sons
+            // // ******************************** *
+
+
+            // // ******************************** *
+            // // BOUTON TOGGLE SPEED
+            //   if (setTimeOutMultiplierBoolTransition == true) {
+            //     setTimeOutMultiplierBoolTransition = false;
+            //     setTimeOutMultiplier = 1;
+            //     document.getElementById("fastForwardSrc").src = 'fastForwardGrey.png';
+            //   }
+            //   else {
+            //     setTimeOutMultiplierBoolTransition = true;
+            //     setTimeOutMultiplier = 0.68;
+            //     document.getElementById("fastForwardSrc").src = 'fastForwardActif.png';
+            //   }
+            // // FIN bouton toggle speed
+            // // ******************************** *
+
+            }
+          });
+
+
           scoreTotalJoueur = 0;
           scoreTotalCroupier = 0;
+
+
+
+
           setTimeout( function lancerPartie() {
               document.getElementById("compteurDeck").innerHTML = compteurDeck;
               document.getElementById("compteurDeckMax").innerHTML = compteurDeckMax;
@@ -480,6 +549,7 @@
               miseLock();  
           }, 500)
         });
+
       }
 
 
@@ -1540,9 +1610,11 @@
                     lancerPhaseCroupierAfterBurst();
                   }, 750)
 
-                  setTimeout(function() {
+                  // Apparition bouton (après PhaseCroupier sinon MessUp si cliqué trop tot)
+                  setTimeout(function() { 
                     document.getElementById("relancer").classList.add("fadeInResultat");
-                  }, 750)
+                    document.getElementById("relancer").style.visibility = "visible";
+                  }, 2000)
 
                   // Bouton Rejouer
                   relancer();

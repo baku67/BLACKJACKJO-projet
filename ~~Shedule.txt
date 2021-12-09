@@ -2,6 +2,9 @@ UN JOUR: Clean l'arborescence   +   Simplifier le JS (surtout les ajout de style
 
 
 *** RELANCE: boutons toggle HS
+CREER LES FONCTION d'ajout du event click sur button
+
+
 
 Sons choix et Son newGame
 
