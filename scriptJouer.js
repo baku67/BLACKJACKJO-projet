@@ -456,30 +456,30 @@
       //***   WIP: Relancer    ***\\
 
       function relancer() {
-      //   $("#relancer").click(function(){
-      //     $("#container1").load("jouerPartie.html");
-      //     scoreTotalJoueur = 0;
-      //     scoreTotalCroupier = 0;
-      //     setTimeout( function lancerPartie() {
-      //         document.getElementById("compteurDeck").innerHTML = compteurDeck;
-      //         document.getElementById("compteurDeckMax").innerHTML = compteurDeckMax;
-      //         $.ajax({
-      //           async: false,
-      //           url: "footerMiseModul.html",
-      //           dataType: "html",
-      //           success: function(response) {
-      //             $("#container3").html(response);
-      //             footerShow();
-      //             phaseMise();
-      //             document.getElementById("footerTitle").innerHTML = " - MISE -";
-      //             window.onload = tokensClick();
-      //             checkMiseWarning();
-      //           }
-      //         });
-      //         miseBoutonStyle();
-      //         miseLock();  
-      //     }, 500)
-      //   });
+        $("#relancer").click(function(){
+          $("#container1").load("jouerPartie.html");
+          scoreTotalJoueur = 0;
+          scoreTotalCroupier = 0;
+          setTimeout( function lancerPartie() {
+              document.getElementById("compteurDeck").innerHTML = compteurDeck;
+              document.getElementById("compteurDeckMax").innerHTML = compteurDeckMax;
+              $.ajax({
+                async: false,
+                url: "footerMiseModul.html",
+                dataType: "html",
+                success: function(response) {
+                  $("#container3").html(response);
+                  footerShow();
+                  phaseMise();
+                  document.getElementById("footerTitle").innerHTML = " - MISE -";
+                  window.onload = tokensClick();
+                  checkMiseWarning();
+                }
+              });
+              miseBoutonStyle();
+              miseLock();  
+          }, 500)
+        });
       }
 
 
