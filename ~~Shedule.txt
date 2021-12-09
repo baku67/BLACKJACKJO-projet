@@ -3,9 +3,10 @@ UN JOUR:  Simplifier le JS (surtout les ajout de style random, y'a les id)
 https://stackoverflow.com/questions/36384310/automatically-slide-in-div-on-page-load
 
 *** RELANCE: boutons toggle HS
-CREER LES FONCTION d'ajout du event click sur button
++ CREER LES FONCTION d'ajout du event click sur button
 
-
+Nouveau boutons Toggle (avec hover et active) see FaceBook selfconv
+Boutons choix: *de base* couleur unie avec inversion/noirOUblanc ?
 
 Sons choix et Son newGame
 
