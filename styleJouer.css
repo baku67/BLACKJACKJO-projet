@@ -306,6 +306,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 }
 
 .fadeInResultat {
+	visibility: visible;
 	animation: fadeInResultat ease 1s; 
 	animation-iteration-count: 1; 
 	animation-fill-mode: forwards; 
@@ -1010,6 +1011,7 @@ p {
 }
 
 #relancer {
+	visibility: hidden;
 	position: absolute;
 	margin-left: 80px;
 	margin-top: 56px;
