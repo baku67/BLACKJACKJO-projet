@@ -1357,10 +1357,10 @@
         audioCardSound.play();
         document.getElementById("croupier").appendChild(img);
 
-        if (burstJoueur = false) {
+        if (burstJoueur == false) {
           decrementCompteurDeck();
+          console.log("decrement");
         }
-        // decrementCompteurDeck()
 
         checkMiseWarning();
 
