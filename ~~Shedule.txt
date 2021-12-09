@@ -1,5 +1,10 @@
 UN JOUR: Clean l'arborescence   +   Simplifier le JS (surtout les ajout de style random, y'a les id)
 
+
+*** RELANCE: boutons toggle HS
+
+Sons choix et Son newGame
+
 POUR NOEL: patcher les autre résultats + AS 
            Vrai / Faux BlackJack
 

@@ -1540,6 +1540,9 @@
                     lancerPhaseCroupierAfterBurst();
                   }, 750)
 
+                  setTimeout(function() {
+                    document.getElementById("relancer").classList.add("fadeInResultat");
+                  }, 750)
 
                   // Bouton Rejouer
                   relancer();
