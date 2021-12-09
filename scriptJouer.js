@@ -969,7 +969,7 @@
                     document.getElementById("miseResultat").innerHTML = miseLocked;
                     setTimeout( function() {
                       DecrementGain();
-                    }, 1500 * setTimeOutMultiplier);
+                    }, 1500);
                     
 
                     document.getElementById("deckContainer").remove();
@@ -1050,7 +1050,7 @@
                       document.getElementById("miseResultat").innerHTML = miseLocked;
                       setTimeout( function() {
                         IncrementGain(miseLockedMultiplied);
-                      }, 1500 * setTimeOutMultiplier);
+                      }, 1500);
 
                       
                         // function: (en partant de la mise vers le gains réel)
@@ -1143,7 +1143,7 @@
                         document.getElementById("miseResultat").innerHTML = miseLocked;
                         setTimeout( function() {
                           IncrementGain(miseLockedMultiplied);
-                        }, 1500 * setTimeOutMultiplier);
+                        }, 1500);
   
                         
                           // function: (en partant de la mise vers le gains réel)
@@ -1535,7 +1535,7 @@
               document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;
             }
             else {
-              document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur + " / " + (scoreTotalJoueur + 10);
+              document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur + "&nbsp;&nbsp;/&nbsp;&nbsp;" + (scoreTotalJoueur + 10);
             }
           }
           else {
@@ -1616,7 +1616,7 @@
                     document.getElementById("miseResultat").innerHTML = miseLocked;
                     setTimeout( function() {
                       DecrementGain();
-                    }, 1500 * setTimeOutMultiplier);
+                    }, 1500);
                     
                       
                     // Fin résultat Gains
@@ -1711,7 +1711,7 @@
                   document.getElementById("miseResultat").innerHTML = miseLocked;
                   setTimeout( function() {
                     IncrementGain(miseLockedMultiplied);
-                  }, 1500 * setTimeOutMultiplier);
+                  }, 1500);
                   
                     // function: (en partant de la mise vers le gains réel)
                     var miseLockedMultiplied = miseLocked * 3;
