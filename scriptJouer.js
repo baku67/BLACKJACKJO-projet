@@ -401,7 +401,7 @@
                 }
                 else {
                   setTimeOutMultiplierBool = true;
-                  setTimeOutMultiplier = 0.6;
+                  setTimeOutMultiplier = 0.65;
                   document.getElementById("speedToggleImage").src = 'Images/fastForwardWhite.png';
                 }
               });

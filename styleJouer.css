@@ -441,21 +441,15 @@ p {
 	background-color:rgba(56, 71, 131, 0.8);
 
 	position: absolute; 
-
-	/* left: -3%; */
-	/* top: 9%; */
-	/* transform left% en px */
 	left: -60px;
 	top: 193px;
 
-	transition: left 0.2s;
+	transition: left 0.23s;
 }
 #soundButtonContainer:hover {
-	/* TRANSITION à ajouter  */
-	left: -1%;
+	left: -23px;
 }
 #soundButtonContainer:active {
-	/* Dans le onClick varier la left: (-1)~(-3)% */
 	/* + border plus larde (avec border-box ou autre pour contenir, = la meme taille) */
 }
 
@@ -473,24 +467,15 @@ p {
 	background-color:rgba(56, 71, 131, 0.8);
 
 	position: absolute; 
-
-	/* left: -3%; */
-	/* top: 13%; */
-
-	/* transform % en px */
 	left: -60px;
 	top: 275px;
 
-		
-
-	transition: left 0.2s;
+	transition: left 0.23s;
 }
 #speedButtonContainer:hover {
-	/* TRANSITION à ajouter  */
-	left: -1%;
+	left: -23px;
 }
 #speedButtonContainer:active {
-	/* Dans le onClick varier la left: (-1)~(-3)% */
 	/* + border plus larde (avec border-box ou autre pour contenir, = la meme taille) */
 
 }
@@ -1546,17 +1531,25 @@ p {
 	#soundButtonContainer {
 		left: -70px;
 		top: 193px;
+		border: 1px solid rgba(58, 54, 54, 0.9);
+		height: 85px;
 	}
 	#speedButtonContainer {
 		left: -70px;
-		top: 265px;
+		top: 300px;
+		border: 1px solid rgba(58, 54, 54, 0.9);
+		height: 85px;
 	}
 
 	#soundToggleImage {
-		width: 40px;
+		margin-top: 18px;
+		margin-left: 15px !important;
+		width: 53px;
 	}
 	#speedToggleImage {
-		width: 40px;
+		margin-top: 18px;
+		margin-left: 15px;
+		width: 53px;
 	}
 
 	/*  active avec transition ease in-out (genre ça fait la transition et puis inverse) */
