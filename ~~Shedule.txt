@@ -2,6 +2,11 @@ UN JOUR:  Simplifier le JS (surtout les ajout de style random, y'a les id)
 
 https://stackoverflow.com/questions/36384310/automatically-slide-in-div-on-page-load
 
+
+OSEF-tier: mettre les toggle à droite (c'est un petit bordel) car smartphone+droitiers majoritaires (UX tmtc)
+
+EZ: speakerMax_sourceMax: repartir de ce SOURCE pur faire un png plus précis (il y a du blanc en contour sur l'actuel) régler la tolérence sur PNG transparency
+
 *** RELANCE: boutons toggle HS
 + CREER LES FONCTION d'ajout du event click sur button
 
@@ -173,12 +178,12 @@ TO DO: Bouton Miser! grisé+nonClickable quand aucun mise
 - Virer les cards High-Low 
 TO DO: Nouveau module: Tokens
 Hover: choix(hit/stand/double)
- TO DO: Scores(J/C)- apparition deforme height responsive
- Le Score High-Low est contenu dans "#container3" ducoup il est rechargé à chaque ajax (mise/HiLo)
- --> TO DO (fun): Clignotement lent/infini du border bouton Miser! quand ajout de mise
- TO DO: Garder la meme height de Footer quand load Mise
- TO DO: Ajouter Deck à gauche (garder fight centré), avec nbrCardsRestantes dessus 
- Ajouter carteCroupier face cachée lors ditribution afterMise (plus compréhensible), puis los de phase Stand: l'enlever AU MOMENT de la boucle IF récursive  (gérer transition propre)
+TO DO: Scores(J/C)- apparition deforme height responsive
+Le Score High-Low est contenu dans "#container3" ducoup il est rechargé à chaque ajax (mise/HiLo)
+--> TO DO (fun): Clignotement lent/infini du border bouton Miser! quand ajout de mise
+TO DO: Garder la meme height de Footer quand load Mise
+TO DO: Ajouter Deck à gauche (garder fight centré), avec nbrCardsRestantes dessus 
+Ajouter carteCroupier face cachée lors ditribution afterMise (plus compréhensible), puis los de phase Stand: l'enlever AU MOMENT de la boucle IF récursive  (gérer transition propre)
 Bruit de tirelire quand win / bruit d'eplosion quand bust
 Clean l'arborescence
 ___________________________________________________________________________________________

@@ -428,22 +428,78 @@ p {
 
 
 
-#soundToggleButton {
-	font-size: 2em; 
-	position: absolute; 
-	left: 1%;
-}
-#soundToggleImg {
+/* #soundToggleButton {
+	Placer le clicable dans le container
+} */
+#soundToggleImage {
 	width: 60px;
 }
+#soundButtonContainer {
+	width: 70px;
+	border: 3px solid black;
+	border-radius: 5px;
+	padding-left: 50px;
+	background-color:rgba(56, 71, 131, 0.8);
 
-#speedToggleButton {
 	position: absolute; 
-	left: 4%;
+
+	/* left: -3%; */
+	/* top: 9%; */
+	/* transform left% en px */
+	left: -60px;
+	top: 193px;
+
+	transition: left 0.2s;
 }
+#soundButtonContainer:hover {
+	/* TRANSITION à ajouter  */
+	left: -1%;
+}
+#soundButtonContainer:active {
+	/* Dans le onClick varier la left: (-1)~(-3)% */
+	/* + border plus larde (avec border-box ou autre pour contenir, = la meme taille) */
+}
+
+
+
+/* #speedToggleButton {
+	position: absolute; 
+	left: 1%;
+	top: 12%;	
+} */
 #speedToggleImage {
 	width: 60px;
 }
+#speedButtonContainer {
+	width: 70px;
+	border: 3px solid black;
+	border-radius: 5px;
+	padding-left: 50px;
+	background-color:rgba(56, 71, 131, 0.8);
+
+	position: absolute; 
+
+	/* left: -3%; */
+	/* top: 13%; */
+
+	/* transform % en px */
+	left: -60px;
+	top: 275px;
+
+		
+
+	transition: left 0.2s;
+}
+#speedButtonContainer:hover {
+	/* TRANSITION à ajouter  */
+	left: -1%;
+}
+#speedButtonContainer:active {
+	/* Dans le onClick varier la left: (-1)~(-3)% */
+	/* + border plus larde (avec border-box ou autre pour contenir, = la meme taille) */
+
+}
+
 
 
 
@@ -1465,15 +1521,15 @@ p {
 		height: 100px;
 	}
 
-	#soundToggleButton {
+	/* #soundToggleButton {
 		left: 2% !important;
 		font-size: 1.5em !important;
-	}
+	} */
 
-	#speedToggleButton {
+	/* #speedToggleButton {
 		left: 9% !important;
 		font-size: 1.3em !important;
-	}
+	} */
 
 	#list {
 		margin-top: 17px;
@@ -1489,6 +1545,28 @@ p {
 	.resultatTextBJ {
 		text-shadow: -3px 3px 0px #e600dd, -6px 6px 0px #01cccc, -9px 9px 0px #bd0000;
 	}
+
+
+	#soundButtonContainer {
+		left: -70px;
+		top: 193px;
+	}
+	#speedButtonContainer {
+		left: -70px;
+		top: 265px;
+	}
+
+	#soundToggleImage {
+		width: 40px;
+	}
+	#speedToggleImage {
+		width: 40px;
+	}
+
+	/*  active avec transition ease in-out (genre ça fait la transition et puis inverse) */
+
+
+
 	
 	#separateur {
 		width: 70%;
