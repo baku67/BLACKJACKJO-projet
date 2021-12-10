@@ -8,7 +8,7 @@
       audioCoinWin.volume = 0.4;
 
       var audioExplosionBust = new Audio("Audio/explosionSound.mp3");
-      audioExplosionBust.volume = 0.1;
+      audioExplosionBust.volume = 0.08;
 
       var audioPush = new Audio("Audio/pushSound.mp3");
       audioPush.volume = 0.4;
@@ -17,7 +17,7 @@
       audioToken.volume = 0.7;
 
       var audioDecompte = new Audio("Audio/decompteSound.mp3");
-      audioDecompte.volume = 0.1;
+      audioDecompte.volume = 0.08;
 
       var audioMiser = new Audio("Audio/soundMise.wav");
       audioMiser.volume = 0.3;
@@ -359,10 +359,12 @@
 
               // ******************************** *
               // BOUTON TOGGLE SON
-              document.getElementById("soundToggleButton").addEventListener("click", function() {
+              // document.getElementById("soundButtonContainer").style.cursor = "pointer";
+              document.getElementById("soundButtonContainer").addEventListener("click", function() {
                 if (SoundMuteBool == true) {
                   SoundMuteBool = false;
-                  audioCardSound.volume = 0.5;
+                  document.getElementById("soundToggleImage").style.marginLeft = "3px";
+                  audioCardSound.volume = 0.5;  
                   audioCoinWin.volume = 0.5;
                   audioExplosionBust.volume = 0.5;
                   audioPush.volume = 0.5;
@@ -373,6 +375,7 @@
                 }
                 else {
                   SoundMuteBool = true;
+                  document.getElementById("soundToggleImage").style.marginLeft = "13px";
                   audioCardSound.volume = 0;
                   audioCoinWin.volume = 0;
                   audioExplosionBust.volume = 0;
@@ -389,7 +392,8 @@
  
               // ******************************** *
               // BOUTON TOGGLE SPEED
-              document.getElementById("speedToggleButton").addEventListener("click", function() {
+              // document.getElementById("speedButtonContainer").style.cursor = "pointer";
+              document.getElementById("speedButtonContainer").addEventListener("click", function() {
                 if (setTimeOutMultiplierBool == true) {
                   setTimeOutMultiplierBool = false;
                   setTimeOutMultiplier = 1;

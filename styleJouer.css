@@ -428,13 +428,12 @@ p {
 
 
 
-/* #soundToggleButton {
-	Placer le clicable dans le container
-} */
 #soundToggleImage {
+	margin-left: 3px;
 	width: 60px;
 }
 #soundButtonContainer {
+	cursor: pointer;
 	width: 70px;
 	border: 3px solid black;
 	border-radius: 5px;
@@ -462,15 +461,11 @@ p {
 
 
 
-/* #speedToggleButton {
-	position: absolute; 
-	left: 1%;
-	top: 12%;	
-} */
 #speedToggleImage {
 	width: 60px;
 }
 #speedButtonContainer {
+	cursor: pointer;
 	width: 70px;
 	border: 3px solid black;
 	border-radius: 5px;
@@ -1522,6 +1517,7 @@ p {
 	}
 
 	/* #soundToggleButton {
+		margin-left: 4px;
 		left: 2% !important;
 		font-size: 1.5em !important;
 	} */
