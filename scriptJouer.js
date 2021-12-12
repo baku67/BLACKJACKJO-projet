@@ -26,6 +26,9 @@
       // réinitialisé dans le NewGame (tableau des valeurs derniers jetons ajoutés en vue de retour arriere)
       let logTokenValues = [];
 
+      var credits = 0;
+      var gain = 0;
+
       var score = 0;
       var mise = 0;
       var scoreTotalJoueur = 0;
@@ -354,6 +357,10 @@
           setTimeout( function lancerPartie() {
 
               logTokenValues = [];
+
+              credits = 100;
+              document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + credits + "&nbsp;€";
+ 
               document.getElementById("compteurDeck").innerHTML = compteurDeck;
               document.getElementById("compteurDeckMax").innerHTML = compteurDeckMax;
 
@@ -401,7 +408,7 @@
                 }
                 else {
                   setTimeOutMultiplierBool = true;
-                  setTimeOutMultiplier = 0.45;
+                  setTimeOutMultiplier = 0.55;
                   document.getElementById("speedToggleImage").src = 'Images/fastForwardWhite.png';
                 }
               });
@@ -481,6 +488,10 @@
             dataType: "html",
             success: function(response) {
               $("#container1").html(response);
+
+              //** Récupérer le nouveau Crédits 
+              document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + credits + "&nbsp;€";
+              // FIN
 
               //**** Garder l'état Toggle lors Relance
               // *Mute*
@@ -1045,7 +1056,14 @@
                     document.getElementById("miseResultat").innerHTML = miseLocked;
                     setTimeout( function() {
                       DecrementGain();
-                    }, 1500);
+                    }, 1500); 
+
+                    // WIP gain (ajouter effet refresh CSS)
+                    setTimeout( function() {
+                      gain = -miseLocked;
+                      ajoutGain(gain)
+                    }, 500)
+                    //
                     
 
                     document.getElementById("deckContainer").remove();
@@ -1127,6 +1145,11 @@
                       setTimeout( function() {
                         IncrementGain(miseLockedMultiplied);
                       }, 1500);
+
+                      setTimeout( function() {
+                        gain = miseLocked;
+                        ajoutGain(gain)
+                      }, 500)
 
                       
                         // function: (en partant de la mise vers le gains réel)
@@ -1220,6 +1243,11 @@
                         setTimeout( function() {
                           IncrementGain(miseLockedMultiplied);
                         }, 1500);
+
+                        setTimeout( function() {
+                          gain = miseLocked;
+                          ajoutGain(gain)
+                        }, 500)
   
                         
                           // function: (en partant de la mise vers le gains réel)
@@ -1316,6 +1344,11 @@
   
                       // Résultat Gains 
                       document.getElementById("miseResultat").innerHTML = miseLocked;
+
+                      setTimeout( function() {
+                        gain = 0;
+                        ajoutGain(gain)
+                      }, 500)
                       
                       document.getElementById("miseResultat").classList.add("addColorToResultatYellow");
 
@@ -1397,82 +1430,126 @@
 
 
       function tokensClick() {
-        document.getElementById("whiteToken").addEventListener("click", function() {
+
+          // Créer une var global créditpotentiel
+        
+          document.getElementById("whiteToken").addEventListener("click", function() {
           
-          addLastTokenClickToTab(1);
+            if ((credits-miseEnCours) >= 1) {
+              addLastTokenClickToTab(1);
+    
+              audioToken.play();
+    
+              miseEnCours += 1;
+              document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
+              miseBoutonStyle();
+              misePop();
+              setTimeout(function scoreDepop() {
+                document.getElementById("miseEnCours").classList.toggle('scorePop');
+              }, 500);
+              cssMiseEnCours();
+            }
+          })
+        //*** Backup WhiteTokenClick
+        // document.getElementById("whiteToken").addEventListener("click", function() {
+          
+        //   addLastTokenClickToTab(1);
 
-          audioToken.play();
+        //   audioToken.play();
 
-          miseEnCours += 1;
-          document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
-          miseBoutonStyle();
-          misePop();
-          setTimeout(function scoreDepop() {
-            document.getElementById("miseEnCours").classList.toggle('scorePop');
-          }, 500);
-          cssMiseEnCours();
-        })
-        document.getElementById("redToken").addEventListener("click", function() {
+        //   miseEnCours += 1;
+        //   document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
+        //   miseBoutonStyle();
+        //   misePop();
+        //   setTimeout(function scoreDepop() {
+        //     document.getElementById("miseEnCours").classList.toggle('scorePop');
+        //   }, 500);
+        //   cssMiseEnCours();
+        // })
+        // FIN backup
 
-          addLastTokenClickToTab(5);
+          document.getElementById("redToken").addEventListener("click", function() {
 
-          audioToken.play();
+            if ((credits-miseEnCours) >= 5) {
+              addLastTokenClickToTab(5);
 
-          miseEnCours += 5;
-          document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
-          miseBoutonStyle();
-          misePop();
-          setTimeout(function scoreDepop() {
-            document.getElementById("miseEnCours").classList.toggle('scorePop');
-          }, 500);
-          cssMiseEnCours();
-        })
-        document.getElementById("greenToken").addEventListener("click", function() {
+              audioToken.play();
 
-          addLastTokenClickToTab(10);
+              miseEnCours += 5;
+              document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
+              miseBoutonStyle();
+              misePop();
+              setTimeout(function scoreDepop() {
+                document.getElementById("miseEnCours").classList.toggle('scorePop');
+              }, 500);
+              cssMiseEnCours();
+            }
 
-          audioToken.play();
+          })
+        
 
-          miseEnCours += 10;
-          document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
-          miseBoutonStyle();
-          misePop();
-          setTimeout(function scoreDepop() {
-            document.getElementById("miseEnCours").classList.toggle('scorePop');
-          }, 500);
-          cssMiseEnCours();
-        })
+          document.getElementById("greenToken").addEventListener("click", function() {
+
+            if ((credits-miseEnCours) >= 10) {
+              addLastTokenClickToTab(10);
+
+              audioToken.play();
+
+              miseEnCours += 10;
+              document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
+              miseBoutonStyle();
+              misePop();
+              setTimeout(function scoreDepop() {
+                document.getElementById("miseEnCours").classList.toggle('scorePop');
+              }, 500);
+              cssMiseEnCours();
+            }
+
+          })
+       
+
         document.getElementById("blueToken").addEventListener("click", function() {
 
-          addLastTokenClickToTab(25);
+          if ((credits-miseEnCours) >= 25) {
+            addLastTokenClickToTab(25);
 
-          audioToken.play();
+            audioToken.play();
 
-          miseEnCours += 25;
-          document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
-          miseBoutonStyle();
-          misePop();
-          setTimeout(function scoreDepop() {
-            document.getElementById("miseEnCours").classList.toggle('scorePop');
-          }, 500);
-          cssMiseEnCours();
+            miseEnCours += 25;
+            document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
+            miseBoutonStyle();
+            misePop();
+            setTimeout(function scoreDepop() {
+              document.getElementById("miseEnCours").classList.toggle('scorePop');
+            }, 500);
+            cssMiseEnCours();
+          }
+
         })
+
+        
+
         document.getElementById("blackToken").addEventListener("click", function() {
 
-          addLastTokenClickToTab(100);
+          if ((credits-miseEnCours) >= 100) {
+            addLastTokenClickToTab(100);
 
-          audioToken.play();
+            audioToken.play();
 
-          miseEnCours += 100;
-          document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
-          miseBoutonStyle();
-          misePop();
-          setTimeout(function scoreDepop() {
-            document.getElementById("miseEnCours").classList.toggle('scorePop');
-          }, 500);
-          cssMiseEnCours();
+            miseEnCours += 100;
+            document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
+            miseBoutonStyle();
+            misePop();
+            setTimeout(function scoreDepop() {
+              document.getElementById("miseEnCours").classList.toggle('scorePop');
+            }, 500);
+            cssMiseEnCours();
+          }
         })
+
+
       }
+      
       
 
       
@@ -1661,6 +1738,11 @@
         document.getElementById("compteurDeck").innerHTML = compteurDeck;
       }
 
+      function ajoutGain(gain) {
+        document.getElementById("credits").innerHTML = "Crédits: &nbsp;" + (credits + gain) + "€";
+        credits = credits + gain;
+      }
+
       
 
       function checkBurstJoueur() {
@@ -1693,6 +1775,14 @@
                     setTimeout( function() {
                       DecrementGain();
                     }, 1500);
+
+                    // WIP gain (ajouter effet refresh CSS)
+                      setTimeout( function() {
+                        gain = -miseLocked;
+                        ajoutGain(gain)
+                      }, 500)
+                    //
+
                     
                       
                     // Fin résultat Gains
@@ -1789,8 +1879,15 @@
                     IncrementGain(miseLockedMultiplied);
                   }, 1500);
                   
-                    // function: (en partant de la mise vers le gains réel)
-                    var miseLockedMultiplied = miseLocked * 3;
+                    // DOUBLON ??
+                    // var miseLockedMultiplied = 3 * miseLocked;
+
+                  // WIP gain (ajouter effet refresh CSS)
+                  setTimeout( function() {
+                    gain = miseLocked * 2;
+                    ajoutGain(gain)
+                  }, 500)
+                  //
                     
                   // Fin résultat Gains
 

@@ -1,6 +1,11 @@
 UN JOUR:  Simplifier le JS (surtout les ajout de style random, y'a les id)
 
+
+
 https://stackoverflow.com/questions/36384310/automatically-slide-in-div-on-page-load
+
+
++BOUTON (croix) à coté de retourArriere qui suppr miseEnCours
 
 
 OSEF-tier: mettre les toggle à droite (c'est un petit bordel) car smartphone+droitiers majoritaires (UX tmtc)
