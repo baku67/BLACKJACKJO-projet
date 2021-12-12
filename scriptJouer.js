@@ -72,7 +72,7 @@
 
 
 
-      var SoundMuteBool = true;
+      var SoundMuteBool = false;
 
       // Template utilisé dans le NewGame load
       // function toggleMute() {
@@ -502,7 +502,7 @@
                 document.getElementById("soundToggleImage").style.marginLeft = "13px";
               }
               else {
-                SoundMuteBool = true;
+                // SoundMuteBool = true;
                 document.getElementById("soundToggleImage").src = 'Images/speakerMax_sourceMax5.png';
                 document.getElementById("soundToggleImage").style.marginLeft = "3px";
               }
@@ -1653,7 +1653,6 @@
 
         if (burstJoueur == false) {
           decrementCompteurDeck();
-          console.log("decrement");
         }
 
         checkMiseWarning();
@@ -1690,7 +1689,7 @@
         //WIP AS
         if (pickedCardObject.cardValue == 1) {
           asJoueur = true;
-          console.log(asJoueur + " TRUE!");
+          console.log("WIP AS see line --->");
         }
         //FIN
 
