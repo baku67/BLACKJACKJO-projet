@@ -8,7 +8,7 @@
       audioCoinWin.volume = 0.4;
 
       var audioExplosionBust = new Audio("Audio/explosionSound.mp3");
-      audioExplosionBust.volume = 0.08;
+      audioExplosionBust.volume = 0.04;
 
       var audioPush = new Audio("Audio/pushSound.mp3");
       audioPush.volume = 0.4;
@@ -17,7 +17,7 @@
       audioToken.volume = 0.7;
 
       var audioDecompte = new Audio("Audio/decompteSound.mp3");
-      audioDecompte.volume = 0.08;
+      audioDecompte.volume = 0.02;
 
       var audioMiser = new Audio("Audio/soundMise.wav");
       audioMiser.volume = 0.3;
@@ -29,6 +29,7 @@
       var credits = 0;
       var gain = 0;
 
+      var newValue;
       var score = 0;
       var mise = 0;
       var scoreTotalJoueur = 0;
@@ -375,9 +376,9 @@
                   document.getElementById("soundToggleImage").style.marginLeft = "3px";
                   audioCardSound.volume = 0.5;  
                   audioCoinWin.volume = 0.4;
-                  audioExplosionBust.volume = 0.08;
+                  audioExplosionBust.volume = 0.04;
                   audioPush.volume = 0.4;
-                  audioDecompte.volume = 0.08;
+                  audioDecompte.volume = 0.02;
                   audioToken.volume = 0.7;
                   audioMiser.volume = 0.3;
                   document.getElementById("soundToggleImage").src = 'Images/speakerMax_sourceMax5.png';
@@ -491,6 +492,8 @@
             success: function(response) {
               $("#container1").html(response);
 
+              asJoueur = false;
+
               //** Récupérer le nouveau Crédits 
               document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + credits + "&nbsp;€";
               // FIN
@@ -525,9 +528,9 @@
                   document.getElementById("soundToggleImage").style.marginLeft = "3px";
                   audioCardSound.volume = 0.5;  
                   audioCoinWin.volume = 0.4;
-                  audioExplosionBust.volume = 0.08;
+                  audioExplosionBust.volume = 0.04;
                   audioPush.volume = 0.4;
-                  audioDecompte.volume = 0.08;
+                  audioDecompte.volume = 0.02;
                   audioToken.volume = 0.7;
                   audioMiser.volume = 0.3;
                   document.getElementById("soundToggleImage").src = 'Images/speakerMax_sourceMax5.png';
@@ -827,6 +830,10 @@
 
 
                 document.getElementById("stand").addEventListener("click", function() {
+                  if (asJoueur == true) {
+                    scoreTotalJoueur = scoreTotalJoueur + 10;
+                    document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;
+                  }
                   lancerPhaseCroupier();
                 });
 
@@ -928,6 +935,11 @@
               
 
               document.getElementById("stand").addEventListener("click", function() {
+                if (asJoueur == true) {
+                  scoreTotalJoueur = scoreTotalJoueur + 10;
+                  document.getElementById('scoreJoueur').innerHTML = (scoreTotalJoueur + 10);
+
+                }
                 lancerPhaseCroupier();
               });
               //***  shortcut Stand
@@ -1690,6 +1702,8 @@
         if (pickedCardObject.cardValue == 1) {
           asJoueur = true;
           console.log("WIP AS see line --->");
+
+          newValue = scoreTotalJoueur + 10;
         }
         //FIN
 
