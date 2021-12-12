@@ -628,6 +628,27 @@
                 dataType: "html",
                 success: function(response) {
                   $("#container3").html(response);
+
+                  // RESET du tableau TokenLogs
+                  logTokenValues = [];
+                  //
+                  // Bouton RetourArriere
+                  document.getElementById("retourArriereButton").addEventListener("click", function() {
+                    // fonction de rafraichissement de la mise en cours (Si il y a matière)
+                    if (miseEnCours != 0) {
+                      miseEnCours = miseEnCours - logTokenValues[0];
+                      document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
+
+                      // fonction qui remove le premier var du tableau
+                    logTokenValues.shift();
+
+                    // Rafraichit l'état style du bouton (par exemple si denouveau = 0)
+                    miseBoutonStyle();
+                    } 
+                  });
+                  // FIN
+
+
                   footerShow();
                   phaseMise();
                   document.getElementById("footerTitle").innerHTML = " - MISE -";
