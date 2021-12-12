@@ -72,7 +72,7 @@
 
 
 
-      var SoundMuteBool = false;
+      var SoundMuteBool = true;
 
       // Template utilisé dans le NewGame load
       // function toggleMute() {
@@ -367,17 +367,19 @@
               // ******************************** *
               // BOUTON TOGGLE SON
               // document.getElementById("soundButtonContainer").style.cursor = "pointer";
+              // SoundMuteBool = true;
+
               document.getElementById("soundButtonContainer").addEventListener("click", function() {
                 if (SoundMuteBool == true) {
                   SoundMuteBool = false;
                   document.getElementById("soundToggleImage").style.marginLeft = "3px";
                   audioCardSound.volume = 0.5;  
-                  audioCoinWin.volume = 0.5;
-                  audioExplosionBust.volume = 0.5;
-                  audioPush.volume = 0.5;
-                  audioDecompte.volume = 0.5;
-                  audioToken.volume = 0.5;
-                  audioMiser.volume = 0.5;
+                  audioCoinWin.volume = 0.4;
+                  audioExplosionBust.volume = 0.08;
+                  audioPush.volume = 0.4;
+                  audioDecompte.volume = 0.08;
+                  audioToken.volume = 0.7;
+                  audioMiser.volume = 0.3;
                   document.getElementById("soundToggleImage").src = 'Images/speakerMax_sourceMax5.png';
                 }
                 else {
@@ -473,9 +475,9 @@
 
       //***   WIP: Relancer    ***\\
       function relancer() {
-        // Récupération des états ToggleButton avant rafraichissement
-          var soundMuteBoolTransition = SoundMuteBool;
-          var setTimeOutMultiplierBoolTransition = setTimeOutMultiplierBool;
+        // Récupération des états ToggleButton avant rafraichissement (à virer: ca var globale WindowOnLoad)
+          // var soundMuteBoolTransition = SoundMuteBool;
+          // var setTimeOutMultiplierBoolTransition = setTimeOutMultiplierBool;
         // Fin 
 
         $("#relancer").click(function(){
@@ -522,12 +524,12 @@
                   SoundMuteBool = false;
                   document.getElementById("soundToggleImage").style.marginLeft = "3px";
                   audioCardSound.volume = 0.5;  
-                  audioCoinWin.volume = 0.5;
-                  audioExplosionBust.volume = 0.5;
-                  audioPush.volume = 0.5;
-                  audioDecompte.volume = 0.5;
-                  audioToken.volume = 0.5;
-                  audioMiser.volume = 0.5;
+                  audioCoinWin.volume = 0.4;
+                  audioExplosionBust.volume = 0.08;
+                  audioPush.volume = 0.4;
+                  audioDecompte.volume = 0.08;
+                  audioToken.volume = 0.7;
+                  audioMiser.volume = 0.3;
                   document.getElementById("soundToggleImage").src = 'Images/speakerMax_sourceMax5.png';
                 }
                 else {
