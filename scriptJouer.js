@@ -401,7 +401,7 @@
                 }
                 else {
                   setTimeOutMultiplierBool = true;
-                  setTimeOutMultiplier = 0.65;
+                  setTimeOutMultiplier = 0.45;
                   document.getElementById("speedToggleImage").src = 'Images/fastForwardWhite.png';
                 }
               });
@@ -481,6 +481,78 @@
             dataType: "html",
             success: function(response) {
               $("#container1").html(response);
+
+              //**** Garder l'état Toggle lors Relance
+              // *Mute*
+              if (SoundMuteBool == true) {
+                document.getElementById("soundToggleImage").src = 'Images/speakerMute_sourceMaxPng2.png';
+                document.getElementById("soundToggleImage").style.marginLeft = "13px";
+              }
+              else {
+                SoundMuteBool = true;
+                document.getElementById("soundToggleImage").src = 'Images/speakerMax_sourceMax5.png';
+                document.getElementById("soundToggleImage").style.marginLeft = "3px";
+              }
+
+              // *Speed*
+              if (setTimeOutMultiplierBool == true) {
+                document.getElementById("speedToggleImage").src = 'Images/fastForwardWhite.png';
+              }
+              else {
+                document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
+              }
+              //****
+
+
+              // ****************************** * 
+              // BOUTON TOGGLE SPEED
+              document.getElementById("soundButtonContainer").addEventListener("click", function() {
+                if (SoundMuteBool == true) {
+                  SoundMuteBool = false;
+                  document.getElementById("soundToggleImage").style.marginLeft = "3px";
+                  audioCardSound.volume = 0.5;  
+                  audioCoinWin.volume = 0.5;
+                  audioExplosionBust.volume = 0.5;
+                  audioPush.volume = 0.5;
+                  audioDecompte.volume = 0.5;
+                  audioToken.volume = 0.5;
+                  audioMiser.volume = 0.5;
+                  document.getElementById("soundToggleImage").src = 'Images/speakerMax_sourceMax5.png';
+                }
+                else {
+                  SoundMuteBool = true;
+                  document.getElementById("soundToggleImage").style.marginLeft = "13px";
+                  audioCardSound.volume = 0;
+                  audioCoinWin.volume = 0;
+                  audioExplosionBust.volume = 0;
+                  audioPush.volume = 0;
+                  audioDecompte.volume = 0;
+                  audioToken.volume = 0;
+                  audioMiser.volume = 0;
+                  document.getElementById("soundToggleImage").src = 'Images/speakerMute_sourceMaxPng2.png';
+                }
+              });
+              // FIN bouton toggle sons
+              // ******************************** *
+
+ 
+              // ******************************** *
+              // BOUTON TOGGLE SPEED
+              // document.getElementById("speedButtonContainer").style.cursor = "pointer";
+              document.getElementById("speedButtonContainer").addEventListener("click", function() {
+                if (setTimeOutMultiplierBool == true) {
+                  setTimeOutMultiplierBool = false;
+                  setTimeOutMultiplier = 1;
+                  document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
+                }
+                else {
+                  setTimeOutMultiplierBool = true;
+                  setTimeOutMultiplier = 0.65;
+                  document.getElementById("speedToggleImage").src = 'Images/fastForwardWhite.png';
+                }
+              });
+              // FIN bouton toggle speed
+              // ******************************** *
 
             //   // REPETITION DE CODE: à revoir
             //   // ******************************** *
