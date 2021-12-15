@@ -830,6 +830,7 @@
 
 
                 document.getElementById("stand").addEventListener("click", function() {
+                  // 
                   if (asJoueur == true) {
                     scoreTotalJoueur = scoreTotalJoueur + 10;
                     document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;
@@ -937,11 +938,13 @@
               document.getElementById("stand").addEventListener("click", function() {
                 if (asJoueur == true) {
                   scoreTotalJoueur = scoreTotalJoueur + 10;
-                  document.getElementById('scoreJoueur').innerHTML = (scoreTotalJoueur + 10);
+                  // POURQUOI AFFICHAGE +10 ALORS QUE DEJA LA VAR EST +10 ??????? 
+                  document.getElementById('scoreJoueur').innerHTML = (scoreTotalJoueur);
 
                 }
                 lancerPhaseCroupier();
               });
+
               //***  shortcut Stand
               function doc_keyStand(e) {
                 if ((e.key === '-') && (ChoixActif == true)) {
@@ -1718,6 +1721,7 @@
           void elementScore.offsetWidth;
           elementScore.classList.add("scores");
 
+          //
           //WIP AS 
           if (asJoueur == true) {
             if ((scoreTotalJoueur + 10) > 21) {
