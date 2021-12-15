@@ -1701,9 +1701,9 @@
         //WIP AS
         if (pickedCardObject.cardValue == 1) {
           asJoueur = true;
-          console.log("WIP AS see line --->");
+          // console.log("WIP AS see line --->");
 
-          newValue = scoreTotalJoueur + 10;
+          // newValue = scoreTotalJoueur + 10;
         }
         //FIN
 
