@@ -1,6 +1,6 @@
 UN JOUR:  Simplifier le JS (surtout les ajout de style random, y'a les id)
 
-
+/!\ CroupierAS: Maj Affichage/Score ASmax(+10) tant que pas burst (en ce moment, juste +1)
 
 https://stackoverflow.com/questions/36384310/automatically-slide-in-div-on-page-load
 

@@ -2,7 +2,7 @@
     window.onload = function(){
 
       var audioCardSound = new Audio("Audio/addCardSound.mp3");
-      audioCardSound.volume = 0.5;
+      audioCardSound.volume = 0.4;
 
       var audioCoinWin = new Audio("Audio/winCoinSound.mp3");
       audioCoinWin.volume = 0.4;
@@ -832,7 +832,9 @@
                 document.getElementById("stand").addEventListener("click", function() {
                   // 
                   if (asJoueur == true) {
-                    scoreTotalJoueur = scoreTotalJoueur + 10;
+                    if (scoreTotalJoueur + 10 < 22) {
+                      scoreTotalJoueur = scoreTotalJoueur + 10;
+                    }
                     document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;
                   }
                   lancerPhaseCroupier();
@@ -937,7 +939,10 @@
 
               document.getElementById("stand").addEventListener("click", function() {
                 if (asJoueur == true) {
-                  scoreTotalJoueur = scoreTotalJoueur + 10;
+                  //  IF NOT BURST
+                  if (scoreTotalJoueur + 10 < 22) {
+                    scoreTotalJoueur = scoreTotalJoueur + 10;
+                  }
                   // POURQUOI AFFICHAGE +10 ALORS QUE DEJA LA VAR EST +10 ??????? 
                   document.getElementById('scoreJoueur').innerHTML = (scoreTotalJoueur);
 
