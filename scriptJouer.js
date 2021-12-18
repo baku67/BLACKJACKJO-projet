@@ -26,6 +26,8 @@
       // réinitialisé dans le NewGame (tableau des valeurs derniers jetons ajoutés en vue de retour arriere)
       let logTokenValues = [];
 
+      var nbrCardsJoueur;
+
       var credits = 0;
       var gain = 0;
 
@@ -128,6 +130,11 @@
         checkMiseWarning();
       }
       
+
+
+      var nbrDecks;
+
+
 
 
       //#region array of objects: "cards"
@@ -359,6 +366,8 @@
 
               logTokenValues = [];
 
+              nbrCardsJoueur = 0;
+
               credits = 100;
               document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + credits + "&nbsp;€";
  
@@ -493,6 +502,7 @@
               $("#container1").html(response);
 
               asJoueur = false;
+              nbrCardsJoueur = 0;
 
               //** Récupérer le nouveau Crédits 
               document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + credits + "&nbsp;€";
@@ -1714,6 +1724,8 @@
           // newValue = scoreTotalJoueur + 10;
         }
         //FIN
+        nbrCardsJoueur = nbrCardsJoueur + 1;
+        console.log("nbrCardsJoueur: " + nbrCardsJoueur);
 
         scoreTotalJoueur += pickedCardObject.cardValue;
 
@@ -1891,11 +1903,11 @@
 
       
       function checkBJjoueur() {
-        // ATTENTION: Bugued à cause du WIP AS (pour l'instant la valeur de l'AS est 1, deuxième score (21) juste affiché)
         // Proc lors de faux BlackJack (Add condition nbrCardJoueur == 2)
 
-        if (scoreTotalJoueur == 21) {
-          //      "|| nbrOfJoueurCards == 2"     (pour le vrai BJ)
+        if ((scoreTotalJoueur + 10 == 21) && (nbrCardsJoueur == 2)) {
+          //      "&& nbrOfJoueurCards == 2"     (pour le vrai BJ)
+          console.log("nbrCardsJoueur: " + nbrCardsJoueur + "&nbscp; |true BLACKJACK|");
 
           setTimeout(function() {
             $.ajax({
