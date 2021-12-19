@@ -428,6 +428,11 @@
               // ******************************** *
 
 
+              // Toggle background Green/White
+              // document.getElementById(backgroundGreenContainer)
+              // **
+
+
               $.ajax({
                 async: false,
                 url: "Footers/footerMiseModul.html",
@@ -579,52 +584,6 @@
                   document.getElementById("speedToggleImage").src = 'Images/fastForwardWhite.png';
                 }
               });
-              // FIN bouton toggle speed
-              // ******************************** *
-
-            //   // REPETITION DE CODE: à revoir
-            //   // ******************************** *
-            //   // BOUTON TOGGLE SON
-            //   if (soundMuteBoolTransition == true) {
-            //     SoundMuteBoolTransition = false;
-            //     audioCardSound.volume = 0.5;
-            //     audioCoinWin.volume = 0.5;
-            //     audioExplosionBust.volume = 0.5;
-            //     audioPush.volume = 0.5;
-            //     audioDecompte.volume = 0.5;
-            //     audioToken.volume = 0.5;
-            //     audioMiser.volume = 0.5;
-            //     document.getElementById("soundToggleImgage").src = 'Images/speakerMax_sourceMax5.png';
-            //   }
-            //   else {
-            //     SoundMuteBoolTransition = true;
-            //     audioCardSound.volume = 0;
-            //     audioCoinWin.volume = 0;
-            //     audioExplosionBust.volume = 0;
-            //     audioPush.volume = 0;
-            //     audioDecompte.volume = 0;
-            //     audioToken.volume = 0;
-            //     audioMiser.volume = 0;
-            //     document.getElementById("soundToggleImage").src = 'Images/speakerMute_sourceMaxPng2.png';
-            //   }
-            // // FIN bouton toggle sons
-            // // ******************************** *
-
-
-            // // ******************************** *
-            // // BOUTON TOGGLE SPEED
-            //   if (setTimeOutMultiplierBoolTransition == true) {
-            //     setTimeOutMultiplierBoolTransition = false;
-            //     setTimeOutMultiplier = 1;
-            //     document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
-            //   }
-            //   else {
-            //     setTimeOutMultiplierBoolTransition = true;
-            //     setTimeOutMultiplier = 0.68;
-            //     document.getElementById("speedToggleImage").src = 'Images/fastForwardWhite.png';
-            //   }
-            // // FIN bouton toggle speed
-            // // ******************************** *
 
             }
           });
