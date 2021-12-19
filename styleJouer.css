@@ -352,7 +352,8 @@ p {
 #deckContainer {
 	color: rgba(223, 204, 204, 1) !important;
 	position: absolute; 
-	bottom: 50%; left: 12%; 
+	bottom: 50%; 
+	left: 12%; 
 
 	animation: fadeInAnimationPartieScore ease 2s; 
 	animation-iteration-count: 1; 
@@ -1510,6 +1511,97 @@ p {
   }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   /* // MEDIA QUERIES */
 
   @media screen and (max-device-width:480px) {
@@ -1551,6 +1643,9 @@ p {
 		margin-top: 17px;
 	}
 
+	#deckContainer {
+		left: 5%; 
+	}
 
 
 	.resultatTextWin {
