@@ -54,6 +54,7 @@
       var misesResultatDiff;
 
       
+      var backgroundToggle = new Boolean;
 
       var setTimeOutMultiplierBool = false;
       var setTimeOutMultiplier = 1;
@@ -374,6 +375,9 @@
               document.getElementById("compteurDeck").innerHTML = compteurDeck;
               document.getElementById("compteurDeckMax").innerHTML = compteurDeckMax;
 
+              document.getElementById("backgroundToggleImage").src = "Images/backgroundToggleImageActif.png";
+
+
               // ******************************** *
               // BOUTON TOGGLE SON
               // document.getElementById("soundButtonContainer").style.cursor = "pointer";
@@ -429,8 +433,17 @@
 
 
               // Toggle background Green/White
-              // document.getElementById(backgroundGreenContainer)
-              // **
+              document.getElementById("backgroundButtonContainer").addEventListener("click", function() {
+                if (backgroundToggle == true) {
+                  backgroundToggle = false;
+                  document.getElementById("backgroundToggleImage").src = "Images/backgroundToggleImageActif.png";
+                }
+                else {
+                  backgroundToggle = true;
+                  document.getElementById("backgroundToggleImage").src = 'Images/backgroundToggleImage.png';
+                }
+              })
+              // *******
 
 
               $.ajax({

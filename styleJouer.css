@@ -1,16 +1,18 @@
 #miseLocked {
-	color: rgba(5, 2, 39, 0.7);
+	/* color: rgba(5, 2, 39, 0.7); */
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	font-weight: bold;
 	font-size: 1.5em;
 }
 #compteurDeck {
-	color: rgba(43, 39, 95, 0.55);
+	/* color: rgba(43, 39, 95, 0.55); */
+	color: rgba(223, 204, 204, 1);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.3em;
 }
 #compteurDeckMax {
-	color: rgba(43, 39, 95, 0.55);
+	/* color: rgba(43, 39, 95, 0.55); */
+	color: rgba(223, 204, 204, 1);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.37em;
 }
@@ -57,6 +59,7 @@ button, input[type="submit"], input[type="reset"] {
 	background: -webkit-linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%);
 	background: linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#820e27",endColorstr="#1a2039",GradientType=1);
+	border-bottom: 3px solid rgba(230, 211, 211, 0.6);
 }
 
 #onglets {
@@ -135,7 +138,8 @@ button, input[type="submit"], input[type="reset"] {
 
 
 body {
-	background-image: url("Images/backgroundMix1.png");
+	background-image: url("Images/backgroundMix2.png");
+	/* background-position: center; */
 	/* background-color: rgb(232, 241, 241); */
 	margin: 0px;
 	height: 100%;
@@ -234,9 +238,10 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	transform: translate(-50%, -50%);
 
 	padding: 20px 40px;
-	border: 3px solid rgba(34, 10, 141, 0.08);
+	/* border: 8px solid rgba(34, 10, 141, 0.08); */
+	border: 3px solid rgba(223, 204, 204, 0.6);
 	border-radius: 4px;
-	transition: all 0.7s;
+	transition: all 0.4s;
 }
 #newGame:hover {
 	border: 4px solid rgba(34, 10, 141, 0.6);
@@ -275,7 +280,9 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 
 .scoreBorder {
 	padding: 1px 6px;
-	border: solid 0.5px rgba(13, 1, 56, 0.5);
+	/* Toggle couleurs */
+	/* border: solid 0.5px rgba(13, 1, 56, 0.5); */
+	border: 1px solid rgba(223, 204, 204, 1);
 	border-radius: 5px;
 }
 .scores 
@@ -293,7 +300,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 		opacity: 0; 
 	}
 	100% { 
-		opacity: 0.7; 
+		opacity: 0.9; 
 	} 
 }
 @keyframes fadeInAnimationPartieScore { 
@@ -343,6 +350,7 @@ p {
 
 
 #deckContainer {
+	color: rgba(223, 204, 204, 1) !important;
 	position: absolute; 
 	bottom: 50%; left: 12%; 
 
@@ -356,10 +364,12 @@ p {
 	/* position: relative;
 	top: 4px; */
 	margin-top: 10px;
+	color: rgba(223, 204, 204, 0.9) !important;
 }
 #scoreJoueur {
 	position: relative;
 	bottom: 21px;
+	color: rgba(223, 204, 204, 0.9) !important;
 }
 
 #chipsContainer {
@@ -467,7 +477,7 @@ p {
     background-color: rgba(56, 71, 131, 0.8);
     position: absolute;
     left: -60px;
-    top: 360px;
+    top: 350px;
     transition: left 0.23s;
 }
 #backgroundButtonContainer:hover {
@@ -883,6 +893,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#33686c",endCo
 	text-align: center;
     letter-spacing: 1px;
 
+	border-top: 1px solid rgba(230, 211, 211, 0.6);
 
 	background: rgb(130,16,40);
 	background: -moz-linear-gradient(180deg, rgba(130,16,40,1) 49%, rgba(26,31,57,1) 100%);
@@ -1250,7 +1261,9 @@ p {
 .JouerContainer {
 	text-align: center;
 	font-weight: bold;
-	color: rgba(5, 2, 39, 0.7);
+	/* Color Toggle */
+	/* color: rgba(5, 2, 39, 0.7); */
+	color: rgba(223, 204, 204, 0.95);
 	font-size: 1em;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     letter-spacing: 0.3px;
