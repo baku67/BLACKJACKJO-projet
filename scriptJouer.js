@@ -548,6 +548,7 @@
                 else {
                   SoundMuteBool = true;
                   document.getElementById("soundToggleImage").style.marginLeft = "13px";
+                  // Inutile car ajout de if pour tout les .play()
                   audioCardSound.volume = 0;
                   audioCoinWin.volume = 0;
                   audioExplosionBust.volume = 0;
@@ -555,6 +556,7 @@
                   audioDecompte.volume = 0;
                   audioToken.volume = 0;
                   audioMiser.volume = 0;
+                  //
                   document.getElementById("soundToggleImage").src = 'Images/speakerMute_sourceMaxPng2.png';
                 }
               });
@@ -685,7 +687,12 @@
 
         // adapter la longueur du son: calculer le temps pris pour decrement/increment du miseResultat (((110/miseLocked) * setTimeOutMultiplier) * miseLocked)   (en ms)
         // provoquer un fadeOut du son à partir d'avant ce moment
-        audioDecompte.play();
+        if (SoundMuteBool == false) {
+          audioDecompte.play();
+        }
+        // TEST audio coupé et non audio = 0;
+        // audioDecompte.play();
+
 
         setTimeout( function() {
             if (miseLocked > 0) {
@@ -698,9 +705,16 @@
       } 
       // fin fonction
 
+
+
       // function (en partant de la mise vers le gains réel)
       function IncrementGain(miseLockedMultiplied) {
-        audioDecompte.play();
+
+        if (SoundMuteBool == false) {
+          audioDecompte.play();
+        }
+        // TEST audio coupé et non audio = 0;
+        // audioDecompte.play();
 
         misesResultatDiff = miseLockedMultiplied - miseLocked;
 
@@ -775,7 +789,11 @@
       function miseLock() {
         document.getElementById("boutonMiser").addEventListener("click", function() {
 
-          audioMiser.play();
+          if (SoundMuteBool == false) {
+            audioMiser.play();
+          }
+          // TEST Audio coupé et non audio = 0;
+          // audioMiser.play();
 
           document.querySelector("#boutonMiser").style.opacity = "0.4";
           
@@ -898,7 +916,12 @@
         img.id = "backCardCroupier";
         img.className = "imgPartie";
         img.src = "Images/deck2.png";
-        audioCardSound.play();
+
+        // test audio coupé et non audio = 0
+        // audioCardSound.play();
+        if (SoundMuteBool == false) {
+          audioCardSound.play();
+        }
         document.getElementById("croupier").appendChild(img);
       }
 
@@ -1146,7 +1169,11 @@
                       document.getElementById("resultatText").classList.add("resultatTextBust");
                       document.getElementById("separateur").classList.add("styleSeparateur");
 
-                      audioExplosionBust.play();
+                      if (SoundMuteBool == false) {
+                        audioExplosionBust.play();
+                      }
+                      // TEST audio coupé et non audio = 0 
+                      // audioExplosionBust.play();
 
                       // Animation scale() qui pop avec fadeIn()
                       document.getElementById("separateur").classList.add("fadeInResultat");
@@ -1245,7 +1272,12 @@
                       document.getElementById("resultatText").classList.add("resultatTextWin");
                       document.getElementById("separateur").classList.add("styleSeparateurWin");
 
-                      audioCoinWin.play();
+                      
+                      if (SoundMuteBool == false) {
+                        audioCoinWin.play();
+                      }
+                      // TEST audio coupé et non audio = 0;
+                      // audioCoinWin.play();
 
                       // Animation scale() qui pop avec fadeIn()
                       document.getElementById("separateur").classList.add("fadeInResultat");
@@ -1343,7 +1375,11 @@
                         document.getElementById("resultatText").classList.add("resultatTextWin");
                         document.getElementById("separateur").classList.add("styleSeparateurWin");
 
-                        audioCoinWin.play();
+                        if (SoundMuteBool == false) {
+                          audioCoinWin.play();
+                        }
+                        // TEST audio coupé et non audio = 0
+                        // audioCoinWin.play();
 
                         // Animation scale() qui pop avec fadeIn()
                         document.getElementById("separateur").classList.add("fadeInResultat");
@@ -1430,7 +1466,11 @@
                       document.getElementById("resultatText").classList.add("resultatTextPush");
                       document.getElementById("separateur").classList.add("styleSeparateurPush");
 
-                      audioPush.play();
+                      if (SoundMuteBool == false) {
+                        audioPush.play();
+                      }
+                      // TEST audio coupé et non audio = 0;
+                      // audioPush.play();
 
                       // Animation scale() qui pop avec fadeIn()
                       document.getElementById("separateur").classList.add("fadeInResultat");
@@ -1491,7 +1531,12 @@
             if ((credits-miseEnCours) >= 1) {
               addLastTokenClickToTab(1);
     
-              audioToken.play();
+
+              if (SoundMuteBool == false) {
+                audioToken.play();
+              }
+              // Test audio coupé et non audio = 0;
+              // audioToken.play();
     
               miseEnCours += 1;
               document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
@@ -1526,7 +1571,11 @@
             if ((credits-miseEnCours) >= 5) {
               addLastTokenClickToTab(5);
 
-              audioToken.play();
+              if (SoundMuteBool == false) {
+                audioToken.play();
+              }
+              // Test audio coupé et non audio = 0;
+              // audioToken.play();
 
               miseEnCours += 5;
               document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
@@ -1546,7 +1595,11 @@
             if ((credits-miseEnCours) >= 10) {
               addLastTokenClickToTab(10);
 
-              audioToken.play();
+              if (SoundMuteBool == false) {
+                audioToken.play();
+              }
+              // Test audio coupé et non audio = 0;
+              // audioToken.play();
 
               miseEnCours += 10;
               document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
@@ -1566,7 +1619,11 @@
           if ((credits-miseEnCours) >= 25) {
             addLastTokenClickToTab(25);
 
-            audioToken.play();
+            if (SoundMuteBool == false) {
+              audioToken.play();
+            }
+            // Test audio coupé et non audio = 0;
+            // audioToken.play();
 
             miseEnCours += 25;
             document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
@@ -1587,7 +1644,11 @@
           if ((credits-miseEnCours) >= 100) {
             addLastTokenClickToTab(100);
 
-            audioToken.play();
+            if (SoundMuteBool == false) {
+              audioToken.play();
+            }
+            // Test audio coupé et non audio = 0;
+            // audioToken.play();
 
             miseEnCours += 100;
             document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
@@ -1678,7 +1739,13 @@
         img.className = "imgPartie";
 
         // Ajoute la var img à l'<ul> "#croupier"
-        audioCardSound.play();
+        if (SoundMuteBool == false) {
+          audioCardSound.play();
+        }
+        // Test audio coupé et non audio = 0;
+        // audioCardSound.play();
+
+
         document.getElementById("croupier").appendChild(img);
 
         if (burstJoueur == false) {
@@ -1762,7 +1829,14 @@
         cards.splice(picketCardIndex, 1);
 
         img.className = "imgPartie";
-        audioCardSound.play();
+
+        if (SoundMuteBool == false) {
+          audioCardSound.play();
+        }
+        // TEST audio coupé et non audio = 0;
+        // audioCardSound.play();
+
+
         document.getElementById("joueur").appendChild(img);
 
         decrementCompteurDeck()
@@ -1865,7 +1939,12 @@
                     document.getElementById("resultatText").classList.add("resultatTextBust");
                     document.getElementById("separateur").classList.add("styleSeparateur");
   
-                    audioExplosionBust.play();
+
+                    if (SoundMuteBool == false) {
+                      audioExplosionBust.play();
+                    }
+                    // TEST audio coupé et non audio = 0;
+                    // audioExplosionBust.play();
   
                     // Animation scale() qui pop avec fadeIn()
                     document.getElementById("separateur").classList.add("fadeInResultat");
@@ -1901,6 +1980,141 @@
         }
       }
 
+
+
+
+
+
+
+
+
+
+
+
+      // document.getElementById('scoreJoueur').innerHTML = (scoreTotalJoueur + 10);
+
+
+
+
+
+      // *******************************************************************************
+      // Si 21 (hors-BlackJack) = le jeu s'arrète et Joueur gagne direct,  il faut un check:
+      //
+      // FUNCTION CHECK21() {
+        if ((scoreTotalJoueur == 21) && (nbrCardsJoueur > 2)) {
+          //      "&& nbrOfJoueurCards == 2"     (pour le vrai BJ)
+          console.log("nbrCardsJoueur: " + nbrCardsJoueur + "&nbscp; |~~~  21  ~~~|");
+
+          setTimeout(function() {
+            $.ajax({
+              async: false,
+              url: "Footers/footerJoueurGagne.html",
+              dataType: "html",
+              success: function(response) {
+                $("#container3").html(response);
+                ChoixActif = false;
+                document.getElementById("footerTitle").innerHTML = " - Résultat -";
+
+                // WIP footerResultat
+                  // WIP: Fade In du résultat
+                    // document.getElementById("container3").visibility = "hidden";
+                    // document.getElementById("container3").classList.add("fadeIn2");
+                  // Fin WIP: Fade In du résultat
+
+                  // Mise lockée
+                  document.getElementById("miseLockedFooter").innerHTML = miseLocked;
+                  // fin
+
+                  // Résultat Gains 
+                  var miseLockedMultiplied = 2 * miseLocked;
+                  document.getElementById("miseResultat").innerHTML = miseLocked;
+                  setTimeout( function() {
+                    IncrementGain(miseLockedMultiplied);
+                  }, 1500);
+                  
+                    // DOUBLON ??
+                    // var miseLockedMultiplied = 3 * miseLocked;
+
+                  // WIP gain (ajouter effet refresh CSS)
+                  setTimeout( function() {
+                    gain = miseLocked;
+                    ajoutGain(gain)
+                  }, 500)
+                  //
+                    
+                  // Fin résultat Gains
+
+                // FIN WIP
+                
+
+
+                document.getElementById("deckContainer").remove();
+                // document.getElementById("deckContainer").classList.add("fadeOut");
+
+                //*** Perdu BURST 
+                document.getElementById("scoreCroupier").style.backgroundColor = "rgba(215,31,48,1)";
+                document.getElementById("scoreJoueur").style.backgroundColor = "rgba(59,217,10,1)";
+
+                document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)";
+                document.getElementById("scoreJoueur").style.color = "rgba(255,245,0,1)";
+
+                document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)";
+                document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)";
+
+                document.getElementById("scoreCroupier").style.border = "1px solid rgba(255,1,49,0.5)";
+                document.getElementById("scoreJoueur").style.border = "1px solid rgba(58,157,32,0.5)";
+                // Fin Perdu BURST
+
+
+                // Séparateur
+                setTimeout(function() {
+                  document.getElementById("resultatText").classList.add("resultatTextBJ");
+                  document.getElementById("separateur").classList.add("styleSeparateurBlackJack");
+
+                  audioCoinWin.play();
+
+                  // Animation scale() qui pop avec fadeIn()
+                  document.getElementById("separateur").classList.add("fadeInResultat");
+                  document.getElementById("separateur").classList.add("scaleBoom");
+                  // document.getElementById("separateur").classList.add("marginFix");
+                
+                  // TEXT
+                  document.getElementById("resultatText").innerText = "21 !";
+                }, 250);
+                // Fin Séparateur
+
+                // Apparition bouton (après PhaseCroupier sinon MessUp si cliqué trop tot)
+                setTimeout(function() { 
+                  document.getElementById("relancer").classList.add("fadeInResultat");
+                  document.getElementById("relancer").style.visibility = "visible";
+
+                  // Disparition boutton onClick
+                  document.getElementById("relancer").addEventListener("click", function() {
+                    // document.getElementById("relancer").classList.add("fadeOut");
+                    document.getElementById("relancer").style.visibility = "hidden";
+                  })
+                }, 2000)
+
+                // Bouton Rejouer
+                relancer();
+              }
+            });
+          }, 1200);
+        }
+
+      // }
+      // *******************************************************************************
+
+
+
+
+
+
+
+
+
+      // TRUE BLACKJACK
+      // *******************************************************************************
       
       function checkBJjoueur() {
         // Proc lors de faux BlackJack (Add condition nbrCardJoueur == 2)
@@ -1975,7 +2189,11 @@
                   document.getElementById("resultatText").classList.add("resultatTextBJ");
                   document.getElementById("separateur").classList.add("styleSeparateurBlackJack");
 
-                  audioCoinWin.play();
+                  if (SoundMuteBool == false) {
+                    audioCoinWin.play();
+                  }
+                  // Test audio coupé et non audio = 0;
+                  // audioCoinWin.play();
 
                   // Animation scale() qui pop avec fadeIn()
                   document.getElementById("separateur").classList.add("fadeInResultat");

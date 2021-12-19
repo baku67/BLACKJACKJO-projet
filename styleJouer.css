@@ -1532,24 +1532,24 @@ p {
 		left: -70px;
 		top: 193px;
 		border: 1px solid rgba(58, 54, 54, 0.9);
-		height: 85px;
+		height: 60px;
 	}
 	#speedButtonContainer {
 		left: -70px;
-		top: 300px;
+		top: 270px;
 		border: 1px solid rgba(58, 54, 54, 0.9);
-		height: 85px;
+		height: 60px;
 	}
 
 	#soundToggleImage {
-		margin-top: 18px;
+		margin-top: 10px;
 		margin-left: 15px !important;
-		width: 53px;
+		width: 40px;
 	}
 	#speedToggleImage {
-		margin-top: 18px;
+		margin-top: 10px;
 		margin-left: 15px;
-		width: 53px;
+		width: 40px;
 	}
 
 	/*  active avec transition ease in-out (genre ça fait la transition et puis inverse) */
