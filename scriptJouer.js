@@ -386,6 +386,7 @@
               document.getElementById("soundButtonContainer").addEventListener("click", function() {
                 if (SoundMuteBool == true) {
                   SoundMuteBool = false;
+                  document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
                   document.getElementById("soundToggleImage").style.marginLeft = "3px";
                   audioCardSound.volume = 0.5;  
                   audioCoinWin.volume = 0.4;
@@ -398,6 +399,7 @@
                 }
                 else {
                   SoundMuteBool = true;
+                  document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
                   document.getElementById("soundToggleImage").style.marginLeft = "13px";
                   audioCardSound.volume = 0;
                   audioCoinWin.volume = 0;
@@ -419,11 +421,13 @@
               document.getElementById("speedButtonContainer").addEventListener("click", function() {
                 if (setTimeOutMultiplierBool == true) {
                   setTimeOutMultiplierBool = false;
+                  document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
                   setTimeOutMultiplier = 1;
                   document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
                 }
                 else {
                   setTimeOutMultiplierBool = true;
+                  document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
                   setTimeOutMultiplier = 0.55;
                   document.getElementById("speedToggleImage").src = 'Images/fastForwardWhite.png';
                 }
@@ -540,9 +544,12 @@
 
               // *Speed*
               if (setTimeOutMultiplierBool == true) {
+                document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
                 document.getElementById("speedToggleImage").src = 'Images/fastForwardWhite.png';
+
               }
               else {
+                document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
                 document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
               }
               //****
@@ -553,6 +560,7 @@
               document.getElementById("soundButtonContainer").addEventListener("click", function() {
                 if (SoundMuteBool == true) {
                   SoundMuteBool = false;
+                  document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
                   document.getElementById("soundToggleImage").style.marginLeft = "3px";
                   audioCardSound.volume = 0.5;  
                   audioCoinWin.volume = 0.4;
@@ -565,6 +573,7 @@
                 }
                 else {
                   SoundMuteBool = true;
+                  document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
                   document.getElementById("soundToggleImage").style.marginLeft = "13px";
                   // Inutile car ajout de if pour tout les .play()
                   audioCardSound.volume = 0;
@@ -588,11 +597,13 @@
               document.getElementById("speedButtonContainer").addEventListener("click", function() {
                 if (setTimeOutMultiplierBool == true) {
                   setTimeOutMultiplierBool = false;
+                  document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
                   setTimeOutMultiplier = 1;
                   document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
                 }
                 else {
                   setTimeOutMultiplierBool = true;
+                  document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
                   setTimeOutMultiplier = 0.65;
                   document.getElementById("speedToggleImage").src = 'Images/fastForwardWhite.png';
                 }

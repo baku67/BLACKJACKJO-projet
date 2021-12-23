@@ -449,7 +449,7 @@ p {
 	border: 3px solid black;
 	border-radius: 5px;
 	padding-left: 50px;
-	background-color:rgba(25, 39, 95, 1);
+	background-color : rgba(130,14,39,0.8);
 
 	position: absolute; 
 	left: -60px;
@@ -477,10 +477,10 @@ p {
     border: 3px solid black;
     border-radius: 5px;
     padding-left: 50px;
-    background-color: rgba(25, 39, 95, 1);
+    background-color: rgba(25, 39, 95, 0.8);
     position: absolute;
     left: -60px;
-    top: 350px;
+	top: 357px;
     transition: left 0.23s;
 }
 #backgroundButtonContainer:hover {
@@ -501,7 +501,7 @@ p {
 	border: 3px solid black;
 	border-radius: 5px;
 	padding-left: 50px;
-	background-color:rgba(25, 39, 95, 1);
+	background-color:rgba(25, 39, 95, 0.8);
 
 	position: absolute; 
 	left: -60px;
@@ -1668,14 +1668,14 @@ p {
 
 	#backgroundButtonContainer {
 		left: -70px;
-		top: 350px;
+		top: 347px;
 		/* border: 1px solid rgba(58, 54, 54, 0.9); */
 		border: 1px solid rgba(223, 204, 204, 0.4);
 		height: 60px;
 	}
 	#backgroundToggleImage {
-		margin-top: 10px;
-		margin-left: 15px;
+		margin-top: 6px;
+		margin-left: 18px;
 		width: 40px;
 	}
 
@@ -1698,14 +1698,14 @@ p {
 	}
 
 	#soundToggleImage {
-		margin-top: 10px;
+		margin-top: 0px;
 		margin-left: 15px !important;
-		width: 40px;
+		width: 65px;
 	}
 	#speedToggleImage {
-		margin-top: 10px;
-		margin-left: 15px;
-		width: 40px;
+		margin-top: 1px;
+		margin-left: 13px;
+		width: 60px;
 	}
 
 	/*  active avec transition ease in-out (genre ça fait la transition et puis inverse) */
