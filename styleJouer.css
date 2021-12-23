@@ -449,7 +449,7 @@ p {
 	border: 3px solid black;
 	border-radius: 5px;
 	padding-left: 50px;
-	background-color:rgba(56, 71, 131, 0.8);
+	background-color:rgba(25, 39, 95, 1);
 
 	position: absolute; 
 	left: -60px;
@@ -459,6 +459,8 @@ p {
 }
 #soundButtonContainer:hover {
 	left: -23px;
+	border: 1px solid rgba(223, 204, 204, 0.2);
+	background-color: rgba(130,14,39,0.8);
 }
 #soundButtonContainer:active {
 	/* + border plus larde (avec border-box ou autre pour contenir, = la meme taille) */
@@ -475,7 +477,7 @@ p {
     border: 3px solid black;
     border-radius: 5px;
     padding-left: 50px;
-    background-color: rgba(56, 71, 131, 0.8);
+    background-color: rgba(25, 39, 95, 1);
     position: absolute;
     left: -60px;
     top: 350px;
@@ -483,6 +485,8 @@ p {
 }
 #backgroundButtonContainer:hover {
 	left: -23px;
+	border: 1px solid rgba(223, 204, 204, 0.2);
+	background-color: rgba(130,14,39,0.8);
 }
 
 
@@ -497,7 +501,7 @@ p {
 	border: 3px solid black;
 	border-radius: 5px;
 	padding-left: 50px;
-	background-color:rgba(56, 71, 131, 0.8);
+	background-color:rgba(25, 39, 95, 1);
 
 	position: absolute; 
 	left: -60px;
@@ -507,6 +511,8 @@ p {
 }
 #speedButtonContainer:hover {
 	left: -23px;
+	border: 1px solid rgba(223, 204, 204, 0.2);
+	background-color: rgba(130,14,39,0.8);
 }
 #speedButtonContainer:active {
 	/* + border plus larde (avec border-box ou autre pour contenir, = la meme taille) */
@@ -1663,7 +1669,8 @@ p {
 	#backgroundButtonContainer {
 		left: -70px;
 		top: 350px;
-		border: 1px solid rgba(58, 54, 54, 0.9);
+		/* border: 1px solid rgba(58, 54, 54, 0.9); */
+		border: 1px solid rgba(223, 204, 204, 0.4);
 		height: 60px;
 	}
 	#backgroundToggleImage {
@@ -1678,13 +1685,15 @@ p {
 	#soundButtonContainer {
 		left: -70px;
 		top: 193px;
-		border: 1px solid rgba(58, 54, 54, 0.9);
+		/* border: 1px solid rgba(58, 54, 54, 0.9); */
+		border: 1px solid rgba(223, 204, 204, 0.4);
 		height: 60px;
 	}
 	#speedButtonContainer {
 		left: -70px;
 		top: 270px;
-		border: 1px solid rgba(58, 54, 54, 0.9);
+		/* border: 1px solid rgba(58, 54, 54, 0.9); */
+		border: 1px solid rgba(223, 204, 204, 0.4);
 		height: 60px;
 	}
 

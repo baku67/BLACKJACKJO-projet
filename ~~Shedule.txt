@@ -1,9 +1,11 @@
 UN JOUR:  Simplifier le JS (surtout les ajout de style random, y'a les id)
 
+Le X2 double pas les gains (ez)
+
 Ya un probleme de compteur Deck:  y'a des addCard ou le reveal 2eme carte croupier qui decrememnte pas le compteuer Deck jsp
 
 FAIRE DESIGN JETONS BJJ
-
+SpaceBar click: hit/relancer
 
 /!\ CroupierAS: Maj Affichage/Score ASmax(+10) tant que pas burst (en ce moment, juste +1)
 

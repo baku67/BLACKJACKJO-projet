@@ -2091,7 +2091,7 @@
       function checkBJjoueur() {
         // Proc lors de faux BlackJack (Add condition nbrCardJoueur == 2)
 
-        if ((scoreTotalJoueur + 10 == 21) && (nbrCardsJoueur == 2)) {
+        if ((scoreTotalJoueur + 10 == 21) && (nbrCardsJoueur == 2) && (asJoueur == true)) {
           //      "&& nbrOfJoueurCards == 2"     (pour le vrai BJ)
           console.log("nbrCardsJoueur: " + nbrCardsJoueur + "&nbscp; |true BLACKJACK|");
 
@@ -2153,6 +2153,8 @@
 
                 document.getElementById("scoreCroupier").style.border = "1px solid rgba(255,1,49,0.5)";
                 document.getElementById("scoreJoueur").style.border = "1px solid rgba(58,157,32,0.5)";
+
+                document.getElementById('scoreJoueur').innerHTML = (scoreTotalJoueur + 10);
                 // Fin Perdu BURST
 
 
