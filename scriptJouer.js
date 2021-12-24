@@ -408,7 +408,7 @@
                   audioDecompte.volume = 0;
                   audioToken.volume = 0;
                   audioMiser.volume = 0;
-                  document.getElementById("soundToggleImage").src = 'Images/speakerMute_sourceMaxPng2.png';
+                  document.getElementById("soundToggleImage").src = 'Images/speakerMute_sourceMaxPng2Recenter4.png';
                 }
               });
               // FIN bouton toggle sons
@@ -533,7 +533,7 @@
               //**** Garder l'état Toggle lors Relance
               // *Mute*
               if (SoundMuteBool == true) {
-                document.getElementById("soundToggleImage").src = 'Images/speakerMute_sourceMaxPng2.png';
+                document.getElementById("soundToggleImage").src = 'Images/speakerMute_sourceMaxPng2Recenter4.png';
                 document.getElementById("soundToggleImage").style.marginLeft = "13px";
               }
               else {
@@ -584,7 +584,7 @@
                   audioToken.volume = 0;
                   audioMiser.volume = 0;
                   //
-                  document.getElementById("soundToggleImage").src = 'Images/speakerMute_sourceMaxPng2.png';
+                  document.getElementById("soundToggleImage").src = 'Images/speakerMute_sourceMaxPng2Recenter4.png';
                 }
               });
               // FIN bouton toggle sons
