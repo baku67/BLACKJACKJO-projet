@@ -1654,7 +1654,8 @@ p {
 
 	#deckContainer {
 		left: 5%; 
-		height: 151.5px;
+		bottom: 45%; 
+		height: 153px;
 	}
 
 
@@ -1719,6 +1720,8 @@ p {
 	
 	#separateur {
 		width: 70%;
+
+		margin: 90px auto 85px auto;
 	}
 
 	#relancer {
