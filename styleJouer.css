@@ -913,6 +913,10 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#33686c",endCo
 	background: -webkit-linear-gradient(180deg, rgba(130,16,40,1) 49%, rgba(26,31,57,1) 100%);
 	background: linear-gradient(180deg, rgba(130,16,40,1) 49%, rgba(26,31,57,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#821028",endColorstr="#1a1f39",GradientType=1);
+
+	border-radius: 6px;
+	border-bottom-left-radius: 1px;
+	border-bottom-right-radius: 1px;
 }
 .footerBorderWhite {
 	/* Ajout Border pour eviter mess-up du BorderClignotement qui dépop */
@@ -1389,50 +1393,43 @@ p {
 
 
 .miserActif2 {
+	transition: border-color 1s ease-in-out;
 	animation-name: footerClignotement;
 	-webkit-animation-name: footerClignotement;
-	animation-iteration-count: 1000;
-	animation-duration: 7s;
-	-webkit-animation-duration: 7s;
-	-webkit-animation-iteration-count: 1000;
-	animation-timing-function: ease;
-	-webkit-animation-timing-function: ease;
+	animation-iteration-count: infinite;
+	animation-duration: 3s;
+	-webkit-animation-duration: 3s;
+	-webkit-animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-timing-function: ease-in-out;
 	/* Pushai sur la droite (de maniere permanente, sans ça ça push aussi mais juste le temps de l'anim
 	animation-fill-mode: forwards;
 	-webkit-animation-fill-mode: forwards; 
 	*/
 }
 @keyframes footerClignotement {
-	0% {
-		border: 5px solid rgba(130,16,40,1);
-		border-radius: 10px;
-		border-bottom-left-radius: 1px;
-		border-bottom-right-radius: 1px;
-	}
-	25% {
-		border: 5px solid rgba(221, 190, 16, 0.6);
-		border-radius: 10px;
-		border-bottom-left-radius: 1px;
-		border-bottom-right-radius: 1px;
-	}
-	50% {
-		border: 5px solid rgba(130,16,40,1);
-		border-radius: 10px;
-		border-bottom-left-radius: 1px;
-		border-bottom-right-radius: 1px;
-	}
-	75% {
-		border: 5px solid rgba(221, 190, 16, 0.6);
-		/* rgba(26,32,57,1) */
-		border-radius: 10px;
+	/* 0% {
+		border: 5px solid rgba(130,16,40,0.7);
+		border-radius: 6px;
 		border-bottom-left-radius: 1px;
 		border-bottom-right-radius: 1px;
 	}
 	100% {
-		border: 5px solid rgba(130,16,40,1);
-		border-radius: 10px;
+		border: 5px solid rgba(0, 255, 255, 0.69);
+		border-radius: 6px;
 		border-bottom-left-radius: 1px;
 		border-bottom-right-radius: 1px;
+	} */
+
+	from {
+		border-width: 5px;
+		border-style: solid;
+		border-color: rgba(130,16,40,0.7);
+	}
+	to {
+		border-width: 5px;
+		border-style: solid;
+		border-color: rgba(0, 255, 255, 0.69);
 	}
 }
 
