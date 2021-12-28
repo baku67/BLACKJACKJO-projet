@@ -1643,6 +1643,12 @@ p {
 
   
   @media screen and (max-device-width:400px) {
+	#tokenChipsContainer {
+		position: relative;
+		right: 7%;
+	}
+
+
 	.pokerChips {
 		width: 3.5em;
 		height: 3.5em;
@@ -1782,7 +1788,7 @@ p {
 	#retourArriereImg {
 		width: 30px !important;
 		position: relative;
-		right: 82px;
+		right: 98px;
 		margin-top: 3px !important;
 	}
 
@@ -1888,6 +1894,13 @@ p {
   /* // MEDIA QUERIES */
 
   @media screen and (max-device-width:480px) and (min-device-width:401px) {
+	#tokenChipsContainer {
+		position: relative;
+		right: 5%;
+	}
+
+
+
 	.pokerChips {
 		width: 4em;
 		height: 4em;
@@ -2029,7 +2042,7 @@ p {
 	#retourArriereImg {
 		width: 30px !important;
 		position: relative;
-		right: 82px;
+		right: 93px;
 		margin-top: 3px !important;
 	}
 
