@@ -848,6 +848,8 @@
           
           miseLocked = miseEnCours;
           document.getElementById("miseLocked").innerHTML = "Mise: " + "&nbsp;" + miseLocked + "&nbsp;" + "&#8364;";
+          document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + (credits - miseLocked) + "&nbsp;€";
+
     
 
           // DELETE MiseEnCours du Footer onClick (OK)
