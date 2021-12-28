@@ -122,6 +122,25 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 
+.divider {
+	opacity: 0.6;
+	width: 60%;
+	margin: 0 auto;
+
+	height: 2px;
+	background: #000;
+	background: -webkit-linear-gradient(left, rgb(255,255,255) 0%, rgb(50,50,50) 50%, rgb(255,255,255) 100%);
+  }
+  .divider.light {
+	opacity: 0.6;
+	width: 60%;
+	text-align: center;
+
+	background: #fff;
+	background: -webkit-linear-gradient(left, rgb(90,90,90) 0%, rgba(255,255,255,0.7) 50%, rgb(90,90,90) 100%);
+  }
+
+
 
 
 #title {
@@ -450,6 +469,7 @@ p {
 	width: 60px;
 }
 #soundButtonContainer {
+	opacity: 0.9;
 	cursor: pointer;
 	width: 70px;
 	border: 3px solid black;
@@ -464,6 +484,7 @@ p {
 	transition: left 0.23s;
 }
 #soundButtonContainer:hover {
+	opacity: 1;
 	left: -23px;
 	border: 1px solid rgba(223, 204, 204, 0.2);
 	background-color: rgba(130,14,39,0.8);
@@ -475,9 +496,11 @@ p {
 
 
 #backgroundToggleImage {
-	width: 60px;
+	width: 42px;
+	padding: 9px 5px;
 }
 #backgroundButtonContainer {
+	opacity: 0.9;
 	cursor: pointer;
     width: 70px;
     border: 3px solid black;
@@ -490,6 +513,7 @@ p {
     transition: left 0.23s;
 }
 #backgroundButtonContainer:hover {
+	opacity: 1;
 	left: -23px;
 	border: 1px solid rgba(223, 204, 204, 0.2);
 	background-color: rgba(130,14,39,0.8);
@@ -502,6 +526,7 @@ p {
 	width: 60px;
 }
 #speedButtonContainer {
+	opacity: 0.9;
 	cursor: pointer;
 	width: 70px;
 	border: 3px solid black;
@@ -516,6 +541,7 @@ p {
 	transition: left 0.23s;
 }
 #speedButtonContainer:hover {
+	opacity: 1;
 	left: -23px;
 	border: 1px solid rgba(223, 204, 204, 0.2);
 	background-color: rgba(130,14,39,0.8);
@@ -1649,7 +1675,7 @@ p {
 	} */
 
 	#list {
-		margin-top: 17px;
+		margin-top: 6px;
 	}
 
 	#deckContainer {
@@ -1672,6 +1698,7 @@ p {
 
 
 	#backgroundButtonContainer {
+		opacity: 0.8;
 		left: -70px;
 		top: 347px;
 		/* border: 1px solid rgba(58, 54, 54, 0.9); */
@@ -1679,7 +1706,7 @@ p {
 		height: 60px;
 	}
 	#backgroundToggleImage {
-		margin-top: 6px;
+		margin-bottom: 2px;
 		margin-left: 18px;
 		width: 40px;
 	}
@@ -1688,6 +1715,7 @@ p {
 
 
 	#soundButtonContainer {
+		opacity: 0.8;
 		left: -70px;
 		top: 193px;
 		/* border: 1px solid rgba(58, 54, 54, 0.9); */
@@ -1695,6 +1723,7 @@ p {
 		height: 60px;
 	}
 	#speedButtonContainer {
+		opacity: 0.8;
 		left: -70px;
 		top: 270px;
 		/* border: 1px solid rgba(58, 54, 54, 0.9); */

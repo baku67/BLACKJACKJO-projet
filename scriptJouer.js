@@ -352,7 +352,69 @@
           cardImageURL: "cartes\\AS.png",
           cardValue: 1,
           cardValue2: 10
+        },
+        // TRICHE (attention virgule)
+        C1e = {
+          cardImageURL: "cartes\\AC.png",
+          cardValue: 1,
+          cardValue2: 10
+        },
+        C1f = {
+          cardImageURL: "cartes\\AD.png",
+          cardValue: 1,
+          cardValue2: 10
+        },
+        C1g = {
+          cardImageURL: "cartes\\AH.png",
+          cardValue: 1,
+          cardValue2: 10
+        },
+        C1h = {
+          cardImageURL: "cartes\\AS.png",
+          cardValue: 1,
+          cardValue2: 10
+        },
+        C1i = {
+          cardImageURL: "cartes\\AC.png",
+          cardValue: 1,
+          cardValue2: 10
+        },
+        C1j = {
+          cardImageURL: "cartes\\AD.png",
+          cardValue: 1,
+          cardValue2: 10
+        },
+        C1k = {
+          cardImageURL: "cartes\\AH.png",
+          cardValue: 1,
+          cardValue2: 10
+        },
+        C1l = {
+          cardImageURL: "cartes\\AS.png",
+          cardValue: 1,
+          cardValue2: 10
+        },
+        C1m = {
+          cardImageURL: "cartes\\AC.png",
+          cardValue: 1,
+          cardValue2: 10
+        },
+        C1n = {
+          cardImageURL: "cartes\\AD.png",
+          cardValue: 1,
+          cardValue2: 10
+        },
+        C1o = {
+          cardImageURL: "cartes\\AH.png",
+          cardValue: 1,
+          cardValue2: 10
+        },
+        C1p = {
+          cardImageURL: "cartes\\AS.png",
+          cardValue: 1,
+          cardValue2: 10
         }
+        // FIN TRICHE
       ];
       //#endregion
 
@@ -371,6 +433,7 @@
 
               credits = 100;
               document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + credits + "&nbsp;€";
+              document.getElementById("traitLumineux").style.visibility = "visible";
  
               document.getElementById("compteurDeck").innerHTML = compteurDeck;
               document.getElementById("compteurDeckMax").innerHTML = compteurDeckMax;
@@ -400,7 +463,7 @@
                 else {
                   SoundMuteBool = true;
                   document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
-                  document.getElementById("soundToggleImage").style.marginLeft = "13px";
+                  document.getElementById("soundToggleImage").style.marginLeft = "5px";
                   audioCardSound.volume = 0;
                   audioCoinWin.volume = 0;
                   audioExplosionBust.volume = 0;
@@ -534,7 +597,7 @@
               // *Mute*
               if (SoundMuteBool == true) {
                 document.getElementById("soundToggleImage").src = 'Images/speakerMute_sourceMaxPng2Recenter4.png';
-                document.getElementById("soundToggleImage").style.marginLeft = "13px";
+                document.getElementById("soundToggleImage").style.marginLeft = "5px";
               }
               else {
                 // SoundMuteBool = true;
@@ -1681,14 +1744,27 @@
         // Associe la VALUE de la KEY "cardImageUrl", à l'attribut HTML de l'<img> créé
         img.src = pickedCardObject.cardImageURL;
 
-        // Choix du AS non affiché pour le croupier (titre)
-        // if (pickedCardObject.cardValue == 1) {
-        //   asCroupier = true;
-        // }
+        //Choix du AS non affiché pour le croupier (titre)
+        if (pickedCardObject.cardValue == 1) {
+          asCroupier = true;
+        }
         //FIN
 
         // Scores Total Croupier
-        scoreTotalCroupier += pickedCardObject.cardValue;
+        if (asCroupier == true) {
+          asCroupier = false;
+          if (scoreTotalCroupier + 10 > 21) {
+            scoreTotalCroupier += pickedCardObject.cardValue;
+          }
+          else {
+            scoreTotalCroupier += (pickedCardObject.cardValue + 10);
+          }
+        }
+        else {
+          scoreTotalCroupier += pickedCardObject.cardValue;
+        }
+
+        // scoreTotalCroupier += pickedCardObject.cardValue;
 
         setTimeout (function() {
           // Refresh FadeInAnimation Score
