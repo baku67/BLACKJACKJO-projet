@@ -1839,9 +1839,29 @@
 
 
 
+      function distribAnim() {
+        var img = document.createElement('img')
+        img.classList.add("deckAnimStyle");
+        // img.style.width = "75px";
+        // img.style.position = "absolute";
+        // img.style.left = "15%";
+        // img.style.top = "18%";
+        // img.style.borderRadius = "3px";
+        img.src = "Images/deck2.png";
+
+        document.getElementById('deckContainer').appendChild(img);
+      }
+
+
 
       // NOUVELLE CARTE  > JOUEUR (+ScoreTOTAL)
       function addCardJoueur() {
+
+
+        // WIP Animation Distribution Carte
+        distribAnim();
+        // FIN
+
         var img = document.createElement('img');
         let pickedCardObject = cards[Math.floor(Math.random()*cards.length)];
         img.src = pickedCardObject.cardImageURL;

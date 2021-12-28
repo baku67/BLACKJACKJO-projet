@@ -1565,7 +1565,13 @@ p {
 
 
 
-
+  .deckAnimStyle {
+	width: 0px;
+	position: absolute;
+	left: 17%;
+	top: 21%;
+	border-radius: 8px;
+}
 
 
 
@@ -1643,6 +1649,18 @@ p {
 
   
   @media screen and (max-device-width:400px) {
+	.deckAnimStyle {
+		width: 75px;
+		position: absolute;
+		left: 17%;
+		top: 21%;
+		border-radius: 8px;
+	}
+	/*  TRANSITION ANIMATION TRANSLATE Y/X
+	AND ANIMATION FADEOUT (ou avec) */
+
+
+
 	#tokenChipsContainer {
 		position: relative;
 		right: 7%;
@@ -1894,6 +1912,15 @@ p {
   /* // MEDIA QUERIES */
 
   @media screen and (max-device-width:480px) and (min-device-width:401px) {
+	.deckAnimStyle {
+		width: 75px;
+		position: absolute;
+		left: 17%;
+		top: 21%;
+		border-radius: 8px;
+	}
+
+
 	#tokenChipsContainer {
 		position: relative;
 		right: 5%;
