@@ -541,6 +541,7 @@
 
                     //*** Zone FooterBorder Clignotement      
                     document.querySelector("#footer").classList.add("miserActif2");  
+
                     // IF Click sur footer: remove Miser Actif2 et add footerBorderWhite (ci dessous sans le timeOut)
                     // setTimeout( function() {
                     //   document.querySelector("#footer").classList.remove("miserActif2"); 
@@ -834,6 +835,8 @@
       // Lock de la mise
       function miseLock() {
         document.getElementById("boutonMiser").addEventListener("click", function() {
+
+          document.querySelector("#footer").classList.remove("miserActif2");  
 
           if (SoundMuteBool == false) {
             audioMiser.play();
