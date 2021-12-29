@@ -53,20 +53,50 @@ button, input[type="submit"], input[type="reset"] {
 #header {
 	padding: 0.5em 0em 3em 0em;
 	/* background: rgb(130,14,39); */
-	/* background-image: -moz-linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%);
+	background-image: -moz-linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%);
 	background-image: -webkit-linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%);
-	background-image: linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%); */
+	background-image: linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%);
 
-	/* background: linear-gradient(-45deg, #5e5d13, #820e27, #1a2039, #0d585e); */
-	background: linear-gradient(-45deg, #5e5d13, #820e27, #0d585e, #1a2039);
-
-	background-size: 400% 400%;
+	/* background: linear-gradient(-45deg, #5e5d13, #820e27, #0d585e, #1a2039);
+	background-size: 400% 400%; */
 
 
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#820e27",endColorstr="#1a2039",GradientType=1);
 	border-bottom: 3px solid rgba(230, 211, 211, 0.6);
-	animation: gradientAnim1 15s ease infinite;
+	/* border-bottom-left-radius:10%;
+    border-bottom-right-radius:10%;
 
+	animation: gradientAnim1 15s ease infinite; */
+}
+/* @keyframes gradientAnim1 {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+} */
+
+.headerOnPartie {
+	background-image: linear-gradient(-45deg, #5e5d13, #820e27, #0d585e, #1a2039) !important;
+	background-size: 400% 400%;
+
+	border-bottom-left-radius:10%;
+    border-bottom-right-radius:10%;
+
+	animation: gradientAnim1 15s ease infinite;
+}
+.footerOnPartie {
+	background-image: linear-gradient(-45deg, #5e5d13, #820e27, #0d585e, #1a2039) !important;
+	background-size: 400% 400%;
+
+	border-top-left-radius:10%;
+    border-top-right-radius:10%;
+
+	animation: gradientAnim1 15s ease infinite;
 }
 @keyframes gradientAnim1 {
 	0% {
@@ -79,6 +109,9 @@ button, input[type="submit"], input[type="reset"] {
 		background-position: 0% 50%;
 	}
 }
+
+
+
 
 #onglets {
 	position: relative;
@@ -169,7 +202,7 @@ button, input[type="submit"], input[type="reset"] {
 	text-shadow: rgb(5, 2, 39) 5px 3px;
 
 	/* IMPORTANT */
-	margin-block-start: 10px;
+	margin-block-start: 25px;
     margin-block-end: 0em;
 }
 
@@ -296,11 +329,18 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 .module-border-wrap {
 	max-width: 280px;
 	position: relative;
-	background: linear-gradient(to right, rgba(153, 7, 7, 0.8), rgba(13, 1, 56, 0.8));
-	padding: 15px 0px;
-}.module-border-wrap:hover {
-	background: linear-gradient(to right, rgba(153, 7, 7, 0.87), rgba(13, 1, 56, 0.87));
+	/* background: linear-gradient(to right, rgba(153, 7, 7, 0.8), rgba(13, 1, 56, 0.8)); */
+	background: linear-gradient(-45deg, #5e5d13, #820e27, #0d585e, #1a2039);
+	background-size: 400% 400%;
+	animation: gradientAnim1 8s ease infinite;
 
+	padding: 15px 0px;
+}
+.module-border-wrap:hover {
+	/* background: linear-gradient(to right, rgba(153, 7, 7, 0.87), rgba(13, 1, 56, 0.87)); */
+	background: linear-gradient(-45deg, #5e5d13, #820e27, #0d585e, #1a2039);
+	background-size: 400% 400%;
+	animation: gradientAnim1 8s ease infinite;
 }
 
 
@@ -497,7 +537,7 @@ p {
 
 	position: absolute; 
 	left: -60px;
-	top: 193px;
+	top: 253px;
 
 	transition: left 0.23s;
 }
@@ -527,7 +567,7 @@ p {
     background-color: rgba(25, 39, 95, 0.8);
     position: absolute;
     left: -60px;
-	top: 357px;
+	top: 417px;
     transition: left 0.23s;
 }
 #backgroundButtonContainer:hover {
@@ -554,7 +594,7 @@ p {
 
 	position: absolute; 
 	left: -60px;
-	top: 275px;
+	top: 335px;
 
 	transition: left 0.23s;
 }
@@ -1744,7 +1784,7 @@ p {
 	#backgroundButtonContainer {
 		opacity: 0.8;
 		left: -70px;
-		top: 347px;
+		top: 383px;
 		/* border: 1px solid rgba(58, 54, 54, 0.9); */
 		border: 1px solid rgba(223, 204, 204, 0.4);
 		height: 60px;
@@ -1761,7 +1801,7 @@ p {
 	#soundButtonContainer {
 		opacity: 0.8;
 		left: -70px;
-		top: 193px;
+		top: 314px;
 		/* border: 1px solid rgba(58, 54, 54, 0.9); */
 		border: 1px solid rgba(223, 204, 204, 0.4);
 		height: 60px;
@@ -1769,7 +1809,7 @@ p {
 	#speedButtonContainer {
 		opacity: 0.8;
 		left: -70px;
-		top: 270px;
+		top: 245px;
 		/* border: 1px solid rgba(58, 54, 54, 0.9); */
 		border: 1px solid rgba(223, 204, 204, 0.4);
 		height: 60px;
@@ -2020,7 +2060,7 @@ p {
 	#backgroundButtonContainer {
 		opacity: 0.8;
 		left: -70px;
-		top: 347px;
+		top: 383px;
 		/* border: 1px solid rgba(58, 54, 54, 0.9); */
 		border: 1px solid rgba(223, 204, 204, 0.4);
 		height: 60px;
@@ -2037,7 +2077,7 @@ p {
 	#soundButtonContainer {
 		opacity: 0.8;
 		left: -70px;
-		top: 193px;
+		top: 314px;
 		/* border: 1px solid rgba(58, 54, 54, 0.9); */
 		border: 1px solid rgba(223, 204, 204, 0.4);
 		height: 60px;
@@ -2045,7 +2085,7 @@ p {
 	#speedButtonContainer {
 		opacity: 0.8;
 		left: -70px;
-		top: 270px;
+		top: 245px;
 		/* border: 1px solid rgba(58, 54, 54, 0.9); */
 		border: 1px solid rgba(223, 204, 204, 0.4);
 		height: 60px;

@@ -427,6 +427,9 @@
 
           setTimeout( function lancerPartie() {
 
+              document.getElementById("header").classList.add('headerOnPartie');
+              document.getElementById("footer").classList.add('footerOnPartie');
+
               logTokenValues = [];
 
               nbrCardsJoueur = 0;
