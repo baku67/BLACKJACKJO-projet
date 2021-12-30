@@ -591,13 +591,17 @@
           
           // Refresh footer/header gradient animation
           document.getElementById("footer").classList.remove("footerOnPartie");
+          document.getElementById("footer").classList.remove("footerOnPartie2");
           setTimeout( function() {
             document.getElementById("footer").classList.add("footerOnPartie");
-          }, 100);
+            document.getElementById("footer").classList.add("footerOnPartieRedecale");
+          }, 0);
           document.getElementById("header").classList.remove("headerOnPartie");
+          document.getElementById("header").classList.remove("headerOnPartie2");
           setTimeout( function() {
             document.getElementById("header").classList.add("headerOnPartie");
-          }, 100);
+            document.getElementById("header").classList.add("headerOnPartieRedecale");
+          }, 0);
           // Fin refresh
 
 
@@ -859,6 +863,7 @@
 
           document.querySelector("#footer").classList.remove("miserActif2");  
 
+          // mettre des remove et setTimeOut comme avec l'autre
           document.getElementById("header").classList.add("headerOnPartie2");
           document.getElementById("footer").classList.add("footerOnPartie2");
 

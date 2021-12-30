@@ -201,8 +201,22 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 
-
-
+.footerOnPartieRedecale {
+	animation: redecale 2s ease 1 !important;
+	animation-fill-mode: forwards !important;
+}
+.headerOnPartieRedecale {
+	animation: redecale 2s ease 1 !important;
+	animation-fill-mode: forwards !important;
+}
+@keyframes redecale {
+	0% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
 
 
 #onglets {
