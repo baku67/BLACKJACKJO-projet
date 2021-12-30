@@ -67,7 +67,7 @@ button, input[type="submit"], input[type="reset"] {
 	/* border-bottom-left-radius:10%;
     border-bottom-right-radius:10%; */
 
-	animation: gradientAnimHeader 6s ease-in-out 1; 
+	animation: gradientAnimHeader 4s ease-in-out 1; 
 	animation-fill-mode: forwards;
 }
 @keyframes gradientAnimHeader {
@@ -1089,15 +1089,21 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#33686c",endCo
 
 	border-top: 1px solid rgba(230, 211, 211, 0.6);
 
-	background: rgb(130,16,40);
-	background: -moz-linear-gradient(180deg, rgba(130,16,40,1) 49%, rgba(26,31,57,1) 100%);
-	background: -webkit-linear-gradient(180deg, rgba(130,16,40,1) 49%, rgba(26,31,57,1) 100%);
-	background: linear-gradient(180deg, rgba(130,16,40,1) 49%, rgba(26,31,57,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#821028",endColorstr="#1a1f39",GradientType=1);
+	background: -moz-linear-gradient(56deg, rgba(130,14,80,1) 0%, rgba(135,0,20,1) 25%, rgba(172,3,26,1) 26%, rgba(121,0,6,1) 31%, rgba(196,53,53,1) 31%, rgba(130,14,39,1) 35%, rgba(33,55,144,1) 55%, rgba(23,31,73,1) 68%, rgba(156,14,14,1) 78%, rgba(209,16,16,1) 83%, rgba(85,9,9,1) 83%, rgba(194,31,31,1) 89%, rgba(64,43,43,1) 92%, rgba(120,6,6,1) 95%, rgba(18,5,5,1) 97%, rgba(122,0,0,1) 100%);
+	background: -webkit-linear-gradient(56deg, rgba(130,14,80,1) 0%, rgba(135,0,20,1) 25%, rgba(172,3,26,1) 26%, rgba(121,0,6,1) 31%, rgba(196,53,53,1) 31%, rgba(130,14,39,1) 35%, rgba(33,55,144,1) 55%, rgba(23,31,73,1) 68%, rgba(156,14,14,1) 78%, rgba(209,16,16,1) 83%, rgba(85,9,9,1) 83%, rgba(194,31,31,1) 89%, rgba(64,43,43,1) 92%, rgba(120,6,6,1) 95%, rgba(18,5,5,1) 97%, rgba(122,0,0,1) 100%);
+	background: linear-gradient(56deg, rgba(130,14,80,1) 0%, rgba(135,0,20,1) 25%, rgba(172,3,26,1) 26%, rgba(121,0,6,1) 31%, rgba(196,53,53,1) 31%, rgba(130,14,39,1) 35%, rgba(33,55,144,1) 55%, rgba(23,31,73,1) 68%, rgba(156,14,14,1) 78%, rgba(209,16,16,1) 83%, rgba(85,9,9,1) 83%, rgba(194,31,31,1) 89%, rgba(64,43,43,1) 92%, rgba(120,6,6,1) 95%, rgba(18,5,5,1) 97%, rgba(122,0,0,1) 100%);	
+	/*  BACKUP tuto stylé */
+	/* background: linear-gradient(-45deg, #5e5d13, #820e27, #0d585e, #1a2039); */
+	/*  FIN BACKUP */
+	background-size: 700% 700%; 
 
 	border-radius: 6px;
 	border-bottom-left-radius: 1px;
 	border-bottom-right-radius: 1px;
+
+	animation: gradientAnimHeader 3.5s ease-in-out 1; 
+	animation-fill-mode: forwards;
+	/* animation-delay: 2s; */
 }
 .footerBorderWhite {
 	/* Ajout Border pour eviter mess-up du BorderClignotement qui dépop */
