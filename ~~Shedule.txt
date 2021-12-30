@@ -2,6 +2,13 @@ UN JOUR:  Simplifier le JS (surtout les ajout de style random, y'a les id)
 
 ADAPTER LE GRADIENT-ANIM EN FONCTION DES ACTIONS/EVENEMENTS !!!!
 
+  /* styleJouer.css:94
+	/* SI il finit (càd 100%) à un endroit chouette du gradient, ça peut etre chouette  */
+	/*!!!!!!!!!!!!!!!!!!!!!!!!! Étapes du jeu (NewGame,MiseLock,Résultat) fait slidé le gradient !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+	/* pour résultat: possible de changer le gradient en fonction du résultat sans effet refresh? */
+
+
+
 Le X2 double pas les gains (ez)
 
 Ya un probleme de compteur Deck:  y'a des addCard ou le reveal 2eme carte croupier qui decrememnte pas le compteuer Deck jsp

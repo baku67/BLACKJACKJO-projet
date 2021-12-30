@@ -578,21 +578,26 @@
               // document.getElementById("scoreCroupier").style.visibility = "visible";
           }, 500)
       });
-
       // Fonctions Mute/Speed
 
 
 
       //***   WIP: Relancer    ***\\
       function relancer() {
-        // Récupération des états ToggleButton avant rafraichissement (à virer: ca var globale WindowOnLoad)
-          // var soundMuteBoolTransition = SoundMuteBool;
-          // var setTimeOutMultiplierBoolTransition = setTimeOutMultiplierBool;
-        // Fin 
 
         $("#relancer").click(function(){
-          // Mettre un ajax load (pour succes et enchainement)
-          // $("#container1").load("jouerPartie.html");
+          
+          // Refresh footer/header gradient animation
+          document.getElementById("footer").classList.remove("footerOnPartie");
+          setTimeout( function() {
+            document.getElementById("footer").classList.add("footerOnPartie");
+          }, 100);
+          document.getElementById("header").classList.remove("headerOnPartie");
+          setTimeout( function() {
+            document.getElementById("header").classList.add("headerOnPartie");
+          }, 100);
+          // Fin refresh
+
 
           $.ajax({
             async: false,

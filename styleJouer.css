@@ -53,18 +53,6 @@ button, input[type="submit"], input[type="reset"] {
 #header {
 	padding: 0.5em 0em 3em 0em;
 
-	/* BACKUP GRADIENT SYMPA SIMPLE */
-	/* background: -moz-linear-gradient(56deg, rgba(130,14,39,1) 35%, rgba(26,32,57,1) 65%);
-	background: -webkit-linear-gradient(56deg, rgba(130,14,39,1) 35%, rgba(26,32,57,1) 65%);
-	background: linear-gradient(56deg, rgba(130,14,39,1) 35%, rgba(26,32,57,1) 65%); */
-	/* FIN */
-
-	/* BACKUP Gradient 1 */
-	/* background: -moz-linear-gradient(56deg, rgba(130,14,80,1) 0%, rgba(135,0,20,1) 25%, rgba(172,3,26,1) 26%, rgba(121,0,6,1) 31%, rgba(196,53,53,1) 31%, rgba(130,14,39,1) 35%, rgba(33,55,144,1) 65%, rgba(215,29,81,1) 77%, rgba(225,255,0,1) 81%, rgba(23,31,73,1) 81%, rgba(19,245,236,1) 89%, rgba(154,249,250,1) 92%, rgba(5,179,172,1) 96%, rgba(207,207,19,1) 100%);
-	background: -webkit-linear-gradient(56deg, rgba(130,14,80,1) 0%, rgba(135,0,20,1) 25%, rgba(172,3,26,1) 26%, rgba(121,0,6,1) 31%, rgba(196,53,53,1) 31%, rgba(130,14,39,1) 35%, rgba(33,55,144,1) 65%, rgba(215,29,81,1) 77%, rgba(225,255,0,1) 81%, rgba(23,31,73,1) 81%, rgba(19,245,236,1) 89%, rgba(154,249,250,1) 92%, rgba(5,179,172,1) 96%, rgba(207,207,19,1) 100%);
-	background: linear-gradient(56deg, rgba(130,14,80,1) 0%, rgba(135,0,20,1) 25%, rgba(172,3,26,1) 26%, rgba(121,0,6,1) 31%, rgba(196,53,53,1) 31%, rgba(130,14,39,1) 35%, rgba(33,55,144,1) 65%, rgba(215,29,81,1) 77%, rgba(225,255,0,1) 81%, rgba(23,31,73,1) 81%, rgba(19,245,236,1) 89%, rgba(154,249,250,1) 92%, rgba(5,179,172,1) 96%, rgba(207,207,19,1) 100%); */
-	/* FIN Backup */
-
 	background: -moz-linear-gradient(56deg, rgba(130,14,80,1) 0%, rgba(135,0,20,1) 25%, rgba(172,3,26,1) 26%, rgba(121,0,6,1) 31%, rgba(196,53,53,1) 31%, rgba(130,14,39,1) 35%, rgba(33,55,144,1) 55%, rgba(23,31,73,1) 68%, rgba(156,14,14,1) 78%, rgba(209,16,16,1) 83%, rgba(85,9,9,1) 83%, rgba(194,31,31,1) 89%, rgba(64,43,43,1) 92%, rgba(120,6,6,1) 95%, rgba(18,5,5,1) 97%, rgba(122,0,0,1) 100%);
 	background: -webkit-linear-gradient(56deg, rgba(130,14,80,1) 0%, rgba(135,0,20,1) 25%, rgba(172,3,26,1) 26%, rgba(121,0,6,1) 31%, rgba(196,53,53,1) 31%, rgba(130,14,39,1) 35%, rgba(33,55,144,1) 55%, rgba(23,31,73,1) 68%, rgba(156,14,14,1) 78%, rgba(209,16,16,1) 83%, rgba(85,9,9,1) 83%, rgba(194,31,31,1) 89%, rgba(64,43,43,1) 92%, rgba(120,6,6,1) 95%, rgba(18,5,5,1) 97%, rgba(122,0,0,1) 100%);
 	background: linear-gradient(56deg, rgba(130,14,80,1) 0%, rgba(135,0,20,1) 25%, rgba(172,3,26,1) 26%, rgba(121,0,6,1) 31%, rgba(196,53,53,1) 31%, rgba(130,14,39,1) 35%, rgba(33,55,144,1) 55%, rgba(23,31,73,1) 68%, rgba(156,14,14,1) 78%, rgba(209,16,16,1) 83%, rgba(85,9,9,1) 83%, rgba(194,31,31,1) 89%, rgba(64,43,43,1) 92%, rgba(120,6,6,1) 95%, rgba(18,5,5,1) 97%, rgba(122,0,0,1) 100%);	
@@ -101,6 +89,15 @@ button, input[type="submit"], input[type="reset"] {
 	100% {
 		background-position: 100% 50%;
 	}
+
+
+	/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+	/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+	/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+	/*  IDEE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+	/* SI il finit (càd 100%) à un endroit chouette du gradient, ça peut etre chouette  */
+	/*!!!!!!!!!!!!!!!!!!!!!!!!! Étapes du jeu (NewGame,MiseLock,Résultat) fait slidé le gradient !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+	/* pour résultat: possible de changer le gradient en fonction du résultat sans effet refresh? */
 }
 
 
