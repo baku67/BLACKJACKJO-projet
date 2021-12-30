@@ -859,6 +859,9 @@
 
           document.querySelector("#footer").classList.remove("miserActif2");  
 
+          document.getElementById("header").classList.add("headerOnPartie2");
+          document.getElementById("footer").classList.add("footerOnPartie2");
+
           if (SoundMuteBool == false) {
             audioMiser.play();
           }

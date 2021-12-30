@@ -178,22 +178,28 @@ button, input[type="submit"], input[type="reset"] {
 	0% {
 		background-position: 0% 50%;
 	}
-	100% {
-		/* transform: rotate(30deg); */
-		background-position: 100% 50%;
-	}
 	/* 100% {
-		background-position: 0% 50%;
+		background-position: 100% 50%;
 	} */
 }
-@keyframes test {
-	65% {
-		background-position: 65% 35%;
+
+.headerOnPartie2 {
+	animation: gradientAnimPartie2 2s ease 1 !important;
+	animation-fill-mode: forwards !important;
+}
+.footerOnPartie2 {
+	animation: gradientAnimPartie2 2s ease 1 !important;
+	animation-fill-mode: forwards !important;
+}
+@keyframes gradientAnimPartie2 {
+	0% {
+		background-position: 0% 50%;
 	}
 	100% {
 		background-position: 100% 50%;
 	}
-} 
+}
+
 
 
 
