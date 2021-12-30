@@ -605,6 +605,7 @@
           // Fin refresh
 
 
+
           $.ajax({
             async: false,
             url: "jouerPartie.html",
@@ -863,9 +864,17 @@
 
           document.querySelector("#footer").classList.remove("miserActif2");  
 
-          // mettre des remove et setTimeOut comme avec l'autre
-          document.getElementById("header").classList.add("headerOnPartie2");
-          document.getElementById("footer").classList.add("footerOnPartie2");
+          // mettre des remove et setTimeOut comme avec l'autre[TENTÉ] (regarder dans l'inspecteur: ya toujours la class redecalge et comme ya le fill-mode: forward...)
+          document.getElementById("header").classList.remove("headerOnPartie2");
+          document.getElementById("footer").classList.remove("footerOnPartie2");
+
+          setTimeout(function() {
+            document.getElementById("header").classList.add("headerOnPartie2");
+            document.getElementById("footer").classList.add("footerOnPartie2");
+          }, 0);
+          // document.getElementById("header").classList.add("headerOnPartie2");
+          // document.getElementById("footer").classList.add("footerOnPartie2");
+
 
           if (SoundMuteBool == false) {
             audioMiser.play();
