@@ -142,6 +142,8 @@
 
       var nbrDecks;
 
+      // document.getElementById("title").style.left = "0%";
+
 
 
 
