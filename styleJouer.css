@@ -123,19 +123,20 @@ button, input[type="submit"], input[type="reset"] {
 	}
 }
 
+
+#traitTitleSlide {
+	position: relative;
+	right: 100%;
+
+	animation: traitTitleSlide 2s ease-in-out 1 !important;
+	animation-fill-mode: forwards !important;
+}
 #traitTitleSlide {
 	height: 2px !important;
-	width: 350px !important;
+	width: 365px !important;
+	margin: 0 auto;
 
-
-	position: relative !important;
-	right: 100%; 
 	bottom: 7px;
-
-	animation: traitTitleSlide 2s ease 1 forwards !important;
-
-	/* animation: boogieTraitTitle 4s ease-in-out infinite 2s !important; */
-
 	background-color: rgb(223, 204, 204) !important;
 }
 @keyframes traitTitleSlide {
@@ -143,17 +144,10 @@ button, input[type="submit"], input[type="reset"] {
 		right: 100%;
 	}
 	100% {
-		right: -23%;
+		right: 0%;
 	}
 }
-@keyframes boogieTraitTitle {
-	0% {
-		right: -40% !important;
-	}
-	100% {
-		right: -35% !important;
-	}
-}
+
 
 
 .headerOnPartie {
