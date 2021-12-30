@@ -437,6 +437,8 @@
           setTimeout( function lancerPartie() {
 
               document.getElementById("header").classList.add('headerOnPartie');
+              // document.getElementById("header").classList.add("classTest");
+
               document.getElementById("footer").classList.add('footerOnPartie');
 
               logTokenValues = [];

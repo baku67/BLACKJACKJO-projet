@@ -67,28 +67,22 @@ button, input[type="submit"], input[type="reset"] {
 	/* border-bottom-left-radius:10%;
     border-bottom-right-radius:10%; */
 
-	animation: gradientAnimHeader 15s ease-in-out 1; 
-	/* animation-delay: 0.5s; */
+	animation: gradientAnimHeader 6s ease-in-out 1; 
+	animation-fill-mode: forwards;
 }
 @keyframes gradientAnimHeader {
 	0% {
 		background-position: 0% 0%;
 	}
-	35% {
+	100% {
 		background-position: 35% 15%;
 	}
-	/* 35% {
-		background-position: 38% 16%;
-	} */
 	/* 65% {
-		background-position: 60% 17%;
-	} */
-	65% {
 		background-position: 65% 35%;
 	}
 	100% {
 		background-position: 100% 50%;
-	}
+	} */
 
 
 	/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
@@ -100,6 +94,18 @@ button, input[type="submit"], input[type="reset"] {
 	/* pour résultat: possible de changer le gradient en fonction du résultat sans effet refresh? */
 }
 
+/* .classTest {
+	animation: test 6s ease-in-out 1; 
+	animation-fill-mode: forwards;
+}
+@keyframes test {
+	65% {
+		background-position: 65% 35%;
+	}
+	100% {
+		background-position: 100% 50%;
+	}
+} */
 
 #title {
 	position: relative; 
@@ -151,7 +157,7 @@ button, input[type="submit"], input[type="reset"] {
 
 
 .headerOnPartie {
-	background-image: linear-gradient(-45deg, #5e5d13, #820e27, #0d585e, #1a2039) !important;
+	background-image: linear-gradient(-45deg, #68032a, #820e27, #0d585e, #1a2039) !important;
 	background-size: 400% 400%;
 
 	border-bottom-left-radius:10%;
@@ -160,9 +166,11 @@ button, input[type="submit"], input[type="reset"] {
 
 	animation: gradientAnimPartie 15s ease 1 !important;
 	animation-fill-mode: forwards !important;
+	/* animation: test 6s ease-in-out 1; 
+	animation-fill-mode: forwards; */
 }
 .footerOnPartie {
-	background-image: linear-gradient(-45deg, #5e5d13, #820e27, #0d585e, #1a2039) !important;
+	background-image: linear-gradient(-45deg, #68032a, #820e27, #0d585e, #1a2039) !important;
 	background-size: 400% 400% !important;
 
 	/* border-top-left-radius:5% !important;
@@ -177,12 +185,21 @@ button, input[type="submit"], input[type="reset"] {
 		background-position: 0% 50%;
 	}
 	100% {
+		/* transform: rotate(30deg); */
 		background-position: 100% 50%;
 	}
 	/* 100% {
 		background-position: 0% 50%;
 	} */
 }
+@keyframes test {
+	65% {
+		background-position: 65% 35%;
+	}
+	100% {
+		background-position: 100% 50%;
+	}
+} 
 
 
 
