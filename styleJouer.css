@@ -120,6 +120,33 @@ button, input[type="submit"], input[type="reset"] {
 	}
 }
 
+#traitTitleSlide {
+	height: 3px !important;
+	width: 350px !important;
+
+
+	position: relative !important;
+	right: 100%; 
+
+	animation: traitTitleSlide 2s ease-in-out 1 !important;
+	animation-fill-mode: forwards !important;
+
+	background-color: rgb(223, 204, 204) !important;
+	text-align: center !important;
+
+	/* IMPORTANT */
+	margin-block-start: 25px !important;
+    margin-block-end: 0em !important;
+}
+@keyframes traitTitleSlide {
+	0% {
+		right: 100%;
+	}
+	100% {
+		right: -30%;
+	}
+}
+
 
 .headerOnPartie {
 	background-image: linear-gradient(-45deg, #5e5d13, #820e27, #0d585e, #1a2039) !important;
