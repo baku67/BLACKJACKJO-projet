@@ -52,33 +52,57 @@ button, input[type="submit"], input[type="reset"] {
 
 #header {
 	padding: 0.5em 0em 3em 0em;
-	/* background: rgb(130,14,39); */
-	background-image: -moz-linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%);
-	background-image: -webkit-linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%);
-	background-image: linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%);
 
-	/* background: linear-gradient(-45deg, #5e5d13, #820e27, #0d585e, #1a2039);
-	background-size: 400% 400%; */
+	/* BACKUP GRADIENT SYMPA SIMPLE */
+	/* background: -moz-linear-gradient(56deg, rgba(130,14,39,1) 35%, rgba(26,32,57,1) 65%);
+	background: -webkit-linear-gradient(56deg, rgba(130,14,39,1) 35%, rgba(26,32,57,1) 65%);
+	background: linear-gradient(56deg, rgba(130,14,39,1) 35%, rgba(26,32,57,1) 65%); */
+	/* FIN */
+
+	/* BACKUP Gradient 1 */
+	/* background: -moz-linear-gradient(56deg, rgba(130,14,80,1) 0%, rgba(135,0,20,1) 25%, rgba(172,3,26,1) 26%, rgba(121,0,6,1) 31%, rgba(196,53,53,1) 31%, rgba(130,14,39,1) 35%, rgba(33,55,144,1) 65%, rgba(215,29,81,1) 77%, rgba(225,255,0,1) 81%, rgba(23,31,73,1) 81%, rgba(19,245,236,1) 89%, rgba(154,249,250,1) 92%, rgba(5,179,172,1) 96%, rgba(207,207,19,1) 100%);
+	background: -webkit-linear-gradient(56deg, rgba(130,14,80,1) 0%, rgba(135,0,20,1) 25%, rgba(172,3,26,1) 26%, rgba(121,0,6,1) 31%, rgba(196,53,53,1) 31%, rgba(130,14,39,1) 35%, rgba(33,55,144,1) 65%, rgba(215,29,81,1) 77%, rgba(225,255,0,1) 81%, rgba(23,31,73,1) 81%, rgba(19,245,236,1) 89%, rgba(154,249,250,1) 92%, rgba(5,179,172,1) 96%, rgba(207,207,19,1) 100%);
+	background: linear-gradient(56deg, rgba(130,14,80,1) 0%, rgba(135,0,20,1) 25%, rgba(172,3,26,1) 26%, rgba(121,0,6,1) 31%, rgba(196,53,53,1) 31%, rgba(130,14,39,1) 35%, rgba(33,55,144,1) 65%, rgba(215,29,81,1) 77%, rgba(225,255,0,1) 81%, rgba(23,31,73,1) 81%, rgba(19,245,236,1) 89%, rgba(154,249,250,1) 92%, rgba(5,179,172,1) 96%, rgba(207,207,19,1) 100%); */
+	/* FIN Backup */
+
+	background: -moz-linear-gradient(56deg, rgba(130,14,80,1) 0%, rgba(135,0,20,1) 25%, rgba(172,3,26,1) 26%, rgba(121,0,6,1) 31%, rgba(196,53,53,1) 31%, rgba(130,14,39,1) 35%, rgba(33,55,144,1) 55%, rgba(23,31,73,1) 68%, rgba(156,14,14,1) 78%, rgba(209,16,16,1) 83%, rgba(85,9,9,1) 83%, rgba(194,31,31,1) 89%, rgba(64,43,43,1) 92%, rgba(120,6,6,1) 95%, rgba(18,5,5,1) 97%, rgba(122,0,0,1) 100%);
+	background: -webkit-linear-gradient(56deg, rgba(130,14,80,1) 0%, rgba(135,0,20,1) 25%, rgba(172,3,26,1) 26%, rgba(121,0,6,1) 31%, rgba(196,53,53,1) 31%, rgba(130,14,39,1) 35%, rgba(33,55,144,1) 55%, rgba(23,31,73,1) 68%, rgba(156,14,14,1) 78%, rgba(209,16,16,1) 83%, rgba(85,9,9,1) 83%, rgba(194,31,31,1) 89%, rgba(64,43,43,1) 92%, rgba(120,6,6,1) 95%, rgba(18,5,5,1) 97%, rgba(122,0,0,1) 100%);
+	background: linear-gradient(56deg, rgba(130,14,80,1) 0%, rgba(135,0,20,1) 25%, rgba(172,3,26,1) 26%, rgba(121,0,6,1) 31%, rgba(196,53,53,1) 31%, rgba(130,14,39,1) 35%, rgba(33,55,144,1) 55%, rgba(23,31,73,1) 68%, rgba(156,14,14,1) 78%, rgba(209,16,16,1) 83%, rgba(85,9,9,1) 83%, rgba(194,31,31,1) 89%, rgba(64,43,43,1) 92%, rgba(120,6,6,1) 95%, rgba(18,5,5,1) 97%, rgba(122,0,0,1) 100%);	
+	/*  BACKUP tuto stylé */
+	/* background: linear-gradient(-45deg, #5e5d13, #820e27, #0d585e, #1a2039); */
+	/*  FIN BACKUP */
+	background-size: 400% 400%; 
 
 
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#820e27",endColorstr="#1a2039",GradientType=1);
 	border-bottom: 3px solid rgba(230, 211, 211, 0.6);
 	/* border-bottom-left-radius:10%;
-    border-bottom-right-radius:10%;
+    border-bottom-right-radius:10%; */
 
-	animation: gradientAnim1 15s ease infinite; */
+	animation: gradientAnimHeader 15s ease-in-out 1; 
+	/* animation-delay: 0.5s; */
 }
-/* @keyframes gradientAnim1 {
+@keyframes gradientAnimHeader {
 	0% {
-		background-position: 0% 50%;
+		background-position: 0% 0%;
 	}
-	50% {
-		background-position: 100% 50%;
+	35% {
+		background-position: 35% 15%;
+	}
+	/* 35% {
+		background-position: 38% 16%;
+	} */
+	/* 65% {
+		background-position: 60% 17%;
+	} */
+	65% {
+		background-position: 65% 35%;
 	}
 	100% {
-		background-position: 0% 50%;
+		background-position: 100% 50%;
 	}
-} */
+}
+
 
 .headerOnPartie {
 	background-image: linear-gradient(-45deg, #5e5d13, #820e27, #0d585e, #1a2039) !important;
@@ -88,7 +112,7 @@ button, input[type="submit"], input[type="reset"] {
     border-bottom-right-radius:10%;
 	/* border-radius: 0 0 50% 50% / 50px; */
 
-	animation: gradientAnim1 15s ease infinite;
+	animation: gradientAnimPartie 15s ease 1;
 }
 .footerOnPartie {
 	background-image: linear-gradient(-45deg, #5e5d13, #820e27, #0d585e, #1a2039) !important;
@@ -98,18 +122,18 @@ button, input[type="submit"], input[type="reset"] {
     border-top-right-radius:5% !important; */
 	border-radius: 50% 50% 0 0 / 20px !important;
 
-	animation: gradientAnim1 15s ease infinite !important;
+	animation: gradientAnimPartie 15s ease 1 !important;
 }
-@keyframes gradientAnim1 {
+@keyframes gradientAnimPartie {
 	0% {
 		background-position: 0% 50%;
 	}
-	50% {
+	100% {
 		background-position: 100% 50%;
 	}
-	100% {
+	/* 100% {
 		background-position: 0% 50%;
-	}
+	} */
 }
 
 
@@ -194,7 +218,10 @@ button, input[type="submit"], input[type="reset"] {
 	background: -webkit-linear-gradient(left, rgb(90,90,90) 0%, rgba(255,255,255,0.7) 50%, rgb(90,90,90) 100%);
   }
 
-
+#traitLumineuxFooter {
+	position: relative;
+	bottom: 5px;
+}
 
 
 #title {
@@ -335,7 +362,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	/* background: linear-gradient(to right, rgba(153, 7, 7, 0.8), rgba(13, 1, 56, 0.8)); */
 	background: linear-gradient(-45deg, #5e5d13, #820e27, #0d585e, #1a2039);
 	background-size: 400% 400%;
-	animation: gradientAnim1 8s ease infinite;
+	animation: gradientAnimPartie 8s ease infinite;
 
 	padding: 15px 0px;
 }
@@ -343,8 +370,22 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	/* background: linear-gradient(to right, rgba(153, 7, 7, 0.87), rgba(13, 1, 56, 0.87)); */
 	background: linear-gradient(-45deg, #5e5d13, #820e27, #0d585e, #1a2039);
 	background-size: 400% 400%;
-	animation: gradientAnim1 8s ease infinite;
+	animation: gradientAnim 8s ease infinite;
+	
 }
+@keyframes gradientAnim {
+		0% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		100% {
+			/* transform: rotate(1.5turn) translate(70%, 35%); */
+			background-position: 0% 50%;
+			
+		}
+	}
 
 
 #infanticide {
@@ -550,9 +591,6 @@ p {
 	border: 1px solid rgba(223, 204, 204, 0.2);
 	background-color: rgba(130,14,39,0.8);
 }
-#soundButtonContainer:active {
-	/* + border plus larde (avec border-box ou autre pour contenir, = la meme taille) */
-}
 
 
 
@@ -607,11 +645,6 @@ p {
 	border: 1px solid rgba(223, 204, 204, 0.2);
 	background-color: rgba(130,14,39,0.8);
 }
-#speedButtonContainer:active {
-	/* + border plus larde (avec border-box ou autre pour contenir, = la meme taille) */
-
-}
-
 
 
 

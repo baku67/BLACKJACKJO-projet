@@ -105,7 +105,9 @@
       var content = document.getElementById("collapseContent");
       var isCollapsed = false;
       footerCollapse();
-      document.getElementById("arrowPng").setAttribute("src", "Images/arrowUp.png");
+      document.getElementById("arrowPng").setAttribute("src", "Images/arrowUpWhitePng.png");
+      document.getElementById("arrowPng").style.position = "relative";
+      document.getElementById("arrowPng").style.bottom = "13px";
       
 
       coll.addEventListener("click", function() {
@@ -120,13 +122,18 @@
 
       function footerCollapse() {
         content.style.display = "none";
-        document.getElementById("arrowPng").setAttribute("src", "Images/arrowUp.png");
+        document.getElementById("arrowPng").setAttribute("src", "Images/arrowUpWhitePng.png");
+        document.getElementById("arrowPng").style.position = "relative";
+        document.getElementById("arrowPng").style.bottom = "13px";
+
         isCollapsed = true;
         checkMiseWarning();
       }
       function footerShow() {
         content.style.display = "block";
-        document.getElementById("arrowPng").setAttribute("src", "Images/arrowDown.png");
+        document.getElementById("arrowPng").setAttribute("src", "Images/arrowDownWhitePng.png");
+        document.getElementById("arrowPng").style.bottom = "0px";
+
         isCollapsed = false;
         checkMiseWarning();
       }
@@ -436,6 +443,8 @@
 
               credits = 100;
               document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + credits + "&nbsp;€";
+              document.getElementById("credits").style.position = "relative";
+              document.getElementById("credits").style.top = "7px";
               document.getElementById("traitLumineux").style.visibility = "visible";
  
               document.getElementById("compteurDeck").innerHTML = compteurDeck;
