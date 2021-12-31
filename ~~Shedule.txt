@@ -1,7 +1,7 @@
-UN JOUR:  Simplifier le JS (surtout les ajout de style random, y'a les id)
+Effet bleu clair au debut du gradient à garder + faire pareil avec le rouge à droite
+
 
 ADAPTER LE GRADIENT-ANIM EN FONCTION DES ACTIONS/EVENEMENTS !!!!
-
   /* styleJouer.css:94
 	/* SI il finit (càd 100%) à un endroit chouette du gradient, ça peut etre chouette  */
 	/*!!!!!!!!!!!!!!!!!!!!!!!!! Étapes du jeu (NewGame,MiseLock,Résultat) fait slidé le gradient !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
@@ -18,18 +18,9 @@ SpaceBar click: hit/relancer
 
 /!\ CroupierAS: Maj Affichage/Score ASmax(+10) tant que pas burst (en ce moment, juste +1)
 
-https://stackoverflow.com/questions/36384310/automatically-slide-in-div-on-page-load
-
-
-+BOUTON (croix) à coté de retourArriere qui suppr miseEnCours
-
 
 OSEF-tier: mettre les toggle à droite (c'est un petit bordel) car smartphone+droitiers majoritaires (UX tmtc)
 
-EZ: speakerMax_sourceMax: repartir de ce SOURCE pur faire un png plus précis (il y a du blanc en contour sur l'actuel) régler la tolérence sur PNG transparency
-
-
-Nouveau boutons Toggle (avec hover et active) see FaceBook selfconv
 Boutons choix: *de base* couleur unie avec inversion/noirOUblanc ?
 
 Sons choix et Son newGame
@@ -37,7 +28,6 @@ Sons choix et Son newGame
 POUR NOEL: patcher les autre résultats + AS 
            Vrai / Faux BlackJack
 
-SE LANCER DANS LES ANIMATIONS (genre slide, taclé-glissé, en opposition, gauche-droite, tmtc)
 
 
 (lourd) Son audioDecompte: prendre le début/fin du son (genre précisément), et créer une fonction d'ajout incrémentale||while:decompte  d'ajout de "séquence" du son de dropCoin x1
@@ -47,11 +37,6 @@ Dans decrement/increment gains:
   // provoquer un fadeOut du son à partir d'avant ce moment
 
 Faire Pop-FadeIn (ajouter le DOM: appenchild?) le bouton "Nouvelle Partie !" avec SetTimeOut OnloadWindow pour effet décalé stylé (je suppose?)
-
-+Bruits de pieces pendant Increment/decrement (decompteSound.wav dans Backup Dir A DECOMPRESSER en mp3 (site fav))
-
-+Rendre le bouton SoundMute vraiment png
-
 
 Icone Mise en cours // Images background du footer Win/Loose/BJ (fond de pièces, etc...)
 Animation: BigWin/BlackJack/Bust (pop ou slide lent vers la droite avec soulignage qui pop de la droite et glisse vers la droite)
@@ -207,6 +192,9 @@ Bruit de tirelire quand win / bruit d'eplosion quand bust
 Clean l'arborescence
 *** RELANCE: boutons toggle HS
 + CREER LES FONCTION d'ajout du event click sur button
+SE LANCER DANS LES ANIMATIONS (genre slide, taclé-glissé, en opposition, gauche-droite, tmtc)
++Bruits de pieces pendant Increment/decrement (decompteSound.wav dans Backup Dir A DECOMPRESSER en mp3 (site fav)) 
+
 
 ___________________________________________________________________________________________
 DEROULEMENT:
