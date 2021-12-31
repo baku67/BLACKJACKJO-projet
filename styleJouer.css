@@ -1,7 +1,7 @@
 #miseLocked {
 	/* color: rgba(5, 2, 39, 0.7); */
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	font-weight: bold;
+	/* font-weight: bold; */
 	font-size: 1.5em;
 }
 #compteurDeck {
@@ -182,6 +182,7 @@ button, input[type="submit"], input[type="reset"] {
 		background-position: 100% 50%;
 	} */
 }
+
 
 .headerOnPartie2 {
 	animation: gradientAnimPartie2 2s ease 1 !important;
