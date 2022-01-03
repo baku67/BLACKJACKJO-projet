@@ -363,66 +363,66 @@
           cardValue2: 10
         },
         // TRICHE (attention virgule)
-        C1e = {
-          cardImageURL: "cartes\\AC.png",
-          cardValue: 1,
-          cardValue2: 10
-        },
-        C1f = {
-          cardImageURL: "cartes\\AD.png",
-          cardValue: 1,
-          cardValue2: 10
-        },
-        C1g = {
-          cardImageURL: "cartes\\AH.png",
-          cardValue: 1,
-          cardValue2: 10
-        },
-        C1h = {
-          cardImageURL: "cartes\\AS.png",
-          cardValue: 1,
-          cardValue2: 10
-        },
-        C1i = {
-          cardImageURL: "cartes\\AC.png",
-          cardValue: 1,
-          cardValue2: 10
-        },
-        C1j = {
-          cardImageURL: "cartes\\AD.png",
-          cardValue: 1,
-          cardValue2: 10
-        },
-        C1k = {
-          cardImageURL: "cartes\\AH.png",
-          cardValue: 1,
-          cardValue2: 10
-        },
-        C1l = {
-          cardImageURL: "cartes\\AS.png",
-          cardValue: 1,
-          cardValue2: 10
-        },
-        C1m = {
-          cardImageURL: "cartes\\AC.png",
-          cardValue: 1,
-          cardValue2: 10
-        },
-        C1n = {
-          cardImageURL: "cartes\\AD.png",
-          cardValue: 1,
-          cardValue2: 10
-        },
-        C1o = {
-          cardImageURL: "cartes\\AH.png",
-          cardValue: 1,
-          cardValue2: 10
-        },
-        C1p = {
-          cardImageURL: "cartes\\AS.png",
-          cardValue: 1,
-          cardValue2: 10
-        }
+        // C1e = {
+        //   cardImageURL: "cartes\\AC.png",
+        //   cardValue: 1,
+        //   cardValue2: 10
+        // },
+        // C1f = {
+        //   cardImageURL: "cartes\\AD.png",
+        //   cardValue: 1,
+        //   cardValue2: 10
+        // },
+        // C1g = {
+        //   cardImageURL: "cartes\\AH.png",
+        //   cardValue: 1,
+        //   cardValue2: 10
+        // },
+        // C1h = {
+        //   cardImageURL: "cartes\\AS.png",
+        //   cardValue: 1,
+        //   cardValue2: 10
+        // },
+        // C1i = {
+        //   cardImageURL: "cartes\\AC.png",
+        //   cardValue: 1,
+        //   cardValue2: 10
+        // },
+        // C1j = {
+        //   cardImageURL: "cartes\\AD.png",
+        //   cardValue: 1,
+        //   cardValue2: 10
+        // },
+        // C1k = {
+        //   cardImageURL: "cartes\\AH.png",
+        //   cardValue: 1,
+        //   cardValue2: 10
+        // },
+        // C1l = {
+        //   cardImageURL: "cartes\\AS.png",
+        //   cardValue: 1,
+        //   cardValue2: 10
+        // },
+        // C1m = {
+        //   cardImageURL: "cartes\\AC.png",
+        //   cardValue: 1,
+        //   cardValue2: 10
+        // },
+        // C1n = {
+        //   cardImageURL: "cartes\\AD.png",
+        //   cardValue: 1,
+        //   cardValue2: 10
+        // },
+        // C1o = {
+        //   cardImageURL: "cartes\\AH.png",
+        //   cardValue: 1,
+        //   cardValue2: 10
+        // },
+        // C1p = {
+        //   cardImageURL: "cartes\\AS.png",
+        //   cardValue: 1,
+        //   cardValue2: 10
+        // }
         // FIN TRICHE
       ];
       //#endregion
