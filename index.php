@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 
+<?php
+   include("config.php");
+?>
+
 <html lang="fr">
 	<head>
 		<title id="title">BlackJack Jo' - Jouer</title>
