@@ -2,6 +2,8 @@
 
 <?php
    include("config.php");
+
+   
 ?>
 
 <html lang="fr">
@@ -50,27 +52,67 @@
 
 			<!-- MODALS Connection/Inscription -->
 			<div id="connectionModal" class="w3-modal">
-				<div class="w3-modal-content">
-					<div class="w3-container">
+				<div class="w3-modal-content w3-animate-zoom">
+					<div>
 						<span onclick="document.getElementById('connectionModal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
 						<header class="modalHeader">
 							<h2 style="text-align: center; font-family:Segoe UI,Arial,sans-serif; font-weight:400; color:rgb(223, 204, 204)">Connection</h2>
 						</header>
 						<br>
 						<!-- FORM -->
+						<!-- <div class="w3-center"><br>
+							<img src="img_avatar4.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+						</div> -->
+						<form class="w3-container" action="/action_page.php">
+							<div class="w3-section">
+								<label><b>Identifiant</b></label>
+									<input class="w3-input w3-border w3-margin-bottom fixBoxSizing" type="text" placeholder="Entrer votre identifiant" name="usrname" required>
+								<label><b>Mot de passe</b></label>
+									<input class="w3-input w3-border fixBoxSizing" type="password" placeholder="Entrer votre mot de passe" name="psw" required>
+								<button class="w3-button w3-block w3-blue w3-section w3-padding" type="submit">Se connecter</button>
+								<input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Se souvenir de moi
+							</div>
+						</form>
+						<div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+							<button onclick="document.getElementById('connectionModal').style.display='none'" type="button" class="w3-button w3-red">Annuler</button>
+							<span class="w3-right w3-padding w3-hide-small"><a href="#">mot de passe</a> oublié?</span>
+						</div>
+						<!-- FIN FORM -->
+
 					</div>
 				</div>	
 			</div>
 			
 			<div id="inscriptionModal" class="w3-modal">
-				<div class="w3-modal-content">
-					<div class="w3-container">
+				<div class="w3-modal-content w3-animate-zoom">
+					<div">
 						<span onclick="document.getElementById('inscriptionModal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
 						<header class="modalHeader">
 							<h2 style="text-align: center; font-family:Segoe UI,Arial,sans-serif; font-weight:400; color:rgb(223, 204, 204)">Inscription</h2>
 						</header>
 						<br>
 						<!-- FORM -->
+						<!-- <div class="w3-center"><br>
+							<img src="img_avatar4.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+						</div> -->
+						<form class="w3-container" action="/action_page.php">
+							<div class="w3-section">
+								<label><b>E-mail</b></label>
+									<input class="w3-input w3-border fixBoxSizing w3-margin-bottom" type="password" placeholder="Entrez votre adresse mail" name="mail" required>
+								<label><b>Identifiant</b></label>
+									<input class="w3-input w3-border w3-margin-bottom fixBoxSizing" type="text" placeholder="Entrer un identifiant" name="usrname" required>
+								<label><b>Mot de passe</b></label>
+									<input class="w3-input w3-border fixBoxSizing w3-margin-bottom" type="password" placeholder="Entrer un mot de passe" name="psw" required>
+								<label><b>Confirmer le mot de passe</b></label>
+									<input class="w3-input w3-border fixBoxSizing" type="password" placeholder="Réécrivez le mot de passe" name="psw2" required>
+								<button class="w3-button w3-block w3-blue w3-section w3-padding" type="submit">S'inscrire</button>
+								<input class="w3-check w3-margin-top" type="checkbox"> J'accepte les termes et conditions d'utilisation
+							</div>
+						</form>
+						<div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+							<button onclick="document.getElementById('inscriptionModal').style.display='none'" type="button" class="w3-button w3-red">Annuler</button>
+						</div>
+						<!-- FIN FORM -->
 					</div>
 				</div>
 			</div>
@@ -98,7 +140,7 @@
 
 
 				<div style="display:inline-flex;">
-					<h3 id="footerTitle" style="letter-spacing: 3px;">  Comment jouer ...  </h3>
+					<h3 id="footerTitle" style="letter-spacing: 1px;">  Comment jouer ...  </h3>
 					<button type="button" id="collapsible"><img src="Images/arrowDownWhitePng.png" id="arrowPng" style="height:1em;"></button>
 				</div>
 

@@ -1,5 +1,7 @@
 Effet bleu clair au debut du gradient à garder + faire pareil avec le rouge à droite
 
+BDD: table hsitorique (idJoueur, scoreTotalJoueur/ScoreTotaleCroupier, nbrCartesDeck? ...)
+
 Meme apres gradientSlide (index), ne pas laisser le font statique (petits moves très lents/ease gauche/droite jsp)
 
 petit fadeIn/out footerDistribution

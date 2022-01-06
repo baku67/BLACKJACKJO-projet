@@ -336,7 +336,8 @@ button, input[type="submit"], input[type="reset"] {
 	text-decoration-color: rgba(223, 204, 204, 0.4);
 }
 h2 {
-	font-size: 1.5em !important;
+	/* font-size: 1.5em !important; */
+	font-size: 32px !important;
 	margin-block-start: 0em;
 }
 .modalHeader {

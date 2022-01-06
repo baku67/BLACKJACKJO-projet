@@ -427,6 +427,21 @@
       ];
       //#endregion
 
+
+      var modal2 = document.getElementById("inscriptionModal");
+      var modalCo = document.getElementById("connectionModal");
+      
+      
+      window.onclick = function(event) {
+        if (event.target == modal2) {
+          modal2.style.display = "none";
+        }
+      };
+      window.onclick = function(event) {
+        if (event.target == modalCo) {
+          modalCo.style.display = "none";
+        }
+      };
       
 
       // JQUERY JAX : load Partie
