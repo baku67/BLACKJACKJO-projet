@@ -1,5 +1,7 @@
 Effet bleu clair au debut du gradient à garder + faire pareil avec le rouge à droite
 
+Meme apres gradientSlide (index), ne pas laisser le font statique (petits moves très lents/ease gauche/droite jsp)
+
 petit fadeIn/out footerDistribution
 
 ADAPTER LE GRADIENT-ANIM EN FONCTION DES ACTIONS/EVENEMENTS !!!!

@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 
-<?php
-   include("config.php");
-?>
-
 <html lang="fr">
 	<head>
 		<title id="title">BlackJack Jo' - Jouer</title>
@@ -29,7 +25,7 @@
 				<div>
 					<ul id="onglets">
 						<li class="onglet"><a href="Hi-Lo.html" id="Hi-Lo">Hi-Lo</a></li>
-						<li class="onglet" ><a href="index.php" id="jouer">JOUER !</a></li>
+						<li class="onglet" ><a href="index.html" id="jouer">JOUER !</a></li>
 						<li class="onglet"><a href="compteur.html" id="Compteur">Compteur</a></li>
 					</ul>
 				</div>
@@ -37,7 +33,6 @@
 
 
 
-			
 
 			<!-- BOUTONS Connection/Inscription -->
 			<div id="connectionContainer">
@@ -53,10 +48,7 @@
 				<div class="w3-modal-content">
 					<div class="w3-container">
 						<span onclick="document.getElementById('connectionModal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-						<header class="modalHeader">
-							<h2 style="text-align: center; font-family:Segoe UI,Arial,sans-serif; font-weight:400; color:rgb(223, 204, 204)">Connection</h2>
-						</header>
-						<br>
+						<p>TEST Connection</p>
 						<!-- FORM -->
 					</div>
 				</div>	
@@ -66,10 +58,7 @@
 				<div class="w3-modal-content">
 					<div class="w3-container">
 						<span onclick="document.getElementById('inscriptionModal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-						<header class="modalHeader">
-							<h2 style="text-align: center; font-family:Segoe UI,Arial,sans-serif; font-weight:400; color:rgb(223, 204, 204)">Inscription</h2>
-						</header>
-						<br>
+						<p>TEST Inscription</p>
 						<!-- FORM -->
 					</div>
 				</div>
@@ -83,8 +72,6 @@
 
 
 
-
-			
 			<div id="container1">
 				<div id="newGame" class="module-border-wrap">
 					<a href="#" style="text-decoration: none;" id="lancerPartie">Nouvelle Partie !</a>

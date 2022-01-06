@@ -316,6 +316,35 @@ button, input[type="submit"], input[type="reset"] {
     margin-block-end: 0em;
 }
 
+#connectionContainer {
+	text-align: center; 
+	margin: 15px auto;
+}
+.connectionButtons {
+	margin: 0px 15px; 
+	display: inline-block; 
+	color:rgba(223, 204, 204, 0.8); 
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+	font-size: 1.2em;
+}
+/* #connectionButton {
+	text-decoration: underline;
+	text-decoration-color: rgba(223, 204, 204, 0.4);
+} */
+#inscriptionButton {
+	text-decoration: underline;
+	text-decoration-color: rgba(223, 204, 204, 0.4);
+}
+h2 {
+	font-size: 1.5em !important;
+	margin-block-start: 0em;
+}
+.modalHeader {
+	width: 100%;
+	padding: 10px 0 10px 0;
+	background-color: brown;
+}
+
 
 body {
 	background-image: url("Images/backgroundMix2.png");
