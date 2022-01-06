@@ -361,7 +361,7 @@
           cardImageURL: "cartes\\AS.png",
           cardValue: 1,
           cardValue2: 10
-        },
+        }
         // TRICHE (attention virgule)
         // C1e = {
         //   cardImageURL: "cartes\\AC.png",
