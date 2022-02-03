@@ -444,7 +444,7 @@
       
 
       // JQUERY JAX : load Partie
-      $("#newGame").click(function(){
+      $("#newGameInvite").click(function(){
 
           $("#container1").load("jouerPartie.php");
 
@@ -459,11 +459,14 @@
 
               nbrCardsJoueur = 0;
 
-              // credits = 100;
-              // document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + credits + "&nbsp;€";
-              // document.getElementById("credits").style.position = "relative";
-              // document.getElementById("credits").style.top = "7px";
-              // document.getElementById("traitLumineux").style.visibility = "visible";
+              // Désactivation Crédits mode invité (sinon doublon avec Crédits Php USER)
+              // ******************************** *
+              credits = 100;
+              document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + credits + "&nbsp;€";
+              document.getElementById("credits").style.position = "relative";
+              document.getElementById("credits").style.top = "7px";
+              document.getElementById("traitLumineux").style.visibility = "visible";
+              // ******************************** *
  
               document.getElementById("compteurDeck").innerHTML = compteurDeck;
               document.getElementById("compteurDeckMax").innerHTML = compteurDeckMax;
@@ -473,9 +476,6 @@
 
               // ******************************** *
               // BOUTON TOGGLE SON
-              // document.getElementById("soundButtonContainer").style.cursor = "pointer";
-              // SoundMuteBool = true;
-
               document.getElementById("soundButtonContainer").addEventListener("click", function() {
                 if (SoundMuteBool == true) {
                   SoundMuteBool = false;
@@ -510,7 +510,6 @@
  
               // ******************************** *
               // BOUTON TOGGLE SPEED
-              // document.getElementById("speedButtonContainer").style.cursor = "pointer";
               document.getElementById("speedButtonContainer").addEventListener("click", function() {
                 if (setTimeOutMultiplierBool == true) {
                   setTimeOutMultiplierBool = false;
@@ -529,7 +528,8 @@
               // ******************************** *
 
 
-              // Toggle background Green/White
+              // Toggle Design
+              // ******************************** *
               document.getElementById("backgroundButtonContainer").addEventListener("click", function() {
                 if (backgroundToggle == true) {
                   backgroundToggle = false;
@@ -540,7 +540,8 @@
                   document.getElementById("backgroundToggleImage").src = 'Images/backgroundToggleImage.png';
                 }
               })
-              // *******
+              // Fin bouton toggle Design
+              // ******************************** *
 
 
               $.ajax({
@@ -565,9 +566,6 @@
                     miseBoutonStyle();
                     } 
                   });
-                  // $('#retourArriereButton').hover(function() {
-                  //   document.getElementById("retourArriereImg").src = "retourArriere2.png";
-                  // });
 
                     //*** Zone FooterBorder Clignotement      
                     document.querySelector("#footer").classList.add("miserActif2");  

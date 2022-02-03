@@ -2,11 +2,11 @@ DONE: Fix window.onclick pour enlever les modals
 connection et inscription
 maj routes nav 
 
-Quand connection: (anim en 2-3 temps) Le user pop rapide puis une barre de soulignage pop rapide aussi (en grossissant d'un coup) et enfin les étoiles fadeIn lentement 
+Quand connection: (anim en 2-3 temps) Le user pop rapide puis les crédits (en grossissant d'un coup) et enfin le soulignage fadeIn lentement 
  -> Genre ('TUM'  'TUM'  tssssss...)
 
-Déplacer Crédit à gauche (symétrie déconnexion)
-;iddle user pqs centr2 qvec le JOUER!
+index ligne 208
+			<!--  METTRE un if isset username ou !isset pour determiner quel bouton on affiche ('Nouvelle Partie!' ou 'Partie invité'), chacun lançant une fonction différente (l'une avec du Php/SQL, l'autre juste avec le JS) -->
 
 
 Effet bleu clair au debut du gradient à garder + faire pareil avec le rouge à droite

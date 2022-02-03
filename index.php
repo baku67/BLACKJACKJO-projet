@@ -56,25 +56,30 @@
 
 				<!-- Affichage User courant et bouton déconnexion (à la place des boutons connection/inscription)  -->
 				<?php  if (isset($_SESSION['username'])) : ?>
-					<p style="position:relative; bottom: 0.6em; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:1.2em; color: rgb(241 205 92 / 95%)">
-						<strong style="font-size:1.4em; color:rgba(223, 204, 204, 0.8);">
-							&#9733;
-							<?php echo $_SESSION['username']; ?>
-							&#9733;
+					<p style="position:relative; bottom: 0.6em; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:1.2em; color:rgba(223, 204, 204, 0.8);">
+						<strong style="font-size:1.4em;">
+
+							<span>&#9733;</span>
+							<?php 
+								echo $_SESSION['username']; 
+							?>
+							<span>&#9733;</span>
+
 						</strong>
 
-						&nbsp;&nbsp;|&nbsp;&nbsp;
+						&nbsp;&nbsp;<span style="font-size:1.7em;">|</span>&nbsp;&nbsp;
 
-						Crédits: 00,-
-						<strong>
+						Crédits: <span style="color: rgb(241 205 92 / 95%) !important"> 00, -</span>
+						<strong style="color: rgb(241 205 92 / 95%) !important">
 							<?php echo $_SESSION['credit']; ?>
 							
 						</strong>
 					</p>
 
 					<p>
-						<a href="index.php?logout='1'" class="deconnection" style="position: absolute; right: 2em; color: #ffa4a4; font-size: 1.2em; text-decoration: none; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
-							Déconnexion
+						<a href="index.php?logout='1'" class="deconnection" style="position: absolute; right: 1em; font-size: 1.3em; text-decoration: none;">
+							<!-- Déconnexion -->
+							<img src="deconnexion.png" alt="deconnexion" id="deconnexionImg" style="height:30px; width:30px;">
 						</a>
             		</p>
 
@@ -190,21 +195,27 @@
 			</div>
 			<!-- FIN MODALS -->
 			
-
 			
-
-
-
-
-
-
 			
 			<div id="container1">
-				<div id="newGame" class="module-border-wrap">
-					<a href="#" style="text-decoration: none;" id="lancerPartie">Nouvelle Partie !</a>
-				</div>
+				<!-- Bouton "Nouvelle Partie" si invité -->
+				<?php  
+					if (!isset($_SESSION['username'])) : 
+				?>
+							<div id="newGameInvite" class="module-border-wrap">
+								<a href="#" style="text-decoration: none;">Partie rapide !</a>
+							</div>
+				<?php 
+					elseif (isset($_SESSION['username'])) : 
+				?>
+							<div id="newGameConnected" class="module-border-wrap">
+								<a href="#" style="text-decoration: none;">Nouvelle Partie !</a>
+							</div>
+				<?php 
+					endif 
+				?>
+				<!-- Fin -->
 			</div>
-
 
 			
 
