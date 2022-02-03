@@ -57,11 +57,24 @@
 							<h2 style="text-align: center; font-family:Segoe UI,Arial,sans-serif; font-weight:400; color:rgb(223, 204, 204)">Connexion</h2>
 						</header>
 						<br>
-						<!-- FORM -->
-						<!-- <div class="w3-center"><br>
-							<img src="img_avatar4.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
-						</div> -->
-						<form class="w3-container" action="" method="post">
+
+						<!-- NOUVEAU FORM -->
+						<form class="w3-container" action="connexion.php" method="post">
+							<label><b>Identifiant</b></label>
+									<input class="w3-input w3-border w3-margin-bottom fixBoxSizing" type="text" placeholder="Entrer votre identifiant" name="username" required>
+							<br />
+							<label><b>Mot de passe</b></label>
+									<input class="w3-input w3-border fixBoxSizing" type="password" placeholder="Entrer votre mot de passe" name="password" required>
+							<br />
+							<!-- <input type="submit" name="connexion" value="Connexion" /> -->
+							<button class="w3-button w3-block w3-blue w3-section w3-padding" type="submit" name="connexion" value="Connexion">Se connecter</button>
+							<input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Se souvenir de moi
+						</form>
+						<!-- FIN NOUVEAU FORM -->
+
+						
+						<!-- Ancien form -->
+						<!-- <form class="w3-container" action="" method="post">
 							<div class="w3-section">
 								<label><b>Identifiant</b></label>
 									<input class="w3-input w3-border w3-margin-bottom fixBoxSizing" type="text" placeholder="Entrer votre identifiant" name="username" required>
@@ -70,7 +83,10 @@
 								<button class="w3-button w3-block w3-blue w3-section w3-padding" type="submit">Se connecter</button>
 								<input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Se souvenir de moi
 							</div>
-						</form>
+						</form> -->
+						<!-- Fin ancien form -->
+
+
 						<div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
 							<button onclick="document.getElementById('connectionModal').style.display='none'" type="button" class="w3-button w3-red">Annuler</button>
 							<span class="w3-right w3-padding w3-hide-small"><a href="#">mot de passe</a> oublié?</span>
@@ -89,11 +105,27 @@
 							<h2 style="text-align: center; font-family:Segoe UI,Arial,sans-serif; font-weight:400; color:rgb(223, 204, 204)">Inscription</h2>
 						</header>
 						<br>
-						<!-- FORM -->
-						<!-- <div class="w3-center"><br>
-							<img src="img_avatar4.png" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
-						</div> -->
-						<form class="w3-container" action="" method="post">
+
+						<!-- NOUVEAU FORM -->
+						<form class="w3-container" action="inscription.php" method="post">
+							<div class="w3-section">
+								<label><b>E-mail</b></label>
+									<input class="w3-input w3-border fixBoxSizing w3-margin-bottom" type="" placeholder="Entrez votre adresse mail" name="mail" required>
+								<label><b>Identifiant</b></label>
+									<input class="w3-input w3-border w3-margin-bottom fixBoxSizing" type="text" placeholder="Entrer un identifiant" name="username" required>
+								<label><b>Mot de passe</b></label>
+									<input class="w3-input w3-border fixBoxSizing w3-margin-bottom" type="password" placeholder="Entrer un mot de passe" name="password" required>
+								<label><b>Confirmer le mot de passe</b></label>
+									<input class="w3-input w3-border fixBoxSizing" type="password" placeholder="Réécrivez le mot de passe" name="password2" required>
+								<button class="w3-button w3-block w3-blue w3-section w3-padding" type="submit" value="S'inscrire">S'inscrire</button>
+								<input class="w3-check w3-margin-top" type="checkbox"> J'accepte les termes et conditions d'utilisation
+							</div>
+						</form>
+						<!-- FIN NOUVEAU FORM -->
+
+
+						<!-- Ancien form -->
+						<!-- <form class="w3-container" action="" method="post">
 							<div class="w3-section">
 								<label><b>E-mail</b></label>
 									<input class="w3-input w3-border fixBoxSizing w3-margin-bottom" type="password" placeholder="Entrez votre adresse mail" name="mail" required>
@@ -106,7 +138,11 @@
 								<button class="w3-button w3-block w3-blue w3-section w3-padding" type="submit">S'inscrire</button>
 								<input class="w3-check w3-margin-top" type="checkbox"> J'accepte les termes et conditions d'utilisation
 							</div>
-						</form>
+						</form> -->
+						<!-- Fin ancien form -->
+
+
+
 						<div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
 							<button onclick="document.getElementById('inscriptionModal').style.display='none'" type="button" class="w3-button w3-red">Annuler</button>
 						</div>
