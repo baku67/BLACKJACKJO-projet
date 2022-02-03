@@ -347,7 +347,10 @@ h2 {
 }
 
 .deconnection {
-	transform: translate(0px, -50px);
+	transform: translate(0px, -35px);
+}
+.Crédits {
+	transform: translate(0px, -35px);
 }
 
 body {

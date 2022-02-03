@@ -32,9 +32,9 @@
 				<br/>
 				<div>
 					<ul id="onglets">
-						<li class="onglet"><a href="Hi-Lo.html" id="Hi-Lo">Hi-Lo</a></li>
+						<li class="onglet"><a href="guide.html" id="Hi-Lo">Guide</a></li>
 						<li class="onglet" ><a href="index.php" id="jouer">JOUER !</a></li>
-						<li class="onglet"><a href="compteur.html" id="Compteur">Compteur</a></li>
+						<li class="onglet"><a href="scores.html" id="Compteur">Scores</a></li>
 					</ul>
 				</div>
 			</header>
@@ -63,7 +63,7 @@
 							&#9733;
 						</strong>
 					</p>
-					<p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:1.1em;">
+					<p class="Crédits" style="position: absolute; left: 2em; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 1.1em; color: rgb(241 205 92 / 95%)">
 						Crédits:
 						<strong>
 							<?php echo $_SESSION['credit']; ?>
