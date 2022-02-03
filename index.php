@@ -56,25 +56,28 @@
 
 				<!-- Affichage User courant et bouton déconnexion (à la place des boutons connection/inscription)  -->
 				<?php  if (isset($_SESSION['username'])) : ?>
-					<p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:1.1em; color:rgba(223, 204, 204, 0.8);">
-						<strong style="font-size: 1.4em;">
+					<p style="position:relative; bottom: 0.6em; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:1.2em; color: rgb(241 205 92 / 95%)">
+						<strong style="font-size:1.4em; color:rgba(223, 204, 204, 0.8);">
 							&#9733;
 							<?php echo $_SESSION['username']; ?>
 							&#9733;
 						</strong>
-					</p>
-					<p class="Crédits" style="position: absolute; left: 2em; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 1.1em; color: rgb(241 205 92 / 95%)">
-						Crédits:
+
+						&nbsp;&nbsp;|&nbsp;&nbsp;
+
+						Crédits: 00,-
 						<strong>
 							<?php echo $_SESSION['credit']; ?>
 							
 						</strong>
 					</p>
+
 					<p>
 						<a href="index.php?logout='1'" class="deconnection" style="position: absolute; right: 2em; color: #ffa4a4; font-size: 1.2em; text-decoration: none; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
 							Déconnexion
 						</a>
             		</p>
+
 				<?php endif ?>
 				<!-- Fin -->
 

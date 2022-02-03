@@ -6,6 +6,7 @@ Quand connection: (anim en 2-3 temps) Le user pop rapide puis une barre de souli
  -> Genre ('TUM'  'TUM'  tssssss...)
 
 Déplacer Crédit à gauche (symétrie déconnexion)
+;iddle user pqs centr2 qvec le JOUER!
 
 
 Effet bleu clair au debut du gradient à garder + faire pareil avec le rouge à droite

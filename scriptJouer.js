@@ -362,7 +362,7 @@
           cardValue: 1,
           cardValue2: 10
         }
-        // TRICHE (attention virgule)
+        // TRICHE TEST AS (attention virgule)
         // C1e = {
         //   cardImageURL: "cartes\\AC.png",
         //   cardValue: 1,
@@ -446,7 +446,7 @@
       // JQUERY JAX : load Partie
       $("#newGame").click(function(){
 
-          $("#container1").load("jouerPartie.html");
+          $("#container1").load("jouerPartie.php");
 
           setTimeout( function lancerPartie() {
 
@@ -459,11 +459,11 @@
 
               nbrCardsJoueur = 0;
 
-              credits = 100;
-              document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + credits + "&nbsp;€";
-              document.getElementById("credits").style.position = "relative";
-              document.getElementById("credits").style.top = "7px";
-              document.getElementById("traitLumineux").style.visibility = "visible";
+              // credits = 100;
+              // document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + credits + "&nbsp;€";
+              // document.getElementById("credits").style.position = "relative";
+              // document.getElementById("credits").style.top = "7px";
+              // document.getElementById("traitLumineux").style.visibility = "visible";
  
               document.getElementById("compteurDeck").innerHTML = compteurDeck;
               document.getElementById("compteurDeckMax").innerHTML = compteurDeckMax;
@@ -622,7 +622,7 @@
 
           $.ajax({
             async: false,
-            url: "jouerPartie.html",
+            url: "jouerPartie.php",
             dataType: "html",
             success: function(response) {
               $("#container1").html(response);
