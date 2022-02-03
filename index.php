@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 
 
+<?php
+	include('connexion.php')
+?>
+
 <html lang="fr">
 	<head>
 		<title id="title">BlackJack Jo'</title>
@@ -41,9 +45,40 @@
 
 			<!-- BOUTONS Connection/Inscription -->
 			<div id="connectionContainer">
-				<button id="connectionButton" class="connectionButtons" onclick="document.getElementById('connectionModal').style.display='block'">Se connecter</button>
-				<p class="connectionButtons">&nbsp;|&nbsp;</p>
-				<button id="inscriptionButton" class="connectionButtons" onclick="document.getElementById('inscriptionModal').style.display='block'">S'inscrire</button>
+
+				<!-- Bouton Connexion/Inscription (désactivé si connecté) -->
+				<?php  if (!isset($_SESSION['username'])) : ?>
+					<button id="connectionButton" class="connectionButtons" onclick="document.getElementById('connectionModal').style.display='block'">Se connecter</button>
+					<p class="connectionButtons">&nbsp;|&nbsp;</p>
+					<button id="inscriptionButton" class="connectionButtons" onclick="document.getElementById('inscriptionModal').style.display='block'">S'inscrire</button>
+				<?php endif ?>
+				<!-- Fin -->
+
+				<!-- Affichage User courant et bouton déconnexion (à la place des boutons connection/inscription)  -->
+				<?php  if (isset($_SESSION['username'])) : ?>
+					<p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:1.1em;">
+						Identifiant:
+						<strong>
+							<?php echo $_SESSION['username']; ?>
+							
+						</strong>
+					</p>
+					<p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:1.1em;">
+						Crédits:
+						<strong>
+							<?php echo $_SESSION['credit']; ?>
+							
+						</strong>
+					</p>
+					<p>
+						<a href="index.php?logout='1'" style="color: #ffa4a4; text-decoration: none; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+							Déconnexion
+						</a>
+            		</p>
+				<?php endif ?>
+				<!-- Fin -->
+
+
 			</div>
 			<!-- FIN BOUTONS -->
 
@@ -72,7 +107,7 @@
 						</form>
 						<!-- FIN NOUVEAU FORM -->
 
-						
+
 						<!-- Ancien form -->
 						<!-- <form class="w3-container" action="" method="post">
 							<div class="w3-section">

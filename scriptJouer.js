@@ -428,20 +428,19 @@
       //#endregion
 
 
-      var modal2 = document.getElementById("inscriptionModal");
-      var modalCo = document.getElementById("connectionModal");
-      
+      var modalInscription = document.getElementById("inscriptionModal");
+      var modalConnection = document.getElementById("connectionModal");
       
       window.onclick = function(event) {
-        if (event.target == modal2) {
-          modal2.style.display = "none";
+        if (event.target == modalConnection) {
+          modalConnection.style.display = "none";
         }
-      };
-      window.onclick = function(event) {
-        if (event.target == modalCo) {
-          modalCo.style.display = "none";
+        if (event.target == modalInscription) {
+          modalInscription.style.display = "none";
         }
-      };
+      }
+     
+      
       
 
       // JQUERY JAX : load Partie
