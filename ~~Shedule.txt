@@ -2,6 +2,11 @@ DONE: Fix window.onclick pour enlever les modals
 connection et inscription
 maj routes nav 
 
+Quand connection: (anim en 2-3 temps) Le user pop rapide puis une barre de soulignage pop rapide aussi (en grossissant d'un coup) et enfin les étoiles fadeIn lentement 
+ -> Genre ('TUM'  'TUM'  tssssss...)
+
+Déplacer Crédit à gauche (symétrie déconnexion)
+
 
 Effet bleu clair au debut du gradient à garder + faire pareil avec le rouge à droite
 

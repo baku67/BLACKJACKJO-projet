@@ -56,11 +56,11 @@
 
 				<!-- Affichage User courant et bouton déconnexion (à la place des boutons connection/inscription)  -->
 				<?php  if (isset($_SESSION['username'])) : ?>
-					<p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:1.1em;">
-						Identifiant:
-						<strong>
+					<p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:1.1em; color:rgba(223, 204, 204, 0.8);">
+						<strong style="font-size: 1.4em;">
+							&#9733;
 							<?php echo $_SESSION['username']; ?>
-							
+							&#9733;
 						</strong>
 					</p>
 					<p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:1.1em;">
@@ -71,7 +71,7 @@
 						</strong>
 					</p>
 					<p>
-						<a href="index.php?logout='1'" style="color: #ffa4a4; text-decoration: none; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+						<a href="index.php?logout='1'" class="deconnection" style="position: absolute; right: 2em; color: #ffa4a4; font-size: 1.2em; text-decoration: none; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
 							Déconnexion
 						</a>
             		</p>

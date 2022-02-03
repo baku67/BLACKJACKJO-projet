@@ -346,6 +346,9 @@ h2 {
 	background-color: brown;
 }
 
+.deconnection {
+	transform: translate(0px, -50px);
+}
 
 body {
 	background-image: url("Images/backgroundMix2.png");

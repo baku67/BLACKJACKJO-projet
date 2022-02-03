@@ -22,12 +22,11 @@ if(isset($_POST['connexion'])){
             //le htmlentities() passera les guillemets en entités HTML, ce qui empêchera en partie, les injections SQL
             $Pseudo = htmlentities($_POST['username'], ENT_QUOTES, "UTF-8"); 
             $MotDePasse = htmlentities($_POST['password'], ENT_QUOTES, "UTF-8");
+            //$md5MotDePasse = md5($MotDePasse);
 
             //on se connecte à la base de données:
-                //$mysqli = mysqli_connect('', '', '', '');
-                //include("config.php");
                 $mysqli = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE); 
-                
+
             //on vérifie que la connexion s'effectue correctement:
             if(!$mysqli){
                 echo "Erreur de connexion à la base de données.";
@@ -35,7 +34,7 @@ if(isset($_POST['connexion'])){
             } else {
                 //on fait maintenant la requête dans la base de données pour rechercher si ces données existent et correspondent:
                 //si vous avez enregistré le mot de passe en md5() il vous faudra faire la vérification en mettant mdp = '".md5($MotDePasse)."' au lieu de mdp = '".$MotDePasse."'
-                $Requete = mysqli_query($mysqli,"SELECT * FROM users WHERE username = '".$Pseudo."' AND password = '".($MotDePasse)."'");
+                $Requete = mysqli_query($mysqli,"SELECT * FROM users WHERE username = '".$Pseudo."' AND password = '".$MotDePasse."'");
                 
                 // ~~~~~~ (credits HS) ~~~~~~ $Credits = mysqli_query($mysqli,"SELECT credits FROM users WHERE username = '".$Pseudo."' AND password = '".$MotDePasse."'");
                 
