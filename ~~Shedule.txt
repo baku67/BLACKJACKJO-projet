@@ -1,6 +1,5 @@
-DONE: Fix window.onclick pour enlever les modals
-connection et inscription
-maj routes nav 
+css 678: 	/* Adapter la Couleur du jeton sur la valeur hover (PC) */
+
 
 Quand connection: (anim en 2-3 temps) Le user pop rapide puis les crédits (en grossissant d'un coup) et enfin le soulignage fadeIn lentement 
  -> Genre ('TUM'  'TUM'  tssssss...)
@@ -13,9 +12,30 @@ Effet bleu clair au debut du gradient à garder + faire pareil avec le rouge à 
 
 BDD: table hsitorique (idJoueur, scoreTotalJoueur/ScoreTotaleCroupier, nbrCartesDeck? ...)
 
+
+
+
+
+
+
 Meme apres gradientSlide (index), ne pas laisser le font statique (petits moves très lents/ease gauche/droite jsp)
 
 petit fadeIn/out footerDistribution
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ADAPTER LE GRADIENT-ANIM EN FONCTION DES ACTIONS/EVENEMENTS !!!!
   /* styleJouer.css:94
