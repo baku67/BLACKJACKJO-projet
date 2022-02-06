@@ -1,5 +1,6 @@
 css 678: 	/* Adapter la Couleur du jeton sur la valeur hover (PC) */
 
+Apres bust joueur, si relancer -> distributionCardCroupier continue
 
 Quand connection: (anim en 2-3 temps) Le user pop rapide puis les crédits (en grossissant d'un coup) et enfin le soulignage fadeIn lentement 
  -> Genre ('TUM'  'TUM'  tssssss...)

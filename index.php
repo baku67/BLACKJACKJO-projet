@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
-
 <?php
 	include('connexion.php')
 ?>
+
 
 <html lang="fr">
 	<head>
@@ -17,21 +17,21 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<meta name="description" content="BlackJackJo est un site d'entraînement au jeu de carte Blakjack. Le site est codé dans le cadre d'un projet étudiant de développement web et est régulièrement mis à jour.">
 	
-		<script>
-					<?php
-						if (isset($_SESSION['username'])) :
-					?>
-							isConnected = true;
-							console.log('estConnecté: ' + isConnected);
-					<?php
-						else :
-					?>
-							isConnected = false;
-							console.log('estConnecté:' + isConnected);
-					<?php
-						endif;
-					?>
-		</script>
+		<!--  Changer la valeur du boolean isConnected -->
+
+		<?php 
+			if (!isset($_SESSION['username'])) :
+		?>
+				<script> isConnected = false; console.log('estPasConnecté');</script>
+
+		<?php
+			else :
+		?>
+				<script> isConnected = true; console.log('estConnecté');</script>
+		<?php
+			endif;
+		?>
+
 
 	</head>
 
@@ -65,6 +65,10 @@
 
 				<!-- Bouton Connexion/Inscription (désactivé si connecté) -->
 				<?php  if (!isset($_SESSION['username'])) : ?>
+
+					<!-- Test script -->
+					<!-- Fin test -->
+
 					<button id="connectionButton" class="connectionButtons" onclick="document.getElementById('connectionModal').style.display='block'">Se connecter</button>
 					<p class="connectionButtons">&nbsp;|&nbsp;</p>
 					<button id="inscriptionButton" class="connectionButtons" onclick="document.getElementById('inscriptionModal').style.display='block'">S'inscrire</button>
@@ -73,8 +77,13 @@
 
 				<!-- Affichage User courant et bouton déconnexion (à la place des boutons connection/inscription)  -->
 				<?php  if (isset($_SESSION['username'])) : ?>
+
+					<!-- Test script -->
+					<!-- Fin test -->
+
+
 					<p style="position:relative; bottom: 0.6em; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:1.2em; color:rgba(223, 204, 204, 0.8);">
-						<strong style="font-size:1.4em;">
+						<strong style="font-size:1.4em; text-shadow:0 0 3px rgb(43 39 39);">
 
 							<span>&#9733;</span>
 							<?php 
@@ -86,7 +95,7 @@
 
 						&nbsp;&nbsp;<span style="font-size:1.7em;">|</span>&nbsp;&nbsp;
 
-						Crédits: <span style="color: rgb(241 205 92 / 95%) !important"> 00, -</span>
+						Crédits:&nbsp; <span style="color: rgb(241 205 92 / 95%) !important; text-shadow: 0 0 4px rgb(255 213 2)" id="creditsConnected"> 00, -</span>
 						<strong style="color: rgb(241 205 92 / 95%) !important">
 							<?php echo $_SESSION['credit']; ?>
 							
@@ -94,9 +103,9 @@
 					</p>
 
 					<p>
-						<a href="index.php?logout='1'" class="deconnection" style="position: absolute; right: 1em; font-size: 1.3em; text-decoration: none;">
+						<a href="index.php?logout='1'" id="deconnexionLink" style="">
 							<!-- Déconnexion -->
-							<img src="Images/deconnexion.png" alt="deconnexion" id="deconnexionImg" style="height:30px; width:30px; opacity:0.7;">
+							<img src="Images/deconnexion.png" alt="deconnexion" id="deconnexionImg" style="">
 						</a>
             		</p>
 
@@ -219,13 +228,13 @@
 				<?php  
 					if (!isset($_SESSION['username'])) : 
 				?>
-							<div id="newGameInvite" class="module-border-wrap">
+							<div id="newGame" class="module-border-wrap">
 								<a href="#" style="text-decoration: none;">Partie rapide !</a>
 							</div>
 				<?php 
 					elseif (isset($_SESSION['username'])) : 
 				?>
-							<div id="newGameConnected" class="module-border-wrap">
+							<div id="newGame" class="module-border-wrap">
 								<a href="#" style="text-decoration: none;">Nouvelle Partie !</a>
 							</div>
 				<?php 

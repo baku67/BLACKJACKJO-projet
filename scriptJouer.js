@@ -1,8 +1,6 @@
     
     window.onload = function(){
 
-      var isConnected = false;
-
       var audioCardSound = new Audio("Audio/addCardSound.mp3");
       audioCardSound.volume = 0.4;
 
@@ -443,12 +441,12 @@
       }
      
       
-      
 
       // JQUERY JAX : load Partie
-      $("#newGameInvite").click(function(){
+      $("#newGame").click(function(){
 
           $("#container1").load("jouerPartie.php");
+          
 
           setTimeout( function lancerPartie() {
 
@@ -461,13 +459,24 @@
 
               nbrCardsJoueur = 0;
 
-              // Désactivation Crédits mode invité (sinon doublon avec Crédits Php USER)
+              // Activation Crédits Brut mode invité
               // ******************************** *
-              credits = 100;
-              document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + credits + "&nbsp;€";
-              document.getElementById("credits").style.position = "relative";
-              document.getElementById("credits").style.top = "7px";
-              document.getElementById("traitLumineux").style.visibility = "visible";
+              if (isConnected == false) {
+                console.log('isConnected: ' + isConnected);
+                credits = 100;
+                document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + credits + "&nbsp;€";
+                document.getElementById("credits").style.position = "relative";
+                document.getElementById("credits").style.top = "7px";
+                document.getElementById("traitLumineux").style.visibility = "visible";
+              }
+              else {
+                console.log('isConnected: ' + isConnected);
+                document.getElementById("creditsConnected").innerText = "00,00 -";
+                document.getElementById("traitLumineux").style.visibility = "visible";
+                document.getElementById("traitLumineux").style.position = 'relative';
+                document.getElementById("traitLumineux").style.bottom = '20px';
+              }
+              
               // ******************************** *
  
               document.getElementById("compteurDeck").innerHTML = compteurDeck;
@@ -2414,7 +2423,7 @@
 
       //document.getElementById("scoreVar").innerHTML = score;
 
-      document.getElementById('scoreAdd').addEventListener("click", plus1);
+      // document.getElementById('scoreAdd').addEventListener("click", plus1);
       function plus1() {
         scorePop();
         score += 1;
@@ -2425,7 +2434,7 @@
           document.getElementById("scoreContainer").classList.toggle('scorePop');
         }, 500);
       }
-      document.getElementById('scoreRem').addEventListener("click", minus1);
+      // document.getElementById('scoreRem').addEventListener("click", minus1);
       function minus1() {
         scorePop();
         score -= 1;

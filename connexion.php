@@ -46,10 +46,13 @@ if(isset($_POST['connexion'])){
                     //on ouvre la session avec $_SESSION:
                     //la session peut être appelée différemment et son contenu aussi peut être autre chose que le pseudo
                     $_SESSION['username'] = $Pseudo;
-                    
-                    // ~~~~~~ (credits HS) ~~~~~~  $_SESSION['credits'] = $Credits;
-                    
-                    // echo "Vous êtes à présent connecté !";
+
+                    //Passage boolean isConnected à true 
+                    // echo '<script type='text/javascript'>
+                    //         isconnected=true;
+                    //       </script>'
+                                        
+                    // Redirection post connexion
                     header('Location: http://www.basilek.ovh/index.php');
                     exit;
                 }
