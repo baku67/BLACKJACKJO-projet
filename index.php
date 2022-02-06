@@ -16,6 +16,23 @@
 		<link rel="icon" href="Images/favicon.png">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<meta name="description" content="BlackJackJo est un site d'entraînement au jeu de carte Blakjack. Le site est codé dans le cadre d'un projet étudiant de développement web et est régulièrement mis à jour.">
+	
+		<script>
+					<?php
+						if (isset($_SESSION['username'])) :
+					?>
+							isConnected = true;
+							console.log('estConnecté: ' + isConnected);
+					<?php
+						else :
+					?>
+							isConnected = false;
+							console.log('estConnecté:' + isConnected);
+					<?php
+						endif;
+					?>
+		</script>
+
 	</head>
 
 	

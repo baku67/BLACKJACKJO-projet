@@ -1,6 +1,8 @@
     
     window.onload = function(){
 
+      var isConnected = false;
+
       var audioCardSound = new Audio("Audio/addCardSound.mp3");
       audioCardSound.volume = 0.4;
 
@@ -2410,7 +2412,7 @@
         }
       }
 
-      document.getElementById("scoreVar").innerHTML = score;
+      //document.getElementById("scoreVar").innerHTML = score;
 
       document.getElementById('scoreAdd').addEventListener("click", plus1);
       function plus1() {
