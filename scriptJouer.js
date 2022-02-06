@@ -471,7 +471,7 @@
               }
               else {
                 console.log('isConnected: ' + isConnected);
-                document.getElementById("creditsConnected").innerText = "00,00 -";
+                document.getElementById("creditsConnected").innerText = "00,-";
                 document.getElementById("traitLumineux").style.visibility = "visible";
                 document.getElementById("traitLumineux").style.position = 'relative';
                 document.getElementById("traitLumineux").style.bottom = '20px';

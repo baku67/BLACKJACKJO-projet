@@ -10,7 +10,9 @@
 		<title id="title">BlackJack Jo'</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="styleJouer.css" id="stylesheet_1">
+		<link rel="stylesheet" href="style.css" id="stylesheet_1">
+		<link rel="stylesheet" href="MediaQueries1.css" id="stylesheet_3">
+		<link rel="stylesheet" href="MediaQueries2.css" id="stylesheet_4">
 		<link rel="stylesheet" href="styleW3.css" id="stylesheet_2">
 		<script type="text/javascript" src="scriptJouer.js"></script>
 		<link rel="icon" href="Images/favicon.png">
@@ -95,11 +97,8 @@
 
 						&nbsp;&nbsp;<span style="font-size:1.7em;">|</span>&nbsp;&nbsp;
 
-						Crédits:&nbsp; <span style="color: rgb(241 205 92 / 95%) !important; text-shadow: 0 0 4px rgb(255 213 2)" id="creditsConnected"> 00, -</span>
-						<strong style="color: rgb(241 205 92 / 95%) !important">
-							<?php echo $_SESSION['credit']; ?>
-							
-						</strong>
+						Crédits:&nbsp; <span style="color: rgb(241 205 92 / 95%) !important; text-shadow: 0 0 4px rgb(255 213 2)" id="creditsConnected"> 00,-</span>
+		
 					</p>
 
 					<p>
