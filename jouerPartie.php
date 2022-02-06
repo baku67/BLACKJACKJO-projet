@@ -53,7 +53,7 @@
         </ul>
 
         <!-- Trait lumineux -->
-        <div id="traitLumineux" class="divider light" style="visibility: hidden;" />
+        <div id="traitLumineux" class="divider light" style="visibility: hidden;"></div>
         <!-- Fin -->
 
         <br>

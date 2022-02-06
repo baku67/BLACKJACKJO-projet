@@ -79,7 +79,7 @@
 					<p>
 						<a href="index.php?logout='1'" class="deconnection" style="position: absolute; right: 1em; font-size: 1.3em; text-decoration: none;">
 							<!-- Déconnexion -->
-							<img src="deconnexion.png" alt="deconnexion" id="deconnexionImg" style="height:30px; width:30px;">
+							<img src="Images/deconnexion.png" alt="deconnexion" id="deconnexionImg" style="height:30px; width:30px; opacity:0.7;">
 						</a>
             		</p>
 
