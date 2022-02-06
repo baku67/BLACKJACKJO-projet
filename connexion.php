@@ -34,7 +34,7 @@ if(isset($_POST['connexion'])){
             } else {
                 //on fait maintenant la requête dans la base de données pour rechercher si ces données existent et correspondent:
                 //si vous avez enregistré le mot de passe en md5() il vous faudra faire la vérification en mettant mdp = '".md5($MotDePasse)."' au lieu de mdp = '".$MotDePasse."'
-                $Requete = mysqli_query($mysqli,"SELECT * FROM users WHERE username = '".$Pseudo."' AND password = '".$MotDePasse."'");
+                $Requete = mysqli_query($mysqli,"SELECT * FROM users WHERE username = '".$Pseudo."' AND password = '".md5($MotDePasse)."'");
                 
                 // ~~~~~~ (credits HS) ~~~~~~ $Credits = mysqli_query($mysqli,"SELECT credits FROM users WHERE username = '".$Pseudo."' AND password = '".$MotDePasse."'");
                 
