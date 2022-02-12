@@ -1,3 +1,21 @@
+Trouver le gradient (pour les modals bigWin/)
+ajout effet trait blanc des le rouge du gradient
+
+
+// BACKUP GRADIENTS
+
+Gradient Footer/header-OnPartie (style.css) '.footerOnPartie':
+linear-gradient(-45deg, #68032a, #820e27, #0d585e, #1a2039) !important
+	background-image: linear-gradient(-45deg, #68032a, #820e27, #0d585e, #1a2039) !important;
+
+
+Gradient Index.php (style.css) #header :
+linear-gradient(56deg, rgba(130,14,80,1) 0%, rgba(135,0,20,1) 25%, rgba(172,3,26,1) 26%, rgba(121,0,6,1) 31%, rgba(196,53,53,1) 31%, rgba(130,14,39,1) 35%, rgba(33,55,144,1) 55%, rgba(23,31,73,1) 68%, rgba(156,14,14,1) 78%, rgba(209,16,16,1) 83%, rgba(85,9,9,1) 83%, rgba(194,31,31,1) 89%, rgba(64,43,43,1) 92%, rgba(120,6,6,1) 95%, rgba(18,5,5,1) 97%, rgba(122,0,0,1) 100%)
+
+
+
+
+
 css 678: 	/* Adapter la Couleur du jeton sur la valeur hover (PC) */
 
 Apres bust joueur, si relancer -> distributionCardCroupier continue

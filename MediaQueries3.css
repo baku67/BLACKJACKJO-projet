@@ -1,0 +1,9 @@
+@media screen and (max-device-width:375px) and (min-device-width: 0px){
+
+    #tokenChipsContainer {
+
+		position: relative;
+		margin-left: 10px;
+	}
+
+}
