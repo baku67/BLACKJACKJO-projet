@@ -1,3 +1,8 @@
+Les chiffres au dessu sur moibile
+Modals Results
+ColorTool -> gradients
+
+
 Trouver le gradient (pour les modals bigWin/)
 ajout effet trait blanc des le rouge du gradient
 

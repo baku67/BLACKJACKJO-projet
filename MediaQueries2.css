@@ -12,13 +12,19 @@
 		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 		color: rgb(223, 204, 204);
 		letter-spacing: 1px;
-		font-size: 0em;
+		font-size: 1em;
 	
 		position: relative;
-		bottom: 58px;
+		bottom: 0px;
 	
 		/* Adapter la Couleur du jeton sur la valeur hover (PC) */
 		color: #e5b815;
+	}
+
+	.container .valeurs {
+		left: 45% !important;
+		top: -16px !important;
+		opacity: 1;
 	}
 
 
