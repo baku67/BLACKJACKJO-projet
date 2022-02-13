@@ -963,6 +963,7 @@
 
                   if (scoreTotalJoueur > 8 && scoreTotalJoueur < 12) {
                     document.getElementById("double").style.opacity = 1;
+                    document.getElementById("choixLabel").style.opacity = 1;
                   }
 
                 document.getElementById("hit").addEventListener("click", function() {
