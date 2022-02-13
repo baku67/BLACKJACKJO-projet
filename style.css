@@ -931,21 +931,35 @@ figure:active {
     letter-spacing: 2px;
     position: relative;
     top: 22%;
-	left: 12%;
-    /* text-shadow: 0px 0px 5px rgb(184 0 0); */
-    text-shadow:0 -1px 4px #ff00f2de, 0 -2px 10px rgb(126 111 127), 0 -10px 20px #e4ff02, 0 -18px 40px #f2ff00, 2px 2px 4px rgb(206 89 55 / 0%);
+	left: 0%;
+
+
+    /* text-shadow: 0px 0px 5px rgb(0 0 0); */
+    /* text-shadow:0 -1px 4px #ff00f2de, 0 -2px 10px rgb(126 111 127), 0 -10px 20px #e4ff02, 0 -18px 40px #f2ff00, 2px 2px 4px rgb(206 89 55 / 0%); */
+
+	-webkit-animation: glowWin 1s ease-in-out infinite alternate;
+	-moz-animation: glowWin 1s ease-in-out infinite alternate;
+	animation: glowWin 1s ease-in-out infinite alternate;
 }
+@keyframes glowWin {
+	from {
+	  text-shadow: 0 0 10px rgb(134, 72, 0), 0 0 20px rgb(134, 72, 0), 0 0 30px #e69600, 0 0 40px #e69600, 0 0 50px #e69600, 0 0 60px #e69600, 0 0 70px #e69600;
+	}
+	to {
+	  text-shadow: 0 0 20px rgb(134, 72, 0), 0 0 30px #ffb84d, 0 0 40px #ffb84d, 0 0 50px #ffb84d, 0 0 60px #ffb84d, 0 0 70px #ffb84d, 0 0 80px #ffb84d;
+	}
+  }
 .resultatTextBJ {
 	color: rgb(252 202 0);
     font-size: 3.5em;
     letter-spacing: 2px;
     position: relative;
     top: 22%;
-	left: 12%;
+	left: 0%;
 	text-shadow: -3px 3px 0px #e600dd, -6px 6px 0px #01cccc, -9px 9px 0px #bd0000;
 }
-.resultatTextBust {
-	color:rgba(110, 37, 37, 0.9);
+.resultatTextLose {
+	color:rgb(242 209 209 / 90%);
 	 	/* Text Shadow blanc? */
 	font-size: 3.5em;
 	letter-spacing: 2px;
@@ -955,7 +969,43 @@ figure:active {
 	top: 22%;
 	/* text-shadow: 0px 0px 5px rgba(184, 0, 0, 1); */
 	text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00, 2px 2px 4px rgba(206,89,55,0);
+
+	-webkit-animation: glowLose 1.5s ease-in-out infinite alternate;
+	-moz-animation: glowLose 1.5s ease-in-out infinite alternate;
+	animation: glowLose 1.5s ease-in-out infinite alternate;
 }
+@keyframes glowLose {
+	from {
+	  text-shadow: 0 0 10px rgb(255, 171, 171), 0 0 20px rgb(255, 171, 171), 0 0 30px #e60000, 0 0 40px #e60000, 0 0 50px #e60000, 0 0 60px #e60000, 0 0 70px #e60000;
+	}
+	to {
+	  text-shadow: 0 0 20px rgb(255, 129, 129), 0 0 30px #fd3b3b, 0 0 40px #fd3b3b, 0 0 50px #fd3b3b, 0 0 60px #fd3b3b, 0 0 70px #fd3b3b, 0 0 80px #fd3b3b;
+	}
+  }
+.resultatTextBust {
+	color:rgb(136 2 2 / 90%);
+	 	/* Text Shadow blanc? */
+	font-size: 3.5em;
+	letter-spacing: 2px;
+
+	/* Dégueulasse mais OK */
+	position: relative;
+	top: 22%;
+	/* text-shadow: 0px 0px 5px rgba(184, 0, 0, 1); */
+	text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00, 2px 2px 4px rgba(206,89,55,0);
+
+	-webkit-animation: glowBust 1s ease-in-out infinite alternate;
+	-moz-animation: glowBust 1s ease-in-out infinite alternate;
+	animation: glowBust 1s ease-in-out infinite alternate;
+}
+@keyframes glowBust {
+	from {
+	  text-shadow: 0 0 10px rgb(255, 171, 171), 0 0 20px rgb(255, 171, 171), 0 0 30px #e60000, 0 0 40px #e60000, 0 0 50px #e60000, 0 0 60px #e60000, 0 0 70px #e60000;
+	}
+	to {
+	  text-shadow: 0 0 20px rgb(255, 129, 129), 0 0 30px #fd3b3b, 0 0 40px #fd3b3b, 0 0 50px #fd3b3b, 0 0 60px #fd3b3b, 0 0 70px #fd3b3b, 0 0 80px #fd3b3b;
+	}
+  }
 .resultatTextPush {
 	color: rgb(68 64 122 / 90%);
 
@@ -971,11 +1021,11 @@ figure:active {
 
 
 
-.styleSeparateur {
+.styleSeparateurBust {
 	/* background: linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%); */
 	box-sizing: border-box;
 	overflow: hidden;
-	background-image: url("Images/boomPng.png"), linear-gradient(67deg, rgba(130,14,39,0.9) 47%, rgba(26,32,57,0.9) 53%);
+	background-image: url("Images/boomPng.png"), linear-gradient(-45deg, rgba(34,0,13,1) 0%, rgba(115,9,50,1) 21%, rgba(145,13,41,1) 42%, rgba(14,100,107,1) 71%, rgba(36,46,87,1) 100%);
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position-x: 50%;
@@ -986,10 +1036,26 @@ figure:active {
 	border-left: 9px solid rgba(130,14,39, 0.80); */
 	border-radius: 10px;
 }
+.styleSeparateurLose {
+	/* background: linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%); */
+	box-sizing: border-box;
+	overflow: hidden;
+	background-image: url(""), linear-gradient(-45deg, rgba(115,9,50,1) 21%, rgba(145,13,41,1) 42%, rgba(14,100,107,1) 71%, rgba(36,46,87,1) 100%);
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position-x: 50%;
+	background-position-y: 50%;
+	border-top: 1px solid rgba(130,14,39, 0.30);
+	border-bottom: 1px solid rgba(130,14,39, 0.30);
+	/* border-right: 8px solid rgba(130,14,39, 0.80);
+	border-left: 9px solid rgba(130,14,39, 0.80); */
+	border-radius: 10px;
+}
+
 .styleSeparateurWin {
 	box-sizing: border-box;
 	overflow: hidden;
-	background-image: url("Images/cash.png"), linear-gradient(27deg, rgba(0,255,94,0.9) 0%, rgba(0,212,255,0.9) 100%);
+	background-image: url(""), linear-gradient(-45deg, rgba(36,85,87,1) 48%, rgba(115,9,50,1) 48%, rgba(36,85,87,1) 50%, rgba(115,9,50,1) 51%);
 	/* background-image: url("Images/cash2.png"), linear-gradient(166deg, rgba(0,0,0,1) 0%, rgba(0,187,255,1) 99%); */
 	background-repeat: no-repeat;
 	background-attachment: scroll;
@@ -1004,7 +1070,7 @@ figure:active {
 .styleSeparateurBlackJack {
 	box-sizing: border-box;
 	overflow: hidden;
-	background-image: url("Images/cashBJ.png"), linear-gradient(144deg, rgba(131,58,180,0.9) 0%, rgba(253,29,29,0.9) 50%, rgba(252,176,69,0.9) 100%);
+	background-image: url("Images/cashBJ.png"), linear-gradient(127deg, rgba(181,161,17,1) 1%, rgba(252,107,0,1) 32%, rgba(186,25,167,1) 76%, rgba(85,8,168,1) 99%);
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position-x: 40%;
@@ -1017,24 +1083,10 @@ figure:active {
 
 	border-radius: 10px;
 }
-/* Gradient(triple) BlackJack ?  */
-/* background: rgb(131,58,180);
-background: -moz-linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
-background: -webkit-linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
-background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#833ab4",endColorstr="#fcb045",GradientType=1); */
-
-/* Gradient(double) BlackJack ? */
-/* background: rgb(63,94,251);
-background: -moz-radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
-background: -webkit-radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
-background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3f5efb",endColorstr="#fc466b",GradientType=1); */
-
 .styleSeparateurPush {
 	box-sizing: border-box;
 	overflow: hidden;
-	background-image: url("Images/pushArrows.png"), linear-gradient(144deg, rgb(253 128 128) 0%, rgb(247 254 91) 100%);
+	background-image: url(""), linear-gradient(144deg, rgb(253 128 128) 0%, rgb(247 254 91) 100%);
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position-x: 40%;
@@ -1491,7 +1543,7 @@ p {
 
 
 #double {
-	opacity: 0.4;
+	opacity: 0.3;
 	color: rgba(252, 227, 3, 0.8);
 	font-size: 3.5em;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -1502,6 +1554,8 @@ p {
 	border-radius: 8px;
 	transition-property: font-size;
 	transition-duration: 0.3s;
+
+	background-image: radial-gradient(circle, rgba(14,100,107,0.8) 0%, rgba(36,46,87,0) 100%);
 }
 #double:hover {
 	opacity: 1;
@@ -1532,6 +1586,8 @@ p {
 	transition: border-style 0.5s ease-in-out;
 	transition: border-color 0.5s ease-in-out;
 	transition: font-size 0.3s;
+
+	background-image: radial-gradient(circle, rgba(14,100,107,0.8) 0%, rgba(36,46,87,0) 100%);
 }
 #hit:hover {
 	color: rgba(44, 252, 3, 1);
@@ -1559,6 +1615,8 @@ p {
 	border-radius: 8px;
 	transition-property: font-size;
 	transition-duration: 0.3s;
+
+	background-image: radial-gradient(circle, rgba(14,100,107,0.8) 0%, rgba(36,46,87,0) 100%);
 }
 #stand:hover {
 	/**** ZZZ hover (transparent) *****/

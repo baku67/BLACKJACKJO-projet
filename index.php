@@ -249,7 +249,7 @@
 				
 				<div style="display:inline-flex;">
 					<h3 id="footerTitle" style="letter-spacing: 1px;">  Comment jouer ...  </h3>
-					<button type="button" id="collapsible"><img src="Images/arrowDownWhitePng.png" id="arrowPng" style="height:1em;"></button>
+					<button type="button" id="collapsible"><img src="Images/arrowDownWhitePng.png" id="arrowPng" style="height:0.8em;"></button>
 				</div>
 
 

@@ -38,6 +38,7 @@
 
 
 	#tokenChipsContainer {
+		top: 10px;
 		position: relative;
 		right: 5%;
 	}
@@ -172,13 +173,19 @@
 		margin-block-end: 0.3em;
 	}
 
-	.styleSeparateur {
+	.styleSeparateurBust {
 		/* Resizer l'image (add autre URL) */
-		background-image: url("Images/boomPngMobile.png"), linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%);
+		background-image: url("Images/boomPngMobile.png"), linear-gradient(-45deg, rgba(34,0,13,1) 0%, rgba(115,9,50,1) 21%, rgba(145,13,41,1) 42%, rgba(14,100,107,1) 71%, rgba(36,46,87,1) 100%);
 	}
-	.styleSeparateurWin {
-		background-image: url("Images/cash.png"), linear-gradient(27deg, rgba(0,255,94,1) 0%, rgba(0,212,255,1) 100%);
+	/* .styleSeparateurWin {
+		background-image: url(""), linear-gradient(-45deg, rgba(36,85,87,1) 48%, rgba(115,9,50,1) 48%, rgba(36,85,87,1) 50%, rgba(115,9,50,1) 51%);
 	}
+	.styleSeparateurLose {
+
+		background-image: url(""), linear-gradient(-45deg, rgba(117,5,48,1) 0%, rgba(146,14,42,1) 33%, rgba(13,88,94,1) 67%, rgba(26,32,57,1) 100%);
+
+	} */
+
 
 
 

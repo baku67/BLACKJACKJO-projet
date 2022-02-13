@@ -108,6 +108,8 @@
       document.getElementById("arrowPng").setAttribute("src", "Images/arrowUpWhitePng.png");
       document.getElementById("arrowPng").style.position = "relative";
       document.getElementById("arrowPng").style.bottom = "13px";
+      document.getElementById("arrowPng").style.opacity = "0.6";
+
       
 
       coll.addEventListener("click", function() {
@@ -125,6 +127,7 @@
         document.getElementById("arrowPng").setAttribute("src", "Images/arrowUpWhitePng.png");
         document.getElementById("arrowPng").style.position = "relative";
         document.getElementById("arrowPng").style.bottom = "13px";
+        document.getElementById("arrowPng").style.opacity = "0.6";
 
         isCollapsed = true;
         checkMiseWarning();
@@ -133,6 +136,8 @@
         content.style.display = "block";
         document.getElementById("arrowPng").setAttribute("src", "Images/arrowDownWhitePng.png");
         document.getElementById("arrowPng").style.bottom = "0px";
+        document.getElementById("arrowPng").style.opacity = "0.6";
+
 
         isCollapsed = false;
         checkMiseWarning();
@@ -545,10 +550,14 @@
                 if (backgroundToggle == true) {
                   backgroundToggle = false;
                   document.getElementById("backgroundToggleImage").src = "Images/backgroundToggleImageActif.png";
+                  
+                  // TEST
+                  // document.getElementById("footer").style.backgroundImage = 'linear-gradient(-45deg, rgba(104,3,42,1) 0%, rgba(146,14,91,1) 33%, rgba(13,88,94,1) 67%, rgba(26,32,57,1) 100%) !important;';
                 }
                 else {
                   backgroundToggle = true;
                   document.getElementById("backgroundToggleImage").src = 'Images/backgroundToggleImage.png';
+
                 }
               })
               // Fin bouton toggle Design
@@ -1281,8 +1290,8 @@
                     // Séparateur
                     setTimeout(function() {
                       //Apparition
-                      document.getElementById("resultatText").classList.add("resultatTextBust");
-                      document.getElementById("separateur").classList.add("styleSeparateur");
+                      document.getElementById("resultatText").classList.add("resultatTextLose");
+                      document.getElementById("separateur").classList.add("styleSeparateurLose");
 
                       if (SoundMuteBool == false) {
                         audioExplosionBust.play();
@@ -2085,7 +2094,7 @@
                   setTimeout(function() {
                     //Apparition
                     document.getElementById("resultatText").classList.add("resultatTextBust");
-                    document.getElementById("separateur").classList.add("styleSeparateur");
+                    document.getElementById("separateur").classList.add("styleSeparateurBust");
   
 
                     if (SoundMuteBool == false) {
