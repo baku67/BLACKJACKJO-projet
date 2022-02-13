@@ -963,7 +963,7 @@
 
                   if (scoreTotalJoueur > 8 && scoreTotalJoueur < 12) {
                     document.getElementById("double").style.opacity = 1;
-                    document.getElementById("choixLabel").style.opacity = 1;
+                    document.getElementById("choixDoubler").style.opacity = 1;
                   }
 
                 document.getElementById("hit").addEventListener("click", function() {
@@ -1077,7 +1077,7 @@
               ChoixActif = true;
 
               $("#chipsContainer").html(response);
-              document.getElementById("footerTitle").innerHTML = " - Choix... -";
+              document.getElementById("footerTitle").innerHTML = " - Choix -";
 
 
               document.getElementById("hit").addEventListener("click", function() {

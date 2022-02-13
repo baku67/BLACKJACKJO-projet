@@ -53,16 +53,25 @@
 
 	#hit {
 		/* margin-top: 18px; */
+		position: relative;
+		top: 20px;
+
 		width: 100px;
 		height: 100px;
 	}
 	#double {
-		margin-top: 18px;
+		/* margin-top: 18px; */
+		position: relative;
+		top: 20px;
+
 		width: 100px;
 		height: 100px;
 	}
 	#stand {
-		margin-top: 18px;
+		/* margin-top: 18px; */
+		position: relative;
+		top: 20px;
+		
 		width: 100px;
 		height: 100px;
 	}

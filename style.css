@@ -950,7 +950,7 @@ figure:active {
 	}
   }
 .resultatTextBJ {
-	color: rgb(252 202 0);
+	color: rgb(255 229 126);
     font-size: 3.5em;
     letter-spacing: 2px;
     position: relative;
@@ -1211,7 +1211,7 @@ h3 {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;
-	font-size: 1em;
+	font-size: 1.3em;
 }
 
 p {
