@@ -9,6 +9,6 @@
       echo $row['credits']; 
       }
 
-    mysqli_close($con);
+    mysqli_close($db);
 
 ?>

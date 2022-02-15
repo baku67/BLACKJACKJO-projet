@@ -29,6 +29,7 @@
       var nbrCardsJoueur;
 
       var credits = 0;
+      // var creditsConnected = 0;
       var gain = 0;
 
       var newValue;
@@ -444,6 +445,18 @@
           modalInscription.style.display = "none";
         }
       }
+
+
+
+      // Activation Crédits Brut mode invité (hors partie)
+      // ******************************** *
+      if (isConnected == true) {
+        console.log('isConnected: ' + isConnected);
+        //
+        document.getElementById("creditsConnected").innerHTML = creditsConnected;
+      }
+      // ******************************** *
+
      
       
 
@@ -464,7 +477,7 @@
 
               nbrCardsJoueur = 0;
 
-              // Activation Crédits Brut mode invité
+              // Activation Crédits Brut mode invité (en partie)
               // ******************************** *
               if (isConnected == false) {
                 console.log('isConnected: ' + isConnected);
@@ -476,7 +489,8 @@
               }
               else {
                 console.log('isConnected: ' + isConnected);
-                
+                //
+                document.getElementById("creditsConnected").innerHTML = creditsConnected;
                 document.getElementById("traitLumineux").style.visibility = "visible";
                 document.getElementById("traitLumineux").style.position = 'relative';
                 document.getElementById("traitLumineux").style.bottom = '20px';

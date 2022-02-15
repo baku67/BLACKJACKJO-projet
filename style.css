@@ -1493,10 +1493,18 @@ p {
 
 	margin-left: 50px;
 }
+#footerResultatLine {
+	display: inline-flex;
+	height: 3em;
+}
 #arrowResultat {
 	font-size: 4em;
 	position: relative;
 	bottom: 17px;
+
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal;
 }
 
 .addColorToResultatRed {

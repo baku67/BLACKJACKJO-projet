@@ -16,6 +16,7 @@
 		<!-- <link rel="stylesheet" href="MediaQueries3.css" id="stylesheet_5"> -->
 		<link rel="stylesheet" href="styleW3.css" id="stylesheet_2">
 		<script type="text/javascript" src="scriptJouer.js"></script>
+		
 		<link rel="icon" href="Images/favicon.png">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<meta name="description" content="BlackJackJo est un site d'entraînement au jeu de carte Blakjack. Le site est codé dans le cadre d'un projet étudiant de développement web et est régulièrement mis à jour.">
@@ -31,6 +32,12 @@
 			else :
 		?>
 				<script> isConnected = true; console.log('estConnecté');</script>
+				<!-- Méthode Ajax XMLHttpRequest (js/php) -->
+				<script type="text/javascript" src="scriptJouerPhp.js"></script>
+				<script type="text/javascript">
+					var creditsConnected = <?php include('getCredits.php'); ?>; // Don't forget the extra semicolon!
+					console.log('var js creditConnected: ' + creditsConnected);
+				</script>
 		<?php
 			endif;
 		?>
@@ -98,10 +105,9 @@
 
 						&nbsp;&nbsp;<span style="font-size:1.7em;">|</span>&nbsp;&nbsp;
 
-						Crédits:&nbsp; <span style="color: rgb(241 205 92 / 95%) !important; text-shadow: 0 0 4px rgb(255 213 2);" id="creditsConnected">
-						 <?php
-							include('getCredits.php');
-						 ?>
+						Crédits:&nbsp; 
+						
+						<span style="color: rgb(241 205 92 / 95%) !important; text-shadow: 0 0 4px rgb(255 213 2);" id="creditsConnected">
 						</span>
 		
 					</p>
