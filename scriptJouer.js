@@ -946,7 +946,7 @@
           document.querySelector("#boutonMiser").style.opacity = "0.4";
           
           miseLocked = miseEnCours;
-          document.getElementById("miseLocked").style.opacity = "1";
+          document.getElementById("miseLocked").style.opacity = "0.9";
           document.getElementById("miseLocked").innerHTML = "Mise: " + "&nbsp;" + "<span style='color:rgb(241 205 92 / 95%); text-shadow: 0 0 4px rgb(255 213 2);'>" + miseLocked + "</span>";
       
 
