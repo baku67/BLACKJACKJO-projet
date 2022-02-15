@@ -827,6 +827,7 @@ p {
 	height: 169.05px;
 	position: fixed;
 	bottom: 250px;
+	display: flex;
 
 	left: 50%;
 	transform: translateX(-50%);

@@ -23,6 +23,9 @@
       audioMiser.volume = 0.3;
 
       
+      var removed = false;
+
+
       // réinitialisé dans le NewGame (tableau des valeurs derniers jetons ajoutés en vue de retour arriere)
       let logTokenValues = [];
 
@@ -474,6 +477,8 @@
 
               document.getElementById("footer").classList.add('footerOnPartie');
 
+              removed = false;
+
               logTokenValues = [];
 
               nbrCardsJoueur = 0;
@@ -651,7 +656,7 @@
           }, 0);
           // Fin refresh
 
-
+          
 
           $.ajax({
             async: false,
@@ -662,9 +667,15 @@
 
               asJoueur = false;
               nbrCardsJoueur = 0;
+              removed = false;
 
               //** Récupérer le nouveau Crédits 
-              document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + credits + "&nbsp;€";
+              if (isConnected == false) {
+                document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + credits + "&nbsp;€";
+              }
+              else if (isConnected == true) {
+                document.getElementById("creditsConnected").innerHTML = credits;
+              }
               // FIN
 
               //**** Garder l'état Toggle lors Relance
@@ -1231,13 +1242,16 @@
 
             
           function addCardCroupierRecursive() {
-            setTimeout(function() {
-              document.getElementById("backCardCroupier").classList.add("fadeOut2");
-            }, 1550 * setTimeOutMultiplier)
+            if ( removed == false) {
+              removed = true;
+              setTimeout(function() {
+                document.getElementById("backCardCroupier").classList.add("fadeOut2");
+              }, 1550 * setTimeOutMultiplier)
+              setTimeout(function() {
+                document.getElementById("backCardCroupier").remove();
+              }, 2150 * setTimeOutMultiplier)
+            }
 
-            setTimeout(function() {
-              document.getElementById("backCardCroupier").remove();
-            }, 2150 * setTimeOutMultiplier)
             
             if (scoreTotalCroupier < 17) {
               setTimeout(function() {
@@ -1687,10 +1701,10 @@
               miseEnCours += 1;
               document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
               miseBoutonStyle();
-              misePop();
-              setTimeout(function scoreDepop() {
-                document.getElementById("miseEnCours").classList.toggle('scorePop');
-              }, 500);
+              // misePop();
+              // setTimeout(function scoreDepop() {
+              //   document.getElementById("miseEnCours").classList.toggle('scorePop');
+              // }, 500);
               cssMiseEnCours();
             }
           })
@@ -1726,10 +1740,10 @@
               miseEnCours += 5;
               document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
               miseBoutonStyle();
-              misePop();
-              setTimeout(function scoreDepop() {
-                document.getElementById("miseEnCours").classList.toggle('scorePop');
-              }, 500);
+              // misePop();
+              // setTimeout(function scoreDepop() {
+              //   document.getElementById("miseEnCours").classList.toggle('scorePop');
+              // }, 500);
               cssMiseEnCours();
             }
 
@@ -1750,10 +1764,10 @@
               miseEnCours += 10;
               document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
               miseBoutonStyle();
-              misePop();
-              setTimeout(function scoreDepop() {
-                document.getElementById("miseEnCours").classList.toggle('scorePop');
-              }, 500);
+              // misePop();
+              // setTimeout(function scoreDepop() {
+              //   document.getElementById("miseEnCours").classList.toggle('scorePop');
+              // }, 500);
               cssMiseEnCours();
             }
 
@@ -1774,10 +1788,10 @@
             miseEnCours += 25;
             document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
             miseBoutonStyle();
-            misePop();
-            setTimeout(function scoreDepop() {
-              document.getElementById("miseEnCours").classList.toggle('scorePop');
-            }, 500);
+            // misePop();
+            // setTimeout(function scoreDepop() {
+            //   document.getElementById("miseEnCours").classList.toggle('scorePop');
+            // }, 500);
             cssMiseEnCours();
           }
 
@@ -1799,10 +1813,10 @@
             miseEnCours += 100;
             document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
             miseBoutonStyle();
-            misePop();
-            setTimeout(function scoreDepop() {
-              document.getElementById("miseEnCours").classList.toggle('scorePop');
-            }, 500);
+            // misePop();
+            // setTimeout(function scoreDepop() {
+            //   document.getElementById("miseEnCours").classList.toggle('scorePop');
+            // }, 500);
             cssMiseEnCours();
           }
         })
@@ -1917,12 +1931,12 @@
         // Mise a jour du score High-Low
         if (pickedCardObject.cardValue < 7) {
           setTimeout(function() {
-            plus1();
+            // plus1();
           }, 500);
         }
         else if (pickedCardObject.cardValue > 9) {
           setTimeout(function() {
-            minus1();
+            // minus1();
           }, 500);
         }
         else {
@@ -2028,12 +2042,12 @@
         // Mise a jour du score High-Low
         if (pickedCardObject.cardValue < 7) {
           setTimeout(function() {
-            plus1();
+            // plus1();
           }, 500);
         }
         else if (pickedCardObject.cardValue > 9) {
           setTimeout(function() {
-            minus1();
+            // minus1();
           }, 500);
         }
         else {
@@ -2048,10 +2062,19 @@
         document.getElementById("compteurDeck").innerHTML = compteurDeck;
       }
 
-      function ajoutGain(gain) {
-        document.getElementById("credits").innerHTML = "Crédits: &nbsp;" + (credits + gain) + "€";
-        credits = credits + gain;
+      if (isConnected == true) {
+        function ajoutGain(gain) {
+          document.getElementById("creditsConnected").innerHTML = (credits + gain);
+          credits = credits + gain;
+        }
       }
+      else if (isConnected == false) {
+        function ajoutGain(gain) {
+          document.getElementById("credits").innerHTML = "Crédits: &nbsp;" + (credits + gain) + "€";
+          credits = credits + gain;
+        }
+      }
+      
 
       
 
@@ -2412,12 +2435,12 @@
 
 
       //***  CHIFFRES POP
-      function misePop() {
-        document.getElementById("miseEnCours").classList.toggle('scorePop');
-      }
-      function scorePop() {
-        document.getElementById("scoreContainer").classList.toggle('scorePop');
-      }
+      // function misePop() {
+      //   document.getElementById("miseEnCours").classList.toggle('scorePop');
+      // }
+      // function scorePop() {
+      //   document.getElementById("scoreContainer").classList.toggle('scorePop');
+      // }
       //*** 
       
 
@@ -2455,26 +2478,27 @@
       //document.getElementById("scoreVar").innerHTML = score;
 
       // document.getElementById('scoreAdd').addEventListener("click", plus1);
-      function plus1() {
-        scorePop();
-        score += 1;
-        document.getElementById("scoreVar").innerHTML = score;
-        scoreState();
-        // Suppression de la classe togglé "scorePop" apres x temps
-        setTimeout(function scoreDepop() {
-          document.getElementById("scoreContainer").classList.toggle('scorePop');
-        }, 500);
-      }
-      // document.getElementById('scoreRem').addEventListener("click", minus1);
-      function minus1() {
-        scorePop();
-        score -= 1;
-        document.getElementById("scoreVar").innerHTML = score;
-        scoreState();
-        // Suppression de la classe togglé "scorePop" apres x temps
-        setTimeout(function scoreDepop() {
-          document.getElementById("scoreContainer").classList.toggle('scorePop');
-        }, 500);
-      }
+      // function plus1() {
+      //   scorePop();
+      //   score += 1;
+      //   document.getElementById("scoreVar").innerHTML = score;
+      //   scoreState();
+      //   // Suppression de la classe togglé "scorePop" apres x temps
+      //   setTimeout(function scoreDepop() {
+      //     document.getElementById("scoreContainer").classList.toggle('scorePop');
+      //   }, 500);
+      // }
+      // // document.getElementById('scoreRem').addEventListener("click", minus1);
+      // function minus1() {
+      //   // !!! A réactiver pour faire marcher la fonction
+      //   // scorePop();
+      //   score -= 1;
+      //   document.getElementById("scoreVar").innerHTML = score;
+      //   scoreState();
+      //   // Suppression de la classe togglé "scorePop" apres x temps
+      //   setTimeout(function scoreDepop() {
+      //     document.getElementById("scoreContainer").classList.toggle('scorePop');
+      //   }, 500);
+      // }
       //*** FIN
     }
