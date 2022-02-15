@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php
-	include('connexion.php')
+	include('connexion.php');
 ?>
 
 
@@ -98,7 +98,12 @@
 
 						&nbsp;&nbsp;<span style="font-size:1.7em;">|</span>&nbsp;&nbsp;
 
-						Crédits:&nbsp; <span style="color: rgb(241 205 92 / 95%) !important; text-shadow: 0 0 4px rgb(255 213 2)" id="creditsConnected"> 00,-</span>
+						Crédits:&nbsp; <span style="color: rgb(241 205 92 / 95%) !important; text-shadow: 0 0 4px rgb(255 213 2);" id="creditsConnected">
+						 <!-- 00,- -->
+						 <?php
+							include('getCredits.php');
+						 ?>
+						</span>
 		
 					</p>
 
