@@ -454,6 +454,7 @@
         console.log('isConnected: ' + isConnected);
         //
         document.getElementById("creditsConnected").innerHTML = creditsConnected;
+        credits = creditsConnected;
       }
       // ******************************** *
 

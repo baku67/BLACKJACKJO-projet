@@ -1,3 +1,6 @@
+Pour ordi: augmenter tailles (surtout cartes)
+
+
 OSKOUR: Faire un mod-diff entre style.css et les MediaQueires -> garder seulement les modifs qui concerne le footer(token et container inclus) et virer toutes les autres fonctions css GLOBALES (sinon faut tous les modifier au moindre changmeet)
 
 Garder le boom.png pour BUST joueur mais mettre un Loose (sans img comme Win)
