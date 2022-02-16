@@ -26,7 +26,10 @@
 		<?php 
 			if (!isset($_SESSION['username'])) :
 		?>
-				<script> isConnected = false; console.log('estPasConnecté');</script>
+				<script> 
+					isConnected = false; 
+					console.log('estPasConnecté');
+				</script>
 
 		<?php
 			else :
@@ -108,6 +111,9 @@
 						Crédits:&nbsp; 
 						
 						<span style="color: rgb(241 205 92 / 95%) !important; text-shadow: 0 0 4px rgb(255 213 2);" id="creditsConnected">
+						</span>
+						<span>
+							<img src="Images/sou.png" alt="pièce" id="imageSouPetit">
 						</span>
 		
 					</p>

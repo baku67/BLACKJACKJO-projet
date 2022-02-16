@@ -60,7 +60,16 @@ button, input[type="submit"], input[type="reset"] {
     border-radius: 124px;
     padding: 5px 8px 7px 8px;
 }
-
+#imageSouPetit {
+	height: 40px; 
+	position: relative; 
+	top: 10px;
+}
+.imagesSou {
+	height: 55px; 
+	position: absolute; 
+	bottom: -10px;
+}
 
 
 #header {
