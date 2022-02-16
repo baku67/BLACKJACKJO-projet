@@ -20,7 +20,9 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@1,300;1,700&display=swap" rel="stylesheet">		<meta name="viewport" content="width=device-width,initial-scale=1.0">
-		<meta name="description" content="BlackJackJo est un site d'entraînement au jeu de carte Blakjack. Le site est codé dans le cadre d'un projet étudiant de développement web et est régulièrement mis à jour.">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@1,300&family=Holtwood+One+SC&family=Kavoon&display=swap" rel="stylesheet">
 	
 		<!--  Changer la valeur du boolean isConnected -->
 
@@ -58,7 +60,7 @@
 
 
 			<header id="header">
-				<h1 id="title">BlackJack Jo'</h1>
+				<h1 id="title" style="font-family: 'Kavoon', cursive">BlackJack Jo'</h1>
 				<div id="traitTitleSlide"></div>
 				<br/>
 				<div>
