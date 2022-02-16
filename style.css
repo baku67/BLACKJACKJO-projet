@@ -51,7 +51,7 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 #creditsConnected {
-	font-size: 1.3em;
+	font-size: 1.4em;
 }
 #miseLocked {
 	color: rgba(241, 233, 206, 0.95);
@@ -64,11 +64,13 @@ button, input[type="submit"], input[type="reset"] {
 	height: 40px; 
 	position: relative; 
 	top: 10px;
+	opacity: 0.9;
 }
 .imagesSou {
 	height: 55px; 
 	position: absolute; 
 	bottom: -10px;
+	opacity: 0.9;
 }
 
 

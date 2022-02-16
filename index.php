@@ -8,6 +8,7 @@
 <html lang="fr">
 	<head>
 		<title id="title">BlackJack Jo'</title>
+		<link rel="icon" href="Images/favicon3.png">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="style.css" id="stylesheet_1">
@@ -16,9 +17,9 @@
 		<!-- <link rel="stylesheet" href="MediaQueries3.css" id="stylesheet_5"> -->
 		<link rel="stylesheet" href="styleW3.css" id="stylesheet_2">
 		<script type="text/javascript" src="scriptJouer.js"></script>
-		
-		<link rel="icon" href="Images/favicon.png">
-		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@1,300;1,700&display=swap" rel="stylesheet">		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<meta name="description" content="BlackJackJo est un site d'entraînement au jeu de carte Blakjack. Le site est codé dans le cadre d'un projet étudiant de développement web et est régulièrement mis à jour.">
 	
 		<!--  Changer la valeur du boolean isConnected -->
@@ -96,27 +97,31 @@
 
 
 					<p style="position:relative; bottom: 0.6em; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:1.2em; color:rgba(223, 204, 204, 0.8);">
+						
 						<strong style="font-size:1.4em; text-shadow:0 0 3px rgb(43 39 39);">
-
 							<span>&#9733;</span>
 							<?php 
 								echo $_SESSION['username']; 
 							?>
 							<span>&#9733;</span>
-
 						</strong>
 
-						&nbsp;&nbsp;<span style="font-size:1.7em;">|</span>&nbsp;&nbsp;
-
-						Crédits:&nbsp; 
+						&nbsp;&nbsp;
 						
-						<span style="color: rgb(241 205 92 / 95%) !important; text-shadow: 0 0 4px rgb(255 213 2);" id="creditsConnected">
-						</span>
+						<span style="font-size:1.7em;">|</span>
+						
+						&nbsp;&nbsp;
+						<span style="font-family: 'Bellota',cursive; font-size:1.3em; color:rgba(203,202,192,1); font-weight:700;" >Crédits:</span>
+						&nbsp; 
+						
+						<span style="color: rgb(241 205 92 / 95%) !important; text-shadow: 0 0 4px rgb(255 213 2);" id="creditsConnected"></span>
+						
 						<span>
 							<img src="Images/sou.png" alt="pièce" id="imageSouPetit">
 						</span>
 		
 					</p>
+
 
 					<p>
 						<a href="index.php?logout='1'" id="deconnexionLink" style="">
