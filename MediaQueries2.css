@@ -115,7 +115,7 @@
 	#backgroundButtonContainer {
 		opacity: 0.8;
 		left: -70px;
-		top: 383px;
+		top: 184px;
 		/* border: 1px solid rgba(58, 54, 54, 0.9); */
 		border: 1px solid rgba(223, 204, 204, 0.4);
 		height: 60px;
@@ -132,7 +132,7 @@
 	#soundButtonContainer {
 		opacity: 0.8;
 		left: -70px;
-		top: 314px;
+		top: 109px;
 		/* border: 1px solid rgba(58, 54, 54, 0.9); */
 		border: 1px solid rgba(223, 204, 204, 0.4);
 		height: 60px;
@@ -140,7 +140,7 @@
 	#speedButtonContainer {
 		opacity: 0.8;
 		left: -70px;
-		top: 245px;
+		top: 35px;
 		/* border: 1px solid rgba(58, 54, 54, 0.9); */
 		border: 1px solid rgba(223, 204, 204, 0.4);
 		height: 60px;

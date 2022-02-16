@@ -488,7 +488,7 @@
               if (isConnected == false) {
                 console.log('isConnected: ' + isConnected);
                 credits = 100;
-                document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + credits + "&nbsp;€";
+                document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + credits + "&nbsp;<img src='Images/souBleu.png' class=\"imageSouDeco\">";
                 document.getElementById("credits").style.position = "relative";
                 document.getElementById("credits").style.top = "7px";
                 document.getElementById("traitLumineux").style.visibility = "visible";
@@ -671,7 +671,7 @@
 
               //** Récupérer le nouveau Crédits 
               if (isConnected == false) {
-                document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + credits + "&nbsp;€";
+                document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + credits + "&nbsp;<img src='Images/souBleu.png' class=\"imageSouDeco\">";
               }
               else if (isConnected == true) {
                 document.getElementById("creditsConnected").innerHTML = credits;
@@ -951,7 +951,7 @@
       
 
           if (isConnected == false) {
-            document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + (credits - miseLocked) + "&nbsp;€";
+            document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + (credits - miseLocked) + "&nbsp;<img src='Images/souBleu.png' class=\"imageSouDeco\">";
           }
           else if (isConnected == true) {
             document.getElementById("creditsConnected").innerHTML = (credits - miseLocked);
@@ -2071,7 +2071,7 @@
       }
       else if (isConnected == false) {
         function ajoutGain(gain) {
-          document.getElementById("credits").innerHTML = "Crédits: &nbsp;" + (credits + gain) + "€";
+          document.getElementById("credits").innerHTML = "Crédits: &nbsp;" + (credits + gain) + "<img src='Images/souBleu.png' class=\"imageSouDeco\">";
           credits = credits + gain;
         }
       }

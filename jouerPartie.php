@@ -17,9 +17,6 @@
     
     
         <ul id="list">
-            <!-- <li>
-                <button type="button" id="soundToggleButton">&#128264;</button>
-            </li> -->
             <li>
                 <div id="soundButtonContainer">
                     <button type="button" id="soundToggleButton">
@@ -27,9 +24,6 @@
                     </button>
                 </div>               
             </li>
-            <!-- <li>
-                <button type="button" id="speedToggleButton">&#x23e9;</button>
-            </li> -->
             <li>
                 <div id="speedButtonContainer">
                     <button type="button" id="speedToggleButton">
@@ -48,8 +42,6 @@
             <?php  if (!isset($_SESSION['username'])) : ?>
                 <li style=" font-size: 1.5em; margin-top: 25px;" id="credits"></li>
 			<?php endif ?>
-            <!-- <li style=" font-size: 1.5em; margin-top: 25px;" id="credits"></li> -->
-
         </ul>
 
         <!-- Trait lumineux -->
