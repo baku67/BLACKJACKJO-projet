@@ -919,6 +919,7 @@ figure:active {
 }
 
 #miseEnCours {
+	font-family: 'Holtwood One SC', serif;
 	position: relative;
 	bottom: 5px;
 }

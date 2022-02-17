@@ -879,6 +879,13 @@
           document.getElementById("boutonMiser").style.cursor = "pointer";
           button.disabled = false;
         }
+        // *** ATTENTION NOUVELLE REGLE: pas de mise > 25% du credits (hors double) ***
+        // else if (miseEnCours > (credits * 25 / 100)) {
+        //   document.getElementById("boutonMiser").classList.remove("miserActif");
+        //   document.getElementById("boutonMiser").style.opacity = "0.4";
+        //   document.getElementById("boutonMiser").style.cursor = "default";
+        //   button.disabled = true;
+        // }
         else {
           document.getElementById("boutonMiser").classList.remove("miserActif");
           document.getElementById("boutonMiser").style.opacity = "0.4";
