@@ -2067,6 +2067,19 @@
         function ajoutGain(gain) {
           document.getElementById("creditsConnected").innerHTML = (credits + gain);
           credits = credits + gain;
+
+          var gainToPhp = {};
+          gainToPhp.value = gain;
+
+          console.log("(JS) Gain: " + gain);
+          $.ajax({
+            url: "setCredits.php",
+            method: "post",
+            data: gainToPhp,
+            success: function(res) {
+              console.log("(JS) success POST: " + res);
+            }
+          })
         }
       }
       else if (isConnected == false) {

@@ -1,3 +1,6 @@
+scintillement léger (em mode flash rapide) du titre onLoad (a la fin du SLide)
+
+
 Optimiser l'espacement du retourArriere 
 miseLocked yellow
 

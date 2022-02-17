@@ -2,6 +2,7 @@
 
 <?php
 	include('connexion.php');
+	// include('setCredits');
 ?>
 
 
@@ -9,7 +10,9 @@
 	<head>
 		<title id="title">BlackJack Jo'</title>
 		<link rel="icon" href="Images/favicon3.png">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> -->
+		<!-- <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script> -->
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="style.css" id="stylesheet_1">
 		<link rel="stylesheet" href="MediaQueries1.css" id="stylesheet_3">

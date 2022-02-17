@@ -11,9 +11,6 @@ if ($_SERVER['HTTP_HOST'] == "basilek.ovh")
 } 
 
 
-/*
-Page: connexion.php
-*/
 //à mettre tout en haut du fichier .php, cette fonction propre à PHP servira à maintenir la $_SESSION
 session_start();
 //si le bouton "Connexion" est cliqué
@@ -44,9 +41,7 @@ if(isset($_POST['connexion'])){
                 //on fait maintenant la requête dans la base de données pour rechercher si ces données existent et correspondent:
                 //si vous avez enregistré le mot de passe en md5() il vous faudra faire la vérification en mettant mdp = '".md5($MotDePasse)."' au lieu de mdp = '".$MotDePasse."'
                 $Requete = mysqli_query($mysqli,"SELECT * FROM users WHERE username = '".$Pseudo."' AND password = '".md5($MotDePasse)."'");
-                
-                // ~~~~~~ (credits HS) ~~~~~~ $Credits = mysqli_query($mysqli,"SELECT credits FROM users WHERE username = '".$Pseudo."' AND password = '".$MotDePasse."'");
-                
+                                
                 //si il y a un résultat, mysqli_num_rows() nous donnera alors 1
                 //si mysqli_num_rows() retourne 0 c'est qu'il a trouvé aucun résultat
                 if(mysqli_num_rows($Requete) == 0) {
@@ -55,11 +50,6 @@ if(isset($_POST['connexion'])){
                     //on ouvre la session avec $_SESSION:
                     //la session peut être appelée différemment et son contenu aussi peut être autre chose que le pseudo
                     $_SESSION['username'] = $Pseudo;
-
-                    //Passage boolean isConnected à true 
-                    // echo '<script type='text/javascript'>
-                    //         isconnected=true;
-                    //       </script>'
                                         
                     // Redirection post connexion
                     header('Location: http://www.basilek.ovh/index.php');
