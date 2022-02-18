@@ -25,9 +25,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@1,300;1,700&display=swap" rel="stylesheet">		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@1,300&family=Holtwood+One+SC&family=Kavoon&display=swap" rel="stylesheet">
-	
-		<!--  Changer la valeur du boolean isConnected -->
+		<link href="https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@1,300&family=Courgette&family=Holtwood+One+SC&family=Kavoon&display=swap" rel="stylesheet">		<!--  Changer la valeur du boolean isConnected -->
 
 		<?php 
 			if (!isset($_SESSION['username'])) :
@@ -122,7 +120,7 @@
 						<span style="color: rgb(241 205 92 / 95%) !important; text-shadow: 0 0 4px rgb(255 213 2);" id="creditsConnected"></span>
 						
 						<span>
-							<img src="Images/sou.png" alt="pièce" id="imageSouPetit">
+							<img src="Images/souBarre.png" alt="pièce" id="imageSouPetit">
 						</span>
 		
 					</p>
@@ -274,7 +272,7 @@
 			<div id="footer">
 				
 				<div style="display:inline-flex;">
-					<h3 id="footerTitle" style="letter-spacing: 1px;">  Comment jouer ...  </h3>
+					<h3 id="footerTitle">  Comment jouer ...  </h3>
 					<button type="button" id="collapsible"><img src="Images/arrowDownWhitePng.png" id="arrowPng" style="height:0.8em;"></button>
 				</div>
 

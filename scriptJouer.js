@@ -597,7 +597,7 @@
                     // fonction de rafraichissement de la mise en cours (Si il y a matière)
                     if (miseEnCours != 0) {
                       miseEnCours = miseEnCours - logTokenValues[0];
-                      document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/sou.png' class=\"imagesSou\">";
+                      document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBarre.png' class=\"imagesSou\">";
 
                       // fonction qui remove le premier var du tableau
                     logTokenValues.shift();
@@ -620,7 +620,7 @@
 
                   footerShow();
                   phaseMise();
-                  document.getElementById("footerTitle").innerHTML = " - MISE -";
+                  document.getElementById("footerTitle").innerHTML = " - Mise -";
                   window.onload = tokensClick();
                   checkMiseWarning();
                 }
@@ -785,7 +785,7 @@
                     // fonction de rafraichissement de la mise en cours (Si il y a matière)
                     if (miseEnCours != 0) {
                       miseEnCours = miseEnCours - logTokenValues[0];
-                      document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/sou.png' class=\"imagesSou\">";
+                      document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBarre.png' class=\"imagesSou\">";
 
                       // fonction qui remove le premier var du tableau
                     logTokenValues.shift();
@@ -799,7 +799,7 @@
 
                   footerShow();
                   phaseMise();
-                  document.getElementById("footerTitle").innerHTML = " - MISE -";
+                  document.getElementById("footerTitle").innerHTML = " - Mise -";
                   window.onload = tokensClick();
                   checkMiseWarning();
                 }
@@ -1707,7 +1707,7 @@
               // audioToken.play();
     
               miseEnCours += 1;
-              document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/sou.png' class=\"imagesSou\">";
+              document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBarre.png' class=\"imagesSou\">";
               miseBoutonStyle();
               // misePop();
               // setTimeout(function scoreDepop() {
@@ -1746,7 +1746,7 @@
               // audioToken.play();
 
               miseEnCours += 5;
-              document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/sou.png' class=\"imagesSou\">";
+              document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBarre.png' class=\"imagesSou\">";
               miseBoutonStyle();
               // misePop();
               // setTimeout(function scoreDepop() {
@@ -1770,7 +1770,7 @@
               // audioToken.play();
 
               miseEnCours += 10;
-              document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/sou.png' class=\"imagesSou\">";
+              document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBarre.png' class=\"imagesSou\">";
               miseBoutonStyle();
               // misePop();
               // setTimeout(function scoreDepop() {
@@ -1794,7 +1794,7 @@
             // audioToken.play();
 
             miseEnCours += 25;
-            document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/sou.png' class=\"imagesSou\">";
+            document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBarre.png' class=\"imagesSou\">";
             miseBoutonStyle();
             // misePop();
             // setTimeout(function scoreDepop() {
@@ -1819,7 +1819,7 @@
             // audioToken.play();
 
             miseEnCours += 100;
-            document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/sou.png' class=\"imagesSou\">";
+            document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBarre.png' class=\"imagesSou\">";
             miseBoutonStyle();
             // misePop();
             // setTimeout(function scoreDepop() {

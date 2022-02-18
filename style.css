@@ -61,15 +61,15 @@ button, input[type="submit"], input[type="reset"] {
     padding: 5px 8px 7px 8px;
 }
 #imageSouPetit {
-	height: 40px; 
+	height: 45px; 
 	position: relative; 
-	top: 10px;
+	top: 14px;
 	opacity: 0.9;
 }
 .imagesSou {
 	height: 55px; 
 	position: absolute; 
-	bottom: -10px;
+	bottom: -2px;
 	opacity: 0.9;
 }
 .imageSouDeco {
@@ -922,6 +922,8 @@ figure:active {
 	font-family: 'Holtwood One SC', serif;
 	position: relative;
 	bottom: 5px;
+
+	margin-right: -4px;
 }
 /* Class ajoutée si miseEnCours > 0 pour centrer propre */
 .miseEnCours {
@@ -1208,6 +1210,11 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#33686c",endCo
 
 #barre {
 	font-size: 1.2em;
+}
+
+#footerTitle {
+	letter-spacing: 3px;
+	font-family: 'Bellota',cursive;
 }
 
 
@@ -1711,6 +1718,10 @@ p {
 	border: 3px solid rgba(230, 211, 211, 0.7); 
 	border-radius: 5px;
 	opacity: 1;
+	letter-spacing: 2px;
+
+	margin-top: 3px;
+	margin-left: 40px;
 
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
