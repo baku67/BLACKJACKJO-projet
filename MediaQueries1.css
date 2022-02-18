@@ -1,4 +1,4 @@
-@media screen and (max-device-width:400px) and (min-device-width: 0px){
+@media screen and (max-device-width:340px) and (min-device-width: 0px){
 
 	input,
 	textarea,
@@ -163,7 +163,12 @@
 	#separateur {
 		width: 70%;
 
-		margin: 90px auto 85px auto;
+		/* margin: 90px auto 85px auto; */
+
+		position: absolute;
+		top: 43%;
+		left: 0;
+		right: 0;
 	}
 
 	#relancer {
@@ -213,7 +218,24 @@
 
 
 
+	#miseResultat {
+		font-size: 3em;
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		font-weight: bold;
+	
+		margin-left: 20px;
+	}
+	#miseLockedFooter {
+		font-size: 3em;
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
+		margin-right: 20px;
+	}
+	#relancer {
+		margin-left: 90px;
+		margin-top: 25px;
+		padding: 1px 1px 1px 1px;
+	}
 
 	#croupier {
 		/* A MODIFIE DANS MEDIAQUERIES (Height-responsive) */

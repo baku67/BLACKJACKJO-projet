@@ -17,7 +17,7 @@
 		<link rel="stylesheet" href="style.css" id="stylesheet_1">
 		<link rel="stylesheet" href="MediaQueries1.css" id="stylesheet_3">
 		<link rel="stylesheet" href="MediaQueries2.css" id="stylesheet_4">
-		<!-- <link rel="stylesheet" href="MediaQueries3.css" id="stylesheet_5"> -->
+		<link rel="stylesheet" href="MediaQueries3.css" id="stylesheet_5">
 		<link rel="stylesheet" href="styleW3.css" id="stylesheet_2">
 		<script type="text/javascript" src="scriptJouer.js"></script>
 		<link rel="preconnect" href="https://fonts.googleapis.com">

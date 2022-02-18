@@ -1,4 +1,4 @@
-@media screen and (max-device-width:480px) and (min-device-width:401px) {
+@media screen and (max-device-width:480px) and (min-device-width:341px) {
 	
 	input,
 	textarea,
@@ -40,7 +40,7 @@
 	#tokenChipsContainer {
 		top: 10px;
 		position: relative;
-		right: 5%;
+		right: -2%;
 	}
 
 
@@ -165,7 +165,12 @@
 	#separateur {
 		width: 70%;
 
-		margin: 90px auto 85px auto;
+		/* margin: 90px auto 85px auto; */
+
+		position: absolute;
+		top: 43%;
+		left: 0;
+		right: 0;
 	}
 
 	#relancer {

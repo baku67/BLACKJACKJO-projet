@@ -1,5 +1,288 @@
-@media screen and (max-device-width:768px) and (min-device-width: 481px){
+@media screen and (max-device-width:770px) and (min-device-width: 481px){
 
  /*  TABLETTE: rajouter les tokenValue en dur au comme sur phone */
+
+ input,
+ textarea,
+ button,
+ select,
+ a {
+     -webkit-tap-highlight-color: rgba(0,0,0,0);
+ }
+
+ .text {
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     color: rgb(223, 204, 204);
+     letter-spacing: 1px;
+     font-size: 1em;
+ 
+     position: relative;
+     bottom: 0px;
+ 
+     /* Adapter la Couleur du jeton sur la valeur hover (PC) */
+     color: #e5b815;
+ }
+
+ .container .valeurs {
+     left: 45% !important;
+     top: -16px !important;
+     opacity: 1;
+ }
+
+
+ .deckAnimStyle {
+     width: 75px;
+     position: absolute;
+     left: 17%;
+     top: 21%;
+     border-radius: 8px;
+ }
+
+
+ #tokenChipsContainer {
+     top: 10px;
+     position: relative;
+     right: -2%;
+ }
+
+
+
+ .pokerChips {
+     width: 4em;
+     height: 4em;
+     /* margin: 0.5em 0.3em; */
+     margin: 0em 1em 1em 0.3em;
+ }
+
+
+ #hit {
+     /* margin-top: 18px; */
+     position: relative;
+     top: 20px;
+     
+     width: 100px;
+     height: 100px;
+ }
+ #double {
+     /* margin-top: 18px; */
+     position: relative;
+     top: 20px;
+     
+     width: 100px;
+     height: 100px;
+ }
+ #stand {
+     /* margin-top: 18px; */
+     position: relative;
+     top: 20px;
+
+     width: 100px;
+     height: 100px;
+ }
+
+ /* #soundToggleButton {
+     margin-left: 4px;
+     left: 2% !important;
+     font-size: 1.5em !important;
+ } */
+
+ /* #speedToggleButton {
+     left: 9% !important;
+     font-size: 1.3em !important;
+ } */
+
+ #list {
+     margin-top: 6px;
+ }
+
+ #deckContainer {
+     left: 5%; 
+     bottom: 45%; 
+     height: 153px;
+ }
+
+
+ .resultatTextWin {
+     top: 23%;
+ }
+ .resultatTextBust {
+ }
+ .resultatTextBJ {
+     text-shadow: -3px 3px 0px #e600dd, -6px 6px 0px #01cccc, -9px 9px 0px #bd0000;
+ }
+
+
+
+
+ #backgroundButtonContainer {
+     opacity: 0.8;
+     left: -70px;
+     top: 184px;
+     /* border: 1px solid rgba(58, 54, 54, 0.9); */
+     border: 1px solid rgba(223, 204, 204, 0.4);
+     height: 60px;
+ }
+ #backgroundToggleImage {
+     margin-bottom: 2px;
+     margin-left: 18px;
+     width: 40px;
+ }
+
+
+
+
+ #soundButtonContainer {
+     opacity: 0.8;
+     left: -70px;
+     top: 109px;
+     /* border: 1px solid rgba(58, 54, 54, 0.9); */
+     border: 1px solid rgba(223, 204, 204, 0.4);
+     height: 60px;
+ }
+ #speedButtonContainer {
+     opacity: 0.8;
+     left: -70px;
+     top: 35px;
+     /* border: 1px solid rgba(58, 54, 54, 0.9); */
+     border: 1px solid rgba(223, 204, 204, 0.4);
+     height: 60px;
+ }
+
+ #soundToggleImage {
+     margin-top: 2px;
+     margin-left: 15px !important;
+     width: 55px;
+ }
+ #speedToggleImage {
+     margin-top: 1px;
+     margin-left: 13px;
+     width: 60px;
+ }
+
+ /*  active avec transition ease in-out (genre ça fait la transition et puis inverse) */
+
+
+ #separateur {
+    width: 70%;
+
+    /* margin: 90px auto 85px auto; */
+
+    position: absolute;
+    top: 43%;
+    left: 0;
+    right: 0;
+}
+ 
+
+ #relancer {
+     position: absolute;
+     margin-left: 72px;
+     margin-top: 17px;
+     font-size: 2em;
+     padding: 5px 15px 5px 15px;
+     border: 7px solid rgba(223, 223, 223, 0.6);
+     border-radius: 17px;
+ }
+
+ h1 {
+     margin-block-end: 0.3em;
+ }
+
+ .styleSeparateurBust {
+     /* Resizer l'image (add autre URL) */
+     background-image: url("Images/boomPngMobile.png"), linear-gradient(-45deg, rgba(34,0,13,1) 0%, rgba(115,9,50,1) 21%, rgba(145,13,41,1) 42%, rgba(14,100,107,1) 71%, rgba(36,46,87,1) 100%);
+ }
+ /* .styleSeparateurWin {
+     background-image: url(""), linear-gradient(-45deg, rgba(36,85,87,1) 48%, rgba(115,9,50,1) 48%, rgba(36,85,87,1) 50%, rgba(115,9,50,1) 51%);
+ }
+ .styleSeparateurLose {
+
+     background-image: url(""), linear-gradient(-45deg, rgba(117,5,48,1) 0%, rgba(146,14,42,1) 33%, rgba(13,88,94,1) 67%, rgba(26,32,57,1) 100%);
+
+ } */
+
+
+
+
+ #retourArriereImg {
+     width: 30px !important;
+     position: relative;
+     right: 206px;
+     top: 54px;
+     margin-top: 3px !important;
+ }
+
+
+
+
+
+ #croupier {
+     /* A MODIFIE DANS MEDIAQUERIES (Height-responsive) */
+     margin-top: 10px;
+     /* FIN */
+ }
+
+ #imgCardDeck {
+     width: 5em;
+ }
+
+ #scoreContainer {
+     padding: 10px 5px 15px 5px;
+     /* margin: 0 50px; */
+     position: absolute;
+     right: 10px;
+     top: 65px;
+     /* width: 30%; */
+     text-align: center;
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ 
+     /* FLEX WRAP AVEC WIDTH 100% des elements inside pour retour ligne et center */
+     display: flex wrap;
+ 
+     border: 2px solid rgba(255,255,255,0.2);
+     border-radius: 5px;
+
+     color: rgba(223, 204, 204, 0.5);
+ }
+ h2 {
+     font-size: 1em;
+     margin-block-end: 0.1em;
+ }
+ #scoreVar {
+     font-size: 1.5em;
+ }
+ #scoreHighLow {
+     margin-bottom: 10px;
+ }
+
+
+ #infanticide {
+     margin: 0 0 0 0; 
+     font-size: 2em;
+ }
+
+
+
+
+
+
+ #container3 {
+     height: 140px;
+     /* margin-right: 30px; */
+
+ }
+
+ /* .container {
+     margin-left: 7px;
+     margin-left: 7px; 
+ } 
+ */
+
+ 
+ #textDistribution {
+     width: 100%;
+     font-size: 2em;
+     padding: 17px 0 29px 0 !important;
+ }
 
 }

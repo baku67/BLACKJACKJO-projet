@@ -870,7 +870,7 @@ p {
 }
 #croupier {
 	/* A MODIFIE DANS MEDIAQUERIES (Height-responsive) */
-	margin-top: 70px;
+	margin-top: -11px;
 	/* FIN */
 
 	height: 169.05px;
@@ -1465,7 +1465,7 @@ p {
 
 .rotateReloadPng{
 
-	animation: rotationReload 1.5s ease-in-out;
+	animation: rotationReload 1.5s ease;
 } 
 @keyframes rotationReload {
 	from {
