@@ -507,7 +507,7 @@
               document.getElementById("compteurDeck").innerHTML = compteurDeck;
               document.getElementById("compteurDeckMax").innerHTML = compteurDeckMax;
 
-              document.getElementById("backgroundToggleImage").src = "Images/backgroundToggleImageActif.png";
+              // document.getElementById("backgroundToggleImage").src = "Images/backgroundToggleImageActif.png";
 
 
               // ******************************** *
@@ -566,20 +566,20 @@
 
               // Toggle Design
               // ******************************** *
-              document.getElementById("backgroundButtonContainer").addEventListener("click", function() {
-                if (backgroundToggle == true) {
-                  backgroundToggle = false;
-                  document.getElementById("backgroundToggleImage").src = "Images/backgroundToggleImageActif.png";
+              // document.getElementById("backgroundButtonContainer").addEventListener("click", function() {
+              //   if (backgroundToggle == true) {
+              //     backgroundToggle = false;
+              //     // document.getElementById("backgroundToggleImage").src = "Images/backgroundToggleImageActif.png";
                   
-                  // TEST
-                  // document.getElementById("footer").style.backgroundImage = 'linear-gradient(-45deg, rgba(104,3,42,1) 0%, rgba(146,14,91,1) 33%, rgba(13,88,94,1) 67%, rgba(26,32,57,1) 100%) !important;';
-                }
-                else {
-                  backgroundToggle = true;
-                  document.getElementById("backgroundToggleImage").src = 'Images/backgroundToggleImage.png';
+              //     // TEST
+              //     // document.getElementById("footer").style.backgroundImage = 'linear-gradient(-45deg, rgba(104,3,42,1) 0%, rgba(146,14,91,1) 33%, rgba(13,88,94,1) 67%, rgba(26,32,57,1) 100%) !important;';
+              //   }
+              //   else {
+              //     backgroundToggle = true;
+              //     // document.getElementById("backgroundToggleImage").src = 'Images/backgroundToggleImage.png';
 
-                }
-              })
+              //   }
+              // })
               // Fin bouton toggle Design
               // ******************************** *
 

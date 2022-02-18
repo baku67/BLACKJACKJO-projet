@@ -31,13 +31,13 @@
                     </button>
                 </div>            
             </li>
-            <li>
+            <!-- <li>
                 <div id="backgroundButtonContainer">
                     <button type="button" id="backgroundToggleButton">
                         <img id="backgroundToggleImage" src="Images/backgroundToggleImage.png">
                     </button>
                 </div>            
-            </li>
+            </li> -->
 
             <?php  if (!isset($_SESSION['username'])) : ?>
                 <li style=" font-size: 1.5em; margin-top: 25px;" id="credits"></li>
