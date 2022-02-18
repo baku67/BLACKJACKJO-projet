@@ -2,6 +2,7 @@
 
     include('config.php');
 
+    //  NE PAS OUBLIE SESSION START A CHAQUE PAGE 
     session_start();
 
     $gainFromJS = ($_POST);
