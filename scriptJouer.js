@@ -488,7 +488,7 @@
               if (isConnected == false) {
                 console.log('isConnected: ' + isConnected);
                 credits = 100;
-                document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + credits + "&nbsp;<img src='Images/souBleu.png' class=\"imageSouDeco\">";
+                document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + credits + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
                 document.getElementById("credits").style.position = "relative";
                 document.getElementById("credits").style.top = "7px";
                 document.getElementById("traitLumineux").style.visibility = "visible";
@@ -675,7 +675,7 @@
 
               //** Récupérer le nouveau Crédits 
               if (isConnected == false) {
-                document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + credits + "&nbsp;<img src='Images/souBleu.png' class=\"imageSouDeco\">";
+                document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + credits + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
               }
               else if (isConnected == true) {
                 document.getElementById("creditsConnected").innerHTML = credits;
@@ -820,7 +820,7 @@
       }
 
 
-
+    
       // function: (en partant de la mise vers le gains réel)
       function DecrementGain() {
 
@@ -836,7 +836,12 @@
         setTimeout( function() {
             if (miseLocked > 0) {
             miseLocked = miseLocked - 1;
-            document.getElementById("miseResultat").innerHTML = miseLocked;
+            if ( isConnected == true) {
+              document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBarre.png" class="imagesSouResultat">';
+            }
+            else {
+              document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBlancBarre.png" class="imagesSouResultat">';
+            }            
             document.getElementById("miseResultat").classList.add("addColorToResultatRed");
             DecrementGain();
             }
@@ -860,7 +865,12 @@
         setTimeout( function() {
             if (miseLocked < miseLockedMultiplied) {
             miseLocked = miseLocked + 1;
-            document.getElementById("miseResultat").innerHTML = miseLocked;
+            if ( isConnected == true) {
+              document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBarre.png" class="imagesSouResultat">';
+            }
+            else {
+              document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBlancBarre.png" class="imagesSouResultat">';
+            }            
             document.getElementById("miseResultat").classList.add("addColorToResultatBJ");
             IncrementGain(miseLockedMultiplied);
             }
@@ -966,7 +976,7 @@
       
 
           if (isConnected == false) {
-            document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + (credits - miseLocked) + "&nbsp;<img src='Images/souBleu.png' class=\"imageSouDeco\">";
+            document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + (credits - miseLocked) + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
           }
           else if (isConnected == true) {
             document.getElementById("creditsConnected").innerHTML = (credits - miseLocked);
@@ -1305,7 +1315,12 @@
                     // fin
 
                     // Résultat Gains 
-                    document.getElementById("miseResultat").innerHTML = miseLocked;
+                    if ( isConnected == true) {
+                      document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBarre.png" class="imagesSouResultat">';
+                    }
+                    else {
+                      document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBlancBarre.png" class="imagesSouResultat">';
+                    }                    
                     setTimeout( function() {
                       DecrementGain();
                     }, 1500); 
@@ -1365,11 +1380,16 @@
                     setTimeout(function() { 
                       document.getElementById("relancer").classList.add("fadeInResultat");
                       document.getElementById("relancer").style.visibility = "visible";
-
                       // Disparition boutton onClick
                       document.getElementById("relancer").addEventListener("click", function() {
+
+                        document.getElementById("reloadPng").classList.add('rotateReloadPng');
+                        console.log('OK');
+
                         // document.getElementById("relancer").classList.add("fadeOut");
-                        document.getElementById("relancer").style.visibility = "hidden";
+                        setTimeout( function() { 
+                          document.getElementById("relancer").style.visibility = "hidden";
+                        }, 1500);
                       })
                     }, 2000)
 
@@ -1397,7 +1417,12 @@
                       // fin
   
                       // Résultat Gains 
-                      document.getElementById("miseResultat").innerHTML = miseLocked;
+                      if ( isConnected == true) {
+                        document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBarre.png" class="imagesSouResultat">';
+                      }
+                      else {
+                        document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBlancBarre.png" class="imagesSouResultat">';
+                      }                      
                       setTimeout( function() {
                         IncrementGain(miseLockedMultiplied);
                       }, 1500);
@@ -1469,11 +1494,14 @@
                     setTimeout(function() { 
                       document.getElementById("relancer").classList.add("fadeInResultat");
                       document.getElementById("relancer").style.visibility = "visible";
-
                       // Disparition boutton onClick
                       document.getElementById("relancer").addEventListener("click", function() {
+                          document.getElementById("reloadPng").classList.add('rotateReloadPng');
+                          console.log('OK');
                         // document.getElementById("relancer").classList.add("fadeOut");
-                        document.getElementById("relancer").style.visibility = "hidden";
+                        setTimeout( function() { 
+                          document.getElementById("relancer").style.visibility = "hidden";
+                        }, 1500);
                       })
                     }, 2000)
 
@@ -1500,7 +1528,12 @@
                         // fin
     
                         // Résultat Gains 
-                        document.getElementById("miseResultat").innerHTML = miseLocked;
+                        if ( isConnected == true) {
+                          document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBarre.png" class="imagesSouResultat">';
+                        }
+                        else {
+                          document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBlancBarre.png" class="imagesSouResultat">';
+                        }                        
                         setTimeout( function() {
                           IncrementGain(miseLockedMultiplied);
                         }, 1500);
@@ -1571,12 +1604,15 @@
                       setTimeout(function() { 
                         document.getElementById("relancer").classList.add("fadeInResultat");
                         document.getElementById("relancer").style.visibility = "visible";
-
                         // Disparition boutton onClick
                         document.getElementById("relancer").addEventListener("click", function() {
-                          // document.getElementById("relancer").classList.add("fadeOut");
+                          document.getElementById("reloadPng").classList.add('rotateReloadPng');
+                          console.log('OK');
+                        // document.getElementById("relancer").classList.add("fadeOut");
+                        setTimeout( function() { 
                           document.getElementById("relancer").style.visibility = "hidden";
-                        })
+                        }, 1500);
+                      })
                       }, 2000)
       
                       // Bouton Rejouer
@@ -1608,8 +1644,12 @@
                       // fin
   
                       // Résultat Gains 
-                      document.getElementById("miseResultat").innerHTML = miseLocked;
-
+                      if ( isConnected == true) {
+                        document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBarre.png" class="imagesSouResultat">';
+                      }
+                      else {
+                        document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBlancBarre.png" class="imagesSouResultat">';
+                      }
                       setTimeout( function() {
                         gain = 0;
                         ajoutGain(gain)
@@ -1662,12 +1702,15 @@
                     setTimeout(function() { 
                       document.getElementById("relancer").classList.add("fadeInResultat");
                       document.getElementById("relancer").style.visibility = "visible";
-
                       // Disparition boutton onClick
-                    document.getElementById("relancer").addEventListener("click", function() {
-                      // document.getElementById("relancer").classList.add("fadeOut");
-                      document.getElementById("relancer").style.visibility = "hidden";
-                    })
+                      document.getElementById("relancer").addEventListener("click", function() {
+                          document.getElementById("reloadPng").classList.add('rotateReloadPng');
+                          console.log('OK');
+                        // document.getElementById("relancer").classList.add("fadeOut");
+                        setTimeout( function() { 
+                          document.getElementById("relancer").style.visibility = "hidden";
+                        }, 1500);
+                      })
                     }, 2000)
   
                     // Bouton Rejouer
@@ -2134,7 +2177,7 @@
       }
       else if (isConnected == false) {
         function ajoutGain(gain) {
-          document.getElementById("credits").innerHTML = "Crédits: &nbsp;" + (credits + gain) + "<img src='Images/souBleu.png' class=\"imageSouDeco\">";
+          document.getElementById("credits").innerHTML = "Crédits: &nbsp;" + (credits + gain) + "<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
           credits = credits + gain;
         }
       }
@@ -2168,7 +2211,12 @@
 
                     // Résultat Gains 
                     
-                    document.getElementById("miseResultat").innerHTML = miseLocked;
+                    if ( isConnected == true) {
+                      document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBarre.png" class="imagesSouResultat">';
+                    }
+                    else {
+                      document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBlancBarre.png" class="imagesSouResultat">';
+                    }                    
                     setTimeout( function() {
                       DecrementGain();
                     }, 1500);
@@ -2230,11 +2278,14 @@
                   setTimeout(function() { 
                     document.getElementById("relancer").classList.add("fadeInResultat");
                     document.getElementById("relancer").style.visibility = "visible";
-
                     // Disparition boutton onClick
                     document.getElementById("relancer").addEventListener("click", function() {
+                        document.getElementById("reloadPng").classList.add('rotateReloadPng');
+                        console.log('OK');
                       // document.getElementById("relancer").classList.add("fadeOut");
-                      document.getElementById("relancer").style.visibility = "hidden";
+                      setTimeout( function() { 
+                        document.getElementById("relancer").style.visibility = "hidden";
+                      }, 1500);
                     })
                   }, 2000)
 
@@ -2293,7 +2344,12 @@
 
                   // Résultat Gains 
                   var miseLockedMultiplied = 2 * miseLocked;
-                  document.getElementById("miseResultat").innerHTML = miseLocked;
+                  if ( isConnected == true) {
+                    document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBarre.png" class="imagesSouResultat">';
+                  }
+                  else {
+                    document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBlancBarre.png" class="imagesSouResultat">';
+                  }                  
                   setTimeout( function() {
                     IncrementGain(miseLockedMultiplied);
                   }, 1500);
@@ -2353,11 +2409,14 @@
                 setTimeout(function() { 
                   document.getElementById("relancer").classList.add("fadeInResultat");
                   document.getElementById("relancer").style.visibility = "visible";
-
                   // Disparition boutton onClick
                   document.getElementById("relancer").addEventListener("click", function() {
+                      document.getElementById("reloadPng").classList.add('rotateReloadPng');
+                      console.log('OK');
                     // document.getElementById("relancer").classList.add("fadeOut");
-                    document.getElementById("relancer").style.visibility = "hidden";
+                    setTimeout( function() { 
+                      document.getElementById("relancer").style.visibility = "hidden";
+                    }, 1500);
                   })
                 }, 2000)
 
@@ -2411,7 +2470,12 @@
 
                   // Résultat Gains 
                   var miseLockedMultiplied = 3 * miseLocked;
-                  document.getElementById("miseResultat").innerHTML = miseLocked;
+                  if ( isConnected == true) {
+                    document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBarre.png" class="imagesSouResultat">';
+                  }
+                  else {
+                    document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBlancBarre.png" class="imagesSouResultat">';
+                  }                  
                   setTimeout( function() {
                     IncrementGain(miseLockedMultiplied);
                   }, 1500);
@@ -2477,11 +2541,14 @@
                 setTimeout(function() { 
                   document.getElementById("relancer").classList.add("fadeInResultat");
                   document.getElementById("relancer").style.visibility = "visible";
-
                   // Disparition boutton onClick
                   document.getElementById("relancer").addEventListener("click", function() {
+                      document.getElementById("reloadPng").classList.add('rotateReloadPng');
+                      console.log('OK');
                     // document.getElementById("relancer").classList.add("fadeOut");
-                    document.getElementById("relancer").style.visibility = "hidden";
+                    setTimeout( function() { 
+                      document.getElementById("relancer").style.visibility = "hidden";
+                    }, 1500);
                   })
                 }, 2000)
 
