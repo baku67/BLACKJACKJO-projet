@@ -25,6 +25,7 @@
       
       var removed = false;
 
+      var result;
 
       // réinitialisé dans le NewGame (tableau des valeurs derniers jetons ajoutés en vue de retour arriere)
       let logTokenValues = [];
@@ -659,7 +660,6 @@
             document.getElementById("header").classList.add("headerOnPartieRedecale");
           }, 0);
           // Fin refresh
-
           
 
           $.ajax({
@@ -1300,6 +1300,9 @@
           function resultat() {
             setTimeout(function() {
               if (scoreTotalCroupier > scoreTotalJoueur && scoreTotalCroupier < 22) {
+
+                result = 'LOSE';
+
                 $.ajax({
                   async: false,
                   url: "Footers/footerCroupierWin.html",
@@ -1402,6 +1405,9 @@
 
 
             if (scoreTotalCroupier > 21) {
+
+              result = 'WIN';
+
               setTimeout(function() {
                 $.ajax({
                   async: false,
@@ -1513,6 +1519,9 @@
             }
 
               if (scoreTotalJoueur > scoreTotalCroupier) {
+
+                result = 'WIN';
+
                 setTimeout(function() {
                   $.ajax({
                     async: false,
@@ -1623,6 +1632,8 @@
               }
 
               if (scoreTotalJoueur == scoreTotalCroupier) {
+
+                result = 'PUSH';
 
                 $.ajax({
                   async: false,
@@ -2170,9 +2181,19 @@
             method: "post",
             data: gainToPhp,
             success: function(res) {
-              console.log("(JS) success POST: " + res);
+              console.log("(JS) success POST gains: " + res);
             }
           })
+
+          // console.log("(JS) Log ");
+          // $.ajax({
+          //   url: "setLog.php",
+          //   method: "post",
+          //   data: { result: result, gain: gain},
+          //   success: function(res) {
+          //     console.log("(JS) success POST Log : " + res);
+          //   }
+          // })
         }
       }
       else if (isConnected == false) {
@@ -2187,6 +2208,9 @@
 
       function checkBurstJoueur() {
         if (scoreTotalJoueur > 21) {
+
+            result = 'BURST';
+
             burstJoueur = true;
 
             setTimeout(function() {
@@ -2320,6 +2344,9 @@
       // FUNCTION CHECK21() {
         if ((scoreTotalJoueur == 21) && (nbrCardsJoueur > 2)) {
           //      "&& nbrOfJoueurCards == 2"     (pour le vrai BJ)
+
+          result = 'BlackJack';
+
           console.log("nbrCardsJoueur: " + nbrCardsJoueur + "&nbscp; |~~~  21  ~~~|");
 
           setTimeout(function() {

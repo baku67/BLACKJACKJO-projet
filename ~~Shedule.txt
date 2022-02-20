@@ -10,15 +10,8 @@ Sur Ordi: occuper les espaces vides (gauche et droite du plateau) avec l histori
 
 OSKOUR: Faire un mod-diff entre style.css et les MediaQueires -> garder seulement les modifs qui concerne le footer(token et container inclus) et virer toutes les autres fonctions css GLOBALES (sinon faut tous les modifier au moindre changmeet)
 
-Garder le boom.png pour BUST joueur mais mettre un Loose (sans img comme Win)
-
-Pour LE HEIGHT RESPONSIVE DU FOOTER + JoueurModule: faut tout fixer au bottom en absolute (en % et apres jouer avec les mediaQueries)
-
-Petite anim (loading: genre point gauche droite) en dessous de 'Distribution...' en JS (check NET)
-
 Changer ce fond vert degueu srx (ou vraiment fix le toggle pour choisir avec un truc plus sobre)
 
-Faire un sou (BJJ)
 
 Anim sur les modals Resultats centraux (slide ou effet)
 
@@ -244,6 +237,10 @@ box-sizing: border-box;  Pour border contenu dans la box (pas de dépassement ou
 
 /////////////////         DONE         \\\\\\\\\\\\\\\\\
 
+Garder le boom.png pour BUST joueur mais mettre un Loose (sans img comme Win)
+Pour LE HEIGHT RESPONSIVE DU FOOTER + JoueurModule: faut tout fixer au bottom en absolute (en % et apres jouer avec les mediaQueries)
+Petite anim (loading: genre point gauche droite) en dessous de 'Distribution...' en JS (check NET)
+Faire un sou (BJJ)
 TO DO (insupportable + NoBrain):  Rescale/Redim (standardiser) taille cartes (prendre la plus faible)
 TO DO (NoBrain): Ajouter TOUTES les Cards (POUR LE RANDOM + esthétique affichage non répétitif) !
 TO DO (Intéressant): Ajouter compteur 'valeurTotale' JOUEUR/CROUPIER  /!\
