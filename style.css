@@ -73,9 +73,9 @@ button, input[type="submit"], input[type="reset"] {
     opacity: 0.9;
 }
 .imagesSouResultat {
-	height: 60px; 
+	height: 140px; 
 	position: absolute; 
-	bottom: 69px;
+	bottom: 35px;
 	/* nice */
 	opacity: 0.9;
 }
@@ -94,6 +94,10 @@ button, input[type="submit"], input[type="reset"] {
     right: -77px;
     bottom: -33px;
 }
+
+
+
+
 
 
 
@@ -1029,6 +1033,7 @@ figure:active {
 }
 
 .resultatTextWin {
+	font-family: 'Alfa Slab One', cursive;
 	color: rgb(225 187 50);
     font-size: 3.5em;
     letter-spacing: 2px;
@@ -1053,6 +1058,7 @@ figure:active {
 	}
   }
 .resultatTextBJ {
+	font-family: 'Alfa Slab One', cursive;
 	color: rgb(255 229 126);
     font-size: 3.5em;
     letter-spacing: 2px;
@@ -1062,6 +1068,7 @@ figure:active {
 	text-shadow: -3px 3px 0px #e600dd, -6px 6px 0px #01cccc, -9px 9px 0px #bd0000;
 }
 .resultatTextLose {
+	font-family: 'Alfa Slab One', cursive;
 	color:rgb(242 209 209 / 90%);
 	 	/* Text Shadow blanc? */
 	font-size: 3.5em;
@@ -1110,6 +1117,7 @@ figure:active {
 	}
   }
 .resultatTextPush {
+	font-family: 'Alfa Slab One', cursive;
 	color: rgb(68 64 122 / 90%);
 
 	font-size: 3.5em;
@@ -1519,7 +1527,7 @@ p {
 	-webkit-box-sizing: border-box;
 	visibility: hidden;
 	position: absolute;
-	margin-left: 90px;
+	margin-left: 215px;
 	margin-top: 31px;
 	font-size: 2.5em;
 	padding: 5px 15px 5px 15px;
