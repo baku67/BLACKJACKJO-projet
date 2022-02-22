@@ -143,6 +143,28 @@
 		width: 40px;
 	}
 
+	#choixStand {
+		position: relative; 
+		top:20px; 
+		color: rgba(252, 0, 0, 1); 
+		font-weight: bold; 
+		font-size: large;
+	}
+	#choixHit {
+		position: relative; 
+		top:20px; 
+		color: rgba(44, 252, 3, 0.8); 
+		font-weight: bold; 
+		font-size: large;
+	}
+	#choixDoubler {
+		opacity: 0; 
+		position: relative; 
+		top:20px; 
+		color: rgba(252, 227, 3, 0.8); 
+		font-weight: bold; 
+		font-size: large;
+	}
 
 
 

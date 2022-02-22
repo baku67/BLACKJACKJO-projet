@@ -3,7 +3,8 @@ fleche resultat et reste
 bouton hit stand pc texte
 restyle Wasted/BIGWIN/...   (+ sur pc moins de width)
 
-sur PC: mettre du margin-bottom sur la div joueur (equivalent au connexionContainer)
+(AUGMENTER LE BOTTOM DE #joueur de base(PC) et réduire sur MediaQueries)
+Sur PC: plus gros Sou et connexion container font size ...
 
 
 scintillement léger (em mode flash rapide) du titre onLoad (a la fin du SLide)
