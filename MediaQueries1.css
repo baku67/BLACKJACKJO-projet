@@ -86,7 +86,10 @@
 		bottom: 250px;
 	}
 
-
+	.waviy {
+		position: relative;
+		top: 25%;
+	  }
 
 
 	#tokenChipsContainer {

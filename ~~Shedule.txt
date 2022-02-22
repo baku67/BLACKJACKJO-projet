@@ -1,3 +1,5 @@
+font-family: Distribution... =>    .waviy{}  et  .resultatTextLose{}
+
 
 fleche resultat et reste 
 bouton hit stand pc texte
