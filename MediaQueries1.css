@@ -78,6 +78,17 @@
 		font-size: large;
 	}
 
+
+	#scoreJoueur {
+		bottom: 450px;
+	}
+	#joueur {
+		bottom: 250px;
+	}
+
+
+
+
 	#tokenChipsContainer {
 		position: relative;
 		margin-left: 15px;

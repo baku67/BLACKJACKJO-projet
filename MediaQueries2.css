@@ -167,6 +167,14 @@
 	}
 
 
+	#scoreJoueur {
+		bottom: 450px;
+	}
+	#joueur {
+		bottom: 250px;
+	}
+
+
 
 	#soundButtonContainer {
 		opacity: 0.8;
