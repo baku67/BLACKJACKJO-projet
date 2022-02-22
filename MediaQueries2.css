@@ -34,6 +34,10 @@
 		color: #e5b815;
 	}
 
+	#traitLumineuxFooter {
+		width: 75% !important;
+	}
+
 	.container .valeurs {
 		left: 45% !important;
 		top: -16px !important;

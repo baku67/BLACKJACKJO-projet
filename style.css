@@ -1768,6 +1768,7 @@ p {
 
 #boutonMiser {
 	font-size: 0.8em !important; 
+	font-family: 'Kavoon', cursive;
 	padding: 5px 25px; 
 	border: 3px solid rgba(230, 211, 211, 0.7); 
 	border-radius: 5px;
