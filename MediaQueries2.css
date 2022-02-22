@@ -176,7 +176,12 @@
 
 	/*  active avec transition ease in-out (genre ça fait la transition et puis inverse) */
 
-
+	.imagesSouResultat {
+		height: 60px; 
+		position: absolute; 
+		bottom: 40px;
+		opacity: 0.9;
+	}
 
 	
 	#separateur {

@@ -1,3 +1,11 @@
+
+fleche resultat et reste 
+bouton hit stand pc texte
+restyle Wasted/BIGWIN/...   (+ sur pc moins de width)
+
+sur PC: mettre du margin-bottom sur la div joueur (equivalent au connexionContainer)
+
+
 scintillement léger (em mode flash rapide) du titre onLoad (a la fin du SLide)
 
 
