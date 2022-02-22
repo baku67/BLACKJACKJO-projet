@@ -1,5 +1,9 @@
 @media screen and (max-device-width:480px) and (min-device-width:341px) {
 	
+	.imgPartie {
+		width: 7em;
+	} 
+
 	.imagesSou {
 		height: 55px;
 		position: absolute;
@@ -166,12 +170,18 @@
 		font-size: large;
 	}
 
-
+	#scoreCroupier {
+		top: 0px;
+		font-size:2em;
+	}
 	#scoreJoueur {
 		bottom: 450px;
+		font-size:2em;
+
 	}
 	#joueur {
 		bottom: 250px;
+		height: 168.5px;
 	}
 
 	.waviy {

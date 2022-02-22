@@ -714,12 +714,28 @@ p {
 	top: 4px; */
 	margin-top: 10px;
 	color: rgba(223, 204, 204, 0.9) !important;
+
+	position: relative;
+	top: 47px;
+	font-size: 3em;
+	background-color: #415657;
+	z-index: 1;
+
+
 }
 #scoreJoueur {
 	/* position: relative;
 	bottom: 21px; */
 	position: fixed;
-	bottom: 485px;
+
+
+	/* bottom: 485px; */
+	bottom: 529px;
+	font-size: 3em;
+	background-color: #415657;
+	z-index: 1;
+
+
 
 	left: 50%;
 	transform: translateX(-50%);
@@ -915,7 +931,7 @@ p {
 	height: 169.05px;
 }
 #joueur {
-	height: 169.05px;
+	height: 217.05px;
 	position: fixed;
 	bottom: 300px;
 	display: flex;
@@ -993,7 +1009,7 @@ figure:active {
 .imgPartie {
 	border: 1px solid rgba(0,0,0,0.2);
 	border-radius: 9px;
-	width: 7em;
+	width: 9em;
 	opacity: 0.8;
 		/*  Les px de border ne compte pas en plus de la div  (pas de mess) */
 		box-sizing: border-box;
@@ -1029,7 +1045,7 @@ figure:active {
 	width: 25%;
 	text-align: center; 
 
-	margin: 60px auto 55px auto;
+	margin: 175px auto 55px auto;
 }
 
 .resultatTextWin {
@@ -1093,6 +1109,7 @@ figure:active {
 	}
   }
 .resultatTextBust {
+	font-family: 'Alfa Slab One', cursive;
 	color:rgb(136 2 2 / 90%);
 	 	/* Text Shadow blanc? */
 	font-size: 3.5em;
