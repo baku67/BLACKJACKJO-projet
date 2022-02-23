@@ -621,7 +621,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 
 
 .scoreBorder {
-	padding: 1px 6px;
+	padding: 1px 12px;
 	/* Toggle couleurs */
 	/* border: solid 0.5px rgba(13, 1, 56, 0.5); */
 	border: 1px solid rgba(223, 204, 204, 1);
@@ -713,7 +713,7 @@ p {
 	/* position: relative;
 	top: 4px; */
 	margin-top: 10px;
-	color: rgba(223, 204, 204, 0.9) !important;
+	color: rgba(223, 204, 204, 0.9);
 
 	position: relative;
 	top: 47px;
@@ -740,7 +740,7 @@ p {
 	left: 50%;
 	transform: translateX(-50%);
 
-	color: rgba(223, 204, 204, 0.9) !important;
+	color: rgba(223, 204, 204, 0.9);
 
 }
 
@@ -1205,8 +1205,8 @@ figure:active {
 	background-position-y: 38%;
 	/* border-top: 1px solid rgba(130,14,39, 0.10);
 	border-bottom: 1px solid rgba(130,14,39, 0.20); */
-	border-top: 3px solid rgb(255 194 0);
-	border-bottom: 3px solid rgb(255 203 0);
+	/* border-top: 3px solid rgb(255 194 0);
+	border-bottom: 3px solid rgb(255 203 0); */
 
 
 	border-radius: 10px;

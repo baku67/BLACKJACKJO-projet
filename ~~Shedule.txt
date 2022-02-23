@@ -1,5 +1,6 @@
 font-family: Distribution... =>    .waviy{}  et  .resultatTextLose{}
 
+FADE OUT lors relance ou qqc parce que trop brusque
 
 fleche resultat et reste 
 bouton hit stand pc texte
