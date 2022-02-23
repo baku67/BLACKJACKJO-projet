@@ -228,6 +228,10 @@
 		opacity: 0.9;
 	}
 
+	#container1 a {
+		font-size: 2.2em;
+	}
+
 	
 	#separateur {
 		width: 70%;

@@ -1,4 +1,7 @@
 font-family: Distribution... =>    .waviy{}  et  .resultatTextLose{}
+Faire le rouge du ScoreJouerur/Croupier Loose
+
+Le header gradient trait lumineux oblique sur pc est degueux 
 
 FADE OUT lors relance ou qqc parce que trop brusque
 
