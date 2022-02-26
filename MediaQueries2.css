@@ -262,7 +262,7 @@
 
 	.styleSeparateurBust {
 		/* Resizer l'image (add autre URL) */
-		background-image: url("Images/boomPngMobile.png"), linear-gradient(-45deg, rgba(34,0,13,1) 0%, rgba(115,9,50,1) 21%, rgba(145,13,41,1) 42%, rgba(14,100,107,1) 71%, rgba(36,46,87,1) 100%);
+		background-image: url(Images/boomPngMobile.png), linear-gradient(-45deg, rgba(34,0,13,1) 0%, rgb(181 42 42) 21%, rgb(249 156 175) 42%, rgba(14,100,107,1) 71%, rgba(36,46,87,1) 100%);
 	}
 	/* .styleSeparateurWin {
 		background-image: url(""), linear-gradient(-45deg, rgba(36,85,87,1) 48%, rgba(115,9,50,1) 48%, rgba(36,85,87,1) 50%, rgba(115,9,50,1) 51%);

@@ -1238,7 +1238,7 @@
             }
             else if (scoreTotalCroupier > 21) {
               setTimeout(function() {
-                document.getElementById("scoreCroupier").style.backgroundColor = "rgba(215,31,48,1)"
+                document.getElementById("scoreCroupier").style.backgroundColor = "rgb(160 13 27)"
                 document.getElementById("scoreCroupier").style.color = "rgba(239,230,230, 1)"
                 document.getElementById("scoreCroupier").style.textShadow = "1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, -1px -1px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, -1px 0px 0 #000000, 0px -1px 0 #000000";
                 document.getElementById("scoreCroupier").style.border = "3px solid rgba(130,14,39, 1)";
@@ -1342,7 +1342,7 @@
                       // Fin rubans
                     
                     // document.getElementById("scoreCroupier").style.backgroundColor = "rgba(59,217,10,1)";
-                    document.getElementById("scoreJoueur").style.backgroundColor = "rgba(215,31,48,1)";
+                    document.getElementById("scoreJoueur").style.backgroundColor = "rgb(160 13 27)";
 
                     document.getElementById("scoreCroupier").style.color = "rgba(255,245,0,1)";
                     document.getElementById("scoreJoueur").style.color = "rgba(239,230,230,1)";
@@ -1454,7 +1454,7 @@
                     document.getElementById("deckContainer").remove();
                     // document.getElementById("deckContainer").classList.add("fadeOut");
   
-                    document.getElementById("scoreCroupier").style.backgroundColor = "rgba(215,31,48,1)";
+                    document.getElementById("scoreCroupier").style.backgroundColor = "rgb(160 13 27)";
                     // document.getElementById("scoreJoueur").style.backgroundColor = "rgba(59,217,10,1)";
 
                     document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)";
@@ -1565,7 +1565,7 @@
                       document.getElementById("deckContainer").remove();
                       // document.getElementById("deckContainer").classList.add("fadeOut");
     
-                      document.getElementById("scoreCroupier").style.backgroundColor = "rgba(215,31,48,1)";
+                      document.getElementById("scoreCroupier").style.backgroundColor = "rgb(160 13 27)";
                       // document.getElementById("scoreJoueur").style.backgroundColor = "rgba(59,217,10,1)";
   
                       document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)";
@@ -2240,7 +2240,7 @@
 
 
                   //*** Perdu BURST 
-                  document.getElementById("scoreJoueur").style.backgroundColor = "rgba(215,31,48,1)"
+                  document.getElementById("scoreJoueur").style.backgroundColor = "rgb(160 13 27)"
                   document.getElementById("scoreJoueur").style.color = "rgba(239,230,230, 1)"
                   document.getElementById("scoreJoueur").style.textShadow = "1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, -1px -1px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, -1px 0px 0 #000000, 0px -1px 0 #000000";
                   document.getElementById("scoreJoueur").style.border = "3px solid rgba(130,14,39, 1)";
@@ -2374,7 +2374,7 @@
                 // document.getElementById("deckContainer").classList.add("fadeOut");
 
                 //*** Perdu BURST 
-                document.getElementById("scoreCroupier").style.backgroundColor = "rgba(215,31,48,1)";
+                document.getElementById("scoreCroupier").style.backgroundColor = "rgb(160 13 27)";
                 // document.getElementById("scoreJoueur").style.backgroundColor = "rgba(59,217,10,1)";
 
                 document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)";
@@ -2500,7 +2500,7 @@
                 // document.getElementById("deckContainer").classList.add("fadeOut");
 
                 //*** Perdu BURST 
-                document.getElementById("scoreCroupier").style.backgroundColor = "rgba(215,31,48,1)";
+                document.getElementById("scoreCroupier").style.backgroundColor = "rgb(160 13 27)";
                 // document.getElementById("scoreJoueur").style.backgroundColor = "rgba(59,217,10,1)";
 
                 document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)";
