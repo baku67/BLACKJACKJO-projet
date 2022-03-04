@@ -1,5 +1,23 @@
 @media screen and (max-device-width:340px) and (min-device-width: 0px){
 
+	.imgPartie {
+		width: 7em;
+	} 
+
+
+	.imagesSou {
+		height: 55px;
+		position: absolute;
+		bottom: -2px;
+		opacity: 0.9;
+	}
+
+	#retourArriereWhite {
+		width: 45px;
+		opacity: 0.7;
+		margin-top: 12px;
+	}
+
 	input,
 	textarea,
 	button,
@@ -21,6 +39,10 @@
 		color: #e5b815;
 	}
 
+	#traitLumineuxFooter {
+		width: 75% !important;
+	}
+
 	
 	.container .valeurs {
 		top: -11px !important;
@@ -37,6 +59,48 @@
 	/*  TRANSITION ANIMATION TRANSLATE Y/X
 	AND ANIMATION FADEOUT (ou avec) */
 
+
+	#choixStand {
+		position: relative; 
+		top:20px; 
+		color: rgba(252, 0, 0, 1); 
+		font-weight: bold; 
+		font-size: large;
+	}
+	#choixHit {
+		position: relative; 
+		top:20px; 
+		color: rgba(44, 252, 3, 0.8); 
+		font-weight: bold; 
+		font-size: large;
+	}
+	#choixDoubler {
+		opacity: 0; 
+		position: relative; 
+		top:20px; 
+		color: rgba(252, 227, 3, 0.8); 
+		font-weight: bold; 
+		font-size: large;
+	}
+
+	#scoreCroupier {
+		top: 0px;
+		font-size:2em;
+	}
+	#scoreJoueur {
+		bottom: 450px;
+		font-size:2em;
+
+	}
+	#joueur {
+		bottom: 250px;
+		height: 168.5px;
+	}
+
+	.waviy {
+		position: relative;
+		top: 25%;
+	  }
 
 
 	#tokenChipsContainer {
@@ -157,7 +221,16 @@
 
 	/*  active avec transition ease in-out (genre ça fait la transition et puis inverse) */
 
+	.imagesSouResultat {
+		height: 60px; 
+		position: absolute; 
+		bottom: 40px;
+		opacity: 0.9;
+	}
 
+	#container1 a {
+		font-size: 1.9em;
+	}
 
 	
 	#separateur {
@@ -169,6 +242,8 @@
 		top: 43%;
 		left: 0;
 		right: 0;
+
+		margin: 69px auto 55px auto;
 	}
 
 	#relancer {
