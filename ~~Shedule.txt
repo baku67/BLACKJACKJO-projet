@@ -1,3 +1,7 @@
+POUR EXAM: Faire deuspi un boolean si t'es admin, tu vas dans l'onglet iseless a droite t'as la liste des users avec leurs soldes c'es tout c'est une requete.
+
+
+
 font-family: Distribution... =>    .waviy{}  et  .resultatTextLose{}
 Faire le rouge du ScoreJouerur/Croupier Loose
 
