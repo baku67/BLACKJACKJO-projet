@@ -42,7 +42,7 @@
 		?>
 				<script> isConnected = true; console.log('estConnecté');</script>
 				<!-- Méthode Ajax XMLHttpRequest (js/php) -->
-				<script type="text/javascript" src="scriptJouerPhp.js"></script>
+				<!-- <script type="text/javascript" src="scriptJouerPhp.js"></script> -->
 				<script type="text/javascript">
 					var creditsConnected = <?php include('getCredits.php'); ?>; // Don't forget the extra semicolon!
 					console.log('var js creditConnected: ' + creditsConnected);
@@ -267,6 +267,29 @@
 					endif 
 				?>
 				<!-- Fin -->
+
+				<div id="highScoreDiv">
+
+					<p>
+						<span>&#9733;</span>
+						Top 1: &nbsp;&nbsp; 
+					</p>
+
+					<?php
+						include('getHighScoreName.php');
+					?>
+
+					&nbsp;		
+					<p> - </p>
+					&nbsp;
+
+					<?php 
+						include('getHighScore.php'); 
+					?>
+					
+					<img src="Images/souBlancBarre.png" alt="pièce" id="imageSouPetit" style="top:-10px !important">
+
+				</div>
 			</div>
 
 			

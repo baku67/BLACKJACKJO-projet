@@ -1146,6 +1146,23 @@ figure:active {
 }
 
 
+#highScoreDiv {
+	text-align:center;
+	display: inline-flex;
+	position: absolute;
+	margin-top: 100px;
+
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+	color: white;
+	font-size: 27px;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
 
 
 
