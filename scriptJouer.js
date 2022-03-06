@@ -484,6 +484,8 @@
 
               nbrCardsJoueur = 0;
 
+              var winLose = 0;
+
               // Activation Crédits Brut mode invité (en partie)
               // ******************************** *
               if (isConnected == false) {
@@ -660,6 +662,8 @@
             document.getElementById("header").classList.add("headerOnPartieRedecale");
           }, 0);
           // Fin refresh
+
+          var winLose = 0;
           
 
           $.ajax({
@@ -1331,7 +1335,11 @@
                     // WIP gain (ajouter effet refresh CSS)
                     setTimeout( function() {
                       gain = -miseLocked;
-                      ajoutGain(gain)
+                      ajoutGain(gain);
+
+                      winLose = -1;
+                      winLoseDB(winLose);
+
                     }, 500)
                     //
                     
@@ -1435,7 +1443,11 @@
 
                       setTimeout( function() {
                         gain = miseLocked;
-                        ajoutGain(gain)
+                        ajoutGain(gain);
+
+                        winLose = 1;
+                        winLoseDB(winLose);
+
                       }, 500)
 
                       
@@ -1549,7 +1561,11 @@
 
                         setTimeout( function() {
                           gain = miseLocked;
-                          ajoutGain(gain)
+                          ajoutGain(gain);
+
+                          winLose = 1;
+                          winLoseDB(winLose);
+
                         }, 500)
   
                         
@@ -1663,7 +1679,7 @@
                       }
                       setTimeout( function() {
                         gain = 0;
-                        ajoutGain(gain)
+                        ajoutGain(gain);
                       }, 500)
                       
                       document.getElementById("miseResultat").classList.add("addColorToResultatYellow");
@@ -2167,6 +2183,24 @@
         document.getElementById("compteurDeck").innerHTML = compteurDeck;
       }
 
+
+      // Ne pas oublier de mettre un if ISSET avant d'appeler la fonction
+      function winLoseDB(winLose) {
+        var winLoseToPhp = {};
+        winLoseToPhp.value = winLose;
+
+
+        $.ajax({
+          url: "setWinLose.php",
+          method: "post",
+          data: winLoseToPhp,
+          success: function(res) {
+            console.log("(JS) AJAX POST var winLose(" + res + ") vers setWinLose.php réussi");
+          }
+        })
+      }
+
+
       if (isConnected == true) {
         function ajoutGain(gain) {
           document.getElementById("creditsConnected").innerHTML = (credits + gain);
@@ -2248,7 +2282,11 @@
                     // WIP gain (ajouter effet refresh CSS)
                       setTimeout( function() {
                         gain = -miseLocked;
-                        ajoutGain(gain)
+                        ajoutGain(gain);
+
+                        winLose = -1;
+                        winLoseDB(winLose);
+
                       }, 500)
                     //
 
@@ -2387,7 +2425,11 @@
                   // WIP gain (ajouter effet refresh CSS)
                   setTimeout( function() {
                     gain = miseLocked;
-                    ajoutGain(gain)
+                    ajoutGain(gain);
+
+                    winLose = 1;
+                    winLoseDB(winLose);
+
                   }, 500)
                   //
                     
@@ -2513,7 +2555,11 @@
                   // WIP gain (ajouter effet refresh CSS)
                   setTimeout( function() {
                     gain = miseLocked * 2;
-                    ajoutGain(gain)
+                    ajoutGain(gain);
+
+                    winLose = 1;
+                    winLoseDB(winLose);
+
                   }, 500)
                   //
                     

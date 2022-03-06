@@ -280,8 +280,8 @@
 					?>
 
 					&nbsp;		
-					<p> - </p>
-					&nbsp;
+					<!-- <p> - </p> -->
+					<!-- &nbsp; -->
 
 					<?php 
 						include('getHighScore.php'); 
