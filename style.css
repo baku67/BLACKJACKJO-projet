@@ -190,7 +190,7 @@ button, input[type="submit"], input[type="reset"] {
 #traitTitleSlide {
 	/* height: 2px !important; */
 	height: 5px !important;
-	width: 372px !important;
+	width: 382px !important;
 	margin: 0 auto;
 
 	bottom: 7px;
@@ -413,7 +413,7 @@ button, input[type="submit"], input[type="reset"] {
 	display: inline-block; 
 	color:rgba(223, 204, 204, 0.8); 
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
-	font-size: 1.2em;
+	font-size: 1.4em;
 }
 /* #connectionButton {
 	text-decoration: underline;

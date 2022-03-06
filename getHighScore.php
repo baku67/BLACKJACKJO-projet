@@ -7,7 +7,7 @@
 
     $row = mysqli_fetch_assoc($result);
     
-    echo "<p>" . $row['maximum'] . "</p>"; 
+    echo "<p style='margin-top:2px;'>" . $row['maximum'] . "</p>"; 
     
     mysqli_close($db);
 

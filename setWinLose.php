@@ -2,7 +2,7 @@
 
     include('config.php');
 
-    //  NE PAS OUBLIE SESSION START A CHAQUE PAGE 
+    //  NE PAS OUBLIE SESSION START A CHAQUE PAGE où need username
     session_start();
 
     $valueFromJS = ($_POST);
@@ -16,24 +16,12 @@
 
 
     if ($value2 == 1) :
-
         $query = "UPDATE users SET win = win + 1 WHERE username = '".$_SESSION['username']."' ";
 
     elseif ($value == -1) :
-
         $query = "UPDATE users SET lose = lose + 1 WHERE username = '".$_SESSION['username']."' ";
 
     endif;
-
-    // if ($valueFromJS == 1) :
-
-    //     $query = "UPDATE users SET win = win + 1 WHERE username = '".$_SESSION['username']."' ";
-
-    // elseif ($valueFromJS == -1) :
-
-    //     $query = "UPDATE users SET lose = lose + 1 WHERE username = '".$_SESSION['username']."' ";
-
-    // endif;
 
 
 

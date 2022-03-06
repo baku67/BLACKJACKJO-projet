@@ -1,4 +1,21 @@
-POUR EXAM: Faire deuspi un boolean si t'es admin, tu vas dans l'onglet iseless a droite t'as la liste des users avec leurs soldes c'es tout c'est une requete.
+Ratio WinLose en pourcentage sans decimaux: 
+	FadeIn/SetTimeOut syncho avec le Top
+	Rouge/Vert selon <>50% ?
+	(PC): Sur un des cotés du Index
+	(Phone): En dessous de "Nouvelle Partie !"
+	
+Classement:
+	FadeIn dans l'ordre des Top 1, 2 et 3
+	Etoiles Or, Argent, Bronze
+	(PC): Sur un des cotés du Index
+	(Phone): En dessous de Ratio WinLose
+
+
+
+
+
+
+POUR EXAM: Faire deuspi un boolean si t'es admin, tu vas dans l'onglet useless a droite t'as la liste des users avec leurs soldes c'es tout c'est une requete.
 
 
 

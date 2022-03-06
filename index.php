@@ -116,7 +116,9 @@
 						<span style="font-size:1.7em;">|</span>
 						
 						&nbsp;&nbsp;
+
 						<span style="font-family: 'Bellota',cursive; font-size:1.3em; color:rgba(203,202,192,1); font-weight:700;" >Crédits:</span>
+						
 						&nbsp; 
 						
 						<span style="color: rgb(241 205 92 / 95%) !important; text-shadow: 0 0 4px rgb(255 213 2);" id="creditsConnected"></span>
@@ -127,10 +129,10 @@
 		
 					</p>
 
-
+					<!-- Déconnexion -->
 					<p>
 						<a href="index.php?logout='1'" id="deconnexionLink" style="">
-							<!-- Déconnexion -->
+							
 							<img src="Images/deconnexion.png" alt="deconnexion" id="deconnexionImg" style="">
 						</a>
             		</p>
@@ -250,7 +252,8 @@
 			
 			
 			<div id="container1">
-				<!-- Bouton "Nouvelle Partie" si invité -->
+
+				<!-- Bouton "Nouvelle Partie" -->
 				<?php  
 					if (!isset($_SESSION['username'])) : 
 				?>
@@ -268,6 +271,17 @@
 				?>
 				<!-- Fin -->
 
+
+
+				<!-- Ratio (WIP voir Shedule: header, position, responsive+) -->
+				<div style="position:absolute; top ......  NE PAS OUBLIER LE TRANSLATE">
+					<!-- <h3 style="font-family:'Bellota',cursive;">Ratio Win</h3> -->
+				</div>
+				<!-- Fin Ratio -->
+
+
+
+				<!-- Classement (WIP voir Shedule: header, position, responsive+) -->
 				<div id="highScoreDiv">
 
 					<p>
@@ -275,21 +289,19 @@
 						Top 1: &nbsp;&nbsp; 
 					</p>
 
-					<?php
-						include('getHighScoreName.php');
-					?>
+					<?php include('getHighScoreName.php'); ?>
 
 					&nbsp;		
-					<!-- <p> - </p> -->
-					<!-- &nbsp; -->
+					<p style="color: #a09f39"> _ </p>
+					&nbsp;
 
-					<?php 
-						include('getHighScore.php'); 
-					?>
+					<?php include('getHighScore.php'); ?>
 					
-					<img src="Images/souBlancBarre.png" alt="pièce" id="imageSouPetit" style="top:-10px !important">
+					<img src="Images/souBlancBarre.png" alt="pièce" id="imageSouPetit" style="top:-9px !important">
 
 				</div>
+				<!-- fin Classement -->
+
 			</div>
 
 			
