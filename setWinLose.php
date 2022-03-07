@@ -28,4 +28,5 @@
     $stmt = mysqli_prepare($db, $query);
     mysqli_stmt_bind_param($stmt, 's', $value2);
     mysqli_stmt_execute($stmt);
+    
 ?>

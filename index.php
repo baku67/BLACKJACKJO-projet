@@ -274,31 +274,44 @@
 
 
 				<!-- Ratio (WIP voir Shedule: header, position, responsive+) -->
-				<div style="position:absolute; top ......  NE PAS OUBLIER LE TRANSLATE">
-					<!-- <h3 style="font-family:'Bellota',cursive;">Ratio Win</h3> -->
-				</div>
+				<?php
+				if (isset($_SESSION['username'])) : 
+				?>
+					<div id='ratioDiv'>
+						<h3>Ratio</h3>
+						<?php include('getRatio.php') ?>
+					</div>
+				<?php
+				endif
+				?>
 				<!-- Fin Ratio -->
 
 
 
 				<!-- Classement (WIP voir Shedule: header, position, responsive+) -->
-				<div id="highScoreDiv">
+				
+				<div id="classementDiv">
 
-					<p>
-						<span>&#9733;</span>
-						Top 1: &nbsp;&nbsp; 
-					</p>
+					<h3 id="classementTitle">Classement</h3>
 
-					<?php include('getHighScoreName.php'); ?>
+					<div id="top1Div">
 
-					&nbsp;		
-					<p style="color: #a09f39"> _ </p>
-					&nbsp;
+						<p>
+							<span>&#9733;</span>
+							Top 1: &nbsp;&nbsp; 
+						</p>
 
-					<?php include('getHighScore.php'); ?>
-					
-					<img src="Images/souBlancBarre.png" alt="pièce" id="imageSouPetit" style="top:-9px !important">
+						<?php include('getHighScoreName.php'); ?>
 
+						&nbsp;		
+						<p style="color: #a09f39"> _ </p>
+						&nbsp;
+
+						<?php include('getHighScore.php'); ?>
+						
+						<img src="Images/souBlancBarre.png" alt="pièce" id="imageSouPetit" style="top:-9px !important">
+
+					</div>
 				</div>
 				<!-- fin Classement -->
 

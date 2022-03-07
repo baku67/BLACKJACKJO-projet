@@ -16,8 +16,8 @@
     }
 
 
+    $query = "INSERT INTO historique (resultatCas) VALUES (resultatCas) WHERE username = '".$_SESSION['username']."' ";
 
-    $query = "INSERT INTO logs (resultat, gain, date) VALUES (result, gain, date) WHERE username = '".$_SESSION['username']."' ";
 
     // https://www.codegrepper.com/search.php?q=mysqli%20prepare%20for%20update%20records
     $stmt = mysqli_prepare($db, $query);
