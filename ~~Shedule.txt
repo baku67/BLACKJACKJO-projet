@@ -9,6 +9,7 @@ Classement:
 	Etoiles Or, Argent, Bronze
 	(PC): Sur un des cotés du Index
 	(Phone): En dessous de Ratio WinLose
+	Augmenter tailles des étoiles et ajuster le reste
 
 
 

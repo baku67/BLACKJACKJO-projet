@@ -278,7 +278,7 @@
 				if (isset($_SESSION['username'])) : 
 				?>
 					<div id='ratioDiv'>
-						<h3>Ratio</h3>
+						<h3 style="font-size:1.3em;">Ratio</h3>
 						<?php include('getRatio.php') ?>
 					</div>
 				<?php
@@ -292,12 +292,12 @@
 				
 				<div id="classementDiv">
 
-					<h3 id="classementTitle">Classement</h3>
+					<h3 id="classementTitle" style="font-size:1.3em;">Classement</h3>
 
-					<div id="top1Div">
+					<div class="topLineDiv">
 
 						<p>
-							<span>&#9733;</span>
+							<span style="color: rgb(241 205 92 / 95%) !important">&#9733;</span>
 							Top 1: &nbsp;&nbsp; 
 						</p>
 
@@ -312,6 +312,49 @@
 						<img src="Images/souBlancBarre.png" alt="pièce" id="imageSouPetit" style="top:-9px !important">
 
 					</div>
+
+					<br>
+
+					<div class="topLineDiv">
+
+						<p>
+							<span style="color: silver !important">&#9733;</span>
+							Top 2: &nbsp;&nbsp; 
+						</p>
+
+						<?php include('getHighScore2Name.php'); ?>
+
+						&nbsp;		
+						<p style="color: #a09f39"> _ </p>
+						&nbsp;
+
+						<?php include('getHighScore2.php'); ?>
+						
+						<img src="Images/souBlancBarre.png" alt="pièce" id="imageSouPetit" style="top:-9px !important">
+
+					</div>
+
+					<br>
+
+					<div class="topLineDiv">
+
+						<p>
+							<span style="color: #ba6555 !important">&#9733;</span>
+							Top 3: &nbsp;&nbsp; 
+						</p>
+
+						<?php include('getHighScore3Name.php'); ?>
+
+						&nbsp;		
+						<p style="color: #a09f39"> _ </p>
+						&nbsp;
+
+						<?php include('getHighScore3.php'); ?>
+						
+						<img src="Images/souBlancBarre.png" alt="pièce" id="imageSouPetit" style="top:-9px !important">
+
+					</div>
+
 				</div>
 				<!-- fin Classement -->
 

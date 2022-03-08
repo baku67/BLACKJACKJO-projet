@@ -15,15 +15,6 @@
      }
 
 
-
-     
-    // mysqli_query($db,"UPDATE users SET credits = credits + '".$gain"' WHERE username '".$_SESSION['username']."' ");
-    // echo ('username(setCredits.php): ' . $_SESSION['username']);
-
-    // TEST Requete (fonctionne avec valeurs dures)
-    // A REACTIVER mysqli_query($db,"UPDATE users SET credits = credits + 10 WHERE username = 'admin' ");
-    // echo ('username(setCredits.php): ' . $_SESSION['username']);
-
     $query = "UPDATE users SET credits = credits + ? WHERE username = '".$_SESSION['username']."' ";
 
     // https://www.codegrepper.com/search.php?q=mysqli%20prepare%20for%20update%20records

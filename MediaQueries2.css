@@ -1,5 +1,49 @@
 @media screen and (max-device-width:480px) and (min-device-width:341px) {
 	
+
+	/* .topLineDiv {
+		text-align:center;
+		display: inline-flex;
+	
+		color: white;
+		font-size: 1.1em;
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	} */
+	
+	#ratioDiv {
+		text-align: center;
+		position: absolute;
+		/* margin-top: 125px; */
+		top: 35%;
+		left: 50%;
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		color: white;
+		font-size: 27px;
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	}
+	
+	#classementDiv {
+		text-align:center;
+		position: absolute;
+		/* margin-top: 330px; */
+		top: 70%;
+		left: 50%;
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	
+		color: white;
+		font-size: 27px;
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	}
+	
+
+
+
+
+
+
+
 	.imgPartie {
 		width: 7em;
 	} 
