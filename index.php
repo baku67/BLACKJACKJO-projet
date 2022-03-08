@@ -2,7 +2,6 @@
 
 <?php
 	include('connexion.php');
-	// include('setCredits');
 ?>
 
 
@@ -14,11 +13,11 @@
 		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> -->
 		<!-- <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script> -->
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="style.css" id="stylesheet_1">
-		<link rel="stylesheet" href="MediaQueries1.css" id="stylesheet_3">
-		<link rel="stylesheet" href="MediaQueries2.css" id="stylesheet_4">
-		<link rel="stylesheet" href="MediaQueries3.css" id="stylesheet_5">
-		<link rel="stylesheet" href="styleW3.css" id="stylesheet_2">
+		<link rel="stylesheet" href="Styles/style.css" id="stylesheet_1">
+		<link rel="stylesheet" href="Styles/MediaQueries1.css" id="stylesheet_3">
+		<link rel="stylesheet" href="Styles/MediaQueries2.css" id="stylesheet_4">
+		<link rel="stylesheet" href="Styles/MediaQueries3.css" id="stylesheet_5">
+		<link rel="stylesheet" href="Styles/styleW3.css" id="stylesheet_2">
 		<script type="text/javascript" src="scriptJouer.js"></script>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -279,6 +278,7 @@
 				?>
 					<div id='ratioDiv'>
 						<h3 style="font-size:1.3em;">Ratio</h3>
+						<div class="divider light" style="position:relative; bottom:8px"></div>
 						<?php include('getRatio.php') ?>
 					</div>
 				<?php
@@ -293,6 +293,8 @@
 				<div id="classementDiv">
 
 					<h3 id="classementTitle" style="font-size:1.3em;">Classement</h3>
+
+					<div class="divider light" style="position:relative; bottom:8px"></div>
 
 					<div class="topLineDiv">
 

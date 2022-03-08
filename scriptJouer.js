@@ -2200,6 +2200,23 @@
         })
       }
 
+      function historiqueDB(WinLose, resultatCas, gain, date) {
+        var historiqueToPhp = {};
+        historiqueToPhp[1] = WinLose;
+        historiqueToPhp[2] = resultatCas;
+        historiqueToPhp[3] = gain;
+        historiqueToPhp[4] = date;
+
+        $.ajax({
+          url: "setHistorique.php",
+          method: "post",
+          data: historiqueToPhp,
+          succes: function(res) {
+            console.log("(JS) AJAX POST historique: " + res);
+          }
+        })
+      }
+
 
       if (isConnected == true) {
         function ajoutGain(gain) {
@@ -2237,7 +2254,6 @@
         }
       }
       
-
       
 
       function checkBurstJoueur() {
