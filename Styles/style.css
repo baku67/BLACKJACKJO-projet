@@ -567,7 +567,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	border-radius: 10px;
 	transition: all 0.3s;
 }
-#newGame:hover, #newGame:hover {
+#newGame:hover {
 	border: 4px solid rgba(34, 10, 141, 0.6);
 
 	/* padding: 0px 1000px; */
@@ -1157,6 +1157,7 @@ figure:active {
 
 #ratioDiv {
 	color: rgb(223, 204, 204);
+	opacity: 0.8;
 
 	text-align: center;
     position: absolute;
@@ -1174,6 +1175,8 @@ figure:active {
 }
 
 #classementDiv {
+	opacity: 0.8;
+
 	text-align:center;
 	position: absolute;
 	/* margin-top: 330px; */

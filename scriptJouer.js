@@ -25,15 +25,12 @@
       
       var removed = false;
 
-      var result;
-
-      // réinitialisé dans le NewGame (tableau des valeurs derniers jetons ajoutés en vue de retour arriere)
+      // Réinitialisé dans le NewGame (tableau des valeurs derniers jetons ajoutés en vue de retour arriere)
       let logTokenValues = [];
 
       var nbrCardsJoueur;
 
       var credits = 0;
-      // var creditsConnected = 0;
       var gain = 0;
 
       var newValue;
@@ -58,48 +55,14 @@
 
       var misesResultatDiff;
 
-      
-      var backgroundToggle = new Boolean;
 
+
+      // Boutons Toggle
+      var backgroundToggle = new Boolean;
       var setTimeOutMultiplierBool = false;
       var setTimeOutMultiplier = 1;
-      
-      // Template utilisé dans le NewGame load
-      // function toggleSpeed() {
-      //   if (setTimeOutMultiplierBool == true) {
-      //     setTimeOutMultiplierBool = false;
-      //     setTimeOutMultiplier = 1;
-      //   }
-      //   else {
-      //     setTimeOutMultiplierBool = true;
-      //     setTimeOutMultiplier = 0.5;
-      //   }
-      // }
-
-
-
-
-
-
       var SoundMuteBool = false;
-
-      // Template utilisé dans le NewGame load
-      // function toggleMute() {
-      //   if (SoundMuteBool == true) {
-      //     SoundMuteBool = false;
-      //     audioCardSound.volume = 0.5;
-      //   }
-      //   else {
-      //     SoundMuteBool = true;
-      //     audioCardSound.volume = 0;
-      //   }
-      // }
-      
-
-
-
-
-
+      // fin Boutons
 
 
 
@@ -1305,7 +1268,7 @@
             setTimeout(function() {
               if (scoreTotalCroupier > scoreTotalJoueur && scoreTotalCroupier < 22) {
 
-                result = 'LOSE';
+                resultatCas = 'WASTED';
 
                 $.ajax({
                   async: false,
@@ -1414,7 +1377,7 @@
 
             if (scoreTotalCroupier > 21) {
 
-              result = 'WIN';
+              resultatCas = 'WIN';
 
               setTimeout(function() {
                 $.ajax({
@@ -1532,7 +1495,7 @@
 
               if (scoreTotalJoueur > scoreTotalCroupier) {
 
-                result = 'WIN';
+                resultatCas = 'WIN';
 
                 setTimeout(function() {
                   $.ajax({
@@ -1649,7 +1612,7 @@
 
               if (scoreTotalJoueur == scoreTotalCroupier) {
 
-                result = 'PUSH';
+                resultatCas = 'PUSH';
 
                 $.ajax({
                   async: false,
@@ -2259,7 +2222,7 @@
       function checkBurstJoueur() {
         if (scoreTotalJoueur > 21) {
 
-            result = 'BURST';
+          resultatCas = 'BURST';
 
             burstJoueur = true;
 
@@ -2399,7 +2362,7 @@
         if ((scoreTotalJoueur == 21) && (nbrCardsJoueur > 2)) {
           //      "&& nbrOfJoueurCards == 2"     (pour le vrai BJ)
 
-          result = 'BlackJack';
+          resultatCas = 'BlackJack';
 
           console.log("nbrCardsJoueur: " + nbrCardsJoueur + "&nbscp; |~~~  21  ~~~|");
 

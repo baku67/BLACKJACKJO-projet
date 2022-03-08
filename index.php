@@ -278,7 +278,7 @@
 				?>
 					<div id='ratioDiv'>
 						<h3 style="font-size:1.3em;">Ratio</h3>
-						<div class="divider light" style="position:relative; bottom:8px"></div>
+						<div class="divider light" style="position:relative; bottom:16px"></div>
 						<?php include('getRatio.php') ?>
 					</div>
 				<?php
@@ -294,7 +294,7 @@
 
 					<h3 id="classementTitle" style="font-size:1.3em;">Classement</h3>
 
-					<div class="divider light" style="position:relative; bottom:8px"></div>
+					<div class="divider light" style="position:relative; bottom:16px"></div>
 
 					<div class="topLineDiv">
 

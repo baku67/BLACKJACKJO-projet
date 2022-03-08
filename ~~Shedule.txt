@@ -1,8 +1,8 @@
 Ratio WinLose en pourcentage sans decimaux: 
-	FadeIn/SetTimeOut syncho avec le Top
+	FadeIn/SetTimeOut synchro avec le Top
 	Rouge/Vert selon <>50% ?
 	(PC): Sur un des cotés du Index
-	(Phone): En dessous de "Nouvelle Partie !"
+	(Phone): Au dessus de "Nouvelle Partie !"
 	
 Classement:
 	FadeIn dans l'ordre des Top 1, 2 et 3
@@ -11,8 +11,8 @@ Classement:
 	(Phone): En dessous de Ratio WinLose
 	Augmenter tailles des étoiles et ajuster le reste
 
-
-
+Mise Max Value = 1000;
+Désactiver de base le SoundToggle index (var SoundMuteBool), et adapter le style
 
 
 
