@@ -371,15 +371,43 @@ button, input[type="submit"], input[type="reset"] {
 	height: 2px;
 	background: #000;
 	background: -webkit-linear-gradient(left, rgb(255,255,255) 0%, rgb(50,50,50) 50%, rgb(255,255,255) 100%);
-  }
-  .divider.light {
+}
+.divider.light {
 	opacity: 0.6;
 	width: 60%;
 	text-align: center;
 
 	background: #fff;
 	background: -webkit-linear-gradient(left, rgb(90,90,90) 0%, rgba(255,255,255,0.7) 50%, rgb(90,90,90) 100%);
-  }
+}
+
+#traitBlancRatio {
+	opacity: 0.8;
+	width: 200%;
+	right: 42px; /* Pour compenser le width qui décale */
+	text-align: center;
+	height: 2px;
+
+	position: relative;
+	bottom:16px;
+
+	background: #fff;
+	background: -webkit-linear-gradient(left, rgb(90,90,90) 0%, rgba(255,255,255,1) 50%, rgb(90,90,90) 100%);
+}
+
+#traitBlancClassement {
+	opacity: 0.8;
+	width: 100%;
+	/* Pas besoin de compenser ici, le width (why?) */
+	text-align: center;
+	height: 2px;
+
+	position: relative;
+	bottom:16px;
+
+	background: #fff;
+	background: -webkit-linear-gradient(left, rgb(90,90,90) 0%, rgba(255,255,255,1) 50%, rgb(90,90,90) 100%);
+}
 
 
 #traitLumineux {

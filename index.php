@@ -278,8 +278,16 @@
 				?>
 					<div id='ratioDiv'>
 						<h3 style="font-size:1.3em;">Ratio</h3>
-						<div class="divider light" style="position:relative; bottom:16px"></div>
+						<div class="divider light" style="position:relative; bottom:16px; width:100%; -webkit-linear-gradient(left, rgb(90,90,90) 0%, rgba(255,255,255,1) 50%, rgb(90,90,90) 100%)"></div>
 						<?php include('getRatio.php') ?>
+					</div>
+				<?php
+				else :
+				?>
+					<div id='ratioDiv'>
+						<h3 style="font-size:1.3em;">Ratio</h3>
+						<div id="traitBlancRatio"></div>
+						<p id='ratioLine'>-- %</p>
 					</div>
 				<?php
 				endif
@@ -292,9 +300,9 @@
 				
 				<div id="classementDiv">
 
-					<h3 id="classementTitle" style="font-size:1.3em;">Classement</h3>
+					<h3 id="classementTitle" style="font-size:1.3em; color:rgb(223, 204, 204);">Classement</h3>
 
-					<div class="divider light" style="position:relative; bottom:16px"></div>
+					<div id="traitBlancClassement"></div>
 
 					<div class="topLineDiv">
 
