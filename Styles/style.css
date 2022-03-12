@@ -352,28 +352,33 @@ button, input[type="submit"], input[type="reset"] {
 	left: 13px;
 	font-size: 1.5em;
 }
-#Hi-Lo {
+#guide {
 	position: relative;
 	left: 15px;
 }
 
 
-.onglet a:hover {
+.onglet button:hover {
 	opacity: 1;
 	color:rgb(238, 226, 226);
 
-	transform: scale(1.5);
+	transform: scale(1.1);
 }
 #jouer:hover{
-	transform: scale(1.75) !important;
-	text-decoration: underline overline rgba(224, 211, 211, 0.85);
+	transform: scale(1.2) !important;
+	text-decoration: underline rgb(223, 204, 204);
 }
-#Hi-Lo:hover {
+#guide:hover {
+	text-decoration: underline rgb(223, 204, 204);
+}
+#historique:hover {
+	text-decoration: underline rgb(223, 204, 204);
+}
+
+/* #guide:hover {
 	text-decoration: underline overline rgb(206, 209, 221);
-}
-#Compteur:hover {
-	text-decoration: underline overline rgba(226, 214, 214, 0.85);
-}
+
+} */
 
 
 .divider {
