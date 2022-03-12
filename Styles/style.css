@@ -333,6 +333,19 @@ button, input[type="submit"], input[type="reset"] {
 	display:inline-block;
 	transition: all 0.4s; 
 }
+.onglet button {
+	color:rgb(212, 189, 189);
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: 1.4em;
+	letter-spacing: 2.5px;
+	text-decoration: none;
+	
+	/* Les <a></a> n'acceptent pas les "transform{}" ducoup inline-block */
+	display:inline-block;
+	transition: all 0.4s; 
+}
+
+
 #jouer {
 	position: relative;
 	bottom: 15px;

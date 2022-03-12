@@ -14,6 +14,7 @@ Classement:
 Mise Max Value = 1000;
 Désactiver de base le SoundToggle index (var SoundMuteBool), et adapter le style
 
+Mettre le contenu du index dans index2.php et mettre a jour le load du JS
 
 
 POUR EXAM: Faire deuspi un boolean si t'es admin, tu vas dans l'onglet useless a droite t'as la liste des users avec leurs soldes c'es tout c'est une requete.

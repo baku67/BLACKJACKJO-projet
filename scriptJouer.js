@@ -425,8 +425,31 @@
       }
       // ******************************** *
 
-     
-      
+
+
+
+      $("#historique").click(function() {
+
+          $("#container1").load("historique.php");
+
+      });
+
+      $("#guide").click(function() {
+
+        $("#container1").load("guide.php");
+        
+      });
+
+      $("#jouer").click(function() {
+
+        $("#container1").load("index.php");
+        
+      });
+
+
+
+
+        
 
       // JQUERY JAX : load Partie
       $("#newGame").click(function(){

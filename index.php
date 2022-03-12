@@ -67,9 +67,9 @@
 				<br/>
 				<div>
 					<ul id="onglets">
-						<li class="onglet"><a href="guide.html" id="Hi-Lo">Guide</a></li>
-						<li class="onglet" ><a href="index.php" id="jouer">JOUER !</a></li>
-						<li class="onglet"><a href="scores.html" id="Compteur">Scores</a></li>
+						<li class="onglet"><button id="guide">Guide</button></li>
+						<li class="onglet" ><button id="jouer">JOUER !</button></li>
+						<li class="onglet"><button id="historique">Historique</button></li>
 					</ul>
 				</div>
 			</header>
