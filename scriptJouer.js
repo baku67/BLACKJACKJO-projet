@@ -440,11 +440,11 @@
         
       });
 
-      $("#jouer").click(function() {
+      // $("#jouer").click(function() {
 
-        $("#container1").load("index.php");
+      //   $("#container1").load("index.php");
         
-      });
+      // });
 
 
 
