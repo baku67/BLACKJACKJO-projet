@@ -55,9 +55,9 @@ button, input[type="submit"], input[type="reset"] {
 }
 #miseLocked {
 	color: rgba(241, 233, 206, 0.95);
-	border: 2px solid;
+	border: 2px solid rgba(222,159,38,0.8);
     text-shadow: 0 0 4px rgb(255 213 2);
-    border-radius: 124px;
+    border-radius: 8px;
     padding: 5px 10px 7px 10px;
 }
 #imageSouPetit {

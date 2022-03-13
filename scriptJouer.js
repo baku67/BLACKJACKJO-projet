@@ -268,12 +268,32 @@
                   document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
                   setTimeOutMultiplier = 0.8;
                   document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
+
+                  // $.ajax({
+                  //   // Voir si true(JS) = 1(SQL) car en SQL boolean == TINYINT(1)
+                  //   url: "setToggleTurbo.php",
+                  //   method: "post",
+                  //   data: setTimeOutMultiplierBool,
+                  //   success: function(res) {
+                  //     console.log("(JS) AJAX POST bool 'setTimeOutMultiplierBool' " + res + " vers setToggleTurbo.php réussi");
+                  //   }
+                  // })
                 }
                 else {
                   setTimeOutMultiplierBool = true;
                   document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
-                  setTimeOutMultiplier = 0.5;
+                  setTimeOutMultiplier = 0.4;
                   document.getElementById("speedToggleImage").src = 'Images/fastForwardWhite.png';
+
+                  $.ajax({
+                    // Voir si true(JS) = 1(SQL) car en SQL boolean == TINYINT(1)
+                    url: "setToggleTurbo.php",
+                    method: "post",
+                    data: setTimeOutMultiplierBool,
+                    success: function(res) {
+                      console.log("(JS) AJAX POST bool 'setTimeOutMultiplierBool' " + res + " vers setToggleTurbo.php réussi");
+                    }
+                  })
                 }
               });
               // FIN bouton toggle speed
