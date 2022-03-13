@@ -3,7 +3,7 @@
 ?>
 
 <div id="deckContainer" style="text-align: center;">
-    <span id="compteurDeck"></span> &nbsp; / &nbsp; <span id="compteurDeckMax"></span>
+    <span id="compteurDeck"></span> &nbsp; / &nbsp; <span id="compteurDeckMax"></span><!--<img src="Images/deckIcon.png" style="width:40px;"/>-->
     <br>
     <img src="Images/deck2.png" id="imgCardDeck" class="imgPartie" style="margin-top: 5px;">
     <br><br>
@@ -20,7 +20,7 @@
             <li>
                 <div id="soundButtonContainer">
                     <button type="button" id="soundToggleButton">
-                        <img id="soundToggleImage" src="Images/speakerMax_sourceMax5.png">
+                        <img id="soundToggleImage" src="Images/speakerMute_sourceMaxPng2Recenter4.png">
                     </button>
                 </div>               
             </li>
@@ -46,45 +46,30 @@
 
         <!-- Trait lumineux -->
         <div id="traitLumineux" class="divider light" style="visibility: hidden;"></div>
+        <br>
         <!-- Fin -->
 
-        <br>
 
 
 
         <ul class="list2" id="croupier">
             <!-- AJOUT DES CARTES ICI -->
         </ul>
-
         <br> 
-
         <span id="scoreCroupier" class="scores" style="visibility: hidden">0</span>
 
 
-
-
-
-        <!-- PIRE SEPARATEUR (JOUEUR/CROUPIER) -->
-        <!-- <p><br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br></p> -->
-        <!-- Fin du pire séparateur EU West -->
 
         <!-- Nouveau Séparateur avec "Gagné"/"Perdu" et backgroundColor correspondant -->
         <div id="separateur">
             <p id="resultatText"></p>
         </div>
+        <br>
         <!-- Fin -->
 
 
-        <br>
-
-
+    
         <span id="scoreJoueur" class="scores" style="visibility: hidden;">0</span>
-
         <div class="list2" id="joueur">
             <!-- AJOUT DES CARTES ICI -->
         </div>

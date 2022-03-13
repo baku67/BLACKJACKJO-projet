@@ -351,6 +351,7 @@ button, input[type="submit"], input[type="reset"] {
 	bottom: 15px;
 	left: 13px;
 	font-size: 1.5em;
+	margin-left: 30px;
 }
 #guide {
 	position: relative;
@@ -453,9 +454,10 @@ button, input[type="submit"], input[type="reset"] {
 #connectionContainer {
 	text-align: center; 
 	margin: 15px auto;
+	margin-right: 15px;
 }
 .connectionButtons {
-	margin: 0px 15px; 
+	margin: 0px 10px; 
 	display: inline-block; 
 	color:rgba(223, 204, 204, 0.8); 
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
@@ -872,7 +874,7 @@ p {
 	border: 3px solid black;
 	border-radius: 5px;
 	padding-left: 50px;
-	background-color : rgba(130,14,39,0.8);
+	background-color : rgba(25, 39, 95, 0.8);
 
 	position: absolute; 
 	left: -60px;
@@ -884,7 +886,7 @@ p {
 	opacity: 1;
 	left: -23px;
 	border: 1px solid rgba(223, 204, 204, 0.2);
-	background-color: rgba(130,14,39,0.8);
+	background-color: rgba(25, 39, 95, 0.8);
 }
 
 

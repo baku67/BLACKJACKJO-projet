@@ -43,8 +43,8 @@
       var miseEnCours;
       var miseLocked;
 
-      var compteurDeck = 52;
-      var compteurDeckMax = 52;
+      var compteurDeck = cards.length;
+      var compteurDeckMax = cards.length;
 
       var burstJoueur = false;
 
@@ -60,8 +60,8 @@
       // Boutons Toggle
       var backgroundToggle = new Boolean;
       var setTimeOutMultiplierBool = false;
-      var setTimeOutMultiplier = 1;
-      var SoundMuteBool = false;
+      var setTimeOutMultiplier = 0.8;
+      var SoundMuteBool = true;
       // fin Boutons
 
 
@@ -98,7 +98,6 @@
         document.getElementById("arrowPng").style.opacity = "0.6";
 
         isCollapsed = true;
-        checkMiseWarning();
       }
       function footerShow() {
         content.style.display = "block";
@@ -108,7 +107,6 @@
 
 
         isCollapsed = false;
-        checkMiseWarning();
       }
       
 
@@ -120,285 +118,14 @@
 
 
 
-      //#region array of objects: "cards"
-      // Tableau d'objets cards
-      let cards = [
-        C2a = {
-          cardImageURL: "cartes\\2C.png",
-          cardValue: 2
-        },
-        C2b = {
-          cardImageURL: "cartes\\2D.png",
-          cardValue: 2
-        },
-        C2c = {
-          cardImageURL: "cartes\\2H.png",
-          cardValue: 2
-        },
-        C2d = {
-          cardImageURL: "cartes\\2S.png",
-          cardValue: 2
-        },
-        C3a = {
-          cardImageURL: "cartes\\3C.png",
-          cardValue: 3
-        },
-        C3b = {
-          cardImageURL: "cartes\\3D.png",
-          cardValue: 3
-        },
-        C3c = {
-          cardImageURL: "cartes\\3H.png",
-          cardValue: 3
-        },
-        C3d = {
-          cardImageURL: "cartes\\3S.png",
-          cardValue: 3
-        },
-        C4a = {
-          cardImageURL: "cartes\\4C.png",
-          cardValue: 4
-        },
-        C4b = {
-          cardImageURL: "cartes\\4D.png",
-          cardValue: 4
-        },
-        C4c = {
-          cardImageURL: "cartes\\4H.png",
-          cardValue: 4
-        },
-        C4d = {
-          cardImageURL: "cartes\\4S.png",
-          cardValue: 4
-        },
-        C5a = {
-          cardImageURL: "cartes\\5C.png",
-          cardValue: 5
-        },
-        C5b = {
-          cardImageURL: "cartes\\5D.png",
-          cardValue: 5
-        },
-        C5c = {
-          cardImageURL: "cartes\\5H.png",
-          cardValue: 5
-        },
-        C5d = {
-          cardImageURL: "cartes\\5S.png",
-          cardValue: 5
-        },
-        C6a = {
-          cardImageURL: "cartes\\6C.png",
-          cardValue: 6
-        },
-        C6b = {
-          cardImageURL: "cartes\\6D.png",
-          cardValue: 6
-        },
-        C6c = {
-          cardImageURL: "cartes\\6H.png",
-          cardValue: 6
-        },
-        C6d = {
-          cardImageURL: "cartes\\6S.png",
-          cardValue: 6
-        },
-        C7a = {
-          cardImageURL: "cartes\\7C.png",
-          cardValue: 7
-        },
-        C7b = {
-          cardImageURL: "cartes\\7D.png",
-          cardValue: 7
-        },
-        C7c = {
-          cardImageURL: "cartes\\7H.png",
-          cardValue: 7
-        },
-        C7d = {
-          cardImageURL: "cartes\\7S.png",
-          cardValue: 7
-        },
-        C8a = {
-          cardImageURL: "cartes\\8C.png",
-          cardValue: 8
-        },
-        C8b = {
-          cardImageURL: "cartes\\8D.png",
-          cardValue: 8
-        },
-        C8c = {
-          cardImageURL: "cartes\\8H.png",
-          cardValue: 8
-        },
-        C8d = {
-          cardImageURL: "cartes\\8S.png",
-          cardValue: 8
-        },
-        C9a = {
-          cardImageURL: "cartes\\9C.png",
-          cardValue: 9
-        },
-        C9b = {
-          cardImageURL: "cartes\\9D.png",
-          cardValue: 9
-        },
-        C9c = {
-          cardImageURL: "cartes\\9H.png",
-          cardValue: 9
-        },
-        C9d = {
-          cardImageURL: "cartes\\9S.png",
-          cardValue: 9
-        },
-        C10a = {
-          cardImageURL: "cartes\\10C.png",
-          cardValue: 10
-        },
-        C10b = {
-          cardImageURL: "cartes\\10D.png",
-          cardValue: 10
-        },
-        C10c = {
-          cardImageURL: "cartes\\10H.png",
-          cardValue: 10
-        },
-        C10d = {
-          cardImageURL: "cartes\\10S.png",
-          cardValue: 10
-        },
-        C11a = {
-          cardImageURL: "cartes\\JC.png",
-          cardValue: 10
-        },
-        C11b = {
-          cardImageURL: "cartes\\JD.png",
-          cardValue: 10
-        },
-        C11c = {
-          cardImageURL: "cartes\\JH.png",
-          cardValue: 10
-        },
-        C11d = {
-          cardImageURL: "cartes\\JS.png",
-          cardValue: 10
-        },
-        C12a = {
-          cardImageURL: "cartes\\QC.png",
-          cardValue: 10
-        },
-        C12b = {
-          cardImageURL: "cartes\\QD.png",
-          cardValue: 10
-        },
-        C12c = {
-          cardImageURL: "cartes\\QH.png",
-          cardValue: 10
-        },
-        C12d = {
-          cardImageURL: "cartes\\QS.png",
-          cardValue: 10
-        },
-        C13a = {
-          cardImageURL: "cartes\\KC.png",
-          cardValue: 10
-        },
-        C13b = {
-          cardImageURL: "cartes\\KD.png",
-          cardValue: 10
-        },
-        C13c = {
-          cardImageURL: "cartes\\KH.png",
-          cardValue: 10
-        },
-        C13d = {
-          cardImageURL: "cartes\\KS.png",
-          cardValue: 10
-        },
-        C1a = {
-          cardImageURL: "cartes\\AC.png",
-          cardValue: 1,
-          cardValue2: 10
-        },
-        C1b = {
-          cardImageURL: "cartes\\AD.png",
-          cardValue: 1,
-          cardValue2: 10
-        },
-        C1c = {
-          cardImageURL: "cartes\\AH.png",
-          cardValue: 1,
-          cardValue2: 10
-        },
-        C1d = {
-          cardImageURL: "cartes\\AS.png",
-          cardValue: 1,
-          cardValue2: 10
-        }
-        // TRICHE TEST AS (attention virgule)
-        // C1e = {
-        //   cardImageURL: "cartes\\AC.png",
-        //   cardValue: 1,
-        //   cardValue2: 10
-        // },
-        // C1f = {
-        //   cardImageURL: "cartes\\AD.png",
-        //   cardValue: 1,
-        //   cardValue2: 10
-        // },
-        // C1g = {
-        //   cardImageURL: "cartes\\AH.png",
-        //   cardValue: 1,
-        //   cardValue2: 10
-        // },
-        // C1h = {
-        //   cardImageURL: "cartes\\AS.png",
-        //   cardValue: 1,
-        //   cardValue2: 10
-        // },
-        // C1i = {
-        //   cardImageURL: "cartes\\AC.png",
-        //   cardValue: 1,
-        //   cardValue2: 10
-        // },
-        // C1j = {
-        //   cardImageURL: "cartes\\AD.png",
-        //   cardValue: 1,
-        //   cardValue2: 10
-        // },
-        // C1k = {
-        //   cardImageURL: "cartes\\AH.png",
-        //   cardValue: 1,
-        //   cardValue2: 10
-        // },
-        // C1l = {
-        //   cardImageURL: "cartes\\AS.png",
-        //   cardValue: 1,
-        //   cardValue2: 10
-        // },
-        // C1m = {
-        //   cardImageURL: "cartes\\AC.png",
-        //   cardValue: 1,
-        //   cardValue2: 10
-        // },
-        // C1n = {
-        //   cardImageURL: "cartes\\AD.png",
-        //   cardValue: 1,
-        //   cardValue2: 10
-        // },
-        // C1o = {
-        //   cardImageURL: "cartes\\AH.png",
-        //   cardValue: 1,
-        //   cardValue2: 10
-        // },
-        // C1p = {
-        //   cardImageURL: "cartes\\AS.png",
-        //   cardValue: 1,
-        //   cardValue2: 10
-        // }
-        // FIN TRICHE
-      ];
-      //#endregion
+
+
+
+
+
+
+
+
 
 
       var modalInscription = document.getElementById("inscriptionModal");
@@ -472,6 +199,7 @@
 
               var winLose = 0;
 
+
               // Activation Crédits Brut mode invité (en partie)
               // ******************************** *
               if (isConnected == false) {
@@ -484,19 +212,18 @@
               }
               else {
                 console.log('isConnected: ' + isConnected);
-                //
                 document.getElementById("creditsConnected").innerHTML = creditsConnected;
                 document.getElementById("traitLumineux").style.visibility = "visible";
                 document.getElementById("traitLumineux").style.position = 'relative';
                 document.getElementById("traitLumineux").style.bottom = '20px';
               }
-              
               // ******************************** *
  
+
+
               document.getElementById("compteurDeck").innerHTML = compteurDeck;
               document.getElementById("compteurDeckMax").innerHTML = compteurDeckMax;
 
-              // document.getElementById("backgroundToggleImage").src = "Images/backgroundToggleImageActif.png";
 
 
               // ******************************** *
@@ -539,13 +266,13 @@
                 if (setTimeOutMultiplierBool == true) {
                   setTimeOutMultiplierBool = false;
                   document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
-                  setTimeOutMultiplier = 1;
+                  setTimeOutMultiplier = 0.8;
                   document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
                 }
                 else {
                   setTimeOutMultiplierBool = true;
                   document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
-                  setTimeOutMultiplier = 0.55;
+                  setTimeOutMultiplier = 0.5;
                   document.getElementById("speedToggleImage").src = 'Images/fastForwardWhite.png';
                 }
               });
@@ -592,7 +319,7 @@
                       else {
                         document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBlancBarre.png' class=\"imagesSou\">";
                       }
-                      // fonction qui remove le premier var du tableau
+                    // fonction qui remove le premier var du tableau
                     logTokenValues.shift();
 
                     // Rafraichit l'état style du bouton (par exemple si denouveau = 0)
@@ -615,17 +342,13 @@
                   phaseMise();
                   document.getElementById("footerTitle").innerHTML = " - Mise -";
                   window.onload = tokensClick();
-                  checkMiseWarning();
                 }
               });
               miseBoutonStyle();
               miseLock();  
 
-              // document.getElementById("scoreJoueur").style.visibility = "visible";
-              // document.getElementById("scoreCroupier").style.visibility = "visible";
           }, 500)
       });
-      // Fonctions Mute/Speed
 
 
 
@@ -799,7 +522,6 @@
                   phaseMise();
                   document.getElementById("footerTitle").innerHTML = " - Mise -";
                   window.onload = tokensClick();
-                  checkMiseWarning();
                 }
               });
               miseBoutonStyle();
@@ -1746,29 +1468,19 @@
         }
       }
 
-      function addLastTokenClickToTab(value) {
-        logTokenValues.unshift(value);
-        console.log(logTokenValues);
-      }
-
-
+      
 
 
       function tokensClick() {
-
-          // Créer une var global créditpotentiel
         
           document.getElementById("whiteToken").addEventListener("click", function() {
           
             if ((credits-miseEnCours) >= 1) {
               addLastTokenClickToTab(1);
     
-
               if (SoundMuteBool == false) {
                 audioToken.play();
               }
-              // Test audio coupé et non audio = 0;
-              // audioToken.play();
     
               miseEnCours += 1;
 
@@ -1780,30 +1492,10 @@
               }
 
               miseBoutonStyle();
-              // misePop();
-              // setTimeout(function scoreDepop() {
-              //   document.getElementById("miseEnCours").classList.toggle('scorePop');
-              // }, 500);
               cssMiseEnCours();
             }
           })
-        //*** Backup WhiteTokenClick
-        // document.getElementById("whiteToken").addEventListener("click", function() {
-          
-        //   addLastTokenClickToTab(1);
 
-        //   audioToken.play();
-
-        //   miseEnCours += 1;
-        //   document.getElementById("miseEnCours").innerHTML = miseEnCours + " &#8364;";
-        //   miseBoutonStyle();
-        //   misePop();
-        //   setTimeout(function scoreDepop() {
-        //     document.getElementById("miseEnCours").classList.toggle('scorePop');
-        //   }, 500);
-        //   cssMiseEnCours();
-        // })
-        // FIN backup
 
           document.getElementById("redToken").addEventListener("click", function() {
 
@@ -1813,8 +1505,6 @@
               if (SoundMuteBool == false) {
                 audioToken.play();
               }
-              // Test audio coupé et non audio = 0;
-              // audioToken.play();
 
               miseEnCours += 5;
 
@@ -1826,10 +1516,6 @@
               }
 
               miseBoutonStyle();
-              // misePop();
-              // setTimeout(function scoreDepop() {
-              //   document.getElementById("miseEnCours").classList.toggle('scorePop');
-              // }, 500);
               cssMiseEnCours();
             }
 
@@ -1844,8 +1530,6 @@
               if (SoundMuteBool == false) {
                 audioToken.play();
               }
-              // Test audio coupé et non audio = 0;
-              // audioToken.play();
 
               miseEnCours += 10;
 
@@ -1857,10 +1541,6 @@
               }
               
               miseBoutonStyle();
-              // misePop();
-              // setTimeout(function scoreDepop() {
-              //   document.getElementById("miseEnCours").classList.toggle('scorePop');
-              // }, 500);
               cssMiseEnCours();
             }
 
@@ -1875,8 +1555,6 @@
             if (SoundMuteBool == false) {
               audioToken.play();
             }
-            // Test audio coupé et non audio = 0;
-            // audioToken.play();
 
             miseEnCours += 25;
 
@@ -1888,10 +1566,6 @@
             }
               
             miseBoutonStyle();
-            // misePop();
-            // setTimeout(function scoreDepop() {
-            //   document.getElementById("miseEnCours").classList.toggle('scorePop');
-            // }, 500);
             cssMiseEnCours();
           }
 
@@ -1907,8 +1581,6 @@
             if (SoundMuteBool == false) {
               audioToken.play();
             }
-            // Test audio coupé et non audio = 0;
-            // audioToken.play();
 
             miseEnCours += 100;
 
@@ -1920,31 +1592,21 @@
             }
               
             miseBoutonStyle();
-            // misePop();
-            // setTimeout(function scoreDepop() {
-            //   document.getElementById("miseEnCours").classList.toggle('scorePop');
-            // }, 500);
             cssMiseEnCours();
           }
         })
 
 
       }
-      
-      
 
-      
-
-      // WARNING si footerMise collapsed quand phase de Mise
-      function checkMiseWarning() {
-        // if ((isCollapsed == true) && (isPhaseMise == true)) {
-        //     document.getElementById("footerTitle").innerHTML = "- MISE -  /!\\";
-        // }
-        // else {
-        // document.getElementById("footerTitle").innerHTML = "- MISE -";
-        // }
+      function addLastTokenClickToTab(value) {
+        logTokenValues.unshift(value);
+        console.log(logTokenValues);
       }
+      
+      
 
+      
 
       // Phase mise
       function phaseMise() {
@@ -2031,9 +1693,6 @@
         if (burstJoueur == false) {
           decrementCompteurDeck();
         }
-
-        checkMiseWarning();
-
 
         // Mise a jour du score High-Low
         if (pickedCardObject.cardValue < 7) {
@@ -2140,8 +1799,6 @@
         document.getElementById("joueur").appendChild(img);
 
         decrementCompteurDeck()
-
-        checkMiseWarning();
 
         checkBurstJoueur();
         checkBJjoueur();

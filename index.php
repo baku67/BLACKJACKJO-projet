@@ -19,6 +19,7 @@
 		<link rel="stylesheet" href="Styles/MediaQueries3.css" id="stylesheet_5">
 		<link rel="stylesheet" href="Styles/styleW3.css" id="stylesheet_2">
 		<script type="text/javascript" src="scriptJouer.js"></script>
+		<script type="text/javascript" src="deck.js"></script>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@1,300;1,700&display=swap" rel="stylesheet">		<meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -87,9 +88,10 @@
 					<!-- Test script -->
 					<!-- Fin test -->
 
-					<button id="connectionButton" class="connectionButtons" onclick="document.getElementById('connectionModal').style.display='block'">Se connecter</button>
+					<!-- Anciennement "Se connecter / S'inscrire"-->
+					<button id="connectionButton" class="connectionButtons" onclick="document.getElementById('connectionModal').style.display='block'">Connexion</button>
 					<p class="connectionButtons">&nbsp;|&nbsp;</p>
-					<button id="inscriptionButton" class="connectionButtons" onclick="document.getElementById('inscriptionModal').style.display='block'">S'inscrire</button>
+					<button id="inscriptionButton" class="connectionButtons" onclick="document.getElementById('inscriptionModal').style.display='block'">Inscription</button>
 				<?php endif ?>
 				<!-- Fin -->
 
