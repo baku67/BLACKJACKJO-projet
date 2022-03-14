@@ -1,6 +1,17 @@
     
     window.onload = function(){
 
+      // FIX MOZILLA ZOOM
+        // const browser = window.browser || window.chrome;
+
+        // function onError(error) {
+        //   console.log(`Error: ${error}`);
+        // }
+    
+        // var setting = browser.tabs.setZoom(2);
+        // setting.then(null, onError);
+      // FIN FIX
+
       var audioCardSound = new Audio("Audio/addCardSound.mp3");
       audioCardSound.volume = 0.4;
 

@@ -490,18 +490,20 @@ h2 {
 }
 
 body {
-	background-image: url("../Images/backgroundMix2.png");
-	/* background-position: center; */
-	/* background-color: rgb(232, 241, 241); */
+	background-image: url("../Images/backgroundMix2-compressed.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+
+	/* background-color: #464646; */
+	background-color: #747474;
+
 	margin: 0px;
 	height: 100%;
 
-	/* ZOOM DE LA PAGE ENTIERE */
-	/* zoom: 65%;
-	-ms-zoom: 0.65;
-	-webkit-zoom: 0.65; */
 	
-	zoom: 53%;
+	zoom: 0.53;
 	-ms-zoom: 0.53;
 	-webkit-zoom: 0.53;
 
