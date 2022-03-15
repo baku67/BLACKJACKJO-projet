@@ -502,6 +502,8 @@ body {
 	margin: 0px;
 	height: 100%;
 
+	font-size: 120%;
+
 	
 	zoom: 0.53;
 	-ms-zoom: 0.53;
@@ -1221,7 +1223,7 @@ figure:active {
 }
 
 #ratioLine {
-	font-size: 2.2em;
+	font-size: 3.5em;
 }
 
 #classementDiv {
@@ -1236,7 +1238,7 @@ figure:active {
     transform: translate(-50%, -50%);
 
 	color: white;
-	font-size: 27px;
+	font-size: 37px;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 

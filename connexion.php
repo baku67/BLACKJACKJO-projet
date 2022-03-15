@@ -4,7 +4,12 @@ include("config.php");
 
 // Code pour empecher d'essayer de se co sur 'basilek.ovh' plutot que 'www.basilek.ovh'
 // Empechait la première tentative de co (avant de rediriger vers l'url valide)
-if ($_SERVER['HTTP_HOST'] == "basilek.ovh")
+// if ($_SERVER['HTTP_HOST'] == "basilek.ovh")
+// {
+//    $url = "http://www." . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+//    header("Location: $url");
+// } 
+if ($_SERVER['HTTP_HOST'] == "blackjackjo.com")
 {
    $url = "http://www." . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
    header("Location: $url");
@@ -52,7 +57,8 @@ if(isset($_POST['connexion'])){
                     $_SESSION['username'] = $Pseudo;
                                         
                     // Redirection post connexion
-                    header('Location: http://www.basilek.ovh/index.php');
+                    // header('Location: http://www.basilek.ovh/index.php');
+                    header('Location: http://www.blackjackjo.com/index.php');
                     exit;
                 }
             }
