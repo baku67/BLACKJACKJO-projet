@@ -10,9 +10,10 @@
 		<title id="title">BlackJack Jo'</title>
 		<link rel="icon" href="Images/favicon3.png">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
-		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> -->
-		<!-- <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script> -->
 		<meta charset="UTF-8">
+		<meta name="description" content="Application de BlackJack en ligne">
+		<meta name="author" content="Basile Kuntz">
+		<meta name="keywords" content="Blackjack, Casino, Jeu">
 		<link rel="stylesheet" href="Styles/style.css" id="stylesheet_1">
 		<link rel="stylesheet" href="Styles/MediaQueries1.css" id="stylesheet_3">
 		<link rel="stylesheet" href="Styles/MediaQueries2.css" id="stylesheet_4">
@@ -22,7 +23,8 @@
 		<script type="text/javascript" src="deck.js"></script>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@1,300;1,700&display=swap" rel="stylesheet">		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@1,300;1,700&display=swap" rel="stylesheet">		
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		
 		
 		<link rel="preconnect" href="https://fonts.googleapis.com">
