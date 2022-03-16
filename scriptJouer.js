@@ -1507,13 +1507,15 @@
           document.getElementById("whiteToken").addEventListener("click", function() {
           
             if ((credits-miseEnCours) >= 1) {
-              addLastTokenClickToTab(1);
     
               if (SoundMuteBool == false) {
                 audioToken.play();
               }
     
-              miseEnCours += 1;
+              if (miseEnCours < 100) {
+                addLastTokenClickToTab(1);
+                miseEnCours += 1;
+              }
 
               if (isConnected == true) {
                 document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBarre.png' class=\"imagesSou\">";
@@ -1531,13 +1533,15 @@
           document.getElementById("redToken").addEventListener("click", function() {
 
             if ((credits-miseEnCours) >= 5) {
-              addLastTokenClickToTab(5);
 
               if (SoundMuteBool == false) {
                 audioToken.play();
               }
 
-              miseEnCours += 5;
+              if (miseEnCours <= 95) {
+                addLastTokenClickToTab(5);
+                miseEnCours += 5;
+              }
 
               if (isConnected == true) {
                 document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBarre.png' class=\"imagesSou\">";
@@ -1556,13 +1560,15 @@
           document.getElementById("greenToken").addEventListener("click", function() {
 
             if ((credits-miseEnCours) >= 10) {
-              addLastTokenClickToTab(10);
 
               if (SoundMuteBool == false) {
                 audioToken.play();
               }
 
-              miseEnCours += 10;
+              if (miseEnCours <= 90) {
+                addLastTokenClickToTab(10);
+                miseEnCours += 10;
+              }
 
               if (isConnected == true) {
                 document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBarre.png' class=\"imagesSou\">";
@@ -1581,13 +1587,16 @@
         document.getElementById("blueToken").addEventListener("click", function() {
 
           if ((credits-miseEnCours) >= 25) {
-            addLastTokenClickToTab(25);
+            
 
             if (SoundMuteBool == false) {
               audioToken.play();
             }
 
-            miseEnCours += 25;
+            if (miseEnCours <= 75) {
+              addLastTokenClickToTab(25);
+              miseEnCours += 25;
+            }
 
             if (isConnected == true) {
               document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBarre.png' class=\"imagesSou\">";
@@ -1607,13 +1616,15 @@
         document.getElementById("blackToken").addEventListener("click", function() {
 
           if ((credits-miseEnCours) >= 100) {
-            addLastTokenClickToTab(100);
 
             if (SoundMuteBool == false) {
               audioToken.play();
             }
 
-            miseEnCours += 100;
+            if (miseEnCours == 0) {
+              addLastTokenClickToTab(100);
+              miseEnCours += 100;
+            }
 
             if (isConnected == true) {
               document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBarre.png' class=\"imagesSou\">";

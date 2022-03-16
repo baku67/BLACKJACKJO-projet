@@ -10,6 +10,20 @@
     <span id="miseLocked" style="opacity: 0;"></span>
 </div>
 
+<div id="parametresPartieDiv" style="text-align:center;">
+    <p style="position:relative; width:100%; font-size:1.35em; padding-right:35px; opacity:0.4;">Mise max</p>
+
+    <div style="display:inline-flex;">
+        <p style="font-weight:bold; font-size:1.5em; opacity:0.6;">100 </p><!--<img class="imagesSou" src="Images/souBlanc.png"/>-->
+    </div>
+    <br/><br/>
+    <p style="position:relative; width:100%; font-size:1.35em; padding-right:35px; opacity:0.4;">Nombre de paquets</p>
+    
+    <div style="display:inline-flex;">
+        <p style="font-weight:bold; font-size:1.5em; opacity:0.6;">2 </p><!--<img class="imagesSou" src="Images/paquets.png"/>-->
+    </div>
+</div>
+
 
 
 <div class="background JouerContainer">

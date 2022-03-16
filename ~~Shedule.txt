@@ -1,3 +1,5 @@
+Affichage des regles/parametrage partie au milieu en gros (condensé, voir en ligne) opacity 0
+
 Ratio WinLose en pourcentage sans decimaux: 
 	FadeIn/SetTimeOut synchro avec le Top
 	Rouge/Vert selon <>50% ?
