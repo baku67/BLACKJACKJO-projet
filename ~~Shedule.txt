@@ -1,4 +1,16 @@
-Affichage des regles/parametrage partie au milieu en gros (condensé, voir en ligne) opacity 0
+Update
+	MiseLock() => SQL Update -mise (voir si gains adaptés)
+	|---> Lors reload/URL/redirections/JS.load():  mettre un alert("Etes vous sur de quitter la partie? La mise en cours sera perdue") avec OUI et NON (ducoup pop l'alert avant la redirection)
+
+	Journal/historique des dernieres parties (Etape1: set, Etape2: set)
+
+	Guide(règles)
+
+
+
+
+
+AJOUTER UN BOOLEAN 'fin distrib croupier' pour savoir quand afficher le reload()
 
 Ratio WinLose en pourcentage sans decimaux: 
 	FadeIn/SetTimeOut synchro avec le Top

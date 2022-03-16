@@ -55,7 +55,7 @@ button, input[type="submit"], input[type="reset"] {
 }
 #miseLocked {
 	color: rgba(241, 233, 206, 0.95);
-	border: 2px solid rgba(222,159,38,0.8);
+	border: 3px solid rgba(252, 227, 3, 0.6);
     text-shadow: 0 0 4px rgb(255 213 2);
     border-radius: 8px;
     padding: 5px 10px 7px 10px;
@@ -1183,7 +1183,7 @@ figure:active {
   }
 .resultatTextBust {
 	font-family: 'Alfa Slab One', cursive;
-	color:rgb(136 2 2 / 90%);
+	color:rgb(223, 204, 204);
 	 	/* Text Shadow blanc? */
 	font-size: 3.5em;
 	letter-spacing: 2px;
@@ -1650,7 +1650,7 @@ p {
 		transform: rotate(0deg);
 	}
 	to {
-		transform: rotate(360deg);
+		transform: rotate(720deg);
 	}
 }
 
@@ -1666,7 +1666,7 @@ p {
 	margin-top: 31px;
 	font-size: 2.5em;
 	padding: 5px 15px 5px 15px;
-	border: 7px solid rgba(223, 223, 223, 0.6);
+	border: 2px solid rgba(223, 223, 223, 0.4);
 	border-radius: 17px;
 }
 /* #relancer:hover { */
@@ -1754,13 +1754,14 @@ p {
   }
   .waviy span {
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-weight: bold;
 	position: relative;
 	display: inline-block;
 	font-size: 30px;
 	color: #fff;
 	/* text-transform: uppercase; */
-	animation: flip 2s infinite;
-	animation-delay: calc(.2s * var(--i))
+	animation: flip 1s infinite;
+	animation-delay: calc(.1s * var(--i))
   }
   @keyframes flip {
 	0%,80% {

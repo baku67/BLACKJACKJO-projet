@@ -667,7 +667,7 @@
           success: function(response) {
             $("#chipsContainer").html(response);
             ChoixActif = false;
-            document.getElementById("footerTitle").innerHTML = " - Distribution... -";
+            document.getElementById("footerTitle").innerHTML = " - En attente -";
           }
         });
 
@@ -861,7 +861,7 @@
           success: function(response) {
             $("#chipsContainer").html(response);
             ChoixActif = false;
-            document.getElementById("footerTitle").innerHTML = " - Distribution... -";
+            document.getElementById("footerTitle").innerHTML = " - En attente -";
           }
         });
 
@@ -1003,7 +1003,7 @@
             success: function(response) {
               $("#chipsContainer").html(response);
               ChoixActif = false;
-              document.getElementById("footerTitle").innerHTML = " - Distribution... -";
+              document.getElementById("footerTitle").innerHTML = " - En attente -";
             }
           });
 
