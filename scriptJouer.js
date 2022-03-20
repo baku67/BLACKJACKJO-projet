@@ -1140,19 +1140,7 @@
                     }, 250);
                     // Fin séparateur
 
-                    // Apparition bouton (après PhaseCroupier sinon MessUp si cliqué trop tot)
-                    
-                    setTimeout(function() { 
-                      document.getElementById("relancer").classList.add("fadeInResultat");
-                      document.getElementById("relancer").style.visibility = "visible";
-                      // Disparition boutton onClick
-                      document.getElementById("relancer").addEventListener("click", function() {
-                        document.getElementById("reloadPng").classList.add('rotateReloadPng');
-                        setTimeout( function() { 
-                          document.getElementById("relancer").style.visibility = "hidden";
-                        }, 1500);
-                      })
-                    }, 2000)
+                    popBoutonReload();
 
                     // Bouton Rejouer
                     relancer();
@@ -1258,18 +1246,7 @@
                     }, 250);
                     // Fin séparateur
   
-                    // Apparition bouton (après PhaseCroupier sinon MessUp si cliqué trop tot)
-                    setTimeout(function() { 
-                      document.getElementById("relancer").classList.add("fadeInResultat");
-                      document.getElementById("relancer").style.visibility = "visible";
-                      // Disparition boutton onClick
-                      document.getElementById("relancer").addEventListener("click", function() {
-                          document.getElementById("reloadPng").classList.add('rotateReloadPng');
-                        setTimeout( function() { 
-                          document.getElementById("relancer").style.visibility = "hidden";
-                        }, 1500);
-                      })
-                    }, 2000)
+                    popBoutonReload();
 
                     // Bouton Rejouer
                     relancer();
@@ -1373,18 +1350,7 @@
                       }, 250);
                       // Fin séparateur
     
-                      // Apparition bouton (après PhaseCroupier sinon MessUp si cliqué trop tot)
-                      setTimeout(function() { 
-                        document.getElementById("relancer").classList.add("fadeInResultat");
-                        document.getElementById("relancer").style.visibility = "visible";
-                        // Disparition boutton onClick
-                        document.getElementById("relancer").addEventListener("click", function() {
-                          document.getElementById("reloadPng").classList.add('rotateReloadPng');
-                        setTimeout( function() { 
-                          document.getElementById("relancer").style.visibility = "hidden";
-                        }, 1500);
-                      })
-                      }, 2000)
+                      popBoutonReload();
       
                       // Bouton Rejouer
                       relancer();
@@ -1471,18 +1437,7 @@
                     }, 250);
                     // Fin séparateur
   
-                    // Apparition bouton (après PhaseCroupier sinon MessUp si cliqué trop tot)
-                    setTimeout(function() { 
-                      document.getElementById("relancer").classList.add("fadeInResultat");
-                      document.getElementById("relancer").style.visibility = "visible";
-                      // Disparition boutton onClick
-                      document.getElementById("relancer").addEventListener("click", function() {
-                          document.getElementById("reloadPng").classList.add('rotateReloadPng');
-                        setTimeout( function() { 
-                          document.getElementById("relancer").style.visibility = "hidden";
-                        }, 1500);
-                      })
-                    }, 2000)
+                    popBoutonReload();
   
                     // Bouton Rejouer
                     relancer();
@@ -1502,6 +1457,22 @@
         if (miseEnCours > 0) {
           document.getElementById("miseEnCours").className ="miseEnCours";
         }
+      }
+
+
+      function popBoutonReload() {
+        // Apparition bouton (après PhaseCroupier sinon MessUp si cliqué trop tot)
+        setTimeout(function() { 
+          document.getElementById("relancer").classList.add("fadeInResultat");
+          document.getElementById("relancer").style.visibility = "visible";
+          // Disparition boutton onClick
+          document.getElementById("relancer").addEventListener("click", function() {
+            document.getElementById("reloadPng").classList.add('rotateReloadPng');
+            setTimeout( function() { 
+              document.getElementById("relancer").style.visibility = "hidden";
+            }, 1500);
+          })
+        }, 2000)
       }
 
       
@@ -1926,15 +1897,7 @@
             }
           })
 
-          // console.log("(JS) Log ");
-          // $.ajax({
-          //   url: "setLog.php",
-          //   method: "post",
-          //   data: { result: result, gain: gain},
-          //   success: function(res) {
-          //     console.log("(JS) success POST Log : " + res);
-          //   }
-          // })
+          // historiqueDB();
         }
       }
       else if (isConnected == false) {
@@ -2166,18 +2129,7 @@
                 }, 250);
                 // Fin Séparateur
 
-                // Apparition bouton (après PhaseCroupier sinon MessUp si cliqué trop tot)
-                setTimeout(function() { 
-                  document.getElementById("relancer").classList.add("fadeInResultat");
-                  document.getElementById("relancer").style.visibility = "visible";
-                  // Disparition boutton onClick
-                  document.getElementById("relancer").addEventListener("click", function() {
-                      document.getElementById("reloadPng").classList.add('rotateReloadPng');
-                    setTimeout( function() { 
-                      document.getElementById("relancer").style.visibility = "hidden";
-                    }, 1500);
-                  })
-                }, 2000)
+                popBoutonReload();
 
                 // Bouton Rejouer
                 relancer();
@@ -2300,18 +2252,7 @@
                 }, 250);
                 // Fin Séparateur
 
-                // Apparition bouton (après PhaseCroupier sinon MessUp si cliqué trop tot)
-                setTimeout(function() { 
-                  document.getElementById("relancer").classList.add("fadeInResultat");
-                  document.getElementById("relancer").style.visibility = "visible";
-                  // Disparition boutton onClick
-                  document.getElementById("relancer").addEventListener("click", function() {
-                      document.getElementById("reloadPng").classList.add('rotateReloadPng');
-                    setTimeout( function() { 
-                      document.getElementById("relancer").style.visibility = "hidden";
-                    }, 1500);
-                  })
-                }, 2000)
+                popBoutonReload();
 
                 // Bouton Rejouer
                 relancer();
