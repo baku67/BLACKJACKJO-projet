@@ -7,10 +7,10 @@ Update
 	Guide(règles)
 
 
+Mettre le fix de pop du relancer apres distrib de addCardCroupieradterBust pour le BlackJack (meme situation)
+--> Ah bah non le balckJack ne provoque pas la distribution
 
-
-
-AJOUTER UN BOOLEAN 'fin distrib croupier' pour savoir quand afficher le reload()
+faire une fonction pour le relancer
 
 Ratio WinLose en pourcentage sans decimaux: 
 	FadeIn/SetTimeOut synchro avec le Top

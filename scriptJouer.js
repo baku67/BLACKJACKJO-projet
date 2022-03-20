@@ -955,6 +955,7 @@
         addCardCroupierRecursiveAfterBurst();
 
         function addCardCroupierRecursiveAfterBurst() {
+
           setTimeout(function() {
             document.getElementById("backCardCroupier").classList.add("fadeOut2");
           }, 1550 * setTimeOutMultiplier)
@@ -970,10 +971,9 @@
             }, 2150 * setTimeOutMultiplier)
           }
           else {
-            // resultat();
+            // resultats
             if ((scoreTotalCroupier > 16) && (scoreTotalCroupier < 22)) {
               setTimeout(function() {
-                // document.getElementById("scoreCroupier").style.backgroundColor = "rgba(59,217,10,1)"
                 document.getElementById("scoreCroupier").style.color = "rgba(255,245,0,1)";
                 document.getElementById("scoreCroupier").style.textShadow = "1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, -1px -1px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, -1px 0px 0 #000000, 0px -1px 0 #000000";
                 document.getElementById("scoreCroupier").style.border = "3px solid rgba(58,157,32, 1)";
@@ -987,6 +987,20 @@
                 document.getElementById("scoreCroupier").style.border = "3px solid rgba(130,14,39, 1)";
               }, 400);
             }
+
+            // WIP fix: affichage bouton relancer seulement après la fin de la distribution
+              // Apparition bouton (après PhaseCroupier sinon MessUp si cliqué trop tot)
+              setTimeout(function() { 
+                document.getElementById("relancer").classList.add("fadeInResultat");
+                document.getElementById("relancer").style.visibility = "visible";
+                // Disparition boutton onClick
+                document.getElementById("relancer").addEventListener("click", function() {
+                    document.getElementById("reloadPng").classList.add('rotateReloadPng');
+                  setTimeout( function() { 
+                    document.getElementById("relancer").style.visibility = "hidden";
+                  }, 1500);
+                })
+              }, 500)
           }
         };
 
@@ -1127,16 +1141,13 @@
                     // Fin séparateur
 
                     // Apparition bouton (après PhaseCroupier sinon MessUp si cliqué trop tot)
+                    
                     setTimeout(function() { 
                       document.getElementById("relancer").classList.add("fadeInResultat");
                       document.getElementById("relancer").style.visibility = "visible";
                       // Disparition boutton onClick
                       document.getElementById("relancer").addEventListener("click", function() {
-
                         document.getElementById("reloadPng").classList.add('rotateReloadPng');
-                        console.log('OK');
-
-                        // document.getElementById("relancer").classList.add("fadeOut");
                         setTimeout( function() { 
                           document.getElementById("relancer").style.visibility = "hidden";
                         }, 1500);
@@ -1254,8 +1265,6 @@
                       // Disparition boutton onClick
                       document.getElementById("relancer").addEventListener("click", function() {
                           document.getElementById("reloadPng").classList.add('rotateReloadPng');
-                          console.log('OK');
-                        // document.getElementById("relancer").classList.add("fadeOut");
                         setTimeout( function() { 
                           document.getElementById("relancer").style.visibility = "hidden";
                         }, 1500);
@@ -1371,8 +1380,6 @@
                         // Disparition boutton onClick
                         document.getElementById("relancer").addEventListener("click", function() {
                           document.getElementById("reloadPng").classList.add('rotateReloadPng');
-                          console.log('OK');
-                        // document.getElementById("relancer").classList.add("fadeOut");
                         setTimeout( function() { 
                           document.getElementById("relancer").style.visibility = "hidden";
                         }, 1500);
@@ -1471,8 +1478,6 @@
                       // Disparition boutton onClick
                       document.getElementById("relancer").addEventListener("click", function() {
                           document.getElementById("reloadPng").classList.add('rotateReloadPng');
-                          console.log('OK');
-                        // document.getElementById("relancer").classList.add("fadeOut");
                         setTimeout( function() { 
                           document.getElementById("relancer").style.visibility = "hidden";
                         }, 1500);
@@ -2037,20 +2042,6 @@
                     lancerPhaseCroupierAfterBurst();
                   }, 750)
 
-                  // Apparition bouton (après PhaseCroupier sinon MessUp si cliqué trop tot)
-                  setTimeout(function() { 
-                    document.getElementById("relancer").classList.add("fadeInResultat");
-                    document.getElementById("relancer").style.visibility = "visible";
-                    // Disparition boutton onClick
-                    document.getElementById("relancer").addEventListener("click", function() {
-                        document.getElementById("reloadPng").classList.add('rotateReloadPng');
-                        console.log('OK');
-                      // document.getElementById("relancer").classList.add("fadeOut");
-                      setTimeout( function() { 
-                        document.getElementById("relancer").style.visibility = "hidden";
-                      }, 1500);
-                    })
-                  }, 2000)
 
                   // Bouton Rejouer
                   relancer();
@@ -2182,8 +2173,6 @@
                   // Disparition boutton onClick
                   document.getElementById("relancer").addEventListener("click", function() {
                       document.getElementById("reloadPng").classList.add('rotateReloadPng');
-                      console.log('OK');
-                    // document.getElementById("relancer").classList.add("fadeOut");
                     setTimeout( function() { 
                       document.getElementById("relancer").style.visibility = "hidden";
                     }, 1500);
@@ -2318,8 +2307,6 @@
                   // Disparition boutton onClick
                   document.getElementById("relancer").addEventListener("click", function() {
                       document.getElementById("reloadPng").classList.add('rotateReloadPng');
-                      console.log('OK');
-                    // document.getElementById("relancer").classList.add("fadeOut");
                     setTimeout( function() { 
                       document.getElementById("relancer").style.visibility = "hidden";
                     }, 1500);
