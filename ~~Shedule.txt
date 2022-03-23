@@ -2,13 +2,14 @@ Update
 	MiseLock() => SQL Update -mise (voir si gains adaptés)
 	|---> Lors reload/URL/redirections/JS.load():  mettre un alert("Etes vous sur de quitter la partie? La mise en cours sera perdue") avec OUI et NON (ducoup pop l'alert avant la redirection)
 
-	Journal/historique des dernieres parties (Etape1: set, Etape2: get)
-
 	Guide(règles)
 
+	!!! setHistorique.php ajouter les Var de l'array historiqueToPhp(JS) aux autres cas
+	!!! getHistorique.php (GET): si LOSE: background rouge	
+							 si WIN: background vert
+							 si BJ: background jaune
 
-Mettre le fix de pop du relancer apres distrib de addCardCroupieradterBust pour le BlackJack (meme situation)
---> Ah bah non le balckJack ne provoque pas la distribution
+
 
 faire une fonction pour le relancer
 
@@ -25,8 +26,6 @@ Classement:
 	(Phone): En dessous de Ratio WinLose
 	Augmenter tailles des étoiles et ajuster le reste
 
-Mise Max Value = 1000;
-Désactiver de base le SoundToggle index (var SoundMuteBool), et adapter le style
 
 Mettre le contenu du index dans index2.php et mettre a jour le load du JS
 
@@ -289,6 +288,8 @@ box-sizing: border-box;  Pour border contenu dans la box (pas de dépassement ou
 
 /////////////////         DONE         \\\\\\\\\\\\\\\\\
 
+Mise Max Value = 1000;
+Désactiver de base le SoundToggle index (var SoundMuteBool), et adapter le style
 Garder le boom.png pour BUST joueur mais mettre un Loose (sans img comme Win)
 Pour LE HEIGHT RESPONSIVE DU FOOTER + JoueurModule: faut tout fixer au bottom en absolute (en % et apres jouer avec les mediaQueries)
 Petite anim (loading: genre point gauche droite) en dessous de 'Distribution...' en JS (check NET)

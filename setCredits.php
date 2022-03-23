@@ -12,7 +12,7 @@
     foreach ($gainFromJS as $key => $value) {
         $gain = $value;
         echo ('PhP Valeur gain passé du JS: ' . $gain);
-     }
+    }
 
 
     $query = "UPDATE users SET credits = credits + ? WHERE username = '".$_SESSION['username']."' ";

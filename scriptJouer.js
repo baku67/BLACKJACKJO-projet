@@ -1845,7 +1845,7 @@
       }
 
 
-      // Ne pas oublier de mettre un if ISSET avant d'appeler la fonction
+      // Envoi Defaite/Victoire +1 pour calcul ratio
       function winLoseDB(winLose) {
         var winLoseToPhp = {};
         winLoseToPhp.value = winLose;
@@ -1860,25 +1860,34 @@
           }
         })
       }
+      // Fin ratio
 
-      function historiqueDB(WinLose, resultatCas, gain, date) {
-        var historiqueToPhp = {};
-        historiqueToPhp[1] = WinLose;
-        historiqueToPhp[2] = resultatCas;
-        historiqueToPhp[3] = gain;
-        historiqueToPhp[4] = date;
 
+      function historiqueDB(WinLose, resultatCas, gain) {
+        var date = new Date();
+
+        // Array envoyé au php
+        var historiqueToPhp = [];
+        historiqueToPhp[0] = WinLose;
+        historiqueToPhp[1] = resultatCas;
+        historiqueToPhp[2] = gain;
+        historiqueToPhp[3] = date.toString();
+
+        console.log("Array JS: [" + historiqueToPhp + "]");
+
+        // Envoi de l'array
         $.ajax({
           url: "setHistorique.php",
           method: "post",
-          data: historiqueToPhp,
+          data: { vArray: historiqueToPhp },
           succes: function(res) {
-            console.log("(JS) AJAX POST historique: " + res);
+            console.log("ALLLLLLLOOOOOOOOOOOO prout: " + res);
           }
-        })
+        });
       }
 
 
+      // Envoi/Refresh du crédits et appel historiqueDB();
       if (isConnected == true) {
         function ajoutGain(gain) {
           document.getElementById("creditsConnected").innerHTML = (credits + gain);
@@ -1895,9 +1904,10 @@
             success: function(res) {
               console.log("(JS) success POST gains: " + res);
             }
-          })
+          });
 
-          // historiqueDB();
+          // A replacer la ou est appelé ajoutGain();
+          historiqueDB(WinLose, resultatCas, gain);
         }
       }
       else if (isConnected == false) {
@@ -1912,7 +1922,10 @@
       function checkBurstJoueur() {
         if (scoreTotalJoueur > 21) {
 
+          WinLose = 'LOSE';
           resultatCas = 'BURST';
+          // gain = gain
+          // date est pris dans la fonction historiqueDB
 
             burstJoueur = true;
 
