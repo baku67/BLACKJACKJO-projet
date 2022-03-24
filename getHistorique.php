@@ -1,13 +1,13 @@
 <?php
-
     session_start();
-    $query = 'SELECT winLose, gain FROM historique WHERE username = "'.$_SESSION['username'].'" ORDER BY id DESC LIMIT 5;   ';
-
-    // EXEMPLE QUI MARCHE:    $query = "SELECT winLose, gain FROM historique WHERE username = 'basile' ORDER BY 'id' DESC LIMIT 3";
 
     
+    $query = 'SELECT winLose, gain FROM historique WHERE username = "'.$_SESSION['username'].'" ORDER BY id DESC LIMIT 5;   ';
+    // ajouter (SELECT) scoreJoueur et scoreCroupier
     
     $result = mysqli_query($db, $query);
+
+
 
     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
     {

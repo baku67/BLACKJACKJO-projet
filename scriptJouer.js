@@ -1148,112 +1148,112 @@
 
 
 
-            if (scoreTotalCroupier > 21) {
+              if (scoreTotalCroupier > 21) {
 
-              WinLose = 'WIN';
-              resultatCas = 'Big Win';
+                WinLose = 'WIN';
+                resultatCas = 'Big Win';
 
-              setTimeout(function() {
-                $.ajax({
-                  async: false,
-                  url: "Footers/footerJoueurGagne.html",
-                  dataType: "html",
-                  success: function(response) {
-                    $("#container3").html(response);
-                    ChoixActif = false;
-                    document.getElementById("footerTitle").innerHTML = " - Résultat -";
-  
-                      // Mise lockée
-                      document.getElementById("miseLockedFooter").innerHTML = miseLocked;
-                      // fin
-  
-                      // Résultat Gains 
-                      if ( isConnected == true) {
-                        document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBarre.png" class="imagesSouResultat">';
-                      }
-                      else {
-                        document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBlancBarre.png" class="imagesSouResultat">';
-                      }                      
-                      setTimeout( function() {
-                        IncrementGain(miseLockedMultiplied);
-                      }, 1500);
+                setTimeout(function() {
+                  $.ajax({
+                    async: false,
+                    url: "Footers/footerJoueurGagne.html",
+                    dataType: "html",
+                    success: function(response) {
+                      $("#container3").html(response);
+                      ChoixActif = false;
+                      document.getElementById("footerTitle").innerHTML = " - Résultat -";
+    
+                        // Mise lockée
+                        document.getElementById("miseLockedFooter").innerHTML = miseLocked;
+                        // fin
+    
+                        // Résultat Gains 
+                        if ( isConnected == true) {
+                          document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBarre.png" class="imagesSouResultat">';
+                        }
+                        else {
+                          document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBlancBarre.png" class="imagesSouResultat">';
+                        }                      
+                        setTimeout( function() {
+                          IncrementGain(miseLockedMultiplied);
+                        }, 1500);
 
-                      setTimeout( function() {
-                        gain = miseLocked;
-                        ajoutGain(gain);
+                        setTimeout( function() {
+                          gain = miseLocked;
+                          ajoutGain(gain);
 
-                        winLose = 1;
-                        winLoseDB(winLose);
+                          winLose = 1;
+                          winLoseDB(winLose);
 
-                      }, 500)
+                        }, 500)
 
+                        
+                          // function: (en partant de la mise vers le gains réel)
+                          var miseLockedMultiplied = miseLocked * 2;
+                          // function IncrementGain() {
+                          //   setTimeout( function() {
+                          //       if (miseLocked < miseLockedMultiplied) {
+                          //       miseLocked = miseLocked + 1;
+                          //       document.getElementById("miseResultat").innerHTML = miseLocked;
+                          //       document.getElementById("miseResultat").classList.add("addColorToResultatGreen");
+                          //       IncrementGain();
+                          //       }
+                          //   }, 20);
+                          // } 
+                          // fin fonction
+                        // Fin résultat Gains
+    
+                      // FIN WIP
                       
-                        // function: (en partant de la mise vers le gains réel)
-                        var miseLockedMultiplied = miseLocked * 2;
-                        // function IncrementGain() {
-                        //   setTimeout( function() {
-                        //       if (miseLocked < miseLockedMultiplied) {
-                        //       miseLocked = miseLocked + 1;
-                        //       document.getElementById("miseResultat").innerHTML = miseLocked;
-                        //       document.getElementById("miseResultat").classList.add("addColorToResultatGreen");
-                        //       IncrementGain();
-                        //       }
-                        //   }, 20);
-                        // } 
-                        // fin fonction
-                      // Fin résultat Gains
-  
-                    // FIN WIP
-                    
 
-                    document.getElementById("deckContainer").remove();
-                    document.getElementById("parametresPartieDiv").remove();
-                    // document.getElementById("deckContainer").classList.add("fadeOut");
-  
-                    document.getElementById("scoreCroupier").style.backgroundColor = "rgb(160 13 27)";
-                    // document.getElementById("scoreJoueur").style.backgroundColor = "rgba(59,217,10,1)";
+                      document.getElementById("deckContainer").remove();
+                      document.getElementById("parametresPartieDiv").remove();
+                      // document.getElementById("deckContainer").classList.add("fadeOut");
+    
+                      document.getElementById("scoreCroupier").style.backgroundColor = "rgb(160 13 27)";
+                      // document.getElementById("scoreJoueur").style.backgroundColor = "rgba(59,217,10,1)";
 
-                    document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)";
-                    document.getElementById("scoreJoueur").style.color = "rgba(255,245,0,1)";
+                      document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)";
+                      document.getElementById("scoreJoueur").style.color = "rgba(255,245,0,1)";
 
-                    document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)";
-                    document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)";
+                      document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)";
+                      document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)";
 
-                    document.getElementById("scoreCroupier").style.border = "1px solid rgba(255,1,49,0.5)";
-                    document.getElementById("scoreJoueur").style.border = "1px solid rgba(255, 245, 0, 0.7)";
+                      document.getElementById("scoreCroupier").style.border = "1px solid rgba(255,1,49,0.5)";
+                      document.getElementById("scoreJoueur").style.border = "1px solid rgba(255, 245, 0, 0.7)";
 
 
-                    // Séparateur
-                    setTimeout(function() {
-                      //Apparition
-                      document.getElementById("resultatText").classList.add("resultatTextWin");
-                      document.getElementById("separateur").classList.add("styleSeparateurWin");
+                      // Séparateur
+                      setTimeout(function() {
+                        //Apparition
+                        document.getElementById("resultatText").classList.add("resultatTextWin");
+                        document.getElementById("separateur").classList.add("styleSeparateurWin");
 
-                      
-                      if (SoundMuteBool == false) {
-                        audioCoinWin.play();
-                      }
-                      // TEST audio coupé et non audio = 0;
-                      // audioCoinWin.play();
+                        
+                        if (SoundMuteBool == false) {
+                          audioCoinWin.play();
+                        }
+                        // TEST audio coupé et non audio = 0;
+                        // audioCoinWin.play();
 
-                      // Animation scale() qui pop avec fadeIn()
-                      document.getElementById("separateur").classList.add("fadeInResultat");
-                      document.getElementById("separateur").classList.add("scaleBoom");
-                      // document.getElementById("separateur").classList.add("marginFix");
+                        // Animation scale() qui pop avec fadeIn()
+                        document.getElementById("separateur").classList.add("fadeInResultat");
+                        document.getElementById("separateur").classList.add("scaleBoom");
+                        // document.getElementById("separateur").classList.add("marginFix");
 
-                      // TEXT
-                      document.getElementById("resultatText").innerText = "BIG WIN";
-                    }, 250);
-                    // Fin séparateur
-  
-                    popBoutonReload();
+                        // TEXT
+                        document.getElementById("resultatText").innerText = "BIG WIN";
+                      }, 250);
+                      // Fin séparateur
+    
+                      popBoutonReload();
 
-                    // Bouton Rejouer
-                    relancer();
-                  }
-                });
-              }, 0);
-            }
+                      // Bouton Rejouer
+                      relancer();
+                    }
+                  });
+                }, 0);
+              }
 
               if (scoreTotalJoueur > scoreTotalCroupier) {
 
@@ -1295,22 +1295,8 @@
                         }, 500)
   
                         
-                          // function: (en partant de la mise vers le gains réel)
-                          var miseLockedMultiplied = miseLocked * 2;
-                          // function IncrementGain() {
-                          //   setTimeout( function() {
-                          //       if (miseLocked < miseLockedMultiplied) {
-                          //       miseLocked = miseLocked + 1;
-                          //       document.getElementById("miseResultat").innerHTML = miseLocked;
-                          //       document.getElementById("miseResultat").classList.add("addColorToResultatGreen");
-                          //       IncrementGain();
-                          //       }
-                          //   }, 20);
-                          // } 
-                          // fin fonction
-                        // Fin résultat Gains
-    
-                      // FIN WIP
+                        var miseLockedMultiplied = miseLocked * 2;
+
                       
   
                       document.getElementById("deckContainer").remove();
@@ -1361,8 +1347,9 @@
                 }, 0);
               }
 
-              if (scoreTotalJoueur == scoreTotalCroupier) {
 
+
+              if (scoreTotalJoueur == scoreTotalCroupier) {
 
                 WinLose = 'PUSH';
                 resultatCas = 'Push';
@@ -1763,9 +1750,6 @@
         //WIP AS
         if (pickedCardObject.cardValue == 1) {
           asJoueur = true;
-          // console.log("WIP AS see line --->");
-
-          // newValue = scoreTotalJoueur + 10;
         }
         //FIN
         nbrCardsJoueur = nbrCardsJoueur + 1;
@@ -1782,7 +1766,7 @@
           void elementScore.offsetWidth;
           elementScore.classList.add("scores");
 
-          //
+
           //WIP AS 
           if (asJoueur == true) {
             if ((scoreTotalJoueur + 10) > 21) {
@@ -1819,6 +1803,7 @@
         decrementCompteurDeck()
 
         checkBurstJoueur();
+        check21noBJ();
         checkBJjoueur();
 
         // Mise a jour du score High-Low
@@ -1872,6 +1857,8 @@
         historiqueToPhp[1] = resultatCas;
         historiqueToPhp[2] = gain;
         historiqueToPhp[3] = date.toString();
+        //historiqueToPhp[4] = scoreJoueur;
+        //historiqueToPhp[5] = scoreCroupier();
 
         console.log("Array JS: [" + historiqueToPhp + "]");
 
@@ -2046,15 +2033,12 @@
 
 
       // 21 hors BlackJack: Enlever la possibilité de choisir 
+      function check21noBJ() {
         if ((scoreTotalJoueur == 21) && (nbrCardsJoueur > 2)) {
           //      "&& nbrOfJoueurCards == 2"     (pour le vrai BJ)
 
           WinLose = 'WIN';
           resultatCas = 'Big Win';
-          // gain = gain
-          // date est pris dans la fonction historiqueDB
-
-          console.log("nbrCardsJoueur: " + nbrCardsJoueur + "&nbscp; |~~~  21  ~~~|");
 
           setTimeout(function() {
             $.ajax({
@@ -2138,6 +2122,7 @@
             });
           }, 1200);
         }
+      }
 
 
 

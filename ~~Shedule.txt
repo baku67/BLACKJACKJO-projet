@@ -1,3 +1,9 @@
+addcardCroupier() value AS/deuxieme AS/ etc ...   A finir
+addCardJoueur() a finir aussi
+
+WIP: Ajouter les scoreJoueur et scoreCroupier au historiqueToPhp() + BDD + PHP
+
+
 if scoreJoueur == 21: resultats sans choix
 
 Mettre deja les fonction de resultats ensemble (puis les toutes les fonctions ensemble)
