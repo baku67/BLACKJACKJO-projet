@@ -127,7 +127,7 @@
 						<span style="color: rgb(241 205 92 / 95%) !important; text-shadow: 0 0 4px rgb(255 213 2);" id="creditsConnected"></span>
 						
 						<span>
-							<img src="Images/souBarre.png" alt="pièce" id="imageSouPetit">
+							<img src="Images/souBarre.png" alt="pièce" class="imageSouPetit">
 						</span>
 		
 					</p>
@@ -323,7 +323,7 @@
 
 						<?php include('getHighScore.php'); ?>
 						
-						<img src="Images/souBlancBarre.png" alt="pièce" id="imageSouPetit" style="top:-9px !important">
+						<img src="Images/souBlancBarre.png" alt="pièce" class="imageSouPetit" style="top:-9px !important">
 
 					</div>
 
@@ -344,7 +344,7 @@
 
 						<?php include('getHighScore2.php'); ?>
 						
-						<img src="Images/souBlancBarre.png" alt="pièce" id="imageSouPetit" style="top:-9px !important">
+						<img src="Images/souBlancBarre.png" alt="pièce" class="imageSouPetit" style="top:-9px !important">
 
 					</div>
 
@@ -365,7 +365,7 @@
 
 						<?php include('getHighScore3.php'); ?>
 						
-						<img src="Images/souBlancBarre.png" alt="pièce" id="imageSouPetit" style="top:-9px !important">
+						<img src="Images/souBlancBarre.png" alt="pièce" class="imageSouPetit" style="top:-9px !important">
 
 					</div>
 

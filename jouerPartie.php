@@ -7,7 +7,7 @@
     <br>
     <img src="Images/deck2.png" id="imgCardDeck" class="imgPartie" style="margin-top: 5px;">
     <br><br>
-    <span id="miseLocked" style="opacity: 0;"></span>
+    <span id="miseLocked" style="opacity: 0; padding:15px 12px 12px 12px;"></span>
 </div>
 
 <div id="parametresPartieDiv" style="text-align:center; visiblity: visible">

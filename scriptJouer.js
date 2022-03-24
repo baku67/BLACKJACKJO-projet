@@ -564,17 +564,11 @@
 
 
     
-      // function: (en partant de la mise vers le gains réel)
       function DecrementGain() {
 
-        // adapter la longueur du son: calculer le temps pris pour decrement/increment du miseResultat (((110/miseLocked) * setTimeOutMultiplier) * miseLocked)   (en ms)
-        // provoquer un fadeOut du son à partir d'avant ce moment
         if (SoundMuteBool == false) {
           audioDecompte.play();
         }
-        // TEST audio coupé et non audio = 0;
-        // audioDecompte.play();
-
 
         setTimeout( function() {
             if (miseLocked > 0) {
@@ -590,18 +584,14 @@
             }
         }, (110/miseLocked) * setTimeOutMultiplier);
       } 
-      // fin fonction
 
 
 
-      // function (en partant de la mise vers le gains réel)
       function IncrementGain(miseLockedMultiplied) {
 
         if (SoundMuteBool == false) {
           audioDecompte.play();
         }
-        // TEST audio coupé et non audio = 0;
-        // audioDecompte.play();
 
         misesResultatDiff = miseLockedMultiplied - miseLocked;
 
@@ -619,7 +609,6 @@
             }
         }, (110/misesResultatDiff) * setTimeOutMultiplier);
       } 
-      // fin fonction
 
 
 
@@ -672,7 +661,7 @@
         });
 
         miseLocked = miseLocked * 2;
-        document.getElementById("miseLocked").innerHTML = "Mise: " + "&nbsp;" + "<span style='color:rgb(241 205 92 / 95%); text-shadow: 0 0 4px rgb(255 213 2);'>" + miseLocked + "</span>";
+        document.getElementById("miseLocked").innerHTML = "<span style='color:rgb(241 205 92 / 95%); font-size:1.8rem; text-shadow: 0 0 4px rgb(255 213 2);'>" + miseLocked + "</span><img src='Images/souBarre.png' class='imageSouPetit'/> " ;
 
         setTimeout(function() {
           addCardJoueur();
@@ -715,8 +704,15 @@
           
           miseLocked = miseEnCours;
           document.getElementById("miseLocked").style.opacity = "0.9";
-          document.getElementById("miseLocked").innerHTML = "Mise: " + "&nbsp;" + "<span style='color:rgb(241 205 92 / 95%); text-shadow: 0 0 4px rgb(255 213 2);'>" + miseLocked + "</span>";
-      
+
+
+
+          if (isConnected == false) {
+            document.getElementById("miseLocked").innerHTML = "<span style='color:rgb(241 205 92 / 95%); font-size:1.8rem; text-shadow: 0 0 4px rgb(255 213 2);'>" + miseLocked + "</span><img src='Images/souBlancBarre.png' class='imageSouPetit'/> ";
+          }
+          else if (isConnected == true) {
+          document.getElementById("miseLocked").innerHTML = "<span style='color:rgb(241 205 92 / 95%); font-size:1.8rem; text-shadow: 0 0 4px rgb(255 213 2);'>" + miseLocked + "</span><img src='Images/souBarre.png' class='imageSouPetit'/> ";
+          }
 
           if (isConnected == false) {
             document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + (credits - miseLocked) + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
