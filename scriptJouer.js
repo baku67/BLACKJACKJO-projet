@@ -1058,7 +1058,8 @@
             setTimeout(function() {
               if (scoreTotalCroupier > scoreTotalJoueur && scoreTotalCroupier < 22) {
 
-                resultatCas = 'WASTED';
+                WinLose = 'LOSE';
+                resultatCas = 'Wasted';
 
                 $.ajax({
                   async: false,
@@ -1098,12 +1099,9 @@
                     
 
                     document.getElementById("deckContainer").remove();
+                    document.getElementById("parametresPartieDiv").remove();
 
-                    // Perdu
-                      // rubans de Win/Loose
-                      // document.getElementById("croupier").style.backgroundColor = "rgba(61,255,1,0.3)";
-                      // document.getElementById("joueur").style.backgroundColor = "rgba(255,1,49,0.3)";
-                      // Fin rubans
+
                     
                     // document.getElementById("scoreCroupier").style.backgroundColor = "rgba(59,217,10,1)";
                     document.getElementById("scoreJoueur").style.backgroundColor = "rgb(160 13 27)";
@@ -1152,7 +1150,8 @@
 
             if (scoreTotalCroupier > 21) {
 
-              resultatCas = 'WIN';
+              WinLose = 'WIN';
+              resultatCas = 'Big Win';
 
               setTimeout(function() {
                 $.ajax({
@@ -1208,6 +1207,7 @@
                     
 
                     document.getElementById("deckContainer").remove();
+                    document.getElementById("parametresPartieDiv").remove();
                     // document.getElementById("deckContainer").classList.add("fadeOut");
   
                     document.getElementById("scoreCroupier").style.backgroundColor = "rgb(160 13 27)";
@@ -1257,7 +1257,8 @@
 
               if (scoreTotalJoueur > scoreTotalCroupier) {
 
-                resultatCas = 'WIN';
+                WinLose = 'WIN';
+                resultatCas = 'Big Win';
 
                 setTimeout(function() {
                   $.ajax({
@@ -1313,6 +1314,7 @@
                       
   
                       document.getElementById("deckContainer").remove();
+                      document.getElementById("parametresPartieDiv").remove();
                       // document.getElementById("deckContainer").classList.add("fadeOut");
     
                       document.getElementById("scoreCroupier").style.backgroundColor = "rgb(160 13 27)";
@@ -1361,7 +1363,9 @@
 
               if (scoreTotalJoueur == scoreTotalCroupier) {
 
-                resultatCas = 'PUSH';
+
+                WinLose = 'PUSH';
+                resultatCas = 'Push';
 
                 $.ajax({
                   async: false,
@@ -1402,7 +1406,8 @@
                   
   
                     document.getElementById("deckContainer").remove();
-  
+                    document.getElementById("parametresPartieDiv").remove();
+
 
 
                     document.getElementById("scoreCroupier").style.color = "rgb(11 136 6)";
@@ -1735,11 +1740,6 @@
       function distribAnim() {
         var img = document.createElement('img')
         img.classList.add("deckAnimStyle");
-        // img.style.width = "75px";
-        // img.style.position = "absolute";
-        // img.style.left = "15%";
-        // img.style.top = "18%";
-        // img.style.borderRadius = "3px";
         img.src = "Images/deck2.png";
 
         document.getElementById('deckContainer').appendChild(img);
@@ -1752,7 +1752,7 @@
 
 
         // WIP Animation Distribution Carte
-        distribAnim();
+        // distribAnim();
         // FIN
 
         var img = document.createElement('img');
@@ -1922,8 +1922,9 @@
       function checkBurstJoueur() {
         if (scoreTotalJoueur > 21) {
 
+          // Var pour array historiquePhp
           WinLose = 'LOSE';
-          resultatCas = 'BURST';
+          resultatCas = 'Bust';
           // gain = gain
           // date est pris dans la fonction historiqueDB
 
@@ -1980,6 +1981,7 @@
                   
 
                   document.getElementById("deckContainer").remove();
+                  document.getElementById("parametresPartieDiv").remove();
                   // document.getElementById("deckContainer").classList.add("fadeOut");
 
 
@@ -2038,7 +2040,6 @@
 
 
 
-      // document.getElementById('scoreJoueur').innerHTML = (scoreTotalJoueur + 10);
 
 
 
@@ -2051,7 +2052,10 @@
         if ((scoreTotalJoueur == 21) && (nbrCardsJoueur > 2)) {
           //      "&& nbrOfJoueurCards == 2"     (pour le vrai BJ)
 
-          resultatCas = 'BlackJack';
+          WinLose = 'WIN';
+          resultatCas = 'Big Win';
+          // gain = gain
+          // date est pris dans la fonction historiqueDB
 
           console.log("nbrCardsJoueur: " + nbrCardsJoueur + "&nbscp; |~~~  21  ~~~|");
 
@@ -2108,6 +2112,7 @@
 
 
                 document.getElementById("deckContainer").remove();
+                document.getElementById("parametresPartieDiv").remove();
                 // document.getElementById("deckContainer").classList.add("fadeOut");
 
                 //*** Perdu BURST 
@@ -2172,6 +2177,9 @@
           //      "&& nbrOfJoueurCards == 2"     (pour le vrai BJ)
           console.log("nbrCardsJoueur: " + nbrCardsJoueur + "&nbscp; |true BLACKJACK|");
 
+          WinLose = 'BJ';
+          resultatCas = 'BlackJack';
+
           setTimeout(function() {
             $.ajax({
               async: false,
@@ -2225,6 +2233,7 @@
 
 
                 document.getElementById("deckContainer").remove();
+                document.getElementById("parametresPartieDiv").remove();
                 // document.getElementById("deckContainer").classList.add("fadeOut");
 
                 //*** Perdu BURST 

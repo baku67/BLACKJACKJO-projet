@@ -1,3 +1,5 @@
+Mettre deja les fonction de resultats ensemble (puis les toutes les fonctions ensemble)
+
 Update
 	MiseLock() => SQL Update -mise (voir si gains adaptés)
 	|---> Lors reload/URL/redirections/JS.load():  mettre un alert("Etes vous sur de quitter la partie? La mise en cours sera perdue") avec OUI et NON (ducoup pop l'alert avant la redirection)

@@ -10,7 +10,7 @@
     <span id="miseLocked" style="opacity: 0;"></span>
 </div>
 
-<div id="parametresPartieDiv" style="text-align:center;">
+<div id="parametresPartieDiv" style="text-align:center; visiblity: visible">
     <p style="position:relative; width:100%; font-size:1.35em; padding-right:35px; opacity:0.4;">Mise max</p>
 
     <div style="display:inline-flex;">
