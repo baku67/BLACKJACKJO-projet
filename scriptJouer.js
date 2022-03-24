@@ -1009,6 +1009,7 @@
 
 
 
+
       function lancerPhaseCroupier() {
           $.ajax({
             async: false,
@@ -2026,104 +2027,14 @@
 
 
 
-
-
-
-
-
-
       // 21 hors BlackJack: Enlever la possibilité de choisir 
       function check21noBJ() {
         if ((scoreTotalJoueur == 21) && (nbrCardsJoueur > 2)) {
 
+          // Pourquoi j'ai eu le moyen de choisir pendant le lancerPhaseCroupier() qui devrait load footerDistribution?
           lancerPhaseCroupier(); 
 
-          //      "&& nbrOfJoueurCards == 2"     (pour le vrai BJ)
-
-          // WinLose = 'WIN';
-          // resultatCas = 'Big Win';
-
-          // setTimeout(function() {
-          //   $.ajax({
-          //     async: false,
-          //     url: "Footers/footerJoueurGagne.html",
-          //     dataType: "html",
-          //     success: function(response) {
-          //       $("#container3").html(response);
-          //       ChoixActif = false;
-          //       document.getElementById("footerTitle").innerHTML = " - Résultat -";
-
-          //         // Mise lockée
-          //         document.getElementById("miseLockedFooter").innerHTML = miseLocked;
-          //         // fin
-
-          //         // Résultat Gains 
-          //         var miseLockedMultiplied = 2 * miseLocked;
-          //         if ( isConnected == true) {
-          //           document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBarre.png" class="imagesSouResultat">';
-          //         }
-          //         else {
-          //           document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBlancBarre.png" class="imagesSouResultat">';
-          //         }                  
-          //         setTimeout( function() {
-          //           IncrementGain(miseLockedMultiplied);
-          //         }, 1500);
-                  
-
-          //         // WIP gain (ajouter effet refresh CSS)
-          //         setTimeout( function() {
-          //           gain = miseLocked;
-          //           ajoutGain(gain);
-
-          //           winLose = 1;
-          //           winLoseDB(winLose);
-
-          //         }, 500)
-          //         //
-                    
-          //         // Fin résultat Gains
-                
-
-
-          //       document.getElementById("deckContainer").remove();
-          //       document.getElementById("parametresPartieDiv").remove();
-
-
-          //       //*** Perdu BURST 
-          //       document.getElementById("scoreCroupier").style.backgroundColor = "rgb(160 13 27)";
-
-          //       document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)";
-          //       document.getElementById("scoreJoueur").style.color = "rgba(255,245,0,1)";
-
-          //       document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)";
-          //       document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)";
-
-          //       document.getElementById("scoreCroupier").style.border = "1px solid rgba(255,1,49,0.5)";
-          //       document.getElementById("scoreJoueur").style.border = "1px solid rgba(255, 245, 0, 0.7)";
-          //       // Fin Perdu BURST
-
-
-          //       // Séparateur
-          //       setTimeout(function() {
-          //         document.getElementById("resultatText").classList.add("resultatTextBJ");
-          //         document.getElementById("separateur").classList.add("styleSeparateurBlackJack");
-
-          //         audioCoinWin.play();
-
-          //         // Animation scale() qui pop avec fadeIn()
-          //         document.getElementById("separateur").classList.add("fadeInResultat");
-          //         document.getElementById("separateur").classList.add("scaleBoom");
-                
-          //         document.getElementById("resultatText").innerText = "21 !";
-          //       }, 250);
-          //       // Fin Séparateur
-
-          //       popBoutonReload();
-
-          //       relancer();
-          //     }
-          //   });
-          // }, 1200);
+          
         }
       }
 

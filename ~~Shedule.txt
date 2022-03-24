@@ -1,3 +1,25 @@
+BLOQUANT: 21 lance phase croupier mais footerChoix load quand meme (voir JS:2031  JS:1013)
+
+Ajouter le jeton MiseEnCours (retirer "Mise:"  ->  visuel simplifié comme ça pop)
+
+
+
+Probleme d'AS joueur:
+C:\Users\basil\OneDrive\Bureau\voirFin.mp4
+
+
+**************    IMPORTANT   *********************
+BUST:  Petit détail quand speedrun le jeu (=taper hit() comme un debile):  load footerChoix.html pop 1frame, c'est pas bo et ça tire une carte (EDIT: et ça fait pas pop le relancer() !!!! )
+C:\Users\basil\OneDrive\Bureau\phaseChoix_afterBUST.mp4
+***************************************************
+
+
+
+
+
+
+
+
 addcardCroupier() value AS/deuxieme AS/ etc ...   A finir
 addCardJoueur() a finir aussi
 
@@ -5,11 +27,9 @@ Historique: AJOUTER LE MISE -> gain  (PHP/SQL/BDD)
 
 WIP: Ajouter les scoreJoueur et scoreCroupier au historiqueToPhp() + BDD + PHP
 
-lancerPhaseCroupierAfterBurst() réduire le delai entre les cartes distribuées
 
-if scoreJoueur == 21: resultats sans choix
 
-Mettre deja les fonction de resultats ensemble (puis les toutes les fonctions ensemble)
+
 
 Update
 	MiseLock() => SQL Update -mise (voir si gains adaptés)
@@ -25,6 +45,7 @@ Update
 
 
 faire une fonction pour le relancer
+
 
 Ratio WinLose en pourcentage sans decimaux: 
 	FadeIn/SetTimeOut synchro avec le Top
@@ -42,8 +63,6 @@ Classement:
 
 Mettre le contenu du index dans index2.php et mettre a jour le load du JS
 
-
-POUR EXAM: Faire deuspi un boolean si t'es admin, tu vas dans l'onglet useless a droite t'as la liste des users avec leurs soldes c'es tout c'est une requete.
 
 
 
