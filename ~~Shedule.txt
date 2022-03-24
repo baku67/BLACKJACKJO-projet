@@ -1,8 +1,11 @@
 addcardCroupier() value AS/deuxieme AS/ etc ...   A finir
 addCardJoueur() a finir aussi
 
+Historique: AJOUTER LE MISE -> gain  (PHP/SQL/BDD)
+
 WIP: Ajouter les scoreJoueur et scoreCroupier au historiqueToPhp() + BDD + PHP
 
+lancerPhaseCroupierAfterBurst() réduire le delai entre les cartes distribuées
 
 if scoreJoueur == 21: resultats sans choix
 
