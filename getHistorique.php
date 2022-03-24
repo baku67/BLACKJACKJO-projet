@@ -1,10 +1,10 @@
 <?php
 
     session_start();
-    $query = "SELECT winLose, gain FROM historique WHERE username = '".$_SESSION['username']."' ";
-    // ajouter le     ORDER BY 'id' DESC     puis   ~LIMIT 5
-    // $query = "SELECT winLose, gain FROM historique WHERE username = '".$_SESSION['username']."' ORDER BY "id" DESC";
-    // exemple SQL qui marche: SELECT winLose, gain FROM historique WHERE username = 'basile' ORDER BY "id" DESC;
+    $query = 'SELECT winLose, gain FROM historique WHERE username = "'.$_SESSION['username'].'" ORDER BY id DESC LIMIT 5;   ';
+
+    // EXEMPLE QUI MARCHE:    $query = "SELECT winLose, gain FROM historique WHERE username = 'basile' ORDER BY 'id' DESC LIMIT 3";
+
     
     
     $result = mysqli_query($db, $query);
