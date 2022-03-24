@@ -1,3 +1,5 @@
+if scoreJoueur == 21: resultats sans choix
+
 Mettre deja les fonction de resultats ensemble (puis les toutes les fonctions ensemble)
 
 Update

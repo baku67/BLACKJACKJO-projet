@@ -165,10 +165,10 @@
 
 
 
-
       $("#historique").click(function() {
 
           $("#container1").load("historique.php");
+          document.getElementById("resultatCasHistorique").style.color = "red";
 
       });
 
@@ -2045,10 +2045,7 @@
 
 
 
-      // *******************************************************************************
-      // Si 21 (hors-BlackJack) = le jeu s'arrète et Joueur gagne direct,  il faut un check:
-      //
-      // FUNCTION CHECK21() {
+      // 21 hors BlackJack: Enlever la possibilité de choisir 
         if ((scoreTotalJoueur == 21) && (nbrCardsJoueur > 2)) {
           //      "&& nbrOfJoueurCards == 2"     (pour le vrai BJ)
 
@@ -2069,12 +2066,6 @@
                 ChoixActif = false;
                 document.getElementById("footerTitle").innerHTML = " - Résultat -";
 
-                // WIP footerResultat
-                  // WIP: Fade In du résultat
-                    // document.getElementById("container3").visibility = "hidden";
-                    // document.getElementById("container3").classList.add("fadeIn2");
-                  // Fin WIP: Fade In du résultat
-
                   // Mise lockée
                   document.getElementById("miseLockedFooter").innerHTML = miseLocked;
                   // fin
@@ -2091,8 +2082,6 @@
                     IncrementGain(miseLockedMultiplied);
                   }, 1500);
                   
-                    // DOUBLON ??
-                    // var miseLockedMultiplied = 3 * miseLocked;
 
                   // WIP gain (ajouter effet refresh CSS)
                   setTimeout( function() {
@@ -2106,18 +2095,15 @@
                   //
                     
                   // Fin résultat Gains
-
-                // FIN WIP
                 
 
 
                 document.getElementById("deckContainer").remove();
                 document.getElementById("parametresPartieDiv").remove();
-                // document.getElementById("deckContainer").classList.add("fadeOut");
+
 
                 //*** Perdu BURST 
                 document.getElementById("scoreCroupier").style.backgroundColor = "rgb(160 13 27)";
-                // document.getElementById("scoreJoueur").style.backgroundColor = "rgba(59,217,10,1)";
 
                 document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)";
                 document.getElementById("scoreJoueur").style.color = "rgba(255,245,0,1)";
@@ -2140,41 +2126,28 @@
                   // Animation scale() qui pop avec fadeIn()
                   document.getElementById("separateur").classList.add("fadeInResultat");
                   document.getElementById("separateur").classList.add("scaleBoom");
-                  // document.getElementById("separateur").classList.add("marginFix");
                 
-                  // TEXT
                   document.getElementById("resultatText").innerText = "21 !";
                 }, 250);
                 // Fin Séparateur
 
                 popBoutonReload();
 
-                // Bouton Rejouer
                 relancer();
               }
             });
           }, 1200);
         }
 
-      // }
-      // *******************************************************************************
 
 
 
 
 
-
-
-
-
-      // TRUE BLACKJACK
-      // *******************************************************************************
       
       function checkBJjoueur() {
-        // Proc lors de faux BlackJack (Add condition nbrCardJoueur == 2)
 
         if ((scoreTotalJoueur + 10 == 21) && (nbrCardsJoueur == 2) && (asJoueur == true)) {
-          //      "&& nbrOfJoueurCards == 2"     (pour le vrai BJ)
           console.log("nbrCardsJoueur: " + nbrCardsJoueur + "&nbscp; |true BLACKJACK|");
 
           WinLose = 'BJ';
