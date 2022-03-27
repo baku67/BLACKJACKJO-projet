@@ -11,7 +11,7 @@
 
 
 
-    echo "<ol id='listHistorique' style='text-align: inline'>";
+    echo "<ul id='listHistorique' style='text-align: inline'>";
 
 
     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
@@ -28,14 +28,14 @@
 
                 .  "&nbsp;&nbsp;&nbsp;&nbsp;"
                 // A faire: DATE fonction qui retourne "il y a 12 minutes" "il y a 2 jours" 
-                .  "<span>". $row['date'] . "</span>"."</p>";
+                .  "<span class='dateHistorique'>". $row['date'] . "</span>"."</p>";
 
                 echo "<br/>";
             echo "</li>";
     }
 
 
-    echo "</ol>";
+    echo "</ul>";
     
 ?>
 

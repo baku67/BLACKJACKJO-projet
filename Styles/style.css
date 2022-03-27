@@ -97,7 +97,10 @@ button, input[type="submit"], input[type="reset"] {
 
 
 
-
+.dateHistorique {
+	font-size: 0.8em !important;
+	font-style: italic;
+}
 
 
 

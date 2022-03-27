@@ -168,7 +168,7 @@
 
 
 
-
+      // A mettre dans un fichier différent
       $("#historique").click(function() {
 
           $("#container1").load("historique.php", function() {
@@ -199,31 +199,102 @@
             //***  Style des gains
             for (let i = 0; i < 5; i++) {
 
-              let resultatCasHistoriqueLine = document.getElementsByClassName("gainHistorique")[i];
+              let gainsHistoriqueLine = document.getElementsByClassName("gainHistorique")[i];
 
-              if (parseInt(resultatCasHistoriqueLine.innerHTML) < 0) {
-                resultatCasHistoriqueLine.style.color = "#df2c2c";
+              if (parseInt(gainsHistoriqueLine.innerHTML) < 0) {
+                gainsHistoriqueLine.style.color = "#df2c2c";
               }
-              else if (parseInt(resultatCasHistoriqueLine.innerHTML) > 0) {
+              else if (parseInt(gainsHistoriqueLine.innerHTML) > 0) {
                 if (historiqueBjBool == true) {
-                  resultatCasHistoriqueLine.style.color = "purple";
+                  gainsHistoriqueLine.style.color = "purple";
                   historiqueBjBool = false;
                 }
                 else {
-                  resultatCasHistoriqueLine.style.color = "#14e56f";
+                  gainsHistoriqueLine.style.color = "#14e56f";
                 }
               }
-              else if (parseInt(resultatCasHistoriqueLine.innerHTML) == 0) {
-                resultatCasHistoriqueLine.style.color = "#bebe5e";
+              else if (parseInt(gainsHistoriqueLine.innerHTML) == 0) {
+                gainsHistoriqueLine.style.color = "#bebe5e";
               }
             }
             //*** FIN gains
 
 
 
-            // Style et Formattage Date
+            // Style et Formattage Date (personnel)
+            for (let i = 0; i < 5; i++) {
+
+              let dateHistoriqueElem = document.getElementsByClassName("dateHistorique")[i];
+              let dateHtml = dateHistoriqueElem.innerHTML.slice(0, -3);
 
 
+
+
+
+
+              // fonction qui compare la date avec la date actuelle et qui retourne la différence sous la forme "il y a ... sec/min/h/jour"
+              console.log(i, dateHistoriqueElem, dateHtml);
+              
+              var year = parseInt(dateHtml.charAt(0)+ dateHtml.charAt(1) + dateHtml.charAt(2) + dateHtml.charAt(3));
+              console.log("Année: " + year);
+
+              var month = parseInt(dateHtml.charAt(5) + dateHtml.charAt(6));
+              console.log("Moi: " + month);
+
+              var day = parseInt(dateHtml.charAt(8) + dateHtml.charAt(9));
+              console.log("Jour: " + day);
+
+              var hour = parseInt(dateHtml.charAt(11) + dateHtml.charAt(12));
+              console.log("Heures: " + hour);
+
+              var minute = parseInt(dateHtml.charAt(14) + dateHtml.charAt(15));
+              console.log("Minutes: " + minute);
+
+
+
+              anneeActuelle = new Date().getFullYear();
+              moiActuel = new Date().getMonth();
+              jourActuel = new Date().getDate(); 
+
+
+              if (year != anneeActuelle) {
+                document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (year - anneeActuelle) + " année(s)";
+              }
+              else if (month != moiActuel) {
+                document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (moiActuel - month) + " moi(s)";
+              }
+              else if (day != jourActuel) {
+                document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (jourActuel - day) + " jour(s)";
+              }
+
+
+
+
+
+
+
+              // Dans l'ordre
+              // Si mois différents :
+              // Si jour différents : 
+              // Si heures différents : 
+              // Si minutes différents : 
+              // Supprimer les secondes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            }
             //*** FIN Date
           
 
