@@ -1,8 +1,12 @@
+Possibilité de changer le background des cartes, etc...
+
+
 BLOQUANT: 21 lance phase croupier mais footerChoix load quand meme (voir JS:2031  JS:1013)
 
-Ajouter le jeton MiseEnCours (retirer "Mise:"  ->  visuel simplifié comme ça pop)
+BDD SQL event sheduler -super privlieges)
+-boolean par compte: "firstDailyConnection" (pass en true à la connection)
 
-
+PATH des controller php 
 
 Probleme d'AS joueur:
 C:\Users\basil\OneDrive\Bureau\voirFin.mp4
