@@ -131,14 +131,6 @@
 
 
 
-
-
-
-
-
-
-
-
       var modalInscription = document.getElementById("inscriptionModal");
       var modalConnection = document.getElementById("connectionModal");
       
@@ -165,12 +157,82 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
       $("#historique").click(function() {
 
-          $("#container1").load("historique.php");
-          document.getElementById("resultatCasHistorique").style.color = "red";
+          $("#container1").load("historique.php", function() {
+
+            //***  Style des resultatCas
+            for (let i = 0; i < 5; i++) {
+
+              let resultatCasHistoriqueLine = document.getElementsByClassName("resultatCasHistorique")[i];
+              var historiqueBjBool = false;
+
+              if (resultatCasHistoriqueLine.innerHTML == 'LOSE') {
+                resultatCasHistoriqueLine.style.color = "#df2c2c";
+              }
+              else if (resultatCasHistoriqueLine.innerHTML == 'WIN') {
+                resultatCasHistoriqueLine.style.color = "#14e56f";
+              }
+              else if (resultatCasHistoriqueLine.innerHTML == 'PUSH') {
+                resultatCasHistoriqueLine.style.color = "#bebe5e";
+              }
+              else if (resultatCasHistoriqueLine.innerHTML == 'BJ') {
+                resultatCasHistoriqueLine.style.color = "purple";
+                historiqueBjBool = true;
+              }
+            }
+            //***  FIN resultatCas
+
+
+            //***  Style des gains
+            for (let i = 0; i < 5; i++) {
+
+              let resultatCasHistoriqueLine = document.getElementsByClassName("gainHistorique")[i];
+
+              if (parseInt(resultatCasHistoriqueLine.innerHTML) < 0) {
+                resultatCasHistoriqueLine.style.color = "#df2c2c";
+              }
+              else if (parseInt(resultatCasHistoriqueLine.innerHTML) > 0) {
+                if (historiqueBjBool == true) {
+                  resultatCasHistoriqueLine.style.color = "purple";
+                  historiqueBjBool = false;
+                }
+                else {
+                  resultatCasHistoriqueLine.style.color = "#14e56f";
+                }
+              }
+              else if (parseInt(resultatCasHistoriqueLine.innerHTML) == 0) {
+                resultatCasHistoriqueLine.style.color = "#bebe5e";
+              }
+            }
+            //*** FIN gains
+
+
+
+            // Style et Formattage Date
+
+
+            //*** FIN Date
+          
+
+          });
+
+          // document.getElementsByClassName("resultatCasHistorique")[0].style.color = "red";
 
       });
+
 
       $("#guide").click(function() {
 
@@ -183,6 +245,30 @@
       //   $("#container1").load("index.php");
         
       // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
