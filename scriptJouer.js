@@ -173,17 +173,23 @@
 
           $("#container1").load("historique.php", function() {
 
+
             //***  Style des resultatCas
-            for (let i = 0; i < 5; i++) {
+            for (let i = 0; i < 20; i++) {
 
               let resultatCasHistoriqueLine = document.getElementsByClassName("resultatCasHistorique")[i];
               var historiqueBjBool = false;
 
+
               if (resultatCasHistoriqueLine.innerHTML == 'LOSE') {
                 resultatCasHistoriqueLine.style.color = "#df2c2c";
+                resultatCasHistoriqueLine.style.border = "1px solid rgb(241 13 13)";
+                resultatCasHistoriqueLine.classList.add('backgroundLose');
               }
               else if (resultatCasHistoriqueLine.innerHTML == 'WIN') {
-                resultatCasHistoriqueLine.style.color = "#14e56f";
+                resultatCasHistoriqueLine.style.color = "rgb(0 255 111)";
+                resultatCasHistoriqueLine.style.border = "1px solid #3fff00";
+                resultatCasHistoriqueLine.classList.add('backgroundWin');
               }
               else if (resultatCasHistoriqueLine.innerHTML == 'PUSH') {
                 resultatCasHistoriqueLine.style.color = "#bebe5e";
@@ -192,12 +198,15 @@
                 resultatCasHistoriqueLine.style.color = "purple";
                 historiqueBjBool = true;
               }
+              else {
+              }
+              
             }
             //***  FIN resultatCas
 
 
             //***  Style des gains
-            for (let i = 0; i < 5; i++) {
+            for (let i = 0; i < 20; i++) {
 
               let gainsHistoriqueLine = document.getElementsByClassName("gainHistorique")[i];
 
@@ -216,19 +225,19 @@
               else if (parseInt(gainsHistoriqueLine.innerHTML) == 0) {
                 gainsHistoriqueLine.style.color = "#bebe5e";
               }
+              else {
+              }
+
             }
             //*** FIN gains
 
 
 
             // Style et Formattage Date (personnel)
-            for (let i = 0; i < 5; i++) {
+            for (let i = 0; i < 20; i++) {
 
               let dateHistoriqueElem = document.getElementsByClassName("dateHistorique")[i];
               let dateHtml = dateHistoriqueElem.innerHTML.slice(0, -3);
-
-
-
 
 
 
@@ -266,43 +275,20 @@
               else if (day != jourActuel) {
                 document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (jourActuel - day) + " jour(s)";
               }
+              else {
+              }
 
-
-
-
-
-
-
-              // Dans l'ordre
-              // Si mois différents :
-              // Si jour différents : 
-              // Si heures différents : 
-              // Si minutes différents : 
-              // Supprimer les secondes
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+              
 
             }
             //*** FIN Date
           
 
           });
-
-          // document.getElementsByClassName("resultatCasHistorique")[0].style.color = "red";
-
       });
+
+
+
 
 
       $("#guide").click(function() {

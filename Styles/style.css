@@ -102,6 +102,35 @@ button, input[type="submit"], input[type="reset"] {
 	font-style: italic;
 }
 
+.resultatCasHistorique {
+	margin-left:50px; 
+	padding:5px 15px; 
+	border:1px solid #cca5a5; 
+	border-radius:10px;
+	letter-spacing: 1px;
+}
+
+.backgroundWin {
+	background: rgb(8,127,138);
+	background: -moz-linear-gradient(-45deg, rgba(8,127,138,0.804359243697479) 5%, rgba(120,201,178,0.773546918767507) 49%, rgba(9,144,20,0.7063200280112045) 100%);
+	background: -webkit-linear-gradient(-45deg, rgba(8,127,138,0.804359243697479) 5%, rgba(120,201,178,0.773546918767507) 49%, rgba(9,144,20,0.7063200280112045) 100%);
+	background: linear-gradient(-45deg, rgba(8,127,138,0.804359243697479) 5%, rgba(120,201,178,0.773546918767507) 49%, rgba(9,144,20,0.7063200280112045) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#087f8a",endColorstr="#099014",GradientType=1);
+}
+.backgroundLose {
+	background: rgb(219,15,15);
+	background: -moz-linear-gradient(-45deg, rgba(219,15,15,0.7259278711484594) 5%, rgba(115,220,221,0.6362920168067228) 49%, rgba(144,9,43,0.6166841736694677) 100%);
+	background: -webkit-linear-gradient(-45deg, rgba(219,15,15,0.7259278711484594) 5%, rgba(115,220,221,0.6362920168067228) 49%, rgba(144,9,43,0.6166841736694677) 100%);
+	background: linear-gradient(-45deg, rgba(219,15,15,0.7259278711484594) 5%, rgba(115,220,221,0.6362920168067228) 49%, rgba(144,9,43,0.6166841736694677) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#db0f0f",endColorstr="#90092b",GradientType=1);
+
+}
+
+
+
+.gainHistorique {
+	font-size: 1.3em;
+}
 
 
 #header {
@@ -412,6 +441,21 @@ button, input[type="submit"], input[type="reset"] {
 
 	position: relative;
 	bottom:16px;
+
+	background: #fff;
+	background: -webkit-linear-gradient(left, rgb(90,90,90) 0%, rgba(255,255,255,1) 50%, rgb(90,90,90) 100%);
+}
+#traitBlancHistorique {
+	opacity: 0.8;
+	width: 80%;
+	margin: 0 auto;	
+	text-align: center;
+	height: 2px;
+
+	position: relative;
+	bottom: 5px;
+
+	margin-bottom: 50px;
 
 	background: #fff;
 	background: -webkit-linear-gradient(left, rgb(90,90,90) 0%, rgba(255,255,255,1) 50%, rgb(90,90,90) 100%);
