@@ -3,13 +3,14 @@
 
     $limit = 20;
     
-    $query = 'SELECT winLose, gain, date FROM historique WHERE username = "'.$_SESSION['username'].'" ORDER BY id DESC LIMIT 20;   ';
+    $query = 'SELECT winLose, gain, scoreJoueur, scoreCroupier, doubleBool, date FROM historique WHERE username = "'.$_SESSION['username'].'" ORDER BY id DESC LIMIT 20;   ';
     // ajouter (SELECT) scoreJoueur et scoreCroupier
     
     $result = mysqli_query($db, $query);
 
     $count = 0;
 
+    
 
 
     echo "<ul id='listHistorique' style='font-size:2em; '>";
@@ -18,6 +19,13 @@
     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
     {
             $count += 1;
+
+            if ($row['doubleBool'] == 1) {
+                $double = 'x2';
+            }
+            elseif ($row['doubleBool'] == 0) {
+                $double = 'x1';
+            }
 
             echo "<li>";
 
@@ -28,6 +36,8 @@
 
 
                 .  "<span class='gainHistorique'>". $row['gain'] . "</span>"
+
+                .  "<span class='doubleBoolHistorique'>" . " " . $double . "</span>"
 
                 .  "&nbsp;&nbsp;&nbsp;&nbsp;"
                 // A faire: DATE fonction qui retourne "il y a 12 minutes" "il y a 2 jours" 
@@ -42,7 +52,7 @@
 
             echo "<li>";
 
-                // Ligne avec toutes les infos
+                // Fausses Lignes (fix elem inexistant JS)
                 echo 
                 "<p>"."<span class='resultatCasHistorique' style='opacity:0;'>--</span>"
                 .  "&nbsp;&nbsp;&nbsp;"

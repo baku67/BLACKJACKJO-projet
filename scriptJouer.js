@@ -66,6 +66,9 @@
 
       var misesResultatDiff;
 
+      var doubleBool = 0;
+
+
 
 
       // Boutons Toggle
@@ -211,7 +214,7 @@
               let gainsHistoriqueLine = document.getElementsByClassName("gainHistorique")[i];
 
               if (parseInt(gainsHistoriqueLine.innerHTML) < 0) {
-                gainsHistoriqueLine.style.color = "#df2c2c";
+                gainsHistoriqueLine.style.color = "rgb(255 105 105)";
               }
               else if (parseInt(gainsHistoriqueLine.innerHTML) > 0) {
                 if (historiqueBjBool == true) {
@@ -223,7 +226,26 @@
                 }
               }
               else if (parseInt(gainsHistoriqueLine.innerHTML) == 0) {
-                gainsHistoriqueLine.style.color = "#bebe5e";
+                // gainsHistoriqueLine.style.color = "#bebe5e";
+                gainsHistoriqueLine.style.color = "rgb(228 228 183)";
+              }
+              else {
+              }
+
+              //Style double:
+              let doubleBoolHistoriqueLine = document.getElementsByClassName("doubleBoolHistorique")[i];
+
+              if (doubleBoolHistoriqueLine.innerHTML == ' x2') {
+                gainsHistoriqueLine.style.border = "2px solid rgba(255,215,0,0.5)";
+                gainsHistoriqueLine.style.padding = "2px 10px";
+                gainsHistoriqueLine.style.borderRadius = "6px";
+                doubleBoolHistoriqueLine.style.display = "inline-block";
+                doubleBoolHistoriqueLine.style.fontSize = "0.8em";
+                doubleBoolHistoriqueLine.style.color = "rgba(255,215,0,0.7)";
+
+              }
+              else if (doubleBoolHistoriqueLine.innerHTML == ' x1') {
+                gainsHistoriqueLine.style.border = "0px solid gold";
               }
               else {
               }
@@ -352,6 +374,8 @@
               nbrCardsJoueur = 0;
 
               var winLose = 0;
+
+              doubleBool = 0;
 
 
               // Activation Crédits Brut mode invité (en partie)
@@ -547,6 +571,9 @@
           // Fin refresh
 
           var winLose = 0;
+
+          doubleBool = 0;
+
           
 
           $.ajax({
@@ -791,6 +818,8 @@
       function double() {
         // Le double fonctionne normalement, mais à la toute fin, le ("miselocked" -> "miseResultat")  devient (0 -> 0)
         // Comparer loadFooters Hit() et double() car double pas assez réactif
+
+        doubleBool = 1;
 
         $.ajax({
           async: false,
@@ -1996,9 +2025,11 @@
         historiqueToPhp[0] = WinLose;
         historiqueToPhp[1] = resultatCas;
         historiqueToPhp[2] = gain;
-        historiqueToPhp[3] = date.toString();
-        //historiqueToPhp[4] = scoreJoueur;
-        //historiqueToPhp[5] = scoreCroupier();
+        historiqueToPhp[3] = scoreTotalJoueur;
+        historiqueToPhp[4] = scoreTotalCroupier;
+        historiqueToPhp[5] = doubleBool;
+        historiqueToPhp[6] = date.toString();
+
 
         console.log("Array JS: [" + historiqueToPhp + "]");
 
@@ -2007,8 +2038,8 @@
           url: "setHistorique.php",
           method: "post",
           data: { vArray: historiqueToPhp },
-          succes: function(res) {
-            console.log("ALLLLLLLOOOOOOOOOOOO prout: " + res);
+          success: function() {
+            console.log("ajax:OnSuccess setHistorique.php");
           }
         });
       }

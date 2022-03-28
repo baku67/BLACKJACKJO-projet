@@ -110,6 +110,22 @@ button, input[type="submit"], input[type="reset"] {
 	letter-spacing: 1px;
 }
 
+.doubleBoolHistorique {
+	display: none;
+	position: relative;
+	/* top:50px; */
+	/* visibility: hidden;; */
+	position: relative;
+	right: 9px;
+	top: 22px;
+}
+
+.gainHistorique {
+	font-size: 1.3em;
+	position: relative;
+	top: 4px;
+}
+
 .backgroundWin {
 	background: rgb(8,127,138);
 	background: -moz-linear-gradient(-45deg, rgba(8,127,138,0.804359243697479) 5%, rgba(120,201,178,0.773546918767507) 49%, rgba(9,144,20,0.7063200280112045) 100%);
@@ -127,10 +143,6 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 
-
-.gainHistorique {
-	font-size: 1.3em;
-}
 
 
 #header {
