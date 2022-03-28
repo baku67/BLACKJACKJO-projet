@@ -281,21 +281,44 @@
               var minute = parseInt(dateHtml.charAt(14) + dateHtml.charAt(15));
               console.log("Minutes: " + minute);
 
+              console.log("Date partie: " + hour + ":" + minute + ", " + day + "/" + month + "/" + year);
+
+              
+              let todayDate = new Date();
+              anneeActuelle = todayDate.getFullYear();
+              moiActuel = (todayDate.getMonth() +1);
+              jourActuel = todayDate.getDate(); 
+              heureActuelle = todayDate.getHours();
+              minuteActuelle = todayDate.getMinutes();
 
 
-              anneeActuelle = new Date().getFullYear();
-              moiActuel = new Date().getMonth();
-              jourActuel = new Date().getDate(); 
+              console.log("Date partie: " + hour + ":" + minute + ", " + day + "/" + month + "/" + year);
+              console.log("Date actuelle: " + "" + jourActuel + "/" + moiActuel + "/" + anneeActuelle);
 
+              var suffixePluriel;
 
               if (year != anneeActuelle) {
-                document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (year - anneeActuelle) + " année(s)";
+                if (anneeActuelle-year > 1) { suffixePluriel = "s"; }
+                else { suffixePluriel = ''; }
+                document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (anneeActuelle - year) + " an" + suffixePluriel;
               }
               else if ((year == anneeActuelle) && (month != moiActuel)) {
-                document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (moiActuel - month) + " moi(s)";
+                document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (moiActuel - month) + " mois";
               }
               else if ((year == anneeActuelle) && (month == moiActuel) && (day != jourActuel)) {
-                document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (jourActuel - day) + " jour(s)";
+                if (jourActuel-day > 1) { suffixePluriel = "s"; }
+                else { suffixePluriel = ''; }
+                document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (jourActuel - day) + " jour" + suffixePluriel;
+              }
+              else if ((year == anneeActuelle) && (month == moiActuel) && (day == jourActuel) && (hour != heureActuelle)) {
+                if (heureActuelle-hour > 1) { suffixePluriel = "s"; }
+                else { suffixePluriel = ''; }
+                document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (heureActuelle - hour) + " heure" + suffixePluriel;
+              }
+              else if ((year == anneeActuelle) && (month == moiActuel) && (day == jourActuel) && (hour == heureActuelle) && (minute != minuteActuelle)) {
+                if (minuteActuelle-minute > 1) { suffixePluriel = "s"; }
+                else { suffixePluriel = ''; }
+                document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (minuteActuelle - minute) + " minute" + suffixePluriel;
               }
               else {
               }
@@ -2018,7 +2041,12 @@
 
 
       function historiqueDB(WinLose, resultatCas, gain) {
-        var date = new Date();
+
+        var date = new Date().toISOString().slice(0, 19).replace('T', ' ');
+        // A fix: problème de fuseau horaire
+        // var dateHoursTemp = new Date().getHours();
+        // var date = new Date().setHours(dateHoursTemp + 2);
+        // var dateFinale = date.toISOString().slice(0, 19).replace('T', ' ');
 
         // Array envoyé au php
         var historiqueToPhp = [];
@@ -2028,10 +2056,11 @@
         historiqueToPhp[3] = scoreTotalJoueur;
         historiqueToPhp[4] = scoreTotalCroupier;
         historiqueToPhp[5] = doubleBool;
-        historiqueToPhp[6] = date.toString();
-
-
+        historiqueToPhp[6] = date;
+        //historiqueToPhp[6] = dateFinale;
+        
         console.log("Array JS: [" + historiqueToPhp + "]");
+        console.log("New Date SQL: " + date);
 
         // Envoi de l'array
         $.ajax({
