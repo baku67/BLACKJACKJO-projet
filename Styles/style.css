@@ -425,6 +425,41 @@ button, input[type="submit"], input[type="reset"] {
 
 } */
 
+.historiqueLine {
+	height: 45px; 
+	padding: 12px 0;
+	/* Pas de séparations entre les lignes: */
+	margin-top: 0px;
+}
+
+.historiqueLineLose {
+	background: rgb(219,15,15);
+	background: -moz-linear-gradient(-45deg, rgba(219,15,15,0.7404807692307692) 0%, rgba(255,0,0,0.1004807692307692) 20%, rgba(255,0,0,0.09740384615384612) 80%, rgba(219,15,15,0.6974038461538461) 100%);
+	background: -webkit-linear-gradient(-45deg, rgba(219,15,15,0.7404807692307692) 0%, rgba(255,0,0,0.1004807692307692) 20%, rgba(255,0,0,0.09740384615384612) 80%, rgba(219,15,15,0.6974038461538461) 100%);
+	background: linear-gradient(-45deg, rgba(219,15,15,0.7404807692307692) 0%, rgba(255,0,0,0.1004807692307692) 20%, rgba(255,0,0,0.09740384615384612) 80%, rgba(219,15,15,0.6974038461538461) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#db0f0f",endColorstr="#db0f0f",GradientType=1);
+}
+.historiqueLineWin {
+	background: rgb(45,219,15);
+	background: -moz-linear-gradient(-45deg, rgba(45,219,15,0.7404807692307692) 0%, rgba(0,255,28,0.1004807692307692) 20%, rgba(47,255,0,0.09740384615384612) 80%, rgba(34,219,15,0.6943269230769231) 100%);
+	background: -webkit-linear-gradient(-45deg, rgba(45,219,15,0.7404807692307692) 0%, rgba(0,255,28,0.1004807692307692) 20%, rgba(47,255,0,0.09740384615384612) 80%, rgba(34,219,15,0.6943269230769231) 100%);
+	background: linear-gradient(-45deg, rgba(45,219,15,0.7404807692307692) 0%, rgba(0,255,28,0.1004807692307692) 20%, rgba(47,255,0,0.09740384615384612) 80%, rgba(34,219,15,0.6943269230769231) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2ddb0f",endColorstr="#22db0f",GradientType=1);
+}
+.historiqueLinePush {
+	background: rgb(194,201,20);
+	background: -moz-linear-gradient(-45deg, rgba(194,201,20,0.7404807692307692) 0%, rgba(245,255,0,0.1004807692307692) 20%, rgba(245,255,0,0.09740384615384612) 80%, rgba(186,200,21,0.6943269230769231) 100%);
+	background: -webkit-linear-gradient(-45deg, rgba(194,201,20,0.7404807692307692) 0%, rgba(245,255,0,0.1004807692307692) 20%, rgba(245,255,0,0.09740384615384612) 80%, rgba(186,200,21,0.6943269230769231) 100%);
+	background: linear-gradient(-45deg, rgba(194,201,20,0.7404807692307692) 0%, rgba(245,255,0,0.1004807692307692) 20%, rgba(245,255,0,0.09740384615384612) 80%, rgba(186,200,21,0.6943269230769231) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#c2c914",endColorstr="#bac815",GradientType=1);
+}
+.historiqueLineBJ {
+	background: rgb(252,202,0);
+	background: -moz-linear-gradient(-45deg, rgba(252,202,0,0.9097115384615384) 0%, rgba(246,211,0,0.8481730769230769) 2%, rgba(246,85,212,0.8050961538461539) 9%, rgba(246,128,95,0.7343269230769232) 15%, rgba(245,255,0,0.1958653846153846) 27%, rgba(245,255,0,0.1004807692307692) 30%, rgba(245,255,0,0) 50%, rgba(245,255,0,0.1004807692307692) 70%, rgba(245,255,0,0.2204807692307692) 80%, rgba(239,186,32,0.49740384615384614) 86%, rgba(239,16,200,0.6420192307692307) 94%, rgba(254,208,0,0.9004807692307693) 100%);
+	background: -webkit-linear-gradient(-45deg, rgba(252,202,0,0.9097115384615384) 0%, rgba(246,211,0,0.8481730769230769) 2%, rgba(246,85,212,0.8050961538461539) 9%, rgba(246,128,95,0.7343269230769232) 15%, rgba(245,255,0,0.1958653846153846) 27%, rgba(245,255,0,0.1004807692307692) 30%, rgba(245,255,0,0) 50%, rgba(245,255,0,0.1004807692307692) 70%, rgba(245,255,0,0.2204807692307692) 80%, rgba(239,186,32,0.49740384615384614) 86%, rgba(239,16,200,0.6420192307692307) 94%, rgba(254,208,0,0.9004807692307693) 100%);
+	background: linear-gradient(-45deg, rgba(252,202,0,0.9097115384615384) 0%, rgba(246,211,0,0.8481730769230769) 2%, rgba(246,85,212,0.8050961538461539) 9%, rgba(246,128,95,0.7343269230769232) 15%, rgba(245,255,0,0.1958653846153846) 27%, rgba(245,255,0,0.1004807692307692) 30%, rgba(245,255,0,0) 50%, rgba(245,255,0,0.1004807692307692) 70%, rgba(245,255,0,0.2204807692307692) 80%, rgba(239,186,32,0.49740384615384614) 86%, rgba(239,16,200,0.6420192307692307) 94%, rgba(254,208,0,0.9004807692307693) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fcca00",endColorstr="#fed000",GradientType=1);
+}
 
 .divider {
 	opacity: 0.6;
@@ -474,7 +509,7 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 .traitBlancHistoriqueLine {
-	opacity: 0.2;
+	opacity: 0.3;
 	width: 50%;
 	margin: 0 auto;	
 	text-align: center;
@@ -483,7 +518,7 @@ button, input[type="submit"], input[type="reset"] {
 	/* position: relative;
 	bottom: 5px; */
 
-	margin-top: 10px;
+	margin-top: 13px;
 	margin-bottom: 3px;
 
 	background: #fff;

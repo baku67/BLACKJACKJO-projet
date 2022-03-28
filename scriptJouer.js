@@ -177,6 +177,32 @@
           $("#container1").load("historique.php", function() {
 
 
+            //*** Style des backgrounds
+            for (let i = 0; i < 20; i++) {
+
+              let HistoriqueLineContainer = document.getElementsByClassName("historiqueLine")[i];
+              let resultatCasHistoriqueLine = document.getElementsByClassName("resultatCasHistorique")[i];
+
+              if (resultatCasHistoriqueLine.innerHTML == 'LOSE') {
+                HistoriqueLineContainer.classList.add('historiqueLineLose');
+              }
+              else if (resultatCasHistoriqueLine.innerHTML == 'WIN') {
+                HistoriqueLineContainer.classList.add('historiqueLineWin');
+              }
+              else if (resultatCasHistoriqueLine.innerHTML == 'PUSH') {
+                HistoriqueLineContainer.classList.add('historiqueLinePush');
+              }
+              else if (resultatCasHistoriqueLine.innerHTML == 'BJ') {
+                HistoriqueLineContainer.classList.add('historiqueLineBJ');
+              }
+              else {
+              }
+              
+            }
+            //***  FIN backgrounds
+
+
+
             //***  Style des resultatCas
             for (let i = 0; i < 20; i++) {
 

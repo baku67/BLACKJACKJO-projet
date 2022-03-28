@@ -27,7 +27,7 @@
                 $double = 'x1';
             }
 
-            echo "<li>";
+            echo "<li class='historiqueLine'>";
 
                 // Ligne avec toutes les infos
                 echo 
@@ -54,7 +54,7 @@
 
     for ($i=0; $i < ($limit-$count); $i++) {
 
-            echo "<li>";
+            echo "<li class='historiqueLine'>";
 
                 // Fausses Lignes (fix elem inexistant JS)
                 echo 
