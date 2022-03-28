@@ -291,10 +291,10 @@
               if (year != anneeActuelle) {
                 document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (year - anneeActuelle) + " année(s)";
               }
-              else if (month != moiActuel) {
+              else if ((year == anneeActuelle) && (month != moiActuel)) {
                 document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (moiActuel - month) + " moi(s)";
               }
-              else if (day != jourActuel) {
+              else if ((year == anneeActuelle) && (month == moiActuel) && (day != jourActuel)) {
                 document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (jourActuel - day) + " jour(s)";
               }
               else {
