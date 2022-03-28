@@ -27,6 +27,8 @@
                 $double = 'x1';
             }
 
+
+
             echo "<li class='historiqueLine'>";
 
                 // Ligne avec toutes les infos

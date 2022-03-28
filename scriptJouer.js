@@ -230,7 +230,7 @@
 
 
 
-      
+
 
 
 
@@ -305,7 +305,7 @@
               let gainsHistoriqueLine = document.getElementsByClassName("gainHistorique")[i];
     
               if (parseInt(gainsHistoriqueLine.innerHTML) < 0) {
-                gainsHistoriqueLine.style.color = "rgb(255 105 105)";
+                gainsHistoriqueLine.style.color = "rgb(255 77 77)";
               }
               else if (parseInt(gainsHistoriqueLine.innerHTML) > 0) {
                 if (historiqueBjBool == true) {
@@ -327,11 +327,11 @@
               let doubleBoolHistoriqueLine = document.getElementsByClassName("doubleBoolHistorique")[i];
     
               if (doubleBoolHistoriqueLine.innerHTML == ' x2') {
-                gainsHistoriqueLine.style.border = "2px solid rgba(255,215,0,0.5)";
+                gainsHistoriqueLine.style.border = "2px solid rgba(255,215,0,0.3)";
                 gainsHistoriqueLine.style.padding = "2px 10px";
                 gainsHistoriqueLine.style.borderRadius = "6px";
                 doubleBoolHistoriqueLine.style.display = "inline-block";
-                doubleBoolHistoriqueLine.style.fontSize = "0.8em";
+                doubleBoolHistoriqueLine.style.fontSize = "0.7em";
                 doubleBoolHistoriqueLine.style.color = "rgba(255,215,0,0.7)";
     
               }
@@ -422,6 +422,7 @@
                 document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (minuteActuelle - minute) + " minute" + suffixePluriel;
               }
               else {
+                document.getElementsByClassName("dateHistorique")[i].innerHTML = "à l'instant";
               }
     
               
@@ -2187,6 +2188,18 @@
       function historiqueDB(WinLose, resultatCas, gain) {
 
         var date = new Date().toISOString().slice(0, 19).replace('T', ' ');
+
+        // toLocalString pour récupérer l'heure correspondant au fuseau horaire (mais probleme entre 22h-2h surement)
+        var date2 = new Date().toLocaleString().replace("/", "-").replace("/", "-").replace(",", "");
+          var dd = date2.slice(0, 2);
+          var mm = date2.slice(3, 5);
+          var yyyy = date2.slice(6, 10);
+          var hh = date2.slice(11, 13);
+          var mi = date2.slice(14, 16);
+          var ss = date2.slice(17, 19);
+          date2 = yyyy + '-' + mm + '-' + dd + ' ' + hh + ':' + mi + ':' + ss;
+        console.log("DATE2: " + date2);
+
         // A fix: problème de fuseau horaire
         // var dateHoursTemp = new Date().getHours();
         // var date = new Date().setHours(dateHoursTemp + 2);
@@ -2200,11 +2213,10 @@
         historiqueToPhp[3] = scoreTotalJoueur;
         historiqueToPhp[4] = scoreTotalCroupier;
         historiqueToPhp[5] = doubleBool;
-        historiqueToPhp[6] = date;
+        historiqueToPhp[6] = date2;
         //historiqueToPhp[6] = dateFinale;
         
         console.log("Array JS: [" + historiqueToPhp + "]");
-        console.log("New Date SQL: " + date);
 
         // Envoi de l'array
         $.ajax({
