@@ -31,17 +31,21 @@
 
                 // Ligne avec toutes les infos
                 echo 
-                "<p>"."<span class='resultatCasHistorique'>" . $row['winLose']. "</span>"
-                .  "&nbsp;&nbsp;&nbsp;"
+                   "<p style='margin: 0 10%; display:grid; grid-template-columns: 1.1fr 0.6fr 1.3fr; grid-template-rows: 1fr; gap: 0px 50px; grid-template-areas: \"resultats gains dates\"; '>"
 
-
-                .  "<span class='gainHistorique'>". $row['gain'] . "</span>"
+                .  "<span style='gridArea: resultats;' class='resultatCasHistorique'>" . $row['winLose']. "</span>"
+                
+                // Grouper gain et doubleBool (pour grid)
+                .  "<span style='gridArea: gains;' class='gainHistorique'>". $row['gain'] . "</span>"
 
                 .  "<span class='doubleBoolHistorique'>" . " " . $double . "</span>"
 
-                .  "&nbsp;&nbsp;&nbsp;&nbsp;"
                 // A faire: DATE fonction qui retourne "il y a 12 minutes" "il y a 2 jours" 
-                .  "<span class='dateHistorique'>". $row['date'] . "</span>"."</p>";
+                .  "<span style='gridArea: dates;' class='dateHistorique'>". $row['date'] . "</span>"
+                
+                .  "</p>"
+
+                .  "<div class='traitBlancHistoriqueLine'></div>";
 
                 echo "<br/>";
             echo "</li>";
@@ -54,15 +58,17 @@
 
                 // Fausses Lignes (fix elem inexistant JS)
                 echo 
-                "<p>"."<span class='resultatCasHistorique' style='opacity:0;'>--</span>"
-                .  "&nbsp;&nbsp;&nbsp;"
+                   "<p style='margin: 0 10%; display:grid; grid-template-columns: 1.1fr 0.6fr 1.3fr; grid-template-rows: 1fr; gap: 0px 0px; grid-template-areas: \"resultats gains dates\"; '>"
+                   
+                .  "<span style='gridArea: resultats;' class='resultatCasHistorique' style='opacity:0;'>--</span>"
+            
 
+                .  "<span style='gridArea: gains;' class='gainHistorique' style='opacity:0;'>--</span>"
 
-                .  "<span class='gainHistorique' style='opacity:0;'>--</span>"
-
-                .  "&nbsp;&nbsp;&nbsp;&nbsp;"
                 // A faire: DATE fonction qui retourne "il y a 12 minutes" "il y a 2 jours" 
-                .  "<span class='dateHistorique' style='opacity:0;'>--</span>"."</p>";
+                .  "<span style='gridArea: dates;' class='dateHistorique' style='opacity:0;'>--</span>"
+                
+                .  "</p>";
 
                 echo "<br/>";
             echo "</li>";
