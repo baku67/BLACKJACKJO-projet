@@ -33,7 +33,9 @@
 
                 // Ligne avec toutes les infos
                 echo 
-                   "<p style='margin: 0 10%; display:grid; grid-template-columns: 1.1fr 0.8fr 1.1fr; grid-template-rows: 1fr; gap: 0px 50px; grid-template-areas: \"resultats gains dates\"; '>"
+                   "<div class='traitBlancHistoriqueLineHaut'></div>"
+
+                .  "<p style='margin: 0 10%; display:grid; grid-template-columns: 1.1fr 0.8fr 1.7fr; grid-template-rows: 1fr; gap: 0px 50px; grid-template-areas: \"resultats gains dates\"; '>"
 
                 .  "<span style='gridArea: resultats;' class='resultatCasHistorique'>" . $row['winLose']. "</span>"
                 
@@ -47,7 +49,7 @@
                 
                 .  "</p>"
 
-                .  "<div class='traitBlancHistoriqueLine'></div>";
+                .  "<div class='traitBlancHistoriqueLineBas'></div>";
 
                 echo "<br/>";
             echo "</li>";
@@ -61,7 +63,9 @@
 
                 // Fausses Lignes (fix elem inexistant JS)
                 echo 
-                   "<p style='margin: 0 10%; display:grid; grid-template-columns: 1.1fr 0.8fr 1.1fr; grid-template-rows: 1fr; gap: 0px 0px; grid-template-areas: \"resultats gains dates\"; '>"
+                   "<div class='traitBlancHistoriqueLineHaut'></div>"
+
+                .  "<p style='margin: 0 10%; display:grid; grid-template-columns: 1.1fr 0.8fr 1.7fr; grid-template-rows: 1fr; gap: 0px 0px; grid-template-areas: \"resultats gains dates\"; '>"
                    
                 .  "<span style='gridArea: resultats;' class='resultatCasHistorique' style='opacity:0;'>--</span>"
             
@@ -71,7 +75,9 @@
                 // A faire: DATE fonction qui retourne "il y a 12 minutes" "il y a 2 jours" 
                 .  "<span style='gridArea: dates;' class='dateHistorique' style='opacity:0;'>--</span>"
                 
-                .  "</p>";
+                .  "</p>"
+
+                .  "<div class='traitBlancHistoriqueLineBas'></div>";
 
                 echo "<br/>";
             echo "</li>";

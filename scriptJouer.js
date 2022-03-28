@@ -2187,23 +2187,20 @@
 
       function historiqueDB(WinLose, resultatCas, gain) {
 
-        var date = new Date().toISOString().slice(0, 19).replace('T', ' ');
+        // Ancienne méthode: fuseau horaire non pris en compte
+        // var date = new Date().toISOString().slice(0, 19).replace('T', ' ');
+        
+        // Formattage du toLocalString (yyyy/mm/dd -> dd-mm-yyyy  + hh:mm:ss) date pour SQL DATETIME
+        var date = new Date().toLocaleString().replace("/", "-").replace("/", "-").replace(",", "");
+          var dd = date.slice(0, 2);
+          var mm = date.slice(3, 5);
+          var yyyy = date.slice(6, 10);
+          var hh = date.slice(11, 13);
+          var mi = date.slice(14, 16);
+          var ss = date.slice(17, 19);
+        date = yyyy + '-' + mm + '-' + dd + ' ' + hh + ':' + mi + ':' + ss;
 
-        // toLocalString pour récupérer l'heure correspondant au fuseau horaire (mais probleme entre 22h-2h surement)
-        var date2 = new Date().toLocaleString().replace("/", "-").replace("/", "-").replace(",", "");
-          var dd = date2.slice(0, 2);
-          var mm = date2.slice(3, 5);
-          var yyyy = date2.slice(6, 10);
-          var hh = date2.slice(11, 13);
-          var mi = date2.slice(14, 16);
-          var ss = date2.slice(17, 19);
-          date2 = yyyy + '-' + mm + '-' + dd + ' ' + hh + ':' + mi + ':' + ss;
-        console.log("DATE2: " + date2);
 
-        // A fix: problème de fuseau horaire
-        // var dateHoursTemp = new Date().getHours();
-        // var date = new Date().setHours(dateHoursTemp + 2);
-        // var dateFinale = date.toISOString().slice(0, 19).replace('T', ' ');
 
         // Array envoyé au php
         var historiqueToPhp = [];
@@ -2213,8 +2210,7 @@
         historiqueToPhp[3] = scoreTotalJoueur;
         historiqueToPhp[4] = scoreTotalCroupier;
         historiqueToPhp[5] = doubleBool;
-        historiqueToPhp[6] = date2;
-        //historiqueToPhp[6] = dateFinale;
+        historiqueToPhp[6] = date;
         
         console.log("Array JS: [" + historiqueToPhp + "]");
 

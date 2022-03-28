@@ -13,6 +13,38 @@
     } */
 
 
+
+    .historiqueLine {
+        padding: 12px 0;
+        border-radius: 8px;
+        width: 90%;
+
+        /* Séparation lignes:  */
+        margin: 15px auto;
+    }
+
+    .traitBlancHistoriqueLineHaut {
+		position: relative;
+		bottom: 11px;
+	}
+    .traitBlancHistoriqueLineBas {
+		margin-top: 13px;
+	}
+
+	.resultatCasHistorique {
+		font-size: 1em;
+	}
+
+	.dateHistorique {
+		margin-top: 11px;
+	}
+
+    .gainHistorique {
+        font-size: 1.3em;
+    }
+
+
+
     body {
         font-size: 100%;
 	}

@@ -1,4 +1,11 @@
+Historique: Centrer resutatCas et gain(avec + si positif)
+-> c'est à dire pour resultatCas mettre un width fixe max pour que les containers soient egaux en largeur (estétik)
+
+
+
 Possibilité de changer le background des cartes, etc...
+
+Potit probleme PC: CSS traitLumineuxHiostoriqueBas double/top
 
 BUST/WASTED: https://codepen.io/GeorgePark/pen/jeBbGN
 

@@ -100,6 +100,8 @@ button, input[type="submit"], input[type="reset"] {
 .dateHistorique {
 	font-size: 0.8em !important;
 	font-style: italic;
+
+	margin-top: 17px;
 }
 
 .resultatCasHistorique {
@@ -108,6 +110,8 @@ button, input[type="submit"], input[type="reset"] {
 	border:1px solid #cca5a5; 
 	border-radius:10px;
 	letter-spacing: 1px;
+
+	font-size: 1.5em;
 }
 
 .doubleBoolHistorique {
@@ -121,10 +125,13 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 .gainHistorique {
-	font-size: 1.3em;
+	font-size: 1.6em;
 	position: relative;
 	top: 4px;
 }
+
+
+
 
 .backgroundWin {
 	background: rgb(8,127,138);
@@ -432,11 +439,15 @@ button, input[type="submit"], input[type="reset"] {
 
 .historiqueLine {
 	height: 45px; 
-	padding: 12px 0;
-	/* Pas de séparations entre les lignes: */
-	margin-top: 0px;
-	border-radius: 8px;
-	/* clip-path: ellipse(340px 123px at 50% 40%); */
+	padding: 40px 0;
+	border-radius: 14px;
+
+	width: 30%;
+	text-align: center;
+	list-style: none;
+
+	/* Séparation lignes:  */
+	margin: 20px auto;
 }
 
 .historiqueLineLose {
@@ -514,17 +525,30 @@ button, input[type="submit"], input[type="reset"] {
 	background: -webkit-linear-gradient(left, rgb(90,90,90) 0%, rgba(255,255,255,1) 50%, rgb(90,90,90) 100%);
 }
 
-.traitBlancHistoriqueLine {
+
+.traitBlancHistoriqueLineHaut {
 	opacity: 0.3;
-	width: 50%;
+	width: 80%;
 	margin: 0 auto;	
 	text-align: center;
 	height: 2px;
 
-	/* position: relative;
-	bottom: 5px; */
+	position: relative;
+	bottom: 42px;
 
-	margin-top: 13px;
+	background: #fff;
+	background: -webkit-linear-gradient(left, rgb(90,90,90) 0%, rgba(255,255,255,1) 50%, rgb(90,90,90) 100%);
+}
+.traitBlancHistoriqueLineBas {
+	opacity: 0.3;
+	width: 80%;
+	margin: 0 auto;	
+	text-align: center;
+	height: 2px;
+
+	/* margin-top: 45px; */
+	margin-top: 22px;
+
 	margin-bottom: 3px;
 
 	background: #fff;
