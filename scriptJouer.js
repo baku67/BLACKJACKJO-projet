@@ -171,18 +171,83 @@
 
 
 
-      // A mettre dans un fichier différent
-      $("#historique").click(function() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+
+
+        // A mettre dans un fichier différent
+        $("#historique").click(function() {
 
           $("#container1").load("historique.php", function() {
-
-
+    
+    
             //*** Style des backgrounds
             for (let i = 0; i < 20; i++) {
-
+    
               let HistoriqueLineContainer = document.getElementsByClassName("historiqueLine")[i];
               let resultatCasHistoriqueLine = document.getElementsByClassName("resultatCasHistorique")[i];
-
+    
               if (resultatCasHistoriqueLine.innerHTML == 'LOSE') {
                 HistoriqueLineContainer.classList.add('historiqueLineLose');
               }
@@ -200,16 +265,16 @@
               
             }
             //***  FIN backgrounds
-
-
-
+    
+    
+    
             //***  Style des resultatCas
             for (let i = 0; i < 20; i++) {
-
+    
               let resultatCasHistoriqueLine = document.getElementsByClassName("resultatCasHistorique")[i];
               var historiqueBjBool = false;
-
-
+    
+    
               if (resultatCasHistoriqueLine.innerHTML == 'LOSE') {
                 resultatCasHistoriqueLine.style.color = "#df2c2c";
                 resultatCasHistoriqueLine.style.border = "1px solid rgb(241 13 13)";
@@ -232,13 +297,13 @@
               
             }
             //***  FIN resultatCas
-
-
+    
+    
             //***  Style des gains
             for (let i = 0; i < 20; i++) {
-
+    
               let gainsHistoriqueLine = document.getElementsByClassName("gainHistorique")[i];
-
+    
               if (parseInt(gainsHistoriqueLine.innerHTML) < 0) {
                 gainsHistoriqueLine.style.color = "rgb(255 105 105)";
               }
@@ -257,10 +322,10 @@
               }
               else {
               }
-
+    
               //Style double:
               let doubleBoolHistoriqueLine = document.getElementsByClassName("doubleBoolHistorique")[i];
-
+    
               if (doubleBoolHistoriqueLine.innerHTML == ' x2') {
                 gainsHistoriqueLine.style.border = "2px solid rgba(255,215,0,0.5)";
                 gainsHistoriqueLine.style.padding = "2px 10px";
@@ -268,47 +333,47 @@
                 doubleBoolHistoriqueLine.style.display = "inline-block";
                 doubleBoolHistoriqueLine.style.fontSize = "0.8em";
                 doubleBoolHistoriqueLine.style.color = "rgba(255,215,0,0.7)";
-
+    
               }
               else if (doubleBoolHistoriqueLine.innerHTML == ' x1') {
                 gainsHistoriqueLine.style.border = "0px solid gold";
               }
               else {
               }
-
+    
             }
             //*** FIN gains
-
-
-
+    
+    
+    
             // Style et Formattage Date (personnel)
             for (let i = 0; i < 20; i++) {
-
+    
               let dateHistoriqueElem = document.getElementsByClassName("dateHistorique")[i];
               let dateHtml = dateHistoriqueElem.innerHTML.slice(0, -3);
-
-
-
+    
+    
+    
               // fonction qui compare la date avec la date actuelle et qui retourne la différence sous la forme "il y a ... sec/min/h/jour"
               console.log(i, dateHistoriqueElem, dateHtml);
               
               var year = parseInt(dateHtml.charAt(0)+ dateHtml.charAt(1) + dateHtml.charAt(2) + dateHtml.charAt(3));
               console.log("Année: " + year);
-
+    
               var month = parseInt(dateHtml.charAt(5) + dateHtml.charAt(6));
               console.log("Moi: " + month);
-
+    
               var day = parseInt(dateHtml.charAt(8) + dateHtml.charAt(9));
               console.log("Jour: " + day);
-
+    
               var hour = parseInt(dateHtml.charAt(11) + dateHtml.charAt(12));
               console.log("Heures: " + hour);
-
+    
               var minute = parseInt(dateHtml.charAt(14) + dateHtml.charAt(15));
               console.log("Minutes: " + minute);
-
+    
               console.log("Date partie: " + hour + ":" + minute + ", " + day + "/" + month + "/" + year);
-
+    
               
               let todayDate = new Date();
               anneeActuelle = todayDate.getFullYear();
@@ -316,13 +381,13 @@
               jourActuel = todayDate.getDate(); 
               heureActuelle = todayDate.getHours();
               minuteActuelle = todayDate.getMinutes();
-
-
+    
+    
               console.log("Date partie: " + hour + ":" + minute + ", " + day + "/" + month + "/" + year);
               console.log("Date actuelle: " + "" + jourActuel + "/" + moiActuel + "/" + anneeActuelle);
-
+    
               var suffixePluriel;
-
+    
               if (year != anneeActuelle) {
                 if (anneeActuelle-year > 1) { suffixePluriel = "s"; }
                 else { suffixePluriel = ''; }
@@ -334,7 +399,17 @@
               else if ((year == anneeActuelle) && (month == moiActuel) && (day != jourActuel)) {
                 if (jourActuel-day > 1) { suffixePluriel = "s"; }
                 else { suffixePluriel = ''; }
-                document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (jourActuel - day) + " jour" + suffixePluriel;
+    
+                if (jourActuel-day == 1) {
+                  document.getElementsByClassName("dateHistorique")[i].innerHTML = "Hier";
+                }
+                else if (jourActuel-day == 2) {
+                  document.getElementsByClassName("dateHistorique")[i].innerHTML = "Avant-hier";
+                }
+                else {
+                  document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (jourActuel - day) + " jour" + suffixePluriel;
+                }
+                
               }
               else if ((year == anneeActuelle) && (month == moiActuel) && (day == jourActuel) && (hour != heureActuelle)) {
                 if (heureActuelle-hour > 1) { suffixePluriel = "s"; }
@@ -348,16 +423,15 @@
               }
               else {
               }
-
+    
               
-
+    
             }
             //*** FIN Date
           
-
+    
           });
       });
-
 
 
 
@@ -373,6 +447,50 @@
       //   $("#container1").load("index.php");
         
       // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

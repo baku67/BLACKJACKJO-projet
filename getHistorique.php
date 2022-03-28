@@ -1,17 +1,17 @@
 <?php
     session_start();
 
+    // WIP: input utilisateur (+ sauvegardé bdd)
     $limit = 20;
     
     $query = 'SELECT winLose, gain, scoreJoueur, scoreCroupier, doubleBool, date FROM historique WHERE username = "'.$_SESSION['username'].'" ORDER BY id DESC LIMIT 20;   ';
-    // ajouter (SELECT) scoreJoueur et scoreCroupier
-    
     $result = mysqli_query($db, $query);
 
+    // Compteur de résultats line pour compléter avec lignes vides
     $count = 0;
 
     
-
+    
 
     echo "<ul id='listHistorique' style='font-size:2em; '>";
 
@@ -52,6 +52,7 @@
     }
 
 
+    // Complète avec des lignes vides (jusqu'à LIMIT) pour JS
     for ($i=0; $i < ($limit-$count); $i++) {
 
             echo "<li class='historiqueLine'>";
