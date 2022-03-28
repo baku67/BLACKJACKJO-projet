@@ -11,7 +11,7 @@
     $count = 0;
 
     
-    
+
 
     echo "<ul id='listHistorique' style='font-size:2em; '>";
 
@@ -31,14 +31,14 @@
 
                 // Ligne avec toutes les infos
                 echo 
-                   "<p style='margin: 0 10%; display:grid; grid-template-columns: 1.1fr 0.6fr 1.3fr; grid-template-rows: 1fr; gap: 0px 50px; grid-template-areas: \"resultats gains dates\"; '>"
+                   "<p style='margin: 0 10%; display:grid; grid-template-columns: 1.1fr 0.8fr 1.1fr; grid-template-rows: 1fr; gap: 0px 50px; grid-template-areas: \"resultats gains dates\"; '>"
 
                 .  "<span style='gridArea: resultats;' class='resultatCasHistorique'>" . $row['winLose']. "</span>"
                 
                 // Grouper gain et doubleBool (pour grid)
-                .  "<span style='gridArea: gains;' class='gainHistorique'>". $row['gain'] . "</span>"
+                .  "<span style='gridArea: gains;'><span class='gainHistorique'>". $row['gain'] . "</span>"
 
-                .  "<span class='doubleBoolHistorique'>" . " " . $double . "</span>"
+                .  "<span class='doubleBoolHistorique'>" . " " . $double . "</span></span>"
 
                 // A faire: DATE fonction qui retourne "il y a 12 minutes" "il y a 2 jours" 
                 .  "<span style='gridArea: dates;' class='dateHistorique'>". $row['date'] . "</span>"
@@ -59,7 +59,7 @@
 
                 // Fausses Lignes (fix elem inexistant JS)
                 echo 
-                   "<p style='margin: 0 10%; display:grid; grid-template-columns: 1.1fr 0.6fr 1.3fr; grid-template-rows: 1fr; gap: 0px 0px; grid-template-areas: \"resultats gains dates\"; '>"
+                   "<p style='margin: 0 10%; display:grid; grid-template-columns: 1.1fr 0.8fr 1.1fr; grid-template-rows: 1fr; gap: 0px 0px; grid-template-areas: \"resultats gains dates\"; '>"
                    
                 .  "<span style='gridArea: resultats;' class='resultatCasHistorique' style='opacity:0;'>--</span>"
             

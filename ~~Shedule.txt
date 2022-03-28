@@ -1,5 +1,7 @@
 Possibilité de changer le background des cartes, etc...
 
+quand x2: le gainHistorique devient purple (condition BJ qui pop de nulle part)   JS:310 "purple"
+
 Longueur de l'historique personalisable:
 JS:177 var input utilisateur 
 
