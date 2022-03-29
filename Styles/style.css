@@ -702,6 +702,11 @@ h2 {
 	transform: translate(0px, -35px);
 }
 
+html, body {
+	overflow: hidden;
+	height: 100%;
+}
+
 body {
 	background-image: url("../Images/backgroundMix2-compressed.png");
 	background-position: center center;
