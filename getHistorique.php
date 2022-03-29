@@ -28,6 +28,14 @@
             }
 
 
+            if ($row['gain'] > 0) {
+                $gainSigne = "+" . $row['gain'];
+            }
+            else {
+                $gainSigne = $row['gain'];
+            }
+
+
 
             echo "<li class='historiqueLine'>";
 
@@ -40,7 +48,7 @@
                 .  "<span style='gridArea: resultats;' class='resultatCasHistorique'>" . $row['winLose']. "</span>"
                 
                 // Grouper gain et doubleBool (pour grid)
-                .  "<span style='gridArea: gains;'><span class='gainHistorique'>". $row['gain'] . "</span>"
+                .  "<span style='gridArea: gains;'><span class='gainHistorique'>". $gainSigne . "</span>"
 
                 .  "<span class='doubleBoolHistorique'>" . " " . $double . "</span></span>"
 

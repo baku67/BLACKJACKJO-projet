@@ -23,10 +23,10 @@
 
 	.traitBlancHistoriqueLineHaut {
 		position: relative;
-		bottom: 11px;
+		bottom: 12px;
 	}
 	.traitBlancHistoriqueLineBas {
-		margin-top: 13px;
+		margin-top: 11px;
 	}
 
 	.resultatCasHistorique {
@@ -38,7 +38,7 @@
 	}
 
 	.gainHistorique {
-		font-size: 1.3em;
+		font-size: 1.0em;
 	}
 
 
