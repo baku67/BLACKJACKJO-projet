@@ -289,7 +289,13 @@
                 resultatCasHistoriqueLine.style.color = "#bebe5e";
               }
               else if (resultatCasHistoriqueLine.innerHTML == 'BJ') {
-                resultatCasHistoriqueLine.style.color = "purple";
+                resultatCasHistoriqueLine.style.color = "#fc6bfc";
+                resultatCasHistoriqueLine.style.letterSpacing = "3px";
+                resultatCasHistoriqueLine.style.fontWeight = "bold";
+                resultatCasHistoriqueLine.style.border = "1px solid #ffba04";
+                resultatCasHistoriqueLine.style.textShadow = "-1px -1px 0 rgba(0,0,0,0.5), 1px -1px 0 rgba(0,0,0,0.5), -1px 1px 0 rgba(0,0,0,0.5), 1px 1px 0 rgba(0,0,0,0.5)";
+                resultatCasHistoriqueLine.classList.add('backgroundBJ');
+
                 historiqueBjBool = true;
               }
               else {
@@ -327,12 +333,15 @@
               let doubleBoolHistoriqueLine = document.getElementsByClassName("doubleBoolHistorique")[i];
     
               if (doubleBoolHistoriqueLine.innerHTML == ' x2') {
-                gainsHistoriqueLine.style.border = "2px solid rgba(255,215,0,0.3)";
+                gainsHistoriqueLine.style.border = "2px solid rgba(255,215,0,0.4)";
                 gainsHistoriqueLine.style.padding = "2px 10px";
                 gainsHistoriqueLine.style.borderRadius = "6px";
                 doubleBoolHistoriqueLine.style.display = "inline-block";
-                doubleBoolHistoriqueLine.style.fontSize = "0.7em";
-                doubleBoolHistoriqueLine.style.color = "rgba(255,215,0,0.7)";
+                doubleBoolHistoriqueLine.style.fontSize = "0.8em";
+                doubleBoolHistoriqueLine.style.color = "rgba(255,215,0,0.8)";
+
+                gainsHistoriqueLine.style.position = "relative";
+                gainsHistoriqueLine.style.left = "12px";
     
               }
               else if (doubleBoolHistoriqueLine.innerHTML == ' x1') {
