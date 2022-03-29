@@ -104,14 +104,14 @@
 					<!-- Fin test -->
 
 
-					<p style="position:relative; bottom: 0.6em; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:1.2em; color:rgba(223, 204, 204, 0.8);">
+					<p style="position:relative; left:13px; bottom:0.6em; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:1.2em; color:rgba(223, 204, 204, 0.9);">
 						
 						<strong style="font-size:1.4em; text-shadow:0 0 3px rgb(43 39 39);">
-							<span>&#9733;</span>
+							<span style="color:rgba(255,237,144,1);">&#9733;</span>
 							<?php 
 								echo $_SESSION['username']; 
 							?>
-							<span>&#9733;</span>
+							<span style="color:rgba(255,237,144,1);">&#9733;</span>
 						</strong>
 
 						&nbsp;&nbsp;

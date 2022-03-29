@@ -1,12 +1,12 @@
-<h2 style="position:relative; margin-top:50px; margin-bottom:15px; text-align:center; color:rgb(223, 204, 204); font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+<h2 style="position:relative; margin-top:30px; margin-bottom:15px; text-align:center; color:rgb(223, 204, 204); font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
 - Dernières parties jouées -
 </h2>
 
 <div id="traitBlancHistorique"></div>
 
 <div class="slidecontainer">
-    <p style="font-size:1.2em; color:rgba(223, 204, 204, 0.9); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"><span id="demo"></span></p>
     <input type="range" min="20" max="200" value="50" step="10" class="slider" id="myRange">
+    <p style="position:relative; top:5px; font-size:1.3em; color:rgba(223, 204, 204, 0.9); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Taille: <span id="demo"></span></p>
 </div>
 
 <script>

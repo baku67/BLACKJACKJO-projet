@@ -262,37 +262,31 @@
               }
               else {
               }
-              
-            }
             //***  FIN backgrounds
     
     
     
-            //***  Style des resultatCas
-            for (let i = 0; i < 50; i++) {
-    
-              let resultatCasHistoriqueLine = document.getElementsByClassName("resultatCasHistorique")[i];
+            //***  Style des resultatCas    
               var historiqueBjBool = false;
-    
     
               if (resultatCasHistoriqueLine.innerHTML == 'LOSE') {
                 resultatCasHistoriqueLine.style.color = "#df2c2c";
-                resultatCasHistoriqueLine.style.border = "1px solid rgb(241 13 13)";
+                resultatCasHistoriqueLine.style.border = "1px solid rgba(216, 52, 52, 0.5)";
                 resultatCasHistoriqueLine.classList.add('backgroundLose');
               }
               else if (resultatCasHistoriqueLine.innerHTML == 'WIN') {
                 resultatCasHistoriqueLine.style.color = "rgb(0 255 111)";
-                resultatCasHistoriqueLine.style.border = "1px solid #3fff00";
+                resultatCasHistoriqueLine.style.border = "1px solid rgba(154,255,121,0.5)";
                 resultatCasHistoriqueLine.classList.add('backgroundWin');
               }
               else if (resultatCasHistoriqueLine.innerHTML == 'PUSH') {
                 resultatCasHistoriqueLine.style.color = "#bebe5e";
               }
               else if (resultatCasHistoriqueLine.innerHTML == 'BJ') {
-                resultatCasHistoriqueLine.style.color = "#fc6bfc";
+                resultatCasHistoriqueLine.style.color = "rgba(255,214,0,0.9)";
                 resultatCasHistoriqueLine.style.letterSpacing = "3px";
                 resultatCasHistoriqueLine.style.fontWeight = "bold";
-                resultatCasHistoriqueLine.style.border = "1px solid #ffba04";
+                resultatCasHistoriqueLine.style.border = "1px solid rgba(255,186,4,0.7)";
                 resultatCasHistoriqueLine.style.textShadow = "-1px -1px 0 rgba(0,0,0,0.5), 1px -1px 0 rgba(0,0,0,0.5), -1px 1px 0 rgba(0,0,0,0.5), 1px 1px 0 rgba(0,0,0,0.5)";
                 resultatCasHistoriqueLine.classList.add('backgroundBJ');
 
@@ -300,14 +294,10 @@
               }
               else {
               }
-              
-            }
             //***  FIN resultatCas
     
     
-            //***  Style des gains
-            for (let i = 0; i < 50; i++) {
-    
+            //***  Style des gains    
               let gainsHistoriqueLine = document.getElementsByClassName("gainHistorique")[i];
     
               if (parseInt(gainsHistoriqueLine.innerHTML) < 0) {
@@ -315,7 +305,7 @@
               }
               else if (parseInt(gainsHistoriqueLine.innerHTML) > 0) {
                 if (historiqueBjBool == true) {
-                  gainsHistoriqueLine.style.color = "purple";
+                  gainsHistoriqueLine.style.color = "rgba(255,214,0,0.9)";
                   historiqueBjBool = false;
                 }
                 else {
@@ -324,7 +314,7 @@
               }
               else if (parseInt(gainsHistoriqueLine.innerHTML) == 0) {
                 // gainsHistoriqueLine.style.color = "#bebe5e";
-                gainsHistoriqueLine.style.color = "rgb(228 228 183)";
+                gainsHistoriqueLine.style.color = "rgba(228, 228, 183, 0.7)";
               }
               else {
               }
@@ -342,6 +332,8 @@
 
                 gainsHistoriqueLine.style.position = "relative";
                 gainsHistoriqueLine.style.left = "12px";
+                gainsHistoriqueLine.style.top = "-1px";
+                gainsHistoriqueLine.style.backgroundColor = "rgba(255, 215, 0, 0.05)";
     
               }
               else if (doubleBoolHistoriqueLine.innerHTML == ' x1') {
@@ -349,19 +341,13 @@
               }
               else {
               }
-    
-            }
             //*** FIN gains
     
     
     
-            // Style et Formattage Date (personnel)
-            for (let i = 0; i < 50; i++) {
-    
+            // Style et Formattage Date (personnel)    
               let dateHistoriqueElem = document.getElementsByClassName("dateHistorique")[i];
               let dateHtml = dateHistoriqueElem.innerHTML.slice(0, -3);
-    
-    
     
               // fonction qui compare la date avec la date actuelle et qui retourne la différence sous la forme "il y a ... sec/min/h/jour"
               console.log(i, dateHistoriqueElem, dateHtml);
@@ -441,8 +427,6 @@
               else {
                 document.getElementsByClassName("dateHistorique")[i].innerHTML = "à l'instant";
               }
-    
-              
     
             }
             //*** FIN Date

@@ -41,7 +41,7 @@ button, input[type="submit"], input[type="reset"] {
 	text-align: center;
 	margin: 0 auto;
 
-	margin-bottom: 50px;
+	margin-bottom: 25px;
   }
   
 
@@ -49,7 +49,7 @@ button, input[type="submit"], input[type="reset"] {
 	-webkit-appearance: none;  
 	appearance: none;
 	width: 90%; 
-	height: 2px; 
+	height: 4px; 
 	background: #d3d3d3; 
 	outline: none; 
 	opacity: 0.5; 
@@ -179,9 +179,9 @@ button, input[type="submit"], input[type="reset"] {
 .resultatCasHistorique {
 	margin-left:50px; 
 	padding:5px 15px; 
-	border:1px solid #cca5a5; 
+	/* border:1px solid #cca5a5;  */
 	border-radius:10px;
-	letter-spacing: 1px;
+	letter-spacing: 2px;
 
 	font-size: 1.5em;
 }
@@ -201,6 +201,7 @@ button, input[type="submit"], input[type="reset"] {
 	top: 4px;
 
 	font-family: 'Holtwood One SC', serif;
+	letter-spacing: 1px;
 }
 
 
@@ -812,7 +813,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	opacity:0.7;
 
 	position: relative;
-	bottom: 40px;
+	bottom: 44px;
 }
 
 
