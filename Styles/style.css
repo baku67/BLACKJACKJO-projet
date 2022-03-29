@@ -29,6 +29,78 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 
+
+
+
+
+
+
+
+.slidecontainer {
+	width: 60%; 
+	text-align: center;
+	margin: 0 auto;
+
+	margin-bottom: 50px;
+  }
+  
+
+  .slider {
+	-webkit-appearance: none;  
+	appearance: none;
+	width: 90%; 
+	height: 2px; 
+	background: #d3d3d3; 
+	outline: none; 
+	opacity: 0.5; 
+	-webkit-transition: .2s; 
+	transition: opacity .2s;
+
+	border-radius: 5px;
+  }
+  
+  
+  .slider:hover {
+	opacity: 0.6; 
+  }
+  
+  
+  .slider::-webkit-slider-thumb {
+	-webkit-appearance: none; 
+	appearance: none;
+	width: 25px; 
+	height: 25px; 
+	background: #04AA6D; 
+	cursor: pointer; 
+
+	border-radius: 50%;
+  }
+  
+  .slider::-moz-range-thumb {
+	width: 25px; 
+	height: 25px; 
+	background: #04AA6D; 
+	cursor: pointer; 
+
+	border-radius: 50%;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .fadeOut {
 	visibility: hidden;
 	opacity: 0;
@@ -519,7 +591,7 @@ button, input[type="submit"], input[type="reset"] {
 	position: relative;
 	bottom: 5px;
 
-	margin-bottom: 50px;
+	margin-bottom: 5px;
 
 	background: #fff;
 	background: -webkit-linear-gradient(left, rgb(90,90,90) 0%, rgba(255,255,255,1) 50%, rgb(90,90,90) 100%);

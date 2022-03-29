@@ -243,7 +243,7 @@
     
     
             //*** Style des backgrounds
-            for (let i = 0; i < 20; i++) {
+            for (let i = 0; i < 50; i++) {
     
               let HistoriqueLineContainer = document.getElementsByClassName("historiqueLine")[i];
               let resultatCasHistoriqueLine = document.getElementsByClassName("resultatCasHistorique")[i];
@@ -269,7 +269,7 @@
     
     
             //***  Style des resultatCas
-            for (let i = 0; i < 20; i++) {
+            for (let i = 0; i < 50; i++) {
     
               let resultatCasHistoriqueLine = document.getElementsByClassName("resultatCasHistorique")[i];
               var historiqueBjBool = false;
@@ -300,7 +300,7 @@
     
     
             //***  Style des gains
-            for (let i = 0; i < 20; i++) {
+            for (let i = 0; i < 50; i++) {
     
               let gainsHistoriqueLine = document.getElementsByClassName("gainHistorique")[i];
     
@@ -347,7 +347,7 @@
     
     
             // Style et Formattage Date (personnel)
-            for (let i = 0; i < 20; i++) {
+            for (let i = 0; i < 50; i++) {
     
               let dateHistoriqueElem = document.getElementsByClassName("dateHistorique")[i];
               let dateHtml = dateHistoriqueElem.innerHTML.slice(0, -3);
@@ -411,9 +411,17 @@
                 }
                 
               }
+              // BUG: affiche il y a 1h au changement d'heure:     Pour différence heure (afficher en heure que si differences Minutes >= 60 !)
+              // Et afficher 'à l'instant' de 0 à 1min (prendre en compte les secondes et faire pareil différence>60 ?)
               else if ((year == anneeActuelle) && (month == moiActuel) && (day == jourActuel) && (hour != heureActuelle)) {
                 if (heureActuelle-hour > 1) { suffixePluriel = "s"; }
                 else { suffixePluriel = ''; }
+
+                // WIP
+                // if ()
+
+                // FIN WIP
+
                 document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (heureActuelle - hour) + " heure" + suffixePluriel;
               }
               else if ((year == anneeActuelle) && (month == moiActuel) && (day == jourActuel) && (hour == heureActuelle) && (minute != minuteActuelle)) {

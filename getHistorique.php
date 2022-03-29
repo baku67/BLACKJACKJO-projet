@@ -4,7 +4,7 @@
     // WIP: input utilisateur (+ sauvegardé bdd)
     $limit = 20;
     
-    $query = 'SELECT winLose, gain, scoreJoueur, scoreCroupier, doubleBool, date FROM historique WHERE username = "'.$_SESSION['username'].'" ORDER BY id DESC LIMIT 20;   ';
+    $query = 'SELECT winLose, gain, scoreJoueur, scoreCroupier, doubleBool, date FROM historique WHERE username = "'.$_SESSION['username'].'" ORDER BY id DESC LIMIT 50;   ';
     $result = mysqli_query($db, $query);
 
     // Compteur de résultats line pour compléter avec lignes vides
@@ -35,7 +35,7 @@
                 echo 
                    "<div class='traitBlancHistoriqueLineHaut'></div>"
 
-                .  "<p style='margin: 0 10%; display:grid; grid-template-columns: 1.1fr 0.8fr 1.7fr; grid-template-rows: 1fr; gap: 0px 50px; grid-template-areas: \"resultats gains dates\"; '>"
+                .  "<p style='margin: 0 5%; display:grid; grid-template-columns: 1.1fr 1fr 1.1fr; grid-template-rows: 1fr; gap: 0px 10px; grid-template-areas: \"resultats gains dates\"; '>"
 
                 .  "<span style='gridArea: resultats;' class='resultatCasHistorique'>" . $row['winLose']. "</span>"
                 
@@ -65,7 +65,7 @@
                 echo 
                    "<div class='traitBlancHistoriqueLineHaut'></div>"
 
-                .  "<p style='margin: 0 10%; display:grid; grid-template-columns: 1.1fr 0.8fr 1.7fr; grid-template-rows: 1fr; gap: 0px 0px; grid-template-areas: \"resultats gains dates\"; '>"
+                .  "<p style='margin: 0 5%; display:grid; grid-template-columns: 1.1fr 1fr 1.1fr; grid-template-rows: 1fr; gap: 0px 10px; grid-template-areas: \"resultats gains dates\"; '>"
                    
                 .  "<span style='gridArea: resultats;' class='resultatCasHistorique' style='opacity:0;'>--</span>"
             
