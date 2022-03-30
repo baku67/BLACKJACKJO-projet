@@ -8,6 +8,7 @@
         exit;
     }
 
+    $dateNow = gmdate('Y-m-d h:i:s \G\M\T');
 
 
     //traitement du formulaire:
@@ -30,12 +31,37 @@
                 echo "Une erreur s'est produite: ".mysqli_error($mysqli);
             } else {
                 // mettre en place une connection direct au compte apres creation ici (puis index.php)
-                //header('location: index.php');
-                echo "Inscription réussie !";
+
+                session_start();
+
+                $Pseudo = htmlentities($_POST['username'], ENT_QUOTES, "UTF-8"); 
+                $MotDePasse = htmlentities($_POST['password'], ENT_QUOTES, "UTF-8");    
+
+                $Requete = mysqli_query($mysqli,"SELECT * FROM users WHERE username = '".$Pseudo."' AND password = '".md5($MotDePasse)."'");
+                                
+                if(mysqli_num_rows($Requete) == 0) {
+                    echo "Le pseudo ou le mot de passe est incorrect, le compte n'a pas été trouvé.";
+                } else {
+                    //on ouvre la session avec $_SESSION:
+                    //la session peut être appelée différemment et son contenu aussi peut être autre chose que le pseudo
+                    $_SESSION['username'] = $Pseudo;
+
+                    // Redirection post connexion
+                    header('Location: http://www.blackjackjo.com/index.php');
+                }
             }
+            
+    
+            // Logs 'action'=Connexion
+            $action = 'Connexion';
+            $query = "INSERT INTO logs (username, action, date) VALUES (?, ?, ?)";
+            $stmt = mysqli_prepare($db, $query);
+            mysqli_stmt_bind_param($stmt, 'sss', $_SESSION['username'], $action, $dateNow);
+            mysqli_stmt_execute($stmt);
+            // Fin logs
 
             // Logs 'action'=Inscription
-            $dateNow = gmdate('Y-m-d h:i:s \G\M\T\+\2');
+            $dateNow = gmdate('Y-m-d h:i:s \G\M\T');
             $action = 'Inscription';
             $query = "INSERT INTO logs (username, action, date) VALUES (?, ?, ?)";
             $stmt = mysqli_prepare($db, $query);
