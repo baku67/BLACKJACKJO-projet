@@ -245,7 +245,68 @@
           $("#container1").load("historique.php", function() {
     
 
-            // Mettre ici le isconnect ou non puis le getHistoriqueInvite.php
+            // WIP Historique Invité: voir append() (https://developer.mozilla.org/en-US/docs/Web/API/Element/append)
+
+
+            // if (isConnected == false) {
+            //   console.log("Array utilisée par getHistoriqueInvite.html: " + historiqueInviteArray);
+
+
+            //   document.getElementById("historiqueListContainer").append(
+            //   "<ul id='listHistorique' style='font-size:2em;'>"
+            //   );
+
+
+            //   for (var i = 0; i < historiqueInviteArray.length; i++) 
+            //   {
+            //       console.log("Ligne de l'array utilisée: " + historiqueInviteArray[i]);
+
+            //       document.getElementById("listHistorique").append(
+
+            //           "<li class='historiqueLine'>" +
+
+            //           "<div class='traitBlancHistoriqueLineHaut'></div>" +
+
+            //           "<p style='margin: 0 5%; display:grid; grid-template-columns: 1.1fr 1fr 1.1fr; grid-template-rows: 1fr; gap: 0px 10px; grid-template-areas: \"resultats gains dates\"; '>" +
+
+            //           "<span style='gridArea: resultats;' class='resultatCasHistorique'>" + historiqueInviteArray[i][1] + "</span>" + 
+
+            //           "<span style='gridArea: gains;'><span class='gainHistorique'>" + historiqueInviteArray[i][2] + "</span>" + 
+
+            //           "<span class='doubleBoolHistorique'>" + historiqueInviteArray[i][5] + "</span></span>" + 
+
+            //           "<span style='gridArea: dates;' class='dateHistorique'>" + historiqueInviteArray[i][6] + "</span>" +
+
+            //           "</p>" +
+
+            //           "<div class='traitBlancHistoriqueLineBas'></div>" + 
+
+            //           "<br/>" + 
+
+            //           "</li>"
+            //       ); 
+            //   }
+
+            //   document.getElementById("historiqueListContainer").append(
+            //   "</ul>"
+            //   );
+
+
+            // }
+
+
+
+
+
+
+
+
+
+
+            // !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            // else {
+              
+
     
             //*** Style des backgrounds
             for (let i = 0; i < 50; i++) {
@@ -436,7 +497,7 @@
             }
             //*** FIN Date
           
-    
+          // }
           });
       });
 

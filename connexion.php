@@ -42,6 +42,7 @@ if(isset($_POST['connexion'])){
                 $Requete = mysqli_query($mysqli,"SELECT * FROM users WHERE username = '".$Pseudo."' AND password = '".md5($MotDePasse)."'");
                                 
                 if(mysqli_num_rows($Requete) == 0) {
+                    header('Location: http://www.blackjackjo.com/index.php');
                     echo "Le pseudo ou le mot de passe est incorrect, le compte n'a pas été trouvé.";
                 } else {
                     //on ouvre la session avec $_SESSION:

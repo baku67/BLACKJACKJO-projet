@@ -5,8 +5,8 @@
 <div id="traitBlancHistorique"></div>
 
 <div class="slidecontainer">
-    <input type="range" min="20" max="200" value="50" step="10" class="slider" id="myRange">
     <p style="position:relative; top:5px; font-size:1.3em; color:rgba(223, 204, 204, 0.9); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Taille: <span id="demo"></span></p>
+    <input type="range" min="20" max="200" value="50" step="10" class="slider" id="myRange">
 </div>
 
 <script>
@@ -29,11 +29,13 @@
         include('config.php');
         session_start();
 
-        if (!isset($_SESSION['username'])) :
-            include('getHistoriqueInvite.html');
-        else : 
+
+        // Plutot que faire ça on affiche tout via JS
+        // if (!isset($_SESSION['username'])) :
+        //     include('getHistoriqueInvite.html');
+        // else : 
             include('getHistorique.php');
-        endif;
+        // endif;
         
     ?>
 

@@ -114,14 +114,15 @@
 							<span style="color:rgba(255,237,144,1);">&#9733;</span>
 						</strong>
 
-						&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;
 						
 						<span style="font-size:1.7em;">|</span>
 						
 						&nbsp;&nbsp;
 
-						<span style="font-family: 'Bellota',cursive; font-size:1.3em; color:rgba(203,202,192,1); font-weight:700;" >Crédits:</span>
-						
+						<!-- <span style="font-family: 'Bellota',cursive; font-size:1.3em; color:rgba(203,202,192,1); font-weight:700;" >Crédits:</span> -->
+						<span style="font-family: 'Bellota',cursive; font-size:1.3em; color:rgba(203,202,192,1); font-weight:700;" ></span>
+
 						&nbsp; 
 						
 						<span style="color: rgb(241 205 92 / 95%) !important; text-shadow: 0 0 4px rgb(255 213 2);" id="creditsConnected"></span>
