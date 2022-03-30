@@ -27,12 +27,20 @@
         } else {
             //toutes les vérifications sont faites, on passe à l'enregistrement dans la base de données:
             if(!mysqli_query($mysqli,"INSERT INTO users SET username='".$_POST['username']."', password='".md5($_POST['password'])."'")){//on crypte le mot de passe avec la fonction propre à PHP: md5()
-                echo "Une erreur s'est produite: ".mysqli_error($mysqli);//je conseille de ne pas afficher les erreurs aux visiteurs mais de l'enregistrer dans un fichier log
+                echo "Une erreur s'est produite: ".mysqli_error($mysqli);
             } else {
                 // mettre en place une connection direct au compte apres creation ici (puis index.php)
                 //header('location: index.php');
                 echo "Inscription réussie !";
             }
+
+            // Logs 'action'=Inscription
+            $action = 'Inscription';
+            $query = "INSERT INTO logs (username, action, date) VALUES (?, ?, '30-03-2022 11:34:00')";
+            $stmt = mysqli_prepare($db, $query);
+            mysqli_stmt_bind_param($stmt, 'ss', $_POST['username'], $action);
+            mysqli_stmt_execute($stmt);
+            // Fin logs
         }
     }
 

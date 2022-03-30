@@ -68,6 +68,9 @@
 
       var doubleBool = 0;
 
+      var historiqueInviteArray = [];
+
+
 
 
 
@@ -2186,6 +2189,11 @@
       // Fin ratio
 
 
+
+
+
+
+
       function historiqueDB(WinLose, resultatCas, gain) {
 
         // Ancienne méthode: fuseau horaire non pris en compte
@@ -2227,6 +2235,72 @@
       }
 
 
+
+
+
+      function historiqueInvite(WinLose, resultatCas, gain) {
+
+        // Ancienne méthode: fuseau horaire non pris en compte
+        // var date = new Date().toISOString().slice(0, 19).replace('T', ' ');
+        
+        // Formattage du toLocalString (yyyy/mm/dd -> dd-mm-yyyy  + hh:mm:ss) date pour SQL DATETIME
+        var date = new Date().toLocaleString().replace("/", "-").replace("/", "-").replace(",", "");
+          var dd = date.slice(0, 2);
+          var mm = date.slice(3, 5);
+          var yyyy = date.slice(6, 10);
+          var hh = date.slice(11, 13);
+          var mi = date.slice(14, 16);
+          var ss = date.slice(17, 19);
+        date = yyyy + '-' + mm + '-' + dd + ' ' + hh + ':' + mi + ':' + ss;
+
+        // Array déclaré dans le newGame 
+        var historiqueInviteLine = [];
+        historiqueInviteLine[0] = WinLose;
+        historiqueInviteLine[1] = resultatCas;
+        historiqueInviteLine[2] = gain;
+        historiqueInviteLine[3] = scoreTotalJoueur;
+        historiqueInviteLine[4] = scoreTotalCroupier;
+        historiqueInviteLine[5] = doubleBool;
+        historiqueInviteLine[6] = date;
+
+        historiqueInviteArray.push(historiqueInviteLine);
+
+
+        console.log("Array JS Line: [" + historiqueInviteLine + "]");
+        console.log("Array JS Total: [" + historiqueInviteArray + "]");
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       // Envoi/Refresh du crédits et appel historiqueDB();
       if (isConnected == true) {
         function ajoutGain(gain) {
@@ -2254,6 +2328,8 @@
         function ajoutGain(gain) {
           document.getElementById("credits").innerHTML = "Crédits: &nbsp;" + (credits + gain) + "<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
           credits = credits + gain;
+
+          historiqueInvite(WinLose, resultatCas, gain);
         }
       }
       

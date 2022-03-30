@@ -31,6 +31,7 @@ if(isset($_POST['connexion'])){
         } else {
             // les champs pseudo & mdp sont bien postés et pas vides, on sécurise les données entrées par l'utilisateur
             //le htmlentities() passera les guillemets en entités HTML, ce qui empêchera en partie, les injections SQL
+            //Mr DIEMER: utiliser mysqli_real_escape_string() car nom de famille peuvent avoir des guillemets (qui seraient traduis en ~&neds;)
             $Pseudo = htmlentities($_POST['username'], ENT_QUOTES, "UTF-8"); 
             $MotDePasse = htmlentities($_POST['password'], ENT_QUOTES, "UTF-8");
             //$md5MotDePasse = md5($MotDePasse);
@@ -55,6 +56,13 @@ if(isset($_POST['connexion'])){
                     //on ouvre la session avec $_SESSION:
                     //la session peut être appelée différemment et son contenu aussi peut être autre chose que le pseudo
                     $_SESSION['username'] = $Pseudo;
+
+                    // Logs 'action'=Connexion
+                    $query = "INSERT INTO logs (username, action, date) VALUES (?, 'Connexion', '30/03/2022 11:34:00')";
+                    $stmt = mysqli_prepare($db, $query);
+                    mysqli_stmt_bind_param($stmt, 's', $_SESSION['username']);
+                    mysqli_stmt_execute($stmt);
+                    // Fin logs
                                         
                     // Redirection post connexion
                     // header('Location: http://www.basilek.ovh/index.php');
@@ -66,6 +74,15 @@ if(isset($_POST['connexion'])){
     }
 }
 if (isset($_GET['logout'])) {
+
+    // Logs 'action'=Connexion
+    $action = 'Deconnexion';
+    $query = "INSERT INTO logs (username, action, date) VALUES (?, ?, '30-03-2022 11:34:00')";
+    $stmt = mysqli_prepare($db, $query);
+    mysqli_stmt_bind_param($stmt, 'ss', $_SESSION['username'], $action);
+    mysqli_stmt_execute($stmt);
+    // Fin logs
+
     session_destroy();
     unset($_SESSION['username']);
     header("location: index.php");

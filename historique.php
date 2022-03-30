@@ -27,9 +27,13 @@
 
     <?php
         include('config.php');
-        // session_start();
+        session_start();
 
-        include('getHistorique.php');
+        if (!isset($_SESSION['username'])) :
+            include('getHistoriqueInvite.html');
+        else : 
+            include('getHistorique.php');
+        endif;
         
     ?>
 
