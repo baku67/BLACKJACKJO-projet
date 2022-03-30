@@ -48,7 +48,7 @@ button, input[type="submit"], input[type="reset"] {
   .slider {
 	-webkit-appearance: none;  
 	appearance: none;
-	width: 90%; 
+	width: 30%; 
 	height: 4px; 
 	background: #d3d3d3; 
 	outline: none; 
@@ -467,7 +467,7 @@ button, input[type="submit"], input[type="reset"] {
 .onglet button {
 	color:rgb(212, 189, 189);
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	font-size: 1.4em;
+	font-size: 1.8em;
 	letter-spacing: 2.5px;
 	text-decoration: none;
 	
@@ -481,7 +481,7 @@ button, input[type="submit"], input[type="reset"] {
 	position: relative;
 	bottom: 15px;
 	left: 13px;
-	font-size: 1.5em;
+	font-size: 2em;
 	margin-left: 30px;
 }
 #guide {
@@ -512,9 +512,21 @@ button, input[type="submit"], input[type="reset"] {
 
 } */
 
+
+.paragrapheHistoriqueLine {
+	position:relative; 
+	bottom:10px; 
+
+	margin: 0 5%; 
+	display:grid; 
+	grid-template-columns: 1.1fr 1fr 1.1fr; 
+	grid-template-rows: 1fr; gap: 0px 10px; 
+	grid-template-areas: "resultats gains dates"; 
+}
+
 .historiqueLine {
 	height: 45px; 
-	padding: 40px 0;
+	padding: 20px 0;
 	border-radius: 14px;
 
 	width: 30%;
@@ -522,7 +534,8 @@ button, input[type="submit"], input[type="reset"] {
 	list-style: none;
 
 	/* Séparation lignes:  */
-	margin: 20px auto;
+	margin: 10px auto;
+	
 }
 
 .historiqueLineLose {
@@ -609,7 +622,7 @@ button, input[type="submit"], input[type="reset"] {
 	height: 2px;
 
 	position: relative;
-	bottom: 42px;
+	bottom: 31px;
 
 	background: #fff;
 	background: -webkit-linear-gradient(left, rgb(90,90,90) 0%, rgba(255,255,255,1) 50%, rgb(90,90,90) 100%);
@@ -622,7 +635,7 @@ button, input[type="submit"], input[type="reset"] {
 	height: 2px;
 
 	/* margin-top: 45px; */
-	margin-top: 22px;
+	margin-top: 7px;
 
 	margin-bottom: 3px;
 
@@ -657,7 +670,7 @@ button, input[type="submit"], input[type="reset"] {
 
 #title {
 	text-align: center;
-	font-size: 3.5em;
+	font-size: 4.5em;
 	letter-spacing: 0.04em;
 	color: rgb(223, 204, 204);
 	text-shadow: rgb(5, 2, 39) 5px 3px;
@@ -820,7 +833,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 #container1 a {
 	/* color: rgba(5, 2, 39, 1); */
 	color: rgb(230, 211, 211);
-	font-size: 2.5em;
+	font-size: 3em;
 	font-weight: bold;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	letter-spacing: 0.3px;
@@ -836,7 +849,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	-ms-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 
-	padding: 20px 40px;
+	padding: 30px 60px;
 	/* border: 8px solid rgba(34, 10, 141, 0.08); */
 	border: 3px solid rgba(223, 204, 204, 0.6);
 	border-radius: 10px;
@@ -853,7 +866,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 
 
 .module-border-wrap {
-	max-width: 404px;
+	max-width: 600px;
 	position: relative;
 	/* background: linear-gradient(to right, rgba(153, 7, 7, 0.8), rgba(13, 1, 56, 0.8)); */
 	background: linear-gradient(-45deg, #5e5d13, #820e27, #0d585e, #1a2039);
@@ -1465,7 +1478,7 @@ figure:active {
 }
 
 #ratioLine {
-	font-size: 3.5em;
+	font-size: 2.5em;
 }
 
 #classementDiv {

@@ -43,7 +43,7 @@
                 echo 
                    "<div class='traitBlancHistoriqueLineHaut'></div>"
 
-                .  "<p style='margin: 0 5%; display:grid; grid-template-columns: 1.1fr 1fr 1.1fr; grid-template-rows: 1fr; gap: 0px 10px; grid-template-areas: \"resultats gains dates\"; '>"
+                .  "<p class='paragrapheHistoriqueLine'>"
 
                 .  "<span style='gridArea: resultats;' class='resultatCasHistorique'>" . $row['winLose']. "</span>"
                 

@@ -41,7 +41,13 @@
 		font-size: 1.0em;
 	}
 
+    .slider {
+        width: 90%; 
+    }
 
+    .paragrapheHistoriqueLine {
+        bottom:0px; 
+    }
 
 
 
@@ -85,6 +91,18 @@
 	}
 	
 
+    #newGame {
+        padding: 20px 40px;
+    }
+	#title {
+        font-size: 3.5em;
+    }
+	#jouer {
+        font-size: 1.5em;
+    }
+	.onglet button {
+        font-size: 1.4em;
+    }
 
 
 
