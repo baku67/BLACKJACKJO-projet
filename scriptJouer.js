@@ -244,6 +244,8 @@
 
           $("#container1").load("historique.php", function() {
     
+
+            // Mettre ici le isconnect ou non puis le getHistoriqueInvite.php
     
             //*** Style des backgrounds
             for (let i = 0; i < 50; i++) {
