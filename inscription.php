@@ -35,10 +35,11 @@
             }
 
             // Logs 'action'=Inscription
+            $dateNow = gmdate('Y-m-d h:i:s \G\M\T\+\2');
             $action = 'Inscription';
-            $query = "INSERT INTO logs (username, action, date) VALUES (?, ?, '30-03-2022 11:34:00')";
+            $query = "INSERT INTO logs (username, action, date) VALUES (?, ?, ?)";
             $stmt = mysqli_prepare($db, $query);
-            mysqli_stmt_bind_param($stmt, 'ss', $_POST['username'], $action);
+            mysqli_stmt_bind_param($stmt, 'sss', $_POST['username'], $action, $dateNow);
             mysqli_stmt_execute($stmt);
             // Fin logs
         }
