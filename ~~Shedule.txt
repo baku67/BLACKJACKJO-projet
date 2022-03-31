@@ -1,20 +1,13 @@
-Historique: Centrer resutatCas et gain(avec + si positif)
--> c'est à dire pour resultatCas mettre un width fixe max pour que les containers soient egaux en largeur (estétik)
-
-
-Connection directe apres l'inscription
-
-
 Possibilité de changer le background des cartes, etc...
 
-Potit probleme PC: CSS traitLumineuxHiostoriqueBas double/top
+
 
 BUST/WASTED: https://codepen.io/GeorgePark/pen/jeBbGN
 
-quand x2: le gainHistorique devient purple (condition BJ qui pop de nulle part)   JS:310 "purple"
 
-Longueur de l'historique personalisable:
-JS:177 var input utilisateur 
+
+
+
 
 BLOQUANT: 21 lance phase croupier mais footerChoix load quand meme (voir JS:2031  JS:1013)
 

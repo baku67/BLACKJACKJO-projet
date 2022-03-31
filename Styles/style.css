@@ -682,8 +682,8 @@ button, input[type="submit"], input[type="reset"] {
 
 #connectionContainer {
 	text-align: center; 
-	margin: 15px auto;
-	margin-right: 15px;
+	margin: 15px auto 0 auto;
+	margin-right: 56px;
 }
 .connectionButtons {
 	margin: 0px 10px; 

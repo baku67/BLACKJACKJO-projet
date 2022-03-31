@@ -77,7 +77,7 @@
       // Boutons Toggle
       var backgroundToggle = new Boolean;
       var setTimeOutMultiplierBool = false;
-      var setTimeOutMultiplier = 0.8;
+      var setTimeOutMultiplier = 0.7;
       var SoundMuteBool = true;
       // fin Boutons
 
@@ -679,7 +679,7 @@
                 if (setTimeOutMultiplierBool == true) {
                   setTimeOutMultiplierBool = false;
                   document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
-                  setTimeOutMultiplier = 0.8;
+                  setTimeOutMultiplier = 0.7;
                   document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
 
                   // $.ajax({
@@ -899,13 +899,13 @@
                 if (setTimeOutMultiplierBool == true) {
                   setTimeOutMultiplierBool = false;
                   document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
-                  setTimeOutMultiplier = 1;
+                  setTimeOutMultiplier = 0.7;
                   document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
                 }
                 else {
                   setTimeOutMultiplierBool = true;
                   document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
-                  setTimeOutMultiplier = 0.65;
+                  setTimeOutMultiplier = 0.4;
                   document.getElementById("speedToggleImage").src = 'Images/fastForwardWhite.png';
                 }
               });
@@ -1305,7 +1305,6 @@
                   if (scoreTotalJoueur + 10 < 22) {
                     scoreTotalJoueur = scoreTotalJoueur + 10;
                   }
-                  // POURQUOI AFFICHAGE +10 ALORS QUE DEJA LA VAR EST +10 ??????? 
                   document.getElementById('scoreJoueur').innerHTML = (scoreTotalJoueur);
 
                 }
