@@ -6,7 +6,7 @@ include("config.php");
 // Empechait la première tentative de co (avant de rediriger vers l'url valide)
 if ($_SERVER['HTTP_HOST'] == "blackjackjo.com")
 {
-   $url = "http://www." . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+   $url = "https://www." . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
    header("Location: $url");
 } 
 
@@ -42,7 +42,7 @@ if(isset($_POST['connexion'])){
                 $Requete = mysqli_query($mysqli,"SELECT * FROM users WHERE username = '".$Pseudo."' AND password = '".md5($MotDePasse)."'");
                                 
                 if(mysqli_num_rows($Requete) == 0) {
-                    header('Location: http://www.blackjackjo.com/index.php');
+                    header('Location: https://www.blackjackjo.com/index.php');
                     echo "Le pseudo ou le mot de passe est incorrect, le compte n'a pas été trouvé.";
                 } else {
                     //on ouvre la session avec $_SESSION:
@@ -58,7 +58,7 @@ if(isset($_POST['connexion'])){
                     // Fin logs
                                         
                     // Redirection post connexion
-                    header('Location: http://www.blackjackjo.com/index.php');
+                    header('Location: https://www.blackjackjo.com/index.php');
                     exit;
                 }
             }
