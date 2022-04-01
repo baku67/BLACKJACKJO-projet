@@ -29,13 +29,12 @@
         include('config.php');
         session_start();
 
-
-        // Plutot que faire ça on affiche tout via JS
-        // if (!isset($_SESSION['username'])) :
-        //     include('getHistoriqueInvite.html');
-        // else : 
+        // Vérification ici et dans le JS
+        if (!isset($_SESSION['username'])) :
+            // rien
+        else : 
             include('getHistorique.php');
-        // endif;
+        endif;
         
     ?>
 

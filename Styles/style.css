@@ -660,7 +660,7 @@ button, input[type="submit"], input[type="reset"] {
 
 #traitLumineux {
 	position: relative;
-	bottom: 20px;
+	bottom: 10px;
 }
 #traitLumineuxFooter {
 	position: relative;

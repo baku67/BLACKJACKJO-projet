@@ -68,9 +68,25 @@
 
       var doubleBool = 0;
 
-      var historiqueInviteArray = [];
+
+      let historiqueInviteArray = [];
+      // historiqueInviteArray.push(historiqueInviteArrayStored);
+      // var historiqueInviteArrayStored = localStorage.getItem("historiqueInviteArrayStored");
 
 
+      // Stockage de l'array: https://stackoverflow.com/questions/40200350/keep-data-after-page-refresh
+      // if (typeof(Storage) !== "undefined") {
+      //   localStorage.setItem("historiqueInviteArrayStored", historiqueInviteArray);
+      // } else {
+      // }
+
+
+      if (isConnected == false) {
+        document.getElementById("connectionContainer").style.marginRight = "0px";
+      }
+      else {
+        document.getElementById("connectionContainer").style.marginRight = "55px";
+      }
 
 
 
@@ -242,57 +258,45 @@
         // A mettre dans un fichier différent
         $("#historique").click(function() {
 
+
           $("#container1").load("historique.php", function() {
     
 
-            // WIP Historique Invité: voir append() (https://developer.mozilla.org/en-US/docs/Web/API/Element/append)
+            if (isConnected == false) {
+
+              console.log("Array utilisée par getHistoriqueInvite.html: " + historiqueInviteArray);
 
 
-            // if (isConnected == false) {
-            //   console.log("Array utilisée par getHistoriqueInvite.html: " + historiqueInviteArray);
+              $("#historiqueListContainer").append(
+              "<ul id='listHistorique' style='font-size:2em;'>"
+              );
 
 
-            //   document.getElementById("historiqueListContainer").append(
-            //   "<ul id='listHistorique' style='font-size:2em;'>"
-            //   );
+              for (var i = 0; i < historiqueInviteArray.length; i++) 
+              {
+                  console.log("Ligne de l'array utilisée: " + historiqueInviteArray[i]);
+
+                  $('#listHistorique').append(
+                      "<li class='historiqueLine'>" +
+                      "<div class='traitBlancHistoriqueLineHaut'></div>" +
+                      "<p style='margin: 0 5%; display:grid; grid-template-columns: 1.1fr 1fr 1.1fr; grid-template-rows: 1fr; gap: 0px 10px; grid-template-areas: \"resultats gains dates\"; '>" +
+                      "<span style='gridArea: resultats;' class='resultatCasHistorique'>" + historiqueInviteArray[i][1] + "</span>" + 
+                      "<span style='gridArea: gains;'><span class='gainHistorique'>" + historiqueInviteArray[i][2] + "</span>" + 
+                      "<span class='doubleBoolHistorique'>" + historiqueInviteArray[i][5] + "</span></span>" + 
+                      "<span style='gridArea: dates;' class='dateHistorique'>" + historiqueInviteArray[i][6] + "</span>" +
+                      "</p>" +
+                      "<div class='traitBlancHistoriqueLineBas'></div>" + 
+                      "<br/>" + 
+                      "</li>"
+                  ); 
+              }
+
+              $("#historiqueListContainer").append(
+              "</ul>"
+              );
 
 
-            //   for (var i = 0; i < historiqueInviteArray.length; i++) 
-            //   {
-            //       console.log("Ligne de l'array utilisée: " + historiqueInviteArray[i]);
-
-            //       document.getElementById("listHistorique").append(
-
-            //           "<li class='historiqueLine'>" +
-
-            //           "<div class='traitBlancHistoriqueLineHaut'></div>" +
-
-            //           "<p style='margin: 0 5%; display:grid; grid-template-columns: 1.1fr 1fr 1.1fr; grid-template-rows: 1fr; gap: 0px 10px; grid-template-areas: \"resultats gains dates\"; '>" +
-
-            //           "<span style='gridArea: resultats;' class='resultatCasHistorique'>" + historiqueInviteArray[i][1] + "</span>" + 
-
-            //           "<span style='gridArea: gains;'><span class='gainHistorique'>" + historiqueInviteArray[i][2] + "</span>" + 
-
-            //           "<span class='doubleBoolHistorique'>" + historiqueInviteArray[i][5] + "</span></span>" + 
-
-            //           "<span style='gridArea: dates;' class='dateHistorique'>" + historiqueInviteArray[i][6] + "</span>" +
-
-            //           "</p>" +
-
-            //           "<div class='traitBlancHistoriqueLineBas'></div>" + 
-
-            //           "<br/>" + 
-
-            //           "</li>"
-            //       ); 
-            //   }
-
-            //   document.getElementById("historiqueListContainer").append(
-            //   "</ul>"
-            //   );
-
-
-            // }
+            }
 
 
 
@@ -304,7 +308,7 @@
 
 
             // !!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            // else {
+            else {
               
 
     
@@ -497,7 +501,7 @@
             }
             //*** FIN Date
           
-          // }
+          }
           });
       });
 
@@ -597,8 +601,8 @@
 
           setTimeout( function lancerPartie() {
 
+
               document.getElementById("header").classList.add('headerOnPartie');
-              // document.getElementById("header").classList.add("classTest");
 
               document.getElementById("footer").classList.add('footerOnPartie');
 
@@ -620,7 +624,7 @@
                 credits = 100;
                 document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + credits + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
                 document.getElementById("credits").style.position = "relative";
-                document.getElementById("credits").style.top = "7px";
+                document.getElementById("credits").style.bottom = "7px";
                 document.getElementById("traitLumineux").style.visibility = "visible";
               }
               else {
@@ -2327,6 +2331,12 @@
 
         historiqueInviteArray.push(historiqueInviteLine);
 
+        // Stockage de l'array: https://stackoverflow.com/questions/40200350/keep-data-after-page-refresh
+        // if (typeof(Storage) !== "undefined") {
+        //   localStorage.setItem("historiqueInviteArrayStored", historiqueInviteArray);
+        // } else {
+        //   // Sorry! No Web Storage support
+        // }
 
         console.log("Array JS Line: [" + historiqueInviteLine + "]");
         console.log("Array JS Total: [" + historiqueInviteArray + "]");

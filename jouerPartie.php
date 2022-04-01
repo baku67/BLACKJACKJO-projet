@@ -28,7 +28,9 @@
 
 <div class="background JouerContainer">
 
-    
+        <?php  if (!isset($_SESSION['username'])) : ?>
+                <p style=" font-size: 1.5em;" id="credits"></p>
+        <?php endif ?>
     
         <ul id="list">
             <li>
@@ -53,9 +55,7 @@
                 </div>            
             </li> -->
 
-            <?php  if (!isset($_SESSION['username'])) : ?>
-                <li style=" font-size: 1.5em; margin-top: 25px;" id="credits"></li>
-			<?php endif ?>
+            
         </ul>
 
         <!-- Trait lumineux -->

@@ -1,3 +1,8 @@
+
+FIX le x2, style l'historiqueInvite, finir le storage de l'historique
+
+
+
 Possibilité de changer le background des cartes, etc...
 
 
