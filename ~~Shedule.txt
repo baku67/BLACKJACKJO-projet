@@ -1,4 +1,3 @@
-
 FIX le x2, finir le storage de l'historique Invite
 Le doubler() refonctionne mais doubleBool reste à true?
 

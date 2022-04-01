@@ -29,6 +29,10 @@
 		margin-top: 11px;
 	}
 
+	#traitBlancHistorique {
+		width: 80%;
+	}
+
 	.resultatCasHistorique {
 		font-size: 1em;
 	}

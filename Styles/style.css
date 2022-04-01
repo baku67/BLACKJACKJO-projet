@@ -599,7 +599,7 @@ button, input[type="submit"], input[type="reset"] {
 }
 #traitBlancHistorique {
 	opacity: 0.8;
-	width: 80%;
+	width: 40%;
 	margin: 0 auto;	
 	text-align: center;
 	height: 2px;
