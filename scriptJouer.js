@@ -1068,6 +1068,7 @@
         }
       }
 
+
       function double() {
 
         doubleBool = 1;
@@ -1091,8 +1092,9 @@
         }, 1000);
 
 
+        // IF NOT BUST après le addCardJoueur ! {
         setTimeout(function() {
-          lancerPhaseCroupier();
+          // lancerPhaseCroupier();
         }, 2000);
       }
       
@@ -2157,7 +2159,6 @@
       // NOUVELLE CARTE  > JOUEUR (+ScoreTOTAL)
       function addCardJoueur() {
 
-
         // WIP Animation Distribution Carte
         // distribAnim();
         // FIN
@@ -2528,6 +2529,12 @@
               });
             }, 1200);
         }
+
+        else if ((scoreTotalJoueur < 21) && (doubleBool==1)) {
+          lancerPhaseCroupier();
+          doubleBool=0;
+        }
+
       }
 
 
