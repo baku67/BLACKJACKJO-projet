@@ -605,7 +605,7 @@ button, input[type="submit"], input[type="reset"] {
 	height: 2px;
 
 	position: relative;
-	bottom: 5px;
+	bottom: 14px;
 
 	margin-bottom: 5px;
 
@@ -702,7 +702,7 @@ button, input[type="submit"], input[type="reset"] {
 }
 h2 {
 	/* font-size: 1.5em !important; */
-	font-size: 32px !important;
+	font-size: 32px;
 	margin-block-start: 0em;
 }
 .modalHeader {
@@ -991,8 +991,8 @@ p {
 	animation-iteration-count: 1; 
 	animation-fill-mode: forwards; 
 
-	padding-bottom: 2px;
-	border: 3px solid rgba(223, 204, 204, 0.4);
+	padding: 10px;
+	border: 5px solid rgba(223, 204, 204, 0.2);
 	border-radius: 9px;
 }
 
@@ -1347,12 +1347,18 @@ figure:active {
 
 
 #separateur {
-	height: 115px;
-	/* width: 45%; */
+	height: 135px;
 	width: 25%;
 	text-align: center; 
 
-	margin: 175px auto 55px auto;
+	/* margin: 54px auto 55px auto; */
+	margin: 0 auto;
+	
+	position: absolute;
+    /* top: 45%; */
+	top: 48%;
+    left: 0;
+    right: 0;
 }
 
 .resultatTextWin {

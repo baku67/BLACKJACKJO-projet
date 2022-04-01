@@ -1,11 +1,12 @@
 
-FIX le x2, style l'historiqueInvite, finir le storage de l'historique
+FIX le x2, finir le storage de l'historique Invite
 
 le x2 proc la PhaseCroupier mais si bustJoueur relance en parallèle la phaseCroupier (=2 résultats)
 Double() -> addCardJoueur() puis LancerPhaseCroupier() -> 
 				-> CheckBustJoueur()  -> LancerPhaseCroupierAfterBurst() (ICI)
 
 
+"c'ÉtAiT mIeUx AvAnT":  le "Mise: "
 
 Possibilité de changer le background des cartes, etc...
 

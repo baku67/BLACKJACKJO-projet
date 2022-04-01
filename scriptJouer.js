@@ -1069,8 +1069,6 @@
       }
 
       function double() {
-        // Le double fonctionne normalement, mais à la toute fin, le ("miselocked" -> "miseResultat")  devient (0 -> 0)
-        // Comparer loadFooters Hit() et double() car double pas assez réactif
 
         doubleBool = 1;
 
