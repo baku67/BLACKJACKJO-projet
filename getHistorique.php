@@ -13,7 +13,7 @@
     
 
 
-    echo "<ul id='listHistorique' style='font-size:2em; '>";
+    echo "<ul id='listHistorique' style='font-size:2em;'>";
 
 
     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
