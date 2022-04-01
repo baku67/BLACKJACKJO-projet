@@ -266,6 +266,7 @@
 
                 console.log("Array utilisée par getHistoriqueInvite.html: " + historiqueInviteArray);
 
+                var limit = 50;
 
                 $("#historiqueListContainer").append(
                 "<ul id='listHistorique' style='font-size:2em;'>"
@@ -275,6 +276,14 @@
                 {
                     console.log("Ligne de l'array utilisée: " + historiqueInviteArray[i]);
 
+                    // Transformation bool(TINYINT) double en string pour style
+                    if (historiqueInviteArray[i][5] == 1) {
+                      var double = " x2";
+                    }
+                    else {
+                      var double = " x1";
+                    }
+
                     // Pour le doubleBool: traduire le TINYINT en ' x2' ou ' x1'
                     $('#listHistorique').append(
                         "<li class='historiqueLine'>" +
@@ -282,7 +291,7 @@
                             "<p style='margin: 0 5%; display:grid; grid-template-columns: 1.1fr 1fr 1.1fr; grid-template-rows: 1fr; gap: 0px 10px; grid-template-areas: \"resultats gains dates\"; '>" +
                             "<span style='gridArea: resultats;' class='resultatCasHistorique'>" + historiqueInviteArray[i][0] + "</span>" + 
                             "<span style='gridArea: gains;'><span class='gainHistorique'>" + historiqueInviteArray[i][2] + "</span>" + 
-                            "<span class='doubleBoolHistorique'>" + " " + historiqueInviteArray[i][5] + "</span></span>" + 
+                            "<span class='doubleBoolHistorique'>" + double + "</span></span>" + 
                             "<span style='gridArea: dates;' class='dateHistorique'>" + historiqueInviteArray[i][6] + "</span>" +
                             "</p>" +
                           "<div class='traitBlancHistoriqueLineBas'></div>" + 
@@ -290,6 +299,24 @@
                         "</li>"
                     ); 
                 }
+
+                // Complétion avec lignes vides:
+                for (var i = 0; i < limit-historiqueInviteArray.length; i++) 
+                {
+                    $('#listHistorique').append(
+                      "<li class='historiqueLine'>" +
+                        "<div class='traitBlancHistoriqueLineHaut'></div>" +
+                          "<p style='margin: 0 5%; display:grid; grid-template-columns: 1.1fr 1fr 1.1fr; grid-template-rows: 1fr; gap: 0px 10px; grid-template-areas: \"resultats gains dates\"; '>" +
+                          "<span style='gridArea: resultats;' >" + "--" + "</span>" + 
+                          "<span style='gridArea: gains;'><span >" + "--" + "</span>" + 
+                          "<span class='doubleBoolHistorique'>" + " x1" + "</span></span>" + 
+                          "<span style='gridArea: dates; position: relative; top: 4px'>" + "--" + "</span>" +
+                          "</p>" +
+                        "<div class='traitBlancHistoriqueLineBas'></div>" + 
+                      "<br/>" + 
+                      "</li>"
+                    ); 
+                };
 
                 $("#historiqueListContainer").append(
                 "</ul>"
