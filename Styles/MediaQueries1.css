@@ -215,7 +215,8 @@
 
 	#tokenChipsContainer {
 		position: relative;
-		margin-left: 15px;
+		/* margin-left: 15px; */
+		left: 2%;
 	}
 
 
@@ -411,7 +412,7 @@
 	#retourArriereImg {
 		width: 30px !important;
 		position: relative;
-		right: 206px;
+		right: 180px;
 		top: 54px;
 		margin-top: 3px !important;
 	}

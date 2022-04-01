@@ -903,7 +903,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 
 	width: 160px; 
 	margin: 0 0 0 50px; 
-	padding: 0 30px 0 10px; 
+	/* padding: 0 30px 0 10px;  */
 	font-size: 3em;
 }
 
