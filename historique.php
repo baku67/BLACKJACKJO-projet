@@ -29,12 +29,22 @@
         include('config.php');
         session_start();
 
-        // Vérification ici et dans le JS
-        if (!isset($_SESSION['username'])) :
-            // rien
-        else : 
-            include('getHistorique.php');
-        endif;
+        // Get role
+        $query = mysqli_query($db,"SELECT role FROM users WHERE username = '".$_SESSION['username']."' ");
+        while($row = mysqli_fetch_array($query)) {$role = $row['role']; }
+
+        // Vérification Admin/Connecté/Invite:
+            if ( isset($_SESSION['username']) && $role=='admin' ) :
+                include('getAdminBoard.php');
+
+            elseif (!isset($_SESSION['username'])) : 
+                //rien (historique hors connexion JS)
+
+            else : 
+                include('getHistorique.php'); 
+                
+            endif;
+        // FIN
         
     ?>
 

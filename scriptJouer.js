@@ -2424,7 +2424,6 @@
       function checkBurstJoueur() {
         if (scoreTotalJoueur > 21) {
 
-          // doubleBool=0;
           // Var pour array historiquePhp
           WinLose = 'LOSE';
           resultatCas = 'Bust';
@@ -2533,7 +2532,6 @@
 
         else if ((scoreTotalJoueur < 21) && (doubleBool==1)) {
           lancerPhaseCroupier();
-          // doubleBool=0;
         }
 
       }
