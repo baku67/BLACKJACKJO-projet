@@ -348,6 +348,18 @@
               else {
               }
             //***  FIN backgrounds
+
+
+            // Style de la liste User ADMIN
+              let roleUserLine = document.getElementsByClassName("roleUsers")[i];
+              if (roleUserLine.innerHTML == 'admin') {
+                roleUserLine.style.color = 'rgba(251,226,87,1)';
+              }
+              else if (roleUserLine.innerHTML == 'joueur') {
+                roleUserLine.style.color = 'rgba(215,235,251,1)';
+              }
+            // FIN
+
     
     
     

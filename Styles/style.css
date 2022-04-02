@@ -177,13 +177,19 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 .resultatCasHistorique {
-	margin-left:50px; 
-	padding:5px 15px; 
+	margin-left: 50px; 
+	padding: 5px 15px; 
 	/* border:1px solid #cca5a5;  */
-	border-radius:10px;
+	border-radius: 10px;
 	letter-spacing: 2px;
 
 	font-size: 1.5em;
+}
+
+.roleUsers {
+	padding: 5px 15px; 
+
+	font-size: 0.8em;
 }
 
 .doubleBoolHistorique {
@@ -522,6 +528,26 @@ button, input[type="submit"], input[type="reset"] {
 	grid-template-columns: 1.1fr 1fr 1.1fr; 
 	grid-template-rows: 1fr; gap: 0px 10px; 
 	grid-template-areas: "resultats gains dates"; 
+}
+
+.paragrapheHistoriqueLineAdmin {
+	display: grid; 
+	grid-auto-rows: 1fr 1fr; 
+	grid-template-columns: 1fr 0.7fr 1.1fr 1.4fr; 
+	grid-template-rows: 1fr; 
+	gap: 0px 10px; 
+	grid-template-areas: 
+	  ". . . ."; 
+}
+
+.paragrapheUserLineAdmin {
+	display: grid; 
+	grid-auto-rows: 1fr 1fr; 
+	grid-template-columns: 1fr 0.7fr 0.8fr 1.2fr 1.2fr; 
+	grid-template-rows: 1fr; 
+	gap: 0px 3px; 
+	grid-template-areas: 
+	  "username role credits dateInsc dateLastCo"; 
 }
 
 .historiqueLine {
