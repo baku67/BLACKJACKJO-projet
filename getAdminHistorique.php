@@ -18,6 +18,41 @@
 
     echo("<h2 style=\"font-size:2.2em !important; position:relative; margin-top:30px; margin-bottom:15px; text-align:center; color:rgba(223, 204, 204, 0.9) !important; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\"><span style=\"color:rgb(255, 201, 104) !important;\">★</span> Historique Global <span style=\"color:rgb(255, 201, 104) !important;\">★</span></h2>");
     
+
+
+    // Nom Colonnes Liste Globale Historiques Parties
+
+    echo "<li class='historiqueLine' style='background-color:rgba(2, 107, 198, 0.2);'>";
+    echo 
+       "<div class='traitBlancHistoriqueLineHaut'></div>"
+
+            .  "<p class='paragrapheHistoriqueLineAdmin' style='margin-top:10px;'>"
+
+                .  "<span style='gridArea: username; font-size:1.5em;'>" . "Nom" . "</span>"
+
+                .  "<span style='gridArea: resultats; font-size:1.5em;'>" . "Résultat" . "</span>"
+                
+                // Gain et doubleBool groupé (pour grid)
+                .  "<span style='gridArea: gains; font-size:1.5em;'>". "Gain" . "</span>"
+
+                .  "<span style='gridArea: dates; font-size:1.5em;'>". "Date" . "</span>"
+            
+            .  "</p>"
+
+    .  "<div class='traitBlancHistoriqueLineBas'></div>";
+
+    echo "<br/>";
+    echo "</li>";
+
+
+
+
+
+
+
+
+
+
     echo "<ul id='listHistorique' style='font-size:2em;'>";
 
 

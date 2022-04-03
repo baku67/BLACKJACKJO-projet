@@ -187,7 +187,7 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 .roleUsers {
-	padding: 5px 15px; 
+	/* padding: 5px 15px;  */
 
 	font-size: 0.8em;
 }
@@ -550,17 +550,17 @@ button, input[type="submit"], input[type="reset"] {
 	grid-template-rows: 1fr; 
 	gap: 0px 10px; 
 	grid-template-areas: 
-	  ". . . ."; 
+	  "username resultat gains dates"; 
 }
 
 .paragrapheUserLineAdmin {
 	display: grid; 
 	grid-auto-rows: 1fr 1fr; 
-	grid-template-columns: 1fr 0.7fr 0.8fr 1.2fr 1.2fr; 
+	grid-template-columns: 1fr 0.7fr 0.8fr 1.2fr 1.2fr 0.3fr; 
 	grid-template-rows: 1fr; 
 	gap: 0px 3px; 
 	grid-template-areas: 
-	  "username role credits dateInsc dateLastCo"; 
+	  "username role credits dateInsc dateLastCo deleteButton"; 
 }
 
 .historiqueLine {
