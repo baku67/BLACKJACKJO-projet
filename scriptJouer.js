@@ -532,8 +532,30 @@
                   roleUserLine.style.color = 'rgba(215,235,251,1)';
                   UserLineContainer.classList.add('historiqueLinePush');
                 }
+
+                // Bouton DELETE
+                let deleteUserButtonLine = document.getElementsByClassName("deleteUserButton")[i];
+                let usernameLine = document.getElementsByClassName("username")[i];
+                let usernameHtml = usernameLine.innerText;
+
+                deleteUserButtonLine.addEventListener("click", function() {
+                    //ajax delete (click fonctionne, mais ajax bugué)
+                    $.ajax({
+                      url: "deleteUser.php",
+                      method: "post",
+                      // On envoi le username de la ligne pour suppr le bon
+                      data: usernameHtml,
+                      success: function() {
+                        console.log("Ajax delete user success")
+                      }
+                    })
+                });
             }
             // FIN
+
+
+            
+
           
           });
       });

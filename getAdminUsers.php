@@ -83,7 +83,7 @@
 
                     .  "<p class='paragrapheUserLineAdmin'>"
 
-                        .  "<span style='gridArea:username; margin-top: 10px;'>" . $row['username'] . "</span>"
+                        .  "<span class='username' style='gridArea:username; margin-top: 10px;'>" . $row['username'] . "</span>"
 
                         .  "<span style='gridArea:role; margin-top: 10px;' class='roleUsers'>" . $row['role'] . "</span>"
                         
@@ -95,7 +95,7 @@
 
                         .  "<span style='gridArea:dateLastCo;' class='dateHistorique'>". "il y a 2 jours" . "</span>"
 
-                        .  "<button style='gridArea:deleteButton; background-color:rgba(226,5,61,0.4); font-size:1.8em; position:relative; padding:3px 0; bottom:2px;'>" . "X" . "</button>"
+                        .  "<button class='deleteUserButton' style='gridArea:deleteButton; background-color:rgba(226,5,61,0.4); font-size:1.8em; position:relative; padding:3px 0; bottom:2px;'>" . "X" . "</button>"
                     
                     .  "</p>"
 
