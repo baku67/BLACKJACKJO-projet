@@ -8,7 +8,7 @@
     // WIP: input utilisateur (+ sauvegardé bdd)
     $limit = 20;
     
-    $query = 'SELECT username, credits, Win, Lose, role, commentaires FROM users ORDER BY id DESC LIMIT 50;   ';
+    $query = 'SELECT username, credits, Win, Lose, role, commentaires FROM users ORDER BY credits DESC LIMIT 15;   ';
     
     // Date inscription!  (ET DATE derniere connexion : prévoir Height des lignes)
     // $query = 'SELECT username, credits, Win, Lose, role, commentaires FROM users ORDER BY id DESC LIMIT 50;   ';
@@ -17,7 +17,7 @@
     // FIN
 
     $result = mysqli_query($db, $query);
-    $result2 = mysqli_query($db, $query2);
+    // $result2 = mysqli_query($db, $query2);
 
     // Compteur de résultats line pour compléter avec lignes vides
     $count = 0;
@@ -25,7 +25,10 @@
     
 
 
-    echo("</br>");
+  
+
+    echo("<h2 style=\"font-size:2.2em !important; position:relative; margin-top:30px; margin-bottom:15px; text-align:center; color:rgb(255, 201, 104); font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\"><span style=\"style=color:rgba(223, 204, 204,0.9) !important;\">★</span> Liste Utilisateurs <span style=\"style=color:rgba(223, 204, 204,0.9) !important;\">★</span></h2>");
+
     echo "<ul id='listHistorique' style='font-size:2em;'>";
 
 
@@ -50,7 +53,7 @@
 
 
 
-            echo "<li class='historiqueLine'>";
+            echo "<li class='historiqueLineAdmin'>";
 
                 // Ligne User avec toutes les infos
                 echo 
@@ -82,7 +85,7 @@
     // Complète avec des lignes vides (jusqu'à LIMIT) pour JS
     for ($i=0; $i < ($limit-$count); $i++) {
 
-            echo "<li class='historiqueLine'>";
+            echo "<li class='historiqueLineAdmin'>";
 
                 // Fausses Lignes (fix elem inexistant JS)
                 echo 

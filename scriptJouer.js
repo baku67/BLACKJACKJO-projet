@@ -262,6 +262,7 @@
           $("#container1").load("historique.php", function() {
     
 
+            // MODE INVITÉ:
             if (isConnected == false) {
 
                 console.log("Array utilisée par getHistoriqueInvite.html: " + historiqueInviteArray);
@@ -324,11 +325,10 @@
 
             }
 
-              
 
     
             //*** Style des backgrounds
-            for (let i = 0; i < 50; i++) {
+            for (let i = 0; i < 30; i++) {
     
               let HistoriqueLineContainer = document.getElementsByClassName("historiqueLine")[i];
               let resultatCasHistoriqueLine = document.getElementsByClassName("resultatCasHistorique")[i];
@@ -347,23 +347,11 @@
               }
               else {
               }
-            //***  FIN backgrounds
-
-
-            // Style de la liste User ADMIN
-              let roleUserLine = document.getElementsByClassName("roleUsers")[i];
-              if (roleUserLine.innerHTML == 'admin') {
-                roleUserLine.style.color = 'rgba(251,226,87,1)';
-              }
-              else if (roleUserLine.innerHTML == 'joueur') {
-                roleUserLine.style.color = 'rgba(215,235,251,1)';
-              }
-            // FIN
-
+              //***  FIN backgrounds
     
+  
     
-    
-            //***  Style des resultatCas    
+              //***  Style des resultatCas    
               var historiqueBjBool = false;
     
               if (resultatCasHistoriqueLine.innerHTML == 'LOSE') {
@@ -391,10 +379,10 @@
               }
               else {
               }
-            //***  FIN resultatCas
+              //***  FIN resultatCas
     
     
-            //***  Style des gains    
+              //***  Style des gains    
               let gainsHistoriqueLine = document.getElementsByClassName("gainHistorique")[i];
     
               if (parseInt(gainsHistoriqueLine.innerHTML) < 0) {
@@ -438,11 +426,11 @@
               }
               else {
               }
-            //*** FIN gains
+              //*** FIN gains
     
     
     
-            // Style et Formattage Date (personnel)    
+              // Style et Formattage Date (personnel)    
               let dateHistoriqueElem = document.getElementsByClassName("dateHistorique")[i];
               let dateHtml = dateHistoriqueElem.innerHTML.slice(0, -3);
     
@@ -527,6 +515,25 @@
     
             }
             //*** FIN Date
+
+            //Style de la liste User ADMIN
+            // Mettre des while donnée != vide
+            for (let i = 0; i < 15; i++) {
+              
+                let UserLineContainer = document.getElementsByClassName("historiqueLineAdmin")[i];
+                let roleUserLine = document.getElementsByClassName("roleUsers")[i];
+
+                if (roleUserLine.innerHTML == 'admin') {
+                  roleUserLine.style.color = 'rgba(251,226,87,1)';
+                  UserLineContainer.classList.add('historiqueLineBJ');
+
+                }
+                else if (roleUserLine.innerHTML == 'joueur') {
+                  roleUserLine.style.color = 'rgba(215,235,251,1)';
+                  UserLineContainer.classList.add('historiqueLinePush');
+                }
+            }
+            // FIN
           
           });
       });

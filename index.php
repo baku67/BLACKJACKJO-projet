@@ -104,7 +104,7 @@
 					<!-- Fin test -->
 
 
-					<p style="position:relative; left:13px; bottom:1.1em; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:1.2em; color:rgba(223, 204, 204, 0.9);">
+					<p style="position:relative; left:29px; bottom:1.1em; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:1.2em; color:rgba(223, 204, 204, 0.9);">
 						
 						<strong style="font-size:1.4em; text-shadow:0 0 3px rgb(43 39 39);">
 							<span style="color:rgba(255,237,144,1);">&#9733;</span>

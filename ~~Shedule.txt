@@ -17,7 +17,7 @@ BUST/WASTED: https://codepen.io/GeorgePark/pen/jeBbGN
 
 
 
-
+POUR LIMIT: JS:330 (boucle for avec var i unique)    et   getAdminHistorique
 
 
 BLOQUANT: 21 lance phase croupier mais footerChoix load quand meme (voir JS:2031  JS:1013)
