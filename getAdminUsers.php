@@ -14,7 +14,6 @@
     // $query = 'SELECT username, credits, Win, Lose, role, commentaires FROM users ORDER BY id DESC LIMIT 50;   ';
     // INNER JOIN logs ON username
 
-    // FIN
 
     $result = mysqli_query($db, $query);
     // $result2 = mysqli_query($db, $query2);
@@ -24,13 +23,12 @@
 
     
 
+    // TITRE UserList
+    echo("<h2 style=\"font-size:2.2em !important; position:relative; margin-top:30px; margin-bottom:15px; text-align:center; color:rgba(223, 204, 204, 0.9) !important; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\"><span style=\"color:rgb(255, 201, 104) !important;\">★</span> Liste Utilisateurs <span style=\"color:rgb(255, 201, 104) !important;\">★</span></h2>");
 
-  
 
-    echo("<h2 style=\"font-size:2.2em !important; position:relative; margin-top:30px; margin-bottom:15px; text-align:center; color:rgb(255, 201, 104); font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\"><span style=\"style=color:rgba(223, 204, 204,0.9) !important;\">★</span> Liste Utilisateurs <span style=\"style=color:rgba(223, 204, 204,0.9) !important;\">★</span></h2>");
-
+    // ListContainer
     echo "<ul id='listHistorique' style='font-size:2em;'>";
-
 
     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
     {
@@ -53,7 +51,7 @@
 
 
 
-            echo "<li class='historiqueLineAdmin'>";
+            echo "<li class='historiqueLineAdmin userAdmin'>";
 
                 // Ligne User avec toutes les infos
                 echo 
@@ -61,17 +59,17 @@
 
                     .  "<p class='paragrapheUserLineAdmin'>"
 
-                        .  "<span style='gridArea: username;'>" . $row['username'] . "</span>"
+                        .  "<span style='gridArea: username; margin-top: 10px;'>" . $row['username'] . "</span>"
 
-                        .  "<span style='gridArea: role;' class='roleUsers'>" . $row['role'] . "</span>"
+                        .  "<span style='gridArea: role; margin-top: 10px;' class='roleUsers'>" . $row['role'] . "</span>"
                         
                         .  "<span style='gridArea: credits;' class='gainHistorique'>". $row['credits'] . "</span>"
 
                         // Date inscription et derniere connexion 
 
-                        .  "<span style='gridArea: dateInsc;' class='dateHistorique'>". "il y a 1 mois (DUR)" . "</span>"
+                        .  "<span style='gridArea: dateInsc;' class='dateHistorique'>". "il y a 1 mois" . "</span>"
 
-                        .  "<span style='gridArea: dateLastCo;' class='dateHistorique'>". "il y a 2 jours (DUR)" . "</span>"
+                        .  "<span style='gridArea: dateLastCo;' class='dateHistorique'>". "il y a 2 jours" . "</span>"
                     
                     .  "</p>"
 
@@ -85,7 +83,7 @@
     // Complète avec des lignes vides (jusqu'à LIMIT) pour JS
     for ($i=0; $i < ($limit-$count); $i++) {
 
-            echo "<li class='historiqueLineAdmin'>";
+            echo "<li class='historiqueLineAdmin userAdmin'>";
 
                 // Fausses Lignes (fix elem inexistant JS)
                 echo 

@@ -518,6 +518,13 @@ button, input[type="submit"], input[type="reset"] {
 
 } */
 
+.userAdmin {
+	height:90px;
+	margin: 0 1%; 
+	border-radius: 5px;
+	margin-bottom: 6px;
+}
+
 
 .paragrapheHistoriqueLine {
 	position:relative; 
@@ -528,6 +535,12 @@ button, input[type="submit"], input[type="reset"] {
 	grid-template-columns: 1.1fr 1fr 1.1fr; 
 	grid-template-rows: 1fr; gap: 0px 10px; 
 	grid-template-areas: "resultats gains dates"; 
+}
+
+.historiqueLineAdmin {
+	list-style-type:none;
+	width: 60%;
+	margin: 1% auto;
 }
 
 .paragrapheHistoriqueLineAdmin {
@@ -1273,6 +1286,13 @@ p {
 	transform: translateX(-50%);
 }
 
+#historiqueListContainer::-webkit-scrollbar {
+	display: none; /* Chrome Opera */
+}
+#example {
+	-ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
+}
 
 
 #container3 {

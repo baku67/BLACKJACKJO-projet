@@ -11,6 +11,17 @@
 	} */
 
 
+	.userAdmin {
+		height:60px;
+	}
+
+
+	.historiqueLineAdmin {
+		list-style-type:none;
+		width: 98%;
+		margin: 1% auto;
+	}
+
 
 	.historiqueLine {
 		padding: 12px 0;
