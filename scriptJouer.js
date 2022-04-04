@@ -524,7 +524,7 @@
 
 
             //Style de la liste Users (ADMIN)
-            for (let i = 0; i <= 10; i++) {
+            for (let i = 0; i <= 15; i++) {
               if(document.getElementsByClassName("username")[i] != null){
               
                 let UserLineContainer = document.getElementsByClassName("historiqueLineAdmin")[i];
@@ -545,20 +545,29 @@
                   var usernameLineToPhp = {};
                   usernameLineToPhp.value = document.getElementsByClassName("username")[i].innerText;  
 
-                  // 1er click: ajout de la classe opacity:1 et changer le addEvenListener sur la nouvelle classe ou ajouter un id?
-                  // deleteUserButtonLine.addEventListener("click", function() {};
-
+                  // 1er click: Opacity+Border WARNING,  2eme click: Comfirmation suppression
                   deleteUserButtonLine.addEventListener("click", function() {
-                    //ajax delete (click fonctionne, mais ajax bugué)
-                    $.ajax({
-                      url: "deleteUser.php",
-                      method: "post",
-                      data: usernameLineToPhp,
-                      success: function() {
-                        console.log("Ajax delete user success: " + usernameLineToPhp);
-                        location.reload();
-                      }
-                    })
+                    document.getElementsByClassName("deleteUserButton")[i].style.backgroundColor = 'rgba(226,5,61,1)';
+                    document.getElementsByClassName("deleteUserButton")[i].classList.add('deleteUserRed');
+                    document.getElementsByClassName("historiqueLineAdmin")[i].style.border = '5px solid rgba(226,5,61,0.8)';
+
+
+                    let deleteUserButtonLine1 = document.getElementsByClassName("deleteUserButton")[i];
+
+
+                    deleteUserButtonLine1.addEventListener("click", function() {
+                      //ajax delete (click fonctionne, mais ajax bugué)
+                      $.ajax({
+                        url: "deleteUser.php",
+                        method: "post",
+                        data: usernameLineToPhp,
+                        success: function() {
+                          console.log("Ajax delete user success: " + usernameLineToPhp);
+                          location.reload();
+                        }
+                      })
+                    });
+
                   });
 
               }

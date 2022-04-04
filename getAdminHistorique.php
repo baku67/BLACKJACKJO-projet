@@ -22,7 +22,7 @@
 
     // Nom Colonnes Liste Globale Historiques Parties
 
-    echo "<div class='' style='background-color:rgba(2, 107, 198, 0.2);'>";
+    echo "<div class='' style='margin: 0 30px; background-color:rgba(2, 107, 198, 0.2);'>";
     echo 
        "<div class='traitBlancHistoriqueLineHaut'></div>"
 

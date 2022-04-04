@@ -23,7 +23,7 @@
     echo("<h2 style=\"font-size:2.2em !important; position:relative; margin-top:30px; margin-bottom:15px; text-align:center; color:rgba(223, 204, 204, 0.9) !important; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\"><span style=\"color:rgb(255, 201, 104) !important;\">★</span> Liste Utilisateurs <span style=\"color:rgb(255, 201, 104) !important;\">★</span></h2>");
 
     // Nom Colonnes Liste Utilisateurs
-    echo "<div class='' style='background-color:rgba(2, 107, 198, 0.2); border:2px solid rgba(255,255,255,0.1);'>";
+    echo "<div class='' style='margin: 0 15px; background-color:rgba(2, 107, 198, 0.2); border:2px solid rgba(255,255,255,0.1);'>";
     echo 
         "<p class='paragrapheUserLineAdmin' style='margin-top:10px;'>"
 
@@ -90,7 +90,7 @@
 
                         .  "<span style='gridArea:dateLastCo;' class='dateHistorique'>". "il y a 2 jours" . "</span>"
 
-                        .  "<button class='deleteUserButton' style='gridArea:deleteButton; background-color:rgba(226,5,61,0.4); font-size:1.8em; position:relative; padding:3px 0; bottom:2px;'>" . "X" . "</button>"
+                        .  "<button class='deleteUserButton' style='gridArea:deleteButton; background-color:rgba(226,5,61,0.4); font-size:1.8em; position:relative; padding:5px 0; bottom:3px;'>" . "X" . "</button>"
                     
                     .  "</p>"
 
@@ -99,6 +99,9 @@
                 echo "<br/>";
             echo "</li>";
     }
+
+
+    // BOUTON AJOUT UTILISATEUR Avec role (rapide)
 
 
     // Complète avec des lignes vides (jusqu'à LIMIT) pour JS
@@ -131,12 +134,6 @@
 
 
     echo "</ul>";
+
     
-
-
-
-
-
-
-
 ?>
