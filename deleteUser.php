@@ -5,20 +5,27 @@
 
     $username = ($_POST);
 
-
-    // *** fonction pour choper la value de l'array/objet passé du JS 
     foreach ($username as $key => $value) {
-        $usernameValue = $value;
+        // FONCTIONNE: $usernameValue = 'test';
+
+        // $usernameValue = $value;
+        $usernameValue = strval($value);
+        // $usernameValue = "\"" . strval($value) . "\"";
     }
 
+    // $usernameValue = 'test';
 
-    // $query = "DELETE FROM users WHERE username =  '".$usernameValue."' ";
-    $query = "DELETE FROM users WHERE username =  ? ";
-    
+
+
+    $query = "DELETE FROM users WHERE username = ? ";
+
+
+
     $stmt = mysqli_prepare($db, $query);
     mysqli_stmt_bind_param($stmt, 's', $usernameValue);
     mysqli_stmt_execute($stmt);
 
+    
 ?>
 
 

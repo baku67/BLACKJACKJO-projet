@@ -430,7 +430,7 @@
     
     
     
-              // Style et Formattage Date (personnel)    
+              // Style et Formattage Date  
               let dateHistoriqueElem = document.getElementsByClassName("dateHistorique")[i];
               let dateHtml = dateHistoriqueElem.innerHTML.slice(0, -3);
     
@@ -516,9 +516,16 @@
             }
             //*** FIN Date
 
-            //Style de la liste User ADMIN
-            // Mettre des while donnée != vide
-            for (let i = 0; i < 15; i++) {
+
+
+
+
+
+
+
+            //Style de la liste Users (ADMIN)
+            for (let i = 0; i <= 10; i++) {
+              if(document.getElementsByClassName("username")[i] != null){
               
                 let UserLineContainer = document.getElementsByClassName("historiqueLineAdmin")[i];
                 let roleUserLine = document.getElementsByClassName("roleUsers")[i];
@@ -526,7 +533,6 @@
                 if (roleUserLine.innerHTML == 'admin') {
                   roleUserLine.style.color = 'rgba(251,226,87,1)';
                   UserLineContainer.classList.add('historiqueLineBJ');
-
                 }
                 else if (roleUserLine.innerHTML == 'joueur') {
                   roleUserLine.style.color = 'rgba(215,235,251,1)';
@@ -535,27 +541,29 @@
 
                 // Bouton DELETE
                 let deleteUserButtonLine = document.getElementsByClassName("deleteUserButton")[i];
-                let usernameLine = document.getElementsByClassName("username")[i];
-                let usernameHtml = usernameLine.innerText;
 
-                deleteUserButtonLine.addEventListener("click", function() {
+                  var usernameLineToPhp = {};
+                  usernameLineToPhp.value = document.getElementsByClassName("username")[i].innerText;  
+
+                  // 1er click: ajout de la classe opacity:1 et changer le addEvenListener sur la nouvelle classe ou ajouter un id?
+                  // deleteUserButtonLine.addEventListener("click", function() {};
+
+                  deleteUserButtonLine.addEventListener("click", function() {
                     //ajax delete (click fonctionne, mais ajax bugué)
                     $.ajax({
                       url: "deleteUser.php",
                       method: "post",
-                      // On envoi le username de la ligne pour suppr le bon
-                      data: usernameHtml,
+                      data: usernameLineToPhp,
                       success: function() {
-                        console.log("Ajax delete user success")
+                        console.log("Ajax delete user success: " + usernameLineToPhp);
+                        location.reload();
                       }
                     })
-                });
+                  });
+
+              }
             }
             // FIN
-
-
-            
-
           
           });
       });
@@ -2436,6 +2444,7 @@
 
           var gainToPhp = {};
           gainToPhp.value = gain;
+
 
           console.log("(JS) Gain: " + gain);
           $.ajax({

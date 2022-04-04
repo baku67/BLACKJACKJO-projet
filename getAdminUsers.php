@@ -1,8 +1,5 @@
 <?php
 
-
-
-
     session_start();
 
     // WIP: input utilisateur (+ sauvegardé bdd)
@@ -16,7 +13,6 @@
 
 
     $result = mysqli_query($db, $query);
-    // $result2 = mysqli_query($db, $query2);
 
     // Compteur de résultats line pour compléter avec lignes vides
     $count = 0;
@@ -26,15 +22,14 @@
     // TITRE UserList
     echo("<h2 style=\"font-size:2.2em !important; position:relative; margin-top:30px; margin-bottom:15px; text-align:center; color:rgba(223, 204, 204, 0.9) !important; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\"><span style=\"color:rgb(255, 201, 104) !important;\">★</span> Liste Utilisateurs <span style=\"color:rgb(255, 201, 104) !important;\">★</span></h2>");
 
-
     // Nom Colonnes Liste Utilisateurs
-    echo "<li class='historiqueLineAdmin userAdmin' style='background-color:rgba(2, 107, 198, 0.2); border:2px solid rgba(255,255,255,0.1);'>";
+    echo "<div class='' style='background-color:rgba(2, 107, 198, 0.2); border:2px solid rgba(255,255,255,0.1);'>";
     echo 
         "<p class='paragrapheUserLineAdmin' style='margin-top:10px;'>"
 
             .  "<span style='gridArea:username; margin-top:10px; font-size:1.5em;'>" . "Nom" . "</span>"
 
-            .  "<span style='gridArea:role; margin-top:10px; font-size:1.5em;' class='roleUsers'>" . "Role" . "</span>"
+            .  "<span style='gridArea:role; margin-top:10px; font-size:1.5em;'>" . "Role" . "</span>"
             
             .  "<span style='gridArea:credits; margin-top:10px; font-size:1.5em;'>". "Crédits" . "</span>"
 
@@ -46,7 +41,7 @@
         
         .  "</p>";
     echo "<br/>";
-    echo "</li>";
+    echo "</div>";
     // Fin 
 
 
