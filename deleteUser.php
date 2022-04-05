@@ -6,15 +6,8 @@
     $username = ($_POST);
 
     foreach ($username as $key => $value) {
-        // FONCTIONNE: $usernameValue = 'test';
-
-        // $usernameValue = $value;
         $usernameValue = strval($value);
-        // $usernameValue = "\"" . strval($value) . "\"";
     }
-
-    // $usernameValue = 'test';
-
 
 
     $query = "DELETE FROM users WHERE username = ? ";

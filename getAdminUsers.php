@@ -3,9 +3,9 @@
     session_start();
 
     // WIP: input utilisateur (+ sauvegardé bdd)
-    $limit = 20;
+    $limit = 12;
     
-    $query = 'SELECT username, credits, Win, Lose, role, commentaires FROM users ORDER BY role, credits DESC LIMIT 15;   ';
+    $query = 'SELECT username, credits, Win, Lose, role, commentaires FROM users ORDER BY role, credits DESC LIMIT 10;   ';
     
     // Date inscription!  (ET DATE derniere connexion : prévoir Height des lignes)
     // $query = 'SELECT username, credits, Win, Lose, role, commentaires FROM users ORDER BY id DESC LIMIT 50;   ';
@@ -68,9 +68,8 @@
                 $gainSigne = $row['gain'];
             }
 
-
+            // Ligne userJoueur avec delteButton
             if ($row['role'] == 'joueur') {
-
 
                 echo "<li class='historiqueLineAdmin userAdmin'>";
 
@@ -101,6 +100,7 @@
                     echo "<br/>";
                 echo "</li>";
             }
+            // Ligne userAdmin sans deleteButton
             elseif ($row['role'] == 'admin') {
 
                 echo "<li class='historiqueLineAdmin userAdmin'>";
@@ -133,10 +133,15 @@
                 echo "</li>";
 
             }
+
+        // BOUTON AJOUT UTILISATEUR Avec role (rapide)
+
+        
+
+
     }
 
 
-    // BOUTON AJOUT UTILISATEUR Avec role (rapide)
 
 
     // Complète avec des lignes vides (jusqu'à LIMIT) pour JS

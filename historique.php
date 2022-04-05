@@ -56,6 +56,8 @@ endif;
                 include('getAdminHistorique.php');
                 echo("</br></br></br>");
                 include('getAdminUsers.php');
+                echo("</br></br></br>");
+                include('getAdminLogs.php');
 
             elseif (!isset($_SESSION['username'])) : 
 
