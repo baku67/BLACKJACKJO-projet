@@ -546,30 +546,30 @@
                   usernameLineToPhp.value = document.getElementsByClassName("username")[i].innerText;  
 
                   // 1er click: Opacity+Border WARNING,  2eme click: Comfirmation suppression
-                  deleteUserButtonLine.addEventListener("click", function() {
-                    document.getElementsByClassName("deleteUserButton")[i].style.backgroundColor = 'rgba(226,5,61,1)';
-                    document.getElementsByClassName("deleteUserButton")[i].classList.add('deleteUserRed');
-                    document.getElementsByClassName("historiqueLineAdmin")[i].style.border = '5px solid rgba(226,5,61,0.8)';
+                  if (roleUserLine.innerHTML == 'joueur') {
+                    deleteUserButtonLine.addEventListener("click", function() {
+                      document.getElementsByClassName("deleteUserButton")[i].style.backgroundColor = 'rgba(226,5,61,1)';
+                      document.getElementsByClassName("deleteUserButton")[i].classList.add('deleteUserRed');
+                      document.getElementsByClassName("historiqueLineAdmin")[i].style.border = '5px solid rgba(226,5,61,0.8)';
+                      document.getElementsByClassName("historiqueLineAdmin")[i].style.borderRadius = '12px';
+
+                      let deleteUserButtonLine1 = document.getElementsByClassName("deleteUserButton")[i];
 
 
-                    let deleteUserButtonLine1 = document.getElementsByClassName("deleteUserButton")[i];
+                      deleteUserButtonLine1.addEventListener("click", function() {
+                        $.ajax({
+                          url: "deleteUser.php",
+                          method: "post",
+                          data: usernameLineToPhp,
+                          success: function() {
+                            console.log("Ajax delete user success: " + usernameLineToPhp);
+                            location.reload();
+                          }
+                        })
+                      });
 
-
-                    deleteUserButtonLine1.addEventListener("click", function() {
-                      //ajax delete (click fonctionne, mais ajax bugué)
-                      $.ajax({
-                        url: "deleteUser.php",
-                        method: "post",
-                        data: usernameLineToPhp,
-                        success: function() {
-                          console.log("Ajax delete user success: " + usernameLineToPhp);
-                          location.reload();
-                        }
-                      })
                     });
-
-                  });
-
+                  }
               }
             }
             // FIN

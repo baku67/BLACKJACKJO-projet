@@ -5,7 +5,7 @@
     // WIP: input utilisateur (+ sauvegardé bdd)
     $limit = 20;
     
-    $query = 'SELECT username, credits, Win, Lose, role, commentaires FROM users ORDER BY credits DESC LIMIT 15;   ';
+    $query = 'SELECT username, credits, Win, Lose, role, commentaires FROM users ORDER BY role, credits DESC LIMIT 15;   ';
     
     // Date inscription!  (ET DATE derniere connexion : prévoir Height des lignes)
     // $query = 'SELECT username, credits, Win, Lose, role, commentaires FROM users ORDER BY id DESC LIMIT 50;   ';
@@ -69,35 +69,70 @@
             }
 
 
+            if ($row['role'] == 'joueur') {
 
-            echo "<li class='historiqueLineAdmin userAdmin'>";
 
-                // Ligne User avec toutes les infos
-                echo 
-                   "<div class='traitBlancHistoriqueLineHaut'></div>"
+                echo "<li class='historiqueLineAdmin userAdmin'>";
 
-                    .  "<p class='paragrapheUserLineAdmin'>"
+                    // Ligne User avec toutes les infos
+                    echo 
+                    "<div class='traitBlancHistoriqueLineHaut'></div>"
 
-                        .  "<span class='username' style='gridArea:username; margin-top: 10px;'>" . $row['username'] . "</span>"
+                        .  "<p class='paragrapheUserLineAdmin'>"
 
-                        .  "<span style='gridArea:role; margin-top: 10px;' class='roleUsers'>" . $row['role'] . "</span>"
+                            .  "<span class='username' style='gridArea:username; margin-top: 10px;'>" . $row['username'] . "</span>"
+
+                            .  "<span style='gridArea:role; margin-top: 10px;' class='roleUsers'>" . $row['role'] . "</span>"
+                            
+                            .  "<span style='gridArea:credits;' class='gainHistorique'>". $row['credits'] . "</span>"
+
+                            // Date inscription et derniere connexion 
+
+                            .  "<span style='gridArea:dateInsc;' class='dateHistorique'>". "il y a 1 mois" . "</span>"
+
+                            .  "<span style='gridArea:dateLastCo;' class='dateHistorique'>". "il y a 2 jours" . "</span>"
+
+                            .  "<button class='deleteUserButton' style='gridArea:deleteButton; background-color:rgba(226,5,61,0.4); font-size:1.8em; position:relative; padding:5px 0; bottom:3px;'>" . "X" . "</button>"
                         
-                        .  "<span style='gridArea:credits;' class='gainHistorique'>". $row['credits'] . "</span>"
+                        .  "</p>"
 
-                        // Date inscription et derniere connexion 
+                    .  "<div class='traitBlancHistoriqueLineBas'></div>";
 
-                        .  "<span style='gridArea:dateInsc;' class='dateHistorique'>". "il y a 1 mois" . "</span>"
+                    echo "<br/>";
+                echo "</li>";
+            }
+            elseif ($row['role'] == 'admin') {
 
-                        .  "<span style='gridArea:dateLastCo;' class='dateHistorique'>". "il y a 2 jours" . "</span>"
+                echo "<li class='historiqueLineAdmin userAdmin'>";
 
-                        .  "<button class='deleteUserButton' style='gridArea:deleteButton; background-color:rgba(226,5,61,0.4); font-size:1.8em; position:relative; padding:5px 0; bottom:3px;'>" . "X" . "</button>"
-                    
-                    .  "</p>"
+                    // Ligne User avec toutes les infos
+                    echo 
+                    "<div class='traitBlancHistoriqueLineHaut'></div>"
 
-                .  "<div class='traitBlancHistoriqueLineBas'></div>";
+                        .  "<p class='paragrapheUserLineAdmin'>"
 
-                echo "<br/>";
-            echo "</li>";
+                            .  "<span class='username' style='gridArea:username; margin-top: 10px;'>" . $row['username'] . "</span>"
+
+                            .  "<span style='gridArea:role; margin-top: 10px;' class='roleUsers'>" . $row['role'] . "</span>"
+                            
+                            .  "<span style='gridArea:credits;' class='gainHistorique'>". $row['credits'] . "</span>"
+
+                            // Date inscription et derniere connexion 
+
+                            .  "<span style='gridArea:dateInsc;' class='dateHistorique'>". "il y a 1 mois" . "</span>"
+
+                            .  "<span style='gridArea:dateLastCo;' class='dateHistorique'>". "il y a 2 jours" . "</span>"
+
+                            .  "<button class='deleteUserButton' style='gridArea:deleteButton; position:relative;'></button>"
+                        
+                        .  "</p>"
+
+                    .  "<div class='traitBlancHistoriqueLineBas'></div>";
+
+                    echo "<br/>";
+                echo "</li>";
+
+            }
     }
 
 
