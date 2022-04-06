@@ -4,18 +4,12 @@ Le doubler() refonctionne mais doubleBool reste à true?
 Gradient sur le background des lignes NomColonnes (transparent vers même
 + bleu en bas)
 
-ORDER BY role (admin puis joueur) (par score)
+Finir Ligne-Bouton AddUser
 
-Ligne-Bouton ajout utilisateur avec role (ADMIN) dans la liste sous derniere ligne pleine
-
-Ajouter les logs (ADMIN)
+Finir les logs 
 
 WIP date inscrption / derniere connexion (users ADMIN)
 
-
-le x2 proc la PhaseCroupier mais si bustJoueur relance en parallèle la phaseCroupier (=2 résultats)
-Double() -> addCardJoueur() puis LancerPhaseCroupier() -> 
-				-> CheckBustJoueur()  -> LancerPhaseCroupierAfterBurst() (ICI)
 
 
 "c'ÉtAiT mIeUx AvAnT":  le "Mise: "

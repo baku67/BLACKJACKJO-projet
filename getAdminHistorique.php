@@ -21,12 +21,11 @@
 
 
     // Nom Colonnes Liste Globale Historiques Parties
-
-    echo "<div class='' style='margin: 0 30px; background-color:rgba(2, 107, 198, 0.2);'>";
+    echo "<div class='' style='margin: 0 30px; background:linear-gradient(0deg, rgba(2,107,198,0.4) 0%, rgba(2,0,36,0) 100%); border-bottom: 1px solid #ffffff61;'>";
     echo 
        "<div class='traitBlancHistoriqueLineHaut'></div>"
 
-            .  "<p class='paragrapheHistoriqueLineAdmin' style='margin-top:10px;'>"
+            .  "<p class='paragrapheHistoriqueLineAdmin' style='margin-top:10px; position:relative; top:20px;'>"
 
                 .  "<span style='gridArea: username; font-size:1.5em;'>" . "Nom" . "</span>"
 
@@ -39,7 +38,7 @@
             
             .  "</p>"
 
-    .  "<div class='traitBlancHistoriqueLineBas'></div>";
+    .  "<div class='traitBlancHistoriqueLineBas' style='position:relative; top:23px;'></div>";
 
     echo "<br/>";
     echo "</div>";

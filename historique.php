@@ -6,7 +6,7 @@
     while($row = mysqli_fetch_array($query)) {$role = $row['role']; }
 
     if ($role=='admin') :
-        echo("<h2 style=\"font-size:2.5em !important; position:relative; margin-top:30px; margin-bottom:15px; text-align:center; color:rgb(255, 201, 104); font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\">★ Espace Admin ★</h2>");
+        echo("<h2 style=\"font-size:2.5em !important; position:relative; margin-top:10px; margin-bottom:15px; text-align:center; color:rgb(255, 201, 104); font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\"><span style='font-size:0.6em;'>★</span><span style='font-size:0.8em;'>★</span>★ Espace Admin ★<span style='font-size:0.8em;'>★</span><span style='font-size:0.6em;'>★</span></h2>");
     elseif ($role=='joueur') :
         echo("<h2 style=\"font-size:2.2em !important; position:relative; margin-top:30px; margin-bottom:15px; text-align:center; color:rgb(223, 204, 204); font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\">- Dernières parties jouées -</h2>");
     endif;

@@ -549,6 +549,11 @@
                   if (roleUserLine.innerHTML == 'joueur') {
                     deleteUserButtonLine.addEventListener("click", function() {
                       document.getElementsByClassName("deleteUserButton")[i].style.backgroundColor = 'rgba(226,5,61,1)';
+                      document.getElementsByClassName("deleteUserButton")[i].style.padding = '7px 3px';
+                      document.getElementsByClassName("deleteUserButton")[i].style.bottom = '5px';
+                      document.getElementsByClassName("deleteUserButton")[i].style.left = '1px';
+                      document.getElementsByClassName("deleteUserButton")[i].style.borderRadius = '4px';
+
                       document.getElementsByClassName("deleteUserButton")[i].classList.add('deleteUserRed');
                       document.getElementsByClassName("historiqueLineAdmin")[i].style.border = '5px solid rgba(226,5,61,0.8)';
                       document.getElementsByClassName("historiqueLineAdmin")[i].style.borderRadius = '12px';
@@ -573,6 +578,11 @@
               }
             }
             // FIN
+
+            // Onclick Button addUser (ADMIN)
+            document.getElementById('addUserButton').addEventListener("click", function() {
+              alert('Fonctionalité à venir...');
+            })
           
           });
       });
