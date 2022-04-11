@@ -95,7 +95,13 @@ button, input[type="submit"], input[type="reset"] {
 
 
 
-
+.highScores {
+	margin-top: 2px; 
+	font-family: "Holtwood One SC", serif; 
+	font-size: 0.7em; 
+	letter-spacing: 1px;
+	opacity: 0.95;
+}
 
 
 

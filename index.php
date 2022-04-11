@@ -291,7 +291,7 @@
 
 						<?php include('getHighScore.php'); ?>
 						
-						<img src="Images/souBlancBarre.png" alt="pièce" class="imageSouPetit" style="top:-9px !important">
+						<img src="Images/souBlancBarre.png" alt="pièce" class="imageSouPetit" style="top:-3px !important">
 
 					</div>
 
@@ -312,7 +312,7 @@
 
 						<?php include('getHighScore2.php'); ?>
 						
-						<img src="Images/souBlancBarre.png" alt="pièce" class="imageSouPetit" style="top:-9px !important">
+						<img src="Images/souBlancBarre.png" alt="pièce" class="imageSouPetit" style="top:-3px !important">
 
 					</div>
 
@@ -333,7 +333,7 @@
 
 						<?php include('getHighScore3.php'); ?>
 						
-						<img src="Images/souBlancBarre.png" alt="pièce" class="imageSouPetit" style="top:-9px !important">
+						<img src="Images/souBlancBarre.png" alt="pièce" class="imageSouPetit" style="top:-3px !important">
 
 					</div>
 
