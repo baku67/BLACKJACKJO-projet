@@ -125,7 +125,7 @@
 
 						&nbsp; 
 						
-						<span style="color: rgb(241 205 92 / 95%) !important; text-shadow: 0 0 4px rgb(255 213 2);" id="creditsConnected"></span>
+						<span style="color: rgb(241 205 92 / 95%) !important; text-shadow: 0 0 4px rgb(255 213 2); font-family: 'Holtwood One SC', serif;" id="creditsConnected"></span>
 						
 						<span>
 							<img src="Images/souBarre.png" alt="pièce" class="imageSouPetit">

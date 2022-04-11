@@ -7,7 +7,7 @@
     <br>
     <img src="Images/deck2.png" id="imgCardDeck" class="imgPartie" style="margin-top: 5px;">
     <br><br>
-    <span id="miseLocked" style="opacity: 0; padding:15px 12px 12px 12px;"></span>
+    <span id="miseLocked" style="opacity: 0; padding:10px 2px 9px 15px; font-family:'Holtwood One SC', serif;"></span>
 </div>
 
 <div id="parametresPartieDiv" style="text-align:center; visiblity: visible">
@@ -29,6 +29,8 @@
 <div class="background JouerContainer">
 
         <?php  if (!isset($_SESSION['username'])) : ?>
+                <!-- Séparer le "Crédits: " du crédit pour style font le chiffre uniquement -->
+                <!-- <p style=" font-size: 1.5em; font-family: 'Holtwood One SC', serif;" id="credits"></p> -->
                 <p style=" font-size: 1.5em;" id="credits"></p>
         <?php endif ?>
     

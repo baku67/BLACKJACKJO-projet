@@ -17,8 +17,8 @@
         if(empty($_POST['username'])){
             //le champ pseudo est vide, on arrête l'exécution du script et on affiche un message d'erreur
             echo "Le champ Identifiant est vide.";
-        } elseif(!preg_match("#^[a-z0-9]+$#",$_POST['username'])){//le champ pseudo est renseigné mais ne convient pas au format qu'on souhaite qu'il soit, soit: que des lettres minuscule + des chiffres (je préfère personnellement enregistrer le pseudo de mes membres en minuscule afin de ne pas avoir deux pseudo identique mais différents comme par exemple: Admin et admin)
-            echo "L'identifiant doit être renseigné en lettres minuscules sans accents, sans caractères spéciaux.";
+        } elseif(!preg_match("#^[A-Za-z0-9]+$#",$_POST['username'])){//le champ pseudo est renseigné mais ne convient pas au format qu'on souhaite qu'il soit, soit: que des lettres minuscule + des chiffres (je préfère personnellement enregistrer le pseudo de mes membres en minuscule afin de ne pas avoir deux pseudo identique mais différents comme par exemple: Admin et admin)
+            echo "L'identifiant doit être renseigné en lettres minuscules ou majuscules sans accents, sans caractères spéciaux.";
         } elseif(strlen($_POST['username'])>25){//le pseudo est trop long, il dépasse 25 caractères
             echo "L'identifiant ne doit pas dépasser les 25 caractères.";
         } elseif(empty($_POST['password'])){//le champ mot de passe est vide
