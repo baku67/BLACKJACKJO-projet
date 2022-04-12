@@ -1,4 +1,4 @@
-@media screen and (max-device-width:770px) and (min-device-width: 481px){
+@media screen and (max-width:770px) and (min-width: 481px){
 
     /*  TABLETTE: rajouter les tokenValue en dur au comme sur phone */
 
