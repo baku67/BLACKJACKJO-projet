@@ -78,7 +78,81 @@
       // if (typeof(Storage) !== "undefined") {
       //   localStorage.setItem("historiqueInviteArrayStored", historiqueInviteArray);
       // } else {
+      // } 
+
+
+
+
+
+
+
+// IFRAME WIP 
+      // function displayMessage (evt) {
+      //   var message;
+      //   if (evt.origin !== "http://portfolio.basilek.ovh") {
+      //       message = "You are not worthy";
+      //   } else {
+      //       message = "I got " + evt.data + " from " + evt.origin;
+      //   }   
+      //   document.getElementById("received-message").innerHTML = message;
       // }
+      
+      // if (window.addEventListener) {
+      //     // For standards-compliant web browsers
+      //     window.addEventListener("message", displayMessage, false);
+      // } else {
+      //     window.attachEvent("onmessage", displayMessage);
+      // }
+
+// Solution 2: https://stackoverflow.com/questions/27269406/change-style-of-an-element-inside-iframe-cross-domain-i-own-the-second-domain?fbclid=IwAR1t2ioKteVnuU7ykGgDw42EpOMy77W7PGdqz1MB0ZV1SdLCCgAxLQTEYAI
+    // handleMessage = function(e) {
+    //   if(e.origin === 'http://www.portfolio.basilek.ovh') {
+    //     var action = e.data.split(':')[0]
+    //     if(action === 'changeStyle') {
+    //       //do style change
+    //       document.getElementById("header").style.width = "0px !important";
+    //     }
+    //   }
+    // }
+    // window.addEventListener("message", handleMessage, false);
+
+    // Test log de message recu depuis Portfolio
+    function receivedMessageFromPortfolio ( event ) {
+      console.log('changeStyle', event );
+      // alert("bla", event);
+      document.getElementById("header").style.width = "0px !important";
+    }
+    window.addEventListener("message", receivedMessageFromPortfolio, false);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
       if (isConnected == false) {
@@ -515,10 +589,6 @@
     
             }
             //*** FIN Date
-
-
-
-
 
 
 

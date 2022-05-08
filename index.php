@@ -32,22 +32,22 @@
 		<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bellota+Text:ital,wght@1,300&family=Courgette&family=Holtwood+One+SC&family=Kavoon&display=swap" rel="stylesheet">
 
 		<?php 
-			if (!isset($_SESSION['username'])) :
+			if (!isset($_SESSION['username'])) :  
 		?>
 				<script> 
 					isConnected = false; 
-					console.log('estPasConnecté');
+					console.log('estPasConnecté');  
 				</script>
 
 		<?php
 			else :
 		?>
-				<script> isConnected = true; console.log('estConnecté');</script>
+				<script> isConnected = true; console.log('estConnecté');</script>  
 				<!-- Méthode Ajax XMLHttpRequest (js/php) -->
 				<!-- <script type="text/javascript" src="scriptJouerPhp.js"></script> -->
 				<script type="text/javascript">
 					var creditsConnected = <?php include('getCredits.php'); ?>; // Don't forget the extra semicolon!
-					console.log('var js creditConnected: ' + creditsConnected);
+					console.log('var js creditConnected: ' + creditsConnected);  
 				</script>
 		<?php
 			endif;
@@ -65,7 +65,8 @@
 
 
 			<header id="header">
-				<h1 id="title" style="font-family: 'Kavoon', cursive">BlackJack Jo'</h1>
+				<h1 id="title" style="font-family: 'Kavoon', cursive">BlackJack Jo'</h1>  
+				<!-- <p id="received-message">ici<p> -->
 				<div id="traitTitleSlide"></div>
 				<br/>
 				<div>
