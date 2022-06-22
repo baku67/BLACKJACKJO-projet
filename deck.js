@@ -1,3 +1,7 @@
+
+
+
+
 let cards = [
     C2a = {
       cardImageURL: "cartes\\2C.png",
@@ -128,19 +132,19 @@ let cards = [
       cardValue: 9
     },
     C10a = {
-      cardImageURL: "cartes\\10C.png",
+      cardImageURL: "cartes\\ZC.png",
       cardValue: 10
     },
     C10b = {
-      cardImageURL: "cartes\\10D.png",
+      cardImageURL: "cartes\\ZD.png",
       cardValue: 10
     },
     C10c = {
-      cardImageURL: "cartes\\10H.png",
+      cardImageURL: "cartes\\ZH.png",
       cardValue: 10
     },
     C10d = {
-      cardImageURL: "cartes\\10S.png",
+      cardImageURL: "cartes\\ZS.png",
       cardValue: 10
     },
     C11a = {
@@ -342,19 +346,19 @@ let cards = [
     cardValue: 9
     },
     D10a = {
-    cardImageURL: "cartes\\10C.png",
+    cardImageURL: "cartes\\ZC.png",
     cardValue: 10
     },
     D10b = {
-    cardImageURL: "cartes\\10D.png",
+    cardImageURL: "cartes\\ZD.png",
     cardValue: 10
     },
     D10c = {
-    cardImageURL: "cartes\\10H.png",
+    cardImageURL: "cartes\\ZH.png",
     cardValue: 10
     },
     D10d = {
-    cardImageURL: "cartes\\10S.png",
+    cardImageURL: "cartes\\ZS.png",
     cardValue: 10
     },
     D11a = {

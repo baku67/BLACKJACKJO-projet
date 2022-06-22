@@ -1,6 +1,8 @@
     
     window.onload = function(){
 
+      var darkModeBool = false;
+
       // FIX MOZILLA ZOOM
         // const browser = window.browser || window.chrome;
 
@@ -839,6 +841,7 @@
                   setTimeOutMultiplier = 0.7;
                   document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
 
+
                   // $.ajax({
                   //   // Voir si true(JS) = 1(SQL) car en SQL boolean == TINYINT(1)
                   //   url: "setToggleTurbo.php",
@@ -875,6 +878,15 @@
               // ******************************** *
               document.getElementById("backgroundButtonContainer").addEventListener("click", function() {
 
+                
+
+                // cards.forEach(element => {
+                //   element.cardImageURL = element.cardImageURL.substring(0, 9) + "_darkMode.png";
+                // });
+                // console.log(cards);
+
+                // toggle la backCardCroupier et les img src des li deja present
+
                 let body = document.querySelector('body');
                 let mode = this.dataset.mode;
                 body.dataset.theme = mode;
@@ -888,9 +900,40 @@
                 // Changement du state dark/light
                 if (this.dataset.mode == "dark") {
                   this.dataset.mode = "light";
+                  darkModeBool = true;
+
+                  cards.forEach(element => {
+                    element.cardImageURL = element.cardImageURL.substring(0, 9) + "_darkMode.png";
+                  });
+
+                  var imgElemArray = document.querySelectorAll('.imgPartieDM');
+                  imgElemArray.forEach(element => {
+                    element.src = element.src.substring(0, 37) + "_darkMode.png";
+                  });
+
+                  if (document.getElementById("backCardCroupier") !== null) {
+                    document.getElementById("backCardCroupier").src = "../Images/deck3_darkMode.png";
+                  }
+
                 }
+          
                 else {
                   this.dataset.mode = "dark";
+                  darkModeBool = false;
+
+                  cards.forEach(element => {
+                    element.cardImageURL = element.cardImageURL.substring(0, 9) + ".png";
+                  });
+
+                  var imgElemArray = document.querySelectorAll('.imgPartieDM');
+                  imgElemArray.forEach(element => {
+                    element.src = element.src.substring(0, 37) + ".png";
+                  });
+
+                  if (document.getElementById("backCardCroupier") !== null) {
+                    document.getElementById("backCardCroupier").src = "../Images/deck3.png";
+                  }
+
                 }
 
               })
@@ -1434,7 +1477,13 @@
         var img = document.createElement('img');
         img.id = "backCardCroupier";
         img.className = "imgPartie";
-        img.src = "Images/deck3.png";
+
+        if (darkModeBool == true) {
+          img.src = "Images/deck3_darkMode2.png";
+        }
+        else {
+          img.src = "Images/deck3.png";
+        }
 
         // test audio coupé et non audio = 0
         // audioCardSound.play();
@@ -2281,7 +2330,10 @@
         // cards.splice(picketCardIndex, 1);
 
         // Ajoute class à img pour CSS
-        img.className = "imgPartie";
+        // img.className = "imgPartie";
+
+        // Classe pour le darkMode
+        img.classList.add("imgPartie", "imgPartieDM");
 
         // Ajoute la var img à l'<ul> "#croupier"
         if (SoundMuteBool == false) {
@@ -2381,7 +2433,10 @@
         var picketCardIndex = cards.indexOf(pickedCardObject);
         cards.splice(picketCardIndex, 1);
 
-        img.className = "imgPartie";
+        // img.className = "imgPartie";
+
+        // Classe pour le darkMode
+        img.classList.add("imgPartie", "imgPartieDM");
 
         if (SoundMuteBool == false) {
           audioCardSound.play();

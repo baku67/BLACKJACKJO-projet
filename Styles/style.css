@@ -11,6 +11,9 @@
 	--imgDeck-src: url("../Images/deck3.png");
 
 	--footer-fontColor: rgb(223, 204, 204);
+
+	--creditsConnected-color: rgb(241 205 92 / 95%) !important;
+	--creditsConnected-shadow: 0 0 4px rgb(255 213 2);
 }
 
 [data-theme="light"] {
@@ -26,6 +29,9 @@
 	--imgDeck-src: url("../Images/deck3.png");
 
 	--footer-fontColor: rgb(223, 204, 204);
+
+	--creditsConnected-color: rgb(241 205 92 / 95%) !important;
+	--creditsConnected-shadow: 0 0 4px rgb(255 213 2);
 }
 [data-theme="dark"] {
 	--bg-color: rgb(17 19 31);
@@ -37,9 +43,13 @@
 	--header-bgcolor: rgb(17 19 31);
 	--headerOnPartie-bgcolor: rgb(17 19 31);
 
-	--imgDeck-src: url("../Images/deck3_darkMode.png");
+	--imgDeck-src: url("../Images/deck3_darkMode2.png");
 
 	--footer-fontColor: rgba(239, 59, 46, 1);
+
+	--creditsConnected-color: rgba(239, 59, 46, 1) !important;
+	--creditsConnected-shadow: 0 0 4px rgb(255, 112, 17);
+
 }
 
 
@@ -199,6 +209,10 @@ button, input[type="submit"], input[type="reset"] {
 #creditsConnected {
 	font-size: 1.5em;
 	letter-spacing: 1px;
+
+	color: var(--creditsConnected-color); 
+	text-shadow: var(--creditsConnected-shadow); 
+	font-family: 'Holtwood One SC', serif;
 }
 #miseLocked {
 	color: rgba(241, 233, 206, 0.95);
