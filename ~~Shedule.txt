@@ -1,3 +1,22 @@
+Mettre un flash sur le titre + trait à la fin du slide, si possible rayonnement (ombres)
+-> Flash une lettre apres l'autre rapidement, puis flash final global ?
+NEONS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Différencier les couleur des fonts du footer (les grossir/changer le family!)
+
+Envoi des preferences toggles a la BDD !!!!!!!!!
+
+
+
+Mettre un toggle DarkMode dans le JS pour switch les cards? bordel innomable
+onclick Toggle: if darkMode (deja) TRUE (au debut de la fonction): switch tous les img.src +"_darkmode" jsp
+
+Bouton toggle dark mode (charte graph du portfolio, adaptation/CREATION des images et jetons etc...)
+Detail des parties adns l'hiostorique (onClick uncollapse): avec un genre de player qui montre les étapes de la partie)
+save du toggleSpeed etc... (deja commencé) + déplacer les 3 boutons sur l'index au lieu du jouerPartie.php
+le toggleDesign doit etre un symbole de dark/light mode (lune/soleil)
+
+
 FIX le x2, finir le storage de l'historique Invite
 Le doubler() refonctionne mais doubleBool reste à true?
 

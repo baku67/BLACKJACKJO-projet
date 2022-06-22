@@ -1,3 +1,71 @@
+:root {
+	--bg-color: rgb(17 19 31);
+	--bg-url: url("../Images/backgroundMix2-compressed5.png");
+
+	--title-color: rgb(223, 204, 204);
+	--traitTitle-bgcolor: rgb(223, 204, 204);
+
+	--header-bgcolor: linear-gradient(56deg, rgba(130,14,80,1) 0%, rgba(135,0,20,1) 25%, rgba(172,3,26,1) 26%, rgba(121,0,6,1) 31%, rgba(196,53,53,1) 31%, rgba(130,14,39,1) 35%, rgba(33,55,144,1) 55%, rgba(23,31,73,1) 68%, rgba(156,14,14,1) 78%, rgba(209,16,16,1) 83%, rgba(85,9,9,1) 83%, rgba(194,31,31,1) 89%, rgba(64,43,43,1) 92%, rgba(120,6,6,1) 95%, rgba(18,5,5,1) 97%, rgba(122,0,0,1) 100%);	
+	--headerOnPartie-bgcolor: linear-gradient(-45deg, rgba(104,3,42,1) 0%, rgba(146,14,42,1) 33%, rgba(13,88,94,1) 67%, rgba(26,32,57,1) 100%);
+	
+	--imgDeck-src: url("../Images/deck3.png");
+
+	--footer-fontColor: rgb(223, 204, 204);
+}
+
+[data-theme="light"] {
+	--bg-color: rgb(17 19 31);
+	--bg-url: url("../Images/backgroundMix2-compressed5.png");
+
+	--title-color: rgb(223, 204, 204);
+	--traitTitle-bgcolor: rgb(223, 204, 204);
+
+	--header-bgcolor: linear-gradient(56deg, rgba(130,14,80,1) 0%, rgba(135,0,20,1) 25%, rgba(172,3,26,1) 26%, rgba(121,0,6,1) 31%, rgba(196,53,53,1) 31%, rgba(130,14,39,1) 35%, rgba(33,55,144,1) 55%, rgba(23,31,73,1) 68%, rgba(156,14,14,1) 78%, rgba(209,16,16,1) 83%, rgba(85,9,9,1) 83%, rgba(194,31,31,1) 89%, rgba(64,43,43,1) 92%, rgba(120,6,6,1) 95%, rgba(18,5,5,1) 97%, rgba(122,0,0,1) 100%);	
+	--headerOnPartie-bgcolor: linear-gradient(-45deg, rgba(104,3,42,1) 0%, rgba(146,14,42,1) 33%, rgba(13,88,94,1) 67%, rgba(26,32,57,1) 100%);
+
+	--imgDeck-src: url("../Images/deck3.png");
+
+	--footer-fontColor: rgb(223, 204, 204);
+}
+[data-theme="dark"] {
+	--bg-color: rgb(17 19 31);
+	--bg-url: url();
+
+	--title-color: rgba(239, 59, 46, 1);
+	--traitTitle-bgcolor: rgba(239, 59, 46, 1);
+
+	--header-bgcolor: rgb(17 19 31);
+	--headerOnPartie-bgcolor: rgb(17 19 31);
+
+	--imgDeck-src: url("../Images/deck3_darkMode.png");
+
+	--footer-fontColor: rgba(239, 59, 46, 1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #miseLocked {
 	/* color: rgba(5, 2, 39, 0.7); */
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -252,10 +320,15 @@ button, input[type="submit"], input[type="reset"] {
 
 	/* background-image: url("Images/souBlancBarre.png"), linear-gradient(56deg, rgba(130,14,80,1) 0%, rgba(135,0,20,1) 25%, rgba(172,3,26,1) 26%, rgba(121,0,6,1) 31%, rgba(196,53,53,1) 31%, rgba(130,14,39,1) 35%, rgba(33,55,144,1) 55%, rgba(23,31,73,1) 68%, rgba(156,14,14,1) 78%, rgba(209,16,16,1) 83%, rgba(85,9,9,1) 83%, rgba(194,31,31,1) 89%, rgba(64,43,43,1) 92%, rgba(120,6,6,1) 95%, rgba(18,5,5,1) 97%, rgba(122,0,0,1) 100%); */
 
+
+	/* WIP DARK MODE (voir headerOnPartie aussi) */
 	background: -moz-linear-gradient(56deg, rgba(130,14,80,1) 0%, rgba(135,0,20,1) 25%, rgba(172,3,26,1) 26%, rgba(121,0,6,1) 31%, rgba(196,53,53,1) 31%, rgba(130,14,39,1) 35%, rgba(33,55,144,1) 55%, rgba(23,31,73,1) 68%, rgba(156,14,14,1) 78%, rgba(209,16,16,1) 83%, rgba(85,9,9,1) 83%, rgba(194,31,31,1) 89%, rgba(64,43,43,1) 92%, rgba(120,6,6,1) 95%, rgba(18,5,5,1) 97%, rgba(122,0,0,1) 100%);
 	background: -webkit-linear-gradient(56deg, rgba(130,14,80,1) 0%, rgba(135,0,20,1) 25%, rgba(172,3,26,1) 26%, rgba(121,0,6,1) 31%, rgba(196,53,53,1) 31%, rgba(130,14,39,1) 35%, rgba(33,55,144,1) 55%, rgba(23,31,73,1) 68%, rgba(156,14,14,1) 78%, rgba(209,16,16,1) 83%, rgba(85,9,9,1) 83%, rgba(194,31,31,1) 89%, rgba(64,43,43,1) 92%, rgba(120,6,6,1) 95%, rgba(18,5,5,1) 97%, rgba(122,0,0,1) 100%);
 	background: linear-gradient(56deg, rgba(130,14,80,1) 0%, rgba(135,0,20,1) 25%, rgba(172,3,26,1) 26%, rgba(121,0,6,1) 31%, rgba(196,53,53,1) 31%, rgba(130,14,39,1) 35%, rgba(33,55,144,1) 55%, rgba(23,31,73,1) 68%, rgba(156,14,14,1) 78%, rgba(209,16,16,1) 83%, rgba(85,9,9,1) 83%, rgba(194,31,31,1) 89%, rgba(64,43,43,1) 92%, rgba(120,6,6,1) 95%, rgba(18,5,5,1) 97%, rgba(122,0,0,1) 100%);	
-	
+	/* background: var(--header-bgcolor); */
+
+
+
 	/*  BACKUP tuto stylé */
 	/* background: linear-gradient(-45deg, #5e5d13, #820e27, #0d585e, #1a2039); */
 	/*  FIN BACKUP */
@@ -307,12 +380,23 @@ button, input[type="submit"], input[type="reset"] {
 	}
 } */
 
-#title {
+#title2 {
 	position: relative; 
 	left: 100%;
 
 	animation: titleSlide 2s ease-in-out 1 !important;
 	animation-fill-mode: forwards !important;
+
+	text-align: center;
+	font-size: 4.5em;
+	letter-spacing: 0.04em;
+
+	color: var(--title-color);
+	text-shadow: rgb(5, 2, 39) 5px 3px;
+
+	/* IMPORTANT */
+	margin-block-start: 40px;
+    margin-block-end: 0em;
 }
 @keyframes titleSlide {
 	0% {
@@ -330,15 +414,14 @@ button, input[type="submit"], input[type="reset"] {
 
 	animation: traitTitleSlide 2s ease-in-out 1 !important;
 	animation-fill-mode: forwards !important;
-}
-#traitTitleSlide {
+
 	/* height: 2px !important; */
-	height: 5px !important;
-	width: 382px !important;
+	height: 6px !important;
+	width: 470px !important;
 	margin: 0 auto;
 
 	bottom: 7px;
-	background-color: rgb(223, 204, 204) !important;
+	background-color: var(--traitTitle-bgcolor);
 }
 @keyframes traitTitleSlide {
 	0% {
@@ -376,7 +459,13 @@ button, input[type="submit"], input[type="reset"] {
 
 
 .headerOnPartie {
-	background-image: linear-gradient(-45deg, rgba(104,3,42,1) 0%, rgba(146,14,42,1) 33%, rgba(13,88,94,1) 67%, rgba(26,32,57,1) 100%) !important;
+
+	/* WIP DARK MODE (anims et tout) */
+	background-image: linear-gradient(-45deg, rgba(104,3,42,1) 0%, rgba(146,14,42,1) 33%, rgba(13,88,94,1) 67%, rgba(26,32,57,1) 100%) !important; 
+	/* background-image: var(--headerOnPartie-bgColor); */
+
+	
+	
 	/* background-image: linear-gradient(-45deg, rgba(104,3,42,1) 0%, rgba(146,14,91,1) 33%, rgba(13,88,94,1) 67%, rgba(26,32,57,1) 100%) !important; */
 	background-size: 400% 400%;
 
@@ -724,17 +813,6 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 
-#title {
-	text-align: center;
-	font-size: 4.5em;
-	letter-spacing: 0.04em;
-	color: rgb(223, 204, 204);
-	text-shadow: rgb(5, 2, 39) 5px 3px;
-
-	/* IMPORTANT */
-	margin-block-start: 40px;
-    margin-block-end: 0em;
-}
 
 #connectionContainer {
 	text-align: center; 
@@ -780,7 +858,8 @@ html, body {
 }
 
 body {
-	background-image: url("../Images/backgroundMix2-compressed.png");
+	background-image: var(--bg-url) !important;
+	background-color: var(--bg-color) !important;
 	background-position: center center;
 	background-repeat: no-repeat;
 
@@ -788,19 +867,12 @@ body {
 	background-attachment: fixed;
 	background-size: cover; 
 
-	/* background-color: #464646; */
-	background-color: #747474;
-
 	margin: 0px;
 	height: 100%;
-
-	/* font-size: 120%; */
-
 	
 	zoom: 0.53;
 	-ms-zoom: 0.53;
 	-webkit-zoom: 0.53;
-
 
 	/*  FLASH ONLOAD   */
 	animation: fadeInAnimation ease 2s; 
@@ -1361,6 +1433,10 @@ figure:active {
 	left: 10px;
 }
 
+#imgCardDeck {
+	content:var(--imgDeck-src);
+}
+
 .img {
 	cursor: pointer;
 	width: 6em;
@@ -1716,7 +1792,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#33686c",endCo
     margin-block-end: 0em;
 
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	color: rgb(223, 204, 204);
+	color: var(--footer-fontColor);
 	/* text-shadow: rgb(5, 2, 39) 2px 3px; */
 	text-align: center;
     letter-spacing: 1px;

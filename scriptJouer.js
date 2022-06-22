@@ -774,7 +774,7 @@
               if (isConnected == false) {
                 console.log('isConnected: ' + isConnected);
                 credits = 100;
-                document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + credits + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
+                document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + "<span id=\"creditsInvite\">" + credits + "</span>" + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
                 document.getElementById("credits").style.position = "relative";
                 document.getElementById("credits").style.bottom = "7px";
                 document.getElementById("traitLumineux").style.visibility = "visible";
@@ -792,6 +792,7 @@
 
               document.getElementById("compteurDeck").innerHTML = compteurDeck;
               document.getElementById("compteurDeckMax").innerHTML = compteurDeckMax;
+
 
 
 
@@ -869,24 +870,34 @@
               // ******************************** *
 
 
+
               // Toggle Design
               // ******************************** *
-              // document.getElementById("backgroundButtonContainer").addEventListener("click", function() {
-              //   if (backgroundToggle == true) {
-              //     backgroundToggle = false;
-              //     // document.getElementById("backgroundToggleImage").src = "Images/backgroundToggleImageActif.png";
-                  
-              //     // TEST
-              //     // document.getElementById("footer").style.backgroundImage = 'linear-gradient(-45deg, rgba(104,3,42,1) 0%, rgba(146,14,91,1) 33%, rgba(13,88,94,1) 67%, rgba(26,32,57,1) 100%) !important;';
-              //   }
-              //   else {
-              //     backgroundToggle = true;
-              //     // document.getElementById("backgroundToggleImage").src = 'Images/backgroundToggleImage.png';
+              document.getElementById("backgroundButtonContainer").addEventListener("click", function() {
 
-              //   }
-              // })
-              // Fin bouton toggle Design
-              // ******************************** *
+                let body = document.querySelector('body');
+                let mode = this.dataset.mode;
+                body.dataset.theme = mode;
+
+
+                // SWITCH les <img src> CARTES DARK MODE
+                // var imgElem = document.getElementById("imgCardDeck");
+                // imgElem.src
+                
+
+                // Changement du state dark/light
+                if (this.dataset.mode == "dark") {
+                  this.dataset.mode = "light";
+                }
+                else {
+                  this.dataset.mode = "dark";
+                }
+
+              })
+
+
+
+
 
 
               $.ajax({
@@ -1065,6 +1076,28 @@
                   document.getElementById("speedToggleImage").src = 'Images/fastForwardWhite.png';
                 }
               });
+
+              document.getElementById("backgroundButtonContainer").addEventListener("click", function() {
+
+                let body = document.querySelector('body');
+                let mode = this.dataset.mode;
+                body.dataset.theme = mode;
+    
+    
+                // SWITCH les <img src> CARTES DARK MODE
+                // var imgElem = document.getElementById("imgCardDeck");
+                // imgElem.src
+                
+    
+                // Changement du state dark/light
+                if (this.dataset.mode == "dark") {
+                  this.dataset.mode = "light";
+                }
+                else {
+                  this.dataset.mode = "dark";
+                }
+    
+              })
 
             }
           });
@@ -1401,7 +1434,7 @@
         var img = document.createElement('img');
         img.id = "backCardCroupier";
         img.className = "imgPartie";
-        img.src = "Images/deck2.png";
+        img.src = "Images/deck3.png";
 
         // test audio coupé et non audio = 0
         // audioCardSound.play();

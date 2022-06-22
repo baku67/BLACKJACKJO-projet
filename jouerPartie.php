@@ -5,7 +5,7 @@
 <div id="deckContainer" style="text-align: center;">
     <span id="compteurDeck"></span> &nbsp; / &nbsp; <span id="compteurDeckMax"></span><!--<img src="Images/deckIcon.png" style="width:40px;"/>-->
     <br>
-    <img src="Images/deck2.png" id="imgCardDeck" class="imgPartie" style="margin-top: 5px;">
+    <img id="imgCardDeck" class="imgPartie" style="margin-top: 5px;">
     <br><br>
     <span id="miseLocked" style="opacity: 0; padding:10px 2px 9px 15px; font-family:'Holtwood One SC', serif;"></span>
 </div>
@@ -49,13 +49,13 @@
                     </button>
                 </div>            
             </li>
-            <!-- <li>
-                <div id="backgroundButtonContainer">
+            <li>
+                <div id="backgroundButtonContainer" data-mode="dark">
                     <button type="button" id="backgroundToggleButton">
                         <img id="backgroundToggleImage" src="Images/backgroundToggleImage.png">
                     </button>
                 </div>            
-            </li> -->
+            </li>
 
             
         </ul>

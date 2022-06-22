@@ -59,13 +59,13 @@
 	
 	
 
-	<body>
+	<body id="body" data-theme="light">
 
 		<div class="containerMaster">
 
 
 			<header id="header">
-				<h1 id="title" style="font-family: 'Kavoon', cursive">BlackJack Jo'</h1>  
+				<h1 id="title2" style="font-family: 'Kavoon', cursive">BlackJack Jo'</h1>  
 				<!-- <p id="received-message">ici<p> -->
 				<div id="traitTitleSlide"></div>
 				<br/>
