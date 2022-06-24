@@ -1,3 +1,6 @@
+Le bug need 2 click pour DM (ET MUTE) est que quand isConnected : LE TOGGLE SPEED MARCHE IMPEC
+Après relance: switchToggleDM marche plus sur les cartes sorties?
+
 Réparer le toggleDarkMode 2 click pour fonctionner
 changer l'icon toggleDarkMode
 continuer la charte graphique darkMode (icone deco, jeton?, toggles, traits,)

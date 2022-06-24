@@ -180,6 +180,7 @@
       // Boutons Toggle
 
       if (isConnected == true) {
+
         if (toggleSpeed == 1) {
           toggleSpeed = true;
         }
@@ -195,17 +196,27 @@
           toggleDMfromPhp = false;
         }
         var darkModeBool = toggleDMfromPhp;
+
+        if (toggleMutefromPhp == 1) {
+          toggleMutefromPhp = true;
+        }
+        else {
+          toggleMutefromPhp = false;
+        }
+        var SoundMuteBool = toggleMutefromPhp;
       }
+
       else {
         var setTimeOutMultiplierBool = false;
         var darkModeBool = false;
-      }
-      console.log("var setTimeOutMultiplierBool = " + setTimeOutMultiplierBool);
-      console.log("var darkModeBool = " + darkModeBool);
+        var SoundMuteBool = true;
+      }   
+      
       
       var setTimeOutMultiplier = 0.7;
-      var SoundMuteBool = true;
-      // fin Boutons
+
+
+
 
 
 
@@ -927,6 +938,20 @@
                   audioMiser.volume = 0;
                   document.getElementById("soundToggleImage").src = 'Images/speakerMute_sourceMaxPng2Recenter4.png';
                 }
+
+                var setSoundMuteBoolToPhp = {};
+                setSoundMuteBoolToPhp.value = SoundMuteBool;
+                if (isConnected == true) {
+                  $.ajax({
+                    url: "setToggleMute.php",
+                    method: "post",
+                    data: setSoundMuteBoolToPhp,
+                    success: function(res) {
+                      console.log("(JS) AJAX POST bool 'setSoundMuteBoolToPhp' " + res + " vers setToggleMute.php réussi");
+                    }
+                  });
+                }
+
               });
               // FIN bouton toggle sons
               // ******************************** *
@@ -1040,7 +1065,7 @@
                     method: "post",
                     data: darkModeBoolToPhp,
                     success: function(res) {
-                      console.log("(JS) AJAX POST bool 'setTimeOutMultiplierBool' " + res + " vers setToggleTurbo.php réussi");
+                      console.log("(JS) AJAX POST bool 'darkModeBoolToPhp' " + res + " vers setToggleDarkMode.php réussi");
                     }
                   });
                 }
@@ -1187,7 +1212,7 @@
 
 
               // ****************************** * 
-              // BOUTON TOGGLE SPEED
+              // BOUTON TOGGLE Mute
               document.getElementById("soundButtonContainer").addEventListener("click", function() {
                 if (SoundMuteBool == true) {
                   SoundMuteBool = false;
@@ -1206,7 +1231,6 @@
                   SoundMuteBool = true;
                   document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
                   document.getElementById("soundToggleImage").style.marginLeft = "13px";
-                  // Inutile car ajout de if pour tout les .play()
                   audioCardSound.volume = 0;
                   audioCoinWin.volume = 0;
                   audioExplosionBust.volume = 0;
@@ -1217,6 +1241,19 @@
                   //
                   document.getElementById("soundToggleImage").src = 'Images/speakerMute_sourceMaxPng2Recenter4.png';
                 }
+
+                var setSoundMuteBoolToPhp = {};
+                setSoundMuteBoolToPhp.value = SoundMuteBool;
+                if (isConnected == true) {
+                  $.ajax({
+                    url: "setToggleMute.php",
+                    method: "post",
+                    data: setSoundMuteBoolToPhp,
+                    success: function(res) {
+                      console.log("(JS) AJAX POST bool 'setSoundMuteBoolToPhp' " + res + " vers setToggleMute.php réussi");
+                    }
+                  });
+                }
               });
               // FIN bouton toggle sons
               // ******************************** *
@@ -1224,7 +1261,6 @@
  
               // ******************************** *
               // BOUTON TOGGLE SPEED
-              // document.getElementById("speedButtonContainer").style.cursor = "pointer";
               document.getElementById("speedButtonContainer").addEventListener("click", function() {
                 if (setTimeOutMultiplierBool == true) {
                   setTimeOutMultiplierBool = false;

@@ -54,6 +54,9 @@
 
 					var toggleDMfromPhp = <?php include('getToggleDarkMode.php'); ?>; // Don't forget the extra semicolon!
 					console.log('getToggleDarkMode.php: ' + toggleDMfromPhp);
+
+					var toggleMutefromPhp = <?php include('getToggleMute.php'); ?>; // Don't forget the extra semicolon!
+					console.log('getToggleMute.php: ' + toggleMutefromPhp);
 				</script>
 		<?php
 			endif;
