@@ -131,10 +131,6 @@
 
 
 
-
-
-
-
       if (isConnected == true && toggleDMfromPhp == true) {
         let body = document.querySelector('body');
         body.dataset.theme = "dark";
@@ -147,6 +143,7 @@
         imgElemArray.forEach(element => {
           element.src = element.src.substring(0, 37) + "_darkMode.png";
         });
+
 
         if (document.getElementById("backCardCroupier") !== null) {
           document.getElementById("backCardCroupier").src = "../Images/deck3_darkMode.png";
@@ -835,6 +832,13 @@
                   element.src = element.src.substring(0, 37) + "_darkMode.png";
                 });
 
+                if (document.querySelectorAll('.pokerChips') !== null) {
+                  var imgTokens = document.querySelectorAll('.pokerChips');
+                  imgTokens.forEach(element => {
+                    element.src = element.src.substring(0, 43) + "_darkMode.png";
+                  });
+                }
+
                 if (document.getElementById("backCardCroupier") !== null) {
                   document.getElementById("backCardCroupier").src = "../Images/deck3_darkMode.png";
                 }
@@ -852,6 +856,13 @@
                 imgElemArray.forEach(element => {
                   element.src = element.src.substring(0, 37) + ".png";
                 });
+                
+                if (document.querySelectorAll('.pokerChips') !== null) {
+                  var imgTokens = document.querySelectorAll('.pokerChips');
+                  imgTokens.forEach(element => {
+                    element.src = element.src.substring(0, 43) + ".png";
+                  });
+                }
 
                 if (document.getElementById("backCardCroupier") !== null) {
                   document.getElementById("backCardCroupier").src = "../Images/deck3.png";
@@ -981,6 +992,13 @@
                     element.src = element.src.substring(0, 37) + "_darkMode.png";
                   });
 
+                  if (document.querySelectorAll('.pokerChips') !== null) {
+                    var imgTokens = document.querySelectorAll('.pokerChips');
+                    imgTokens.forEach(element => {
+                      element.src = element.src.substring(0, 43) + "_darkMode.png";
+                    });
+                  }
+
                   if (document.getElementById("backCardCroupier") !== null) {
                     document.getElementById("backCardCroupier").src = "../Images/deck3_darkMode.png";
                   }
@@ -998,6 +1016,13 @@
                   imgElemArray.forEach(element => {
                     element.src = element.src.substring(0, 37) + ".png";
                   });
+
+                  if (document.querySelectorAll('.pokerChips') !== null) {
+                    var imgTokens = document.querySelectorAll('.pokerChips');
+                    imgTokens.forEach(element => {
+                      element.src = element.src.substring(0, 43) + ".png";
+                    });
+                  }
 
                   if (document.getElementById("backCardCroupier") !== null) {
                     document.getElementById("backCardCroupier").src = "../Images/deck3.png";
@@ -1034,6 +1059,15 @@
                   $("#container3").html(response);
                   ChoixActif = false;
                   // document.getElementById("collapsible").style.visibility = "visible";
+
+                  if (isConnected == true && darkModeBool == true) {
+                    if (document.querySelectorAll('.pokerChips') !== null) {
+                      var imgTokens = document.querySelectorAll('.pokerChips');
+                      imgTokens.forEach(element => {
+                        element.src = element.src.substring(0, 43) + "_darkMode.png";
+                      });
+                    }
+                  }
 
                   document.getElementById("retourArriereButton").addEventListener("click", function() {
                     // fonction de rafraichissement de la mise en cours (Si il y a matière)

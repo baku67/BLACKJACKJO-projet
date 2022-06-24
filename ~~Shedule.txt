@@ -1,20 +1,35 @@
+Réparer le toggleDarkMode 2 click pour fonctionner
+changer l'icon toggleDarkMode
+continuer la charte graphique darkMode (icone deco, jeton?, toggles, traits,)
+Remplacer les token DM par les plus foncé ou faire 1 sur 2 (+stylé)
+Il reste le set/get Mute à faire :/ (JS: state+onClick, html: script/php include get.php)
+
+!!!!!!!!!!!!!!   Lors Résultat: CHANGER LE MODAL RESULT !!!  FAIRE QQC OMG (titre qui bouge? flahs? crack? un truc adapté)
+Puis boutons choix? (en darkMode ça passe) mais +anim +delai(500ms)?
+
+
 Mettre un flash sur le titre + trait à la fin du slide, si possible rayonnement (ombres)
 -> Flash une lettre apres l'autre rapidement, puis flash final global ?
 NEONS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-Différencier les couleur des fonts du footer (les grossir/changer le family!)
-
-Envoi des preferences toggles a la BDD !!!!!!!!!
-
 ANIMATION DU TITRE DARK MODE (statique donc var CSS ?)
 
-Mettre un toggle DarkMode dans le JS pour switch les cards? bordel innomable
-onclick Toggle: if darkMode (deja) TRUE (au debut de la fonction): switch tous les img.src +"_darkmode" jsp
 
-Bouton toggle dark mode (charte graph du portfolio, adaptation/CREATION des images et jetons etc...)
+
+
 Detail des parties adns l'hiostorique (onClick uncollapse): avec un genre de player qui montre les étapes de la partie)
-save du toggleSpeed etc... (deja commencé) + déplacer les 3 boutons sur l'index au lieu du jouerPartie.php
-le toggleDesign doit etre un symbole de dark/light mode (lune/soleil)
+déplacer les 3 boutons sur l'index au lieu du jouerPartie.php ?
+
+"c'ÉtAiT mIeUx AvAnT":  le "Mise: "
+
+footer "Perdu !" lors push .....
+
+
+
+
+
+
+
 
 
 FIX le x2, finir le storage de l'historique Invite
@@ -28,14 +43,6 @@ Finir Ligne-Bouton AddUser
 Finir les logs 
 
 WIP date inscrption / derniere connexion (users ADMIN)
-
-
-
-"c'ÉtAiT mIeUx AvAnT":  le "Mise: "
-
-Possibilité de changer le background des cartes, etc...
-
-
 
 BUST/WASTED: https://codepen.io/GeorgePark/pen/jeBbGN
 
