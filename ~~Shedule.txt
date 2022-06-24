@@ -6,7 +6,7 @@ Différencier les couleur des fonts du footer (les grossir/changer le family!)
 
 Envoi des preferences toggles a la BDD !!!!!!!!!
 
-
+ANIMATION DU TITRE DARK MODE (statique donc var CSS ?)
 
 Mettre un toggle DarkMode dans le JS pour switch les cards? bordel innomable
 onclick Toggle: if darkMode (deja) TRUE (au debut de la fonction): switch tous les img.src +"_darkmode" jsp

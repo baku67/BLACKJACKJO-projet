@@ -43,11 +43,17 @@
 			else :
 		?>
 				<script> isConnected = true; console.log('estConnecté');</script>  
-				<!-- Méthode Ajax XMLHttpRequest (js/php) -->
-				<!-- <script type="text/javascript" src="scriptJouerPhp.js"></script> -->
+
 				<script type="text/javascript">
+					// Get.php des données User
 					var creditsConnected = <?php include('getCredits.php'); ?>; // Don't forget the extra semicolon!
-					console.log('var js creditConnected: ' + creditsConnected);  
+					console.log('getCredits.php: ' + creditsConnected);  
+					
+					var toggleSpeed = <?php include('getToggleTurbo.php'); ?>; // Don't forget the extra semicolon!
+					console.log('getToggleTurbo.php: ' + toggleSpeed);
+
+					var toggleDMfromPhp = <?php include('getToggleDarkMode.php'); ?>; // Don't forget the extra semicolon!
+					console.log('getToggleDarkMode.php: ' + toggleDMfromPhp);
 				</script>
 		<?php
 			endif;
