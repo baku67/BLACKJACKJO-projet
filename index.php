@@ -119,7 +119,7 @@
 						<strong style="font-size:1.4em; text-shadow:0 0 3px rgb(43 39 39);">
 							<span style="color:rgba(255,237,144,1);">&#9733;</span>
 							<?php 
-								echo $_SESSION['username']; 
+								echo ucfirst($_SESSION['username']); 
 							?>
 							<span style="color:rgba(255,237,144,1);">&#9733;</span>
 						</strong>
