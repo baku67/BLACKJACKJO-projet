@@ -8,7 +8,7 @@
 
     $row = mysqli_fetch_assoc($result);
     
-    echo "<p style='font-size:0.9em; font-weight:bold; color:silver !important;'>" . $row['username'] . "</p>"; 
+    echo "<p style='font-size:0.9em; font-weight:bold; color:silver !important;'>" . ucfirst($row['username']) . "</p>"; 
     
     mysqli_close($db);
 
