@@ -1745,6 +1745,9 @@
 
 
       function addBackCardCroupier() {
+
+        distribAnim("croupier");
+
         var img = document.createElement('img');
         img.id = "backCardCroupier";
         img.className = "imgPartie";
@@ -1923,6 +1926,9 @@
 
 
       function lancerPhaseCroupier() {
+
+          var firstCardRevealed = false;
+
           $.ajax({
             async: false,
             url: "Footers/footerDistribution.html",
@@ -1951,7 +1957,13 @@
             
             if (scoreTotalCroupier < 17) {
               setTimeout(function() {
-                addCardCroupier();
+                if (firstCardRevealed == true) {
+                  addCardCroupier(firstCardRevealed);  
+                }
+                else {
+                  addCardCroupier(firstCardRevealed);
+                  firstCardRevealed = true;
+                }
                 addCardCroupierRecursive();
               }, 2150 * setTimeOutMultiplier)
             }
@@ -2012,6 +2024,7 @@
                     
 
                     document.getElementById("deckContainer").remove();
+                    document.getElementById("cardAnim").remove();
                     document.getElementById("parametresPartieDiv").remove();
 
 
@@ -2120,6 +2133,7 @@
                       
 
                       document.getElementById("deckContainer").remove();
+                      document.getElementById("cardAnim").remove();
                       document.getElementById("parametresPartieDiv").remove();
                       // document.getElementById("deckContainer").classList.add("fadeOut");
     
@@ -2213,6 +2227,7 @@
                       
   
                       document.getElementById("deckContainer").remove();
+                      document.getElementById("cardAnim").remove();
                       document.getElementById("parametresPartieDiv").remove();
                       // document.getElementById("deckContainer").classList.add("fadeOut");
     
@@ -2306,6 +2321,7 @@
                   
   
                     document.getElementById("deckContainer").remove();
+                    document.getElementById("cardAnim").remove();
                     document.getElementById("parametresPartieDiv").remove();
 
 
@@ -2544,6 +2560,8 @@
       // NOUVELLE CARTE  > CROUPIER (+ScoreTOTAL)
       function addCardCroupier() {
 
+          distribAnim("croupier");
+
         // Créer l'élément <img/>
         var img = document.createElement('img');
         // Pick l'objet et le stock dans une VAR
@@ -2641,12 +2659,25 @@
 
 
 
-      function distribAnim() {
-        var img = document.createElement('img')
-        img.classList.add("deckAnimStyle");
-        img.src = "Images/deck2.png";
+      function distribAnim(destination) {
+        if (destination == "joueur") {
+          var cardAnim = document.querySelector("#cardAnim");
+          cardAnim.classList.add("animDistribCardJoueur");
+  
+          setTimeout(function() {
+            cardAnim.classList.remove('animDistribCardJoueur');
+          }, 550)
+        }
+        else if (destination == "croupier") {
+          var cardAnim = document.querySelector("#cardAnim");
+          cardAnim.classList.add("animDistribCardCroupier");
+  
+          setTimeout(function() {
+            cardAnim.classList.remove('animDistribCardCroupier');
+          }, 550)
+        }
 
-        document.getElementById('deckContainer').appendChild(img);
+
       }
 
 
@@ -2655,7 +2686,7 @@
       function addCardJoueur() {
 
         // WIP Animation Distribution Carte
-        // distribAnim();
+        distribAnim("joueur");
         // FIN
 
         var img = document.createElement('img');
@@ -2717,7 +2748,10 @@
         // audioCardSound.play();
 
 
-        document.getElementById("joueur").appendChild(img);
+        setTimeout(function() {
+          document.getElementById("joueur").appendChild(img);
+        }, 470);
+        // document.getElementById("joueur").appendChild(img);
 
         decrementCompteurDeck()
 
@@ -2982,6 +3016,7 @@
                   
 
                   document.getElementById("deckContainer").remove();
+                  document.getElementById("cardAnim").remove();
                   document.getElementById("parametresPartieDiv").remove();
                   // document.getElementById("deckContainer").classList.add("fadeOut");
 
@@ -3123,6 +3158,7 @@
 
 
                 document.getElementById("deckContainer").remove();
+                document.getElementById("cardAnim").remove();
                 document.getElementById("parametresPartieDiv").remove();
                 // document.getElementById("deckContainer").classList.add("fadeOut");
 

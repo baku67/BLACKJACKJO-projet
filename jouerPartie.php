@@ -10,6 +10,9 @@
     <span id="miseLocked" style="opacity: 0; padding:10px 2px 9px 15px; font-family:'Holtwood One SC', serif;"></span>
 </div>
 
+ <!-- WIP CARTE DE DISTRIBUTION (animation CSS) -->
+<img id="cardAnim" class="imgPartie">
+
 <div id="parametresPartieDiv" style="text-align:center; visiblity: visible">
     <p style="position:relative; width:100%; font-size:1.35em; padding-right:35px; opacity:0.4;">Mise max</p>
 

@@ -238,8 +238,8 @@
 
 	#deckContainer {
 		left: 5%; 
-		bottom: 45%; 
-		height: 158px;
+		bottom: 43%; 
+		height: 187px;
 
 		border: 3px solid rgba(223, 204, 204, 0.2);
 
@@ -426,7 +426,7 @@
 	}
 
 	#imgCardDeck {
-		width: 5em;
+		width: 6em;
 	}
 
 	#scoreContainer {

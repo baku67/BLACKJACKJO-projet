@@ -1121,6 +1121,50 @@ p {
 	border-radius: 9px;
 }
 
+#cardAnim {	
+	position: absolute;
+	content:var(--imgDeck-src);
+
+	/* // Gérer le responsive */
+	width: 6em !important;
+	left: 6.5%;
+	bottom: 44.5%;
+	opacity: 1;
+}
+.animDistribCardJoueur {
+	animation: animDistribJoueur 0.5s ease-out 0s forwards !important;
+}
+@keyframes animDistribJoueur {
+	0% {
+		left: 6.5%;
+		bottom: 44.5%;
+		opacity: 1;
+	} 
+	100% {
+		left: 40%;
+		bottom: 20%;
+		opacity: 0;
+	}
+}
+.animDistribCardCroupier {
+	animation: animDistribCroupier 0.5s ease-out 0s forwards !important;
+}
+@keyframes animDistribCroupier {
+	0% {
+		left: 6.5%;
+		bottom: 44.5%;
+		opacity: 1;
+	} 
+	100% {
+		left: 40%;
+		bottom: 62%;
+		opacity: 0;
+	}
+}
+
+
+
+
 #parametresPartieDiv {
 	color: rgba(223, 204, 204, 1) !important;
 	
