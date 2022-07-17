@@ -458,8 +458,7 @@ button, input[type="submit"], input[type="reset"] {
 	background-image: var(--header-background); 
 	/* background-image: var(--headerOnPartie-bgColor); */
 
-	
-	
+	/* // Gradient du onPartie:  */
 	/* background-image: linear-gradient(-45deg, rgba(104,3,42,1) 0%, rgba(146,14,91,1) 33%, rgba(13,88,94,1) 67%, rgba(26,32,57,1) 100%) !important; */
 	background-size: 400% 400%;
 

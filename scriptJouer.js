@@ -132,6 +132,9 @@
 
 
       if (isConnected == true && toggleDMfromPhp == true) {
+
+        document.querySelector('#deconnexionImg').src = "../Images/deconnexion_darkMode.png"
+
         let body = document.querySelector('body');
         body.dataset.theme = "dark";
 
@@ -214,7 +217,6 @@
       
       
       var setTimeOutMultiplier = 0.7;
-
 
 
 
@@ -1021,14 +1023,16 @@
                 }
               });
               // FIN bouton toggle speed
-              // ******************************** *
+              // ******************************** 
+
+
+
+
 
               console.log("darkModeBool juste AVANT clique sur le bouton: " + darkModeBool);
-
               // Toggle Design
               // ******************************** *
               document.getElementById("backgroundButtonContainer").addEventListener("click", function() {
-
                 console.log("darkModeBool APRES clique sur le bouton: " + darkModeBool);
 
 
@@ -1042,6 +1046,8 @@
                 if (this.dataset.mode == "dark") {
                   this.dataset.mode = "light";
                   darkModeBool = true;
+
+                  document.querySelector('#deconnexionImg').src = "../Images/deconnexion_darkMode.png"
 
                   cards.forEach(element => {
                     element.cardImageURL = element.cardImageURL.substring(0, 9) + "_darkMode.png";
@@ -1067,6 +1073,8 @@
                 else {
                   this.dataset.mode = "dark";
                   darkModeBool = false;
+
+                  document.querySelector('#deconnexionImg').src = "../Images/deconnexion.png"
 
                   cards.forEach(element => {
                     element.cardImageURL = element.cardImageURL.substring(0, 9) + ".png";
@@ -1201,6 +1209,7 @@
 
           
 
+
           $.ajax({
             async: false,
             url: "jouerPartie.php",
@@ -1327,8 +1336,6 @@
               });
 
               document.getElementById("backgroundButtonContainer").addEventListener("click", function() {
-                console.log("darkModeBool: " + darkModeBool);
-
 
                 // toggle la backCardCroupier et les img src des li deja present
 
@@ -1340,8 +1347,8 @@
                 if (this.dataset.mode == "dark") {
                   this.dataset.mode = "light";
                   darkModeBool = true;
-                  console.log("darkModeBool: " + darkModeBool);
 
+                  document.querySelector('#deconnexionImg').src = "../Images/deconnexion_darkMode.png"
 
                   cards.forEach(element => {
                     element.cardImageURL = element.cardImageURL.substring(0, 9) + "_darkMode.png";
@@ -1369,6 +1376,7 @@
                   darkModeBool = false;
                   console.log("darkModeBool: " + darkModeBool);
 
+                  document.querySelector('#deconnexionImg').src = "../Images/deconnexion_darkMode.png"
 
                   cards.forEach(element => {
                     element.cardImageURL = element.cardImageURL.substring(0, 9) + ".png";
@@ -1429,6 +1437,24 @@
                 dataType: "html",
                 success: function(response) {
                   $("#container3").html(response);
+
+                  // *Dark Mode State*
+                  if (darkModeBool == true) {
+                    if (document.querySelectorAll('.pokerChips') !== null) {
+                      var imgTokens = document.querySelectorAll('.pokerChips');
+                      imgTokens.forEach(element => {
+                        element.src = element.src.substring(0, 43) + "_darkMode.png";
+                      });
+                    }
+                  }
+                  else {                
+                    if (document.querySelectorAll('.pokerChips') !== null) {
+                      var imgTokens = document.querySelectorAll('.pokerChips');
+                      imgTokens.forEach(element => {
+                        element.src = element.src.substring(0, 43) + ".png";
+                      });
+                    }
+                  }
 
                   // RESET du tableau TokenLogs
                   logTokenValues = [];
@@ -2669,12 +2695,15 @@
           }, 550)
         }
         else if (destination == "croupier") {
-          var cardAnim = document.querySelector("#cardAnim");
-          cardAnim.classList.add("animDistribCardCroupier");
+          if (document.querySelector("#cardAnim") != null) {
+            var cardAnim = document.querySelector("#cardAnim");
+            cardAnim.classList.add("animDistribCardCroupier");
+    
+            setTimeout(function() {
+              cardAnim.classList.remove('animDistribCardCroupier');
+            }, 550)
   
-          setTimeout(function() {
-            cardAnim.classList.remove('animDistribCardCroupier');
-          }, 550)
+          }
         }
 
 
