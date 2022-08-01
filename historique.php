@@ -61,22 +61,43 @@ endif;
                     include('getTotalGames.php');
                 ?>
                 </div>
-                <?php
 
+                <br>
+
+                <div id="totalWinLoseContainer" style="display:inline-flex; margin:auto;">
+                    <div id="nombreWinContainer" style="display:inline-flex; margin:auto; margin-right: 15px;">
+                        <?php
+                            echo "Parties gagnées: &nbsp;";
+                            include('getTotalWinGames.php');
+                        ?>
+                    </div>
+
+                    <div id="nombreLoseContainer" style="display:inline-flex; margin:auto; margin-left: 15px;">
+                        <?php
+                            echo "Parties perdues: &nbsp;";
+                            include('getTotalLoseGames.php');
+                        ?>
+                    </div>
+                </div>
+
+                <?php
                 include('getAdminHistorique.php');
                 echo("</br></br></br>");
                 include('getAdminUsers.php');
                 echo("</br></br></br>");
                 include('getAdminLogs.php');
 
+                
+            // Mode invité
             elseif (!isset($_SESSION['username'])) : 
 
                 // PROBLEME (03/04/2022 02:53): Historique Invite n'affiche plus le header statique "- Derniere parties jouées -"
                 // echo("<h2 style=\"font-size:2.2em !important; position:relative; margin-top:30px; margin-bottom:15px; text-align:center; color:rgb(255, 255, 255); font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\">- Dernières parties jouées -</h2>");
                 //rien (historique hors connexion JS)
 
-            else : 
 
+            // Joueur connecté (standard)
+            else : 
                 ?>
                 <div id="nombreTotalContainer" style="display:inline-flex; margin:auto;">
                 <?php
@@ -84,8 +105,27 @@ endif;
                     include('getTotalGames.php');
                 ?>
                 </div>
-                <?php>
 
+                <br>
+
+                <div id="totalWinLoseContainer" style="display:inline-flex; margin:auto;">
+                    <div id="nombreWinContainer" style="display:inline-flex; margin:auto; margin-right: 15px;">
+                        <?php
+                            echo "Parties gagnées: &nbsp;";
+                            include('getTotalWinGames.php');
+                        ?>
+                    </div>
+
+                    <div id="nombreLoseContainer" style="display:inline-flex; margin:auto; margin-left: 15px;">
+                        <?php
+                            echo "Parties perdues: &nbsp;";
+                            include('getTotalLoseGames.php');
+                        ?>
+                    </div>
+                </div>
+
+
+                <?php
                 include('getHistorique.php'); 
 
             endif;
