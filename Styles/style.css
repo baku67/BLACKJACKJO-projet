@@ -22,6 +22,10 @@
 
 	--footerBorderTop-Color: rgba(230, 211, 211, 0.6);
 	--headerBorderBottom-Color: rgba(230, 211, 211, 0.6);
+
+	--resultatFooter-color: rgb(223, 204, 204);
+
+	--distributionFooter-color: rgb(223, 204, 204);
 }
 
 [data-theme="light"] {
@@ -48,7 +52,12 @@
 
 	--footerBorderTop-Color: rgba(230, 211, 211, 0.6);
 	--headerBorderBottom-Color: rgba(230, 211, 211, 0.6);
+
+	--resultatFooter-color: rgb(223, 204, 204);
+
+	--distributionFooter-color: rgb(223, 204, 204);
 }
+
 [data-theme="dark"] {
 	--bg-color: rgb(17 19 31);
 	--bg-url: url();
@@ -73,6 +82,10 @@
 
 	--footerBorderTop-Color: rgba(239, 59, 46, 1);
 	--headerBorderBottom-Color: rgba(239, 59, 46, 1);
+
+	--resultatFooter-color: rgba(239, 59, 46, 1);
+
+	--distributionFooter-color: rgba(239, 59, 46, 1);
 }
 
 
@@ -84,9 +97,13 @@
 
 
 
+#distributionFooter {
+	color: var(--distributionFooter-color) !important;
+}
 
-
-
+#resultatFooter {
+	color: var(--resultatFooter-color);
+}
 
 
 
@@ -392,7 +409,7 @@ button, input[type="submit"], input[type="reset"] {
 	position: relative; 
 	left: 100%;
 
-	animation: titleSlide 1.3s ease-in-out 1 !important;
+	animation: titleSlide 0.8s ease-in-out 1 !important;
 	animation-fill-mode: forwards !important;
 
 	text-align: center;
@@ -420,7 +437,7 @@ button, input[type="submit"], input[type="reset"] {
 	position: relative;
 	right: 100%;
 
-	animation: traitTitleSlide 1.6s ease-in-out 1 !important;
+	animation: traitTitleSlide 0.6s 0.2s ease-in-out 1 !important;
 	animation-fill-mode: forwards !important;
 
 	/* height: 2px !important; */

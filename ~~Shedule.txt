@@ -1,10 +1,26 @@
+NBRE PARTIE JOUEES TOTAL OMG dans espace perso
+
+Fix le "Distribution..." pas DM (il pop/load apres donc var CSS hs ?)
+
 Ptit FX lors de d'ajout de mise (sur le chiffre ou le sou) genre ptite étoile et refresh (ou effet cercle sur le sou)
 -> Si 100 de mise atteint effet flammes (PLZ)
 si max mise atteint (ptit pop rouge *max* lors click sur tokens)
 
+Mettre un fadeIn EZ (plutot que Neon) apres le slide du titre (SIMPLE)
+--> FadeIn gardué ? (oui)
+
 utiliser le pourcentage ratio pour l'inclure dans un gradient css ou autre (peutre le soulignement du "ratio") (le faire assez discret, genre peut etre juste doré sur fond gris)
 
 Faire un classement déroulant (+10 on click)
+
+Footer distribution animation simple
+
+Boutons toggle plus petits et discrets
+
+SPLIT ET SIDE BETS ET ASSURANCE
+
+Souligner l'onglet sur lequel on est (assez epais, DM friendly orange, espaces *lettres à queues*)
+
 
 Le bug need 2 click pour DM (ET MUTE) est que quand isConnected : LE TOGGLE SPEED MARCHE IMPEC
 Après relance: switchToggleDM marche plus sur les cartes sorties?

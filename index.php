@@ -58,7 +58,7 @@
 
 					var toggleMutefromPhp = <?php include('getToggleMute.php'); ?>; // Don't forget the extra semicolon!
 					console.log('getToggleMute.php: ' + toggleMutefromPhp);
-					
+
 				</script>
 		<?php
 			endif;
@@ -298,7 +298,7 @@
 						<?php include('getHighScoreName.php'); ?>
 
 						&nbsp;		
-						<p style="color: #a09f39"> _ </p>
+						<!-- <p style="color: #a09f39"> _ </p> -->
 						&nbsp;
 
 						<?php include('getHighScore.php'); ?>
@@ -319,7 +319,7 @@
 						<?php include('getHighScore2Name.php'); ?>
 
 						&nbsp;		
-						<p style="color: #a09f39"> _ </p>
+						<!-- <p style="color: #a09f39"> _ </p> -->
 						&nbsp;
 
 						<?php include('getHighScore2.php'); ?>
@@ -340,7 +340,7 @@
 						<?php include('getHighScore3Name.php'); ?>
 
 						&nbsp;		
-						<p style="color: #a09f39"> _ </p>
+						<!-- <p style="color: #a09f39"> _ </p> -->
 						&nbsp;
 
 						<?php include('getHighScore3.php'); ?>
