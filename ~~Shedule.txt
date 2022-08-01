@@ -1,4 +1,6 @@
-NBRE PARTIE JOUEES TOTAL OMG dans espace perso
+Pour animation flickering Neon: mettre en amont un if DM activated etc ... (pour pas mess up avec le light mode)
+DAILLEURS FAIRE PAREIL POUR LE GRADIENT PEUT ETRE
+
 
 Fix le "Distribution..." pas DM (il pop/load apres donc var CSS hs ?)
 
@@ -13,7 +15,7 @@ utiliser le pourcentage ratio pour l'inclure dans un gradient css ou autre (peut
 
 Faire un classement déroulant (+10 on click)
 
-Footer distribution animation simple
+Footer distribution symbole animé simple
 
 Boutons toggle plus petits et discrets
 

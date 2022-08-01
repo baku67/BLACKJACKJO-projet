@@ -5,6 +5,10 @@
     $query = mysqli_query($db,"SELECT role FROM users WHERE username = '".$_SESSION['username']."' ");
     while($row = mysqli_fetch_array($query)) {$role = $row['role']; }
 
+
+
+
+    
     if ($role=='admin') :
         echo("<h2 style=\"font-size:2.5em !important; position:relative; margin-top:10px; margin-bottom:15px; text-align:center; color:rgb(255, 201, 104); font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\"><span style='font-size:0.6em;'>★</span><span style='font-size:0.8em;'>★</span>★ Espace Admin ★<span style='font-size:0.8em;'>★</span><span style='font-size:0.6em;'>★</span></h2>");
     elseif ($role=='joueur') :
@@ -39,9 +43,31 @@ endif;
     slider.oninput = function() {
         output.innerHTML = this.value;
     }
+
+
+    var winLoseHided = false;
+
+    function hideWinLose() {
+        if (winLoseHided == true) {
+            winLoseHided = false;
+            document.getElementById("amountWin").style.opacity = "1";
+            document.getElementById("amountLose").style.opacity = "1";
+            document.getElementById("hideButton").innerHTML = "Hide";
+
+            //Mettre les get set ajax (et symbole oeil?)
+    }
+        else {
+            winLoseHided = true;
+            document.getElementById("amountWin").style.opacity = "0";
+            document.getElementById("amountLose").style.opacity = "0";
+            document.getElementById("hideButton").innerHTML = "Show";
+
+            //Mettre les get set ajax (et symbole oeil?)
+        }
+    }
+
 </script>
 <!-- Fin Slider -->
-
 
 
 
@@ -55,28 +81,34 @@ endif;
             if ( isset($_SESSION['username']) && $role=='admin' ) :
             
                 ?>
-                <div id="nombreTotalContainer" style="display:inline-flex; margin:auto; font-size: 115%;">
-                <?php
-                    echo "Parties jouées: &nbsp;";
-                    include('getTotalGames.php');
-                ?>
-                </div>
-
-                <br>
-
-                <div id="totalWinLoseContainer" style="display:inline-flex; margin:auto;">
-                    <div id="nombreWinContainer" style="display:inline-flex; margin:auto; margin-right: 15px;">
+                <div style="border: 3px solid rgba(239, 59, 46, 0.6); border-radius:7px; margin-left:12%; margin-right:12%; margin-top:30px; margin-bottom:45px; padding-top:8px; padding-bottom:7px;">
+                    <div id="nombreTotalContainer" style="display:inline-flex; margin:auto; font-size: 115%;">
                         <?php
-                            echo "Parties gagnées: &nbsp;";
-                            include('getTotalWinGames.php');
+                            echo "Parties jouées: &nbsp;";
+                            include('getTotalGames.php');
                         ?>
                     </div>
 
-                    <div id="nombreLoseContainer" style="display:inline-flex; margin:auto; margin-left: 15px;">
-                        <?php
-                            echo "Parties perdues: &nbsp;";
-                            include('getTotalLoseGames.php');
-                        ?>
+                    <br><br>
+
+                    <div id="totalWinLoseContainer" style="display:inline-flex; margin:auto;">
+                        <div id="nombreWinContainer" style="display:inline-flex; margin:auto; margin-right: 15px;">
+                            <?php
+                                echo "Parties gagnées: &nbsp;";
+                                include('getTotalWinGames.php');
+                            ?>
+                        </div>
+
+                        <div id="nombreLoseContainer" style="display:inline-flex; margin:auto; margin-left: 15px;">
+                            <?php
+                                echo "Parties perdues: &nbsp;";
+                                include('getTotalLoseGames.php');
+                            ?>
+                        </div>
+
+                        <div id="hideButtonContainer" style="position:absolute; right:15%; border:3px solid rgb(172 113 108 / 80%); border-radius:5px; padding:2px;">
+                            <button id="hideButton" onclick="hideWinLose()">&nbsp;Hide&nbsp;</button>
+                        </div>  
                     </div>
                 </div>
 
@@ -87,7 +119,7 @@ endif;
                 echo("</br></br></br>");
                 include('getAdminLogs.php');
 
-                
+
             // Mode invité
             elseif (!isset($_SESSION['username'])) : 
 

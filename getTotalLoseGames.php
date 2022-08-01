@@ -6,6 +6,6 @@
 
     $row = mysqli_fetch_assoc($result);
     
-    echo "<p style='font-size:1.1em; margin:auto;'>" . $row['amountGames'] . "</p>"; 
+    echo "<p id='amountLose' style='font-size:1.3em; margin:auto; color:#d25555; font-weight:bold;'>" . $row['amountGames'] . "</p>"; 
     
 ?>
