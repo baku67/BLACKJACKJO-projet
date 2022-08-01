@@ -25,6 +25,7 @@ if ($role=='joueur') :
         </div>';
 endif;
 ?>
+
 <!-- Slider Range (input à finir) -->
 <!-- <div class="slidecontainer">
     <p style="position:relative; top:5px; font-size:1.3em; color:rgba(223, 204, 204, 0.9); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Taille: <span id="demo"></span></p>
@@ -36,7 +37,7 @@ endif;
     output.innerHTML = slider.value;
 
     slider.oninput = function() {
-    output.innerHTML = this.value;
+        output.innerHTML = this.value;
     }
 </script>
 <!-- Fin Slider -->
@@ -52,7 +53,16 @@ endif;
 
         // Historique: Vérification Admin/Connecté/Invite:
             if ( isset($_SESSION['username']) && $role=='admin' ) :
-                
+            
+                ?>
+                <div id="nombreTotalContainer" style="display:inline-flex; margin:auto; font-size: 115%;">
+                <?php
+                    echo "Parties jouées: &nbsp;";
+                    include('getTotalGames.php');
+                ?>
+                </div>
+                <?php
+
                 include('getAdminHistorique.php');
                 echo("</br></br></br>");
                 include('getAdminUsers.php');
@@ -66,6 +76,16 @@ endif;
                 //rien (historique hors connexion JS)
 
             else : 
+
+                ?>
+                <div id="nombreTotalContainer" style="display:inline-flex; margin:auto;">
+                <?php
+                    echo "Parties jouées: &nbsp;";
+                    include('getTotalGames.php');
+                ?>
+                </div>
+                <?php>
+
                 include('getHistorique.php'); 
 
             endif;
