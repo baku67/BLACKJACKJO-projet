@@ -55,7 +55,7 @@
             <li>
                 <div id="backgroundButtonContainer" data-mode="dark">
                     <button type="button" id="backgroundToggleButton">
-                        <img id="backgroundToggleImage" src="Images/backgroundToggleImage.png">
+                        <img id="backgroundToggleImage" src="Images/dayMode2.png">
                     </button>
                 </div>            
             </li>

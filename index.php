@@ -45,6 +45,7 @@
 				<script> isConnected = true; console.log('estConnecté');</script>  
 
 				<script type="text/javascript">
+
 					// Get.php des données User
 					var creditsConnected = <?php include('getCredits.php'); ?>; // Don't forget the extra semicolon!
 					console.log('getCredits.php: ' + creditsConnected);  
@@ -57,6 +58,7 @@
 
 					var toggleMutefromPhp = <?php include('getToggleMute.php'); ?>; // Don't forget the extra semicolon!
 					console.log('getToggleMute.php: ' + toggleMutefromPhp);
+					
 				</script>
 		<?php
 			endif;
