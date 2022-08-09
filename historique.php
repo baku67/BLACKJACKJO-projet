@@ -81,7 +81,7 @@ endif;
             if ( isset($_SESSION['username']) && $role=='admin' ) :
             
                 ?>
-                <div style="border: 3px solid rgba(239, 59, 46, 0.6); border-radius:7px; margin-left:12%; margin-right:12%; margin-top:30px; margin-bottom:45px; padding-top:8px; padding-bottom:7px;">
+                <div style="font-size:120%; border: 3px solid rgba(239, 59, 46, 0.6); border-radius:8px; margin-left:12%; margin-right:12%; margin-top:30px; margin-bottom:45px; padding-top:8px; padding-bottom:7px;">
                     <div id="nombreTotalContainer" style="display:inline-flex; margin:auto; font-size: 115%;">
                         <?php
                             echo "Parties jouées: &nbsp;";
@@ -106,7 +106,7 @@ endif;
                             ?>
                         </div>
 
-                        <div id="hideButtonContainer" style="position:absolute; right:15%; border:3px solid rgb(172 113 108 / 80%); border-radius:5px; padding:2px;">
+                        <div id="hideButtonContainer" style="position:relative; left:10%; border:3px solid rgb(172 113 108 / 80%); border-radius:5px; padding:2px;">
                             <button id="hideButton" onclick="hideWinLose()">&nbsp;Hide&nbsp;</button>
                         </div>  
                     </div>

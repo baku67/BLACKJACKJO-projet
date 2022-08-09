@@ -366,15 +366,38 @@
 
 	
 	#separateur {
+		/* Modification width pour anim a faire avec un addClass (et propriété width !important?) */
 		height: 115px;
-		width: 70%;
+		/* width: 70%; */
 
 		position: absolute;
 		top: 48%;
 		left: 0;
 		right: 0;
 
-		/* margin: 69px auto 55px auto; */
+		/* width: 3px;
+		animation: resultatContainerSlide 1.3s ease-in-out 0.3s normal forwards; */
+	}
+	/* @keyframes resultatContainerSlide {
+		from {
+			width: 2%;
+		}
+		to {
+			width: 70%;
+		}
+	} */
+	
+	.separateurContainerWidthAnim {
+		width: 2%;
+		animation: resultatContainerSlide 1s ease-in-out 0.1s normal forwards !important; 
+	}
+	@keyframes resultatContainerSlide {
+		from {
+			width: 2%;
+		}
+		to {
+			width: 65%;
+		}
 	}
 
 	#relancer {

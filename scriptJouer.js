@@ -1897,13 +1897,17 @@
 
         function addCardCroupierRecursiveAfterBurst() {
 
-          setTimeout(function() {
-            document.getElementById("backCardCroupier").classList.add("fadeOut2");
-          }, 750 * setTimeOutMultiplier)
+          if (document.getElementById("backCardCroupier") !== null) {
+            setTimeout(function() {
+              document.getElementById("backCardCroupier").classList.add("fadeOut2");
+            }, 750 * setTimeOutMultiplier)
+          }
   
-          setTimeout(function() {
-            document.getElementById("backCardCroupier").remove();
-          }, 1200 * setTimeOutMultiplier)
+          if (document.getElementById("backCardCroupier") !== null) {
+            setTimeout(function() {
+              document.getElementById("backCardCroupier").remove();
+            }, 1200 * setTimeOutMultiplier)
+          }
           
           if (scoreTotalCroupier < 17) {
             setTimeout(function() {
@@ -1915,6 +1919,7 @@
             // resultats
             if ((scoreTotalCroupier > 16) && (scoreTotalCroupier < 22)) {
               setTimeout(function() {
+                // alert("à retirer?");
                 document.getElementById("scoreCroupier").style.color = "rgba(255,245,0,1)";
                 document.getElementById("scoreCroupier").style.textShadow = "1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, -1px -1px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, -1px 0px 0 #000000, 0px -1px 0 #000000";
                 document.getElementById("scoreCroupier").style.border = "3px solid rgba(58,157,32, 1)";
@@ -1922,6 +1927,7 @@
             }
             else if (scoreTotalCroupier > 21) {
               setTimeout(function() {
+                // alert("à retirer?");
                 document.getElementById("scoreCroupier").style.backgroundColor = "rgb(160 13 27)"
                 document.getElementById("scoreCroupier").style.color = "rgba(239,230,230, 1)"
                 document.getElementById("scoreCroupier").style.textShadow = "1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, -1px -1px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, -1px 0px 0 #000000, 0px -1px 0 #000000";
@@ -2009,6 +2015,8 @@
             setTimeout(function() {
               if (scoreTotalCroupier > scoreTotalJoueur && scoreTotalCroupier < 22) {
 
+                alert("test3");
+
                 WinLose = 'LOSE';
                 resultatCas = 'Wasted';
 
@@ -2081,6 +2089,7 @@
                       // audioExplosionBust.play();
 
                       // Animation scale() qui pop avec fadeIn()
+                      document.getElementById("separateur").classList.add("separateurContainerWidthAnim");
                       document.getElementById("separateur").classList.add("fadeInResultat");
                       document.getElementById("separateur").classList.add("scaleBoom");
                       // document.getElementById("separateur").classList.add("marginFix");
@@ -2101,6 +2110,8 @@
 
 
               if (scoreTotalCroupier > 21) {
+
+                alert("test4");
 
                 WinLose = 'WIN';
                 resultatCas = 'Big Win';
@@ -2190,6 +2201,7 @@
                         // audioCoinWin.play();
 
                         // Animation scale() qui pop avec fadeIn()
+                        document.getElementById("separateur").classList.add("separateurContainerWidthAnim");
                         document.getElementById("separateur").classList.add("fadeInResultat");
                         document.getElementById("separateur").classList.add("scaleBoom");
                         // document.getElementById("separateur").classList.add("marginFix");
@@ -2209,6 +2221,8 @@
               }
 
               if (scoreTotalJoueur > scoreTotalCroupier) {
+
+                alert("test5");
 
                 WinLose = 'WIN';
                 resultatCas = 'Big Win';
@@ -2283,6 +2297,7 @@
                         // audioCoinWin.play();
 
                         // Animation scale() qui pop avec fadeIn()
+                        document.getElementById("separateur").classList.add("separateurContainerWidthAnim");
                         document.getElementById("separateur").classList.add("fadeInResultat");
                         document.getElementById("separateur").classList.add("scaleBoom");
                         // document.getElementById("separateur").classList.add("marginFix");
@@ -2304,6 +2319,8 @@
 
 
               if (scoreTotalJoueur == scoreTotalCroupier) {
+
+                alert("test6");
 
                 WinLose = 'PUSH';
                 resultatCas = 'Push';
@@ -2986,6 +3003,8 @@
       function checkBurstJoueur() {
         if (scoreTotalJoueur > 21) {
 
+          alert("test7");
+
           // Var pour array historiquePhp
           WinLose = 'LOSE';
           resultatCas = 'Bust';
@@ -3015,7 +3034,6 @@
                     // fin
 
                     // Résultat Gains 
-                    
                     if ( isConnected == true) {
                       document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBarre.png" class="imagesSouResultat">';
                     }
@@ -3036,19 +3054,14 @@
 
                       }, 500)
                     //
-
-                    
-                      
                     // Fin résultat Gains
 
                   // FIN WIP
                   
-
                   document.getElementById("deckContainer").remove();
                   document.getElementById("cardAnim").remove();
                   document.getElementById("parametresPartieDiv").remove();
                   // document.getElementById("deckContainer").classList.add("fadeOut");
-
 
                   //*** Perdu BURST 
                   document.getElementById("scoreJoueur").style.backgroundColor = "rgb(160 13 27)"
@@ -3060,23 +3073,25 @@
                   
                   // Séparateur
                   setTimeout(function() {
-                    //Apparition
-                    document.getElementById("resultatText").classList.add("resultatTextBust");
-                    document.getElementById("separateur").classList.add("styleSeparateurBust");
-  
 
                     if (SoundMuteBool == false) {
                       audioExplosionBust.play();
                     }
-                    // TEST audio coupé et non audio = 0;
-                    // audioExplosionBust.play();
+
+                    //Apparition
+                    document.getElementById("resultatText").classList.add("resultatTextBust");
+                    if (darkModeBool == true) {
+                      document.getElementById("separateur").classList.add("styleSeparateurBustDM");
+                    }
+                    else {
+                      document.getElementById("separateur").classList.add("styleSeparateurBust");
+                    }
   
                     // Animation scale() qui pop avec fadeIn()
+                    document.getElementById("separateur").classList.add("separateurContainerWidthAnim");
                     document.getElementById("separateur").classList.add("fadeInResultat");
                     document.getElementById("separateur").classList.add("scaleBoom");
-                    // document.getElementById("separateur").classList.add("marginFix");
                   
-                    // TEXT
                     document.getElementById("resultatText").innerText = "BUST";
                   }, 250);
                   // Fin séparateur
@@ -3113,6 +3128,8 @@
       function check21noBJ() {
         if ((scoreTotalJoueur == 21) && (nbrCardsJoueur > 2)) {
 
+          alert("test8");
+
           // Pourquoi j'ai eu le moyen de choisir pendant le lancerPhaseCroupier() qui devrait load footerDistribution?
           lancerPhaseCroupier(); 
 
@@ -3129,6 +3146,8 @@
       function checkBJjoueur() {
 
         if ((scoreTotalJoueur + 10 == 21) && (nbrCardsJoueur == 2) && (asJoueur == true)) {
+
+          alert("test9");
           console.log("nbrCardsJoueur: " + nbrCardsJoueur + "&nbscp; |true BLACKJACK|");
 
           WinLose = 'BJ';
@@ -3220,6 +3239,7 @@
                   // audioCoinWin.play();
 
                   // Animation scale() qui pop avec fadeIn()
+                  document.getElementById("separateur").classList.add("separateurContainerWidthAnim");
                   document.getElementById("separateur").classList.add("fadeInResultat");
                   document.getElementById("separateur").classList.add("scaleBoom");
                   // document.getElementById("separateur").classList.add("marginFix");
