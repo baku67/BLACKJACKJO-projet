@@ -2404,6 +2404,8 @@
                       //Apparition
                       document.getElementById("resultatText").classList.add("resultatTextPush");
                       document.getElementById("separateur").classList.add("styleSeparateurPush");
+                      document.getElementById("separateur").classList.add("separateurContainerWidthAnim");
+                      
 
                       if (SoundMuteBool == false) {
                         audioPush.play();

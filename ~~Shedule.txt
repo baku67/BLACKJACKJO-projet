@@ -1,6 +1,9 @@
 var globale js streak: augmentée de 1 lors win/bj, reinit à 0 lors wasted/burst ; requeteSQL a chaque modif (un seul php et on envoi la varBool) ;
 pas oublier le getStreak userk
 
+Reste les anims du seprateur push 
+
+
 Nouvelle partie: onclick height du sperateur anim vers 0 (centré verticalement si possible) puis anim width vers 0 (Anim en 2 temps comme séparateurRésulat)
 Ptit  detail de mard: augmenter l'épaisseur puis la redescendre au normal des border bottom/top du footer/header au moment du smooth border-radius
 

@@ -1944,8 +1944,8 @@ figure:active {
 	background-attachment: scroll;
 	background-position-x: 40%;
 	background-position-y: 38%;
-	border-top: 2px solid rgba(68, 64, 120, 0.3);
-	border-bottom: 2px solid rgba(68, 64, 120, 0.3);
+	/* border-top: 2px solid rgba(68, 64, 120, 0.3);
+	border-bottom: 2px solid rgba(68, 64, 120, 0.3); */
 	border-radius: 6px;
 }
 /* Grandient(double) Push ? */
