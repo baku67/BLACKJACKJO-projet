@@ -796,6 +796,9 @@
       // JQUERY JAX : load Partie
       $("#newGame").click(function(){
 
+          // document.getElementById("footer").classList.add("footerHeightAnim");
+
+
           $("#container1").load("jouerPartie.php");
           
           console.log("darkModeBool NewGame: " + darkModeBool);
@@ -803,9 +806,9 @@
           setTimeout( function lancerPartie() {
 
 
-              document.getElementById("header").classList.add('headerOnPartie');
+              // document.getElementById("header").classList.add('headerOnPartie');
 
-              document.getElementById("footer").classList.add('footerOnPartie');
+              // document.getElementById("footer").classList.add('footerOnPartie');
 
               // Faire de meme avec titleOnPartie (pour finir bleu sur le fond orange si dark mode)
 
@@ -1116,6 +1119,7 @@
 
 
 
+              // document.getElementById("footer").classList.add("footerHeightAnim");
 
 
 
@@ -1125,6 +1129,11 @@
                 dataType: "html",
                 success: function(response) {
                   $("#container3").html(response);
+
+                  document.getElementById("header").classList.add('headerOnPartie');
+
+                  document.getElementById("footer").classList.add('footerOnPartie');
+
                   ChoixActif = false;
                   // document.getElementById("collapsible").style.visibility = "visible";
 
@@ -1919,7 +1928,6 @@
             // resultats
             if ((scoreTotalCroupier > 16) && (scoreTotalCroupier < 22)) {
               setTimeout(function() {
-                // alert("à retirer?");
                 document.getElementById("scoreCroupier").style.color = "rgba(255,245,0,1)";
                 document.getElementById("scoreCroupier").style.textShadow = "1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, -1px -1px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, -1px 0px 0 #000000, 0px -1px 0 #000000";
                 document.getElementById("scoreCroupier").style.border = "3px solid rgba(58,157,32, 1)";
@@ -1927,7 +1935,6 @@
             }
             else if (scoreTotalCroupier > 21) {
               setTimeout(function() {
-                // alert("à retirer?");
                 document.getElementById("scoreCroupier").style.backgroundColor = "rgb(160 13 27)"
                 document.getElementById("scoreCroupier").style.color = "rgba(239,230,230, 1)"
                 document.getElementById("scoreCroupier").style.textShadow = "1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, -1px -1px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, -1px 0px 0 #000000, 0px -1px 0 #000000";
@@ -1943,13 +1950,16 @@
                 // Disparition boutton onClick
                 document.getElementById("relancer").addEventListener("click", function() {
                     document.getElementById("reloadPng").classList.add('rotateReloadPng');
-                  setTimeout( function() { 
-                    document.getElementById("relancer").style.visibility = "hidden";
-                  }, 1500);
+                  
+                    setTimeout( function() { 
+                      if (document.getElementById("relancer") !== null) {
+                        document.getElementById("relancer").style.visibility = "hidden";
+                      }
+                    }, 1500)
                 })
               }, 500)
           }
-        };
+        }
 
         
       }
@@ -2015,8 +2025,6 @@
             setTimeout(function() {
               if (scoreTotalCroupier > scoreTotalJoueur && scoreTotalCroupier < 22) {
 
-                alert("test3");
-
                 WinLose = 'LOSE';
                 resultatCas = 'Wasted';
 
@@ -2062,7 +2070,6 @@
                     document.getElementById("parametresPartieDiv").remove();
 
 
-                    
                     // document.getElementById("scoreCroupier").style.backgroundColor = "rgba(59,217,10,1)";
                     document.getElementById("scoreJoueur").style.backgroundColor = "rgb(160 13 27)";
 
@@ -2076,17 +2083,30 @@
                     document.getElementById("scoreJoueur").style.border = "1px solid rgba(255,1,49,0.5)";                  
                     // Fin Perdu
 
+
+
+
+
                     // Séparateur
                     setTimeout(function() {
                       //Apparition
+                      // document.getElementById("resultatText").classList.add("resultatTextLose");
                       document.getElementById("resultatText").classList.add("resultatTextLose");
                       document.getElementById("separateur").classList.add("styleSeparateurLose");
+
+                      if (darkModeBool == true) {
+                        document.getElementById("resultatText").classList.add("resultatTextWastedDM");
+                        document.getElementById("separateur").classList.add("styleSeparateurWastedDM");
+                      }
+                      else {
+                        document.getElementById("separateur").classList.add(".styleSeparateurLose");
+                      }
 
                       if (SoundMuteBool == false) {
                         audioExplosionBust.play();
                       }
-                      // TEST audio coupé et non audio = 0 
-                      // audioExplosionBust.play();
+
+
 
                       // Animation scale() qui pop avec fadeIn()
                       document.getElementById("separateur").classList.add("separateurContainerWidthAnim");
@@ -2110,8 +2130,6 @@
 
 
               if (scoreTotalCroupier > 21) {
-
-                alert("test4");
 
                 WinLose = 'WIN';
                 resultatCas = 'Big Win';
@@ -2193,6 +2211,7 @@
                         document.getElementById("resultatText").classList.add("resultatTextWin");
                         document.getElementById("separateur").classList.add("styleSeparateurWin");
 
+
                         
                         if (SoundMuteBool == false) {
                           audioCoinWin.play();
@@ -2205,6 +2224,11 @@
                         document.getElementById("separateur").classList.add("fadeInResultat");
                         document.getElementById("separateur").classList.add("scaleBoom");
                         // document.getElementById("separateur").classList.add("marginFix");
+
+
+
+
+
 
                         // TEXT
                         document.getElementById("resultatText").innerText = "BIG WIN";
@@ -2221,8 +2245,6 @@
               }
 
               if (scoreTotalJoueur > scoreTotalCroupier) {
-
-                alert("test5");
 
                 WinLose = 'WIN';
                 resultatCas = 'Big Win';
@@ -2319,8 +2341,6 @@
 
 
               if (scoreTotalJoueur == scoreTotalCroupier) {
-
-                alert("test6");
 
                 WinLose = 'PUSH';
                 resultatCas = 'Push';
@@ -3003,8 +3023,6 @@
       function checkBurstJoueur() {
         if (scoreTotalJoueur > 21) {
 
-          alert("test7");
-
           // Var pour array historiquePhp
           WinLose = 'LOSE';
           resultatCas = 'Bust';
@@ -3081,6 +3099,7 @@
                     //Apparition
                     document.getElementById("resultatText").classList.add("resultatTextBust");
                     if (darkModeBool == true) {
+                      document.getElementById("resultatText").classList.add("resultatTextBustDM");
                       document.getElementById("separateur").classList.add("styleSeparateurBustDM");
                     }
                     else {
@@ -3128,8 +3147,6 @@
       function check21noBJ() {
         if ((scoreTotalJoueur == 21) && (nbrCardsJoueur > 2)) {
 
-          alert("test8");
-
           // Pourquoi j'ai eu le moyen de choisir pendant le lancerPhaseCroupier() qui devrait load footerDistribution?
           lancerPhaseCroupier(); 
 
@@ -3147,7 +3164,6 @@
 
         if ((scoreTotalJoueur + 10 == 21) && (nbrCardsJoueur == 2) && (asJoueur == true)) {
 
-          alert("test9");
           console.log("nbrCardsJoueur: " + nbrCardsJoueur + "&nbscp; |true BLACKJACK|");
 
           WinLose = 'BJ';

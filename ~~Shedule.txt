@@ -1,7 +1,17 @@
+var globale js streak: augmentée de 1 lors win/bj, reinit à 0 lors wasted/burst ; requeteSQL a chaque modif (un seul php et on envoi la varBool) ;
+pas oublier le getStreak userk
+
+Nouvelle partie: onclick height du sperateur anim vers 0 (centré verticalement si possible) puis anim width vers 0 (Anim en 2 temps comme séparateurRésulat)
+Ptit  detail de mard: augmenter l'épaisseur puis la redescendre au normal des border bottom/top du footer/header au moment du smooth border-radius
+
+FAIRE UNE RECHERCHE: lors de l'ajout d'une card à une liste (croupier/joueur): mettre une anim de deplacement de coté des cards deja presentes
+
 Resultat FX: slide souligne et texte gauche/droite vers centre (GRAS, TYPO) + Flash final (garde container mais FadeIn ?)
 Separateur resultat: https://codepen.io/hakimel/pen/bzrZGo (synchro avec anim text)
 OU textResult gauche et droite opacité 0.5 vers le centre (superposé?) en opa 1 et flash
 OU c:\Users\basil\OneDrive\Documents\ShareX\Screenshots\2022-08\MiE50mhJVe.png
+
+REDUIRE la height du resultat container (animation forwards) et adapter le text center et le vertical align du container 
 
 REVOIR BackGround RESULTAT containers (et ducoup adapter: mettre un if DM => addClass CSS)
 -> DM:
@@ -16,6 +26,7 @@ Win? https://codepen.io/markmead/pen/rNOqRNw
 Pour animation flickering Neon: mettre en amont un if DM activated etc ... (pour pas mess up avec le light mode)
 DAILLEURS FAIRE PAREIL POUR LE GRADIENT PEUT ETRE
 
+Rotation (en forme éventail) de chaque lettre titre BlackJackJo (faible)
 
 Fix le "Distribution..." pas DM (il pop/load apres donc var CSS hs ?)
 

@@ -65,7 +65,7 @@
 
 
 	#newGame:hover {
-		font-size: 0.7em !important;
+		font-size: 0.9em !important;
 	}
 
 	body {
@@ -367,7 +367,7 @@
 	
 	#separateur {
 		/* Modification width pour anim a faire avec un addClass (et propriété width !important?) */
-		height: 115px;
+		/* height: 115px; */
 		/* width: 70%; */
 
 		position: absolute;
@@ -388,12 +388,22 @@
 	} */
 	
 	.separateurContainerWidthAnim {
-		width: 2%;
-		animation: resultatContainerSlide 1s ease-in-out 0.1s normal forwards !important; 
+		height: 0px;
+		width: 0.5%;
+		animation: resultatContainerSlide1 0.4s ease-in-out 0.1s normal forwards, 
+			resultatContainerSlide2 0.5s ease-in-out 0.5s normal forwards !important; 
 	}
-	@keyframes resultatContainerSlide {
+	@keyframes resultatContainerSlide1 {
 		from {
-			width: 2%;
+			height: 0px;
+		}
+		to {
+			height: 115px;
+		}
+	}
+	@keyframes resultatContainerSlide2 {
+		from {
+			width: 0.5%;
 		}
 		to {
 			width: 65%;

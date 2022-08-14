@@ -409,7 +409,7 @@ button, input[type="submit"], input[type="reset"] {
 	position: relative; 
 	left: 100%;
 
-	animation: titleSlide 0.8s ease-in-out 1 !important;
+	animation: titleSlide 1.05s ease-in-out 1 !important;
 	animation-fill-mode: forwards !important;
 
 	text-align: center;
@@ -437,7 +437,7 @@ button, input[type="submit"], input[type="reset"] {
 	position: relative;
 	right: 100%;
 
-	animation: traitTitleSlide 0.6s 0.2s ease-in-out 1 !important;
+	animation: traitTitleSlide 1.05s ease-in-out 1 !important;
 	animation-fill-mode: forwards !important;
 
 	/* height: 2px !important; */
@@ -494,15 +494,27 @@ button, input[type="submit"], input[type="reset"] {
 	/* background-image: linear-gradient(-45deg, rgba(104,3,42,1) 0%, rgba(146,14,91,1) 33%, rgba(13,88,94,1) 67%, rgba(26,32,57,1) 100%) !important; */
 	background-size: 400% 400%;
 
-	border-bottom-left-radius:10%;
-    border-bottom-right-radius:10%;
+	border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
 	/* border-radius: 0 0 50% 50% / 50px; */
 
-	animation: gradientAnimPartie 15s ease 1 !important;
+	animation: headerOnPartieBorderRadius 0.6s ease 1, 
+				gradientAnimPartie 15s ease 1 !important;
 	animation-fill-mode: forwards !important;
 	/* animation: test 6s ease-in-out 1; 
 	animation-fill-mode: forwards; */
 }
+@keyframes headerOnPartieBorderRadius {
+	from {
+		border-bottom-left-radius: 0%;
+		border-bottom-right-radius: 0%;
+	}
+	to {
+		border-bottom-left-radius: 10%;
+		border-bottom-right-radius: 10%;
+	}
+}
+
 .footerOnPartie {
 	/* background-image: linear-gradient(-45deg, rgba(104,3,42,1) 0%, rgba(146,14,42,1) 33%, rgba(13,88,94,1) 67%, rgba(26,32,57,1) 100%) !important; */
 	background-image: var(--header-background);
@@ -513,10 +525,32 @@ button, input[type="submit"], input[type="reset"] {
 
 	/* border-top-left-radius:5% !important;
     border-top-right-radius:5% !important; */
-	border-radius: 50% 50% 0 0 / 20px !important;
+	border-radius: 0% 0% 0 0 / 0px;
 
-	animation: gradientAnimPartie 15s ease 1 !important;
+	animation: footerOnPartieBorderRadius 0.6s ease running forwards,
+				footerHeightAnim 0.8s ease-in-out 1,
+				gradientAnimPartie 15s ease 1 !important;
+
 	animation-fill-mode: forwards !important;
+}
+@keyframes footerOnPartieBorderRadius {
+	from {
+		/* mettre l'anim de border qui grossit ici (sans retour normal? reste un peu plus gros?)  ease-out? */
+		border-radius: 0% 0% 0 0 / 0px;
+	}
+	to {
+		border-radius: 50% 50% 0 0 / 20px;
+	}
+}
+@keyframes footerHeightAnim {
+	from {
+		opacity: 0;
+		height: 50px;
+	}
+	to {
+		opacity: 1;
+		height: 205px;
+	}
 }
 @keyframes gradientAnimPartie {
 	0% {
@@ -529,11 +563,13 @@ button, input[type="submit"], input[type="reset"] {
 
 
 .headerOnPartie2 {
-	animation: gradientAnimPartie2 2s ease 1 !important;
+	animation: gradientAnimPartie2 2s ease 1,
+				headerOnPartieBorderRadius 0.6s ease 1 !important;
 	animation-fill-mode: forwards !important;
 }
 .footerOnPartie2 {
-	animation: gradientAnimPartie2 2s ease 1 !important;
+	animation: gradientAnimPartie2 2s ease 1,
+				footerOnPartieBorderRadius 0.6s ease running forwards !important;
 	animation-fill-mode: forwards !important;
 }
 @keyframes gradientAnimPartie2 {
@@ -562,6 +598,59 @@ button, input[type="submit"], input[type="reset"] {
 		background-position: 0% 50%;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #onglets {
@@ -1008,15 +1097,15 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	padding: 30px 60px;
 	/* border: 8px solid rgba(34, 10, 141, 0.08); */
 	border: 3px solid rgba(223, 204, 204, 0.6);
-	border-radius: 10px;
+	border-radius: 5px;
 	transition: all 0.3s;
 }
 #newGame:hover {
 	border: 4px solid rgba(34, 10, 141, 0.6);
 
 	/* padding: 0px 1000px; */
-	padding: 25px 49px; 
-	font-size: 1.2em !important;
+	padding: 28px 55px; 
+	font-size: 1.3em !important;
 }
 
 
@@ -1562,34 +1651,35 @@ figure:active {
 
 #separateur {
 	/* Modification width pour anim a faire avec un addClass (et propriété width !important?) */
-	height: 135px;
+	/* height: 135px; */
 	/* width: 25%; */
-	text-align: center; 
 
+	text-align: center; 
 	margin: 0 auto;
-	
+
 	position: absolute;
 	top: 48%;
     left: 0;
     right: 0;
-
-	/* width: 5px;
-	animation: resultatContainerSlide 1.3s ease-in-out 0.3s normal forwards; */
 }
-/* @keyframes resultatContainerSlide {
-	from {
-		width: 2%;
-	}
-	to {
-		width: 25%;
-	}
-} */
 
 .separateurContainerWidthAnim {
+	height: 0px;
 	width: 2%;
-	animation: resultatContainerSlide 1s ease-in-out 0.1s normal forwards !important; 
+	/* box-shadow: 0px 0px 40px 20px rgb(163, 1, 0.7); */
+	animation: resultatContainerSlide1 0.4s ease-in-out 0.1s normal forwards, 
+		resultatContainerSlide2 0.5s ease-in-out 0.5s normal forwards !important; 
 }
-@keyframes resultatContainerSlide {
+@keyframes resultatContainerSlide1 {
+	from {
+
+		height: 0px;
+	}
+	to {
+		height: 135px;
+	}
+}
+@keyframes resultatContainerSlide2 {
 	from {
 		width: 2%;
 	}
@@ -1598,22 +1688,19 @@ figure:active {
 	}
 }
 
+
+
 .resultatTextWin {
 	font-family: 'Alfa Slab One', cursive;
 	color: rgb(225 187 50);
     font-size: 3.5em;
+	opacity: 0;
     letter-spacing: 2px;
     position: relative;
     top: 22%;
 	left: 0%;
 
-
-    /* text-shadow: 0px 0px 5px rgb(0 0 0); */
-    /* text-shadow:0 -1px 4px #ff00f2de, 0 -2px 10px rgb(126 111 127), 0 -10px 20px #e4ff02, 0 -18px 40px #f2ff00, 2px 2px 4px rgb(206 89 55 / 0%); */
-
-	-webkit-animation: glowWin 1s ease-in-out infinite alternate;
-	-moz-animation: glowWin 1s ease-in-out infinite alternate;
-	animation: glowWin 1s ease-in-out infinite alternate;
+	animation: glowWin 1s ease-in-out infinite alternate, animResult 0.5s ease-out 0.8s normal forwards;
 }
 @keyframes glowWin {
 	from {
@@ -1628,10 +1715,14 @@ figure:active {
 	color: rgb(255 229 126);
     font-size: 3.5em;
     letter-spacing: 2px;
+	opacity: 0;
     position: relative;
     top: 22%;
 	left: 0%;
 	text-shadow: -3px 3px 0px #e600dd, -6px 6px 0px #01cccc, -9px 9px 0px #bd0000;
+
+	animation: animResult 0.5s ease-out 0.8s normal forwards, animResult 0.5s ease-out 0.8s normal forwards;
+	/* css aniamtion chiadée: https://codepen.io/faria09/pen/vYGZVgW ,  */
 }
 .resultatTextLose {
 	font-family: 'Alfa Slab One', cursive;
@@ -1639,6 +1730,7 @@ figure:active {
 	 	/* Text Shadow blanc? */
 	font-size: 3.5em;
 	letter-spacing: 2px;
+	opacity: 0;
 
 	/* Dégueulasse mais OK */
 	position: relative;
@@ -1648,7 +1740,7 @@ figure:active {
 
 	-webkit-animation: glowLose 1.5s ease-in-out infinite alternate;
 	-moz-animation: glowLose 1.5s ease-in-out infinite alternate;
-	animation: glowLose 1.5s ease-in-out infinite alternate;
+	animation: glowLose 1.5s ease-in-out infinite alternate, animResult 0.5s ease-out 0.8s normal forwards;
 }
 @keyframes glowLose {
 	from {
@@ -1658,6 +1750,10 @@ figure:active {
 	  text-shadow: 0 0 20px rgb(255, 129, 129), 0 0 30px #fd3b3b, 0 0 40px #fd3b3b, 0 0 50px #fd3b3b, 0 0 60px #fd3b3b, 0 0 70px #fd3b3b, 0 0 80px #fd3b3b;
 	}
   }
+
+
+
+
 .resultatTextBust {
 	font-family: 'Alfa Slab One', cursive;
 	color:rgb(223, 204, 204);
@@ -1676,14 +1772,21 @@ figure:active {
 
 	-webkit-animation: glowBust 1s ease-in-out infinite alternate;
 	-moz-animation: glowBust 1s ease-in-out infinite alternate;
-	animation: glowBust 1s ease-in-out infinite alternate, animResult 0.7s ease-out 0.8s normal forwards;
+	/* animation: glowBust 1s ease-in-out infinite alternate, animResult 0.7s ease-out 0.8s normal forwards; */
+	animation: glowBust 1s ease-in-out infinite alternate, animResult 0.5s ease-out 0.8s normal forwards;
+}
+.resultatTextBustDM {
+	color: rgb(97 0 0) !important;
+}
+.resultatTextWastedDM {
+	color: rgb(238 226 226 / 90%) !important;
 }
 @keyframes glowBust {
 	from {
-	  text-shadow: 0 0 10px rgb(255, 171, 171), 0 0 20px rgb(255, 171, 171), 0 0 30px #e60000, 0 0 40px #e60000, 0 0 50px #e60000, 0 0 60px #e60000, 0 0 70px #e60000;
+		text-shadow: 0 0 10px rgb(255 0 0), 0 0 20px rgb(195 13 13), 0 0 30px #e60000, 0 0 40px #e60000, 0 0 50px #e60000, 0 0 60px #e60000, 0 0 70px #e60000
 	}
 	to {
-	  text-shadow: 0 0 20px rgb(255, 129, 129), 0 0 30px #fd3b3b, 0 0 40px #fd3b3b, 0 0 50px #fd3b3b, 0 0 60px #fd3b3b, 0 0 70px #fd3b3b, 0 0 80px #fd3b3b;
+	  text-shadow: 0 0 20px rgb(247 242 242), 0 0 30px #fd3b3b, 0 0 40px #fd3b3b, 0 0 50px #fd3b3b, 0 0 60px #fd3b3b, 0 0 70px #fd3b3b, 0 0 80px #fd3b3b
 	}
 }
 @keyframes animResult {
@@ -1754,9 +1857,29 @@ figure:active {
 }
 
 
-
+/* Adapter l'animation color !initiale! background du resultatContainer au resultat */
 .styleSeparateurBustDM {
+	/* background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%);
+	animation: separateurColorInitBust 0.7s 1s ease forwards !important; */
+	box-shadow: 0px 0px 40px 20px rgb(163, 1, 0.7) !important;
 	background: radial-gradient(circle, rgba(219,226,0,1) 0%, rgba(208,1,1,1) 100%) !important;
+}
+/* @keyframes separateurColorInitBust {
+	from {
+		background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%);
+	}
+	to {
+		background: radial-gradient(circle, rgba(219,226,0,1) 0%, rgba(208,1,1,1) 100%);
+	}
+} */
+
+.styleSeparateurWastedDM {
+	box-shadow: 0px 0px 55px 13px rgb(211 0 0) !important;
+	background: radial-gradient(circle, rgba(204,0,0,1) 0%, rgba(0,96,95,1) 100%) !important;
+}
+
+.styleSeparateurWinDM {
+
 }
 
 .styleSeparateurBust {
@@ -1771,8 +1894,6 @@ figure:active {
 	background-position-y: 50%;
 	border-top: 1px solid rgba(130,14,39, 0.30);
 	border-bottom: 1px solid rgba(130,14,39, 0.30);
-	/* border-right: 8px solid rgba(130,14,39, 0.80);
-	border-left: 9px solid rgba(130,14,39, 0.80); */
 	border-radius: 6px;
 }
 
@@ -1786,29 +1907,24 @@ figure:active {
 	background-attachment: scroll;
 	background-position-x: 50%;
 	background-position-y: 50%;
-	border-top: 1px solid rgba(130,14,39, 0.30);
-	border-bottom: 1px solid rgba(130,14,39, 0.30);
-	/* border-right: 8px solid rgba(130,14,39, 0.80);
-	border-left: 9px solid rgba(130,14,39, 0.80); */
 	border-radius: 6px;
 }
 
 .styleSeparateurWin {
+	box-shadow: 0px 0px 45px 17px rgb(221, 183, 12) !important;
+
 	box-sizing: border-box;
 	overflow: hidden;
 	background-image: url(""), linear-gradient(-45deg, rgba(36,85,87,1) 48%, rgba(115,9,50,1) 48%, rgba(36,85,87,1) 50%, rgba(115,9,50,1) 51%);
-	/* background-image: url("Images/cash2.png"), linear-gradient(166deg, rgba(0,0,0,1) 0%, rgba(0,187,255,1) 99%); */
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position-x: 40%;
 	background-position-y: 38%;
-	border-top: 1px solid rgba(130,14,39, 0.10);
-	border-bottom: 1px solid rgba(130,14,39, 0.20);
-	/* border-right: 8px solid rgba(130,14,39, 0.20);
-	border-left: 9px solid rgba(130,14,39, 0.20); */
 	border-radius: 6px;
 }
 .styleSeparateurBlackJack {
+	box-shadow: 0px 0px 45px 17px rgb(229, 3, 236) !important;
+
 	box-sizing: border-box;
 	overflow: hidden;
 	background-image: url("Images/cashBJ.png"), linear-gradient(127deg, rgba(181,161,17,1) 1%, rgba(252,107,0,1) 32%, rgba(186,25,167,1) 76%, rgba(85,8,168,1) 99%);
@@ -1816,13 +1932,11 @@ figure:active {
 	background-attachment: scroll;
 	background-position-x: 40%;
 	background-position-y: 38%;
-	/* border-top: 1px solid rgba(130,14,39, 0.10);
-	border-bottom: 1px solid rgba(130,14,39, 0.20); */
-	/* border-top: 3px solid rgb(255 194 0);
-	border-bottom: 3px solid rgb(255 203 0); */
 	border-radius: 6px;
 }
 .styleSeparateurPush {
+	box-shadow: 0px 0px 55px 13px rgba(164, 167, 0, 0.4) !important;
+
 	box-sizing: border-box;
 	overflow: hidden;
 	background-image: url(""), linear-gradient(144deg, rgb(253 128 128) 0%, rgb(247 254 91) 100%);
@@ -1832,8 +1946,6 @@ figure:active {
 	background-position-y: 38%;
 	border-top: 2px solid rgba(68, 64, 120, 0.3);
 	border-bottom: 2px solid rgba(68, 64, 120, 0.3);
-	/* border-right: 8px solid rgba(130,14,39, 0.20);
-	border-left: 9px solid rgba(130,14,39, 0.20); */
 	border-radius: 6px;
 }
 /* Grandient(double) Push ? */
@@ -1873,7 +1985,6 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#33686c",endCo
 	padding:0.6em 1em 0.7em 0;
 }
 
-
 #collapseContent {
 	padding-bottom: 0.8em;
 }
@@ -1884,7 +1995,6 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#33686c",endCo
     left: 50%;
 }
 
-
 #barre {
 	font-size: 1.2em;
 }
@@ -1893,7 +2003,6 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#33686c",endCo
 	letter-spacing: 3px;
 	font-family: 'Bellota',cursive;
 }
-
 
 #footer {
 	box-sizing: border-box;
@@ -1912,7 +2021,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#33686c",endCo
     letter-spacing: 1px;
 
 	/* border-top: 1px solid rgba(230, 211, 211, 0.6); */
-	border-top: 1px solid var(--footerBorderTop-Color);
+	border-top: 4px solid var(--footerBorderTop-Color);
 
 	/* background: -moz-linear-gradient(56deg, rgba(130,14,80,1) 0%, rgba(135,0,20,1) 25%, rgba(172,3,26,1) 26%, rgba(121,0,6,1) 31%, rgba(196,53,53,1) 31%, rgba(130,14,39,1) 35%, rgba(33,55,144,1) 55%, rgba(23,31,73,1) 68%, rgba(156,14,14,1) 78%, rgba(209,16,16,1) 83%, rgba(85,9,9,1) 83%, rgba(194,31,31,1) 89%, rgba(64,43,43,1) 92%, rgba(120,6,6,1) 95%, rgba(18,5,5,1) 97%, rgba(122,0,0,1) 100%);
 	background: -webkit-linear-gradient(56deg, rgba(130,14,80,1) 0%, rgba(135,0,20,1) 25%, rgba(172,3,26,1) 26%, rgba(121,0,6,1) 31%, rgba(196,53,53,1) 31%, rgba(130,14,39,1) 35%, rgba(33,55,144,1) 55%, rgba(23,31,73,1) 68%, rgba(156,14,14,1) 78%, rgba(209,16,16,1) 83%, rgba(85,9,9,1) 83%, rgba(194,31,31,1) 89%, rgba(64,43,43,1) 92%, rgba(120,6,6,1) 95%, rgba(18,5,5,1) 97%, rgba(122,0,0,1) 100%);
@@ -1926,9 +2035,9 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#33686c",endCo
 	/*  FIN BACKUP */
 	background-size: 700% 700%; 
 
-	border-radius: 6px;
-	border-bottom-left-radius: 1px;
-	border-bottom-right-radius: 1px;
+	/* border-radius: 6px; */
+	/* border-bottom-left-radius: 1px;
+	border-bottom-right-radius: 1px; */
 
 	animation: gradientAnimHeader 3.5s ease-in-out 1; 
 	animation-fill-mode: forwards;
