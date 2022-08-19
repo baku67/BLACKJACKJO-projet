@@ -796,16 +796,24 @@
       // JQUERY JAX : load Partie
       $("#newGame").click(function(){
 
+          document.getElementById("newGameLink").classList.add("newGameLinkFadeOut");
+          // Disparition du textLink et adaptation du bouton avant les anims
+          setTimeout( function() {
+            document.getElementById("newGameLink").innerText = "";
+            // document.getElementById("newGame").
+          }, 100)
+          document.getElementById("newGame").classList.add("animBoutonPartie");
 
           // AVANT LE LOAD METTRE L'ANIM DU BOUTON EN 2 TEMPS (et ducoup setTimeOuter le load en fonction)
 
-
-          $("#container1").load("jouerPartie.php");
+          setTimeout( function delaiLoadPartie() {
+            $("#container1").load("jouerPartie.php");
           
+          
+
           console.log("darkModeBool NewGame: " + darkModeBool);
 
           setTimeout( function lancerPartie() {
-
 
               // document.getElementById("header").classList.add('headerOnPartie');
 
@@ -1186,6 +1194,8 @@
               miseLock();  
 
           }, 500)
+        }, 870)
+
       });
 
 

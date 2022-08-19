@@ -1011,6 +1011,14 @@ body {
 
 }
 
+
+
+
+
+
+
+
+
 #list {
 	position: relative;
 	bottom: 24px;
@@ -1101,6 +1109,8 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	padding: 30px 60px;
 	/* border: 8px solid rgba(34, 10, 141, 0.08); */
 	border: 3px solid rgba(223, 204, 204, 0.6);
+	box-shadow: 0 0 0px 0px #ef3b2e;
+
 	border-radius: 5px;
 	transition: all 0.3s;
 }
@@ -1111,6 +1121,49 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	padding: 28px 55px; 
 	font-size: 1.3em !important;
 }
+
+.newGameLinkFadeOut {
+	animation: animNewGameLinkText 0.1s ease-in-out forwards !important;
+}
+@keyframes animNewGameLinkText {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+.animBoutonPartie {
+	animation: animationBoutonPartie1 0.2s 0.1s ease-in-out forwards, animationBoutonPartie2 0.2s 0.4s ease-in-out forwards !important;
+}
+@keyframes animationBoutonPartie1 {
+	from{
+		padding: 30px 160px;
+		border: 3px solid rgba(223, 204, 204, 0.6);
+		box-shadow: 0 0 0px 0px #ef3b2e;
+	}
+	to {
+		padding: 0px 160px;
+		border: 0.5px solid rgb(224, 168, 164);
+		box-shadow: 0 0 2px 2px rgba(239, 59, 46, 0.6);
+	}
+}
+@keyframes animationBoutonPartie2 {
+	from{
+		border: 0.5px solid rgb(224, 168, 164);
+		padding: 0px 160px;
+		box-shadow: 0 0 2px 2px rgba(239, 59, 46, 0.6);
+	}
+	to {
+		border: 0px solid rgb(224, 168, 164);
+		padding: 0px 0px;
+		box-shadow: 0 0 0px 0px rgba(239, 59, 46, 0);
+	}
+}
+
+
+
 
 
 
