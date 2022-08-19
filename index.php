@@ -145,6 +145,8 @@
 		
 					</p>
 
+
+
 					<!-- Déconnexion -->
 					<p>
 						<a href="index.php?logout='1'" id="deconnexionLink" style="">
@@ -159,6 +161,24 @@
 
 			</div>
 			<!-- FIN BOUTONS -->
+
+
+
+
+
+
+
+			<!-- WIP jauge Streak -->
+			<!-- <div id="jaugeStreakBarre" style="position:relative; margin:auto; width:53%; height:2px; background-color:white; top:-10px;">
+			</div> -->
+			<!-- Fin WIP jauge -->
+
+
+
+
+
+
+
 
 
 			<!-- MODALS Connection/Inscription -->

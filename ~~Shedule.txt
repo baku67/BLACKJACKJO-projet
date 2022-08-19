@@ -1,6 +1,8 @@
 var globale js streak: augmentée de 1 lors win/bj, reinit à 0 lors wasted/burst ; requeteSQL a chaque modif (un seul php et on envoi la varBool) ;
 pas oublier le getStreak userk
 
+streak barre ou https://codepen.io/alvarotrigo/pen/VwMvydQ
+
 Reste les anims du seprateur push 
 
 

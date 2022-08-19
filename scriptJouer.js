@@ -796,7 +796,8 @@
       // JQUERY JAX : load Partie
       $("#newGame").click(function(){
 
-          // document.getElementById("footer").classList.add("footerHeightAnim");
+
+          // AVANT LE LOAD METTRE L'ANIM DU BOUTON EN 2 TEMPS (et ducoup setTimeOuter le load en fonction)
 
 
           $("#container1").load("jouerPartie.php");

@@ -972,6 +972,9 @@ h2 {
 html, body {
 	overflow: hidden;
 	height: 100%;
+/* 
+	width:360px;
+	height:740px; */
 }
 
 body {
@@ -986,6 +989,7 @@ body {
 
 	margin: 0px;
 	height: 100%;
+
 	
 	zoom: 0.53;
 	-ms-zoom: 0.53;
