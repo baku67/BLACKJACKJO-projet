@@ -807,7 +807,7 @@
           document.getElementById("classementDiv").classList.add("indexElemFadeOutOnNewGame");
 
 
-          
+
 
           setTimeout( function delaiLoadPartie() {
 

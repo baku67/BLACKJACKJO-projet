@@ -81,7 +81,7 @@
 				<div id="traitTitleSlide"></div>
 				<br/>
 				<div>
-					<ul id="onglets">
+					<ul id="onglets" class="indexFadeInOnglets1">
 						<li class="onglet"><button id="guide">Guide</button></li>
 						<li class="onglet" ><a href="index.php" id="jouer">JOUER !</a></li>
 						<li class="onglet"><button id="historique">Historique</button></li>
@@ -94,7 +94,7 @@
 			
 
 			<!-- BOUTONS Connection/Inscription -->
-			<div id="connectionContainer">
+			<div id="connectionContainer" class="indexFadeInConnexion2">
 
 				<!-- Bouton Connexion/Inscription (désactivé si connecté) -->
 				<?php  if (!isset($_SESSION['username'])) : ?>
@@ -254,7 +254,7 @@
 			
 			
 			
-			<div id="container1">
+			<div id="container1" class="indexFadeInCentre3">
 
 				<!-- Bouton "Nouvelle Partie" -->
 				<?php  

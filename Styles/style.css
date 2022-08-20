@@ -114,6 +114,54 @@
 
 
 
+.indexFadeInOnglets1 {
+	opacity: 0;
+	animation: indexFadeIn 0.2s 0.7s ease-out forwards;
+}
+.indexFadeInConnexion2 {
+	opacity: 0;
+	animation: indexFadeIn 0.2s 0.9s ease-out forwards;
+}
+.indexFadeInCentre3 {
+	opacity: 0;
+	animation: indexFadeIn 0.2s 1.1s ease-out forwards;
+}
+/* index anim à désactiver car lightMode Gradient Anim conflit? */
+/* .indexFadeInFooter4 {
+	opacity: 0;
+	animation: indexFadeIn 0.2s 1.3s ease-out forwards !important;
+} */
+@keyframes indexFadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #miseLocked {
@@ -396,13 +444,11 @@ button, input[type="submit"], input[type="reset"] {
 		background-position: 35% 15%;
 	}
 
-	/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-	/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-	/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-	/*  IDEE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+	/*  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 	/* SI il finit (càd 100%) à un endroit chouette du gradient, ça peut etre chouette  */
-	/*!!!!!!!!!!!!!!!!!!!!!!!!! Étapes du jeu (NewGame,MiseLock,Résultat) fait slidé le gradient !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-	/* pour résultat: possible de changer le gradient en fonction du résultat sans effet refresh? */
+	/*!!!!!!!!!!!!!!!!!!!!!!!!! Étapes du jeu (NewGame,MiseLock,Résultat) fait slidé le gradient !*/
+	/* pour résultat: possible de changer le gradient en fonction du résultat sans refresh? */
 }
 
 #title2 {
@@ -717,13 +763,13 @@ button, input[type="submit"], input[type="reset"] {
 }
 #jouer:hover{
 	transform: scale(1.2) !important;
-	text-decoration: underline rgb(223, 204, 204);
+	/* text-decoration: underline rgb(223, 204, 204); */
 }
 #guide:hover {
-	text-decoration: underline rgb(223, 204, 204);
+	/* text-decoration: underline rgb(223, 204, 204); */
 }
 #historique:hover {
-	text-decoration: underline rgb(223, 204, 204);
+	/* text-decoration: underline rgb(223, 204, 204); */
 }
 
 /* #guide:hover {
@@ -978,6 +1024,12 @@ html, body {
 }
 
 body {
+	-moz-user-select: none; 
+	-webkit-user-select: none; 
+	-ms-user-select:none; 
+	user-select:none;
+	-o-user-select:none;
+
 	background-image: var(--bg-url) !important;
 	background-color: var(--bg-color) !important;
 	background-position: center center;

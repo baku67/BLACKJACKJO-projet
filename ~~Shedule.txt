@@ -1,3 +1,5 @@
+index Onload elelment fadeIn gradués 1 par en 1 en aprtant par le haut
+
 Anim onLoad Index: Apres l'anim du titleSLide, faire slider les elements un par un en partant par ceux du haut, vers le haut à leur place normal (en cascade)
 
 
