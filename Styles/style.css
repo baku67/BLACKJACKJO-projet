@@ -1135,7 +1135,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 }
 
 .animBoutonPartie {
-	animation: animationBoutonPartie1 0.2s 0.1s ease-in-out forwards, animationBoutonPartie2 0.2s 0.4s ease-in-out forwards !important;
+	animation: animationBoutonPartie1 0.13s 0.15s ease-in-out forwards, animationBoutonPartie2 0.13s 0.45s ease-in-out forwards !important;
 }
 @keyframes animationBoutonPartie1 {
 	from{
@@ -1164,7 +1164,17 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 
 
 
-
+.indexElemFadeOutOnNewGame {
+	animation: fadeOutElemIndex 0.65s ease forwards;
+}
+@keyframes fadeOutElemIndex {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
 
 
 .module-border-wrap {

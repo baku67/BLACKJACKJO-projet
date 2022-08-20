@@ -1,3 +1,6 @@
+Anim onLoad Index: Apres l'anim du titleSLide, faire slider les elements un par un en partant par ceux du haut, vers le haut à leur place normal (en cascade)
+
+
 var globale js streak: augmentée de 1 lors win/bj, reinit à 0 lors wasted/burst ; requeteSQL a chaque modif (un seul php et on envoi la varBool) ;
 pas oublier le getStreak userk
 
