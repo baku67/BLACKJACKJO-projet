@@ -36,30 +36,32 @@ endif;
     <input type="range" min="20" max="200" value="50" step="10" class="slider" id="myRange">
 </div> -->
 <script>
-    var slider = document.getElementById("myRange");
-    var output = document.getElementById("demo");
-    output.innerHTML = slider.value;
-    slider.oninput = function() {
-        output.innerHTML = this.value;
-    }
+    // var slider = document.getElementById("myRange");
+    // var output = document.getElementById("demo");
+    // output.innerHTML = slider.value;
+    // slider.oninput = function() {
+    //     output.innerHTML = this.value;
+    // }
 
 
 
 
 
 
+    // Click Hide WinLose
 
-    var winLoseHided = false;
+        //C'est ce truc qui merde  
+    var getHideWinLoseBool = true;
 
     function hideWinLose() {
-        if (winLoseHided == true) {
-            winLoseHided = false;
+        if (getHideWinLoseBool == true) {
+            getHideWinLoseBool = false;
             document.getElementById("amountWin").style.opacity = "1";
             document.getElementById("amountLose").style.opacity = "1";
             document.getElementById("hideButton").innerHTML = "&nbsp;Hide&nbsp;";
 
             var winLoseHidedToPhp = {};
-            winLoseHidedToPhp.value = winLoseHided;
+            winLoseHidedToPhp.value = getHideWinLoseBool;
 
             if (isConnected == true) {
                   $.ajax({
@@ -73,13 +75,13 @@ endif;
             }
         }
         else {
-            winLoseHided = true;
+            getHideWinLoseBool = true;
             document.getElementById("amountWin").style.opacity = "0";
             document.getElementById("amountLose").style.opacity = "0";
             document.getElementById("hideButton").innerHTML = "&nbsp;Show&nbsp;";
 
             var winLoseHidedToPhp = {};
-            winLoseHidedToPhp.value = winLoseHided;
+            winLoseHidedToPhp.value = getHideWinLoseBool;
 
             if (isConnected == true) {
                   $.ajax({
@@ -93,6 +95,24 @@ endif;
             }
         }
     }
+    // Fin Click Hide WinLose
+
+
+
+    // State HideWinLose
+    var getHideWinLoseBool = <?php include('getHideWinLose.php');?>;
+
+    if (getHideWinLoseBool == 0) {
+        document.getElementById('hideButton').innerHTML = "&nbsp;Hide&nbsp;"
+        document.getElementById("amountWin").style.opacity = "1";
+        document.getElementById("amountLose").style.opacity = "1";
+    }
+    else {
+        document.getElementById('hideButton').innerHTML = "&nbsp;Show&nbsp;"
+        document.getElementById("amountWin").style.opacity = "0";
+        document.getElementById("amountLose").style.opacity = "0";
+    }
+    // Fin State
 
 </script>
 
@@ -143,7 +163,7 @@ endif;
                         </div>
 
                         <div id="hideButtonContainer" style="position:relative; left:7%; border:3px solid rgb(172 113 108 / 80%); border-radius:5px; padding:2px;">
-                            <button id="hideButton" onclick="hideWinLose()">&nbsp;Hide&nbsp;</button>
+                            <button id="hideButton" onclick="hideWinLose()"></button>
                         </div>  
                     </div>
                 </div>
