@@ -1631,8 +1631,14 @@
       function miseLock() {
         document.getElementById("boutonMiser").addEventListener("click", function() {
 
-          document.querySelector("#footer").classList.remove("miserActif2");  
+          // Marche po (anim boutonMiser onClick)
+            // setTimeout( function() {
+            //   document.getElementById("boutonMiser").innerText = "";
+            // }, 100)
+            // document.getElementById("boutonMiser").classList.add("boutonMiserAnim");
+          // Fin marche po
 
+          // document.querySelector("#footer").classList.remove("miserActif2");  
 
           // mettre des remove et setTimeOut comme avec l'autre[TENTÉ] (regarder dans l'inspecteur: ya toujours la class redecalge et comme ya le fill-mode: forward...)
           document.getElementById("header").classList.remove("headerOnPartie2");
@@ -1654,8 +1660,6 @@
           if (SoundMuteBool == false) {
             audioMiser.play();
           }
-          // TEST Audio coupé et non audio = 0;
-          // audioMiser.play();
 
           document.querySelector("#boutonMiser").style.opacity = "0.4";
           

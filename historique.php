@@ -137,7 +137,7 @@ endif;
             if ( isset($_SESSION['username']) && $role=='admin' ) :
             
                 ?>
-                <div style="font-size:120%; border: 3px solid rgba(239, 59, 46, 0.6); border-radius:8px; margin-left:12%; margin-right:12%; margin-top:30px; margin-bottom:45px; padding-top:8px; padding-bottom:7px;">
+                <div style="font-size:120%; border: 3.5px solid rgba(239, 59, 46, 0.6); border-radius:8px; margin-left:12%; margin-right:12%; margin-top:30px; margin-bottom:45px; padding-top:8px; padding-bottom:7px;">
                     <div id="nombreTotalContainer" style="display:inline-flex; margin:auto; font-size: 115%;">
                         <?php
                             echo "Parties jouées: &nbsp;";

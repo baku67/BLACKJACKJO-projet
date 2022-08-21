@@ -1191,12 +1191,12 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 }
 @keyframes animationBoutonPartie1 {
 	from{
-		padding: 30px 160px;
+		padding: 30px 150px;
 		border: 3px solid rgba(223, 204, 204, 0.6);
 		box-shadow: 0 0 0px 0px #ef3b2e;
 	}
 	to {
-		padding: 0px 160px;
+		padding: 0px 150px;
 		border: 0.5px solid rgb(224, 168, 164);
 		box-shadow: 0 0 2px 2px rgba(239, 59, 46, 0.6);
 	}
@@ -1204,7 +1204,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 @keyframes animationBoutonPartie2 {
 	from{
 		border: 0.5px solid rgb(224, 168, 164);
-		padding: 0px 160px;
+		padding: 0px 150px;
 		box-shadow: 0 0 2px 2px rgba(239, 59, 46, 0.6);
 	}
 	to {
@@ -2684,6 +2684,35 @@ p {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
+}
+
+
+.boutonMiserAnim {
+	animation: boutonMiserAnim1 2s 2s ease-in-out forwards, boutonMiserAnim2 2s 2s ease-in-out forwards !important;
+}
+@keyframes boutonMiserAnim1 {
+	from {
+		padding: 5px 25px;
+		border: 3px solid rgba(230, 211, 211, 1);
+		box-shadow: 0 0 0px 0px #2eefc5;
+	}
+	to {
+		padding: 0px 25px;
+		border: 0.5px solid rgba(230, 255, 3, 1);
+		box-shadow: 0 0 2px 2px rgba(0, 255, 213, 0.808);
+	}
+}
+@keyframes boutonMiserAnim2 {
+	from {
+		padding: 0px 25px;
+		border: 0.5px solid rgba(230, 255, 3, 1);
+		box-shadow: 0 0 2px 2px rgba(1, 255, 234, 0.815);
+	}
+	to {
+		padding: 0px 0px;
+		border: 0px solid rgb(3, 255, 158);
+		box-shadow: 0 0 0px 0px rgb(208, 255, 0);
+	}
 }
 
 
