@@ -39,10 +39,14 @@ endif;
     var slider = document.getElementById("myRange");
     var output = document.getElementById("demo");
     output.innerHTML = slider.value;
-
     slider.oninput = function() {
         output.innerHTML = this.value;
     }
+
+
+
+
+
 
 
     var winLoseHided = false;
@@ -52,22 +56,54 @@ endif;
             winLoseHided = false;
             document.getElementById("amountWin").style.opacity = "1";
             document.getElementById("amountLose").style.opacity = "1";
-            document.getElementById("hideButton").innerHTML = "Hide";
+            document.getElementById("hideButton").innerHTML = "&nbsp;Hide&nbsp;";
 
-            //Mettre les get set ajax (et symbole oeil?)
-    }
+            var winLoseHidedToPhp = {};
+            winLoseHidedToPhp.value = winLoseHided;
+
+            if (isConnected == true) {
+                  $.ajax({
+                    url: "setHideWinLose.php",
+                    method: "post",
+                    data: winLoseHidedToPhp,
+                    success: function(res) {
+                      console.log("(JS) AJAX POST bool 'winLoseHidedToPhp' (" + winLoseHidedToPhp.value + ") vers setHideWinLose.php réussi");
+                    }
+                })
+            }
+        }
         else {
             winLoseHided = true;
             document.getElementById("amountWin").style.opacity = "0";
             document.getElementById("amountLose").style.opacity = "0";
-            document.getElementById("hideButton").innerHTML = "Show";
+            document.getElementById("hideButton").innerHTML = "&nbsp;Show&nbsp;";
 
-            //Mettre les get set ajax (et symbole oeil?)
+            var winLoseHidedToPhp = {};
+            winLoseHidedToPhp.value = winLoseHided;
+
+            if (isConnected == true) {
+                  $.ajax({
+                    url: "setHideWinLose.php",
+                    method: "post",
+                    data: winLoseHidedToPhp,
+                    success: function(res) {
+                      console.log("(JS) AJAX POST bool 'winLoseHidedToPhp' (" + winLoseHidedToPhp.value + ") vers setHideWinLose.php réussi");
+                    }
+                })
+            }
         }
     }
 
 </script>
-<!-- Fin Slider -->
+
+
+
+
+
+
+
+
+
 
 
 
@@ -106,7 +142,7 @@ endif;
                             ?>
                         </div>
 
-                        <div id="hideButtonContainer" style="position:relative; left:10%; border:3px solid rgb(172 113 108 / 80%); border-radius:5px; padding:2px;">
+                        <div id="hideButtonContainer" style="position:relative; left:7%; border:3px solid rgb(172 113 108 / 80%); border-radius:5px; padding:2px;">
                             <button id="hideButton" onclick="hideWinLose()">&nbsp;Hide&nbsp;</button>
                         </div>  
                     </div>
