@@ -162,6 +162,18 @@ endif;
                             ?>
                         </div>
 
+                        <!-- *************************************************************************** -->
+                        <!-- TEST: Affichage du statsStreak.php (Commentaires php fonctionnent) -->
+                            <!-- <div style="display:inline-flex; margin:auto; margin-left: 15px;">
+                                <?php
+                                    echo "Stats.php: &nbsp;";
+                                    include('statsStreak.php');
+                                ?>
+                            </div> -->
+                        <!-- Fin test -->
+                        <!-- *************************************************************************** -->
+
+
                         <div id="hideButtonContainer" style="position:relative; left:7%; border:3px solid rgb(172 113 108 / 80%); border-radius:5px; padding:2px;">
                             <button id="hideButton" onclick="hideWinLose()"></button>
                         </div>  
