@@ -643,7 +643,7 @@
 
             //Style de la liste Users (ADMIN)
             for (let i = 0; i <= 15; i++) {
-              if(document.getElementsByClassName("username")[i] != null){
+              if(document.getElementsByClassName("username")[i] !== null){
               
                 let UserLineContainer = document.getElementsByClassName("historiqueLineAdmin")[i];
                 let roleUserLine = document.getElementsByClassName("roleUsers")[i];
@@ -832,7 +832,7 @@
                 doubleBool = 0;
 
                 // *Speed State*
-                if (setTimeOutMultiplierBool == true) {
+                if ((setTimeOutMultiplierBool == true) && (document.getElementById("speedButtonContainer") !== null)) {
                   document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
                   setTimeOutMultiplier = 0.4;
                   document.getElementById("speedToggleImage").src = 'Images/fastForwardWhite.png';
@@ -2076,6 +2076,8 @@
                       winLose = -1;
                       winLoseDB(winLose);
 
+                      majStreak(WinLose);
+
                     }, 500)
                     //
                     
@@ -2180,6 +2182,8 @@
 
                           winLose = 1;
                           winLoseDB(winLose);
+
+                          majStreak(WinLose);
 
                         }, 500)
 
@@ -2296,6 +2300,8 @@
                           winLose = 1;
                           winLoseDB(winLose);
 
+                          majStreak(WinLose);
+
                         }, 500)
   
                         
@@ -2389,6 +2395,9 @@
                       setTimeout( function() {
                         gain = 0;
                         ajoutGain(gain);
+
+                        majStreak(WinLose);
+
                       }, 500)
                       
                       document.getElementById("miseResultat").classList.add("addColorToResultatYellow");
@@ -2935,7 +2944,6 @@
             method: "post",
             data: { vArray: historiqueToPhp },
             success: function() {
-              console.log("ajax:OnSuccess setHistoriqueInvite.php");
             }
           });
         }
@@ -2983,6 +2991,55 @@
         console.log("Array JS Line: [" + historiqueInviteLine + "]");
         console.log("Array JS Total: [" + historiqueInviteArray + "]");
       }
+
+
+
+
+
+
+
+
+
+
+
+
+      // WIP Streak
+      if (isConnected == true) {
+        function majStreak(winLose) {
+          var resultatStreak;
+          if (winLose == "WIN") {
+            resultatStreak = 1;
+          }
+          else if (winLose == "BJ") {
+            resultatStreak = 1;
+          }
+          else if (winLose == "LOSE") {
+            resultatStreak = -2;
+          }
+          else if (winLose == "PUSH") {
+            resultatStreak = 0;
+          }
+
+          var streakModifierToPhp = {};
+          streakModifierToPhp.value = resultatStreak;
+
+
+          $.ajax({
+            url: "setStreak.php",
+            method: "post",
+            data: streakModifierToPhp,
+            success: function() {
+              console.log("Streak modifier: " + resultatStreak);
+            }
+
+          })
+        }
+      }
+      // else {
+      //   function majStreak(winLose) {
+          
+      //   }
+      // }
 
 
 
@@ -3101,6 +3158,8 @@
 
                         winLose = -1;
                         winLoseDB(winLose);
+
+                        majStreak(winLose);
 
                       }, 500)
                     //
@@ -3243,6 +3302,8 @@
 
                     winLose = 1;
                     winLoseDB(winLose);
+
+                    majStreak(WinLose);
 
                   }, 500)
                   //
