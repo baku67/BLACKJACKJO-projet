@@ -2919,14 +2919,27 @@
         console.log("Array JS: [" + historiqueToPhp + "]");
 
         // Envoi de l'array
-        $.ajax({
-          url: "setHistorique.php",
-          method: "post",
-          data: { vArray: historiqueToPhp },
-          success: function() {
-            console.log("ajax:OnSuccess setHistorique.php");
-          }
-        });
+        if (isConnected == true) {
+          $.ajax({
+            url: "setHistorique.php",
+            method: "post",
+            data: { vArray: historiqueToPhp },
+            success: function() {
+              console.log("ajax:OnSuccess setHistorique.php");
+            }
+          });
+        }
+        else {
+          $.ajax({
+            url: "setHistoriqueInvite.php",
+            method: "post",
+            data: { vArray: historiqueToPhp },
+            success: function() {
+              console.log("ajax:OnSuccess setHistoriqueInvite.php");
+            }
+          });
+        }
+        
       }
 
 
@@ -3032,6 +3045,8 @@
           credits = credits + gain;
 
           historiqueInvite(WinLose, resultatCas, gain);
+
+          historiqueDB(WinLose, resultatCas, gain);
         }
       }
       

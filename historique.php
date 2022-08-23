@@ -173,11 +173,21 @@ endif;
                         <!-- Fin test -->
                         <!-- *************************************************************************** -->
 
-
                         <div id="hideButtonContainer" style="position:relative; left:7%; border:3px solid rgb(172 113 108 / 80%); border-radius:5px; padding:2px;">
                             <button id="hideButton" onclick="hideWinLose()"></button>
                         </div>  
                     </div>
+
+                    <!-- Affichage des DailyConnected/Invite GamesNbr -->
+                    <br />
+                        <div style="display:inline-flex; margin:auto;">
+                        <?php
+                                include('getDailyGamesNbr.php');
+                            ?>
+                        </div>
+                    <!-- Fin -->
+
+
                 </div>
 
                 <?php

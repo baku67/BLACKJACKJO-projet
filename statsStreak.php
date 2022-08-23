@@ -11,18 +11,15 @@
     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 
         if ( ($row['winLose'] == "WIN") || ($row['winLose'] =="BJ") ) {
-            $checkCompteurWin += 1;
         }
         else if ($row['winLose'] == "LOSE") {
-            $checkCompteurLose += 1;
         }
         else if ($row['winLose'] == "PUSH") {
-            $checkCompteurPsuh += 1;
         }
 
     }
 
-    echo("Compteur Win: " . $checkCompteurWin . ", Compteur Lose: " . $checkCompteurLose . ", Compteur Push: " . $checkCompteurPsuh);
+    echo("\n Compteur Win: " . $checkCompteurWin . ", Compteur Lose: " . $checkCompteurLose . ", Compteur Push: " . $checkCompteurPsuh);
 
     // foreach elem:    
                     //  Lire le cas result
