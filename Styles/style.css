@@ -122,6 +122,10 @@
 	opacity: 0;
 	animation: indexFadeIn 0.2s 0.9s ease-out forwards;
 }
+.indexFadeInJauge {
+	opacity: 0;
+	animation: indexFadeIn 0.2s 0.9s ease-out forwards;
+}
 .indexFadeInCentre3 {
 	opacity: 0;
 	animation: indexFadeIn 0.2s 1.1s ease-out forwards;

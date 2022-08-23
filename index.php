@@ -174,9 +174,15 @@
 			<!-- Fin WIP jauge -->
 
 			<!-- WIP jauge -->
-			<div id="jaugeContainer">
-            
-			</div>
+			<?php  if (isset($_SESSION['username'])) : ?>
+
+				<div id="jaugeContainer" class="indexFadeInJauge"></div>
+
+			<?php elseif (!isset($_SESSION['username'])) : ?>
+
+				<div id="jaugeContainer" class="indexFadeInJauge" style="bottom:-13px;"></div>
+
+			<?php endif ?>
 			<!-- Fin WIP jauge -->
 
 

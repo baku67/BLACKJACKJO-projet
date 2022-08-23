@@ -939,6 +939,7 @@
                   document.getElementById("credits").style.position = "relative";
                   document.getElementById("credits").style.bottom = "7px";
                   // document.getElementById("traitLumineux").style.visibility = "visible";
+                  document.getElementById("jaugeContainer").style.bottom = "-52px";
                 }
                 else {
                   console.log('isConnected: ' + isConnected);
