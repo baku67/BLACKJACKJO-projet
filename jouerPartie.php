@@ -63,10 +63,27 @@
             
         </ul>
 
+
+
+
+
+
+
         <!-- Trait lumineux -->
-        <div id="traitLumineux" class="divider light" style="visibility: hidden;"></div>
-        <br>
+        <!-- <div id="traitLumineux" class="divider light" style="visibility: hidden;"></div>
+        <br> -->
         <!-- Fin -->
+
+        <!-- WIP jauge -->
+        <!-- <div id="jaugeContainer">
+            
+        </div> -->
+        <!-- Fin WIP jauge -->
+
+
+
+
+
 
 
 

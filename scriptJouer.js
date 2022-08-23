@@ -211,7 +211,7 @@
 
       else {
         var setTimeOutMultiplierBool = false;
-        var darkModeBool = false;
+        var darkModeBool = true;
         var SoundMuteBool = true;
       }   
       
@@ -873,6 +873,8 @@
                 //****
 
 
+
+
                 // *Dark Mode State*
                 if (darkModeBool == true) {
                   document.getElementById("backgroundButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
@@ -936,14 +938,14 @@
                   document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + "<span id=\"creditsInvite\">" + credits + "</span>" + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
                   document.getElementById("credits").style.position = "relative";
                   document.getElementById("credits").style.bottom = "7px";
-                  document.getElementById("traitLumineux").style.visibility = "visible";
+                  // document.getElementById("traitLumineux").style.visibility = "visible";
                 }
                 else {
                   console.log('isConnected: ' + isConnected);
                   document.getElementById("creditsConnected").innerHTML = creditsConnected;
-                  document.getElementById("traitLumineux").style.visibility = "visible";
-                  document.getElementById("traitLumineux").style.position = 'relative';
-                  document.getElementById("traitLumineux").style.bottom = '20px';
+                  // document.getElementById("traitLumineux").style.visibility = "visible";
+                  // document.getElementById("traitLumineux").style.position = 'relative';
+                  // document.getElementById("traitLumineux").style.bottom = '20px';
                 }
                 // ******************************** *
   
