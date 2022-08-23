@@ -176,6 +176,8 @@
       }
       else {
         document.getElementById("connectionContainer").style.marginRight = "55px";
+        document.getElementById("imgStreak").style.top = "20.3%";
+
       }
 
 

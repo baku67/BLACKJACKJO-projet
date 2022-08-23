@@ -173,16 +173,25 @@
 			</div> -->
 			<!-- Fin WIP jauge -->
 
+
 			<!-- WIP jauge -->
-			<?php  if (isset($_SESSION['username'])) : ?>
+			
+				<?php  if (isset($_SESSION['username'])) : ?>
 
-				<div id="jaugeContainer" class="indexFadeInJauge"></div>
+					<div style="display: inline; margin: 0px auto;">
+						<img id="imgStreak" class="indexFadeInImgStreak" src="Images/fire1p.png" alt="Streak">
+						<div id="jaugeContainer" class="indexFadeInJauge"></div>
+					</div>
 
-			<?php elseif (!isset($_SESSION['username'])) : ?>
+				<?php elseif (!isset($_SESSION['username'])) : ?>
 
-				<div id="jaugeContainer" class="indexFadeInJauge" style="bottom:-13px;"></div>
+					<div style="display: inline; margin: 0px auto;">
+						<img id="imgStreak" class="indexFadeInImgStreak" src="Images/fire1p.png" alt="Streak">
+						<div id="jaugeContainer" class="indexFadeInJauge" style="bottom:-13px;"></div>
+					</div>
 
-			<?php endif ?>
+				<?php endif ?>
+			
 			<!-- Fin WIP jauge -->
 
 
