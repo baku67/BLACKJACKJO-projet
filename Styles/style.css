@@ -165,10 +165,10 @@
 
 
 #imgStreak {
-	position:absolute; 
-	left:17%; 
+	position: absolute; 
+	left: 21%; 
 	top: 20%; 
-	width:25px;
+	width: 25px;
 }
 
 
@@ -910,14 +910,17 @@ button, input[type="submit"], input[type="reset"] {
 	position: relative;
 	bottom: 12px;
 
-	width: 55%;
+	width: 50%;
 	margin: 0 auto;
+
+	left: 10px;
 
 	height: 6px;
 	/* border: 1px solid white; */
 	border-radius: 6px; /* border-radius marche sans border  */
 
-	background: rgba(252, 119, 10, 0.8);
+	/* background: rgba(252, 119, 10, 0.8); */
+	background: #ef3b2e;
 	/* partie vide de la jauge: background: rgb(80, 71, 64); */
 }
 
