@@ -178,6 +178,18 @@
         document.getElementById("connectionContainer").style.marginRight = "55px";
         document.getElementById("imgStreak").style.top = "20.3%";
 
+        setTimeout(function() {
+          $(".jaugeContainer span").each(function () {
+            $(this).animate(
+              {
+                width: $(this).attr("data-progress") + "%",
+              },
+              1000
+            );
+            $(this).text($(this).attr("data-progress") + "%");
+          });
+        }, 1500)
+        
       }
 
 

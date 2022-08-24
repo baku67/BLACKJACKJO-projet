@@ -1,3 +1,16 @@
+Couleur du StreakNumber qui rougit et s'enflamme au fur et à mesure !
+
+
+
+
+
+
+
+
+
+
+
+
 index Onload elelment fadeIn gradués 1 par en 1 en aprtant par le haut
 
 Anims Box shadow result (clignotement lent pour win et BJ, le reste:rien?)

@@ -175,22 +175,36 @@
 
 
 			<!-- WIP jauge -->
+
+				
 			
 				<?php  if (isset($_SESSION['username'])) : ?>
 
-					<div style="display: inline; margin: 0px auto;">
+					<div class="indexFadeInJauge" style="display: inline; margin: 0px auto;">
 						<img id="imgStreak" class="indexFadeInImgStreak" src="Images/fire1p.png" alt="Streak">
-						<div id="jaugeContainer" class="indexFadeInJauge"></div>
+						<p id="streakNumber"><?php include('getStreak.php') ?></p>	
+						<div class="jaugeContainer jaugeProgress">
+							<span id="dataProgress" data-progress=""></span>
+						</div>
 					</div>
 
 				<?php elseif (!isset($_SESSION['username'])) : ?>
 
-					<div style="display: inline; margin: 0px auto;">
+					<div class="indexFadeInJauge" style="display: inline; margin: 0px auto;">
 						<img id="imgStreak" class="indexFadeInImgStreak" src="Images/fire1p.png" alt="Streak">
-						<div id="jaugeContainer" class="indexFadeInJauge" style="bottom:-13px;"></div>
+						<div class="jaugeContainer jaugeProgress" style="bottom:-13px;">
+							<span id="dataProgress" data-progress=""></span>
+						</div>
 					</div>
 
 				<?php endif ?>
+
+				<script type="text/javascript">
+					let streakFromPhp = <?php include('getStreak.php') ?>;
+					let streakPourcentage = (streakFromPhp*10).toString();
+
+					document.getElementById('dataProgress').setAttribute("data-progress", streakPourcentage)
+				</script>
 			
 			<!-- Fin WIP jauge -->
 
