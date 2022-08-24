@@ -1,5 +1,7 @@
 Couleur du StreakNumber qui rougit et s'enflamme au fur et à mesure !
+Pendant l'anim de progressBar il faut que le bout s'illumine ou qqc
 
+BUG qui fait perdre tous les streak apres avoir atteint le 10 !!!!!!!!
 
 
 

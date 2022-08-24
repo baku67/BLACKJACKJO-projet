@@ -178,6 +178,11 @@
         document.getElementById("connectionContainer").style.marginRight = "55px";
         document.getElementById("imgStreak").style.top = "20.3%";
 
+        refreshAnimJauge();
+        
+      }
+
+      function refreshAnimJauge() {
         setTimeout(function() {
           $(".jaugeContainer span").each(function () {
             $(this).animate(
@@ -188,8 +193,7 @@
             );
             $(this).text($(this).attr("data-progress") + "%");
           });
-        }, 1500)
-        
+        }, 1000)
       }
 
 
@@ -2097,7 +2101,6 @@
 
                     }, 500)
                     //
-                    
 
                     document.getElementById("deckContainer").remove();
                     document.getElementById("cardAnim").remove();
@@ -2203,7 +2206,6 @@
                           majStreak(WinLose);
 
                         }, 500)
-
                         
                           // function: (en partant de la mise vers le gains réel)
                           var miseLockedMultiplied = miseLocked * 2;
@@ -2321,7 +2323,6 @@
 
                         }, 500)
   
-                        
                         var miseLockedMultiplied = miseLocked * 2;
 
                       
@@ -3022,24 +3023,77 @@
 
       // WIP Streak
       if (isConnected == true) {
+
         function majStreak(winLose) {
+
           var resultatStreak;
+
           if (winLose == "WIN") {
             resultatStreak = 1;
+            var progressBeforeRefresh = document.getElementById('dataProgress').getAttribute("data-progress");
+            var preogressNumBeforeRefresh = parseInt(document.getElementById("streakNumber").innerHTML);
+
+            // Jamais entré car refresh autre part: (donc pas de verifs ce qui cause le pb refresh streak 0 over 10)
+            if (document.getElementById('dataProgress').setAttribute("data-progress", parseInt(progressBeforeRefresh) + 10) <= 100 ) {
+              document.getElementById('dataProgress').setAttribute("data-progress", parseInt(progressBeforeRefresh) + 10);
+            }
+
+            // Refresh du StreakNbr
+            setTimeout( function() {
+              document.getElementById("streakNumber").innerText = (preogressNumBeforeRefresh + 1);
+            }, 1000)
+
+            refreshAnimJauge();
           }
+
+
           else if (winLose == "BJ") {
             resultatStreak = 1;
+            var progressBeforeRefresh = document.getElementById('dataProgress').getAttribute("data-progress");
+            var preogressNumBeforeRefresh = parseInt(document.getElementById("streakNumber").innerHTML);
+
+            // Jamais entré car refresh autre part: (donc pas de verifs ce qui cause le pb refresh streak 0 over 10)
+            if (document.getElementById('dataProgress').setAttribute("data-progress", parseInt(progressBeforeRefresh) + 10) <= 100 ) {
+              document.getElementById('dataProgress').setAttribute("data-progress", parseInt(progressBeforeRefresh) + 10);
+            }
+
+            // Refresh du StreakNbr
+            setTimeout( function() {
+              document.getElementById("streakNumber").innerText = (preogressNumBeforeRefresh + 1);
+            }, 1000)
+
+            refreshAnimJauge();
           }
+
+
           else if (winLose == "LOSE") {
             resultatStreak = -2;
+            var progressBeforeRefresh = document.getElementById('dataProgress').getAttribute("data-progress");
+            var preogressNumBeforeRefresh = parseInt(document.getElementById("streakNumber").innerHTML);
+
+            // Jamais entré car refresh autre part: (donc pas de verifs ce qui cause le pb refresh streak 0 over 10)
+            if (document.getElementById('dataProgress').setAttribute("data-progress", parseInt(progressBeforeRefresh) - 20) >= 0 ) {
+              document.getElementById('dataProgress').setAttribute("data-progress", parseInt(progressBeforeRefresh) - 20);
+            }
+
+            // Refresh du StreakNbr
+            setTimeout( function() {
+              document.getElementById("streakNumber").innerText = (preogressNumBeforeRefresh - 2);
+            }, 1000)
+            
+            refreshAnimJauge();
           }
+
+
           else if (winLose == "PUSH") {
             resultatStreak = 0;
           }
 
+
+
+
           var streakModifierToPhp = {};
           streakModifierToPhp.value = resultatStreak;
-
 
           $.ajax({
             url: "setStreak.php",
@@ -3051,6 +3105,8 @@
 
           })
         }
+
+
       }
       // else {
       //   function majStreak(winLose) {
@@ -3179,6 +3235,7 @@
                         majStreak(winLose);
 
                       }, 500)
+
                     //
                     // Fin résultat Gains
 
@@ -3323,7 +3380,6 @@
                     majStreak(WinLose);
 
                   }, 500)
-                  //
                     
                   // Fin résultat Gains
 
