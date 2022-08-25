@@ -864,7 +864,7 @@
 
                 
                 // *Mute State*
-                if (SoundMuteBool == true) {
+                if ((SoundMuteBool == true) && (document.getElementById("soundButtonContainer") !== null )) {
                   document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
                   document.getElementById("soundToggleImage").style.marginLeft = "5px";
                   audioCardSound.volume = 0;
@@ -876,7 +876,7 @@
                   audioMiser.volume = 0;
                   document.getElementById("soundToggleImage").src = 'Images/speakerMute_sourceMaxPng2Recenter4.png';
                 }
-                else {
+                else if (document.getElementById("soundButtonContainer") !== null ) {
                   document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
                   document.getElementById("soundToggleImage").style.marginLeft = "3px";
                   audioCardSound.volume = 0.5;  
@@ -894,7 +894,7 @@
 
 
                 // *Dark Mode State*
-                if (darkModeBool == true) {
+                if ((darkModeBool == true) && (document.getElementById("backgroundButtonContainer") !== null)) {
                   document.getElementById("backgroundButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
                   let body = document.querySelector('body');
                   body.dataset.theme = "dark";
@@ -919,7 +919,7 @@
                     document.getElementById("backCardCroupier").src = "../Images/deck3_darkMode.png";
                   }
                 }
-                else {
+                else if (document.getElementById("backgroundButtonContainer") !== null) {
                   document.getElementById("backgroundButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
                   let body = document.querySelector('body');
                   body.dataset.theme = "light";
@@ -1063,12 +1063,12 @@
 
 
 
-                console.log("darkModeBool juste AVANT clique sur le bouton: " + darkModeBool);
+                
                 // Toggle Design
                 // ******************************** *
                 document.getElementById("backgroundButtonContainer").addEventListener("click", function() {
-                  console.log("darkModeBool APRES clique sur le bouton: " + darkModeBool);
-
+                  
+                  console.log("darkModeBool juste AVANT clique sur le bouton: " + darkModeBool);
 
                   // toggle la backCardCroupier et les img src des li deja present
 
@@ -1150,7 +1150,11 @@
                       }
                     });
                   }
+
+                  console.log("darkModeBool APRES clique sur le bouton: " + darkModeBool);
+
                 });
+
 
 
 
