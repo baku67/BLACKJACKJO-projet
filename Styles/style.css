@@ -93,7 +93,9 @@
 
 
 
-
+#dataProgress {
+	border-right: 0.5px solid rgba(0,0,0,1);
+}
 
 
 
@@ -947,6 +949,7 @@ button, input[type="submit"], input[type="reset"] {
 
 	font-size: 1.4em;
 	color: rgba(255, 255, 255, 0.8);
+	text-shadow: 2px 2px 0 #11131f, 2px -2px 0 #11131f, -2px 2px 0 #11131f, -2px -2px 0 #11131f, 2px 0px 0 #11131f, 0px 2px 0 #11131f, -2px 0px 0 #11131f, 0px -2px 0 #11131f;
 	font-weight: bold;
 }
 
