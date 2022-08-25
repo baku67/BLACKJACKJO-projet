@@ -1081,7 +1081,9 @@
                     this.dataset.mode = "light";
                     darkModeBool = true;
 
-                    document.querySelector('#deconnexionImg').src = "../Images/deconnexion_darkMode.png"
+                    if (document.querySelector('#deconnexionImg') !== null) {
+                      document.querySelector('#deconnexionImg').src = "../Images/deconnexion_darkMode.png";
+                    }
 
                     cards.forEach(element => {
                       element.cardImageURL = element.cardImageURL.substring(0, 9) + "_darkMode.png";
@@ -1108,7 +1110,9 @@
                     this.dataset.mode = "dark";
                     darkModeBool = false;
 
-                    document.querySelector('#deconnexionImg').src = "../Images/deconnexion.png"
+                    if (document.querySelector('#deconnexionImg') !== null) {
+                      document.querySelector('#deconnexionImg').src = "../Images/deconnexion.png";
+                    }
 
                     cards.forEach(element => {
                       element.cardImageURL = element.cardImageURL.substring(0, 9) + ".png";

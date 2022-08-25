@@ -47,7 +47,10 @@
 
 	--miseEnCours-color: rgb(223, 204, 204);
 
-	--header-background: linear-gradient(56deg, rgba(130,14,80,1) 0%, rgba(135,0,20,1) 25%, rgba(172,3,26,1) 26%, rgba(121,0,6,1) 31%, rgba(196,53,53,1) 31%, rgba(130,14,39,1) 35%, rgba(33,55,144,1) 55%, rgba(23,31,73,1) 68%, rgba(156,14,14,1) 78%, rgba(209,16,16,1) 83%, rgba(85,9,9,1) 83%, rgba(194,31,31,1) 89%, rgba(64,43,43,1) 92%, rgba(120,6,6,1) 95%, rgba(18,5,5,1) 97%, rgba(122,0,0,1) 100%);
+
+	/* Problème: le data-theme du body passe de dark(default) à light au moment de l'ajout de la classe headerOnPartie (classe qui d'ailleurs s'adapte au footer)  */
+	/* --header-background: linear-gradient(56deg, rgba(130,14,80,1) 0%, rgba(135,0,20,1) 25%, rgba(172,3,26,1) 26%, rgba(121,0,6,1) 31%, rgba(196,53,53,1) 31%, rgba(130,14,39,1) 35%, rgba(33,55,144,1) 55%, rgba(23,31,73,1) 68%, rgba(156,14,14,1) 78%, rgba(209,16,16,1) 83%, rgba(85,9,9,1) 83%, rgba(194,31,31,1) 89%, rgba(64,43,43,1) 92%, rgba(120,6,6,1) 95%, rgba(18,5,5,1) 97%, rgba(122,0,0,1) 100%); */
+	--header-background: linear-gradient(-45deg, rgba(104,3,42,1) 0%, rgba(146,14,42,1) 33%, rgba(13,88,94,1) 67%, rgba(26,32,57,1) 100%) !important;
 	/* --header-bg-position: 35% 15%; */
 
 	--footerBorderTop-Color: rgba(230, 211, 211, 0.6);
@@ -549,7 +552,7 @@ button, input[type="submit"], input[type="reset"] {
 
 	/* WIP DARK MODE (anims et tout) */
 	/* background-image: linear-gradient(-45deg, rgba(104,3,42,1) 0%, rgba(146,14,42,1) 33%, rgba(13,88,94,1) 67%, rgba(26,32,57,1) 100%) !important;  */
-	background-image: var(--header-background); 
+	 background-image: var(--header-background); 
 	/* background-image: var(--headerOnPartie-bgColor); */
 
 	/* // Gradient du onPartie:  */

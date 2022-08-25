@@ -23,6 +23,29 @@ https://codepedia.info/detect-browser-in-javascript#:~:text=To%20detect%20user%2
 https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale
 
 
+1er clic boutonToggleDM (depuis DarkMode) s'envoi pas (BDD inchangée), par contre 1er clic depuis Light mode pas de soucis
+Si DM=0 sur BDD, le state chargfe le light mode que apres lancer Partie (DM avant sur index alors que bool 0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
