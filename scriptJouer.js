@@ -855,7 +855,7 @@
                   setTimeOutMultiplier = 0.4;
                   document.getElementById("speedToggleImage").src = 'Images/fastForwardWhite.png';
                 }
-                else {
+                else if (document.getElementById("speedButtonContainer") !== null) {
                   document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
                   setTimeOutMultiplier = 0.7;
                   document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
@@ -958,6 +958,7 @@
                   document.getElementById("credits").style.bottom = "7px";
                   // document.getElementById("traitLumineux").style.visibility = "visible";
                   document.getElementById("jaugeContainer").style.bottom = "-52px";
+                  document.getElementById("imgStreak").style.top = "22.5%";
                 }
                 else {
                   console.log('isConnected: ' + isConnected);

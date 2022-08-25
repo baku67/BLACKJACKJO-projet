@@ -192,7 +192,7 @@
 
 					<div class="indexFadeInJauge" style="display: inline; margin: 0px auto;">
 						<img id="imgStreak" class="indexFadeInImgStreak" src="Images/fire1p.png" alt="Streak">
-						<div class="jaugeContainer jaugeProgress" style="bottom:-13px;">
+						<div id="jaugeContainer" class="jaugeContainer jaugeProgress" style="bottom:-13px;">
 							<span id="dataProgress" data-progress=""></span>
 						</div>
 					</div>
@@ -200,10 +200,12 @@
 				<?php endif ?>
 
 				<script type="text/javascript">
-					let streakFromPhp = <?php include('getStreak.php') ?>;
-					let streakPourcentage = (streakFromPhp*10).toString();
+					if (isConnected == true) {
+						let streakFromPhp = '<?php include('getStreak.php'); ?>';
+						let streakPourcentage = (streakFromPhp*10).toString();
 
-					document.getElementById('dataProgress').setAttribute("data-progress", streakPourcentage)
+						document.getElementById('dataProgress').setAttribute("data-progress", streakPourcentage);
+					}
 				</script>
 			
 			<!-- Fin WIP jauge -->

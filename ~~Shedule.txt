@@ -1,3 +1,11 @@
+Games ne marchent plus
+
+Streak négatif possible, ajouter bg color rouge while jauge decrease et effet etincelle au bout (box-shadow-right) whil increase
+DM par default black (mais switch marche plus)
+
+
+Soucis des dispositions bugué sur phone dues au position absolute ?
+
 Couleur du StreakNumber qui rougit et s'enflamme au fur et à mesure !
 Pendant l'anim de progressBar il faut que le bout s'illumine ou qqc
 
@@ -6,7 +14,12 @@ BUG qui fait perdre tous les streak apres avoir atteint le 10 !!!!!!!!
 
 
 
+RESPONSIVE: POURCENTAGES et Vh (viewport height !!) https://getflywheel.com/layout/choose-css-unit-create-better-site-layouts-how-to/#:~:text=Percentage(%25)%20unit&text=Percentage%20is%20one%20of%20the,width%20of%20its%20parent%20element.
 
+!!!! (rapide) Idée de solution Firefox: get le browser avec JS, puis if firefox: transform -50% (un truc du genre, transform est ok pour firefox et pourrai remplacer le zoom du body)
+https://codepedia.info/detect-browser-in-javascript#:~:text=To%20detect%20user%20browser%20information,to%20identify%20the%20user%20browser.&text=Now%20call%20this%20JS%20function,browser%20name%20on%20page%20load.
+(https://stackoverflow.com/questions/21093570/force-page-zoom-at-100-with-js)
+https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale
 
 
 
