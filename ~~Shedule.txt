@@ -1,4 +1,6 @@
-Games ne marchent plus
+State DM sur index sinon pas de sens (ducoup toggleBoutons aussi): sinon le default data-theme sur index puis load du boolDM BDD 
+
+Les soundButtonContainer etc cargent pas desfois -> arret script lancerPartie (assez souvent, mettre des verif !==null)
 
 Streak négatif possible, ajouter bg color rouge while jauge decrease et effet etincelle au bout (box-shadow-right) whil increase
 DM par default black (mais switch marche plus)
@@ -27,7 +29,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale
 Si DM=0 sur BDD, le state chargfe le light mode que apres lancer Partie (DM avant sur index alors que bool 0)
 
 
-
+Adapter la jauge et l'img au lightMode (ez)
 
 
 

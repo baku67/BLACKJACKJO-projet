@@ -26,6 +26,11 @@
 	--resultatFooter-color: rgb(223, 204, 204);
 
 	--distributionFooter-color: rgb(223, 204, 204);
+
+	--bgColor-jaugeVide: #696565;
+	--bgColor-jaugePleine: rgb(241 205 92);
+
+	--imgFire-src: url("../Images/fire1p_light.png");
 }
 
 [data-theme="light"] {
@@ -59,6 +64,11 @@
 	--resultatFooter-color: rgb(223, 204, 204);
 
 	--distributionFooter-color: rgb(223, 204, 204);
+
+	--bgColor-jaugeVide: #696565;
+	--bgColor-jaugePleine: rgb(241 205 92);
+
+	--imgFire-src: url("../Images/fire1p_light.png");
 }
 
 [data-theme="dark"] {
@@ -89,6 +99,11 @@
 	--resultatFooter-color: rgba(239, 59, 46, 1);
 
 	--distributionFooter-color: rgba(239, 59, 46, 1);
+
+	--bgColor-jaugeVide: rgb(80, 71, 64);
+	--bgColor-jaugePleine: #ef3b2e;
+
+	--imgFire-src: url("../Images/fire1p.png");
 }
 
 
@@ -170,6 +185,8 @@
 
 
 #imgStreak {
+	content:var(--imgFire-src);
+
 	position: absolute; 
 	left: 21%; 
 	top: 20%; 
@@ -923,15 +940,14 @@ button, input[type="submit"], input[type="reset"] {
 	left: 10px;
 
 	height: 6px;
-	/* border: 1px solid white; */
 	border-radius: 6px; /* border-radius marche sans border  */
 
-	/* background: rgba(252, 119, 10, 0.8); */
-	background: rgb(80, 71, 64);
-	/* partie vide de la jauge: background: rgb(80, 71, 64); */
+	/* background: rgb(80, 71, 64); */
+	background: var(--bgColor-jaugeVide);
 }
 .jaugeProgress span {
-	background-color: #ef3b2e;
+	/* background-color: #ef3b2e; */
+	background-color: var(--bgColor-jaugePleine);
 }
 /* Label pourcentage jauge */
 /* #jaugeContainer span {
@@ -950,7 +966,7 @@ button, input[type="submit"], input[type="reset"] {
 	left: 24%; 
 	top: 21.5%; 
 
-	font-size: 1.4em;
+	font-size: 1.5em;
 	color: rgba(255, 255, 255, 0.8);
 	text-shadow: 2px 2px 0 #11131f, 2px -2px 0 #11131f, -2px 2px 0 #11131f, -2px -2px 0 #11131f, 2px 0px 0 #11131f, 0px 2px 0 #11131f, -2px 0px 0 #11131f, 0px -2px 0 #11131f;
 	font-weight: bold;

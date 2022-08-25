@@ -189,11 +189,11 @@
               {
                 width: $(this).attr("data-progress") + "%",
               },
-              1000
+              500
             );
             $(this).text($(this).attr("data-progress") + "%");
           });
-        }, 1000)
+        }, 500)
       }
 
 
@@ -3045,8 +3045,11 @@
 
             // Refresh du StreakNbr
             setTimeout( function() {
-              document.getElementById("streakNumber").innerText = (preogressNumBeforeRefresh + 1);
-            }, 1000)
+              // Vérif front streak>10 
+              if ((preogressNumBeforeRefresh + 1) < 11 ) {
+                document.getElementById("streakNumber").innerText = (preogressNumBeforeRefresh + 1);
+              }
+            }, 500)
 
             refreshAnimJauge();
           }
@@ -3064,8 +3067,11 @@
 
             // Refresh du StreakNbr
             setTimeout( function() {
-              document.getElementById("streakNumber").innerText = (preogressNumBeforeRefresh + 1);
-            }, 1000)
+              // Vérif front streak>10 
+              if ((preogressNumBeforeRefresh + 1) < 11 ) {
+                document.getElementById("streakNumber").innerText = (preogressNumBeforeRefresh + 1);
+              }
+            }, 500)
 
             refreshAnimJauge();
           }
@@ -3083,8 +3089,10 @@
 
             // Refresh du StreakNbr
             setTimeout( function() {
-              document.getElementById("streakNumber").innerText = (preogressNumBeforeRefresh - 2);
-            }, 1000)
+              if ((preogressNumBeforeRefresh - 2) >= 0 ) {
+                document.getElementById("streakNumber").innerText = (preogressNumBeforeRefresh - 2);
+              }
+            }, 500)
             
             refreshAnimJauge();
           }
