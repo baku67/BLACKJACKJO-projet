@@ -1195,6 +1195,20 @@
 
                     document.getElementById("footer").classList.add('footerOnPartie');
 
+                    if ((darkModeBool == true) && (document.querySelectorAll('.pokerChips') !== null)) {
+                        var imgTokens = document.querySelectorAll('.pokerChips');
+                        imgTokens.forEach(element => {
+                          element.src = element.src.substring(0, 43) + "_darkMode.png";
+                        });
+                    }
+                    else if ((darkModeBool == false) && (document.querySelectorAll('.pokerChips') !== null)) {
+                        var imgTokens = document.querySelectorAll('.pokerChips');
+                        imgTokens.forEach(element => {
+                          element.src = element.src.substring(0, 43) + ".png";
+                        });
+                    }
+
+
                     ChoixActif = false;
                     // document.getElementById("collapsible").style.visibility = "visible";
 
