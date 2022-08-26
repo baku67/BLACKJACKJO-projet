@@ -373,21 +373,27 @@
 
 
 
-
+        // Juste utile pour choix (pas mise)
         function animAlertOnClickChoix() {
           setTimeout( function() {
             if (document.getElementById('phaseChoixAlert') !== null) {
               // document.getElementById('textChoix').classList.add('phaseChoixAlert2Flash');
               document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert2");
+              document.getElementById('traitUnderlineInverseChoix').classList.add("traitUnderlineInverse2FlashChoix");
             }
-          }, 380)
+          // }, 380)
+          }, 230)
+
 
           setTimeout( function() {
             if (document.getElementById('phaseChoixAlert') !== null) {
               // document.getElementById('textChoix').classList.remove('phaseChoixAlert2Flash');
               document.getElementById('phaseChoixAlert').classList.remove("phaseChoixAlert2");
+              document.getElementById('traitUnderlineInverseChoix').classList.remove("traitUnderlineInverse2FlashChoix");
+
             }
-          }, 731)
+          // }, 731)
+          }, 581)
 
         }
 
@@ -1862,6 +1868,8 @@
                 document.getElementById("stand").addEventListener("click", function() {
 
                   document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
+                  document.getElementById('traitUnderlineInverseChoix').classList.add("traitUnderlineInverse2FlashChoix");
+
 
                   // Plutot mettre un fade out ou voir l'anim (trop brusque le depop) TimeOut trop long 
                   document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
@@ -1893,6 +1901,8 @@
                 document.getElementById("double").addEventListener("click", function() {
 
                   document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
+                  document.getElementById('traitUnderlineInverseChoix').classList.add("traitUnderlineInverse2FlashChoix");
+
 
                   // Plutot mettre un fade out ou voir l'anim (trop brusque le depop) TimeOut trop long 
                   document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
@@ -1923,6 +1933,7 @@
             setTimeout(function() {
               // document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
               // document.getElementById('traitUnderlineInverse').classList.add("traitUnderlineInverse2Flash");
+              document.getElementById("traitUnderlineInverseChoix").classList.add("traitUnderlineInverseChoix1");
               document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert1");
               // Fin
             }, 8001 * setTimeOutMultiplier);
@@ -2030,6 +2041,7 @@
 
                 // Plutot mettre un fade out ou voir l'anim (trop brusque le depop) TimeOut trop long 
                 document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
+                document.getElementById('traitUnderlineInverseChoix').classList.add("traitUnderlineInverse2FlashChoix");
                 document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert2");
                 setTimeout(function() {
                   document.getElementById('phaseChoixAlert').remove();
@@ -2064,6 +2076,7 @@
 
                 // Plutot mettre un fade out ou voir l'anim (trop brusque le depop) TimeOut trop long 
                 document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
+                document.getElementById('traitUnderlineInverseChoix').classList.add("traitUnderlineInverse2FlashChoix");
                 document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert2");
                 setTimeout(function() {
                   document.getElementById('phaseChoixAlert').remove();

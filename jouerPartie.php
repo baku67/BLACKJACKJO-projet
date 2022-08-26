@@ -142,6 +142,7 @@
                 Choix
             </p>
         </div>
+        <div id="traitUnderlineInverseChoix"></div>
 
         <!-- FIN ANIMS -->
 
