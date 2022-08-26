@@ -1,4 +1,5 @@
-Le flash Choix, le trait souligne + flash, l'adaptation DM/LM, 
+IMPORTANT: Si 21 hors BJ, lance phase croupier auto mais pas de result: donc remove le alertchoix et le traitSouligne
+
 Vite fait: le blur sur premiere anim vertical des separateur et appliquer le text slide du bust sur les autres
 
 L'AS croupier s'adapte pas du tout (genre y'a rien je crois 0 code)

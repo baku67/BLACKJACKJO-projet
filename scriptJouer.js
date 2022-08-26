@@ -1745,7 +1745,7 @@
           
           setTimeout( function() {
             document.getElementById('phaseMiserAlert').classList.add("phaseMiserAlert2");
-          }, 380)
+          }, 0)
           // Fin anims
 
             // Reset des class du AlertMise/choix pour repop des anims lors Choix
@@ -1875,7 +1875,9 @@
                   document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
                   document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert2");
                   setTimeout(function() {
-                    document.getElementById('phaseChoixAlert').remove();
+                    if (document.getElementById("phaseChoixAlert") !==null ) {
+                      document.getElementById("phaseChoixAlert").remove();
+                    }
                   }, 2901);
 
                   // animAlertOnClickChoix();
@@ -1908,7 +1910,9 @@
                   document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
                   document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert2");
                   setTimeout(function() {
-                    document.getElementById('phaseChoixAlert').remove();
+                    if (document.getElementById("phaseChoixAlert") !==null ) {
+                      document.getElementById("phaseChoixAlert").remove();
+                    }
                   }, 2901);
 
                   // animAlertOnClickChoix();
@@ -2045,7 +2049,9 @@
                 document.getElementById('traitUnderlineInverseChoix').classList.add("traitUnderlineInverse2FlashChoix");
                 document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert2");
                 setTimeout(function() {
-                  document.getElementById('phaseChoixAlert').remove();
+                  if (document.getElementById("phaseChoixAlert") !==null ) {
+                    document.getElementById("phaseChoixAlert").remove();
+                  }
                 }, 2901);
 
                 // animAlertOnClickChoix();
@@ -2080,7 +2086,9 @@
                 document.getElementById('traitUnderlineInverseChoix').classList.add("traitUnderlineInverse2FlashChoix");
                 document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert2");
                 setTimeout(function() {
-                  document.getElementById('phaseChoixAlert').remove();
+                  if (document.getElementById("phaseChoixAlert") !==null ) {
+                    document.getElementById("phaseChoixAlert").remove();
+                  }                
                 }, 2901);
 
                 // animAlertOnClickChoix();
@@ -2589,7 +2597,10 @@
 
               if (scoreTotalJoueur == scoreTotalCroupier) {
 
-                document.getElementById("phaseChoixAlert").remove();
+                if ((document.getElementById("phaseChoixAlert") !==null) && (document.getElementById("traitUnderlineInverseChoix") !==null)) {
+                  document.getElementById("phaseChoixAlert").remove();
+                  document.getElementById("traitUnderlineInverseChoix").remove();
+                }
 
                 WinLose = 'PUSH';
                 resultatCas = 'Push';
@@ -3448,8 +3459,10 @@
       function checkBurstJoueur() {
         if (scoreTotalJoueur > 21) {
 
-          document.getElementById("phaseChoixAlert").remove();
-
+          if ((document.getElementById("phaseChoixAlert") !==null) && (document.getElementById("traitUnderlineInverseChoix") !==null)) {
+            document.getElementById("phaseChoixAlert").remove();
+            document.getElementById("traitUnderlineInverseChoix").remove();
+          }
           // Var pour array historiquePhp
           WinLose = 'LOSE';
           resultatCas = 'Bust';
@@ -3594,8 +3607,10 @@
 
         if ((scoreTotalJoueur + 10 == 21) && (nbrCardsJoueur == 2) && (asJoueur == true)) {
 
-          document.getElementById("phaseChoixAlert").remove();
-
+          if ((document.getElementById("phaseChoixAlert") !==null) && (document.getElementById("traitUnderlineInverseChoix") !==null)) {
+            document.getElementById("phaseChoixAlert").remove();
+            document.getElementById("traitUnderlineInverseChoix").remove();
+          }
           console.log("nbrCardsJoueur: " + nbrCardsJoueur + "&nbscp; |true BLACKJACK|");
 
           WinLose = 'BJ';
