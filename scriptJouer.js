@@ -2011,8 +2011,9 @@
               $("#chipsContainer").html(response);
               document.getElementById("footerTitle").innerHTML = " - Choix -";
 
-              document.getElementById('textChoix').classList.remove("phaseChoixAlert2Flash");
-
+              if (document.getElementById('textChoix') !== null) {
+                document.getElementById('textChoix').classList.remove("phaseChoixAlert2Flash");
+              }
 
               document.getElementById("hit").addEventListener("click", function() {
 
@@ -2587,6 +2588,8 @@
 
 
               if (scoreTotalJoueur == scoreTotalCroupier) {
+
+                document.getElementById("phaseChoixAlert").remove();
 
                 WinLose = 'PUSH';
                 resultatCas = 'Push';
@@ -3445,6 +3448,8 @@
       function checkBurstJoueur() {
         if (scoreTotalJoueur > 21) {
 
+          document.getElementById("phaseChoixAlert").remove();
+
           // Var pour array historiquePhp
           WinLose = 'LOSE';
           resultatCas = 'Bust';
@@ -3588,6 +3593,8 @@
       function checkBJjoueur() {
 
         if ((scoreTotalJoueur + 10 == 21) && (nbrCardsJoueur == 2) && (asJoueur == true)) {
+
+          document.getElementById("phaseChoixAlert").remove();
 
           console.log("nbrCardsJoueur: " + nbrCardsJoueur + "&nbscp; |true BLACKJACK|");
 
