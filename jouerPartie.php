@@ -120,10 +120,11 @@
 
 
 
-
-        <!-- <div id="phaseMiserAlert" style="font-size:3em;color:white;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; position:absolute; right:50%; top:50%; -ms-transform: translateY(-50%); transform: translateY(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%);"> -->
+        <!-- class .glitch à ajouter via JS (avec timeOut) pour coincider avec la phaseLente ? 
+        Non il y a une anim Bézier, mettre jsute le delai qu'il faut 
+        Par contre l'exemple est avec un hover -->
         <div id="phaseMiserAlert">
-            <p style="">Mise</p>
+            <p class="glitchPhaseLente">Mise</p>
         </div>
 
 

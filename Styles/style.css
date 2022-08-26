@@ -36,6 +36,8 @@
 
 	--jaugePleine-boxShadowMax: 0 -1px 4px #fff, 0 -2px 10px #00ffea, 0 -5px 20px #00ffea, 0 -4px 20px #00ffea;
 	--jaugePleine-boxShadowMin: 0 -1px 4px #fff, 0 -2px 10px rgba(255, 255, 0, 0.3), 0 -5px 20px rgba(255, 128, 0, 0.3), 0 -4px 20px rgba(255, 0, 0, 0.3);
+
+	--color-miserAlert: rgb(223, 223, 223);
 }
 
 [data-theme="light"] {
@@ -80,6 +82,7 @@
 	--jaugePleine-boxShadowMax: 0 -1px 4px #fff, 0 -2px 10px #00ffea, 0 -5px 20px #00ffea, 0 -4px 20px #00ffea;
 	--jaugePleine-boxShadowMin: 0 -1px 4px #fff, 0 -2px 10px rgba(255, 255, 0, 0.3), 0 -5px 20px rgba(255, 128, 0, 0.3), 0 -4px 20px rgba(255, 0, 0, 0.3);
 
+	--color-miserAlert: rgb(223, 223, 223);
 }
 
 [data-theme="dark"] {
@@ -121,6 +124,7 @@
 	--jaugePleine-boxShadowMax: 0 -1px 4px #fff, 0 -2px 10px #ff0, 0 -5px 20px #ff8000, 0 -4px 20px #f00;
 	--jaugePleine-boxShadowMin: 0 -1px 4px #fff, 0 -2px 10px rgba(255, 255, 0, 0.3), 0 -5px 20px rgba(255, 128, 0, 0.3), 0 -4px 20px rgba(255, 0, 0, 0.3);
 
+	--color-miserAlert: rgba(239, 59, 46, 1);
 }
 
 
@@ -1450,16 +1454,20 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 }
 
 
-/* .marginFix {
-	margin: 60px auto 55px auto !important;
-} */
-
+#phaseMiserAlert p {
+	/* Italic du "Miser" alert */
+	-moz-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(349deg, 0deg);
+    -webkit-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(349deg, 0deg);
+    -o-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(349deg, 0deg);
+    -ms-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(349deg, 0deg);
+    transform: scale(1) rotate(0deg) translate(0px, 0px) skew(349deg, 0deg);
+}
 
 #phaseMiserAlert{
-	/* Position centrée hori/verti normalemennt (de base:) */
 	font-size: 4.5em;
-	color: rgb(223, 223, 223);
+	color: var(--color-miserAlert);
 	font-style: italic;
+
 	font-weight: bold;
 	font-family:' Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
 	position: fixed;  
@@ -1471,7 +1479,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	transform: translateX(-50%);
 
 	opacity:0;
-	animation: animPhaseMiserAlert1 0.6s 0.65s forwards ease-out, animPhaseMiserAlertTransitionLente 3s 1.25s forwards linear;
+	animation: animPhaseMiserAlert1 0.6s 0.65s forwards ease-out, animPhaseMiserAlertTransitionLente 2s 1.25s forwards linear;
 }
 @keyframes animPhaseMiserAlert1 {
 	from {
@@ -1482,27 +1490,27 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	to {
 		opacity: 1;
 		filter: blur(0px);
-		left: 47%; 
+		left: 48%; 
 	}
 }
 @keyframes animPhaseMiserAlertTransitionLente {
 	from {
 		opacity: 1;
-		left: 47%; 
+		left: 48%; 
 	}
 	to {
 		opacity: 1;
-		left: 53%; 
+		left: 52%; 
 	}
 }
 
 .phaseMiserAlert2 {
-	animation: animPhaseMiserAlert2 0.6s forwards ease-in !important;
+	animation: animPhaseMiserAlert2 0.3s forwards ease-in !important;
 }
 @keyframes animPhaseMiserAlert2 {
 	from {
 		opacity: 1;
-		left: 53%; 
+		left: 52%; 
 		filter: blur(0px);
 	}
 	to {
@@ -1511,6 +1519,40 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 		filter: blur(3px);
 	}
 }
+
+
+.glitchPhaseLente {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2224,7 +2266,8 @@ figure:active {
 
 	box-sizing: border-box;
 	overflow: hidden;
-	background-image: url("Images/cashBJ.png"), linear-gradient(127deg, rgba(181,161,17,1) 1%, rgba(252,107,0,1) 32%, rgba(186,25,167,1) 76%, rgba(85,8,168,1) 99%);
+	/* background-image: url("Images/cashBJ.png"), linear-gradient(127deg, rgba(181,161,17,1) 1%, rgba(252,107,0,1) 32%, rgba(186,25,167,1) 76%, rgba(85,8,168,1) 99%); */
+	background: linear-gradient(127deg, rgba(181,161,17,1) 1%, rgba(252,107,0,1) 32%, rgba(186,25,167,1) 76%, rgba(85,8,168,1) 99%);
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position-x: 40%;

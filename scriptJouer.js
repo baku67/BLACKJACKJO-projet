@@ -962,16 +962,21 @@
                 if (isConnected == false) {
                   console.log('isConnected: ' + isConnected);
                   credits = 100;
-                  document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + "<span id=\"creditsInvite\">" + credits + "</span>" + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
-                  document.getElementById("credits").style.position = "relative";
-                  document.getElementById("credits").style.bottom = "7px";
+                  if (document.getElementById("credits") !== null) {
+                    document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + "<span id=\"creditsInvite\">" + credits + "</span>" + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
+                    document.getElementById("credits").style.position = "relative";
+                    document.getElementById("credits").style.bottom = "7px";
+  
+                  }
                   // document.getElementById("traitLumineux").style.visibility = "visible";
                   document.getElementById("jaugeContainer").style.bottom = "-52px";
                   document.getElementById("imgStreak").style.top = "22.5%";
                 }
                 else {
                   console.log('isConnected: ' + isConnected);
-                  document.getElementById("creditsConnected").innerHTML = creditsConnected;
+                  if (document.getElementById("creditsConnected") !== null) {
+                    document.getElementById("creditsConnected").innerHTML = creditsConnected;
+                  }
                   // document.getElementById("traitLumineux").style.visibility = "visible";
                   // document.getElementById("traitLumineux").style.position = 'relative';
                   // document.getElementById("traitLumineux").style.bottom = '20px';
