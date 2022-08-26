@@ -128,7 +128,7 @@
 
 						&nbsp;&nbsp;&nbsp;
 						
-						<span style="font-size:1.7em;">|</span>
+						<span id="traitSeparateurConnecte">|</span>
 						
 						&nbsp;&nbsp;
 
