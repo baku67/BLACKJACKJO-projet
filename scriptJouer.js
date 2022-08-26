@@ -173,6 +173,8 @@
 
       if (isConnected == false) {
         document.getElementById("connectionContainer").style.marginRight = "0px";
+
+        refreshAnimJauge();
       }
       else {
         document.getElementById("connectionContainer").style.marginRight = "55px";
@@ -992,6 +994,7 @@
                   // document.getElementById("traitLumineux").style.visibility = "visible";
                   document.getElementById("jaugeContainer").style.bottom = "-52px";
                   document.getElementById("imgStreak").style.top = "22.5%";
+                  document.getElementById("streakNumber").style.top = "23.5%";
                 }
                 else {
                   console.log('isConnected: ' + isConnected);
@@ -1841,8 +1844,10 @@
                 document.getElementById("footerTitle").innerHTML = " - Choix -";
 
                   if (scoreTotalJoueur > 8 && scoreTotalJoueur < 12) {
-                    document.getElementById("double").style.opacity = 1;
-                    document.getElementById("choixDoubler").style.opacity = 1;
+                    if ((document.getElementById("double") !==null ) && (document.getElementById("choixDoubler") !== null)) {
+                      document.getElementById("double").style.opacity = 1;
+                      document.getElementById("choixDoubler").style.opacity = 1;  
+                    }
                   }
 
                 document.getElementById("hit").addEventListener("click", function() {
@@ -2127,7 +2132,9 @@
           if (choix == "hit") {
             // document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
             // document.getElementById('traitUnderlineInverse').classList.add("traitUnderlineInverse2Flash");
-            document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert1");
+            if (document.getElementById('phaseChoixAlert') !== null) {
+              document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert1");
+            }
           }
           
           // Cette class est a ajouter lors du click sur un bouton (puis on lancera un reload a chaque inclusivité)
@@ -2898,7 +2905,7 @@
       // NOUVELLE CARTE  > CROUPIER (+ScoreTOTAL)
       function addCardCroupier() {
 
-          distribAnim("croupier");
+        distribAnim("croupier");
 
         // Créer l'élément <img/>
         var img = document.createElement('img');
@@ -2915,7 +2922,7 @@
 
         // Scores Total Croupier
         if (asCroupier == true) {
-          asCroupier = false;
+          // asCroupier = false;
           if (scoreTotalCroupier + 10 > 21) {
             scoreTotalCroupier += pickedCardObject.cardValue;
           }
@@ -3023,6 +3030,7 @@
 
 
 
+
       // NOUVELLE CARTE  > JOUEUR (+ScoreTOTAL)
       function addCardJoueur() {
 
@@ -3040,12 +3048,12 @@
           asJoueur = true;
         }
         //FIN
+
+
         nbrCardsJoueur = nbrCardsJoueur + 1;
         console.log("nbrCardsJoueur: " + nbrCardsJoueur);
 
         scoreTotalJoueur += pickedCardObject.cardValue;
-
-        
 
         // MàJ score avec petit delai (et refresh CSS)
         setTimeout(function() {
@@ -3068,6 +3076,7 @@
             document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;
           }
           //FIN
+
 
           // document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;  // Avec if bool AS , innerHTML = ... / ....
           document.getElementById('scoreJoueur').classList.add("scoreBorder");
@@ -3253,7 +3262,7 @@
 
 
       // WIP Streak
-      if (isConnected == true) {
+      // if (isConnected == true) {
 
         function majStreak(winLose) {
 
@@ -3276,6 +3285,12 @@
                 document.getElementById("streakNumber").innerText = (preogressNumBeforeRefresh + 1);
 
                 if (isConnected == true) {
+                  let newDataProgress = (preogressNumBeforeRefresh + 1);
+                  let streakPourcentage = (newDataProgress*10).toString();
+      
+                  document.getElementById('dataProgress').setAttribute("data-progress", streakPourcentage);
+                }
+                else {
                   let newDataProgress = (preogressNumBeforeRefresh + 1);
                   let streakPourcentage = (newDataProgress*10).toString();
       
@@ -3316,6 +3331,13 @@
       
                   document.getElementById('dataProgress').setAttribute("data-progress", streakPourcentage);
                 }
+                else {
+                  let newDataProgress = (preogressNumBeforeRefresh + 1);
+                  let streakPourcentage = (newDataProgress*10).toString();
+      
+                  document.getElementById('dataProgress').setAttribute("data-progress", streakPourcentage);
+                }
+
   
               }
               else {
@@ -3349,6 +3371,14 @@
       
                   document.getElementById('dataProgress').setAttribute("data-progress", streakPourcentage);
                 }
+                else {
+                  let newDataProgress = (preogressNumBeforeRefresh - 2);
+                  let streakPourcentage = (newDataProgress*10).toString();
+      
+                  document.getElementById('dataProgress').setAttribute("data-progress", streakPourcentage);
+                }
+
+                
               }
               else if ((preogressNumBeforeRefresh - 2) < 0) {
                 document.getElementById("streakNumber").innerText = 0;
@@ -3376,27 +3406,33 @@
 
 
 
-          var streakModifierToPhp = {};
-          streakModifierToPhp.value = resultatStreak;
-
-          $.ajax({
-            url: "setStreak.php",
-            method: "post",
-            data: streakModifierToPhp,
-            success: function() {
-              console.log("Streak modifier: " + resultatStreak);
-            }
-
-          })
+          if (isConnected == true) {
+            var streakModifierToPhp = {};
+            streakModifierToPhp.value = resultatStreak;
+  
+            $.ajax({
+              url: "setStreak.php",
+              method: "post",
+              data: streakModifierToPhp,
+              success: function() {
+                console.log("Streak modifier: " + resultatStreak);
+              }
+  
+            })
+          }
+          
         }
 
 
-      }
+      // }
       // else {
       //   function majStreak(winLose) {
           
       //   }
       // }
+
+
+
 
 
 

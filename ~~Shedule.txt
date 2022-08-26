@@ -1,33 +1,30 @@
 Jauge Invite
 
-Il y a un petit décalage (pas beau) du footer vers le haut je crois lors du resultat (out les cas?)
+21 hors BJ: choix :/
 
-IMPORTANT: Si 21 hors BJ, lance phase croupier auto mais pas de result: donc remove le alertchoix et le traitSouligne
+Il y a un petit décalage (pas beau) du footer vers le haut je crois lors du resultat (out les cas?)
 
 Vite fait: le blur sur premiere anim vertical des separateur et appliquer le text slide du bust sur les autres
 
 L'AS croupier s'adapte pas du tout (genre y'a rien je crois 0 code)
 
-Bonus Streak footerGain (éviter vérif front)
+Affichage Bonus Streak footerGain (éviter vérif front)
 
 State DM sur index sinon pas de sens (ducoup toggleBoutons aussi): sinon le default data-theme sur index puis load du boolDM BDD 
 
-Les soundButtonContainer etc cargent pas desfois -> arret script lancerPartie (assez souvent, mettre des verif !==null)
 
-Streak négatif possible, ajouter bg color rouge while jauge decrease et effet etincelle au bout (box-shadow-right) whil increase
-DM par default black (mais switch marche plus)
-
-
-Soucis des dispositions bugué sur phone dues au position absolute ?
+Pendant l'anim de progressBar il faut que le bout s'illumine ou qqc:
+- Streak négatif possible, ajouter bg color rouge while jauge decrease et effet etincelle au bout (box-shadow-right) whil increase
 
 Couleur du StreakNumber qui rougit et s'enflamme au fur et à mesure !
-Pendant l'anim de progressBar il faut que le bout s'illumine ou qqc
 
 BUG qui fait perdre tous les streak apres avoir atteint le 10 !!!!!!!!
 
 
 
-CHECKER LES SCRRENSHOTS DE PB RESULTATS
+
+
+CHECKER LES SCRRENSHOTS DE PB RESULTATS (pas de calcul AS croupier, certains cas ou choix possible alors que phaseCroupierLancée)
 
 BACKUPS BACKUPS BACKUPS BACKUPS BACKUPS BACKUPS BACKUPS BACKUPS BACKUPS BACKUPS BACKUPS BACKUPS
 RESPONSIVE: POURCENTAGES et Vh (viewport height !!) https://getflywheel.com/layout/choose-css-unit-create-better-site-layouts-how-to/#:~:text=Percentage(%25)%20unit&text=Percentage%20is%20one%20of%20the,width%20of%20its%20parent%20element.

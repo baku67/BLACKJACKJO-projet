@@ -192,8 +192,9 @@
 
 					<div class="indexFadeInJauge" style="display: inline; margin: 0px auto;">
 						<img id="imgStreak" class="indexFadeInImgStreak" src="" alt="Streak">
+						<p id="streakNumber">0</p>	
 						<div id="jaugeContainer" class="jaugeContainer jaugeProgress" style="bottom:-13px;">
-							<span id="dataProgress" data-progress=""></span>
+							<span id="dataProgress" data-progress="0"></span>
 						</div>
 					</div>
 
