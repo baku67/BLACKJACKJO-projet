@@ -1718,18 +1718,15 @@
       function miseLock() {
         document.getElementById("boutonMiser").addEventListener("click", function() {
 
-          document.getElementById('phaseMiserAlert').classList.add("phaseMiserAlert2");
+          // Anims miserAlert
+          document.getElementById('textMise').classList.add("phaseMiserAlert2Flash");
+          document.getElementById('traitUnderlineInverse').classList.add("traitUnderlineInverse2Flash");
+          
+          setTimeout( function() {
+            document.getElementById('phaseMiserAlert').classList.add("phaseMiserAlert2");
+          }, 380)
+          // Fin anims
 
-          // Marche po (anim boutonMiser onClick)
-            // setTimeout( function() {
-            //   document.getElementById("boutonMiser").innerText = "";
-            // }, 100)
-            // document.getElementById("boutonMiser").classList.add("boutonMiserAnim");
-          // Fin marche po
-
-          // document.querySelector("#footer").classList.remove("miserActif2");  
-
-          // mettre des remove et setTimeOut comme avec l'autre[TENTÉ] (regarder dans l'inspecteur: ya toujours la class redecalge et comme ya le fill-mode: forward...)
           document.getElementById("header").classList.remove("headerOnPartie2");
           document.getElementById("footer").classList.remove("footerOnPartie2");
           document.getElementById("header").classList.remove("headerOnPartieRedecale");
@@ -1739,11 +1736,6 @@
             document.getElementById("header").classList.add("headerOnPartie2");
             document.getElementById("footer").classList.add("footerOnPartie2");
           }, 0);
-          // document.getElementById("header").classList.add("headerOnPartie2");
-          // document.getElementById("footer").classList.add("footerOnPartie2");
-
-          // Faire de meme avec titleOnPartie (pour finir bleu sur le fond orange si dark mode)
-
 
 
           if (SoundMuteBool == false) {
@@ -1804,6 +1796,12 @@
               dataType: "html",
               success: function(response) {
                 $("#chipsContainer").html(response);
+
+
+                // Anims alertChoix
+
+                // Fin
+
 
                 ChoixActif = true;
                 document.getElementById("footerTitle").innerHTML = " - Choix -";

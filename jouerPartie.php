@@ -124,8 +124,15 @@
         Non il y a une anim Bézier, mettre jsute le delai qu'il faut 
         Par contre l'exemple est avec un hover -->
         <div id="phaseMiserAlert">
-            <p class="glitchPhaseLente">Mise</p>
+            <p id="textMise" class="glitchPhaseLente">
+                <span id="firstLetter">M</span>
+                <span id="secondLetter">i</span>
+                <span id="thirdLetter">s</span>
+                <span id="fourthLetter">e</span>
+            </p>
         </div>
+
+        <div id="traitUnderlineInverse"></div>
 
 
 
