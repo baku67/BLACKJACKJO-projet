@@ -1462,7 +1462,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	font-style: italic;
 	font-weight: bold;
 	font-family:' Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
-	position: absolute;  
+	position: fixed;  
 	top: 47%; 
 	-ms-transform: translateY(-50%); 
 	transform: translateY(-50%); 
