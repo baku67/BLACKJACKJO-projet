@@ -1727,6 +1727,16 @@
           }, 380)
           // Fin anims
 
+            // Reset des class du AlertMise/choix pour repop des anims lors Choix
+            // Reset les positions et l'opacité et tout ce qui est forwardé
+            // setTimeout( function() {
+            //   document.getElementById('textMise').classList.remove("phaseMiserAlert2Flash");
+            //   document.getElementById('traitUnderlineInverse').classList.remove("traitUnderlineInverse2Flash");
+            //   document.getElementById('phaseMiserAlert').classList.remove("phaseMiserAlert2");
+            // }, 415)
+            // Fin reset
+
+
           document.getElementById("header").classList.remove("headerOnPartie2");
           document.getElementById("footer").classList.remove("footerOnPartie2");
           document.getElementById("header").classList.remove("headerOnPartieRedecale");
@@ -1785,6 +1795,12 @@
                 $("#chipsContainer").html(response);
                 ChoixActif = false;
                 document.getElementById("footerTitle").innerHTML = " - En attente... -";
+
+                // Reset des class du AlertMise/choix pour repop des anims lors Choix
+                // document.getElementById('textMise').classList.remove("phaseMiserAlert2Flash");
+                // document.getElementById('traitUnderlineInverse').classList.remove("traitUnderlineInverse2Flash");
+                // document.getElementById('phaseMiserAlert').classList.remove("phaseMiserAlert2");
+                // Fin reset
               }
             });
           }, 700 * setTimeOutMultiplier);
@@ -1799,7 +1815,19 @@
 
 
                 // Anims alertChoix
+                  // Reset des class du AlertMise/choix pour repop des anims lors Choix
+                  // document.getElementById('textMise').classList.remove("phaseMiserAlert2Flash");
+                  // document.getElementById('traitUnderlineInverse').classList.remove("traitUnderlineInverse2Flash");
+                  // document.getElementById('phaseMiserAlert').classList.remove("phaseMiserAlert2");
+                  // Fin reset
 
+                document.getElementById('textMise').innerText = "Choix";
+                document.getElementById('textMise').classList.add("phaseMiserAlert2Flash");
+                document.getElementById('traitUnderlineInverse').classList.add("traitUnderlineInverse2Flash");
+                
+                setTimeout( function() {
+                  document.getElementById('phaseMiserAlert').classList.add("phaseMiserAlert2");
+                }, 380)
                 // Fin
 
 
@@ -1896,8 +1924,6 @@
           img.src = "Images/deck3.png";
         }
 
-        // test audio coupé et non audio = 0
-        // audioCardSound.play();
         if (SoundMuteBool == false) {
           audioCardSound.play();
         }

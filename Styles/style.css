@@ -1499,7 +1499,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 }
 
 .traitUnderlineInverse2Flash {
-	animation: traitUnderlineFlash 0.3s forwards ease, traitUnderlineInverse2 0.35s .38s forwards ease-in !important;
+	animation: traitUnderlineFlash 0.3s ease, traitUnderlineInverse2 0.35s .38s  forwards ease-in !important;
 }
 @keyframes traitUnderlineFlash {
 	0% {
@@ -1583,10 +1583,10 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 
 
 .phaseMiserAlert2Flash {
-	animation: flashMiser 0.3s forwards ease !important;
+	animation: flashMiser 0.3s ease !important;
 }
 .phaseMiserAlert2 {
-	animation: animPhaseMiserAlert2 0.35s forwards ease-in !important;
+	animation: animPhaseMiserAlert2 forwards 0.35s ease-in !important;
 }
 @keyframes flashMiser {
 	0% {

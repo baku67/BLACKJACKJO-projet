@@ -125,14 +125,17 @@
         Par contre l'exemple est avec un hover -->
         <div id="phaseMiserAlert">
             <p id="textMise" class="glitchPhaseLente">
-                <span id="firstLetter">M</span>
+                Mise
+                <!-- <span id="firstLetter">M</span>
                 <span id="secondLetter">i</span>
                 <span id="thirdLetter">s</span>
-                <span id="fourthLetter">e</span>
+                <span id="fourthLetter">e</span> -->
             </p>
         </div>
 
         <div id="traitUnderlineInverse"></div>
+
+
 
 
 
