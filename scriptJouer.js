@@ -1179,11 +1179,6 @@
 
 
 
-
-                // document.getElementById("footer").classList.add("footerHeightAnim");
-
-
-
                 $.ajax({
                   async: false,
                   url: "Footers/footerMiseModul.html",
@@ -1717,6 +1712,8 @@
       // Lock de la mise
       function miseLock() {
         document.getElementById("boutonMiser").addEventListener("click", function() {
+
+          document.getElementById('phaseMiserAlert').classList.add("phaseMiserAlert2");
 
           // Marche po (anim boutonMiser onClick)
             // setTimeout( function() {
