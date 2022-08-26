@@ -1,3 +1,7 @@
+Jauge Invite
+
+Il y a un petit décalage (pas beau) du footer vers le haut je crois lors du resultat (out les cas?)
+
 IMPORTANT: Si 21 hors BJ, lance phase croupier auto mais pas de result: donc remove le alertchoix et le traitSouligne
 
 Vite fait: le blur sur premiere anim vertical des separateur et appliquer le text slide du bust sur les autres

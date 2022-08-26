@@ -2384,6 +2384,12 @@
 
               if (scoreTotalCroupier > 21) {
 
+                if ((document.getElementById("phaseChoixAlert") !==null) && (document.getElementById("traitUnderlineInverseChoix") !==null)) {
+                  document.getElementById("phaseChoixAlert").remove();
+                  document.getElementById("traitUnderlineInverseChoix").remove();
+                }
+
+
                 WinLose = 'WIN';
                 resultatCas = 'Big Win';
 
@@ -2480,10 +2486,6 @@
                         // document.getElementById("separateur").classList.add("marginFix");
 
 
-
-
-
-
                         // TEXT
                         document.getElementById("resultatText").innerText = "BIG WIN";
                       }, 250);
@@ -2498,7 +2500,15 @@
                 }, 0);
               }
 
+
+
+
               if (scoreTotalJoueur > scoreTotalCroupier) {
+
+                if ((document.getElementById("phaseChoixAlert") !==null) && (document.getElementById("traitUnderlineInverseChoix") !==null)) {
+                  document.getElementById("phaseChoixAlert").remove();
+                  document.getElementById("traitUnderlineInverseChoix").remove();
+                }
 
                 WinLose = 'WIN';
                 resultatCas = 'Big Win';
@@ -3589,6 +3599,11 @@
       // 21 hors BlackJack: Enlever la possibilité de choisir 
       function check21noBJ() {
         if ((scoreTotalJoueur == 21) && (nbrCardsJoueur > 2)) {
+
+          if ((document.getElementById("phaseChoixAlert") !==null) && (document.getElementById("traitUnderlineInverseChoix") !==null)) {
+            document.getElementById("phaseChoixAlert").remove();
+            document.getElementById("traitUnderlineInverseChoix").remove();
+          }
 
           // Pourquoi j'ai eu le moyen de choisir pendant le lancerPhaseCroupier() qui devrait load footerDistribution?
           lancerPhaseCroupier(); 
