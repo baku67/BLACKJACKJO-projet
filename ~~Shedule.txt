@@ -1,3 +1,6 @@
+
+Bonus Streak footerGain (éviter vérif front)
+
 State DM sur index sinon pas de sens (ducoup toggleBoutons aussi): sinon le default data-theme sur index puis load du boolDM BDD 
 
 Les soundButtonContainer etc cargent pas desfois -> arret script lancerPartie (assez souvent, mettre des verif !==null)
@@ -14,6 +17,8 @@ Pendant l'anim de progressBar il faut que le bout s'illumine ou qqc
 BUG qui fait perdre tous les streak apres avoir atteint le 10 !!!!!!!!
 
 
+
+CHECKER LES SCRRENSHOTS DE PB RESULTATS
 
 BACKUPS BACKUPS BACKUPS BACKUPS BACKUPS BACKUPS BACKUPS BACKUPS BACKUPS BACKUPS BACKUPS BACKUPS
 RESPONSIVE: POURCENTAGES et Vh (viewport height !!) https://getflywheel.com/layout/choose-css-unit-create-better-site-layouts-how-to/#:~:text=Percentage(%25)%20unit&text=Percentage%20is%20one%20of%20the,width%20of%20its%20parent%20element.

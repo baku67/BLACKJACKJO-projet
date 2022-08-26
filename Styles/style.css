@@ -31,6 +31,8 @@
 	--bgColor-jaugePleine: rgb(241 205 92);
 
 	--imgFire-src: url("../Images/fire1p_light.png");
+
+	--imgDeco-src: url("../Images/deconnexion.png")
 }
 
 [data-theme="light"] {
@@ -69,6 +71,8 @@
 	--bgColor-jaugePleine: rgb(241 205 92);
 
 	--imgFire-src: url("../Images/fire1p_light.png");
+
+	--imgDeco-src: url("../Images/deconnexion.png")
 }
 
 [data-theme="dark"] {
@@ -104,6 +108,8 @@
 	--bgColor-jaugePleine: #ef3b2e;
 
 	--imgFire-src: url("../Images/fire1p.png");
+
+	--imgDeco-src: url("../Images/deconnexion_darkMode.png")
 }
 
 
@@ -1237,6 +1243,8 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 
 	position: relative;
 	bottom: 55px;
+
+	content: var(--imgDeco-src);
 }
 
 

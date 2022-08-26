@@ -133,7 +133,7 @@
 
       if (isConnected == true && toggleDMfromPhp == true) {
 
-        document.querySelector('#deconnexionImg').src = "../Images/deconnexion_darkMode.png"
+        document.querySelector('#deconnexionImg').src = "";
 
         let body = document.querySelector('body');
         body.dataset.theme = "dark";
@@ -901,6 +901,7 @@
 
                   // Fix 1er switch DM/LM need 2 clic 
                   document.getElementById("backgroundButtonContainer").dataset.mode = "light";
+                  // Fin
 
 
                   cards.forEach(element => {
@@ -930,6 +931,7 @@
 
                   // Fix 1er switch DM/LM need 2 clic 
                   document.getElementById("backgroundButtonContainer").dataset.mode = "dark";
+                  // Fin
 
                   
                   cards.forEach(element => {
@@ -1508,8 +1510,18 @@
                 success: function(response) {
                   $("#container3").html(response);
 
+
                   // *Dark Mode State*
                   if (darkModeBool == true) {
+
+                    // Fix 1er switch DM/LM need 2 clic 
+                    document.getElementById("backgroundButtonContainer").dataset.mode = "light";
+                    // Fin fix
+                    document.getElementById("backgroundButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
+                    let body = document.querySelector('body');
+                    body.dataset.theme = "dark";
+                    // Fin 2.0  
+
                     if (document.querySelectorAll('.pokerChips') !== null) {
                       var imgTokens = document.querySelectorAll('.pokerChips');
                       imgTokens.forEach(element => {
@@ -1517,7 +1529,18 @@
                       });
                     }
                   }
-                  else {                
+                  else {  
+                    
+                    // Fix 1er switch DM/LM need 2 clic 
+                    document.getElementById("backgroundButtonContainer").dataset.mode = "dark";
+                    // Fin fix
+                    document.getElementById("backgroundButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
+                    let body = document.querySelector('body');
+                    body.dataset.theme = "light";
+                    // Fin 2.0  
+
+
+
                     if (document.querySelectorAll('.pokerChips') !== null) {
                       var imgTokens = document.querySelectorAll('.pokerChips');
                       imgTokens.forEach(element => {
