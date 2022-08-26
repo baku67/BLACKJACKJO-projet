@@ -133,7 +133,7 @@
 
       if (isConnected == true && toggleDMfromPhp == true) {
 
-        document.querySelector('#deconnexionImg').src = "";
+        document.querySelector('#deconnexionImg').src = "../Images/deconnexion_darkMode.png";
 
         let body = document.querySelector('body');
         body.dataset.theme = "dark";
@@ -3095,7 +3095,20 @@
               // Vérif front streak>10 
               if ((preogressNumBeforeRefresh + 1) < 11 ) {
                 document.getElementById("streakNumber").innerText = (preogressNumBeforeRefresh + 1);
+
+                if (isConnected == true) {
+                  let newDataProgress = (preogressNumBeforeRefresh + 1);
+                  let streakPourcentage = (newDataProgress*10).toString();
+      
+                  document.getElementById('dataProgress').setAttribute("data-progress", streakPourcentage);
+                }
+  
+  
               }
+              else {
+                document.getElementById("streakNumber").innerText = (preogressNumBeforeRefresh);
+              }
+
             }, 500)
 
             refreshAnimJauge();
@@ -3117,7 +3130,19 @@
               // Vérif front streak>10 
               if ((preogressNumBeforeRefresh + 1) < 11 ) {
                 document.getElementById("streakNumber").innerText = (preogressNumBeforeRefresh + 1);
+
+                if (isConnected == true) {
+                  let newDataProgress = (preogressNumBeforeRefresh + 1);
+                  let streakPourcentage = (newDataProgress*10).toString();
+      
+                  document.getElementById('dataProgress').setAttribute("data-progress", streakPourcentage);
+                }
+  
               }
+              else {
+                document.getElementById("streakNumber").innerText = (preogressNumBeforeRefresh);
+              }
+
             }, 500)
 
             refreshAnimJauge();
@@ -3138,7 +3163,27 @@
             setTimeout( function() {
               if ((preogressNumBeforeRefresh - 2) >= 0 ) {
                 document.getElementById("streakNumber").innerText = (preogressNumBeforeRefresh - 2);
+
+                if (isConnected == true) {
+                  let newDataProgress = (preogressNumBeforeRefresh - 2);
+                  let streakPourcentage = (newDataProgress*10).toString();
+      
+                  document.getElementById('dataProgress').setAttribute("data-progress", streakPourcentage);
+                }
               }
+              else if ((preogressNumBeforeRefresh - 2) < 0) {
+                document.getElementById("streakNumber").innerText = 0;
+
+                if (isConnected == true) {      
+                  document.getElementById('dataProgress').setAttribute("data-progress", 0);
+                }
+
+              }
+              // else if ((preogressNumBeforeRefresh - 2) >= -1) {
+              //   document.getElementById("streakNumber").innerText = 0;
+              // }
+
+
             }, 500)
             
             refreshAnimJauge();
@@ -3292,7 +3337,7 @@
                         winLose = -1;
                         winLoseDB(winLose);
 
-                        majStreak(winLose);
+                        majStreak(WinLose);
 
                       }, 500)
 
