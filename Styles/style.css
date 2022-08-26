@@ -1457,7 +1457,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 
 #phaseMiserAlert{
 	/* Position centrée hori/verti normalemennt (de base:) */
-	font-size: 4em;
+	font-size: 4.5em;
 	color: rgb(223, 223, 223);
 	font-style: italic;
 	font-weight: bold;
@@ -1471,15 +1471,17 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	transform: translateX(-50%);
 
 	opacity:0;
-	animation: animPhaseMiserAlert1 0.6s forwards ease-in-out, animPhaseMiserAlertTransitionLente 6s 0.6s forwards ease ;
+	animation: animPhaseMiserAlert1 0.6s 0.65s forwards ease-out, animPhaseMiserAlertTransitionLente 3s 1.25s forwards linear;
 }
 @keyframes animPhaseMiserAlert1 {
 	from {
 		opacity: 0;
+		filter: blur(3px);
 		left: -5%; 
 	}
 	to {
 		opacity: 1;
+		filter: blur(0px);
 		left: 47%; 
 	}
 }
@@ -1493,19 +1495,20 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 		left: 53%; 
 	}
 }
-.phaseMiserAlert2 {
-	overflow: hidden !important;
 
+.phaseMiserAlert2 {
 	animation: animPhaseMiserAlert2 0.6s forwards ease-in !important;
 }
 @keyframes animPhaseMiserAlert2 {
 	from {
 		opacity: 1;
 		left: 53%; 
+		filter: blur(0px);
 	}
 	to {
 		opacity: 0;
 		left: 105%; 
+		filter: blur(3px);
 	}
 }
 
@@ -1524,7 +1527,8 @@ p {
 
 	height: 250px;
 
-	animation: fadeInAnimationPartieScore ease 2s; 
+	opacity: 0;
+	animation: fadeInAnimationPartieScore 2s 1s ease ; 
 	animation-iteration-count: 1; 
 	animation-fill-mode: forwards; 
 
@@ -1589,7 +1593,8 @@ p {
 
 	height: 125px;
 
-	animation: fadeInAnimationPartieScore ease 2s; 
+	opacity: 0;
+	animation: fadeInAnimationPartieScore 2s 1s ease; 
 	animation-iteration-count: 1; 
 	animation-fill-mode: forwards; 
 
@@ -3028,3 +3033,4 @@ a {
 	top: 21%;
 	border-radius: 8px;
 }
+
