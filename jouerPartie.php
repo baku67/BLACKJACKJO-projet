@@ -117,12 +117,13 @@
 
 
 
-
-
+        <!-- ANIMS ALERT PHASE (mise, choix) -->
 
         <!-- class .glitch à ajouter via JS (avec timeOut) pour coincider avec la phaseLente ? 
         Non il y a une anim Bézier, mettre jsute le delai qu'il faut 
         Par contre l'exemple est avec un hover -->
+
+        <!-- Celui la pop avec le load du jouerPartie, pour le choix c'est une autre histoire -->
         <div id="phaseMiserAlert">
             <p id="textMise" class="glitchPhaseLente">
                 Mise
@@ -132,10 +133,17 @@
                 <span id="fourthLetter">e</span> -->
             </p>
         </div>
-
         <div id="traitUnderlineInverse"></div>
 
 
+        <!-- Il faut qui soit créé à l'écart du viewport, puis au moment du load footerChoix, on ajoute des classes d'anims (pas d'anims sur l'id de base) -->
+        <div id="phaseChoixAlert">
+            <p id="textChoix" style="">
+                Choix
+            </p>
+        </div>
+
+        <!-- FIN ANIMS -->
 
 
 

@@ -1,3 +1,6 @@
+Le flash Choix, le trait souligne + flash, l'adaptation DM/LM, 
+Vite fait: le blur sur premiere anim vertical des separateur et appliquer le text slide du bust sur les autres
+
 L'AS croupier s'adapte pas du tout (genre y'a rien je crois 0 code)
 
 Bonus Streak footerGain (éviter vérif front)

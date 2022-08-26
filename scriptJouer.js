@@ -374,7 +374,22 @@
 
 
 
+        function animAlertOnClickChoix() {
+          setTimeout( function() {
+            if (document.getElementById('phaseChoixAlert') !== null) {
+              // document.getElementById('textChoix').classList.add('phaseChoixAlert2Flash');
+              document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert2");
+            }
+          }, 380)
 
+          setTimeout( function() {
+            if (document.getElementById('phaseChoixAlert') !== null) {
+              // document.getElementById('textChoix').classList.remove('phaseChoixAlert2Flash');
+              document.getElementById('phaseChoixAlert').classList.remove("phaseChoixAlert2");
+            }
+          }, 731)
+
+        }
 
 
 
@@ -1731,9 +1746,14 @@
             // Reset les positions et l'opacité et tout ce qui est forwardé
             // setTimeout( function() {
             //   document.getElementById('textMise').classList.remove("phaseMiserAlert2Flash");
+            // }, 300)
+            // setTimeout( function() {
+            //   document.getElementById('traitUnderlineInverse').style.left = "50%";
             //   document.getElementById('traitUnderlineInverse').classList.remove("traitUnderlineInverse2Flash");
+            // }, 730)
+            // setTimeout( function() {
             //   document.getElementById('phaseMiserAlert').classList.remove("phaseMiserAlert2");
-            // }, 415)
+            // }, 730)
             // Fin reset
 
 
@@ -1795,12 +1815,6 @@
                 $("#chipsContainer").html(response);
                 ChoixActif = false;
                 document.getElementById("footerTitle").innerHTML = " - En attente... -";
-
-                // Reset des class du AlertMise/choix pour repop des anims lors Choix
-                // document.getElementById('textMise').classList.remove("phaseMiserAlert2Flash");
-                // document.getElementById('traitUnderlineInverse').classList.remove("traitUnderlineInverse2Flash");
-                // document.getElementById('phaseMiserAlert').classList.remove("phaseMiserAlert2");
-                // Fin reset
               }
             });
           }, 700 * setTimeOutMultiplier);
@@ -1814,21 +1828,7 @@
                 $("#chipsContainer").html(response);
 
 
-                // Anims alertChoix
-                  // Reset des class du AlertMise/choix pour repop des anims lors Choix
-                  // document.getElementById('textMise').classList.remove("phaseMiserAlert2Flash");
-                  // document.getElementById('traitUnderlineInverse').classList.remove("traitUnderlineInverse2Flash");
-                  // document.getElementById('phaseMiserAlert').classList.remove("phaseMiserAlert2");
-                  // Fin reset
-
-                document.getElementById('textMise').innerText = "Choix";
-                document.getElementById('textMise').classList.add("phaseMiserAlert2Flash");
-                document.getElementById('traitUnderlineInverse').classList.add("traitUnderlineInverse2Flash");
                 
-                setTimeout( function() {
-                  document.getElementById('phaseMiserAlert').classList.add("phaseMiserAlert2");
-                }, 380)
-                // Fin
 
 
                 ChoixActif = true;
@@ -1840,6 +1840,10 @@
                   }
 
                 document.getElementById("hit").addEventListener("click", function() {
+
+                  document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
+
+                  animAlertOnClickChoix();
 
                   hit();
 
@@ -1856,7 +1860,18 @@
 
 
                 document.getElementById("stand").addEventListener("click", function() {
-                  // 
+
+                  document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
+
+                  // Plutot mettre un fade out ou voir l'anim (trop brusque le depop) TimeOut trop long 
+                  document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
+                  document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert2");
+                  setTimeout(function() {
+                    document.getElementById('phaseChoixAlert').remove();
+                  }, 2901);
+
+                  // animAlertOnClickChoix();
+                  
                   if (asJoueur == true) {
                     if (scoreTotalJoueur + 10 < 22) {
                       scoreTotalJoueur = scoreTotalJoueur + 10;
@@ -1866,16 +1881,28 @@
                   lancerPhaseCroupier();
                 });
 
-                //***  shortcut Stand
+                  //***  shortcut Stand
                   function doc_keyStand(e) {
                     if ((e.key === '-') && (ChoixActif == true)) {
                         lancerPhaseCroupier();
                     }
                   }
                   document.addEventListener('keyup', doc_keyStand, false);
-                //*** FIN
+                  //*** FIN
 
                 document.getElementById("double").addEventListener("click", function() {
+
+                  document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
+
+                  // Plutot mettre un fade out ou voir l'anim (trop brusque le depop) TimeOut trop long 
+                  document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
+                  document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert2");
+                  setTimeout(function() {
+                    document.getElementById('phaseChoixAlert').remove();
+                  }, 2901);
+
+                  // animAlertOnClickChoix();
+
                   double();
                 });
 
@@ -1891,6 +1918,17 @@
               }
             });
           }, 8000 * setTimeOutMultiplier);
+
+          // Anims alertChoix
+            setTimeout(function() {
+              // document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
+              // document.getElementById('traitUnderlineInverse').classList.add("traitUnderlineInverse2Flash");
+              document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert1");
+              // Fin
+            }, 8001 * setTimeOutMultiplier);
+
+          // Fin Anims alertChoix
+
 
           setTimeout(function() {
             addCardJoueur();
@@ -1930,6 +1968,7 @@
         document.getElementById("croupier").appendChild(img);
       }
 
+      var choix;
 
       function hit() {
 
@@ -1956,11 +1995,21 @@
             success: function(response) {
               ChoixActif = true;
 
+              
+
               $("#chipsContainer").html(response);
               document.getElementById("footerTitle").innerHTML = " - Choix -";
 
+              document.getElementById('textChoix').classList.remove("phaseChoixAlert2Flash");
+
 
               document.getElementById("hit").addEventListener("click", function() {
+
+                document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
+
+                choix = "hit";
+
+                animAlertOnClickChoix();
 
                 hit();
 
@@ -1976,6 +2025,18 @@
               
 
               document.getElementById("stand").addEventListener("click", function() {
+
+                choix = "stand";
+
+                // Plutot mettre un fade out ou voir l'anim (trop brusque le depop) TimeOut trop long 
+                document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
+                document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert2");
+                setTimeout(function() {
+                  document.getElementById('phaseChoixAlert').remove();
+                }, 2901);
+
+                // animAlertOnClickChoix();
+
                 if (asJoueur == true) {
                   //  IF NOT BURST
                   if (scoreTotalJoueur + 10 < 22) {
@@ -1998,6 +2059,18 @@
 
 
               document.getElementById("double").addEventListener("click", function() {
+
+                choix = "double";
+
+                // Plutot mettre un fade out ou voir l'anim (trop brusque le depop) TimeOut trop long 
+                document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
+                document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert2");
+                setTimeout(function() {
+                  document.getElementById('phaseChoixAlert').remove();
+                }, 2901);
+
+                // animAlertOnClickChoix();
+
                 double();
               });
               //***  shortcut Double
@@ -2011,8 +2084,37 @@
 
 
             }
+
+            
+
           });
         }, 2250 * (setTimeOutMultiplier*1.1));
+
+          // Reset apres clickChoix
+          // setTimeout(function() {
+          //   document.getElementById('textChoix').classList.remove("phaseChoixAlert2Flash");
+          //   // document.getElementById('traitUnderlineInverse').classList.add("traitUnderlineInverse2Flash");
+          //   document.getElementById('phaseChoixAlert').classList.remove("phaseChoixAlert1");
+          // }, 2051 * setTimeOutMultiplier*1.1);
+          // Fin
+
+
+        // Ce code est exécuté même apres un Stand() : PB
+        setTimeout(function() {
+          // Anims alertChoix
+          if (choix == "hit") {
+            // document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
+            // document.getElementById('traitUnderlineInverse').classList.add("traitUnderlineInverse2Flash");
+            document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert1");
+          }
+          
+          // Cette class est a ajouter lors du click sur un bouton (puis on lancera un reload a chaque inclusivité)
+          // setTimeout( function() {
+          //   document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert2");
+          // }, 380)
+          // Fin
+        }, 2251 * setTimeOutMultiplier*1.1);
+
       }
 
 
