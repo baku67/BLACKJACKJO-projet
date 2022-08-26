@@ -899,6 +899,10 @@
                   let body = document.querySelector('body');
                   body.dataset.theme = "dark";
 
+                  // Fix 1er switch DM/LM need 2 clic 
+                  document.getElementById("backgroundButtonContainer").dataset.mode = "light";
+
+
                   cards.forEach(element => {
                     element.cardImageURL = element.cardImageURL.substring(0, 9) + "_darkMode.png";
                   });
@@ -924,7 +928,10 @@
                   let body = document.querySelector('body');
                   body.dataset.theme = "light";
 
+                  // Fix 1er switch DM/LM need 2 clic 
+                  document.getElementById("backgroundButtonContainer").dataset.mode = "dark";
 
+                  
                   cards.forEach(element => {
                     element.cardImageURL = element.cardImageURL.substring(0, 9) + ".png";
                   });
@@ -970,92 +977,100 @@
                 // ******************************** *
   
 
-
-                document.getElementById("compteurDeck").innerHTML = compteurDeck;
-                document.getElementById("compteurDeckMax").innerHTML = compteurDeckMax;
+                if (document.getElementById("compteurDeck") !== null)  {
+                  document.getElementById("compteurDeck").innerHTML = compteurDeck;
+                }
+                if (document.getElementById("compteurDeckMax") !== null) {
+                  document.getElementById("compteurDeckMax").innerHTML = compteurDeckMax;  
+                }
 
 
 
 
                 // ******************************** *
                 // BOUTON TOGGLE SON
-                document.getElementById("soundButtonContainer").addEventListener("click", function() {
-                  if (SoundMuteBool == true) {
-                    SoundMuteBool = false;
-                    document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
-                    document.getElementById("soundToggleImage").style.marginLeft = "3px";
-                    audioCardSound.volume = 0.5;  
-                    audioCoinWin.volume = 0.4;
-                    audioExplosionBust.volume = 0.04;
-                    audioPush.volume = 0.4;
-                    audioDecompte.volume = 0.02;
-                    audioToken.volume = 0.7;
-                    audioMiser.volume = 0.3;
-                    document.getElementById("soundToggleImage").src = 'Images/speakerMax_sourceMax5.png';
-                  }
-                  else {
-                    SoundMuteBool = true;
-                    document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
-                    document.getElementById("soundToggleImage").style.marginLeft = "5px";
-                    audioCardSound.volume = 0;
-                    audioCoinWin.volume = 0;
-                    audioExplosionBust.volume = 0;
-                    audioPush.volume = 0;
-                    audioDecompte.volume = 0;
-                    audioToken.volume = 0;
-                    audioMiser.volume = 0;
-                    document.getElementById("soundToggleImage").src = 'Images/speakerMute_sourceMaxPng2Recenter4.png';
-                  }
-
-                  var setSoundMuteBoolToPhp = {};
-                  setSoundMuteBoolToPhp.value = SoundMuteBool;
-                  if (isConnected == true) {
-                    $.ajax({
-                      url: "setToggleMute.php",
-                      method: "post",
-                      data: setSoundMuteBoolToPhp,
-                      success: function(res) {
-                        console.log("(JS) AJAX POST bool 'setSoundMuteBoolToPhp' " + res + " vers setToggleMute.php réussi");
-                      }
-                    });
-                  }
-
-                });
+                if (document.getElementById("soundButtonContainer") !== null ) {
+                  document.getElementById("soundButtonContainer").addEventListener("click", function() {
+                    if (SoundMuteBool == true) {
+                      SoundMuteBool = false;
+                      document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
+                      document.getElementById("soundToggleImage").style.marginLeft = "3px";
+                      audioCardSound.volume = 0.5;  
+                      audioCoinWin.volume = 0.4;
+                      audioExplosionBust.volume = 0.04;
+                      audioPush.volume = 0.4;
+                      audioDecompte.volume = 0.02;
+                      audioToken.volume = 0.7;
+                      audioMiser.volume = 0.3;
+                      document.getElementById("soundToggleImage").src = 'Images/speakerMax_sourceMax5.png';
+                    }
+                    else {
+                      SoundMuteBool = true;
+                      document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
+                      document.getElementById("soundToggleImage").style.marginLeft = "5px";
+                      audioCardSound.volume = 0;
+                      audioCoinWin.volume = 0;
+                      audioExplosionBust.volume = 0;
+                      audioPush.volume = 0;
+                      audioDecompte.volume = 0;
+                      audioToken.volume = 0;
+                      audioMiser.volume = 0;
+                      document.getElementById("soundToggleImage").src = 'Images/speakerMute_sourceMaxPng2Recenter4.png';
+                    }
+  
+                    var setSoundMuteBoolToPhp = {};
+                    setSoundMuteBoolToPhp.value = SoundMuteBool;
+                    if (isConnected == true) {
+                      $.ajax({
+                        url: "setToggleMute.php",
+                        method: "post",
+                        data: setSoundMuteBoolToPhp,
+                        success: function(res) {
+                          console.log("(JS) AJAX POST bool 'setSoundMuteBoolToPhp' " + res + " vers setToggleMute.php réussi");
+                        }
+                      });
+                    }
+  
+                  });
+                }
+                
                 // FIN bouton toggle sons
                 // ******************************** *
 
   
                 // ******************************** *
                 // BOUTON TOGGLE SPEED
-                document.getElementById("speedButtonContainer").addEventListener("click", function() {
-                  if (setTimeOutMultiplierBool == true) {
-                    setTimeOutMultiplierBool = false;
-                    document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
-                    setTimeOutMultiplier = 0.7;
-                    document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
-                  }
-                  else {
-                    setTimeOutMultiplierBool = true;
-                    document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
-                    setTimeOutMultiplier = 0.4;
-                    document.getElementById("speedToggleImage").src = 'Images/fastForwardWhite.png';
-                  }
-                
-                  // Envoi du State toggle ajax si connecté
-                  var setTimeOutMultiplierBoolToPhp = {};
-                  setTimeOutMultiplierBoolToPhp.value = setTimeOutMultiplierBool;
-
-                  if (isConnected == true) {
-                    $.ajax({
-                      url: "setToggleTurbo.php",
-                      method: "post",
-                      data: setTimeOutMultiplierBoolToPhp,
-                      success: function(res) {
-                        console.log("(JS) AJAX POST bool 'setTimeOutMultiplierBool' " + res + " vers setToggleTurbo.php réussi");
-                      }
-                    });
-                  }
-                });
+                if (document.getElementById("speedButtonContainer") !== null) {
+                  document.getElementById("speedButtonContainer").addEventListener("click", function() {
+                    if (setTimeOutMultiplierBool == true) {
+                      setTimeOutMultiplierBool = false;
+                      document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
+                      setTimeOutMultiplier = 0.7;
+                      document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
+                    }
+                    else {
+                      setTimeOutMultiplierBool = true;
+                      document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
+                      setTimeOutMultiplier = 0.4;
+                      document.getElementById("speedToggleImage").src = 'Images/fastForwardWhite.png';
+                    }
+                  
+                    // Envoi du State toggle ajax si connecté
+                    var setTimeOutMultiplierBoolToPhp = {};
+                    setTimeOutMultiplierBoolToPhp.value = setTimeOutMultiplierBool;
+  
+                    if (isConnected == true) {
+                      $.ajax({
+                        url: "setToggleTurbo.php",
+                        method: "post",
+                        data: setTimeOutMultiplierBoolToPhp,
+                        success: function(res) {
+                          console.log("(JS) AJAX POST bool 'setTimeOutMultiplierBool' " + res + " vers setToggleTurbo.php réussi");
+                        }
+                      });
+                    }
+                  });
+                }
                 // FIN bouton toggle speed
                 // ******************************** 
 
@@ -1066,94 +1081,99 @@
                 
                 // Toggle Design
                 // ******************************** *
-                document.getElementById("backgroundButtonContainer").addEventListener("click", function() {
+                if (document.getElementById("backgroundButtonContainer") !== null) {
+                  document.getElementById("backgroundButtonContainer").addEventListener("click", function() {
                   
-                  console.log("darkModeBool juste AVANT clique sur le bouton: " + darkModeBool);
+                    console.log("darkModeBool juste AVANT clique sur le bouton: " + darkModeBool);
+  
+                    // toggle la backCardCroupier et les img src des li deja present
+  
+                    let body = document.querySelector('body');
+                    let mode = this.dataset.mode;
+                    body.dataset.theme = mode;
+  
+                    // Changement du state dark/light
+                    if (this.dataset.mode == "dark") {
+                      darkModeBool = true;
+                      this.dataset.mode = "light";
 
-                  // toggle la backCardCroupier et les img src des li deja present
-
-                  let body = document.querySelector('body');
-                  let mode = this.dataset.mode;
-                  body.dataset.theme = mode;
-
-                  // Changement du state dark/light
-                  if (this.dataset.mode == "dark") {
-                    this.dataset.mode = "light";
-                    darkModeBool = true;
-
-                    if (document.querySelector('#deconnexionImg') !== null) {
-                      document.querySelector('#deconnexionImg').src = "../Images/deconnexion_darkMode.png";
-                    }
-
-                    cards.forEach(element => {
-                      element.cardImageURL = element.cardImageURL.substring(0, 9) + "_darkMode.png";
-                    });
-
-                    var imgElemArray = document.querySelectorAll('.imgPartieDM');
-                    imgElemArray.forEach(element => {
-                      element.src = element.src.substring(0, 37) + "_darkMode.png";
-                    });
-
-                    if (document.querySelectorAll('.pokerChips') !== null) {
-                      var imgTokens = document.querySelectorAll('.pokerChips');
-                      imgTokens.forEach(element => {
-                        element.src = element.src.substring(0, 43) + "_darkMode.png";
-                      });
-                    }
-
-                    if (document.getElementById("backCardCroupier") !== null) {
-                      document.getElementById("backCardCroupier").src = "../Images/deck3_darkMode.png";
-                    }
-                  }
-            
-                  else {
-                    this.dataset.mode = "dark";
-                    darkModeBool = false;
-
-                    if (document.querySelector('#deconnexionImg') !== null) {
-                      document.querySelector('#deconnexionImg').src = "../Images/deconnexion.png";
-                    }
-
-                    cards.forEach(element => {
-                      element.cardImageURL = element.cardImageURL.substring(0, 9) + ".png";
-                    });
-
-                    var imgElemArray = document.querySelectorAll('.imgPartieDM');
-                    imgElemArray.forEach(element => {
-                      element.src = element.src.substring(0, 37) + ".png";
-                    });
-
-                    if (document.querySelectorAll('.pokerChips') !== null) {
-                      var imgTokens = document.querySelectorAll('.pokerChips');
-                      imgTokens.forEach(element => {
-                        element.src = element.src.substring(0, 43) + ".png";
-                      });
-                    }
-
-                    if (document.getElementById("backCardCroupier") !== null) {
-                      document.getElementById("backCardCroupier").src = "../Images/deck3.png";
-                    }
-                  }
-
-
-                  // Envoi du State toggle ajax si connecté
-                  var darkModeBoolToPhp = {};
-                  darkModeBoolToPhp.value = darkModeBool;
-
-                  if (isConnected == true) {
-                    $.ajax({
-                      url: "setToggleDarkMode.php",
-                      method: "post",
-                      data: darkModeBoolToPhp,
-                      success: function(res) {
-                        console.log("(JS) AJAX POST bool 'darkModeBoolToPhp' " + res + " vers setToggleDarkMode.php réussi");
+  
+                      if (document.querySelector('#deconnexionImg') !== null) {
+                        document.querySelector('#deconnexionImg').src = "../Images/deconnexion_darkMode.png";
                       }
-                    });
-                  }
+  
+                      cards.forEach(element => {
+                        element.cardImageURL = element.cardImageURL.substring(0, 9) + "_darkMode.png";
+                      });
+  
+                      var imgElemArray = document.querySelectorAll('.imgPartieDM');
+                      imgElemArray.forEach(element => {
+                        element.src = element.src.substring(0, 37) + "_darkMode.png";
+                      });
+  
+                      if (document.querySelectorAll('.pokerChips') !== null) {
+                        var imgTokens = document.querySelectorAll('.pokerChips');
+                        imgTokens.forEach(element => {
+                          element.src = element.src.substring(0, 43) + "_darkMode.png";
+                        });
+                      }
+  
+                      if (document.getElementById("backCardCroupier") !== null) {
+                        document.getElementById("backCardCroupier").src = "../Images/deck3_darkMode.png";
+                      }
+                    }
+              
+                    else {
+                      darkModeBool = false;
+                      this.dataset.mode = "dark";
 
-                  console.log("darkModeBool APRES clique sur le bouton: " + darkModeBool);
-
-                });
+  
+                      if (document.querySelector('#deconnexionImg') !== null) {
+                        document.querySelector('#deconnexionImg').src = "../Images/deconnexion.png";
+                      }
+  
+                      cards.forEach(element => {
+                        element.cardImageURL = element.cardImageURL.substring(0, 9) + ".png";
+                      });
+  
+                      var imgElemArray = document.querySelectorAll('.imgPartieDM');
+                      imgElemArray.forEach(element => {
+                        element.src = element.src.substring(0, 37) + ".png";
+                      });
+  
+                      if (document.querySelectorAll('.pokerChips') !== null) {
+                        var imgTokens = document.querySelectorAll('.pokerChips');
+                        imgTokens.forEach(element => {
+                          element.src = element.src.substring(0, 43) + ".png";
+                        });
+                      }
+  
+                      if (document.getElementById("backCardCroupier") !== null) {
+                        document.getElementById("backCardCroupier").src = "../Images/deck3.png";
+                      }
+                    }
+  
+  
+                    // Envoi du State toggle ajax si connecté
+                    var darkModeBoolToPhp = {};
+                    darkModeBoolToPhp.value = darkModeBool;
+  
+                    if (isConnected == true) {
+                      $.ajax({
+                        url: "setToggleDarkMode.php",
+                        method: "post",
+                        data: darkModeBoolToPhp,
+                        success: function(res) {
+                          console.log("(JS) AJAX POST bool 'darkModeBoolToPhp' " + res + " vers setToggleDarkMode.php réussi");
+                        }
+                      });
+                    }
+  
+                    console.log("darkModeBool APRES clique sur le bouton: " + darkModeBool);
+  
+                  });
+                }
+                
 
 
 
