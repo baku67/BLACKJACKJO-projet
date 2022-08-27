@@ -1475,7 +1475,6 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	} 
 }
 
-
 #traitUnderlineInverse {
 	position: fixed;  
 	top: 52%; 
@@ -1922,7 +1921,7 @@ p {
 	animation-fill-mode: forwards; 
 
 	padding: 10px;
-	border: 5px solid rgba(223, 204, 204, 0.2);
+	/* border: 5px solid rgba(223, 204, 204, 0.2); */
 	border-radius: 9px;
 }
 

@@ -219,7 +219,7 @@
         bottom: 43%; 
         height: 187px;
 
-        border: 3px solid rgba(223, 204, 204, 0.2);
+        /* border: 3px solid rgba(223, 204, 204, 0.2); */
 
         padding: 6px 8px;
     }
