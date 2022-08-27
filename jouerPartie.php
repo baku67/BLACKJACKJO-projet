@@ -7,7 +7,8 @@
     <br>
     <img id="imgCardDeck" class="imgPartie" style="margin-top: 5px;">
     <br><br>
-    <span id="miseLocked" style="opacity: 0; padding:10px 2px 9px 15px; font-family:'Holtwood One SC', serif;"></span>
+    <!-- MiseLocked popé from JS -->
+    <!-- <span id="miseLocked" style="font-family:'Holtwood One SC', serif;"></span> -->
 </div>
 
  <!-- WIP CARTE DE DISTRIBUTION (animation CSS) -->

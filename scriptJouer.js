@@ -1665,15 +1665,28 @@
           document.querySelector("#boutonMiser").style.opacity = "0.4";
           
           miseLocked = miseEnCours;
-          document.getElementById("miseLocked").style.opacity = "0.9";
 
+          // Apparition du miseLock
+          let miseLockedElement = document.createElement('span');
+          miseLockedElement.setAttribute('id', 'miseLocked');
+          miseLockedElement.setAttribute('style', 'font-family:"Holtwood One SC", serif;');
 
+          document.getElementById("deckContainer").append(miseLockedElement);
+          document.getElementById("miseLocked").classList.add('miseLockedAnim');
 
           if (isConnected == false) {
-            document.getElementById("miseLocked").innerHTML = "<span style='color:rgb(241 205 92 / 95%); font-size:1.8rem; text-shadow: 0 0 4px rgb(255 213 2);'>" + miseLocked + "</span><img src='Images/souBlancBarre.png' class='imageSouPetit'/> ";
+            // TimeOut pour ajouter le chiffre apres l'anim du miseLockContainer (bugué):
+            // setTimeout(function() {
+              document.getElementById("miseLocked").innerHTML = 
+              "<span id='miseLockedNbr'>" + miseLocked + "</span><img src='Images/souBlancBarre.png' class='imageSouPetit' style='margin-left:2px;'/>";
+            // }, 800)
           }
           else if (isConnected == true) {
-          document.getElementById("miseLocked").innerHTML = "<span style='color:rgb(241 205 92 / 95%); font-size:1.8rem; text-shadow: 0 0 4px rgb(255 213 2);'>" + miseLocked + "</span><img src='Images/souBarre.png' class='imageSouPetit'/> ";
+            // TimeOut pour ajouter le chiffre apres l'anim du miseLockContainer (bugué):
+            // setTimeout(function() {
+              document.getElementById("miseLocked").innerHTML = 
+              "<span id='miseLockedNbr'>" + miseLocked + "</span><img src='Images/souBarre.png' class='imageSouPetit' style='margin-left:2px;'/>";
+            // }, 800)
           }
 
           if (isConnected == false) {
