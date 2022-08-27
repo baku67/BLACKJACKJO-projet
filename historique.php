@@ -20,7 +20,7 @@
 
 
 
-<?php
+<!-- <?php
 if ($role=='joueur') :
     echo
         '<div class="slidecontainer">
@@ -28,7 +28,7 @@ if ($role=='joueur') :
             <input type="range" min="20" max="200" value="50" step="10" class="slider" id="myRange">
         </div>';
 endif;
-?>
+?> -->
 
 <!-- Slider Range (input à finir) -->
 <!-- <div class="slidecontainer">
