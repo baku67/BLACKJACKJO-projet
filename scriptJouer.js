@@ -227,7 +227,7 @@
       }   
       
       
-      var setTimeOutMultiplier = 0.7;
+      var setTimeOutMultiplier = 0.65;
 
 
 
@@ -802,12 +802,12 @@
                 // *Speed State*
                 if ((setTimeOutMultiplierBool == true) && (document.getElementById("speedButtonContainer") !== null)) {
                   document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
-                  setTimeOutMultiplier = 0.4;
+                  setTimeOutMultiplier = 0.47;
                   document.getElementById("speedToggleImage").src = 'Images/fastForwardWhite.png';
                 }
                 else if (document.getElementById("speedButtonContainer") !== null) {
                   document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
-                  setTimeOutMultiplier = 0.7;
+                  setTimeOutMultiplier = 0.65;
                   document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
                 }
                 //****
@@ -1000,13 +1000,13 @@
                     if (setTimeOutMultiplierBool == true) {
                       setTimeOutMultiplierBool = false;
                       document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
-                      setTimeOutMultiplier = 0.7;
+                      setTimeOutMultiplier = 0.65;
                       document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
                     }
                     else {
                       setTimeOutMultiplierBool = true;
                       document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
-                      setTimeOutMultiplier = 0.4;
+                      setTimeOutMultiplier = 0.47;
                       document.getElementById("speedToggleImage").src = 'Images/fastForwardWhite.png';
                     }
                   
@@ -1328,13 +1328,13 @@
                 if (setTimeOutMultiplierBool == true) {
                   setTimeOutMultiplierBool = false;
                   document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
-                  setTimeOutMultiplier = 0.7;
+                  setTimeOutMultiplier = 0.65;
                   document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
                 }
                 else {
                   setTimeOutMultiplierBool = true;
                   document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
-                  setTimeOutMultiplier = 0.4;
+                  setTimeOutMultiplier = 0.47;
                   document.getElementById("speedToggleImage").src = 'Images/fastForwardWhite.png';
                 }
 

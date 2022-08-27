@@ -275,7 +275,7 @@
 								<label><b>Confirmer le mot de passe</b></label>
 									<input class="w3-input w3-border fixBoxSizing" type="password" placeholder="Réécrivez le mot de passe" name="password2" required>
 								<button class="w3-button w3-block w3-blue w3-section w3-padding" type="submit" value="S'inscrire">S'inscrire</button>
-								<input class="w3-check w3-margin-top" type="checkbox"> J'accepte les termes et conditions d'utilisation
+								<!-- <input class="w3-check w3-margin-top" type="checkbox"> J'accepte les termes et conditions d'utilisation -->
 							</div>
 						</form>
 						<!-- FIN NOUVEAU FORM -->
