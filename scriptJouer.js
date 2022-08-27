@@ -2922,7 +2922,10 @@
 
         // Scores Total Croupier
         if (asCroupier == true) {
-          // asCroupier = false;
+          
+          // WTF PAS TOUCHE A CE BOOL switch (sinon relance garde scoreCroupier précédent ************
+          asCroupier = false;
+
           if (scoreTotalCroupier + 10 > 21) {
             scoreTotalCroupier += pickedCardObject.cardValue;
           }
