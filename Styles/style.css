@@ -1489,7 +1489,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	height: 5px;
 	background-color: var(--color-miserAlert);
 	width: 22%;
-	border-radius: 2px;
+	border-radius: 1px;
 
 	opacity: 0;
 	animation: traitUnderlineSlide 0.6s 0.65s forwards ease-out, traitUnderlineSlideLent 1.2s 1.25s forwards linear;
@@ -1781,7 +1781,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	height: 5px;
 	background-color: var(--color-miserAlert);
 	width: 22%;
-	border-radius: 2px;
+	border-radius: 1px;
 
 	opacity: 0;
 	/* animation à ajouter via une classe car anim pas native */

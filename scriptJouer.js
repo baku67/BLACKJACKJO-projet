@@ -70,15 +70,6 @@
 
 
       let historiqueInviteArray = [];
-      // historiqueInviteArray.push(historiqueInviteArrayStored);
-      // var historiqueInviteArrayStored = localStorage.getItem("historiqueInviteArrayStored");
-
-
-      // Stockage de l'array: https://stackoverflow.com/questions/40200350/keep-data-after-page-refresh
-      // if (typeof(Storage) !== "undefined") {
-      //   localStorage.setItem("historiqueInviteArrayStored", historiqueInviteArray);
-      // } else {
-      // } 
 
 
 
@@ -286,15 +277,6 @@
       
 
 
-      var nbrDecks;
-
-      // document.getElementById("title").style.left = "0%";
-
-
-
-
-
-
       var modalInscription = document.getElementById("inscriptionModal");
       var modalConnection = document.getElementById("connectionModal");
       
@@ -318,28 +300,6 @@
         credits = creditsConnected;
       }
       // ******************************** *
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -561,7 +521,6 @@
                 }
               }
               else if (parseInt(gainsHistoriqueLine.innerHTML) == 0) {
-                // gainsHistoriqueLine.style.color = "#bebe5e";
                 gainsHistoriqueLine.style.color = "rgba(228, 228, 183, 0.7)";
               }
               else {
@@ -660,11 +619,6 @@
                 if (heureActuelle-hour > 1) { suffixePluriel = "s"; }
                 else { suffixePluriel = ''; }
 
-                // WIP
-                // if ()
-
-                // FIN WIP
-
                 document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (heureActuelle - hour) + " heure" + suffixePluriel;
               }
               else if ((year == anneeActuelle) && (month == moiActuel) && (day == jourActuel) && (hour == heureActuelle) && (minute != minuteActuelle)) {
@@ -755,27 +709,6 @@
         
       });
 
-      // $("#jouer").click(function() {
-
-      //   $("#container1").load("index.php");
-        
-      // });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -855,12 +788,6 @@
             $("#container1").load("jouerPartie.php");
           
             setTimeout( function lancerPartie() {
-
-                // document.getElementById("header").classList.add('headerOnPartie');
-
-                // document.getElementById("footer").classList.add('footerOnPartie');
-
-                // Faire de meme avec titleOnPartie (pour finir bleu sur le fond orange si dark mode)
 
                 removed = false;
 
@@ -1001,9 +928,6 @@
                   if (document.getElementById("creditsConnected") !== null) {
                     document.getElementById("creditsConnected").innerHTML = creditsConnected;
                   }
-                  // document.getElementById("traitLumineux").style.visibility = "visible";
-                  // document.getElementById("traitLumineux").style.position = 'relative';
-                  // document.getElementById("traitLumineux").style.bottom = '20px';
                 }
                 // ******************************** *
   
@@ -1232,9 +1156,7 @@
                         });
                     }
 
-
                     ChoixActif = false;
-                    // document.getElementById("collapsible").style.visibility = "visible";
 
                     if (isConnected == true && darkModeBool == true) {
                       if (document.querySelectorAll('.pokerChips') !== null) {
@@ -1263,16 +1185,8 @@
                       } 
                     });
 
-                      //*** Zone FooterBorder Clignotement      
+                      //*** Zone FooterBorder Clignotement (marrant pourquoi ça marche pas? à supprimer de toute facon)     
                       document.querySelector("#footer").classList.add("miserActif2");  
-
-                      // IF Click sur footer: remove Miser Actif2 et add footerBorderWhite (ci dessous sans le timeOut)
-                      // setTimeout( function() {
-                      //   document.querySelector("#footer").classList.remove("miserActif2"); 
-                      //   document.querySelector("#footer").classList.add("footerBorderWhite");  
-                      // }, 2500);
-                      //*** Fin
-
 
                     footerShow();
                     phaseMise();
@@ -1308,9 +1222,6 @@
             document.getElementById("header").classList.add("headerOnPartie");
             document.getElementById("header").classList.add("headerOnPartieRedecale");
           }, 0);
-
-          // Faire de meme avec titleOnPartie (pour finir bleu sur le fond orange si dark mode)
-
           // Fin refresh
 
           var winLose = 0;
@@ -1318,8 +1229,6 @@
           doubleBool = 0;
 
           
-
-
           $.ajax({
             async: false,
             url: "jouerPartie.php",
@@ -1691,19 +1600,11 @@
           document.getElementById("boutonMiser").style.cursor = "pointer";
           button.disabled = false;
         }
-        // *** ATTENTION NOUVELLE REGLE: pas de mise > 25% du credits (hors double) ***
-        // else if (miseEnCours > (credits * 25 / 100)) {
-        //   document.getElementById("boutonMiser").classList.remove("miserActif");
-        //   document.getElementById("boutonMiser").style.opacity = "0.4";
-        //   document.getElementById("boutonMiser").style.cursor = "default";
-        //   button.disabled = true;
-        // }
         else {
           document.getElementById("boutonMiser").classList.remove("miserActif");
           document.getElementById("boutonMiser").style.opacity = "0.4";
           document.getElementById("boutonMiser").style.cursor = "default";
           button.disabled = true;
-          // Label "Entrez d'abord une mise"
         }
       }
 
@@ -1730,11 +1631,6 @@
           addCardJoueur();
         }, 1000);
 
-
-        // IF NOT BUST après le addCardJoueur ! {
-        setTimeout(function() {
-          // lancerPhaseCroupier();
-        }, 2000);
       }
       
 
@@ -1750,21 +1646,6 @@
             document.getElementById('phaseMiserAlert').classList.add("phaseMiserAlert2");
           }, 0)
           // Fin anims
-
-            // Reset des class du AlertMise/choix pour repop des anims lors Choix
-            // Reset les positions et l'opacité et tout ce qui est forwardé
-            // setTimeout( function() {
-            //   document.getElementById('textMise').classList.remove("phaseMiserAlert2Flash");
-            // }, 300)
-            // setTimeout( function() {
-            //   document.getElementById('traitUnderlineInverse').style.left = "50%";
-            //   document.getElementById('traitUnderlineInverse').classList.remove("traitUnderlineInverse2Flash");
-            // }, 730)
-            // setTimeout( function() {
-            //   document.getElementById('phaseMiserAlert').classList.remove("phaseMiserAlert2");
-            // }, 730)
-            // Fin reset
-
 
           document.getElementById("header").classList.remove("headerOnPartie2");
           document.getElementById("footer").classList.remove("footerOnPartie2");
@@ -1802,12 +1683,6 @@
             document.getElementById("creditsConnected").innerHTML = (credits - miseLocked);
           }
     
-
-          // DELETE MiseEnCours du Footer onClick (OK)
-          // let parent = document.getElementById("infanticide");
-          // let child = document.getElementById("miseEnCours");
-          // parent.removeChild(child);
-
           document.getElementById("miseEnCours").classList.add("fadeOut");
 
           document.getElementById("boutonMiser").disabled = true;
@@ -1940,8 +1815,6 @@
 
           // Anims alertChoix
             setTimeout(function() {
-              // document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
-              // document.getElementById('traitUnderlineInverse').classList.add("traitUnderlineInverse2Flash");
               document.getElementById("traitUnderlineInverseChoix").classList.add("traitUnderlineInverseChoix1");
               document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert1");
               // Fin
@@ -2049,7 +1922,6 @@
 
                 choix = "stand";
 
-                // Plutot mettre un fade out ou voir l'anim (trop brusque le depop) TimeOut trop long 
                 document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
                 document.getElementById('traitUnderlineInverseChoix').classList.add("traitUnderlineInverse2FlashChoix");
                 document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert2");
@@ -2059,7 +1931,6 @@
                   }
                 }, 2901);
 
-                // animAlertOnClickChoix();
 
                 if (asJoueur == true) {
                   //  IF NOT BURST
@@ -2086,7 +1957,6 @@
 
                 choix = "double";
 
-                // Plutot mettre un fade out ou voir l'anim (trop brusque le depop) TimeOut trop long 
                 document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
                 document.getElementById('traitUnderlineInverseChoix').classList.add("traitUnderlineInverse2FlashChoix");
                 document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert2");
@@ -2096,7 +1966,6 @@
                   }                
                 }, 2901);
 
-                // animAlertOnClickChoix();
 
                 double();
               });
@@ -2117,31 +1986,16 @@
           });
         }, 2250 * (setTimeOutMultiplier*1.1));
 
-          // Reset apres clickChoix
-          // setTimeout(function() {
-          //   document.getElementById('textChoix').classList.remove("phaseChoixAlert2Flash");
-          //   // document.getElementById('traitUnderlineInverse').classList.add("traitUnderlineInverse2Flash");
-          //   document.getElementById('phaseChoixAlert').classList.remove("phaseChoixAlert1");
-          // }, 2051 * setTimeOutMultiplier*1.1);
-          // Fin
-
 
         // Ce code est exécuté même apres un Stand() : PB
         setTimeout(function() {
           // Anims alertChoix
           if (choix == "hit") {
-            // document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
-            // document.getElementById('traitUnderlineInverse').classList.add("traitUnderlineInverse2Flash");
             if (document.getElementById('phaseChoixAlert') !== null) {
               document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert1");
             }
           }
           
-          // Cette class est a ajouter lors du click sur un bouton (puis on lancera un reload a chaque inclusivité)
-          // setTimeout( function() {
-          //   document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert2");
-          // }, 380)
-          // Fin
         }, 2251 * setTimeOutMultiplier*1.1);
 
       }
@@ -2150,16 +2004,6 @@
 
 
       function lancerPhaseCroupierAfterBurst() {
-        // $.ajax({
-        //   async: false,
-        //   url: "Footers/footerDistribution.html",
-        //   dataType: "html",
-        //   success: function(response) {
-        //     $("#chipsContainer").html(response);
-        //     document.getElementById("footerTitle").innerHTML = " - Distribution... -";
-        //   }
-        // });
-
 
         addCardCroupierRecursiveAfterBurst();
 
@@ -2269,10 +2113,6 @@
               }, 2150 * setTimeOutMultiplier)
             }
             else {
-              //Ajouter un if avec bool BurstJoueur (si burstJoueur)?
-              // if (burstJoueur = false) {
-              //   resultat();
-              // }
               resultat();
             }
           };
@@ -2329,8 +2169,6 @@
                     document.getElementById("cardAnim").remove();
                     document.getElementById("parametresPartieDiv").remove();
 
-
-                    // document.getElementById("scoreCroupier").style.backgroundColor = "rgba(59,217,10,1)";
                     document.getElementById("scoreJoueur").style.backgroundColor = "rgb(160 13 27)";
 
                     document.getElementById("scoreCroupier").style.color = "rgba(255,245,0,1)";
@@ -2349,8 +2187,8 @@
 
                     // Séparateur
                     setTimeout(function() {
+
                       //Apparition
-                      // document.getElementById("resultatText").classList.add("resultatTextLose");
                       document.getElementById("resultatText").classList.add("resultatTextLose");
                       document.getElementById("separateur").classList.add("styleSeparateurLose");
 
@@ -2372,7 +2210,6 @@
                       document.getElementById("separateur").classList.add("separateurContainerWidthAnim");
                       document.getElementById("separateur").classList.add("fadeInResultat");
                       document.getElementById("separateur").classList.add("scaleBoom");
-                      // document.getElementById("separateur").classList.add("marginFix");
 
                       // TEXT
                       document.getElementById("resultatText").innerText = "WASTED";
@@ -2438,17 +2275,7 @@
                         
                           // function: (en partant de la mise vers le gains réel)
                           var miseLockedMultiplied = miseLocked * 2;
-                          // function IncrementGain() {
-                          //   setTimeout( function() {
-                          //       if (miseLocked < miseLockedMultiplied) {
-                          //       miseLocked = miseLocked + 1;
-                          //       document.getElementById("miseResultat").innerHTML = miseLocked;
-                          //       document.getElementById("miseResultat").classList.add("addColorToResultatGreen");
-                          //       IncrementGain();
-                          //       }
-                          //   }, 20);
-                          // } 
-                          // fin fonction
+
                         // Fin résultat Gains
     
                       // FIN WIP
@@ -2457,10 +2284,8 @@
                       document.getElementById("deckContainer").remove();
                       document.getElementById("cardAnim").remove();
                       document.getElementById("parametresPartieDiv").remove();
-                      // document.getElementById("deckContainer").classList.add("fadeOut");
     
                       document.getElementById("scoreCroupier").style.backgroundColor = "rgb(160 13 27)";
-                      // document.getElementById("scoreJoueur").style.backgroundColor = "rgba(59,217,10,1)";
 
                       document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)";
                       document.getElementById("scoreJoueur").style.color = "rgba(255,245,0,1)";
@@ -2478,20 +2303,14 @@
                         document.getElementById("resultatText").classList.add("resultatTextWin");
                         document.getElementById("separateur").classList.add("styleSeparateurWin");
 
-
-                        
                         if (SoundMuteBool == false) {
                           audioCoinWin.play();
                         }
-                        // TEST audio coupé et non audio = 0;
-                        // audioCoinWin.play();
 
                         // Animation scale() qui pop avec fadeIn()
                         document.getElementById("separateur").classList.add("separateurContainerWidthAnim");
                         document.getElementById("separateur").classList.add("fadeInResultat");
                         document.getElementById("separateur").classList.add("scaleBoom");
-                        // document.getElementById("separateur").classList.add("marginFix");
-
 
                         // TEXT
                         document.getElementById("resultatText").innerText = "BIG WIN";
@@ -2563,10 +2382,8 @@
                       document.getElementById("deckContainer").remove();
                       document.getElementById("cardAnim").remove();
                       document.getElementById("parametresPartieDiv").remove();
-                      // document.getElementById("deckContainer").classList.add("fadeOut");
     
                       document.getElementById("scoreCroupier").style.backgroundColor = "rgb(160 13 27)";
-                      // document.getElementById("scoreJoueur").style.backgroundColor = "rgba(59,217,10,1)";
   
                       document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)";
                       document.getElementById("scoreJoueur").style.color = "rgba(255,245,0,1)";
@@ -2587,14 +2404,11 @@
                         if (SoundMuteBool == false) {
                           audioCoinWin.play();
                         }
-                        // TEST audio coupé et non audio = 0
-                        // audioCoinWin.play();
 
                         // Animation scale() qui pop avec fadeIn()
                         document.getElementById("separateur").classList.add("separateurContainerWidthAnim");
                         document.getElementById("separateur").classList.add("fadeInResultat");
                         document.getElementById("separateur").classList.add("scaleBoom");
-                        // document.getElementById("separateur").classList.add("marginFix");
 
                         // TEXT
                         document.getElementById("resultatText").innerText = "BIG WIN";
@@ -2630,13 +2444,7 @@
                     $("#container3").html(response);
                     ChoixActif = false;
                     document.getElementById("footerTitle").innerHTML = " - Résultat -";
-  
-                    // WIP footerResultat
-                      // WIP: Fade In du résultat
-                        // document.getElementById("container3").visibility = "hidden";
-                        // document.getElementById("container3").classList.add("fadeIn2");
-                      // Fin WIP: Fade In du résultat
-  
+    
                       // Mise lockée
                       document.getElementById("miseLockedFooter").innerHTML = miseLocked;
                       // fin
@@ -2657,11 +2465,8 @@
                       }, 500)
                       
                       document.getElementById("miseResultat").classList.add("addColorToResultatYellow");
-
                       // Fin résultat Gains
-  
-                    // FIN WIP
-                  
+                    
   
                     document.getElementById("deckContainer").remove();
                     document.getElementById("cardAnim").remove();
@@ -2690,13 +2495,10 @@
                       if (SoundMuteBool == false) {
                         audioPush.play();
                       }
-                      // TEST audio coupé et non audio = 0;
-                      // audioPush.play();
 
                       // Animation scale() qui pop avec fadeIn()
                       document.getElementById("separateur").classList.add("fadeInResultat");
                       document.getElementById("separateur").classList.add("scaleBoom");
-                      // document.getElementById("separateur").classList.add("marginFix");
 
                       // TEXT
                       document.getElementById("resultatText").innerText = "Push";
@@ -2922,7 +2724,7 @@
 
         // Scores Total Croupier
         if (asCroupier == true) {
-          
+
           // WTF PAS TOUCHE A CE BOOL switch (sinon relance garde scoreCroupier précédent ************
           asCroupier = false;
 
@@ -2937,8 +2739,6 @@
           scoreTotalCroupier += pickedCardObject.cardValue;
         }
 
-        // scoreTotalCroupier += pickedCardObject.cardValue;
-
         setTimeout (function() {
           // Refresh FadeInAnimation Score
           var elementScore = document.getElementById("scoreCroupier");
@@ -2946,15 +2746,6 @@
           void elementScore.offsetWidth;
           elementScore.classList.add("scores");
 
-          // Choix du AS non affiché pour le croupier (titre)
-          // if (asCroupier == true) {
-          //   document.getElementById('scoreCroupier').style.letterSpacing = 0;
-          //   document.getElementById('scoreCroupier').innerHTML = scoreTotalCroupier + " / " + (scoreTotalCroupier + 10);
-          // }
-          // else {
-          //   document.getElementById('scoreCroupier').innerHTML = scoreTotalCroupier;
-          // }
-          //FIN
           document.getElementById('scoreCroupier').innerHTML = scoreTotalCroupier;
 
           document.getElementById('scoreCroupier').classList.add("scoreBorder");
@@ -2965,10 +2756,6 @@
         var picketCardIndex = cards.indexOf(pickedCardObject);
         cards.splice(picketCardIndex, 1);
         // fin
-        // cards.splice(picketCardIndex, 1);
-
-        // Ajoute class à img pour CSS
-        // img.className = "imgPartie";
 
         // Classe pour le darkMode
         img.classList.add("imgPartie", "imgPartieDM");
@@ -2977,9 +2764,6 @@
         if (SoundMuteBool == false) {
           audioCardSound.play();
         }
-        // Test audio coupé et non audio = 0;
-        // audioCardSound.play();
-
 
         document.getElementById("croupier").appendChild(img);
 
@@ -3080,8 +2864,6 @@
           }
           //FIN
 
-
-          // document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;  // Avec if bool AS , innerHTML = ... / ....
           document.getElementById('scoreJoueur').classList.add("scoreBorder");
           document.getElementById("scoreJoueur").style.visibility = "visible";
         }, 400);
@@ -3089,22 +2871,17 @@
         var picketCardIndex = cards.indexOf(pickedCardObject);
         cards.splice(picketCardIndex, 1);
 
-        // img.className = "imgPartie";
-
         // Classe pour le darkMode
         img.classList.add("imgPartie", "imgPartieDM");
 
         if (SoundMuteBool == false) {
           audioCardSound.play();
         }
-        // TEST audio coupé et non audio = 0;
-        // audioCardSound.play();
 
 
         setTimeout(function() {
           document.getElementById("joueur").appendChild(img);
         }, 470);
-        // document.getElementById("joueur").appendChild(img);
 
         decrementCompteurDeck()
 
@@ -3265,8 +3042,6 @@
 
 
       // WIP Streak
-      // if (isConnected == true) {
-
         function majStreak(winLose) {
 
           var resultatStreak;
@@ -3391,10 +3166,6 @@
                 }
 
               }
-              // else if ((preogressNumBeforeRefresh - 2) >= -1) {
-              //   document.getElementById("streakNumber").innerText = 0;
-              // }
-
 
             }, 500)
             
@@ -3425,14 +3196,6 @@
           }
           
         }
-
-
-      // }
-      // else {
-      //   function majStreak(winLose) {
-          
-      //   }
-      // }
 
 
 
@@ -3529,12 +3292,6 @@
                   $("#container3").html(response);
                   ChoixActif = false;
                   document.getElementById("footerTitle").innerHTML = " - Résultat -";
-
-                  // WIP footerResultat
-                    // WIP: Fade In du résultat
-                      // document.getElementById("container3").visibility = "hidden";
-                      // document.getElementById("container3").classList.add("fadeIn2");
-                    // Fin WIP: Fade In du résultat
 
                     // Mise lockée
                     document.getElementById("miseLockedFooter").innerHTML = miseLocked;
@@ -3680,12 +3437,6 @@
                 ChoixActif = false;
                 document.getElementById("footerTitle").innerHTML = " - Résultat -";
 
-                // WIP footerResultat
-                  // WIP: Fade In du résultat
-                    // document.getElementById("container3").visibility = "hidden";
-                    // document.getElementById("container3").classList.add("fadeIn2");
-                  // Fin WIP: Fade In du résultat
-
                   // Mise lockée
                   document.getElementById("miseLockedFooter").innerHTML = miseLocked;
                   // fin
@@ -3702,9 +3453,6 @@
                     IncrementGain(miseLockedMultiplied);
                   }, 1500);
                   
-                    // DOUBLON ??
-                    // var miseLockedMultiplied = 3 * miseLocked;
-
                   // WIP gain (ajouter effet refresh CSS)
                   setTimeout( function() {
                     gain = miseLocked * 2;
@@ -3726,11 +3474,9 @@
                 document.getElementById("deckContainer").remove();
                 document.getElementById("cardAnim").remove();
                 document.getElementById("parametresPartieDiv").remove();
-                // document.getElementById("deckContainer").classList.add("fadeOut");
 
                 //*** Perdu BURST 
                 document.getElementById("scoreCroupier").style.backgroundColor = "rgb(160 13 27)";
-                // document.getElementById("scoreJoueur").style.backgroundColor = "rgba(59,217,10,1)";
 
                 document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)";
                 document.getElementById("scoreJoueur").style.color = "rgba(255,245,0,1)";
@@ -3753,8 +3499,6 @@
                   if (SoundMuteBool == false) {
                     audioCoinWin.play();
                   }
-                  // Test audio coupé et non audio = 0;
-                  // audioCoinWin.play();
 
                   // Animation scale() qui pop avec fadeIn()
                   document.getElementById("separateur").classList.add("separateurContainerWidthAnim");
