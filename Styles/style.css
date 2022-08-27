@@ -4,6 +4,8 @@
 
 	--title-color: rgb(223, 204, 204);
 	--traitTitle-bgcolor: rgb(223, 204, 204);
+	--traitTitle-bgcolorFlash: #00e7fe;
+	--color-titleFlash: #00e7fe;
 
 	/* --header-bgcolor: linear-gradient(56deg, rgba(130,14,80,1) 0%, rgba(135,0,20,1) 25%, rgba(172,3,26,1) 26%, rgba(121,0,6,1) 31%, rgba(196,53,53,1) 31%, rgba(130,14,39,1) 35%, rgba(33,55,144,1) 55%, rgba(23,31,73,1) 68%, rgba(156,14,14,1) 78%, rgba(209,16,16,1) 83%, rgba(85,9,9,1) 83%, rgba(194,31,31,1) 89%, rgba(64,43,43,1) 92%, rgba(120,6,6,1) 95%, rgba(18,5,5,1) 97%, rgba(122,0,0,1) 100%);	
 	--headerOnPartie-bgcolor: linear-gradient(-45deg, rgba(104,3,42,1) 0%, rgba(146,14,42,1) 33%, rgba(13,88,94,1) 67%, rgba(26,32,57,1) 100%); */
@@ -48,6 +50,8 @@
 
 	--title-color: rgb(223, 204, 204);
 	--traitTitle-bgcolor: rgb(223, 204, 204);
+	--traitTitle-bgcolorFlash: #00e7fe;
+	--color-titleFlash: #00e7fe;
 
 	/* --header-bgcolor: linear-gradient(56deg, rgba(130,14,80,1) 0%, rgba(135,0,20,1) 25%, rgba(172,3,26,1) 26%, rgba(121,0,6,1) 31%, rgba(196,53,53,1) 31%, rgba(130,14,39,1) 35%, rgba(33,55,144,1) 55%, rgba(23,31,73,1) 68%, rgba(156,14,14,1) 78%, rgba(209,16,16,1) 83%, rgba(85,9,9,1) 83%, rgba(194,31,31,1) 89%, rgba(64,43,43,1) 92%, rgba(120,6,6,1) 95%, rgba(18,5,5,1) 97%, rgba(122,0,0,1) 100%);	
 	--headerOnPartie-bgcolor: linear-gradient(-45deg, rgba(104,3,42,1) 0%, rgba(146,14,42,1) 33%, rgba(13,88,94,1) 67%, rgba(26,32,57,1) 100%); */
@@ -95,6 +99,8 @@
 
 	--title-color: rgba(239, 59, 46, 1);
 	--traitTitle-bgcolor: rgba(239, 59, 46, 1);
+	--traitTitle-bgcolorFlash: #00ffea;
+	--color-titleFlash: #00ffea;
 
 	/* --header-bgcolor: rgb(17 19 31);
 	--headerOnPartie-bgcolor: rgb(17 19 31); */
@@ -540,14 +546,13 @@ button, input[type="submit"], input[type="reset"] {
 	position: relative; 
 	left: 100%;
 
-	animation: titleSlide 1.05s ease-in-out 1 !important;
-	animation-fill-mode: forwards !important;
+	animation: titleSlide 1.05s ease 1 forwards !important;
 
 	text-align: center;
-	font-size: 4.5em;
+	font-size: 7vh;
 	letter-spacing: 0.04em;
 
-	color: var(--title-color);
+	color: var(--color-titleFlash);
 	text-shadow: rgb(5, 2, 39) 5px 3px;
 
 	/* IMPORTANT */
@@ -556,20 +561,26 @@ button, input[type="submit"], input[type="reset"] {
 }
 @keyframes titleSlide {
 	0% {
+		color: var(--color-titleFlash);
 		left: 100%;
 	}
+	50% {
+		color: var(--color-titleFlash);
+		left: 50%;
+	}
 	100% {
+		color: var(--title-color);
 		left: 0%;
 	}
 }
+
 
 
 #traitTitleSlide {
 	position: relative;
 	right: 100%;
 
-	animation: traitTitleSlide 1.05s ease-in-out 1 !important;
-	animation-fill-mode: forwards !important;
+	animation: traitTitleSlide 1.05s ease 1 forwards !important;
 
 	/* height: 2px !important; */
 	height: 6px !important;
@@ -577,16 +588,23 @@ button, input[type="submit"], input[type="reset"] {
 	margin: 0 auto;
 
 	bottom: 7px;
-	background-color: var(--traitTitle-bgcolor);
+	background-color: var(--traitTitle-bgcolorFlash);
 }
 @keyframes traitTitleSlide {
 	0% {
+		background-color: var(--traitTitle-bgcolorFlash);
 		right: 100%;
 	}
+	50% {
+		background-color: var(--traitTitle-bgcolorFlash);
+		right: 50%;
+	}
 	100% {
+		background-color: var(--traitTitle-bgcolor);
 		right: 0%;
 	}
 }
+
 
 #choixStand {
 	position: relative; 
