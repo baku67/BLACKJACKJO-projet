@@ -180,17 +180,17 @@
 			
 				<?php  if (isset($_SESSION['username'])) : ?>
 
-					<div id="jaugeContainer" class="indexFadeInJauge" style="display: inline; margin: 0px auto;">
+					<div id="jaugeContainerMaster" class="indexFadeInJauge" style="display: inline; margin: 0px auto;">
 						<img id="imgStreak" class="indexFadeInImgStreak" src="" alt="Streak">
 						<p id="streakNumber"><?php include('getStreak.php') ?></p>	
-						<div class="jaugeContainer jaugeProgress">
+						<div id="jaugeContainer" class="jaugeContainer jaugeProgress">
 							<span id="dataProgress" data-progress=""></span>
 						</div>
 					</div>
 
 				<?php elseif (!isset($_SESSION['username'])) : ?>
 
-					<div id="jaugeContainer" class="indexFadeInJauge" style="display: inline; margin: 0px auto;">
+					<div id="jaugeContainerMaster" class="indexFadeInJauge" style="display: inline; margin: 0px auto;">
 						<img id="imgStreak" class="indexFadeInImgStreak" src="" alt="Streak">
 						<p id="streakNumber">0</p>	
 						<div id="jaugeContainer" class="jaugeContainer jaugeProgress" style="bottom:-13px;">

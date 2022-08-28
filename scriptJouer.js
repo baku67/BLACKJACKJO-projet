@@ -290,7 +290,7 @@
           document.getElementById('header').classList.remove("is-blurred");
           document.getElementById('classementDiv').classList.remove("is-blurred");
           document.getElementById('connectionContainer').classList.remove("is-blurred");
-          document.getElementById('jaugeContainer').classList.remove("is-blurred");
+          document.getElementById('jaugeContainerMaster').classList.remove("is-blurred");
         }
         if (event.target == modalInscription) {
           modalInscription.style.display = "none";
@@ -301,20 +301,22 @@
           document.getElementById('header').classList.remove("is-blurred");
           document.getElementById('classementDiv').classList.remove("is-blurred");
           document.getElementById('connectionContainer').classList.remove("is-blurred");
-          document.getElementById('jaugeContainer').classList.remove("is-blurred");
+          document.getElementById('jaugeContainerMaster').classList.remove("is-blurred");
         }
       }
 
 
-      document.getElementById("connectionButton").addEventListener("click", function() {
-        document.getElementById('newGame').classList.add("is-blurred");
-        document.getElementById('ratioDiv').classList.add("is-blurred");
-        document.getElementById('footer').classList.add("is-blurred");
-        document.getElementById('header').classList.add("is-blurred");
-        document.getElementById('classementDiv').classList.add("is-blurred");
-        document.getElementById('connectionContainer').classList.add("is-blurred");
-        document.getElementById('jaugeContainer').classList.add("is-blurred");
-      })
+      if (document.getElementById("connectionButton") !== null) {
+        document.getElementById("connectionButton").addEventListener("click", function() {
+          document.getElementById('newGame').classList.add("is-blurred");
+          document.getElementById('ratioDiv').classList.add("is-blurred");
+          document.getElementById('footer').classList.add("is-blurred");
+          document.getElementById('header').classList.add("is-blurred");
+          document.getElementById('classementDiv').classList.add("is-blurred");
+          document.getElementById('connectionContainer').classList.add("is-blurred");
+          document.getElementById('jaugeContainerMaster').classList.add("is-blurred");
+        })
+      }
 
 
 
