@@ -103,7 +103,7 @@
 					<!-- Fin test -->
 
 					<!-- Anciennement "Se connecter / S'inscrire"-->
-					<button id="connectionButton" class="connectionButtons" onclick="document.getElementById('connectionModal').style.display='block'">Connexion</button>
+					<button id="connectionButton" class="connectionButtons" onclick="document.getElementById('connectionModal').style.display='block'; ">Connexion</button>
 					<p class="connectionButtons">&nbsp;|&nbsp;</p>
 					<button id="inscriptionButton" class="connectionButtons" onclick="document.getElementById('inscriptionModal').style.display='block'">Inscription</button>
 				<?php endif ?>
@@ -180,7 +180,7 @@
 			
 				<?php  if (isset($_SESSION['username'])) : ?>
 
-					<div class="indexFadeInJauge" style="display: inline; margin: 0px auto;">
+					<div id="jaugeContainer" class="indexFadeInJauge" style="display: inline; margin: 0px auto;">
 						<img id="imgStreak" class="indexFadeInImgStreak" src="" alt="Streak">
 						<p id="streakNumber"><?php include('getStreak.php') ?></p>	
 						<div class="jaugeContainer jaugeProgress">
@@ -190,7 +190,7 @@
 
 				<?php elseif (!isset($_SESSION['username'])) : ?>
 
-					<div class="indexFadeInJauge" style="display: inline; margin: 0px auto;">
+					<div id="jaugeContainer" class="indexFadeInJauge" style="display: inline; margin: 0px auto;">
 						<img id="imgStreak" class="indexFadeInImgStreak" src="" alt="Streak">
 						<p id="streakNumber">0</p>	
 						<div id="jaugeContainer" class="jaugeContainer jaugeProgress" style="bottom:-13px;">
@@ -222,29 +222,28 @@
 			<!-- MODALS Connection/Inscription -->
 			<div id="connectionModal" class="w3-modal">
 				<div class="w3-modal-content w3-animate-zoom">
-					<div>
+					<div class="modalContour">
 						<span onclick="document.getElementById('connectionModal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
 						<header class="modalHeader">
-							<h2 style="text-align: center; font-family:Segoe UI,Arial,sans-serif; font-weight:400; color:rgb(223, 204, 204)">Connexion</h2>
+							<h2 class="modalHeaderText">Connexion</h2>
 						</header>
 						<br>
 
 						<!-- NOUVEAU FORM -->
 						<form class="w3-container" action="connexion.php" method="post">
-							<label><b>Identifiant</b></label>
-									<input class="w3-input w3-border w3-margin-bottom fixBoxSizing" type="text" placeholder="Entrer votre identifiant" name="username" required>
+							<label><b class="modalText">Identifiant</b></label>
+									<input class="inputModal" type="text" placeholder="Entrer votre identifiant" name="username" required>
 							<br />
-							<label><b>Mot de passe</b></label>
-									<input class="w3-input w3-border fixBoxSizing" type="password" placeholder="Entrer votre mot de passe" name="password" required>
+							<label><b class="modalText">Mot de passe</b></label>
+									<input class="inputModal" type="password" placeholder="Entrer votre mot de passe" name="password" required>
 							<br />
 							<!-- <input type="submit" name="connexion" value="Connexion" /> -->
 							<button class="w3-button w3-block w3-blue w3-section w3-padding" type="submit" name="connexion" value="Connexion">Se connecter</button>
-							<input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Se souvenir de moi
 						</form>
 						<!-- FIN NOUVEAU FORM -->
 
 
-						<div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+						<div class="w3-container w3-padding-16 w3-light-grey">
 							<button onclick="document.getElementById('connectionModal').style.display='none'" type="button" class="w3-button w3-red">Annuler</button>
 							<span class="w3-right w3-padding w3-hide-small"><a href="#">mot de passe</a> oublié?</span>
 						</div>
@@ -256,23 +255,23 @@
 			
 			<div id="inscriptionModal" class="w3-modal">
 				<div class="w3-modal-content w3-animate-zoom">
-					<div">
+					<div class="modalContour">
 						<span onclick="document.getElementById('inscriptionModal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
 						<header class="modalHeader">
-							<h2 style="text-align: center; font-family:Segoe UI,Arial,sans-serif; font-weight:400; color:rgb(223, 204, 204)">Inscription</h2>
+							<h2 class="modalHeaderText">Inscription</h2>
 						</header>
 						<br>
 
 						<!-- NOUVEAU FORM -->
 						<form class="w3-container" action="inscription.php" method="post">
 							<div class="w3-section">
-								<label><b>E-mail</b></label>
+								<label><b class="modalText">E-mail</b></label>
 									<input class="w3-input w3-border fixBoxSizing w3-margin-bottom" type="" placeholder="Entrez votre adresse mail" name="mail" required>
-								<label><b>Identifiant</b></label>
+								<label><b class="modalText">Identifiant</b></label>
 									<input class="w3-input w3-border w3-margin-bottom fixBoxSizing" type="text" placeholder="Entrer un identifiant" name="username" required>
-								<label><b>Mot de passe</b></label>
+								<label><b class="modalText">Mot de passe</b></label>
 									<input class="w3-input w3-border fixBoxSizing w3-margin-bottom" type="password" placeholder="Entrer un mot de passe" name="password" required>
-								<label><b>Confirmer le mot de passe</b></label>
+								<label><b class="modalText">Confirmer le mot de passe</b></label>
 									<input class="w3-input w3-border fixBoxSizing" type="password" placeholder="Réécrivez le mot de passe" name="password2" required>
 								<button class="w3-button w3-block w3-blue w3-section w3-padding" type="submit" value="S'inscrire">S'inscrire</button>
 								<!-- <input class="w3-check w3-margin-top" type="checkbox"> J'accepte les termes et conditions d'utilisation -->
@@ -281,7 +280,7 @@
 						<!-- FIN NOUVEAU FORM -->
 
 
-						<div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+						<div class="w3-container w3-padding-16 w3-light-grey">
 							<button onclick="document.getElementById('inscriptionModal').style.display='none'" type="button" class="w3-button w3-red">Annuler</button>
 						</div>
 						<!-- FIN FORM -->

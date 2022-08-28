@@ -283,11 +283,38 @@
       window.onclick = function(event) {
         if (event.target == modalConnection) {
           modalConnection.style.display = "none";
+
+          document.getElementById('newGame').classList.remove("is-blurred");
+          document.getElementById('ratioDiv').classList.remove("is-blurred");
+          document.getElementById('footer').classList.remove("is-blurred");
+          document.getElementById('header').classList.remove("is-blurred");
+          document.getElementById('classementDiv').classList.remove("is-blurred");
+          document.getElementById('connectionContainer').classList.remove("is-blurred");
+          document.getElementById('jaugeContainer').classList.remove("is-blurred");
         }
         if (event.target == modalInscription) {
           modalInscription.style.display = "none";
+
+          document.getElementById('newGame').classList.remove("is-blurred");
+          document.getElementById('ratioDiv').classList.remove("is-blurred");
+          document.getElementById('footer').classList.remove("is-blurred");
+          document.getElementById('header').classList.remove("is-blurred");
+          document.getElementById('classementDiv').classList.remove("is-blurred");
+          document.getElementById('connectionContainer').classList.remove("is-blurred");
+          document.getElementById('jaugeContainer').classList.remove("is-blurred");
         }
       }
+
+
+      document.getElementById("connectionButton").addEventListener("click", function() {
+        document.getElementById('newGame').classList.add("is-blurred");
+        document.getElementById('ratioDiv').classList.add("is-blurred");
+        document.getElementById('footer').classList.add("is-blurred");
+        document.getElementById('header').classList.add("is-blurred");
+        document.getElementById('classementDiv').classList.add("is-blurred");
+        document.getElementById('connectionContainer').classList.add("is-blurred");
+        document.getElementById('jaugeContainer').classList.add("is-blurred");
+      })
 
 
 
@@ -366,7 +393,7 @@
 
 
 
-
+        
 
 
 
@@ -1674,7 +1701,7 @@
           document.getElementById("deckContainer").append(miseLockedElement);
           document.getElementById("miseLocked").classList.add('miseLockedAnim');
 
-          
+
           if (isConnected == false) {
             // TimeOut pour ajouter le chiffre apres l'anim du miseLockContainer (bugué):
             // setTimeout(function() {
