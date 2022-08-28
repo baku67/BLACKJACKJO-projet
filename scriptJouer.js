@@ -1674,6 +1674,7 @@
           document.getElementById("deckContainer").append(miseLockedElement);
           document.getElementById("miseLocked").classList.add('miseLockedAnim');
 
+          
           if (isConnected == false) {
             // TimeOut pour ajouter le chiffre apres l'anim du miseLockContainer (bugué):
             // setTimeout(function() {

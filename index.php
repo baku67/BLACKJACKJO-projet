@@ -329,7 +329,7 @@
 					<div id='ratioDiv'>
 						<h3 style="font-size:1.3em;">Ratio</h3>
 						<div id="traitBlancRatio"></div>
-						<p id='ratioLine'>&#8213;&#8213; &nbsp; %</p>
+						<p id='ratioLine'>0 %</p>
 					</div>
 				<?php
 				endif

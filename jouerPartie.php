@@ -7,6 +7,7 @@
     <br>
     <img id="imgCardDeck" class="imgPartie" style="margin-top: 5px;">
     <br><br>
+    
     <!-- MiseLocked popé from JS -->
     <!-- <span id="miseLocked" style="font-family:'Holtwood One SC', serif;"></span> -->
 </div>

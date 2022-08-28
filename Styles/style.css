@@ -585,9 +585,9 @@ button, input[type="submit"], input[type="reset"] {
 #title2 {
 	position: relative; 
 	left: 100%;
-	filter: blur(10px);
+	/* filter: blur(3px); */
 
-	animation: titleSlide 1.05s ease 1 forwards !important;
+	animation: titleSlide 1.05s 0.4s ease 1 forwards !important;
 
 	text-align: center;
 	font-size: 7vh;
@@ -602,17 +602,12 @@ button, input[type="submit"], input[type="reset"] {
 }
 @keyframes titleSlide {
 	0% {
-		filter: blur(10px);
+		/* filter: blur(3px); */
 		color: var(--color-titleFlash);
 		left: 100%;
 	}
-	50% {
-		filter: blur(5px);
-		color: var(--color-titleFlash);
-		left: 50%;
-	}
 	100% {
-		filter: blur(0px);
+		/* filter: blur(0px); */
 		color: var(--title-color);
 		left: 0%;
 	}
@@ -623,10 +618,10 @@ button, input[type="submit"], input[type="reset"] {
 #traitTitleSlide {
 	position: relative;
 	right: 100%;
+	/* filter: blur(6px); */
 
-	animation: traitTitleSlide 1.05s ease 1 forwards !important;
+	animation: traitTitleSlide 1.05s 0.4s ease 1 forwards !important;
 
-	/* height: 2px !important; */
 	height: 6px !important;
 	width: 470px !important;
 	margin: 0 auto;
@@ -636,14 +631,12 @@ button, input[type="submit"], input[type="reset"] {
 }
 @keyframes traitTitleSlide {
 	0% {
+		/* filter: blur(6px); */
 		background-color: var(--traitTitle-bgcolorFlash);
 		right: 100%;
 	}
-	50% {
-		background-color: var(--traitTitle-bgcolorFlash);
-		right: 50%;
-	}
 	100% {
+		/* filter: blur(0px); */
 		background-color: var(--traitTitle-bgcolor);
 		right: 0%;
 	}
@@ -1185,8 +1178,8 @@ button, input[type="submit"], input[type="reset"] {
 	text-decoration-color: rgba(223, 204, 204, 0.4);
 } */
 #inscriptionButton {
-	text-decoration: underline;
-	text-decoration-color: rgba(223, 204, 204, 0.4);
+	/* text-decoration: underline;
+	text-decoration-color: rgba(223, 204, 204, 0.4); */
 }
 h2 {
 	/* font-size: 1.5em !important; */
