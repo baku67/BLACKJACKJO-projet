@@ -50,7 +50,7 @@
             <li>
                 <div id="speedButtonContainer">
                     <button type="button" id="speedToggleButton">
-                        <img id="speedToggleImage" src="Images/fastForwardGrey.png">
+                        <img id="speedToggleImage" style="opacity:0;" src="Images/fastForwardGrey.png">
                     </button>
                 </div>            
             </li>
