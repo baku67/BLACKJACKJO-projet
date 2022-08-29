@@ -838,12 +838,12 @@
 
                 // *Speed State*
                 if ((setTimeOutMultiplierBool == true) && (document.getElementById("speedButtonContainer") !== null)) {
-                  document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
+                  // document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
                   setTimeOutMultiplier = 0.47;
                   document.getElementById("speedToggleImage").src = 'Images/fastForwardWhite.png';
                 }
                 else if (document.getElementById("speedButtonContainer") !== null) {
-                  document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
+                  // document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
                   setTimeOutMultiplier = 0.65;
                   document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
                 }
@@ -852,7 +852,7 @@
                 
                 // *Mute State*
                 if ((SoundMuteBool == true) && (document.getElementById("soundButtonContainer") !== null )) {
-                  document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
+                  // document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
                   document.getElementById("soundToggleImage").style.marginLeft = "5px";
                   audioCardSound.volume = 0;
                   audioCoinWin.volume = 0;
@@ -864,7 +864,7 @@
                   document.getElementById("soundToggleImage").src = 'Images/speakerMute_sourceMaxPng2Recenter4.png';
                 }
                 else if (document.getElementById("soundButtonContainer") !== null ) {
-                  document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
+                  // document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
                   document.getElementById("soundToggleImage").style.marginLeft = "3px";
                   audioCardSound.volume = 0.5;  
                   audioCoinWin.volume = 0.4;
@@ -882,7 +882,7 @@
 
                 // *Dark Mode State*
                 if ((darkModeBool == true) && (document.getElementById("backgroundButtonContainer") !== null)) {
-                  document.getElementById("backgroundButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
+                  // document.getElementById("backgroundButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
                   let body = document.querySelector('body');
                   body.dataset.theme = "dark";
 
@@ -912,7 +912,7 @@
                   }
                 }
                 else if (document.getElementById("backgroundButtonContainer") !== null) {
-                  document.getElementById("backgroundButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
+                  // document.getElementById("backgroundButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
                   let body = document.querySelector('body');
                   body.dataset.theme = "light";
 
@@ -985,7 +985,7 @@
                   document.getElementById("soundButtonContainer").addEventListener("click", function() {
                     if (SoundMuteBool == true) {
                       SoundMuteBool = false;
-                      document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
+                      // document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
                       document.getElementById("soundToggleImage").style.marginLeft = "3px";
                       audioCardSound.volume = 0.5;  
                       audioCoinWin.volume = 0.4;
@@ -998,7 +998,7 @@
                     }
                     else {
                       SoundMuteBool = true;
-                      document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
+                      // document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
                       document.getElementById("soundToggleImage").style.marginLeft = "5px";
                       audioCardSound.volume = 0;
                       audioCoinWin.volume = 0;
@@ -1036,13 +1036,13 @@
                   document.getElementById("speedButtonContainer").addEventListener("click", function() {
                     if (setTimeOutMultiplierBool == true) {
                       setTimeOutMultiplierBool = false;
-                      document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
+                      // document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
                       setTimeOutMultiplier = 0.65;
                       document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
                     }
                     else {
                       setTimeOutMultiplierBool = true;
-                      document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
+                      // document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
                       setTimeOutMultiplier = 0.47;
                       document.getElementById("speedToggleImage").src = 'Images/fastForwardWhite.png';
                     }
@@ -1300,12 +1300,12 @@
 
               // *Speed*
               if (setTimeOutMultiplierBool == true) {
-                document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
+                // document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
                 document.getElementById("speedToggleImage").src = 'Images/fastForwardWhite.png';
 
               }
               else {
-                document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
+                // document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
                 document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
               }
               //****
@@ -1316,7 +1316,7 @@
               document.getElementById("soundButtonContainer").addEventListener("click", function() {
                 if (SoundMuteBool == true) {
                   SoundMuteBool = false;
-                  document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
+                  // document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
                   document.getElementById("soundToggleImage").style.marginLeft = "3px";
                   audioCardSound.volume = 0.5;  
                   audioCoinWin.volume = 0.4;
@@ -1329,7 +1329,7 @@
                 }
                 else {
                   SoundMuteBool = true;
-                  document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
+                  // document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
                   document.getElementById("soundToggleImage").style.marginLeft = "13px";
                   audioCardSound.volume = 0;
                   audioCoinWin.volume = 0;
@@ -1364,13 +1364,13 @@
               document.getElementById("speedButtonContainer").addEventListener("click", function() {
                 if (setTimeOutMultiplierBool == true) {
                   setTimeOutMultiplierBool = false;
-                  document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
+                  // document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
                   setTimeOutMultiplier = 0.65;
                   document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
                 }
                 else {
                   setTimeOutMultiplierBool = true;
-                  document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
+                  // document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
                   setTimeOutMultiplier = 0.47;
                   document.getElementById("speedToggleImage").src = 'Images/fastForwardWhite.png';
                 }
@@ -1501,7 +1501,7 @@
                     // Fix 1er switch DM/LM need 2 clic 
                     document.getElementById("backgroundButtonContainer").dataset.mode = "light";
                     // Fin fix
-                    document.getElementById("backgroundButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
+                    // document.getElementById("backgroundButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
                     let body = document.querySelector('body');
                     body.dataset.theme = "dark";
                     // Fin 2.0  
@@ -1518,7 +1518,7 @@
                     // Fix 1er switch DM/LM need 2 clic 
                     document.getElementById("backgroundButtonContainer").dataset.mode = "dark";
                     // Fin fix
-                    document.getElementById("backgroundButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
+                    // document.getElementById("backgroundButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
                     let body = document.querySelector('body');
                     body.dataset.theme = "light";
                     // Fin 2.0  

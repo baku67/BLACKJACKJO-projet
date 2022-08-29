@@ -247,8 +247,7 @@
         opacity: 0.8;
         left: -70px;
         top: 184px;
-        /* border: 1px solid rgba(58, 54, 54, 0.9); */
-        border: 1px solid rgba(223, 204, 204, 0.4);
+        /* border: 1px solid rgba(223, 204, 204, 0.4); */
         height: 60px;
     }
     #backgroundToggleImage {
@@ -264,16 +263,14 @@
         opacity: 0.8;
         left: -70px;
         top: 109px;
-        /* border: 1px solid rgba(58, 54, 54, 0.9); */
-        border: 1px solid rgba(223, 204, 204, 0.4);
+        /* border: 1px solid rgba(223, 204, 204, 0.4); */
         height: 60px;
     }
     #speedButtonContainer {
         opacity: 0.8;
         left: -70px;
         top: 35px;
-        /* border: 1px solid rgba(58, 54, 54, 0.9); */
-        border: 1px solid rgba(223, 204, 204, 0.4);
+        /* border: 1px solid rgba(223, 204, 204, 0.4); */
         height: 60px;
     }
 

@@ -2275,10 +2275,10 @@ p {
 	opacity: 0.9;
 	cursor: pointer;
 	width: 70px;
-	border: 3px solid black;
+	/* border: 3px solid black; */
 	border-radius: 5px;
 	padding-left: 50px;
-	background-color : rgba(25, 39, 95, 0.8);
+	/* background-color : rgba(25, 39, 95, 0.8); */
 
 	position: absolute; 
 	left: -60px;
@@ -2286,12 +2286,12 @@ p {
 
 	transition: left 0.23s;
 }
-#soundButtonContainer:hover {
+/* #soundButtonContainer:hover {
 	opacity: 1;
 	left: -23px;
 	border: 1px solid rgba(223, 204, 204, 0.2);
 	background-color: rgba(25, 39, 95, 0.8);
-}
+} */
 
 
 
@@ -2303,21 +2303,21 @@ p {
 	opacity: 0.9;
 	cursor: pointer;
     width: 70px;
-    border: 3px solid black;
+    /* border: 3px solid black; */
     border-radius: 5px;
     padding-left: 50px;
-    background-color: rgba(25, 39, 95, 0.8);
+    /* background-color: rgba(25, 39, 95, 0.8); */
     position: absolute;
     left: -60px;
 	top: 184px;
     transition: left 0.23s;
 }
-#backgroundButtonContainer:hover {
+/* #backgroundButtonContainer:hover {
 	opacity: 1;
 	left: -23px;
 	border: 1px solid rgba(223, 204, 204, 0.2);
 	background-color: rgba(130,14,39,0.8);
-}
+} */
 
 
 
@@ -2329,23 +2329,23 @@ p {
 	opacity: 0.9;
 	cursor: pointer;
 	width: 70px;
-	border: 3px solid black;
+	/* border: 3px solid black; */
 	border-radius: 5px;
 	padding-left: 50px;
-	background-color:rgba(25, 39, 95, 0.8);
+	/* background-color:rgba(25, 39, 95, 0.8); */
 
 	position: absolute; 
 	left: -60px;
 	top: 35px;
 
-	transition: left 0.23s;
+	/* transition: left 0.23s; */
 }
-#speedButtonContainer:hover {
+/* #speedButtonContainer:hover {
 	opacity: 1;
 	left: -23px;
 	border: 1px solid rgba(223, 204, 204, 0.2);
 	background-color: rgba(130,14,39,0.8);
-}
+} */
 
 
 
