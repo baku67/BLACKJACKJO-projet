@@ -1,9 +1,8 @@
 Anime miseLocker:
-1 anim from 0:0 to full horizontal
+1 anim from 0:0 to full horizontal (cian to orange)
 2 anim from line horizontale to carré (vertical)
 3 border all to border vertical rgba opacity 0
 
-Fin Anim titleSlide: flash cian comme alert
 
 Lors clique NouvellePartie: anim title (reSlide, ou depop puis repopSlide "Partie 1" ?)
 

@@ -26,11 +26,10 @@
 		<link href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@1,300;1,700&display=swap" rel="stylesheet">		
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		
-		
+		<script src="https://kit.fontawesome.com/698848973e.js" crossorigin="anonymous"></script>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bellota+Text:ital,wght@1,300&family=Courgette&family=Holtwood+One+SC&family=Kavoon&display=swap" rel="stylesheet">
-
 		<?php 
 			if (!isset($_SESSION['username'])) :  
 		?>
@@ -119,11 +118,8 @@
 					<p style="position:relative; left:29px; bottom:0.95em; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:1.2em; color:rgba(223, 204, 204, 0.9);">
 						
 						<strong style="font-size:1.4em; text-shadow:0 0 3px rgb(43 39 39);">
-							<span style="color:rgba(255,237,144,1);">&#9733;</span>
-							<?php 
-								echo ucfirst($_SESSION['username']); 
-							?>
-							<span style="color:rgba(255,237,144,1);">&#9733;</span>
+						<span style="color:rgba(255,237,144,1); font-size:1.5em; position:relative; top:2px; left:16px;"><i class="fa-solid fa-star"></i><span id="lvlText" style="position:relative;right:36px;bottom:3px;color:rgba(239, 59, 46, 1);font-size:0.62em;letter-spacing:-2px; text-shadow:1px 1px 0 rgba(17, 19, 31, 0.1), 1px -1px 0 rgba(17, 19, 31, 0.1), -1px 1px 0 rgba(17, 19, 31, 0.1), -1px -1px 0 rgba(17, 19, 31, 0.1), 1px 0px 0 rgba(17, 19, 31, 0.1), 0px 1px 0 rgba(17, 19, 31, 0.1), -1px 0px 0 rgba(17, 19, 31, 0.1), 0px -1px 0 rgba(17, 19, 31, 0.1);">14</span></span>
+						<span style="text-decoration:underline 4px rgba(255,237,144,0.8); position:relative; bottom:2px;"><?php echo ucfirst($_SESSION['username']);?></span>
 						</strong>
 
 						&nbsp;&nbsp;&nbsp;

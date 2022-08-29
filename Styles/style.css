@@ -15,7 +15,6 @@
 	--footer-fontColor: rgb(223, 204, 204);
 
 	--creditsConnected-color: rgb(241 205 92 / 95%) !important;
-	--creditsConnected-shadow: 0 0 4px rgb(255 213 2);
 
 	--miseEnCours-color: rgb(223, 204, 204);
 
@@ -75,7 +74,6 @@
 	--footer-fontColor: rgb(223, 204, 204);
 
 	--creditsConnected-color: rgb(241 205 92 / 95%) !important;
-	--creditsConnected-shadow: 0 0 4px rgb(255 213 2);
 
 	--miseEnCours-color: rgb(223, 204, 204);
 
@@ -140,7 +138,6 @@
 	--footer-fontColor: rgb(223, 204, 204);
 
 	--creditsConnected-color: rgba(239, 59, 46, 1) !important;
-	--creditsConnected-shadow: 0 0 4px rgb(255, 112, 17);
 
 	--header-background: #10111b !important;
 	/* --header-bg-position: 35% 15%; */
@@ -491,7 +488,6 @@ button, input[type="submit"], input[type="reset"] {
 	letter-spacing: 1px;
 
 	color: var(--creditsConnected-color); 
-	text-shadow: var(--creditsConnected-shadow); 
 	font-family: 'Holtwood One SC', serif;
 }
 #miseLocked {
