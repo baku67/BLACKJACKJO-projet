@@ -1,3 +1,5 @@
+MAJ front en direct du niveau (pour ca il faut get/echoJS juste le expNeeded)
+
 Anime miseLocker:
 1 anim from 0:0 to full horizontal (cian to orange)
 2 anim from line horizontale to carré (vertical)

@@ -2992,7 +2992,9 @@
 
       function decrementCompteurDeck() {
         compteurDeck = compteurDeck - 1;
-        document.getElementById("compteurDeck").innerHTML = compteurDeck;
+        if (document.getElementById("compteurDeck") !== null) {
+          document.getElementById("compteurDeck").innerHTML = compteurDeck;
+        }
       }
 
 

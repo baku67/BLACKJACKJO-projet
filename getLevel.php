@@ -11,9 +11,8 @@
 
         if ($row['exp'] !== null) {
             $exp = $row['exp'];
-        }
-    }
-
+        };
+    };
 
 
 
@@ -24,38 +23,26 @@
 
 
     while ($exp > 0) {
-        // calculerLvl et décrémenter $exp
         if ($exp >= $expNeeded) {
+
             $lvl = ($lvl + 1);
             $exp = ($exp - $expNeeded);
-            // Taux d'augmentation  de l'expérience nécessaire pour le Lvl suivant
-            $expNeeded = ($expNeeded * 1.1);
-                // TEST Affichage des besoins d'exp
-                // echo("expNeeded: " . $expNeeded . "\n");
+
+            if ( $lvl < 30 ) {
+                $expNeeded = ($expNeeded * 1.15);
+            }
+            else {
+                $expNeeded = ($expNeeded * 1.5);
+            }
         }
         else {
-            // Reste d'exp après calcul pour affichage progression
             $restExp = $exp;
             $exp = 0;            
-                // echo("restExp: " . $restExp . "\n");
-        }
-    }
-
+        };
+    };
 
     echo($lvl);
-
-
-
-
 
     mysqli_close($db);
 
 ?>
-
-
-
-
-<!-- 
-// Formule suite géo (augmentation de 150% xp requis): 
-        // u(0) (lvl.1) = 200px
-        // u(n+1) = 1.5 U(n)  -->
