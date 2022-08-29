@@ -395,10 +395,12 @@
 
 
 
-        if (document.getElementById("lvlText").innerText.length < 2 ) {
-          document.getElementById("lvlText").style.right = "30px";
-          document.getElementById("lvlText").style.bottom = "3px";
-          document.getElementById("lvlText").style.fontSize = "0.7em";
+        if (document.getElementById("lvlText") !== null) {
+          if (document.getElementById("lvlText").innerText.length < 2 ) {
+            document.getElementById("lvlText").style.right = "30px";
+            document.getElementById("lvlText").style.bottom = "3px";
+            document.getElementById("lvlText").style.fontSize = "0.7em";
+          }
         }
         
 

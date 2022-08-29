@@ -1128,6 +1128,11 @@ button, input[type="submit"], input[type="reset"] {
 	background: -webkit-linear-gradient(left, rgb(90,90,90) 0%, rgba(255,255,255,0.7) 50%, rgb(90,90,90) 100%);
 }
 
+#starIcon {
+	/* Id utilisé pour le stretchJS etoile si lvl.length > 1 */
+	transform: scale(1.2,1);
+}
+
 .jaugeContainer {
 	overflow: hidden;
 

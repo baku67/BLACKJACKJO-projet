@@ -118,8 +118,8 @@
 					<p style="position:relative; left:29px; bottom:0.95em; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:1.2em; color:rgba(223, 204, 204, 0.9);">
 						
 						<strong style="font-size:1.4em; text-shadow:0 0 3px rgb(43 39 39);">
-						<span style="color:rgba(255,237,144,1); font-size:1.5em; position:relative; top:2px; left:16px;"><i class="fa-solid fa-star"></i><span id="lvlText" style="position:relative;right:36px;bottom:3px;color:rgba(239, 59, 46, 1);font-size:0.62em;letter-spacing:-2px; text-shadow:1px 1px 0 rgba(17, 19, 31, 0.1), 1px -1px 0 rgba(17, 19, 31, 0.1), -1px 1px 0 rgba(17, 19, 31, 0.1), -1px -1px 0 rgba(17, 19, 31, 0.1), 1px 0px 0 rgba(17, 19, 31, 0.1), 0px 1px 0 rgba(17, 19, 31, 0.1), -1px 0px 0 rgba(17, 19, 31, 0.1), 0px -1px 0 rgba(17, 19, 31, 0.1);">14</span></span>
-						<span style="text-decoration:underline 4px rgba(255,237,144,0.8); position:relative; bottom:2px;"><?php echo ucfirst($_SESSION['username']);?></span>
+						<span style="color:rgba(255,237,144,1); font-size:1.4em; position:relative; top:2px; left:16px;"><i id="starIcon" class="fa-solid fa-star"></i><span id="lvlText" style="position:relative;right:36px;bottom:3px;color:rgba(239, 59, 46, 1);font-size:0.62em;letter-spacing:-2px; text-shadow:1px 1px 0 rgba(17, 19, 31, 0.1), 1px -1px 0 rgba(17, 19, 31, 0.1), -1px 1px 0 rgba(17, 19, 31, 0.1), -1px -1px 0 rgba(17, 19, 31, 0.1), 1px 0px 0 rgba(17, 19, 31, 0.1), 0px 1px 0 rgba(17, 19, 31, 0.1), -1px 0px 0 rgba(17, 19, 31, 0.1), 0px -1px 0 rgba(17, 19, 31, 0.1);">14</span></span>
+						<span style="position:relative; bottom:2px;"><?php echo ucfirst($_SESSION['username']);?></span>
 						</strong>
 
 						&nbsp;&nbsp;&nbsp;
