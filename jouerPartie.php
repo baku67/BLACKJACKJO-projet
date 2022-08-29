@@ -43,7 +43,7 @@
             <li>
                 <div id="soundButtonContainer">
                     <button type="button" id="soundToggleButton">
-                        <img id="soundToggleImage" src="Images/speakerMute_sourceMaxPng2Recenter4.png">
+                        <img id="soundToggleImage" style="opacity:0;" src="Images/speakerMute_sourceMaxPng2Recenter4.png">
                     </button>
                 </div>               
             </li>
@@ -57,7 +57,7 @@
             <li>
                 <div id="backgroundButtonContainer" data-mode="light">
                     <button type="button" id="backgroundToggleButton">
-                        <img id="backgroundToggleImage" src="Images/dayMode2.png">
+                        <img id="backgroundToggleImage" style="opacity:0;" src="Images/dayMode2.png">
                     </button>
                 </div>            
             </li>
