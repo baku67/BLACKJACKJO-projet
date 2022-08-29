@@ -395,11 +395,14 @@
 
 
 
-        if (document.getElementById("lvlText").innerText.length < 2 ) {
-          document.getElementById("lvlText").style.right = "30px";
-          document.getElementById("lvlText").style.bottom = "3px";
-          document.getElementById("lvlText").style.fontSize = "0.7em";
+        if (document.getElementById("lvlText") !== null) {
+          if (document.getElementById("lvlText").innerText.length < 2 ) {
+            document.getElementById("lvlText").style.right = "30px";
+            document.getElementById("lvlText").style.bottom = "3px";
+            document.getElementById("lvlText").style.fontSize = "0.7em";
+          }
         }
+        
         
 
 
@@ -2118,6 +2121,25 @@
 
 
 
+      function expDB(expGain) {
+
+        var expToPhp = {};
+          expToPhp.value = expGain;
+
+          $.ajax({
+            url: "setExp.php",
+            method: "post",
+            data: expToPhp,
+            success: function(res) {
+              console.log("(JS) success POST expGain: " + expToPhp.value);
+            }
+          });
+      };
+
+
+
+
+
       function lancerPhaseCroupier() {
 
           var firstCardRevealed = false;
@@ -2211,7 +2233,11 @@
                       majStreak(WinLose);
 
                     }, 500)
+
+                    expDB(20);
+
                     //
+
 
                     document.getElementById("deckContainer").remove();
                     document.getElementById("cardAnim").remove();
@@ -2318,8 +2344,11 @@
                           winLoseDB(winLose);
 
                           majStreak(WinLose);
+                          
 
                         }, 500)
+
+                        expDB(100);
                         
                           // function: (en partant de la mise vers le gains réel)
                           var miseLockedMultiplied = miseLocked * 2;
@@ -2422,6 +2451,8 @@
                           majStreak(WinLose);
 
                         }, 500)
+
+                        expDB(100);
   
                         var miseLockedMultiplied = miseLocked * 2;
 
@@ -2511,6 +2542,9 @@
                         majStreak(WinLose);
 
                       }, 500)
+
+                      expDB(50);
+
                       
                       document.getElementById("miseResultat").classList.add("addColorToResultatYellow");
                       // Fin résultat Gains
@@ -2815,9 +2849,10 @@
 
         document.getElementById("croupier").appendChild(img);
 
-        if (burstJoueur == false) {
+
+        // if (burstJoueur == false) {
           decrementCompteurDeck();
-        }
+        // }
 
         // Mise a jour du score High-Low
         if (pickedCardObject.cardValue < 7) {
@@ -3368,6 +3403,9 @@
 
                       }, 500)
 
+                      expDB(20);
+
+
                     //
                     // Fin résultat Gains
 
@@ -3512,6 +3550,8 @@
                     majStreak(WinLose);
 
                   }, 500)
+
+                  expDB(250);
                     
                   // Fin résultat Gains
 
