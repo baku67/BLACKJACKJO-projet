@@ -71,6 +71,10 @@
 
 	<body id="body" data-theme="dark">
 
+		<!-- Zone de var Php non confidentiel, non affiché -->
+		<div style="position:absolute; opacity:0; width:0; height:0; font-size:0px;"><?php include("getDailyProcBool.php");?></div>
+		<!-- Fin -->
+
 		<div class="containerMaster">
 
 

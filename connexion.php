@@ -56,6 +56,8 @@ if(isset($_POST['connexion'])){
                     mysqli_stmt_bind_param($stmt, 'sss', $_SESSION['username'], $action, $dateNow);
                     mysqli_stmt_execute($stmt);
                     // Fin logs
+
+                    // include('setLastCoDate.php');
                                         
                     // Redirection post connexion
                     header('Location: https://www.blackjackjo.com/index.php');
@@ -79,5 +81,8 @@ if (isset($_GET['logout'])) {
     unset($_SESSION['username']);
     header("location: index.php");
 }
-?>
 
+
+
+
+?>
