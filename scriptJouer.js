@@ -865,7 +865,7 @@
                   document.getElementById("soundToggleImage").style.opacity = "1";
 
                   // document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
-                  document.getElementById("soundToggleImage").style.marginLeft = "5px";
+                  // document.getElementById("soundToggleImage").style.marginLeft = "5px";
                   audioCardSound.volume = 0;
                   audioCoinWin.volume = 0;
                   audioExplosionBust.volume = 0;
@@ -873,14 +873,14 @@
                   audioDecompte.volume = 0;
                   audioToken.volume = 0;
                   audioMiser.volume = 0;
-                  document.getElementById("soundToggleImage").src = 'Images/speakerMute_sourceMaxPng2Recenter4.png';
+                  document.getElementById("soundToggleImage").src = 'Images/speakerMute.png';
                 }
                 else if (document.getElementById("soundButtonContainer") !== null ) {
                   
                   document.getElementById("soundToggleImage").style.opacity = "1";
                   
                   // document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
-                  document.getElementById("soundToggleImage").style.marginLeft = "3px";
+                  // document.getElementById("soundToggleImage").style.marginLeft = "3px";
                   audioCardSound.volume = 0.5;  
                   audioCoinWin.volume = 0.4;
                   audioExplosionBust.volume = 0.04;
@@ -888,7 +888,12 @@
                   audioDecompte.volume = 0.02;
                   audioToken.volume = 0.7;
                   audioMiser.volume = 0.3;
-                  document.getElementById("soundToggleImage").src = 'Images/speakerMax_sourceMax5.png';
+                  if (darkModeBool == true) {
+                    document.getElementById("soundToggleImage").src = 'Images/speakerMax_darkMode.png';
+                  }
+                  else {
+                    document.getElementById("soundToggleImage").src = 'Images/speakerMax_sourceMax5.png';
+                  }
                 }
                 //****
 
@@ -899,6 +904,7 @@
                 if ((darkModeBool == true) && (document.getElementById("backgroundButtonContainer") !== null)) {
                   
                   document.getElementById('backgroundToggleImage').style.opacity = "1";
+                  document.getElementById('backgroundToggleImage').src = "Images/moon_darkMode.png";
                   
                   // document.getElementById("backgroundButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
                   let body = document.querySelector('body');
@@ -932,6 +938,8 @@
                 else if (document.getElementById("backgroundButtonContainer") !== null) {
 
                   document.getElementById('backgroundToggleImage').style.opacity = "1";
+                  document.getElementById('backgroundToggleImage').src = "Images/moonGrey.png";
+
 
                   // document.getElementById("backgroundButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
                   let body = document.querySelector('body');
@@ -1007,7 +1015,7 @@
                     if (SoundMuteBool == true) {
                       SoundMuteBool = false;
                       // document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
-                      document.getElementById("soundToggleImage").style.marginLeft = "3px";
+                      // document.getElementById("soundToggleImage").style.marginLeft = "3px";
                       audioCardSound.volume = 0.5;  
                       audioCoinWin.volume = 0.4;
                       audioExplosionBust.volume = 0.04;
@@ -1015,12 +1023,16 @@
                       audioDecompte.volume = 0.02;
                       audioToken.volume = 0.7;
                       audioMiser.volume = 0.3;
-                      document.getElementById("soundToggleImage").src = 'Images/speakerMax_sourceMax5.png';
-                    }
+                      if (darkModeBool == true) {
+                        document.getElementById("soundToggleImage").src = 'Images/speakerMax_darkMode.png';
+                      }
+                      else {
+                        document.getElementById("soundToggleImage").src = 'Images/speakerMax_sourceMax5.png';
+                      }                    }
                     else {
                       SoundMuteBool = true;
                       // document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
-                      document.getElementById("soundToggleImage").style.marginLeft = "5px";
+                      // document.getElementById("soundToggleImage").style.marginLeft = "5px";
                       audioCardSound.volume = 0;
                       audioCoinWin.volume = 0;
                       audioExplosionBust.volume = 0;
@@ -1028,7 +1040,7 @@
                       audioDecompte.volume = 0;
                       audioToken.volume = 0;
                       audioMiser.volume = 0;
-                      document.getElementById("soundToggleImage").src = 'Images/speakerMute_sourceMaxPng2Recenter4.png';
+                      document.getElementById("soundToggleImage").src = 'Images/speakerMute.png';
                     }
   
                     var setSoundMuteBoolToPhp = {};
@@ -1116,6 +1128,19 @@
                       darkModeBool = true;
                       this.dataset.mode = "light";
 
+                      if (document.getElementById('soundToggleImage') !== null) {
+                        if (SoundMuteBool == true) {
+                          document.getElementById('soundToggleImage').src = "../Images/speakerMute.png";
+                        }
+                        else {
+                          document.getElementById('soundToggleImage').src = "../Images/speakerMax_darkMode.png";
+                        }
+                      }
+
+                      if (document.getElementById('backgroundToggleImage') !== null) {
+                        document.getElementById('backgroundToggleImage').src = "../Images/moon_darkMode.png";
+                      }
+
                       if (document.querySelector('#speedToggleImage') !== null) {
                         if (toggleSpeed == true) {
                           document.querySelector('#speedToggleImage').src = "../Images/fastForward_darkMode.png";
@@ -1151,8 +1176,24 @@
                     }
               
                     else {
+                      
                       darkModeBool = false;
                       this.dataset.mode = "dark";
+
+
+                      if (document.getElementById('soundToggleImage') !== null) {
+                        if (SoundMuteBool == true) {
+                          document.getElementById('soundToggleImage').src = "../Images/speakerMute.png";
+                        }
+                        else {
+                          document.getElementById('soundToggleImage').src = "../Images/speakerMax_sourceMax5.png";
+                        }
+                      }
+      
+
+                      if (document.getElementById('backgroundToggleImage') !== null) {
+                        document.getElementById('backgroundToggleImage').src = "../Images/moonGrey.png";
+                      }
 
                       if (document.querySelector('#speedToggleImage') !== null) {
                         if (toggleSpeed == true) {
@@ -1333,13 +1374,17 @@
               //**** Garder l'état Toggle lors Relance
               // *Mute*
               if (SoundMuteBool == true) {
-                document.getElementById("soundToggleImage").src = 'Images/speakerMute_sourceMaxPng2Recenter4.png';
-                document.getElementById("soundToggleImage").style.marginLeft = "5px";
+                document.getElementById("soundToggleImage").src = 'Images/speakerMute.png';
+                // document.getElementById("soundToggleImage").style.marginLeft = "5px";
               }
               else {
                 // SoundMuteBool = true;
-                document.getElementById("soundToggleImage").src = 'Images/speakerMax_sourceMax5.png';
-                document.getElementById("soundToggleImage").style.marginLeft = "3px";
+                if (darkModeBool == true) {
+                  document.getElementById("soundToggleImage").src = 'Images/speakerMax_darkMode.png';
+                }
+                else {
+                  document.getElementById("soundToggleImage").src = 'Images/speakerMax_sourceMax5.png';
+                }                // document.getElementById("soundToggleImage").style.marginLeft = "3px";
               }
 
               // *Speed*
@@ -1365,7 +1410,7 @@
                 if (SoundMuteBool == true) {
                   SoundMuteBool = false;
                   // document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
-                  document.getElementById("soundToggleImage").style.marginLeft = "3px";
+                  // document.getElementById("soundToggleImage").style.marginLeft = "3px";
                   audioCardSound.volume = 0.5;  
                   audioCoinWin.volume = 0.4;
                   audioExplosionBust.volume = 0.04;
@@ -1373,12 +1418,17 @@
                   audioDecompte.volume = 0.02;
                   audioToken.volume = 0.7;
                   audioMiser.volume = 0.3;
-                  document.getElementById("soundToggleImage").src = 'Images/speakerMax_sourceMax5.png';
+                  if (darkModeBool == true) {
+                    document.getElementById("soundToggleImage").src = 'Images/speakerMax_darkMode.png';
+                  }
+                  else {
+                    document.getElementById("soundToggleImage").src = 'Images/speakerMax_sourceMax5.png';
+                  }
                 }
                 else {
                   SoundMuteBool = true;
                   // document.getElementById("soundButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
-                  document.getElementById("soundToggleImage").style.marginLeft = "13px";
+                  // document.getElementById("soundToggleImage").style.marginLeft = "13px";
                   audioCardSound.volume = 0;
                   audioCoinWin.volume = 0;
                   audioExplosionBust.volume = 0;
@@ -1387,7 +1437,7 @@
                   audioToken.volume = 0;
                   audioMiser.volume = 0;
                   //
-                  document.getElementById("soundToggleImage").src = 'Images/speakerMute_sourceMaxPng2Recenter4.png';
+                  document.getElementById("soundToggleImage").src = 'Images/speakerMute.png';
                 }
 
                 var setSoundMuteBoolToPhp = {};
@@ -1457,6 +1507,10 @@
                   this.dataset.mode = "light";
                   darkModeBool = true;
 
+                  if (document.getElementById('backgroundToggleImage') !== null) {
+                    document.getElementById('backgroundToggleImage').src = "../Images/moon_darkMode.png";
+                  }
+
                   document.querySelector('#deconnexionImg').src = "../Images/deconnexion_darkMode.png"
 
                   cards.forEach(element => {
@@ -1484,6 +1538,10 @@
                   this.dataset.mode = "dark";
                   darkModeBool = false;
                   console.log("darkModeBool: " + darkModeBool);
+
+                  if (document.getElementById('backgroundToggleImage') !== null) {
+                    document.getElementById('backgroundToggleImage').src = "../Images/moonGrey.png";
+                  }
 
                   document.querySelector('#deconnexionImg').src = "../Images/deconnexion_darkMode.png"
 
