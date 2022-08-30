@@ -708,6 +708,8 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 #title2 {
+	transition: color 1s ease-in-out;
+
 	position: relative; 
 	left: 100%;
 	/* filter: blur(3px); */
@@ -823,6 +825,18 @@ button, input[type="submit"], input[type="reset"] {
 	to {
 		border-bottom-left-radius: 10%;
 		border-bottom-right-radius: 10%;
+	}
+}
+
+.collapseFooter {
+	animation: footerHeightAnimReverse 0.8s ease-in-out 1 forwards;
+}
+@keyframes footerHeightAnimReverse {
+	from {
+		height: 205px;
+	}
+	to {
+		height: 50px;
 	}
 }
 

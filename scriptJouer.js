@@ -239,7 +239,12 @@
       var content = document.getElementById("collapseContent");
       var isCollapsed = false;
       footerCollapse();
-      document.getElementById("arrowPng").setAttribute("src", "Images/arrowUpWhitePng.png");
+      if (darkModeBool == true) {
+        document.getElementById("arrowPng").setAttribute("src", "Images/arrowUpWhitePng_darkMode.png");
+      }
+      else {
+        document.getElementById("arrowPng").setAttribute("src", "Images/arrowUpWhitePng.png");
+      };
       document.getElementById("arrowPng").style.position = "relative";
       document.getElementById("arrowPng").style.bottom = "13px";
       document.getElementById("arrowPng").style.opacity = "0.6";
@@ -249,16 +254,30 @@
       coll.addEventListener("click", function() {
         if (content.style.display === "block") {
           footerCollapse();
+          document.getElementById("collapseContent").style.height = "0px";
+          document.getElementById("footer").classList.remove("footerOnPartie");
+          document.getElementById("footer").classList.add("collapseFooter");
+          // document.getElementById("footer").style.height = "0px";  
         }
         else {
           footerShow();
+          document.getElementById("collapseContent").style.height = "";
+          document.getElementById("footer").classList.remove("collapseFooter");
+          document.getElementById("footer").classList.add("footerOnPartie");
+          // document.getElementById("footer").style.height = "";  
         }
       });
       // FIN
 
       function footerCollapse() {
         content.style.display = "none";
-        document.getElementById("arrowPng").setAttribute("src", "Images/arrowUpWhitePng.png");
+
+        if (darkModeBool == true) {
+          document.getElementById("arrowPng").setAttribute("src", "Images/arrowUpWhitePng_darkMode.png");
+        }
+        else {
+          document.getElementById("arrowPng").setAttribute("src", "Images/arrowUpWhitePng.png");
+        };
         document.getElementById("arrowPng").style.position = "relative";
         document.getElementById("arrowPng").style.bottom = "13px";
         document.getElementById("arrowPng").style.opacity = "0.6";
@@ -267,7 +286,13 @@
       }
       function footerShow() {
         content.style.display = "block";
-        document.getElementById("arrowPng").setAttribute("src", "Images/arrowDownWhitePng.png");
+
+        if (darkModeBool == true) {
+          document.getElementById("arrowPng").setAttribute("src", "Images/arrowDownWhitePng_darkMode.png");
+        }
+        else {
+          document.getElementById("arrowPng").setAttribute("src", "Images/arrowDownWhitePng.png");
+        };
         document.getElementById("arrowPng").style.bottom = "0px";
         document.getElementById("arrowPng").style.opacity = "0.6";
 
@@ -1128,6 +1153,14 @@
                       darkModeBool = true;
                       this.dataset.mode = "light";
 
+                      if (isCollapsed == true) {
+                        document.getElementById("arrowPng").setAttribute("src", "Images/arrowUpWhitePng_darkMode.png");
+                      }
+                      else {
+                        document.getElementById("arrowPng").setAttribute("src", "Images/arrowDownWhitePng_darkMode.png");
+                      }
+    
+
                       if (document.getElementById('soundToggleImage') !== null) {
                         if (SoundMuteBool == true) {
                           document.getElementById('soundToggleImage').src = "../Images/speakerMute.png";
@@ -1179,6 +1212,13 @@
 
                       darkModeBool = false;
                       this.dataset.mode = "dark";
+
+                      if (isCollapsed == true) {
+                        document.getElementById("arrowPng").setAttribute("src", "Images/arrowUpWhitePng.png");
+                      }
+                      else {
+                        document.getElementById("arrowPng").setAttribute("src", "Images/arrowDownWhitePng.png");
+                      }
 
 
                       if (document.getElementById('soundToggleImage') !== null) {
@@ -1407,7 +1447,17 @@
               }
               //****
 
+
+              // *DarkMode*
               document.getElementById("backgroundToggleImage").style.opacity = "1";
+
+              if (darkModeBool == true) {
+                document.getElementById("backgroundToggleImage").src = "Images/moon_darkMode.png";
+              }
+              else {
+                document.getElementById("backgroundToggleImage").src = "Images/moonGrey.png";
+
+              }
 
 
 
@@ -1514,6 +1564,13 @@
                   this.dataset.mode = "light";
                   darkModeBool = true;
 
+                  if (isCollapsed == true) {
+                    document.getElementById("arrowPng").setAttribute("src", "Images/arrowUpWhitePng_darkMode.png");
+                  }
+                  else {
+                    document.getElementById("arrowPng").setAttribute("src", "Images/arrowDownWhitePng_darkMode.png");
+                  }
+
                   if (document.getElementById('backgroundToggleImage') !== null) {
                     document.getElementById('backgroundToggleImage').src = "../Images/moon_darkMode.png";
                   }
@@ -1546,11 +1603,18 @@
                   darkModeBool = false;
                   console.log("darkModeBool: " + darkModeBool);
 
+                  if (isCollapsed == true) {
+                    document.getElementById("arrowPng").setAttribute("src", "Images/arrowUpWhitePng.png");
+                  }
+                  else {
+                    document.getElementById("arrowPng").setAttribute("src", "Images/arrowDownWhitePng.png");
+                  }
+
                   if (document.getElementById('backgroundToggleImage') !== null) {
                     document.getElementById('backgroundToggleImage').src = "../Images/moonGrey.png";
                   }
 
-                  document.querySelector('#deconnexionImg').src = "../Images/deconnexion_darkMode.png";
+                  document.querySelector('#deconnexionImg').src = "../Images/deconnexion.png";
 
                   cards.forEach(element => {
                     element.cardImageURL = element.cardImageURL.substring(0, 9) + ".png";

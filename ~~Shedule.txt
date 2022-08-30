@@ -1,3 +1,6 @@
+Lorsque switch DM/DL: le border-top du footer possede une transitionCSS sur la border-color (test avec title2 non fructifiant, à cause du fait qu'il y ait deja une anim sur l'id)
+
+
 MAJ front en direct du niveau (pour ca il faut get/echoJS juste le expNeeded)
 
 Anime miseLocker:

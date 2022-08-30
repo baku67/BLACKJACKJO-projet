@@ -424,12 +424,12 @@
 			
 
 					<div id="container3">
-						<div id="scoreContainer">
+						<!-- <div id="scoreContainer"> -->
 							<!-- <h2 class="scoreElem" style="margin-block-end: 0em;">High-Low</h2>
 							<br>
 							<h3 id="scoreHighLow">score</h3>
 							<p class="scoreElem"><span id="scoreVar">0</span></p> -->
-						</div>
+						<!-- </div> -->
 					</div>
 
 				</div>
