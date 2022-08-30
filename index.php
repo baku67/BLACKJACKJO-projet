@@ -76,7 +76,8 @@
 		<!-- Fin -->
 
 		<!-- Modal dailyReward -->
-		<div id="dailyRewardDiv" style="display:none; position:absolute; border-radius:10px; box-shadow: 0px 9px 0px rgba(0, 0, 0, 0.9); width:60%; height:10%; padding:1%; font-weight:400; top:50%; left:50%; transform:translate(-50%, -50%); z-index:2; background-color:rgba(239, 59, 46, 1); text-align:center; font-size:1.9em; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color:rgb(17 19 31);">Récompense de connection quotidienne:</div>
+		<div id="dailyRewardDiv" style="display:none; position:absolute; border-radius:10px; box-shadow: 0px 9px 0px rgba(0, 0, 0, 0.9); width:54%; height:9%; padding:2% 4% 4% 4%; font-weight:400; top:50%; left:50%; transform:translate(-50%, -50%); z-index:2; background-color:rgba(239, 59, 46, 1); text-align:center; font-size:1.9em; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color:rgb(17 19 31); border:3px solid black;">Récompense de connection quotidienne: <br><p id="amountDailyReward" style="padding:10px 20px; width:40%; text-align:center; margin:7px auto 0px auto; border-radius:7px; border:1px solid #2a2525;">+100</p><i class="fa-solid fa-mug-saucer" style="position:fixed; right:9%; color:whitesmoke; font-size:2em;"></i></div>
+		
 		<!-- Fin -->
 
 
