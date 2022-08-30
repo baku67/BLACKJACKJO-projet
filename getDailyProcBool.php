@@ -34,7 +34,7 @@
 
 
 
-
+        // En vrai juste en comparan les dates (bah oui ça suffit, j'ai créer un monstre)
         if (($dailyConnectBool == 0) && ($lastCoDate != $dateNow)) {
             $dailyConnectBool = 1;
 
