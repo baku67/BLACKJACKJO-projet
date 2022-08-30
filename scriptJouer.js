@@ -120,11 +120,6 @@
 
 
 
-      if ((isConnected == true) && (document.getElementById("dailyRewardBool") != null)) {
-        if (document.getElementById("dailyRewardBool").innerText == "1") {
-          document.getElementById("dailyRewardDiv").style.display = "block";
-        }
-      }
       
 
 
@@ -219,8 +214,16 @@
         
       }
 
+
       function refreshAnimJauge() {
+
+        // document.getElementById("dataProgress").classList.add("jaugeFlashAnim");
+        // setTimeout(function() {
+        //   document.getElementById("dataProgress").classList.remove("jaugeFlashAnim");
+        // }, 300)
+
         setTimeout(function() {
+
           $(".jaugeContainer span").each(function () {
             $(this).animate(
               {
@@ -232,6 +235,87 @@
           });
         }, 500)
       }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // Front du dailyReward
+      if ((isConnected == true) && (document.getElementById("dailyRewardBool") != null)) {
+        // Bool switché onPurpose pour tester
+        if (document.getElementById("dailyRewardBool").innerText == "1") {
+
+          setTimeout(function() {
+            document.getElementById("dailyRewardDiv").style.display = "block";
+            document.getElementById("dailyRewardDiv").classList.add('fadeInDailyReward');
+          }, 1100)
+
+          document.getElementById('newGame').classList.add("is-blurred");
+          document.getElementById('ratioDiv').classList.add("is-blurred");
+          document.getElementById('footer').classList.add("is-blurred");
+          document.getElementById('header').classList.add("is-blurred");
+          document.getElementById('classementDiv').classList.add("is-blurred");
+          document.getElementById('connectionContainer').classList.add("is-blurred");
+          document.getElementById('jaugeContainerMaster').classList.add("is-blurred");
+        }
+      }
+
+      document.getElementById("amountDailyReward").addEventListener("click", function() {
+        if (document.getElementById("dailyRewardDiv").style.display == "block") {
+
+          setTimeout(function() {
+            document.getElementById("dailyRewardDiv").classList.remove('fadeInDailyReward');
+            document.getElementById("dailyRewardDiv").classList.add('fadeOutDailyRewards');
+          }, 50)
+
+          setTimeout(function() {
+            document.getElementById("dailyRewardDiv").style.display = "none";
+          }, 500)
+
+          // Ajout du reward (front qui correspond au back):
+          setTimeout(function() {
+            document.getElementById("creditsConnected").innerText = (parseInt(document.getElementById("creditsConnected").innerText) + 100);
+            creditsConnected += 100;
+            document.getElementById("creditsConnected").classList.add("refreshCreditAnim");
+          }, 150)
+
+          document.getElementById('newGame').classList.remove("is-blurred");
+          document.getElementById('ratioDiv').classList.remove("is-blurred");
+          document.getElementById('footer').classList.remove("is-blurred");
+          document.getElementById('header').classList.remove("is-blurred");
+          document.getElementById('classementDiv').classList.remove("is-blurred");
+          document.getElementById('connectionContainer').classList.remove("is-blurred");
+          document.getElementById('jaugeContainerMaster').classList.remove("is-blurred");
+        }
+      })
+      // Fin dailyReward
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1414,7 +1498,9 @@
       function relancer() {
 
         $("#relancer").click(function(){
-          
+
+          document.getElementById("creditsConnected").classList.remove("refreshCreditAnim");
+
           // Refresh footer/header gradient animation
           document.getElementById("footer").classList.remove("footerOnPartie");
           document.getElementById("footer").classList.remove("footerOnPartie2");
@@ -1958,6 +2044,7 @@
           }
           else if (isConnected == true) {
             document.getElementById("creditsConnected").innerHTML = (credits - miseLocked);
+            // Anim creditFlash rouge ?
           }
     
           document.getElementById("miseEnCours").classList.add("fadeOut");
@@ -3566,7 +3653,13 @@
       // Envoi/Refresh du crédits et appel historiqueDB();
       if (isConnected == true) {
         function ajoutGain(gain) {
-          document.getElementById("creditsConnected").innerHTML = (credits + gain);
+
+          setTimeout(function() {
+            document.getElementById("creditsConnected").classList.add("refreshCreditAnim");
+            document.getElementById("creditsConnected").innerHTML = (credits + gain);
+          }, 200)
+
+
           credits = credits + gain;
 
           var gainToPhp = {};
@@ -3589,6 +3682,8 @@
       }
       else if (isConnected == false) {
         function ajoutGain(gain) {
+
+          // flash crédits Invite à faire
           document.getElementById("credits").innerHTML = "Crédits: &nbsp;" + (credits + gain) + "<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
           credits = credits + gain;
 

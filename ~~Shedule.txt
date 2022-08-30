@@ -1,3 +1,6 @@
+Anim météorite qui descend en diag (rewardAlert)
+Mise : flash négatif et envoi BDD (voir la fonction gain ducoup)
+
 Lorsque switch DM/DL: le border-top du footer possede une transitionCSS sur la border-color (test avec title2 non fructifiant, à cause du fait qu'il y ait deja une anim sur l'id)
 
 

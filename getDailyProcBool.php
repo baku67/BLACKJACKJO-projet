@@ -33,6 +33,8 @@
         // }
 
 
+        $amountReward = 100;
+
 
         // En vrai juste en comparan les dates (bah oui ça suffit, j'ai créer un monstre)
         if (($dailyConnectBool == 0) && ($lastCoDate != $dateNow)) {
@@ -44,7 +46,13 @@
             mysqli_stmt_execute($stmt);
 
             $procDailyRewardBool = 1;
+
+            $queryAddReward = "UPDATE users SET credits = credits + ? WHERE username = '".$_SESSION['username']."' ";
+            $stmt = mysqli_prepare($db, $queryAddReward);
+            mysqli_stmt_bind_param($stmt, 'i', $amountReward);
+            mysqli_stmt_execute($stmt);
         }
+
         else if (($dailyConnectBool == 0) && ($lastCoDate == $dateNow)) {
             $dailyConnectBool = 1;
 
@@ -54,10 +62,23 @@
             mysqli_stmt_execute($stmt);
 
             $procDailyRewardBool = 1;
+
+            $queryAddReward = "UPDATE users SET credits = credits + ? WHERE username = '".$_SESSION['username']."' ";
+            $stmt = mysqli_prepare($db, $queryAddReward);
+            mysqli_stmt_bind_param($stmt, 'i', $amountReward);
+            mysqli_stmt_execute($stmt);
         }
+
         else if (($dailyConnectBool == 1) && ($lastCoDate != $dateNow)) {
             $procDailyRewardBool = 1;
+
+            $queryAddReward = "UPDATE users SET credits = credits + ? WHERE username = '".$_SESSION['username']."' ";
+            $stmt = mysqli_prepare($db, $queryAddReward);
+            mysqli_stmt_bind_param($stmt, 'i', $amountReward);
+            mysqli_stmt_execute($stmt);
+
         }
+
         else if (($dailyConnectBool == 1) && ($lastCoDate == $dateNow)) {
             $procDailyRewardBool = 0;
         }

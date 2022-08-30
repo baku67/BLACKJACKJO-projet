@@ -76,7 +76,7 @@
 		<!-- Fin -->
 
 		<!-- Modal dailyReward -->
-		<div id="dailyRewardDiv" style="display:none; position:absolute; border-radius:10px; box-shadow: 0px 9px 0px rgba(0, 0, 0, 0.9); width:54%; height:9%; padding:2% 4% 4% 4%; font-weight:400; top:50%; left:50%; transform:translate(-50%, -50%); z-index:2; background-color:rgba(239, 59, 46, 1); text-align:center; font-size:1.9em; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color:rgb(17 19 31); border:3px solid black;">Récompense de connection quotidienne: <br><p id="amountDailyReward" style="padding:10px 20px; width:40%; text-align:center; margin:7px auto 0px auto; border-radius:7px; border:1px solid #2a2525;">+100</p><i class="fa-solid fa-mug-saucer" style="position:fixed; right:9%; color:whitesmoke; font-size:2em;"></i></div>
+		<div id="dailyRewardDiv" style="display:none; opacity:0; position:absolute; left:100%; border-radius:10px; box-shadow: 0px 9px 0px rgba(0, 0, 0, 0.9); width:54%; height:9%; padding:2% 4% 4% 4%; font-weight:400; top:50%; left:50%; transform:translate(-50%, -50%); z-index:2; background-color:rgba(239, 59, 46, 1); text-align:center; font-size:1.9em; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color:rgb(17 19 31); border:3px solid black;">Daily Reward: <br><p id="amountDailyReward" style="position:relative; top:50%; transform:translateY(-50%); padding:17px 20px; width:40%; text-align:center; margin:auto; border-radius:7px; border:3px solid rgb(42 37 37 / 80%); background-color:rgb(215 47 35); box-shadow:rgb(0 0 0 / 90%);"><i class="fa-solid fa-meteor fa-beat" style="position:fixed; left:10%; bottom:13%; color:#11131f; font-size:1.7em; opacity:0.9;"></i> +100</p></div>
 		
 		<!-- Fin -->
 
@@ -127,7 +127,7 @@
 
 					<p style="position:relative; left:29px; bottom:0.95em; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:1.2em; color:rgba(223, 204, 204, 0.9);">
 
-						<strong style="font-size:1.4em; text-shadow:0 0 3px rgb(43 39 39);"><span style="color:rgba(224,162,16,1); font-size:1.5em; position:relative; top:2px; left:16px;"><i class="fa-solid fa-star"></i><span id="lvlText"><?php include('getLevel.php'); ?></span></span><span style="text-decoration:underline 4px rgba(224,162,16,1); position:relative; bottom:2px; left:3px;"><?php echo ucfirst($_SESSION['username']);?></span></strong>
+						<strong style="font-size:1.4em; text-shadow:0 0 3px rgb(43 39 39);"><span style="color:rgba(238,182,50,1); font-size:1.5em; position:relative; top:2px; left:16px;"><i class="fa-solid fa-star"></i><span id="lvlText"><?php include('getLevel.php'); ?></span></span><span style="text-decoration:underline 4px rgba(238,182,50,1); position:relative; bottom:2px; left:3px;"><?php echo ucfirst($_SESSION['username']);?></span></strong>
 
 						&nbsp;&nbsp;&nbsp;
 

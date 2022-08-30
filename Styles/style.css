@@ -21,6 +21,7 @@
 	--footer-fontColor: rgb(223, 204, 204);
 
 	--creditsConnected-color: rgb(241 205 92 / 95%) !important;
+	--creditsConnectedFlash-color: #00e7fe !important;
 
 	--miseEnCours-color: rgb(223, 204, 204);
 
@@ -36,6 +37,7 @@
 
 	--bgColor-jaugeVide: #696565;
 	--bgColor-jaugePleine: rgb(241 205 92);
+	--bgColorFlash-jaugePleine: #00e7fe;
 
 	--imgFire-src: url("../Images/fire1p_light.png");
 
@@ -89,6 +91,7 @@
 	--footer-fontColor: rgb(223, 204, 204);
 
 	--creditsConnected-color: rgb(241 205 92 / 95%) !important;
+	--creditsConnectedFlash-color: #00e7fe !important;
 
 	--miseEnCours-color: rgb(223, 204, 204);
 
@@ -107,6 +110,7 @@
 
 	--bgColor-jaugeVide: #696565;
 	--bgColor-jaugePleine: rgb(241 205 92);
+	--bgColorFlash-jaugePleine: #00e7fe;
 
 	--imgFire-src: url("../Images/fire1p_light.png");
 
@@ -162,6 +166,7 @@
 	--footer-fontColor: rgb(223, 204, 204);
 
 	--creditsConnected-color: rgba(239, 59, 46, 1) !important;
+	--creditsConnectedFlash-color: #00ffea !important;
 
 	--header-background: #10111b !important;
 	/* --header-bg-position: 35% 15%; */
@@ -175,6 +180,7 @@
 
 	--bgColor-jaugeVide: rgb(80, 71, 64);
 	--bgColor-jaugePleine: #ef3b2e;
+	--bgColorFlash-jaugePleine: #00ffea;
 
 	--imgFire-src: url("../Images/fire1p.png");
 
@@ -1139,8 +1145,6 @@ button, input[type="submit"], input[type="reset"] {
 	color: rgb(239, 59, 46);
 } */
 /* #dailyRewardDiv::before {
-	width: 40px;
-	height: 40px;
 	font-size: 2em;
 
 	position: fixed;
@@ -1148,8 +1152,72 @@ button, input[type="submit"], input[type="reset"] {
 	bottom: 100%;
 	transform: translateY(-40%);
 	color: rgb(239, 59, 46);
-	content: "\f017";
+	content: "\f753";
 } */
+
+.fadeInDailyReward {
+	animation: fadeInDailyReward 0.5s ease forwards 1;
+}
+@keyframes fadeInDailyReward {
+	from {
+		opacity: 0;
+		left: -50%
+	}
+	to {
+		opacity: 1;
+		left: 50%;
+	}
+}
+.fadeOutDailyRewards {
+	animation: fadeOutDailyRewards 0.5s ease forwards 1 !important;
+}
+@keyframes fadeOutDailyRewards {
+	from {
+		opacity: 0.9;
+		left: 50%;
+	}
+	to {
+		opacity: 0;
+		left: 150%;
+	}
+}
+
+.refreshCreditAnim {
+	animation: flashCreditRefresh 0.42s ease  forwards !important;
+}
+@keyframes flashCreditRefresh {
+	0% {
+		font-size: 1.5em;
+		letter-spacing: 1px;
+		color: var(--creditsConnected-color);
+	}
+	50% {
+		font-size: 1.6em;
+		letter-spacing: 4px;
+		color: var(--creditsConnectedFlash-color);
+	}
+	100% {
+		font-size: 1.5em;
+		letter-spacing: 1px;
+		color: var(--creditsConnected-color);
+	}
+}
+
+.jaugeFlashAnim {
+	animation: jaugeFlashAnim 0.3s ease forwards !important;
+}
+@keyframes jaugeFlashAnim {
+	0% {
+		background-color: var(--bgColor-jaugePleine);
+	}
+	50% {
+		background-color: var(--bgColorFlash-jaugePleine) !important;
+	}
+	100% {
+		background-color: var(--bgColor-jaugePleine);
+	}
+}
+
 
 .historiqueLineLose {
 	background: rgb(255,0,0);
