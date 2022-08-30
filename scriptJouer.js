@@ -140,7 +140,7 @@
 
 
         if (document.getElementById("backCardCroupier") !== null) {
-          document.getElementById("backCardCroupier").src = "../Images/deck3_darkMode.png";
+          document.getElementById("backCardCroupier").src = "../Images/deck3_darkMode2.png";
         }
       }
 
@@ -932,7 +932,7 @@
                   }
 
                   if (document.getElementById("backCardCroupier") !== null) {
-                    document.getElementById("backCardCroupier").src = "../Images/deck3_darkMode.png";
+                    document.getElementById("backCardCroupier").src = "../Images/deck3_darkMode2.png";
                   }
                 }
                 else if (document.getElementById("backgroundButtonContainer") !== null) {
@@ -1171,12 +1171,12 @@
                       }
   
                       if (document.getElementById("backCardCroupier") !== null) {
-                        document.getElementById("backCardCroupier").src = "../Images/deck3_darkMode.png";
+                        document.getElementById("backCardCroupier").src = "../Images/deck3_darkMode2.png";
                       }
                     }
               
                     else {
-                      
+
                       darkModeBool = false;
                       this.dataset.mode = "dark";
 
@@ -1530,7 +1530,7 @@
                   }
 
                   if (document.getElementById("backCardCroupier") !== null) {
-                    document.getElementById("backCardCroupier").src = "../Images/deck3_darkMode.png";
+                    document.getElementById("backCardCroupier").src = "../Images/deck3_darkMode2.png";
                   }
                 }
           
