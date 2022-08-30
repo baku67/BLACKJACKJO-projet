@@ -12,6 +12,12 @@
 	
 	--imgDeck-src: url("../Images/deck3.png");
 
+	--imgRetourArriere-src: url("../Images/retourArriereWhite.png");
+
+	--imgReloadButton-src: url("../Images/reload.png");
+	--border-reloadButton: 2px solid rgba(223, 223, 223, 0.6);
+	--bgImage-reloadButton: radial-gradient(circle, rgba(14,100,107,0.8) 0%, rgba(36,46,87,0) 100%);
+
 	--footer-fontColor: rgb(223, 204, 204);
 
 	--creditsConnected-color: rgb(241 205 92 / 95%) !important;
@@ -73,6 +79,12 @@
 	--headerOnPartie-bgcolor: linear-gradient(-45deg, rgba(104,3,42,1) 0%, rgba(146,14,42,1) 33%, rgba(13,88,94,1) 67%, rgba(26,32,57,1) 100%); */
 
 	--imgDeck-src: url("../Images/deck3.png");
+
+	--imgRetourArriere-src: url("../Images/retourArriereWhite.png");
+
+	--imgReloadButton-src: url("../Images/reload.png");
+	--border-reloadButton: 2px solid rgba(223, 223, 223, 0.6);
+	--bgImage-reloadButton: radial-gradient(circle, rgba(14,100,107,0.8) 0%, rgba(36,46,87,0) 100%);
 
 	--footer-fontColor: rgb(223, 204, 204);
 
@@ -138,6 +150,12 @@
 	--headerOnPartie-bgcolor: rgb(17 19 31); */
 
 	--imgDeck-src: url("../Images/deck3_darkMode2.png");
+
+	--imgRetourArriere-src: url("../Images/retourArriereWhite_darkMode.png");
+
+	--imgReloadButton-src: url("../Images/reload_darkMode.png");
+	--border-reloadButton: 3px solid rgba(239, 59, 46, 0.7);
+	--bgImage-reloadButton: radial-gradient(circle, rgba(239, 59, 46, 0.5) 0%, rgba(36,46,87,0) 80%);
 
 	--miseEnCours-color: rgba(239, 59, 46, 1);
 
@@ -573,8 +591,10 @@ button, input[type="submit"], input[type="reset"] {
 
 
 #retourArriereImg {
+	content:var(--imgRetourArriere-src);
+
 	width: 45px;
-    opacity: 0.7;
+    opacity: 1;
     position: relative;
     right: -77px;
     bottom: -33px;
@@ -2256,8 +2276,7 @@ p {
 }
 
 .pokerChips {
-	/* display: block;
-	backface-visibility: hidden; */
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
 
 	width: 6.3em; 
 	height: 6.3em;
@@ -2306,6 +2325,8 @@ p {
 	width: 60px;
 }
 #soundButtonContainer {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+
 	opacity: 0.9;
 	cursor: pointer;
 	width: 70px;
@@ -2334,6 +2355,8 @@ p {
 	padding: 9px 5px;
 }
 #backgroundButtonContainer {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+
 	opacity: 0.9;
 	cursor: pointer;
     width: 70px;
@@ -2360,6 +2383,8 @@ p {
 	width: 60px;
 }
 #speedButtonContainer {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+
 	opacity: 0.9;
 	cursor: pointer;
 	width: 70px;
@@ -3137,6 +3162,8 @@ p {
 }
 
 #reloadPng{
+	content:var(--imgReloadButton-src);
+
 	height: 80px; 
 	position: relative; 
 	top: 3px;
@@ -3156,7 +3183,11 @@ p {
 }
 
 #relancer {
-	background-image: radial-gradient(circle, rgba(14,100,107,0.8) 0%, rgba(36,46,87,0) 100%);
+	/* background-image: radial-gradient(circle, rgba(14,100,107,0.8) 0%, rgba(36,46,87,0) 100%); */
+	/* border: 2px solid rgba(223, 223, 223, 0.4); */
+
+	border: var(--border-reloadButton);
+	background-image: var(--bgImage-reloadButton);
 
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -3167,8 +3198,7 @@ p {
 	margin-top: 31px;
 	font-size: 2.5em;
 	padding: 5px 15px 5px 15px;
-	border: 2px solid rgba(223, 223, 223, 0.4);
-	border-radius: 17px;
+	border-radius: 12px;
 }
 /* #relancer:hover { */
 	/*  NEGATIVE MARGIN OMGG */
@@ -3445,6 +3475,8 @@ p {
 
 
 #boutonMiser {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+
 	font-size: 0.8em !important; 
 	font-family: 'Kavoon', cursive;
 	padding: 5px 25px; 

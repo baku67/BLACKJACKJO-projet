@@ -1373,6 +1373,8 @@
 
               //**** Garder l'état Toggle lors Relance
               // *Mute*
+              document.getElementById("soundToggleImage").style.opacity = "1";
+
               if (SoundMuteBool == true) {
                 document.getElementById("soundToggleImage").src = 'Images/speakerMute.png';
                 // document.getElementById("soundToggleImage").style.marginLeft = "5px";
@@ -1388,6 +1390,8 @@
               }
 
               // *Speed*
+              document.getElementById("speedToggleImage").style.opacity = "1";
+
               if (setTimeOutMultiplierBool == true) {
                 // document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
                 if (darkModeBool == true) {
@@ -1402,6 +1406,9 @@
                 document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
               }
               //****
+
+              document.getElementById("backgroundToggleImage").style.opacity = "1";
+
 
 
               // ****************************** * 
@@ -1511,7 +1518,7 @@
                     document.getElementById('backgroundToggleImage').src = "../Images/moon_darkMode.png";
                   }
 
-                  document.querySelector('#deconnexionImg').src = "../Images/deconnexion_darkMode.png"
+                  document.querySelector('#deconnexionImg').src = "../Images/deconnexion_darkMode.png";
 
                   cards.forEach(element => {
                     element.cardImageURL = element.cardImageURL.substring(0, 9) + "_darkMode.png";
@@ -1543,7 +1550,7 @@
                     document.getElementById('backgroundToggleImage').src = "../Images/moonGrey.png";
                   }
 
-                  document.querySelector('#deconnexionImg').src = "../Images/deconnexion_darkMode.png"
+                  document.querySelector('#deconnexionImg').src = "../Images/deconnexion_darkMode.png";
 
                   cards.forEach(element => {
                     element.cardImageURL = element.cardImageURL.substring(0, 9) + ".png";
@@ -2300,6 +2307,21 @@
 
 
 
+          // https://stackoverflow.com/questions/36642525/ajax-get-value-from-php
+          function refreshLvl() {
+            $.ajax({
+              url:"getLvl.php",
+              dataType: "html",
+              method: "get",
+              data: bidule,
+              success: function() {
+                document.getElementById("lvlText").innerHTML = bidule;
+                alert('dedans');
+              }
+            })
+          }
+
+
 
           function resultat() {
             setTimeout(function() {
@@ -2347,6 +2369,7 @@
 
                     expDB(20);
 
+                    // refreshLvl();
                     //
 
 
@@ -2460,6 +2483,8 @@
                         }, 500)
 
                         expDB(100);
+
+                        // refreshLvl();
                         
                           // function: (en partant de la mise vers le gains réel)
                           var miseLockedMultiplied = miseLocked * 2;
@@ -2564,7 +2589,9 @@
                         }, 500)
 
                         expDB(100);
-  
+
+                        // refreshLvl();
+
                         var miseLockedMultiplied = miseLocked * 2;
 
                       
@@ -2656,6 +2683,7 @@
 
                       expDB(50);
 
+                      // refreshLvl();
                       
                       document.getElementById("miseResultat").classList.add("addColorToResultatYellow");
                       // Fin résultat Gains
@@ -3518,6 +3546,8 @@
 
                       expDB(20);
 
+                      // refreshLvl();
+
 
                     //
                     // Fin résultat Gains
@@ -3665,6 +3695,8 @@
                   }, 500)
 
                   expDB(250);
+
+                  // refreshLvl();
                     
                   // Fin résultat Gains
 
