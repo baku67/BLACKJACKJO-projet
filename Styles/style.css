@@ -1125,6 +1125,12 @@ button, input[type="submit"], input[type="reset"] {
 	
 }
 
+#dailyRewardDiv::before {
+	content: url('../Images/arrowDownWhitePng_darkMode.png');
+	width: 40px;
+	height: 40px;
+}
+
 .historiqueLineLose {
 	background: rgb(255,0,0);
 	background: -moz-linear-gradient(-45deg, rgba(255,0,0,0.6789423076923077) 0%, rgba(255,0,0,0.30355769230769236) 4%, rgba(255,0,0,0.06971153846153844) 17%, rgba(255,255,255,0) 50%, rgba(255,0,0,0.07278846153846152) 83%, rgba(255,0,0,0.2974038461538462) 96%, rgba(255,0,0,0.6758653846153846) 100%);

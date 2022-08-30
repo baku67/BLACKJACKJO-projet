@@ -122,9 +122,10 @@
 
       if ((isConnected == true) && (document.getElementById("dailyRewardBool") != null)) {
         if (document.getElementById("dailyRewardBool").innerText == "1") {
-          alert('Proc Daily Reward');
+          document.getElementById("dailyRewardDiv").style.display = "block";
         }
       }
+      
 
 
 

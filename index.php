@@ -75,6 +75,11 @@
 		<div id="dailyRewardBool" style="position:absolute; opacity:0; width:0; height:0; font-size:0px;"><?php include("getDailyProcBool.php");?></div>
 		<!-- Fin -->
 
+		<!-- Modal dailyReward -->
+		<div id="dailyRewardDiv" style="display:none; position:absolute; border-radius:10px; box-shadow: 0px 9px 0px rgba(0, 0, 0, 0.9); width:60%; height:10%; padding:1%; font-weight:400; top:50%; left:50%; transform:translate(-50%, -50%); z-index:2; background-color:rgba(239, 59, 46, 1); text-align:center; font-size:1.9em; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color:rgb(17 19 31);">Récompense de connection quotidienne:</div>
+		<!-- Fin -->
+
+
 		<div class="containerMaster">
 
 
