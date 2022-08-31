@@ -2001,20 +2001,26 @@
 
 
 
-      function animsBouton(choixBoutonPressé) {
+      function animsBouton(choixBoutonPresse) {
+
+        document.getElementById("choixStand").style.opacity = "0";
+        document.getElementById("choixDoubler").style.opacity = "0";
+        document.getElementById("choixHit").style.opacity = "0";
 
         document.querySelectorAll('.choices').forEach(function(elem) {
           let choixDuBoutonParcouru = elem.getAttribute("id");
-          if (choixDuBoutonParcouru == choixBoutonPressé) {
+          if (choixDuBoutonParcouru == choixBoutonPresse) {
 
-            //anim elem pressé
-            elem.style.opacity = "0.7";
+            //anim elem pressé (anim 2 temps)
+            // elem.style.opacity = "0.7";
+            elem.classList.add("glowBoutonChoixPresse");
 
           }
           else {
 
-            //anim autres elem
-            elem.style.opacity = "0";
+            //anim autres elem (grisé tres tres vite instant et opa 0.5) ET DESACTIVER LE CLICK
+            elem.classList.add("boutonGrisedAnim");
+          
 
           }
         })

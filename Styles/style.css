@@ -1701,6 +1701,37 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 }
 
 
+.boutonGrisedAnim {
+	animation: boutonGrisedAnim 0.2s ease forwards;
+}
+@keyframes boutonGrisedAnim {
+	from {
+	}
+	to {
+		color:rgba(255, 255, 255, 0.1);
+		border: 4px solid rgba(255, 255, 255, 0.1);
+		background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(36, 46, 87, 0) 100%)
+	}
+}
+
+/* // Adapter la couleur 100% au cas (creer 3 classses?) */
+.glowBoutonChoixPresse {
+	animation: glowBoutonChoixPresse 0.2s ease forwards !important;
+	text-shadow: 0 0 0px #FFF, 0 0 0px #FFF, 0 0 0px #ef3b2e, 0 0 0px #ef3b2e, 0 0 0px #ef3b2e;
+	box-shadow: 0 0 0px #FFF, 0 0 0px #FFF, 0 0 0px #ef3b2e, 0 0 0px #ef3b2e, 0 0 0px #ef3b2e;
+}
+@keyframes glowBoutonChoixPresse {
+	from {
+	}
+	to {
+		color: rgba(239, 59, 46, 0.9);
+		box-shadow: 0 0 5px rgba(255,255,255,0.7), 0 0 10px rgba(255,255,255,0.7), 0 0 15px rgba(239, 59, 46, 0.7), 0 0 20px rgba(239, 59, 46, 0.7), 0 0 30px rgba(239, 59, 46, 0.7);
+		text-shadow: 0 0 5px rgba(255,255,255,0.7), 0 0 10px rgba(255,255,255,0.7), 0 0 15px rgba(239, 59, 46, 0.7), 0 0 20px rgba(239, 59, 46, 0.7), 0 0 30px rgba(239, 59, 46, 0.7);
+		border: 4px solid rgba(239, 59, 46, 0.7);
+	}
+}
+
+
 
 .indexElemFadeOutOnNewGame {
 	animation: fadeOutElemIndex 0.65s ease forwards;
@@ -3516,7 +3547,7 @@ p {
 	background-image: radial-gradient(circle, rgba(14,100,107,0.8) 0%, rgba(36,46,87,0) 100%);
 }
 #double:hover {
-	opacity: 1;
+	/* opacity: 1;
 	background: rgba(252, 227, 3, 0.2); 
 	font-size: 5em;
 	color: rgba(252, 227, 3, 1);
@@ -3527,7 +3558,7 @@ p {
 	background: -webkit-radial-gradient(circle, rgba(209,181,5,0.7973564425770308) 50%, rgba(255,255,255,0) 100%);
 	background: radial-gradient(circle, rgba(209,181,5,0.7973564425770308) 50%, rgba(255,255,255,0) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d1b505",endColorstr="#ffffff",GradientType=1);
-	text-shadow: 0 0 2px rgb(0, 0, 0);
+	text-shadow: 0 0 2px rgb(0, 0, 0); */
 }
 
 #hit {
@@ -3551,18 +3582,6 @@ p {
 	background-image: radial-gradient(circle, rgba(14,100,107,0.8) 0%, rgba(36,46,87,0) 100%);
 }
 #hit:hover {
-	color: rgba(44, 252, 3, 1);
-	background: rgb(14,121,9);
-	background: -moz-radial-gradient(circle, rgb(18, 150, 11) 50%, rgba(255,255,255,0) 100%);
-	background: -webkit-radial-gradient(circle, rgb(18, 150, 11) 50%, rgba(255,255,255,0) 100%);
-	background: radial-gradient(circle, rgb(18, 150, 11) 50%, rgba(255,255,255,0) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0e7909",endColorstr="#ffffff",GradientType=1);
-
-	border-width: 6px;
-	border-style: solid;
-	border-color: rgba(44, 252, 3, 1);
-	font-size: 8em;
-	text-shadow: 0 0 2px rgb(0, 0, 0);
 }
 
 #stand {
@@ -3570,7 +3589,6 @@ p {
 	font-size: 6.5em;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
-	/* height: 90%;  */
 	height: 80%;
 	position: relative;
 	top: 16px;
@@ -3585,21 +3603,6 @@ p {
 	background-image: radial-gradient(circle, rgba(14,100,107,0.8) 0%, rgba(36,46,87,0) 100%);
 }
 #stand:hover {
-	/**** ZZZ hover (transparent) *****/
-	/* background: url("zzz2.png");
-	background-repeat: no-repeat;
-	background-position: left 5%;
-	background-size: 75%; */
-
-	/**** Gradient circle hover (simple efficace) *****/
-	background: rgb(126,2,16);
-	/* background: -moz-radial-gradient(circle, rgba(126,2,16,0.7413340336134453) 50%, rgba(255,255,255,0) 100%);
-	background: -webkit-radial-gradient(circle, rgba(126,2,16,0.7413340336134453) 50%, rgba(255,255,255,0) 100%);
-	background: radial-gradient(circle, rgba(126,2,16,0.7413340336134453) 50%, rgba(255,255,255,0) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7e0210",endColorstr="#ffffff",GradientType=1); */
-	font-size: 9.5em;
-	border: 6px solid rgba(252, 0, 0, 1);
-	text-shadow: 0 0 2px rgb(0, 0, 0);
 }
 
 

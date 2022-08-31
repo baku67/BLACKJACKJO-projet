@@ -1,14 +1,17 @@
-Apres rework mise, mettre un modal alert si miseLocked (donc déduite BDD) et tentative de switch onglets ! (switch fonctionnel)
+Alors: A la place du load historique et guide: créer l'élément sur le coté (width 100% mais décalé 0% droite/gauche), et onclickOnglet, faire slide pour recouvrir le viewport avec une fleche de retour pour reSlider hors viewport. 
+-> Résout probleme de switchOnglets pendant partie
+	? -> Apres rework mise, mettre un modal alert si miseLocked (donc déduite BDD) et tentative de switch onglets ! (switch fonctionnel)
+		Mise : flash négatif et envoi BDD (voir la fonction gain ducoup)
 
-nim météorite qui descend en diag (rewardAlert)
-Mise : flash négatif et envoi BDD (voir la fonction gain ducoup)
+
+Anim météorite qui descend en diag (rewardAlert)
 
 Lorsque switch DM/DL: le border-top du footer possede une transitionCSS sur la border-color (test avec title2 non fructifiant, à cause du fait qu'il y ait deja une anim sur l'id)
 
 
 MAJ front en direct du niveau (pour ca il faut get/echoJS juste le expNeeded)
 
-Anime miseLocker:
+Anime miseLocked:
 1 anim from 0:0 to full horizontal (cian to orange)
 2 anim from line horizontale to carré (vertical)
 3 border all to border vertical rgba opacity 0
