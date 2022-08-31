@@ -16,7 +16,9 @@
 
 	--imgReloadButton-src: url("../Images/reload.png");
 	--border-reloadButton: 2px solid rgba(223, 223, 223, 0.6);
-	--bgImage-reloadButton: radial-gradient(circle, rgba(14,100,107,0.8) 0%, rgba(36,46,87,0) 100%);
+	--borderFlash-reloadButton: 2px solid rgba(0, 231, 254, 0.8);
+	--bgImage-reloadButton: radial-gradient(circle, rgba(14,100,107,0.8) 0%, rgba(36,46,87,0) 80%);
+	--bgImageFlash-reloadButton: radial-gradient(circle, rgba(14,100,107,0.8) 0%, rgba(36,46,87,0) 80%);
 
 	--footer-fontColor: rgb(223, 204, 204);
 
@@ -86,7 +88,9 @@
 
 	--imgReloadButton-src: url("../Images/reload.png");
 	--border-reloadButton: 2px solid rgba(223, 223, 223, 0.6);
-	--bgImage-reloadButton: radial-gradient(circle, rgba(14,100,107,0.8) 0%, rgba(36,46,87,0) 100%);
+	--borderFlash-reloadButton: 2px solid rgba(0, 231, 254, 0.8);
+	--bgImage-reloadButton: radial-gradient(circle, rgba(14,100,107,0.8) 0%, rgba(36,46,87,0) 80%);
+	--bgImageFlash-reloadButton: radial-gradient(circle, rgba(14,100,107,0.8) 0%, rgba(36,46,87,0) 80%);
 
 	--footer-fontColor: rgb(223, 204, 204);
 
@@ -159,7 +163,9 @@
 
 	--imgReloadButton-src: url("../Images/reload_darkMode.png");
 	--border-reloadButton: 3px solid rgba(239, 59, 46, 0.7);
+	--borderFlash-reloadButton: 3px solid rgba(0, 231, 254, 0.8);
 	--bgImage-reloadButton: radial-gradient(circle, rgba(239, 59, 46, 0.5) 0%, rgba(36,46,87,0) 80%);
+	--bgImageFlash-reloadButton: radial-gradient(circle, rgba(10, 166, 180, 0.753) 0%, rgba(36,46,87,0) 80%);
 
 	--miseEnCours-color: rgba(239, 59, 46, 1);
 
@@ -3278,15 +3284,31 @@ p {
 }
 
 .rotateReloadPng{
-
-	animation: rotationReload 1.5s ease;
+	animation: rotationReload 0.8s ease;
 } 
 @keyframes rotationReload {
 	from {
 		transform: rotate(0deg);
 	}
 	to {
-		transform: rotate(720deg);
+		transform: rotate(360deg);
+	}
+}
+.reloadColorAnim {
+	animation: reloadColorAnim 0.5s ease;
+}
+@keyframes reloadColorAnim {
+	0% {
+		background-image: var(--bgImage-reloadButton);
+		border: var(--border-reloadButton);
+	}
+	50% {
+		background-image: var(--bgImageFlash-reloadButton);
+		border: var(--borderFlash-reloadButton);
+	}
+	100% {
+		background-image: var(--bgImage-reloadButton);
+		border: var(--border-reloadButton);
 	}
 }
 

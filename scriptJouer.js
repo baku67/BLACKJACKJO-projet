@@ -1981,6 +1981,64 @@
         }, 1000);
 
       }
+
+
+
+
+
+
+
+
+
+
+
+      function animsBouton(choixBoutonPressé) {
+
+        document.querySelectorAll('.choices').forEach(function(elem) {
+          let choixDuBoutonParcouru = elem.getAttribute("id");
+          if (choixDuBoutonParcouru == choixBoutonPressé) {
+
+            //anim elem pressé
+            elem.style.opacity = "0.7";
+
+          }
+          else {
+
+            //anim autres elem
+            elem.style.opacity = "0";
+
+          }
+        })
+      };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       
 
       // Lock de la mise
@@ -2091,11 +2149,15 @@
 
                 document.getElementById("hit").addEventListener("click", function() {
 
+
                   document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
 
                   animAlertOnClickChoix();
 
-                  hit();
+                  animsBouton("hit");
+                  setTimeout(function() {
+                    hit();
+                  }, 750)
 
                 });
                 
@@ -2132,7 +2194,11 @@
                     }
                     document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;
                   }
-                  lancerPhaseCroupier();
+                  animsBouton("stand");
+                  setTimeout(function() {
+                    lancerPhaseCroupier();
+                  }, 750)
+
                 });
 
                   //***  shortcut Stand
@@ -2161,7 +2227,11 @@
 
                   // animAlertOnClickChoix();
 
-                  double();
+                  animsBouton("double");
+                  setTimeout(function() {
+                    double();
+                  }, 750)
+
                 });
 
                 //***  shortcut Double
@@ -2179,8 +2249,10 @@
 
           // Anims alertChoix
             setTimeout(function() {
-              document.getElementById("traitUnderlineInverseChoix").classList.add("traitUnderlineInverseChoix1");
-              document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert1");
+              if ((document.getElementById("traitUnderlineInverseChoix")!=null) && (document.getElementById('phaseChoixAlert')!==null)) {
+                document.getElementById("traitUnderlineInverseChoix").classList.add("traitUnderlineInverseChoix1");
+                document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert1");
+              }
               // Fin
             }, 8001 * setTimeOutMultiplier);
 
@@ -2269,7 +2341,10 @@
 
                 animAlertOnClickChoix();
 
-                hit();
+                animsBouton("hit");
+                setTimeout(function() {
+                  hit();
+                }, 750)
 
               });
               //***  shortcut Hit
@@ -2304,8 +2379,11 @@
                   document.getElementById('scoreJoueur').innerHTML = (scoreTotalJoueur);
 
                 }
-                lancerPhaseCroupier();
-              });
+                animsBouton("stand");
+                setTimeout(function() {
+                  lancerPhaseCroupier();
+                }, 750)
+            });
 
               //***  shortcut Stand
               function doc_keyStand(e) {
@@ -2331,8 +2409,11 @@
                 }, 2901);
 
 
-                double();
-              });
+                animsBouton("double");
+                setTimeout(function() {
+                  double();
+                }, 750)
+            });
               //***  shortcut Double
               function doc_keyDouble(e) {
                 if ((e.key === '*') && (ChoixActif == true)){
@@ -2417,6 +2498,7 @@
                 // Disparition boutton onClick
                 document.getElementById("relancer").addEventListener("click", function() {
                     document.getElementById("reloadPng").classList.add('rotateReloadPng');
+                    document.getElementById("relancer").classList.add('reloadColorAnim');
                   
                     setTimeout( function() { 
                       if (document.getElementById("relancer") !== null) {
@@ -2952,6 +3034,8 @@
           // Disparition boutton onClick
           document.getElementById("relancer").addEventListener("click", function() {
             document.getElementById("reloadPng").classList.add('rotateReloadPng');
+            document.getElementById("relancer").classList.add('reloadColorAnim');
+
             setTimeout( function() { 
               if (document.getElementById("relancer") != null)
                {document.getElementById("relancer").style.visibility = "hidden";}
