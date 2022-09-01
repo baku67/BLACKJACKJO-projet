@@ -2013,7 +2013,9 @@
 
             //anim elem pressé (anim 2 temps)
             // elem.style.opacity = "0.7";
-            elem.classList.add("glowBoutonChoixPresse");
+            // elem.classList.add("glowBoutonChoixPresse");
+            elem.innerHTML = "";
+            elem.classList.add("animBoutonChoixPresse");
 
           }
           else {

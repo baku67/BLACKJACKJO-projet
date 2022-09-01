@@ -1739,7 +1739,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 }
 
 /* // Adapter la couleur 100% au cas (creer 3 classses?) */
-.glowBoutonChoixPresse {
+/* .glowBoutonChoixPresse {
 	animation: glowBoutonChoixPresse 0.2s ease forwards !important;
 	text-shadow: 0 0 0px #FFF, 0 0 0px #FFF, 0 0 0px #ef3b2e, 0 0 0px #ef3b2e, 0 0 0px #ef3b2e;
 	box-shadow: 0 0 0px #FFF, 0 0 0px #FFF, 0 0 0px #ef3b2e, 0 0 0px #ef3b2e, 0 0 0px #ef3b2e;
@@ -1749,9 +1749,39 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	}
 	to {
 		color: rgba(239, 59, 46, 0.9);
-		box-shadow: 0 0 5px rgba(255,255,255,0.7), 0 0 10px rgba(255,255,255,0.7), 0 0 15px rgba(239, 59, 46, 0.7), 0 0 20px rgba(239, 59, 46, 0.7), 0 0 30px rgba(239, 59, 46, 0.7);
-		text-shadow: 0 0 5px rgba(255,255,255,0.7), 0 0 10px rgba(255,255,255,0.7), 0 0 15px rgba(239, 59, 46, 0.7), 0 0 20px rgba(239, 59, 46, 0.7), 0 0 30px rgba(239, 59, 46, 0.7);
+		box-shadow: 0 0 5px rgba(255,255,255,0.7), 0 0 10px rgba(255,255,255,0.7), 0 0 15px rgba(239, 59, 46, 0.7), 0 0 20px rgba(239, 59, 46, 0.7);
+		text-shadow: 0 0 5px rgba(255,255,255,0.7), 0 0 10px rgba(255,255,255,0.7), 0 0 15px rgba(239, 59, 46, 0.7), 0 0 20px rgba(239, 59, 46, 0.7);
 		border: 4px solid rgba(239, 59, 46, 0.7);
+	}
+} */
+
+.animBoutonChoixPresse {
+	animation: animBoutonChoixPresse 0.15s ease forwards, anim2BoutonChoixPresse 0.15s 0.22s ease forwards !important;
+	top: 50% !important;
+	transform: translateY(-50%) !important;
+
+	/* text-shadow: 0 0 0px #FFF, 0 0 0px #FFF, 0 0 0px #ef3b2e, 0 0 0px #ef3b2e, 0 0 0px #ef3b2e;
+	box-shadow: 0 0 0px #FFF, 0 0 0px #FFF, 0 0 0px #ef3b2e, 0 0 0px #ef3b2e, 0 0 0px #ef3b2e; */
+}
+@keyframes animBoutonChoixPresse {
+	from {
+	}
+	to {
+		height: 0px;
+		border-width: 1px; 
+
+		/* box-shadow: 0 0 5px rgba(255,255,255,0.4), 0 0 10px rgba(255,255,255,0.4), 0 0 15px rgba(239, 59, 46, 0.4), 0 0 20px rgba(239, 59, 46, 0.4);
+		text-shadow: 0 0 5px rgba(255,255,255,0.4), 0 0 10px rgba(255,255,255,0.4), 0 0 15px rgba(239, 59, 46, 0.4), 0 0 20px rgba(239, 59, 46, 0.4); */
+	}
+}
+@keyframes anim2BoutonChoixPresse {
+	from {
+		border-width: 1px;
+	}
+	to {
+		height: 0px;
+		width: 0px;
+		border-width: 0px;
 	}
 }
 
@@ -2325,7 +2355,7 @@ p {
 
 	/* // Gérer le responsive */
 	width: 6em !important;
-	left: 6.5%;
+	left: 6.2%;
 	bottom: 44.5%;
 	opacity: 1;
 }
@@ -3597,6 +3627,8 @@ p {
 	margin: 5px 8px; 
 	border: 4px solid rgba(44, 252, 3, 0.7); 
 	border-radius: 13px;
+
+	
 
 	transition: border-width 0.5s ease-in-out;
 	transition: border-style 0.5s ease-in-out;
