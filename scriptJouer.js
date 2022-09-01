@@ -2552,6 +2552,8 @@
 
 
 
+
+
       function lancerPhaseCroupier() {
 
           var firstCardRevealed = false;
@@ -3222,9 +3224,11 @@
 
 
       // NOUVELLE CARTE  > CROUPIER (+ScoreTOTAL)
-      function addCardCroupier() {
+      function addCardCroupier(firstCardCroupierRevealed) {
 
-        distribAnim("croupier");
+        if (firstCardCroupierRevealed == true) {
+          distribAnim("croupier");
+        }
 
         // Créer l'élément <img/>
         var img = document.createElement('img');
