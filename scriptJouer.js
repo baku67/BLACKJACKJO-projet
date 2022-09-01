@@ -899,15 +899,15 @@
         
       });
 
-      $('#jouer').click(function() {
+      // $('#jouer').click(function() {
 
-        $('#container1').load("indexContainer.php");
+      //   $('#container1').load("indexContainer.php");
 
-        setTimeout(function() {
-          newGameListener();
-        }, 1500)
+      //   setTimeout(function() {
+      //     newGameListener();
+      //   }, 1500)
 
-      });
+      // });
 
 
 
@@ -3753,10 +3753,17 @@
       if (isConnected == true) {
         function ajoutGain(gain) {
 
-          setTimeout(function() {
-            document.getElementById("creditsConnected").classList.add("refreshCreditAnim");
+          // setTimeout(function() {
+            if (WinLose == "WIN") {
+              document.getElementById("creditsConnected").classList.add("refreshCreditAnim");
+              document.getElementById("creditsConnected").innerHTML = (credits + gain);
+            }
+            else if (WinLose == "BJ") {
+              document.getElementById("creditsConnected").classList.add("refreshCreditAnimBJ");
+              document.getElementById("creditsConnected").innerHTML = (credits + gain);
+            }
             document.getElementById("creditsConnected").innerHTML = (credits + gain);
-          }, 200)
+          // }, 200)
 
 
           credits = credits + gain;

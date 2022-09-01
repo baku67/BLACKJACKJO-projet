@@ -92,7 +92,7 @@
 				<div>
 					<ul id="onglets" class="indexFadeInOnglets1">
 						<li class="onglet"><button id="guide">Guide</button></li>
-						<li class="onglet" ><button id="jouer">JOUER !</button></li>
+						<li class="onglet" ><a id="jouer" href="index.php" >JOUER !</a></li>
 						<li class="onglet"><button id="historique">Historique</button></li>
 					</ul>
 				</div>

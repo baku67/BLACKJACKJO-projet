@@ -24,6 +24,7 @@
 
 	--creditsConnected-color: rgb(241 205 92 / 95%) !important;
 	--creditsConnectedFlash-color: #00e7fe !important;
+	--creditsConnectedFlashBJ-color: #fee500 !important;
 
 	--miseEnCours-color: rgb(223, 204, 204);
 
@@ -96,6 +97,7 @@
 
 	--creditsConnected-color: rgb(241 205 92 / 95%) !important;
 	--creditsConnectedFlash-color: #00e7fe !important;
+	--creditsConnectedFlashBJ-color: #fee500 !important;
 
 	--miseEnCours-color: rgb(223, 204, 204);
 
@@ -173,6 +175,7 @@
 
 	--creditsConnected-color: rgba(239, 59, 46, 1) !important;
 	--creditsConnectedFlash-color: #00ffea !important;
+	--creditsConnectedFlashBJ-color: #fee500 !important;
 
 	--header-background: #10111b !important;
 	/* --header-bg-position: 35% 15%; */
@@ -1200,6 +1203,27 @@ button, input[type="submit"], input[type="reset"] {
 	50% {
 		font-size: 1.6em;
 		letter-spacing: 4px;
+		color: var(--creditsConnectedFlash-color);
+	}
+	100% {
+		font-size: 1.5em;
+		letter-spacing: 1px;
+		color: var(--creditsConnected-color);
+	}
+}
+
+.refreshCreditAnimBJ {
+	animation: flashCreditRefreshBJ 0.42s ease  forwards !important;
+}
+@keyframes flashCreditRefresh {
+	0% {
+		font-size: 1.5em;
+		letter-spacing: 1px;
+		color: var(--creditsConnected-color);
+	}
+	50% {
+		font-size: 1.7em;
+		letter-spacing: 6px;
 		color: var(--creditsConnectedFlash-color);
 	}
 	100% {
