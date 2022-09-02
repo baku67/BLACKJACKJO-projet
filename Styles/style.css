@@ -1779,6 +1779,10 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 		border-width: 1px;
 	}
 	to {
+		/* Margin compensatoire */
+		margin: 0 54px;
+		
+
 		height: 0px;
 		width: 0px;
 		border-width: 0px;
@@ -2485,9 +2489,9 @@ p {
 
 	transition: 0.5s ease;
 }
-.pokerChips:hover {
+/* .pokerChips:hover {
 	opacity: 0.3;
-}
+} */
 .valeurs {
 	transition: .5s ease;
 	opacity: 0;
