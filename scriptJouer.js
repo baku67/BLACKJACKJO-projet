@@ -1508,7 +1508,9 @@
 
         $("#relancer").click(function(){
 
-          document.getElementById("creditsConnected").classList.remove("refreshCreditAnim");
+          if (document.getElementById("creditsConnected") !== null) {
+            document.getElementById("creditsConnected").classList.remove("refreshCreditAnim");
+          }
 
           // Refresh footer/header gradient animation
           document.getElementById("footer").classList.remove("footerOnPartie");
@@ -2280,6 +2282,7 @@
             addCardJoueur();
           }, (2000 * setTimeOutMultiplier));
           setTimeout(function() {
+            distribAnim("croupier");
             addCardCroupier();
           }, (3750 * setTimeOutMultiplier));
           setTimeout(function() {
