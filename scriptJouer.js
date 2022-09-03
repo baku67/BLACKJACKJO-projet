@@ -2174,9 +2174,9 @@
                   animAlertOnClickChoix();
 
                   animsBouton("hit");
-                  setTimeout(function() {
+                  // setTimeout(function() {
                     hit();
-                  }, 750)
+                  // }, 750)
 
                 });
                 
@@ -2362,9 +2362,9 @@
                 animAlertOnClickChoix();
 
                 animsBouton("hit");
-                setTimeout(function() {
+                // setTimeout(function() {
                   hit();
-                }, 750)
+                // }, 750)
 
               });
               //***  shortcut Hit
