@@ -112,9 +112,9 @@
 					<!-- Fin test -->
 
 					<!-- Anciennement "Se connecter / S'inscrire"-->
-					<button id="connectionButton" class="connectionButtons" onclick="document.getElementById('connectionModal').style.display='block'; ">Connexion</button>
+					<button id="connectionButton" class="connectionButtons">Connexion</button>
 					<p class="connectionButtons">&nbsp;|&nbsp;</p>
-					<button id="inscriptionButton" class="connectionButtons" onclick="document.getElementById('inscriptionModal').style.display='block'">Inscription</button>
+					<button id="inscriptionButton" class="connectionButtons">Inscription</button>
 				<?php endif ?>
 				<!-- Fin -->
 
@@ -127,6 +127,7 @@
 
 					<p style="position:relative; left:29px; bottom:0.95em; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:1.2em; color:rgba(223, 204, 204, 0.9);">
 
+					
 						<strong style="font-size:1.4em; text-shadow:0 0 3px rgb(43 39 39);"><span style="color:rgba(238,182,50,1); font-size:1.5em; position:relative; top:2px; left:16px;"><i class="fa-solid fa-star"></i><span id="lvlText"><?php include('getLevel.php'); ?></span></span><span style="text-decoration:underline 4px rgba(238,182,50,1); position:relative; bottom:2px; left:3px;"><?php echo ucfirst($_SESSION['username']);?></span></strong>
 
 						&nbsp;&nbsp;&nbsp;
@@ -226,7 +227,7 @@
 			<div id="connectionModal" class="w3-modal">
 				<div class="w3-modal-content w3-animate-zoom">
 					<div class="modalContour">
-						<span onclick="document.getElementById('connectionModal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+						<span id="closeConnectionModal" class="w3-button w3-display-topright">&times;</span>
 						<header class="modalHeader">
 							<h2 class="modalHeaderText">Connexion</h2>
 						</header>
@@ -247,7 +248,7 @@
 
 
 						<div class="w3-container w3-padding-16 w3-light-grey">
-							<button onclick="document.getElementById('connectionModal').style.display='none'" type="button" class="w3-button w3-red">Annuler</button>
+							<button id="closeConnectionModal2" type="button" class="w3-button w3-red">Annuler</button>
 							<span class="w3-right w3-padding w3-hide-small"><a href="#">mot de passe</a> oublié?</span>
 						</div>
 						<!-- FIN FORM -->
@@ -259,7 +260,7 @@
 			<div id="inscriptionModal" class="w3-modal">
 				<div class="w3-modal-content w3-animate-zoom">
 					<div class="modalContour">
-						<span onclick="document.getElementById('inscriptionModal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+						<span id="closeInscriptionModal" class="w3-button w3-display-topright">&times;</span>
 						<header class="modalHeader">
 							<h2 class="modalHeaderText">Inscription</h2>
 						</header>
@@ -284,7 +285,7 @@
 
 
 						<div class="w3-container w3-padding-16 w3-light-grey">
-							<button onclick="document.getElementById('inscriptionModal').style.display='none'" type="button" class="w3-button w3-red">Annuler</button>
+							<button id="closeInscriptionModal2" type="button" class="w3-button w3-red">Annuler</button>
 						</div>
 						<!-- FIN FORM -->
 					</div>

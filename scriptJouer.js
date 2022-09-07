@@ -430,46 +430,106 @@
       
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       var modalInscription = document.getElementById("inscriptionModal");
       var modalConnection = document.getElementById("connectionModal");
-      
+
+      if ((document.getElementById("connectionButton") !== null ) && (document.getElementById("inscriptionButton") !== null)) {
+        document.getElementById("connectionButton").addEventListener("click", function() {
+          document.getElementById('connectionModal').style.display='block';
+        })
+        document.getElementById("inscriptionButton").addEventListener("click", function() {
+          document.getElementById('inscriptionModal').style.display='block';
+        })  
+      }
+
+      // Fermeture des modals inscription/connection onClick exterieur
       window.onclick = function(event) {
         if (event.target == modalConnection) {
-          modalConnection.style.display = "none";
 
-          document.getElementById('newGame').classList.remove("is-blurred");
-          document.getElementById('ratioDiv').classList.remove("is-blurred");
-          document.getElementById('footer').classList.remove("is-blurred");
-          document.getElementById('header').classList.remove("is-blurred");
-          document.getElementById('classementDiv').classList.remove("is-blurred");
-          document.getElementById('connectionContainer').classList.remove("is-blurred");
-          document.getElementById('jaugeContainerMaster').classList.remove("is-blurred");
+          modalConnection.style.display = "none";
+          removeBlurred()
         }
         if (event.target == modalInscription) {
-          modalInscription.style.display = "none";
 
-          document.getElementById('newGame').classList.remove("is-blurred");
-          document.getElementById('ratioDiv').classList.remove("is-blurred");
-          document.getElementById('footer').classList.remove("is-blurred");
-          document.getElementById('header').classList.remove("is-blurred");
-          document.getElementById('classementDiv').classList.remove("is-blurred");
-          document.getElementById('connectionContainer').classList.remove("is-blurred");
-          document.getElementById('jaugeContainerMaster').classList.remove("is-blurred");
+          modalInscription.style.display = "none";
+          removeBlurred()
         }
       }
 
+      // Fermeture des modals isncription/connection onclick croix
+      document.getElementById("closeConnectionModal").addEventListener("click", function() {
+        modalConnection.style.display='none';
+        removeBlurred()
+      })
+      document.getElementById("closeInscriptionModal").addEventListener("click", function() {
+        modalInscription.style.display='none';
+        removeBlurred()
+      })
 
-      if (document.getElementById("connectionButton") !== null) {
+      document.getElementById("closeConnectionModal2").addEventListener("click", function() {
+        modalConnection.style.display='none';
+        removeBlurred()
+      })
+      document.getElementById("closeInscriptionModal2").addEventListener("click", function() {
+        modalInscription.style.display='none';
+        removeBlurred()
+      })
+      
+
+
+      if ((document.getElementById("connectionButton") !== null) && (document.getElementById("inscriptionButton") !== null)) {
         document.getElementById("connectionButton").addEventListener("click", function() {
-          document.getElementById('newGame').classList.add("is-blurred");
-          document.getElementById('ratioDiv').classList.add("is-blurred");
-          document.getElementById('footer').classList.add("is-blurred");
-          document.getElementById('header').classList.add("is-blurred");
-          document.getElementById('classementDiv').classList.add("is-blurred");
-          document.getElementById('connectionContainer').classList.add("is-blurred");
-          document.getElementById('jaugeContainerMaster').classList.add("is-blurred");
+          addBlur()
+        })
+        document.getElementById("inscriptionButton").addEventListener("click", function() {
+          addBlur()
         })
       }
+
+
+      function removeBlurred() {
+        document.getElementById('newGame').classList.remove("is-blurred");
+        document.getElementById('ratioDiv').classList.remove("is-blurred");
+        document.getElementById('footer').classList.remove("is-blurred");
+        document.getElementById('header').classList.remove("is-blurred");
+        document.getElementById('classementDiv').classList.remove("is-blurred");
+        document.getElementById('connectionContainer').classList.remove("is-blurred");
+        document.getElementById('jaugeContainerMaster').classList.remove("is-blurred");
+      }
+      function addBlur() {
+        document.getElementById('newGame').classList.add("is-blurred");
+        document.getElementById('ratioDiv').classList.add("is-blurred");
+        document.getElementById('footer').classList.add("is-blurred");
+        document.getElementById('header').classList.add("is-blurred");
+        document.getElementById('classementDiv').classList.add("is-blurred");
+        document.getElementById('connectionContainer').classList.add("is-blurred");
+        document.getElementById('jaugeContainerMaster').classList.add("is-blurred");
+      }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2173,6 +2233,7 @@
 
                   animAlertOnClickChoix();
 
+                  
                   animsBouton("hit");
                   // setTimeout(function() {
                     hit();
@@ -2358,6 +2419,7 @@
                 document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
 
                 choix = "hit";
+
 
                 animAlertOnClickChoix();
 
@@ -2668,9 +2730,30 @@
 
                     expDB(20);
 
-                    // refreshLvl();
-                    //
 
+                    // Refresh lvl: (1)
+                    // setTimeout(function() {
+                    //   document.getElementById("lvlText").innerHTML = "<?php include('getLevel.php'); ?>";
+                    // }, 100)
+
+                    // refreshLvl(); (2)
+
+                    // Refresh lvl (3)
+                    // $.get("getLevel.php", function(data) {
+                    //   alert("refresh OK, data: " + data);
+                    // });
+
+                    var lvlRefreshed = $.get("getLevel.php", function() {
+                      console.log("success");
+                    }, "json")
+                      .done(function() {
+                        console.log("deuxieme success, data: " + lvlRefreshed);
+                      });
+  
+                    lvlRefreshed.always(function() {
+                      console.log( "3eme cas" );
+                    });
+  
 
                     document.getElementById("deckContainer").remove();
                     document.getElementById("cardAnim").remove();
@@ -2783,8 +2866,30 @@
 
                         expDB(100);
 
-                        // refreshLvl();
-                        
+
+                        // Refresh lvl: (1)
+                        // setTimeout(function() {
+                        //   document.getElementById("lvlText").innerHTML = "<?php include('getLevel.php'); ?>";
+                        // }, 100)
+
+                        // refreshLvl(); (2)
+
+                        // Refresh lvl (3)
+                        // $.get("getLevel.php", function(data) {
+                        //   alert("refresh OK, data: " + data);
+                        // });
+
+                        var lvlRefreshed = $.get("getLevel.php", function() {
+                          console.log("success");
+                        }, "json")
+                          .done(function() {
+                            console.log("deuxieme success, data: " + lvlRefreshed);
+                          });
+      
+                        lvlRefreshed.always(function() {
+                          console.log( "3eme cas" );
+                        });
+                              
                           // function: (en partant de la mise vers le gains réel)
                           var miseLockedMultiplied = miseLocked * 2;
 
@@ -2887,9 +2992,30 @@
 
                         }, 500)
 
-                        expDB(100);
 
-                        // refreshLvl();
+                        // Refresh lvl: (1)
+                        // setTimeout(function() {
+                        //   document.getElementById("lvlText").innerHTML = "<?php include('getLevel.php'); ?>";
+                        // }, 100)
+
+                        // refreshLvl(); (2)
+
+                        // Refresh lvl (3)
+                        // $.get("getLevel.php", function(data) {
+                        //   alert("refresh OK, data: " + data);
+                        // });
+
+                        var lvlRefreshed = $.get("getLevel.php", function() {
+                          console.log("success");
+                        }, "json")
+                          .done(function() {
+                            console.log("deuxieme success, data: " + lvlRefreshed);
+                          });
+      
+                        lvlRefreshed.always(function() {
+                          console.log( "3eme cas" );
+                        });
+
 
                         var miseLockedMultiplied = miseLocked * 2;
 
@@ -2982,8 +3108,30 @@
 
                       expDB(50);
 
-                      // refreshLvl();
-                      
+
+                      // Refresh lvl: (1)
+                      // setTimeout(function() {
+                      //   document.getElementById("lvlText").innerHTML = "<?php include('getLevel.php'); ?>";
+                      // }, 100)
+
+                      // refreshLvl(); (2)
+
+                      // Refresh lvl (3)
+                      // $.get("getLevel.php", function(data) {
+                      //   alert("refresh OK, data: " + data);
+                      // });
+
+                      var lvlRefreshed = $.get("getLevel.php", function() {
+                        console.log("success");
+                      }, "json")
+                        .done(function() {
+                          console.log("deuxieme success, data: " + lvlRefreshed);
+                        });
+    
+                      lvlRefreshed.always(function() {
+                        console.log( "3eme cas" );
+                      });
+                          
                       document.getElementById("miseResultat").classList.add("addColorToResultatYellow");
                       // Fin résultat Gains
                     
@@ -3864,8 +4012,29 @@
 
                       expDB(20);
 
-                      // refreshLvl();
+                      // Refresh lvl: (1)
+                      // setTimeout(function() {
+                      //   document.getElementById("lvlText").innerHTML = "<?php include('getLevel.php'); ?>";
+                      // }, 100)
 
+                      // refreshLvl(); (2)
+
+                      // Refresh lvl (3)
+                      // $.get("getLevel.php", function(data) {
+                      //   alert("refresh OK, data: " + data);
+                      // });
+
+                      var lvlRefreshed = $.get("getLevel.php", function() {
+                        console.log("success");
+                      }, "json")
+                        .done(function() {
+                          console.log("deuxieme success, data: " + lvlRefreshed);
+                        });
+    
+                      lvlRefreshed.always(function() {
+                        console.log( "3eme cas" );
+                      });
+    
 
                     //
                     // Fin résultat Gains
@@ -4014,7 +4183,28 @@
 
                   expDB(250);
 
-                  // refreshLvl();
+                  // Refresh lvl: (1)
+                  // setTimeout(function() {
+                  //   document.getElementById("lvlText").innerHTML = "<?php include('getLevel.php'); ?>";
+                  // }, 100)
+
+                  // refreshLvl(); (2)
+
+                  // Refresh lvl (3)
+                  // $.get("getLevel.php", function(data) {
+                  //   alert("refresh OK, data: " + data);
+                  // });
+
+                  var lvlRefreshed = $.get("getLevel.php", function() {
+                    console.log("success");
+                  }, "json")
+                    .done(function() {
+                      console.log("deuxieme success, data: " + lvlRefreshed);
+                    });
+
+                  lvlRefreshed.always(function() {
+                    console.log( "3eme cas" );
+                  });
                     
                   // Fin résultat Gains
 

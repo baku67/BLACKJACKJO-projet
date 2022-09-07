@@ -1,7 +1,18 @@
 Alors: A la place du load historique et guide: créer l'élément sur le coté (width 100% mais décalé 0% droite/gauche), et onclickOnglet, faire slide pour recouvrir le viewport avec une fleche de retour pour reSlider hors viewport. 
+https://www.w3schools.com/howto/howto_js_media_queries.asp
 -> Résout probleme de switchOnglets pendant partie
 	? -> Apres rework mise, mettre un modal alert si miseLocked (donc déduite BDD) et tentative de switch onglets ! (switch fonctionnel)
 		Mise : flash négatif et envoi BDD (voir la fonction gain ducoup)
+
+
+EXEMPLE RESPONSIVE: la flameStreak doit etre inline avec la jauge et apres adapter un peu le positionnement par rapport à elle, et non en absolute comme ca
+Fix le bouton degueu tablette/pc
+
+Le debuts des cartesCroupier doit s'adapter en dessous de la jauge 
+
+Puis réduire la taille des cartes responsive
+
+
 
 
 Anim météorite qui descend en diag (rewardAlert)
@@ -10,6 +21,8 @@ Lorsque switch DM/DL: le border-top du footer possede une transitionCSS sur la b
 
 
 MAJ front en direct du niveau (pour ca il faut get/echoJS juste le expNeeded)
+
+
 
 Anime miseLocked:
 1 anim from 0:0 to full horizontal (cian to orange)
