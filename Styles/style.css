@@ -381,7 +381,11 @@ input:-webkit-autofill{
 
 
 
-
+#gainExp {
+	color:gold; 
+	margin-top:2vh; 
+	font-size:2.5vh;
+}
 
 
 #imgStreak {

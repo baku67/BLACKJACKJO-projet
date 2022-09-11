@@ -2701,6 +2701,8 @@
                     ChoixActif = false;
                     document.getElementById("footerTitle").innerHTML = " - Résultat -";
 
+                    document.getElementById("gainExp").innerText = "+20 XP";
+
                     // Mise lockée
                     document.getElementById("miseLockedFooter").innerHTML = miseLocked;
                     // fin
@@ -2826,6 +2828,8 @@
                       $("#container3").html(response);
                       ChoixActif = false;
                       document.getElementById("footerTitle").innerHTML = " - Résultat -";
+
+                        document.getElementById("gainExp").innerText = "+100 XP";
     
                         // Mise lockée
                         document.getElementById("miseLockedFooter").innerHTML = miseLocked;
@@ -2945,6 +2949,8 @@
                       $("#container3").html(response);
                       ChoixActif = false;
                       document.getElementById("footerTitle").innerHTML = " - Résultat -";
+
+                      document.getElementById("gainExp").innerText = "+100 XP";
     
                       // Mise lockée
                       document.getElementById("miseLockedFooter").innerHTML = miseLocked;
@@ -2972,6 +2978,7 @@
 
                       }, 500)
 
+                      expDB(100);
 
                       // Refresh Level
                       setTimeout(function() {
@@ -3055,6 +3062,8 @@
                     $("#container3").html(response);
                     ChoixActif = false;
                     document.getElementById("footerTitle").innerHTML = " - Résultat -";
+
+                    document.getElementById("gainExp").innerText = "+50 XP";
     
                     // Mise lockée
                     document.getElementById("miseLockedFooter").innerHTML = miseLocked;
@@ -3941,6 +3950,8 @@
                   ChoixActif = false;
                   document.getElementById("footerTitle").innerHTML = " - Résultat -";
 
+                    document.getElementById("gainExp").innerText = "+20 XP";
+
                     // Mise lockée
                     document.getElementById("miseLockedFooter").innerHTML = miseLocked;
                     // fin
@@ -4096,6 +4107,8 @@
                 $("#container3").html(response);
                 ChoixActif = false;
                 document.getElementById("footerTitle").innerHTML = " - Résultat -";
+
+                  document.getElementById("gainExp").innerText = "+250 XP";
 
                   // Mise lockée
                   document.getElementById("miseLockedFooter").innerHTML = miseLocked;
