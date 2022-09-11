@@ -240,7 +240,16 @@
 
 
 
-
+      function refreshLvl() {
+        setTimeout(function() {
+          $.ajax({
+            url: "getLevel.php",
+            success: function(data) {
+              document.getElementById("lvlText").innerHTML = parseInt(data);
+            }
+          })  
+        }, 600);
+      }
 
 
 
@@ -2668,19 +2677,7 @@
 
 
 
-          // https://stackoverflow.com/questions/36642525/ajax-get-value-from-php
-          function refreshLvl() {
-            $.ajax({
-              url:"getLvl.php",
-              dataType: "html",
-              method: "get",
-              data: bidule,
-              success: function() {
-                document.getElementById("lvlText").innerHTML = bidule;
-                alert('dedans');
-              }
-            })
-          }
+          
 
 
 
@@ -2728,23 +2725,11 @@
 
                       majStreak(WinLose);
 
-                    }, 500)
+                    }, 500);
 
                     expDB(20);
 
-
-                    // Refresh Level
-                    setTimeout(function() {
-                      $.ajax({
-                        url: "getLevel.php",
-                        success: function(data) {
-                          console.log("TEST lvlRefreshh: " + JSON.stringify(data));
-                          document.getElementById("lvlText").innerHTML = parseInt(data);
-                        }
-                      })  
-                    }, 250)
-                    // Fin refresh Level
-              
+                    refreshLvl();              
 
 
                     document.getElementById("deckContainer").remove();
@@ -2856,23 +2841,11 @@
                           majStreak(WinLose);
                           
 
-                        }, 500)
+                        }, 500);
 
                         expDB(100);
 
-
-                        // Refresh Level
-                        setTimeout(function() {
-                          $.ajax({
-                            url: "getLevel.php",
-                            success: function(data) {
-                              console.log("TEST lvlRefreshh: " + JSON.stringify(data));
-                              document.getElementById("lvlText").innerHTML = parseInt(data);
-                            }
-                          })  
-                        }, 250)
-                        // Fin refresh Level
-
+                        refreshLvl();
 
                         // function: (en partant de la mise vers le gains réel)
                         var miseLockedMultiplied = miseLocked * 2;
@@ -2976,22 +2949,11 @@
 
                         majStreak(WinLose);
 
-                      }, 500)
+                      }, 500);
 
                       expDB(100);
 
-                      // Refresh Level
-                      setTimeout(function() {
-                        $.ajax({
-                          url: "getLevel.php",
-                          success: function(data) {
-                            console.log("TEST lvlRefreshh: " + JSON.stringify(data));
-                            document.getElementById("lvlText").innerHTML = parseInt(data);
-                          }
-                        })  
-                      }, 250)
-                      // Fin refresh Level
-                      
+                      refreshLvl();                      
                       
                       var miseLockedMultiplied = miseLocked * 2;
 
@@ -3082,27 +3044,16 @@
 
                       majStreak(WinLose);
 
-                    }, 500)
+                    }, 500);
 
                     expDB(50);
 
+                    refreshLvl();
 
-                    // Refresh Level
-                    setTimeout(function() {
-                      $.ajax({
-                        url: "getLevel.php",
-                        success: function(data) {
-                          console.log("TEST lvlRefreshh: " + JSON.stringify(data));
-                          document.getElementById("lvlText").innerHTML = parseInt(data);
-                        }
-                      })  
-                    }, 250)
-                    // Fin refresh Level
-                        
+
                     document.getElementById("miseResultat").classList.add("addColorToResultatYellow");
                       // Fin résultat Gains
                     
-  
                     document.getElementById("deckContainer").remove();
                     document.getElementById("cardAnim").remove();
                     document.getElementById("parametresPartieDiv").remove();
@@ -3981,18 +3932,8 @@
 
                       expDB(20);
 
-                      // Refresh Level
-                      setTimeout(function() {
-                        $.ajax({
-                          url: "getLevel.php",
-                          success: function(data) {
-                            console.log("TEST lvlRefreshh: " + JSON.stringify(data));
-                            document.getElementById("lvlText").innerHTML = parseInt(data);
-                          }
-                        })  
-                      }, 250)
-                      // Fin refresh Level
-
+                      refreshLvl();
+                      
                     // Fin résultat Gains
 
                   
@@ -4140,18 +4081,8 @@
 
                   expDB(250);
 
-                  // Refresh Level
-                  setTimeout(function() {
-                    $.ajax({
-                      url: "getLevel.php",
-                      success: function(data) {
-                        console.log("TEST lvlRefreshh: " + JSON.stringify(data));
-                        document.getElementById("lvlText").innerHTML = parseInt(data);
-                      }
-                    })  
-                  }, 250)
-                  // Fin refresh Level
-                    
+                  refreshLvl();
+
                   // Fin résultat Gains
 
                 // FIN WIP

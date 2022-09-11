@@ -2595,10 +2595,8 @@ p {
 	opacity: 0.9;
 	cursor: pointer;
 	width: 70px;
-	/* border: 3px solid black; */
 	border-radius: 5px;
 	padding-left: 50px;
-	/* background-color:rgba(25, 39, 95, 0.8); */
 
 	position: absolute; 
 	left: -60px;
