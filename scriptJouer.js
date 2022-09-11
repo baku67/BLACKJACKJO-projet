@@ -2742,7 +2742,7 @@
                           document.getElementById("lvlText").innerHTML = parseInt(data);
                         }
                       })  
-                    }, 50)
+                    }, 250)
                     // Fin refresh Level
               
 
@@ -2870,7 +2870,7 @@
                               document.getElementById("lvlText").innerHTML = parseInt(data);
                             }
                           })  
-                        }, 50)
+                        }, 250)
                         // Fin refresh Level
 
 
@@ -2989,7 +2989,7 @@
                             document.getElementById("lvlText").innerHTML = parseInt(data);
                           }
                         })  
-                      }, 50)
+                      }, 250)
                       // Fin refresh Level
                       
                       
@@ -3096,7 +3096,7 @@
                           document.getElementById("lvlText").innerHTML = parseInt(data);
                         }
                       })  
-                    }, 50)
+                    }, 250)
                     // Fin refresh Level
                         
                     document.getElementById("miseResultat").classList.add("addColorToResultatYellow");
@@ -3990,7 +3990,7 @@
                             document.getElementById("lvlText").innerHTML = parseInt(data);
                           }
                         })  
-                      }, 50)
+                      }, 250)
                       // Fin refresh Level
 
                     // Fin résultat Gains
@@ -4149,7 +4149,7 @@
                         document.getElementById("lvlText").innerHTML = parseInt(data);
                       }
                     })  
-                  }, 50)
+                  }, 250)
                   // Fin refresh Level
                     
                   // Fin résultat Gains
