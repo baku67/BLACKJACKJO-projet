@@ -34,9 +34,8 @@
 <div class="background JouerContainer">
 
         <?php  if (!isset($_SESSION['username'])) : ?>
-                <!-- Séparer le "Crédits: " du crédit pour style font le chiffre uniquement -->
-                <!-- <p style=" font-size: 1.5em; font-family: 'Holtwood One SC', serif;" id="credits"></p> -->
-                <p style=" font-size: 1.5em;" id="credits"></p>
+                <!-- ReStyle creditInvite: juste mettre le cred inline avec conn/insc  -->
+                <p id="credits"></p>
         <?php endif ?>
     
         <ul id="list">

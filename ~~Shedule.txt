@@ -1,3 +1,5 @@
+Symbole User (bonhomme coupé en deux simpliste), avec un "+" en bas à droite du user. L'icone placé à la place du déco 
+
 
 Alors: A la place du load historique et guide: créer l'élément sur le coté (width 100% mais décalé 0% droite/gauche), et onclickOnglet, faire slide pour recouvrir le viewport avec une fleche de retour pour reSlider hors viewport. 
 https://www.w3schools.com/howto/howto_js_media_queries.asp

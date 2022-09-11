@@ -245,7 +245,9 @@
           $.ajax({
             url: "getLevel.php",
             success: function(data) {
-              document.getElementById("lvlText").innerHTML = parseInt(data);
+              if (document.getElementById("lvlText") !== null ) {
+                document.getElementById("lvlText").innerHTML = parseInt(data);
+              }
             }
           })  
         }, 600);
@@ -1207,14 +1209,16 @@
                     console.log('isConnected: ' + isConnected);
                     credits = 100;
                     if (document.getElementById("credits") !== null) {
-                      document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + "<span id=\"creditsInvite\">" + credits + "</span>" + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
+                      document.getElementById("credits").innerHTML = "<i class='fa-solid fa-star'></i> Invité &nbsp;&nbsp;<span id=\"creditsInvite\">" + credits + "</span>" + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
                       document.getElementById("credits").style.position = "relative";
-                      document.getElementById("credits").style.bottom = "7px";
+                      document.getElementById("credits").style.bottom = "10px";
                     }
                     // document.getElementById("traitLumineux").style.visibility = "visible";
-                    document.getElementById("jaugeContainer").style.bottom = "-52px";
-                    document.getElementById("imgStreak").style.top = "22.5%";
-                    document.getElementById("streakNumber").style.top = "23.5%";
+                    document.getElementById("jaugeContainer").style.bottom = "-50px";
+                    document.getElementById("imgStreak").style.top = "19.5%";
+                    document.getElementById("streakNumber").style.top = "20.5%";
+
+                    document.getElementById("connectionContainer").remove();
                   }
                   else {
                     console.log('isConnected: ' + isConnected);
@@ -1614,7 +1618,9 @@
 
               //** Récupérer le nouveau Crédits 
               if (isConnected == false) {
-                document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + credits + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
+                document.getElementById("credits").innerHTML = "<i class='fa-solid fa-star'></i> Invité &nbsp;&nbsp;<span id=\"creditsInvite\">" + credits + "</span>" + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
+                document.getElementById("credits").style.position = "relative";
+                document.getElementById("credits").style.bottom = "10px";
               }
               else if (isConnected == true) {
                 document.getElementById("creditsConnected").innerHTML = credits;
@@ -2186,7 +2192,7 @@
           }
 
           if (isConnected == false) {
-            document.getElementById("credits").innerHTML = "Crédits: &nbsp;&nbsp;" + (credits - miseLocked) + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
+            document.getElementById("credits").innerHTML = "<i class='fa-solid fa-star'></i> Invité &nbsp;&nbsp;<span id=\"creditsInvite\">" + (credits - miseLocked) + "</span>" + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
           }
           else if (isConnected == true) {
             document.getElementById("creditsConnected").innerHTML = (credits - miseLocked);
@@ -3865,7 +3871,8 @@
         function ajoutGain(gain) {
 
           // flash crédits Invite à faire
-          document.getElementById("credits").innerHTML = "Crédits: &nbsp;" + (credits + gain) + "<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
+          document.getElementById("credits").innerHTML = "<i class='fa-solid fa-star'></i> Invité &nbsp;&nbsp;<span id=\"creditsInvite\">" + (credits + gain) + "</span>" + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
+          
           credits = credits + gain;
 
           historiqueInvite(WinLose, resultatCas, gain);

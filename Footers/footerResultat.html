@@ -8,7 +8,13 @@
         <p id="miseResultat"></p>
     </div>
 
-    <p id="gainExp">+50 XP</p>
+
+    <script>
+        if (isConnected == false) {
+            document.getElementById("gainExp").style.opacity = "0";
+        }
+    </script>
+    <p id="gainExp"></p>
 
 
 </div>
