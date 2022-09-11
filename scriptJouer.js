@@ -2731,29 +2731,19 @@
                     expDB(20);
 
 
-                    // Refresh lvl: (1)
-                    // setTimeout(function() {
-                    //   document.getElementById("lvlText").innerHTML = "<?php include('getLevel.php'); ?>";
-                    // }, 100)
+                    // Refresh Level
+                    setTimeout(function() {
+                      $.ajax({
+                        url: "getLevel.php",
+                        success: function(data) {
+                          console.log("TEST lvlRefreshh: " + JSON.stringify(data));
+                          document.getElementById("lvlText").innerHTML = parseInt(data);
+                        }
+                      })  
+                    }, 50)
+                    // Fin refresh Level
+              
 
-                    // refreshLvl(); (2)
-
-                    // Refresh lvl (3)
-                    // $.get("getLevel.php", function(data) {
-                    //   alert("refresh OK, data: " + data);
-                    // });
-
-                    var lvlRefreshed = $.get("getLevel.php", function() {
-                      console.log("success");
-                    }, "json")
-                      .done(function() {
-                        console.log("deuxieme success, data: " + lvlRefreshed);
-                      });
-  
-                    lvlRefreshed.always(function() {
-                      console.log( "3eme cas" );
-                    });
-  
 
                     document.getElementById("deckContainer").remove();
                     document.getElementById("cardAnim").remove();
@@ -2867,31 +2857,21 @@
                         expDB(100);
 
 
-                        // Refresh lvl: (1)
-                        // setTimeout(function() {
-                        //   document.getElementById("lvlText").innerHTML = "<?php include('getLevel.php'); ?>";
-                        // }, 100)
+                        // Refresh Level
+                        setTimeout(function() {
+                          $.ajax({
+                            url: "getLevel.php",
+                            success: function(data) {
+                              console.log("TEST lvlRefreshh: " + JSON.stringify(data));
+                              document.getElementById("lvlText").innerHTML = parseInt(data);
+                            }
+                          })  
+                        }, 50)
+                        // Fin refresh Level
 
-                        // refreshLvl(); (2)
 
-                        // Refresh lvl (3)
-                        // $.get("getLevel.php", function(data) {
-                        //   alert("refresh OK, data: " + data);
-                        // });
-
-                        var lvlRefreshed = $.get("getLevel.php", function() {
-                          console.log("success");
-                        }, "json")
-                          .done(function() {
-                            console.log("deuxieme success, data: " + lvlRefreshed);
-                          });
-      
-                        lvlRefreshed.always(function() {
-                          console.log( "3eme cas" );
-                        });
-                              
-                          // function: (en partant de la mise vers le gains réel)
-                          var miseLockedMultiplied = miseLocked * 2;
+                        // function: (en partant de la mise vers le gains réel)
+                        var miseLockedMultiplied = miseLocked * 2;
 
                         // Fin résultat Gains
     
@@ -2966,58 +2946,47 @@
                       ChoixActif = false;
                       document.getElementById("footerTitle").innerHTML = " - Résultat -";
     
-                        // Mise lockée
-                        document.getElementById("miseLockedFooter").innerHTML = miseLocked;
-                        // fin
-    
-                        // Résultat Gains 
-                        if ( isConnected == true) {
-                          document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBarre.png" class="imagesSouResultat">';
-                        }
-                        else {
-                          document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBlancBarre.png" class="imagesSouResultat">';
-                        }                        
-                        setTimeout( function() {
-                          IncrementGain(miseLockedMultiplied);
-                        }, 1500);
+                      // Mise lockée
+                      document.getElementById("miseLockedFooter").innerHTML = miseLocked;
+                      // fin
+  
+                      // Résultat Gains 
+                      if ( isConnected == true) {
+                        document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBarre.png" class="imagesSouResultat">';
+                      }
+                      else {
+                        document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBlancBarre.png" class="imagesSouResultat">';
+                      }                        
+                      setTimeout( function() {
+                        IncrementGain(miseLockedMultiplied);
+                      }, 1500);
 
-                        setTimeout( function() {
-                          gain = miseLocked;
-                          ajoutGain(gain);
+                      setTimeout( function() {
+                        gain = miseLocked;
+                        ajoutGain(gain);
 
-                          winLose = 1;
-                          winLoseDB(winLose);
+                        winLose = 1;
+                        winLoseDB(winLose);
 
-                          majStreak(WinLose);
+                        majStreak(WinLose);
 
-                        }, 500)
-
-
-                        // Refresh lvl: (1)
-                        // setTimeout(function() {
-                        //   document.getElementById("lvlText").innerHTML = "<?php include('getLevel.php'); ?>";
-                        // }, 100)
-
-                        // refreshLvl(); (2)
-
-                        // Refresh lvl (3)
-                        // $.get("getLevel.php", function(data) {
-                        //   alert("refresh OK, data: " + data);
-                        // });
-
-                        var lvlRefreshed = $.get("getLevel.php", function() {
-                          console.log("success");
-                        }, "json")
-                          .done(function() {
-                            console.log("deuxieme success, data: " + lvlRefreshed);
-                          });
-      
-                        lvlRefreshed.always(function() {
-                          console.log( "3eme cas" );
-                        });
+                      }, 500)
 
 
-                        var miseLockedMultiplied = miseLocked * 2;
+                      // Refresh Level
+                      setTimeout(function() {
+                        $.ajax({
+                          url: "getLevel.php",
+                          success: function(data) {
+                            console.log("TEST lvlRefreshh: " + JSON.stringify(data));
+                            document.getElementById("lvlText").innerHTML = parseInt(data);
+                          }
+                        })  
+                      }, 50)
+                      // Fin refresh Level
+                      
+                      
+                      var miseLockedMultiplied = miseLocked * 2;
 
                       
   
@@ -3087,52 +3056,41 @@
                     ChoixActif = false;
                     document.getElementById("footerTitle").innerHTML = " - Résultat -";
     
-                      // Mise lockée
-                      document.getElementById("miseLockedFooter").innerHTML = miseLocked;
-                      // fin
-  
-                      // Résultat Gains 
-                      if ( isConnected == true) {
-                        document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBarre.png" class="imagesSouResultat">';
-                      }
-                      else {
-                        document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBlancBarre.png" class="imagesSouResultat">';
-                      }
-                      setTimeout( function() {
-                        gain = 0;
-                        ajoutGain(gain);
+                    // Mise lockée
+                    document.getElementById("miseLockedFooter").innerHTML = miseLocked;
+                    // fin
 
-                        majStreak(WinLose);
+                    // Résultat Gains 
+                    if ( isConnected == true) {
+                      document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBarre.png" class="imagesSouResultat">';
+                    }
+                    else {
+                      document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBlancBarre.png" class="imagesSouResultat">';
+                    }
+                    setTimeout( function() {
+                      gain = 0;
+                      ajoutGain(gain);
 
-                      }, 500)
+                      majStreak(WinLose);
 
-                      expDB(50);
+                    }, 500)
+
+                    expDB(50);
 
 
-                      // Refresh lvl: (1)
-                      // setTimeout(function() {
-                      //   document.getElementById("lvlText").innerHTML = "<?php include('getLevel.php'); ?>";
-                      // }, 100)
-
-                      // refreshLvl(); (2)
-
-                      // Refresh lvl (3)
-                      // $.get("getLevel.php", function(data) {
-                      //   alert("refresh OK, data: " + data);
-                      // });
-
-                      var lvlRefreshed = $.get("getLevel.php", function() {
-                        console.log("success");
-                      }, "json")
-                        .done(function() {
-                          console.log("deuxieme success, data: " + lvlRefreshed);
-                        });
-    
-                      lvlRefreshed.always(function() {
-                        console.log( "3eme cas" );
-                      });
-                          
-                      document.getElementById("miseResultat").classList.add("addColorToResultatYellow");
+                    // Refresh Level
+                    setTimeout(function() {
+                      $.ajax({
+                        url: "getLevel.php",
+                        success: function(data) {
+                          console.log("TEST lvlRefreshh: " + JSON.stringify(data));
+                          document.getElementById("lvlText").innerHTML = parseInt(data);
+                        }
+                      })  
+                    }, 50)
+                    // Fin refresh Level
+                        
+                    document.getElementById("miseResultat").classList.add("addColorToResultatYellow");
                       // Fin résultat Gains
                     
   
@@ -4012,34 +3970,20 @@
 
                       expDB(20);
 
-                      // Refresh lvl: (1)
-                      // setTimeout(function() {
-                      //   document.getElementById("lvlText").innerHTML = "<?php include('getLevel.php'); ?>";
-                      // }, 100)
+                      // Refresh Level
+                      setTimeout(function() {
+                        $.ajax({
+                          url: "getLevel.php",
+                          success: function(data) {
+                            console.log("TEST lvlRefreshh: " + JSON.stringify(data));
+                            document.getElementById("lvlText").innerHTML = parseInt(data);
+                          }
+                        })  
+                      }, 50)
+                      // Fin refresh Level
 
-                      // refreshLvl(); (2)
-
-                      // Refresh lvl (3)
-                      // $.get("getLevel.php", function(data) {
-                      //   alert("refresh OK, data: " + data);
-                      // });
-
-                      var lvlRefreshed = $.get("getLevel.php", function() {
-                        console.log("success");
-                      }, "json")
-                        .done(function() {
-                          console.log("deuxieme success, data: " + lvlRefreshed);
-                        });
-    
-                      lvlRefreshed.always(function() {
-                        console.log( "3eme cas" );
-                      });
-    
-
-                    //
                     // Fin résultat Gains
 
-                  // FIN WIP
                   
                   document.getElementById("deckContainer").remove();
                   document.getElementById("cardAnim").remove();
@@ -4183,28 +4127,17 @@
 
                   expDB(250);
 
-                  // Refresh lvl: (1)
-                  // setTimeout(function() {
-                  //   document.getElementById("lvlText").innerHTML = "<?php include('getLevel.php'); ?>";
-                  // }, 100)
-
-                  // refreshLvl(); (2)
-
-                  // Refresh lvl (3)
-                  // $.get("getLevel.php", function(data) {
-                  //   alert("refresh OK, data: " + data);
-                  // });
-
-                  var lvlRefreshed = $.get("getLevel.php", function() {
-                    console.log("success");
-                  }, "json")
-                    .done(function() {
-                      console.log("deuxieme success, data: " + lvlRefreshed);
-                    });
-
-                  lvlRefreshed.always(function() {
-                    console.log( "3eme cas" );
-                  });
+                  // Refresh Level
+                  setTimeout(function() {
+                    $.ajax({
+                      url: "getLevel.php",
+                      success: function(data) {
+                        console.log("TEST lvlRefreshh: " + JSON.stringify(data));
+                        document.getElementById("lvlText").innerHTML = parseInt(data);
+                      }
+                    })  
+                  }, 50)
+                  // Fin refresh Level
                     
                   // Fin résultat Gains
 

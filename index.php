@@ -63,6 +63,10 @@
 			endif;
 		?>
 
+		<script>
+			var username="<?php echo $_SESSION['username']; ?>";
+		</script>
+
 
 	</head>
 
