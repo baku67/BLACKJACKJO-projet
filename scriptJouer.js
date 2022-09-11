@@ -2693,7 +2693,7 @@
 
                 $.ajax({
                   async: false,
-                  url: "Footers/footerCroupierWin.html",
+                  url: "Footers/footerResultat.html",
                   dataType: "html",
                   success: function(response) {
                     $("#container3").html(response);
@@ -2820,7 +2820,7 @@
                 setTimeout(function() {
                   $.ajax({
                     async: false,
-                    url: "Footers/footerJoueurGagne.html",
+                    url: "Footers/footerResultat.html",
                     dataType: "html",
                     success: function(response) {
                       $("#container3").html(response);
@@ -2939,7 +2939,7 @@
                 setTimeout(function() {
                   $.ajax({
                     async: false,
-                    url: "Footers/footerJoueurGagne.html",
+                    url: "Footers/footerResultat.html",
                     dataType: "html",
                     success: function(response) {
                       $("#container3").html(response);
@@ -3049,7 +3049,7 @@
 
                 $.ajax({
                   async: false,
-                  url: "Footers/footerBurstJoueur.html",
+                  url: "Footers/footerResultat.html",
                   dataType: "html",
                   success: function(response) {
                     $("#container3").html(response);
@@ -3934,7 +3934,7 @@
             setTimeout(function() {
               $.ajax({
                 async: false,
-                url: "Footers/footerBurstJoueur.html",
+                url: "Footers/footerResultat.html",
                 dataType: "html",
                 success: function(response) {
                   $("#container3").html(response);
@@ -4090,7 +4090,7 @@
           setTimeout(function() {
             $.ajax({
               async: false,
-              url: "Footers/footerJoueurGagne.html",
+              url: "Footers/footerResultat.html",
               dataType: "html",
               success: function(response) {
                 $("#container3").html(response);
