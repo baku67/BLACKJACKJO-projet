@@ -8,7 +8,7 @@
     $exp = 0;
 
     $lvl = 1;
-    $expNeeded = 250;
+    $expNeeded = 200;
 
 
     $result = mysqli_query($db,"SELECT exp FROM users WHERE username = '".$_SESSION['username']."' ");

@@ -2281,8 +2281,8 @@
                     }
                   }, 2901);
 
-                  // animAlertOnClickChoix();
                   
+                  // Si AS parmis les 2 premieres cartes distribuées: (on est dans miseLock() )
                   if (asJoueur == true) {
                     if (scoreTotalJoueur + 10 < 22) {
                       scoreTotalJoueur = scoreTotalJoueur + 10;
@@ -2466,6 +2466,7 @@
                     document.getElementById("phaseChoixAlert").remove();
                   }
                 }, 2901);
+
 
 
                 if (asJoueur == true) {
@@ -3451,6 +3452,9 @@
           if (asJoueur == true) {
             if ((scoreTotalJoueur + 10) > 21) {
               document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;
+            }
+            else if ((scoreTotalJoueur + 10) == 21) {
+              document.getElementById('scoreJoueur').innerHTML = (scoreTotalJoueur + 10);
             }
             else {
               document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur + "&nbsp;&nbsp;/&nbsp;&nbsp;" + (scoreTotalJoueur + 10);
