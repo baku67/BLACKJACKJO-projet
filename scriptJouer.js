@@ -1988,7 +1988,7 @@
             document.getElementById("miseResultat").classList.add("addColorToResultatRed");
             DecrementGain();
             }
-        }, (110/miseLocked) * setTimeOutMultiplier);
+        }, (210/miseLocked) * setTimeOutMultiplier);
       } 
 
 
@@ -2013,7 +2013,7 @@
             document.getElementById("miseResultat").classList.add("addColorToResultatBJ");
             IncrementGain(miseLockedMultiplied);
             }
-        }, (110/misesResultatDiff) * setTimeOutMultiplier);
+        }, (210/misesResultatDiff) * setTimeOutMultiplier);
       } 
 
 
@@ -3455,9 +3455,16 @@
             }
             else if ((scoreTotalJoueur + 10) == 21) {
               document.getElementById('scoreJoueur').innerHTML = (scoreTotalJoueur + 10);
+              // 21 hors BJ vu qu'on est dans le addCardJoueur(hit), ducoup ajouter le lancerPhaseCroupier() ici direct ??
+              // EDIT: il y a deja un check 21 hors BJ dans le addCardJourur(hit), avec un lancerPhaseCroupier() dedans
+              // A test
+
+              // ici Le check21horsBJ() est exécuté (appelé plus bas, conditions similaires)
             }
-            else {
+            else if ((scoreTotalJoueur + 10) < 21) {
               document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur + "&nbsp;&nbsp;/&nbsp;&nbsp;" + (scoreTotalJoueur + 10);
+              // et scoreJoueur (la variable) = scoreJoueur + 10 ??
+              scoreJoueur += 10;
             }
           }
           else {
@@ -4024,12 +4031,10 @@
             document.getElementById("traitUnderlineInverseChoix").remove();
           }
 
-          // Pourquoi j'ai eu le moyen de choisir pendant le lancerPhaseCroupier() qui devrait load footerDistribution?
           lancerPhaseCroupier(); 
-
-          
         }
       }
+
 
 
 

@@ -1,4 +1,31 @@
 Symbole User (bonhomme coupé en deux simpliste), avec un "+" en bas à droite du user. L'icone placé à la place du déco 
+-> modal Inscription pour commencer
+-> puis switch modal Inscription/Connection
+
+Ya un debut de color gainCreditResultat: .addColorToResultatRed (Lose jcrois)
+
+RECHERCHER: gain dans JS, puis MiseLock(), faire le reste
+
+Lors dailyReward: la positionJS du imgStreak et StreakNumber est pas load (pas bo) 
+
+
+Rappel: lors inscription, le 1er dailyReawrds marche mais apres reload le front credit est HS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Alors: A la place du load historique et guide: créer l'élément sur le coté (width 100% mais décalé 0% droite/gauche), et onclickOnglet, faire slide pour recouvrir le viewport avec une fleche de retour pour reSlider hors viewport. 
