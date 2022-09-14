@@ -427,68 +427,118 @@ let cards = [
     cardImageURL: "cartes\\AS.png",
     cardValue: 1,
     cardValue2: 10
-    }
+    },
     // TRICHE TEST AS (attention virgule)
-    // C1e = {
-    //   cardImageURL: "cartes\\AC.png",
-    //   cardValue: 1,
-    //   cardValue2: 10
-    // },
-    // C1f = {
-    //   cardImageURL: "cartes\\AD.png",
-    //   cardValue: 1,
-    //   cardValue2: 10
-    // },
-    // C1g = {
-    //   cardImageURL: "cartes\\AH.png",
-    //   cardValue: 1,
-    //   cardValue2: 10
-    // },
-    // C1h = {
-    //   cardImageURL: "cartes\\AS.png",
-    //   cardValue: 1,
-    //   cardValue2: 10
-    // },
-    // C1i = {
-    //   cardImageURL: "cartes\\AC.png",
-    //   cardValue: 1,
-    //   cardValue2: 10
-    // },
-    // C1j = {
-    //   cardImageURL: "cartes\\AD.png",
-    //   cardValue: 1,
-    //   cardValue2: 10
-    // },
-    // C1k = {
-    //   cardImageURL: "cartes\\AH.png",
-    //   cardValue: 1,
-    //   cardValue2: 10
-    // },
-    // C1l = {
-    //   cardImageURL: "cartes\\AS.png",
-    //   cardValue: 1,
-    //   cardValue2: 10
-    // },
-    // C1m = {
-    //   cardImageURL: "cartes\\AC.png",
-    //   cardValue: 1,
-    //   cardValue2: 10
-    // },
-    // C1n = {
-    //   cardImageURL: "cartes\\AD.png",
-    //   cardValue: 1,
-    //   cardValue2: 10
-    // },
-    // C1o = {
-    //   cardImageURL: "cartes\\AH.png",
-    //   cardValue: 1,
-    //   cardValue2: 10
-    // },
-    // C1p = {
-    //   cardImageURL: "cartes\\AS.png",
-    //   cardValue: 1,
-    //   cardValue2: 10
-    // }
+    C1e = {
+      cardImageURL: "cartes\\AC.png",
+      cardValue: 1,
+      cardValue2: 10
+    },
+    C1f = {
+      cardImageURL: "cartes\\AD.png",
+      cardValue: 1,
+      cardValue2: 10
+    },
+    C1g = {
+      cardImageURL: "cartes\\AH.png",
+      cardValue: 1,
+      cardValue2: 10
+    },
+    C1h = {
+      cardImageURL: "cartes\\AS.png",
+      cardValue: 1,
+      cardValue2: 10
+    },
+    C1i = {
+      cardImageURL: "cartes\\AC.png",
+      cardValue: 1,
+      cardValue2: 10
+    },
+    C1j = {
+      cardImageURL: "cartes\\AD.png",
+      cardValue: 1,
+      cardValue2: 10
+    },
+    C1k = {
+      cardImageURL: "cartes\\AH.png",
+      cardValue: 1,
+      cardValue2: 10
+    },
+    C1l = {
+      cardImageURL: "cartes\\AS.png",
+      cardValue: 1,
+      cardValue2: 10
+    },
+    C1m = {
+      cardImageURL: "cartes\\AC.png",
+      cardValue: 1,
+      cardValue2: 10
+    },
+    C1n = {
+      cardImageURL: "cartes\\AD.png",
+      cardValue: 1,
+      cardValue2: 10
+    },
+    C1o = {
+      cardImageURL: "cartes\\AH.png",
+      cardValue: 1,
+      cardValue2: 10
+    },
+    C1p = {
+      cardImageURL: "cartes\\AS.png",
+      cardValue: 1,
+      cardValue2: 10
+    },
+    C1q = {
+      cardImageURL: "cartes\\AC.png",
+      cardValue: 1,
+      cardValue2: 10
+    },
+    C1r = {
+      cardImageURL: "cartes\\AD.png",
+      cardValue: 1,
+      cardValue2: 10
+    },
+    C1s = {
+      cardImageURL: "cartes\\AH.png",
+      cardValue: 1,
+      cardValue2: 10
+    },
+    C1t = {
+      cardImageURL: "cartes\\AS.png",
+      cardValue: 1,
+      cardValue2: 10
+    },
+    C1u = {
+      cardImageURL: "cartes\\AC.png",
+      cardValue: 1,
+      cardValue2: 10
+    },
+    C1v = {
+      cardImageURL: "cartes\\AD.png",
+      cardValue: 1,
+      cardValue2: 10
+    },
+    C1w = {
+      cardImageURL: "cartes\\AH.png",
+      cardValue: 1,
+      cardValue2: 10
+    },
+    C1x = {
+      cardImageURL: "cartes\\AS.png",
+      cardValue: 1,
+      cardValue2: 10
+    },
+    C1y = {
+      cardImageURL: "cartes\\AH.png",
+      cardValue: 1,
+      cardValue2: 10
+    },
+    C1z = {
+      cardImageURL: "cartes\\AS.png",
+      cardValue: 1,
+      cardValue2: 10
+    }
     // FIN TRICHE
   ];
 
@@ -928,68 +978,118 @@ let cards = [
       cardImageURL: "cartes\\AS.png",
       cardValue: 1,
       cardValue2: 10
-      }
+      },
       // TRICHE TEST AS (attention virgule)
-      // C1e = {
-      //   cardImageURL: "cartes\\AC.png",
-      //   cardValue: 1,
-      //   cardValue2: 10
-      // },
-      // C1f = {
-      //   cardImageURL: "cartes\\AD.png",
-      //   cardValue: 1,
-      //   cardValue2: 10
-      // },
-      // C1g = {
-      //   cardImageURL: "cartes\\AH.png",
-      //   cardValue: 1,
-      //   cardValue2: 10
-      // },
-      // C1h = {
-      //   cardImageURL: "cartes\\AS.png",
-      //   cardValue: 1,
-      //   cardValue2: 10
-      // },
-      // C1i = {
-      //   cardImageURL: "cartes\\AC.png",
-      //   cardValue: 1,
-      //   cardValue2: 10
-      // },
-      // C1j = {
-      //   cardImageURL: "cartes\\AD.png",
-      //   cardValue: 1,
-      //   cardValue2: 10
-      // },
-      // C1k = {
-      //   cardImageURL: "cartes\\AH.png",
-      //   cardValue: 1,
-      //   cardValue2: 10
-      // },
-      // C1l = {
-      //   cardImageURL: "cartes\\AS.png",
-      //   cardValue: 1,
-      //   cardValue2: 10
-      // },
-      // C1m = {
-      //   cardImageURL: "cartes\\AC.png",
-      //   cardValue: 1,
-      //   cardValue2: 10
-      // },
-      // C1n = {
-      //   cardImageURL: "cartes\\AD.png",
-      //   cardValue: 1,
-      //   cardValue2: 10
-      // },
-      // C1o = {
-      //   cardImageURL: "cartes\\AH.png",
-      //   cardValue: 1,
-      //   cardValue2: 10
-      // },
-      // C1p = {
-      //   cardImageURL: "cartes\\AS.png",
-      //   cardValue: 1,
-      //   cardValue2: 10
-      // }
+      C1e = {
+        cardImageURL: "cartes\\AC.png",
+        cardValue: 1,
+        cardValue2: 10
+      },
+      C1f = {
+        cardImageURL: "cartes\\AD.png",
+        cardValue: 1,
+        cardValue2: 10
+      },
+      C1g = {
+        cardImageURL: "cartes\\AH.png",
+        cardValue: 1,
+        cardValue2: 10
+      },
+      C1h = {
+        cardImageURL: "cartes\\AS.png",
+        cardValue: 1,
+        cardValue2: 10
+      },
+      C1i = {
+        cardImageURL: "cartes\\AC.png",
+        cardValue: 1,
+        cardValue2: 10
+      },
+      C1j = {
+        cardImageURL: "cartes\\AD.png",
+        cardValue: 1,
+        cardValue2: 10
+      },
+      C1k = {
+        cardImageURL: "cartes\\AH.png",
+        cardValue: 1,
+        cardValue2: 10
+      },
+      C1l = {
+        cardImageURL: "cartes\\AS.png",
+        cardValue: 1,
+        cardValue2: 10
+      },
+      C1m = {
+        cardImageURL: "cartes\\AC.png",
+        cardValue: 1,
+        cardValue2: 10
+      },
+      C1n = {
+        cardImageURL: "cartes\\AD.png",
+        cardValue: 1,
+        cardValue2: 10
+      },
+      C1o = {
+        cardImageURL: "cartes\\AH.png",
+        cardValue: 1,
+        cardValue2: 10
+      },
+      C1p = {
+        cardImageURL: "cartes\\AS.png",
+        cardValue: 1,
+        cardValue2: 10
+      },
+      C1q = {
+        cardImageURL: "cartes\\AC.png",
+        cardValue: 1,
+        cardValue2: 10
+      },
+      C1r = {
+        cardImageURL: "cartes\\AD.png",
+        cardValue: 1,
+        cardValue2: 10
+      },
+      C1s = {
+        cardImageURL: "cartes\\AH.png",
+        cardValue: 1,
+        cardValue2: 10
+      },
+      C1t = {
+        cardImageURL: "cartes\\AS.png",
+        cardValue: 1,
+        cardValue2: 10
+      },
+      C1u = {
+        cardImageURL: "cartes\\AC.png",
+        cardValue: 1,
+        cardValue2: 10
+      },
+      C1v = {
+        cardImageURL: "cartes\\AD.png",
+        cardValue: 1,
+        cardValue2: 10
+      },
+      C1w = {
+        cardImageURL: "cartes\\AH.png",
+        cardValue: 1,
+        cardValue2: 10
+      },
+      C1x = {
+        cardImageURL: "cartes\\AS.png",
+        cardValue: 1,
+        cardValue2: 10
+      },
+      C1y = {
+        cardImageURL: "cartes\\AH.png",
+        cardValue: 1,
+        cardValue2: 10
+      },
+      C1z = {
+        cardImageURL: "cartes\\AS.png",
+        cardValue: 1,
+        cardValue2: 10
+      }
       // FIN TRICHE
     ];
   
