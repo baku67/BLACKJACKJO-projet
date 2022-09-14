@@ -1,4 +1,9 @@
-OnClick miser: depop le sideBets Div
+border top du footer adapté cian/violet (pair/21+3)
+retourArriere bouton adapté aussi (et avec les tableau sideBets parallèles et toggle entre et tout)
+
+Puis enfin passer à la prise en compte mise (et par la meme retravailler la miseBDD et les messages d'alertes si userLeave, ET Melange des cartes pour pas softBlock !)
+
+Mettre les sideBetMiseEnCours inline-flex avec le sou pour centrer (pour l'instant juste chiffre + <img> dans la div) 
 
 
 
