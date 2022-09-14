@@ -1,3 +1,8 @@
+OnClick miser: depop le sideBets Div
+
+
+
+
 Symbole User (bonhomme coupé en deux simpliste), avec un "+" en bas à droite du user. L'icone placé à la place du déco 
 -> modal Inscription pour commencer
 -> puis switch modal Inscription/Connection

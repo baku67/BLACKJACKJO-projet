@@ -994,6 +994,134 @@
 
 
 
+      function refreshSideBetsToggle(bet) {
+
+        var sideBet1 = document.getElementById("sideBet1");
+        var sideBet2 = document.getElementById("sideBet2");
+
+        var sideBet1Title = document.getElementById("sideBet1Title");
+        var sideBet2Title = document.getElementById("sideBet2Title");
+
+
+        if (bet == "pair") {
+          sideBet1.style.borderColor = "rgba(0, 255, 234, 0.8)"; // cian
+          sideBet1.style.backgroundColor = "rgba(0, 255, 234, 0.1)"; // cian
+          sideBet1.style.borderWidth = "3px";
+          sideBet1.style.transform = "translateY(2px)";
+
+          sideBet2.style.borderColor = "rgb(239, 59, 46)";
+          sideBet2.style.backgroundColor = "rgba(239, 59, 46, 0.2)"; 
+          sideBet2.style.borderWidth = "3px 3px 7px 3px";
+          sideBet2.style.transform = "translateY(0px)";
+
+          sideBet1Title.style.color = "rgba(0, 255, 234, 0.8)";
+          sideBet2Title.style.color = "rgba(239, 59, 46, 0.9)";
+        }
+
+        else if (bet == "21+3") {
+          sideBet2.style.borderColor = "rgba(0, 255, 234, 0.8)"; // cian
+          sideBet2.style.backgroundColor = "rgba(0, 255, 234, 0.1)"; // cian
+          sideBet2.style.borderWidth = "3px";
+          sideBet2.style.transform = "translateY(2px)";
+
+          sideBet1.style.borderColor = "rgb(239, 59, 46)";
+          sideBet1.style.backgroundColor = "rgba(239, 59, 46, 0.2)"; 
+          sideBet1.style.borderWidth = "3px 3px 7px 3px";
+          sideBet1.style.transform = "translateY(0px)";
+
+          sideBet1Title.style.color = "rgba(239, 59, 46, 0.9)";
+          sideBet2Title.style.color = "rgba(0, 255, 234, 0.8)";
+        }
+
+        else if (bet == "normal") {
+          sideBet1.style.borderColor = "rgb(239, 59, 46)";
+          sideBet1.style.backgroundColor = "rgba(239, 59, 46, 0.2)"; 
+          sideBet1.style.borderWidth = "3px 3px 7px 3px";
+          sideBet1.style.transform = "translateY(0px)";
+
+          sideBet2.style.borderColor = "rgb(239, 59, 46)";
+          sideBet2.style.backgroundColor = "rgba(239, 59, 46, 0.2)"; 
+          sideBet2.style.borderWidth = "3px 3px 7px 3px";
+          sideBet2.style.transform = "translateY(0px)";
+
+          sideBet1Title.style.color = "rgba(239, 59, 46, 0.9)";
+          sideBet2Title.style.color = "rgba(239, 59, 46, 0.9)";
+        }
+      }
+
+      
+      function sideBetListeners() {
+        var toggleSideBet;
+
+        document.getElementById("sideBet1").addEventListener("click", function() {
+          if (toggleSideBet != "pair") {
+            toggleSideBet = "pair";
+            refreshSideBetsToggle(toggleSideBet);  
+          }
+          else {
+            toggleSideBet = "normal";
+            refreshSideBetsToggle(toggleSideBet);  
+          }
+        })
+
+        document.getElementById("sideBet2").addEventListener("click", function() {
+          if (toggleSideBet != "21+3") {
+            toggleSideBet = "21+3";
+            refreshSideBetsToggle(toggleSideBet);  
+          }
+          else {
+            toggleSideBet = "normal";
+            refreshSideBetsToggle(toggleSideBet);  
+          }
+        })
+      }
+
+
+
+
+      function popSideBets() {
+        // Div contenant les sideBets (Rappel: indicateurs color sous les tokenChips ET borderTop footer ET retourArriere)
+        const sideBetDiv = document.createElement("div");
+        sideBetDiv.setAttribute("id", "sideBetDiv");
+
+
+        // 1er sideBet
+        const sideBet1 = document.createElement("div");
+        sideBet1.setAttribute("id", "sideBet1");
+
+        const sideBet1Title = document.createElement("p");
+        sideBet1Title.setAttribute("id", "sideBet1Title");
+        sideBet1Title.innerHTML = "Pair";
+        sideBet1.appendChild(sideBet1Title);
+
+
+        // 2eme sideBet
+        const sideBet2 = document.createElement("div");
+        sideBet2.setAttribute("id", "sideBet2");
+
+        const sideBet2Title = document.createElement("p");
+        sideBet2Title.setAttribute("id", "sideBet2Title");
+        sideBet2Title.innerHTML = "21+3";
+        sideBet2.appendChild(sideBet2Title);
+
+
+
+        sideBetDiv.appendChild(sideBet1);
+        sideBetDiv.appendChild(sideBet2);
+
+        // Insertion de l'elem dans footer 1st child
+        if (document.getElementById("footer") !== null ) {
+          var footerElem = document.getElementById("footer");
+          footerElem.insertBefore(sideBetDiv, footerElem.firstChild);  
+        }
+
+        sideBetListeners();
+      }
+
+
+
+
+
 
 
 
@@ -1055,6 +1183,9 @@
               $("#container1").load("jouerPartie.php");
             
               setTimeout( function lancerPartie() {
+
+                  var miseSideBet1 = 0;
+                  var miseSideBet1 = 0;
 
                   removed = false;
 
@@ -1505,6 +1636,10 @@
 
                       document.getElementById("footer").classList.add('footerOnPartie');
 
+
+                      popSideBets();
+
+
                       if ((darkModeBool == true) && (document.querySelectorAll('.pokerChips') !== null)) {
                           var imgTokens = document.querySelectorAll('.pokerChips');
                           imgTokens.forEach(element => {
@@ -1611,6 +1746,9 @@
             dataType: "html",
             success: function(response) {
               $("#container1").html(response);
+
+              var miseSideBet1 = 0;
+              var miseSideBet1 = 0;
 
               asJoueur = false;
               nbrCardsJoueur = 0;
@@ -1892,6 +2030,8 @@
                 success: function(response) {
                   $("#container3").html(response);
 
+                  popSideBets();
+
 
                   // *Dark Mode State*
                   if (darkModeBool == true) {
@@ -2139,6 +2279,9 @@
       function miseLock() {
         document.getElementById("boutonMiser").addEventListener("click", function() {
 
+          // Depop du sideBet: (ajouter anim)
+          document.getElementById("sideBetDiv").remove();
+
           // Anims miserAlert
           document.getElementById('textMise').classList.add("phaseMiserAlert2Flash");
           document.getElementById('traitUnderlineInverse').classList.add("traitUnderlineInverse2Flash");
@@ -2226,9 +2369,6 @@
               dataType: "html",
               success: function(response) {
                 $("#chipsContainer").html(response);
-
-
-                
 
 
                 ChoixActif = true;
