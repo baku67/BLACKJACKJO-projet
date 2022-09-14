@@ -290,6 +290,8 @@ input:-webkit-autofill{
 
 	background-color: rgba(239, 59, 46, 0.2);
 	border-radius: 5px;
+
+	transition: border-color 0.3s ease, background-color 0.3s ease; 
 }
 #sideBet2 {
 	margin: 0px 25px;
@@ -305,6 +307,8 @@ input:-webkit-autofill{
 
 	background-color: rgba(239, 59, 46, 0.2);
 	border-radius: 5px;
+
+	transition: border-color 0.3s ease, background-color 0.3s ease; 
 }
 
 #sideBet1Title {
@@ -312,6 +316,8 @@ input:-webkit-autofill{
 	font-weight: bold;
 	font-family: " Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 	color: rgba(239, 59, 46, 1);
+
+	transition: color 0.3s ease; 
 }
 
 #sideBet2Title {
@@ -319,6 +325,8 @@ input:-webkit-autofill{
 	font-weight: bold;
 	font-family: " Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 	color: rgba(239, 59, 46, 1);
+
+	transition: color 0.3s ease; 
 }
 
 #sideBet1Mise {
@@ -713,6 +721,12 @@ button, input[type="submit"], input[type="reset"] {
     bottom: -33px;
 }
 
+.retourArriereSideBet1 {
+	content: url("../Images/retourArriereWhiteSideBet1_darkMode.png") !important;
+}
+.retourArriereSideBet2 {
+	content: url("../Images/retourArriereWhiteSideBet1_darkMode.png") !important;
+}
 
 
 .dateHistorique {
@@ -2803,7 +2817,8 @@ figure:active {
 
 	margin-right: -4px;
 
-	color: var(--miseEnCours-color);
+	/* color: var(--miseEnCours-color); */
+	color: rgba(223, 204, 204, 0.9);
 }
 /* Class ajoutée si miseEnCours > 0 pour centrer propre */
 .miseEnCours {
@@ -3813,59 +3828,7 @@ p {
 
 
 .miserActif2 {
-	transition: border-color 1s ease-in-out;
-	animation-name: footerClignotement;
-	-webkit-animation-name: footerClignotement;
-	animation-iteration-count: infinite;
-	animation-duration: 2s;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: infinite;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-timing-function: ease-in-out;
-	/* Pushai sur la droite (de maniere permanente, sans ça ça push aussi mais juste le temps de l'anim
-	animation-fill-mode: forwards;
-	-webkit-animation-fill-mode: forwards; 
-	*/
-}
-@keyframes footerClignotement {
-	/* 0% {
-		border: 5px solid rgba(130,16,40,0.7);
-		border-radius: 6px;
-		border-bottom-left-radius: 1px;
-		border-bottom-right-radius: 1px;
-	}
-	100% {
-		border: 5px solid rgba(0, 255, 255, 0.69);
-		border-radius: 6px;
-		border-bottom-left-radius: 1px;
-		border-bottom-right-radius: 1px;
-	} */
-
-	0% {
-		border-width: 3px;
-		border-style: solid;
-		border-color: rgba(130,16,40,1);
-	}
-	15% {
-		border-width: 3px;
-		border-style: solid;
-		border-color: rgba(255, 251, 0, 0.6);
-	}
-	50% {
-		border-width: 3px;
-		border-style: solid;
-		border-color: rgba(0, 255, 255, 0.6);
-	}
-	85% {
-		border-width: 3px;
-		border-style: solid;
-		border-color: rgba(255, 251, 0, 0.6);
-	}
-	100% {
-		border-width: 3px;
-		border-style: solid;
-		border-color: rgba(130,16,40,1);
-	}
+	transition: border-color 0.3s ease;
 }
 
 

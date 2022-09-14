@@ -6,6 +6,14 @@ Puis enfin passer à la prise en compte mise (et par la meme retravailler la mis
 Mettre les sideBetMiseEnCours inline-flex avec le sou pour centrer (pour l'instant juste chiffre + <img> dans la div) 
 
 
+Bug du toggleSpeed undefined quand switch from DM to LM en mode Invite pendant phase mise
+
+
+TRES IMPORTANT: Compression des tokens (ils sont encore trop detaillés et lourds) chaud pour le switch SideBets !
+Enlever le color du MiseEnCours (normal) en blanc 
+fix retourArriereCian et add flecheCollapse cyan
+
+
 
 
 Symbole User (bonhomme coupé en deux simpliste), avec un "+" en bas à droite du user. L'icone placé à la place du déco 
