@@ -38,6 +38,8 @@
 
       // Réinitialisé dans le NewGame (tableau des valeurs derniers jetons ajoutés en vue de retour arriere)
       let logTokenValues = [];
+      let logTokenValuesPair = [];
+      let logTokenValues213 = [];
 
       var nbrCardsJoueur;
 
@@ -1766,31 +1768,92 @@
 
                       document.getElementById("retourArriereButton").addEventListener("click", function() {
                         // fonction de rafraichissement de la mise en cours (Si il y a matière)
-                        if (miseEnCours != 0) {
-                          miseEnCours = miseEnCours - logTokenValues[0];
-                          if (isConnected == true) {
-                            document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBarre.png' class=\"imagesSou\">";
-                          }
-                          else {
-                            document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBlancBarre.png' class=\"imagesSou\">";
-                          }
-
-                          // Enlever le sou si mise la mise passe à 0 apres calcul retourArriere
-                          if (miseEnCours == 0) {
+                        if (toggleSideBet == "normal") {
+                          if (miseEnCours != 0) {
+                            miseEnCours = miseEnCours - logTokenValues[0];
                             if (isConnected == true) {
-                              document.getElementById("miseEnCours").innerHTML = miseEnCours;
+                              document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBarre.png' class=\"imagesSou\">";
                             }
                             else {
-                              document.getElementById("miseEnCours").innerHTML = miseEnCours;
-                            }  
-                          }
+                              document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBlancBarre.png' class=\"imagesSou\">";
+                            }
+  
+                            // Enlever le sou si mise la mise passe à 0 apres calcul retourArriere
+                            if (miseEnCours == 0) {
+                              if (isConnected == true) {
+                                document.getElementById("miseEnCours").innerHTML = miseEnCours;
+                              }
+                              else {
+                                document.getElementById("miseEnCours").innerHTML = miseEnCours;
+                              }  
+                            }
+  
+                          // fonction qui remove le premier var du tableau
+                          logTokenValues.shift();
+  
+                          // Rafraichit l'état style du bouton (par exemple si denouveau = 0)
+                          miseBoutonStyle();
+                          } 
+                        }
 
-                        // fonction qui remove le premier var du tableau
-                        logTokenValues.shift();
+                        else if (toggleSideBet == "pair") {
+                          if (misePairEnCours != 0) {
+                            misePairEnCours = misePairEnCours - logTokenValuesPair[0];
+                            if (isConnected == true) {
+                              document.getElementById("sideBet1Mise").innerHTML = misePairEnCours + "<img src='Images/souBarre.png' class=\"imageSouSideBets\">";
+                            }
+                            else {
+                              document.getElementById("sideBet1Mise").innerHTML = misePairEnCours + "<img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
+                            }
+  
+                            // Enlever le sou si mise la mise passe à 0 apres calcul retourArriere
+                            if (misePairEnCours == 0) {
+                              if (isConnected == true) {
+                                document.getElementById("sideBet1Mise").innerHTML = misePairEnCours;
+                              }
+                              else {
+                                document.getElementById("sideBet1Mise").innerHTML = misePairEnCours;
+                              }  
+                            }
+  
+                          // fonction qui remove le premier var du tableau
+                          logTokenValuesPair.shift();
+  
+                          // (désactivé sur "pair" ?) Rafraichit l'état style du bouton (par exemple si denouveau = 0)
+                          // miseBoutonStyle();
+                          } 
+                        }
 
-                        // Rafraichit l'état style du bouton (par exemple si denouveau = 0)
-                        miseBoutonStyle();
-                        } 
+                        else if (toggleSideBet == "21+3") {
+                          if (mise213EnCours != 0) {
+                            mise213EnCours = mise213EnCours - logTokenValues213[0];
+                            if (isConnected == true) {
+                              document.getElementById("sideBet2Mise").innerHTML = mise213EnCours + "<img src='Images/souBarre.png' class=\"imageSouSideBets\">";
+                            }
+                            else {
+                              document.getElementById("sideBet2Mise").innerHTML = mise213EnCours + "<img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
+                            }
+  
+                            // Enlever le sou si mise la mise passe à 0 apres calcul retourArriere
+                            if (mise213EnCours == 0) {
+                              if (isConnected == true) {
+                                document.getElementById("sideBet2Mise").innerHTML = mise213EnCours;
+                              }
+                              else {
+                                document.getElementById("sideBet2Mise").innerHTML = mise213EnCours;
+                              }  
+                            }
+  
+                          // fonction qui remove le premier var du tableau
+                          logTokenValues213.shift();
+  
+                          // (désactivé sur "pair" ?) Rafraichit l'état style du bouton (par exemple si denouveau = 0)
+                          // miseBoutonStyle();
+                          } 
+                        }
+
+
+                        
                       });
 
                         //*** Zone FooterBorder Clignotement (marrant pourquoi ça marche pas? à supprimer de toute facon)     
@@ -2184,37 +2247,97 @@
                     }
                   }
 
-                  // RESET du tableau TokenLogs
+                  // RESET des tableaus TokenLogs 
                   logTokenValues = [];
+                  logTokenValuesPair = [];
+                  logTokenValues213 = [];
                   //
                   // Bouton RetourArriere
                   document.getElementById("retourArriereButton").addEventListener("click", function() {
                     // fonction de rafraichissement de la mise en cours (Si il y a matière)
-                    if (miseEnCours != 0) {
-                      miseEnCours = miseEnCours - logTokenValues[0];
-                      if (isConnected == true) {
-                        document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBarre.png' class=\"imagesSou\">";
-                      }
-                      else {
-                        document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBlancBarre.png' class=\"imagesSou\">";
-                      }
-
-                      // Enlever le sou si mise la mise passe à 0 apres calcul retourArriere
-                      if (miseEnCours == 0) {
+                    if (toggleSideBet == "normal") {
+                      if (miseEnCours != 0) {
+                        miseEnCours = miseEnCours - logTokenValues[0];
                         if (isConnected == true) {
-                          document.getElementById("miseEnCours").innerHTML = miseEnCours;
+                          document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBarre.png' class=\"imagesSou\">";
                         }
                         else {
-                          document.getElementById("miseEnCours").innerHTML = miseEnCours;
-                        }  
-                      }
+                          document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBlancBarre.png' class=\"imagesSou\">";
+                        }
+
+                        // Enlever le sou si mise la mise passe à 0 apres calcul retourArriere
+                        if (miseEnCours == 0) {
+                          if (isConnected == true) {
+                            document.getElementById("miseEnCours").innerHTML = miseEnCours;
+                          }
+                          else {
+                            document.getElementById("miseEnCours").innerHTML = miseEnCours;
+                          }  
+                        }
 
                       // fonction qui remove le premier var du tableau
-                    logTokenValues.shift();
+                      logTokenValues.shift();
 
-                    // Rafraichit l'état style du bouton (par exemple si denouveau = 0)
-                    miseBoutonStyle();
-                    } 
+                      // Rafraichit l'état style du bouton (par exemple si denouveau = 0)
+                      miseBoutonStyle();
+                      } 
+                    }
+
+                    else if (toggleSideBet == "pair") {
+                      if (misePairEnCours != 0) {
+                        misePairEnCours = misePairEnCours - logTokenValuesPair[0];
+                        if (isConnected == true) {
+                          document.getElementById("sideBet1Mise").innerHTML = misePairEnCours + "<img src='Images/souBarre.png' class=\"imageSouSideBets\">";
+                        }
+                        else {
+                          document.getElementById("sideBet1Mise").innerHTML = misePairEnCours + "<img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
+                        }
+
+                        // Enlever le sou si mise la mise passe à 0 apres calcul retourArriere
+                        if (misePairEnCours == 0) {
+                          if (isConnected == true) {
+                            document.getElementById("sideBet1Mise").innerHTML = misePairEnCours;
+                          }
+                          else {
+                            document.getElementById("sideBet1Mise").innerHTML = misePairEnCours;
+                          }  
+                        }
+
+                      // fonction qui remove le premier var du tableau
+                      logTokenValuesPair.shift();
+
+                      // (désactivé sur "pair" ?) Rafraichit l'état style du bouton (par exemple si denouveau = 0)
+                      // miseBoutonStyle();
+                      } 
+                    }
+
+                    else if (toggleSideBet == "21+3") {
+                      if (mise213EnCours != 0) {
+                        mise213EnCours = mise213EnCours - logTokenValues213[0];
+                        if (isConnected == true) {
+                          document.getElementById("sideBet2Mise").innerHTML = mise213EnCours + "<img src='Images/souBarre.png' class=\"imageSouSideBets\">";
+                        }
+                        else {
+                          document.getElementById("sideBet2Mise").innerHTML = mise213EnCours + "<img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
+                        }
+
+                        // Enlever le sou si mise la mise passe à 0 apres calcul retourArriere
+                        if (mise213EnCours == 0) {
+                          if (isConnected == true) {
+                            document.getElementById("sideBet2Mise").innerHTML = mise213EnCours;
+                          }
+                          else {
+                            document.getElementById("sideBet2Mise").innerHTML = mise213EnCours;
+                          }  
+                        }
+
+                      // fonction qui remove le premier var du tableau
+                      logTokenValues213.shift();
+
+                      // (désactivé sur "pair" ?) Rafraichit l'état style du bouton (par exemple si denouveau = 0)
+                      // miseBoutonStyle();
+                      } 
+                    }
                   });
                   // FIN
 
@@ -3413,7 +3536,7 @@
 
       function refreshMisesEnCours(casMise) {
         if (casMise == "normal") {
-          if (isConnected == "true") {
+          if (isConnected == true) {
             document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBarre.png' class=\"imagesSou\">";
           }
           else {
@@ -3421,7 +3544,7 @@
           }
         }
         else if (casMise == "pair") {
-          if (isConnected == "true") {
+          if (isConnected == true) {
             document.getElementById("sideBet1Mise").innerHTML = misePairEnCours + "<img src='Images/souBarre.png' class=\"imageSouSideBets\">";
           }
           else {
@@ -3429,7 +3552,7 @@
           }
         }
         else if (casMise == "21+3") {
-          if (isConnected == "true") {
+          if (isConnected == true) {
             document.getElementById("sideBet2Mise").innerHTML = mise213EnCours + "<img src='Images/souBarre.png' class=\"imageSouSideBets\">";
           }
           else {
@@ -3476,28 +3599,17 @@
                   miseEnCours += 1;
                 }
                 else if (toggleSideBet == "pair") {
-                  // addLastTokenClickToTabPair(1);
+                  addLastTokenClickToTabPair(1);
                   misePairEnCours += 1;
                 }
                 else if (toggleSideBet == "21+3") {
-                  // addLastTokenClickToTab213(1);
+                  addLastTokenClickToTab213(1);
                   mise213EnCours += 1;
                 }
 
               }
 
-              // Mettre le refresh spécifique a chaque miseCas si dessus (avec isconnected): 3fonctions ?
               refreshMisesEnCours(toggleSideBet);
-              // if (isConnected == true) {
-              //   document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBarre.png' class=\"imagesSou\">";
-              //   document.getElementById("sideBet1Mise").innerHTML = misePairEnCours + "<img src='Images/souBarre.png' class=\"imageSouSideBets\">";
-              //   document.getElementById("sideBet2Mise").innerHTML = mise213EnCours + "<img src='Images/souBarre.png' class=\"imageSouSideBets\">";
-              // }
-              // else {
-              //   document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBlancBarre.png' class=\"imagesSou\">";
-              //   document.getElementById("sideBet1Mise").innerHTML = misePairEnCours + "<img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
-              //   document.getElementById("sideBet2Mise").innerHTML = mise213EnCours + "<img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
-              // }
 
               miseBoutonStyle();
               cssMiseEnCours();
@@ -3521,28 +3633,17 @@
                   miseEnCours += 5;
                 }
                 else if (toggleSideBet == "pair") {
-                  // addLastTokenClickToTabPair(5);
+                  addLastTokenClickToTabPair(5);
                   misePairEnCours += 5;
                 }
                 else if (toggleSideBet == "21+3") {
-                  // addLastTokenClickToTab213(5);
+                  addLastTokenClickToTab213(5);
                   mise213EnCours += 5;
                 }
 
               }
 
-              // Mettre le refresh spécifique a chaque miseCas si dessus (avec isconnected): 3fonctions ?
               refreshMisesEnCours(toggleSideBet);
-              // if (isConnected == true) {
-              //   document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBarre.png' class=\"imagesSou\">";
-              //   document.getElementById("sideBet1Mise").innerHTML = misePairEnCours + "<img src='Images/souBarre.png' class=\"imageSouSideBets\">";
-              //   document.getElementById("sideBet2Mise").innerHTML = mise213EnCours + "<img src='Images/souBarre.png' class=\"imageSouSideBets\">";
-              // }
-              // else {
-              //   document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBlancBarre.png' class=\"imagesSou\">";
-              //   document.getElementById("sideBet1Mise").innerHTML = misePairEnCours + "<img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
-              //   document.getElementById("sideBet2Mise").innerHTML = mise213EnCours + "<img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
-              // }
 
               miseBoutonStyle();
               cssMiseEnCours();
@@ -3565,27 +3666,16 @@
                   miseEnCours += 10;
                 }
                 else if (toggleSideBet == "pair") {
-                  // addLastTokenClickToTabPair(10);
+                  addLastTokenClickToTabPair(10);
                   misePairEnCours += 10;
                 }
                 else if (toggleSideBet == "21+3") {
-                  // addLastTokenClickToTab213(10);
+                  addLastTokenClickToTab213(10);
                   mise213EnCours += 10;
                 }
               }
 
-              // Mettre le refresh spécifique a chaque miseCas si dessus (avec isconnected): 3fonctions ?
               refreshMisesEnCours(toggleSideBet);
-              // if (isConnected == true) {
-              //   document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBarre.png' class=\"imagesSou\">";
-              //   document.getElementById("sideBet1Mise").innerHTML = misePairEnCours + "<img src='Images/souBarre.png' class=\"imageSouSideBets\">";
-              //   document.getElementById("sideBet2Mise").innerHTML = mise213EnCours + "<img src='Images/souBarre.png' class=\"imageSouSideBets\">";
-              // }
-              // else {
-              //   document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBlancBarre.png' class=\"imagesSou\">";
-              //   document.getElementById("sideBet1Mise").innerHTML = misePairEnCours + "<img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
-              //   document.getElementById("sideBet2Mise").innerHTML = mise213EnCours + "<img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
-              // }
               
               miseBoutonStyle();
               cssMiseEnCours();
@@ -3609,27 +3699,16 @@
                 miseEnCours += 25;
               }
               else if (toggleSideBet == "pair") {
-                // addLastTokenClickToTabPair(25);
+                addLastTokenClickToTabPair(25);
                 misePairEnCours += 25;
               }
               else if (toggleSideBet == "21+3") {
-                // addLastTokenClickToTab213(25);
+                addLastTokenClickToTab213(25);
                 mise213EnCours += 25;
               }
             }
 
-              // Mettre le refresh spécifique a chaque miseCas si dessus (avec isconnected): 3fonctions ?
-              refreshMisesEnCours(toggleSideBet);
-              // if (isConnected == true) {
-              //   document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBarre.png' class=\"imagesSou\">";
-              //   document.getElementById("sideBet1Mise").innerHTML = misePairEnCours + "<img src='Images/souBarre.png' class=\"imageSouSideBets\">";
-              //   document.getElementById("sideBet2Mise").innerHTML = mise213EnCours + "<img src='Images/souBarre.png' class=\"imageSouSideBets\">";
-              // }
-              // else {
-              //   document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBlancBarre.png' class=\"imagesSou\">";
-              //   document.getElementById("sideBet1Mise").innerHTML = misePairEnCours + "<img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
-              //   document.getElementById("sideBet2Mise").innerHTML = mise213EnCours + "<img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
-              // }
+            refreshMisesEnCours(toggleSideBet);
           
             miseBoutonStyle();
             cssMiseEnCours();
@@ -3653,27 +3732,16 @@
                 miseEnCours += 100;
               }
               else if (toggleSideBet == "pair") {
-                // addLastTokenClickToTabPair(100);
+                addLastTokenClickToTabPair(100);
                 misePairEnCours += 100;
               }
               else if (toggleSideBet == "21+3") {
-                // addLastTokenClickToTab213(100);
+                addLastTokenClickToTab213(100);
                 mise213EnCours += 100;
               }
             }
 
-              // Mettre le refresh spécifique a chaque miseCas si dessus (avec isconnected): 3fonctions ?
-              refreshMisesEnCours(toggleSideBet);
-              // if (isConnected == true) {
-              //   document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBarre.png' class=\"imagesSou\">";
-              //   document.getElementById("sideBet1Mise").innerHTML = misePairEnCours + "<img src='Images/souBarre.png' class=\"imageSouSideBets\">";
-              //   document.getElementById("sideBet2Mise").innerHTML = mise213EnCours + "<img src='Images/souBarre.png' class=\"imageSouSideBets\">";
-              // }
-              // else {
-              //   document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBlancBarre.png' class=\"imagesSou\">";
-              //   document.getElementById("sideBet1Mise").innerHTML = misePairEnCours + "<img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
-              //   document.getElementById("sideBet2Mise").innerHTML = mise213EnCours + "<img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
-              // }
+            refreshMisesEnCours(toggleSideBet);
           
             miseBoutonStyle();
             cssMiseEnCours();
@@ -3685,7 +3753,17 @@
 
       function addLastTokenClickToTab(value) {
         logTokenValues.unshift(value);
-        console.log(logTokenValues);
+        console.log("Tableau mise Normale: " + logTokenValues);
+      }
+
+      function addLastTokenClickToTabPair(value) {
+        logTokenValuesPair.unshift(value);
+        console.log("Tableau mise Pair: " + logTokenValuesPair);
+      }
+
+      function addLastTokenClickToTab213(value) {
+        logTokenValues213.unshift(value);
+        console.log("Tableau mise 21+3: " + logTokenValues213);
       }
       
       
