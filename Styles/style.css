@@ -335,6 +335,8 @@ input:-webkit-autofill{
     position: relative;
     transform: translateY(-50%);
 	font-family: "Holtwood One SC", serif;
+
+	opacity: 0.3;
 }
 #sideBet2Mise {
 	font-size: 1.5em;
@@ -342,6 +344,8 @@ input:-webkit-autofill{
     position: relative;
     transform: translateY(-50%);
 	font-family: "Holtwood One SC", serif;
+
+	opacity: 0.3;
 }
 
 
@@ -725,7 +729,7 @@ button, input[type="submit"], input[type="reset"] {
 	content: url("../Images/retourArriereWhiteSideBet1_darkMode.png") !important;
 }
 .retourArriereSideBet2 {
-	content: url("../Images/retourArriereWhiteSideBet1_darkMode.png") !important;
+	content: url("../Images/retourArriereWhiteSideBet2_darkMode.png") !important;
 }
 
 

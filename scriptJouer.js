@@ -645,6 +645,9 @@
         // A mettre dans un fichier différent
         $("#historique").click(function() {
 
+          if (document.getElementById("sideBetDiv") !== null) {
+            document.getElementById("sideBetDiv").remove();
+          }
 
           $("#container1").load("historique.php", function() {
     
@@ -1020,7 +1023,19 @@
           sideBet1Title.style.color = "rgba(0, 255, 234, 0.8)";
           sideBet2Title.style.color = "rgba(239, 59, 46, 0.9)";
 
-          document.getElementById("miseEnCours").style.opacity = "0.3";
+          if (miseEnCours > 0) {
+            document.getElementById("miseEnCours").style.opacity = "0.6";
+          }
+          else {
+            document.getElementById("miseEnCours").style.opacity = "0.3";
+          }
+          if (mise213EnCours > 0) {
+            document.getElementById("sideBet2Mise").style.opacity = "0.6";
+          }
+          else {
+            document.getElementById("sideBet2Mise").style.opacity = "0.3";
+          }
+          document.getElementById("sideBet1Mise").style.opacity = "1";
 
           document.getElementById("footer").style.borderTop = "4px solid rgba(0, 255, 234, 0.7)";
 
@@ -1030,12 +1045,13 @@
           document.getElementById("blueToken").src = "Tokens/sideBet1TokenB.png";
           document.getElementById("blackToken").src = "Tokens/sideBet1TokenA.png";
 
+          document.getElementById("retourArriereImg").classList.remove("retourArriereSideBet2");
           document.getElementById("retourArriereImg").classList.add("retourArriereSideBet1");
         }
 
         else if (bet == "21+3") {
-          sideBet2.style.borderColor = "rgba(0, 255, 234, 0.8)"; // cian
-          sideBet2.style.backgroundColor = "rgba(0, 255, 234, 0.1)"; // cian
+          sideBet2.style.borderColor = "rgba(255, 55, 250, 0.8)"; // purple
+          sideBet2.style.backgroundColor = "rgba(255, 55, 250, 0.1)"; // purple
           sideBet2.style.borderWidth = "3px";
           sideBet2.style.transform = "translateY(2px)";
 
@@ -1045,21 +1061,35 @@
           sideBet1.style.transform = "translateY(0px)";
 
           sideBet1Title.style.color = "rgba(239, 59, 46, 0.9)";
-          sideBet2Title.style.color = "rgba(0, 255, 234, 0.8)";
+          sideBet2Title.style.color = "rgba(255, 55, 250, 0.8)";
 
-          document.getElementById("miseEnCours").style.opacity = "0.3";
+          if (miseEnCours > 0) {
+            document.getElementById("miseEnCours").style.opacity = "0.6";
+          }
+          else {
+            document.getElementById("miseEnCours").style.opacity = "0.3";
+          }
+          document.getElementById("sideBet2Mise").style.opacity = "1";
+          if (misePairEnCours > 0) {
+            document.getElementById("sideBet1Mise").style.opacity = "0.6";
+          }
+          else {
+            document.getElementById("sideBet1Mise").style.opacity = "0.3";
+          }
 
-          document.getElementById("footer").style.borderTop = "4px solid rgba(0, 255, 234, 0.7)";
+          document.getElementById("footer").style.borderTop = "4px solid rgba(255, 55, 250, 0.7)";
 
-          document.getElementById("whiteToken").src = "Tokens/sideBet1TokenA.png";
-          document.getElementById("redToken").src = "Tokens/sideBet1TokenB.png";
-          document.getElementById("greenToken").src = "Tokens/sideBet1TokenA.png";
-          document.getElementById("blueToken").src = "Tokens/sideBet1TokenB.png";
-          document.getElementById("blackToken").src = "Tokens/sideBet1TokenA.png";
+          document.getElementById("whiteToken").src = "Tokens/sideBet2TokenA.png";
+          document.getElementById("redToken").src = "Tokens/sideBet2TokenB.png";
+          document.getElementById("greenToken").src = "Tokens/sideBet2TokenA.png";
+          document.getElementById("blueToken").src = "Tokens/sideBet2TokenB.png";
+          document.getElementById("blackToken").src = "Tokens/sideBet2TokenA.png";
 
           document.getElementById("retourArriereImg").src = "Images/retourArriereWhiteSideBet1_darkMode.png";
 
+          document.getElementById("retourArriereImg").classList.remove("retourArriereSideBet1");
           document.getElementById("retourArriereImg").classList.add("retourArriereSideBet2");
+
         }
 
         else if (bet == "normal") {
@@ -1077,6 +1107,18 @@
           sideBet2Title.style.color = "rgba(239, 59, 46, 0.9)";
 
           document.getElementById("miseEnCours").style.opacity = "1";
+          if (mise213EnCours > 0) {
+            document.getElementById("sideBet2Mise").style.opacity = "0.6";
+          }
+          else {
+            document.getElementById("sideBet2Mise").style.opacity = "0.3";
+          }
+          if (misePairEnCours > 0) {
+            document.getElementById("sideBet1Mise").style.opacity = "0.6";
+          }
+          else {
+            document.getElementById("sideBet1Mise").style.opacity = "0.3";
+          }
 
           // A adapter au DM state
             document.getElementById("footer").style.borderTop = "4px solid var(--footerBorderTop-Color)";
