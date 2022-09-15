@@ -1,5 +1,5 @@
 
-let cards = [
+  let cards = [
     // 1er Deck
     C2a = {
       cardImageURL: "cartes\\2C.png",
@@ -545,12 +545,13 @@ let cards = [
 
 
   // Mélange DEGUEULASSE
-  // Au moment d'un reload, apres le load jouerPartie, mettre un (if cards length < 60) function de creation du deck
+  // Au moment d'un reload, apres le load jouerPartie, mettre un (if cards length < 60) function de reinit du deck
 
-  function melangeDeck() {
+  function melangeDeck(darkModeBool) {
 
 
-    let cards = [
+
+    cards = [
       // 1er Deck
       C2a = {
         cardImageURL: "cartes\\2C.png",
@@ -1097,9 +1098,52 @@ let cards = [
 
 
 
+    // Nouveau compteur envoyé en return du mélanger() script.js
+    compteurDeck = cards.length;
+
+    // Lors mélange: adaptation des URL cards au DM/LM:
+    if (darkModeBool == true) {
+      cards.forEach(element => {
+        element.cardImageURL = element.cardImageURL.substring(0, 9) + "_darkMode.png";
+      });
+
+      var imgElemArray = document.querySelectorAll('.imgPartieDM');
+      imgElemArray.forEach(element => {
+        element.src = element.src.substring(0, 37) + "_darkMode.png";
+      });
+    }
+    else {
+      cards.forEach(element => {
+        element.cardImageURL = element.cardImageURL.substring(0, 9) + ".png";
+      });
+
+      var imgElemArray = document.querySelectorAll('.imgPartieDM');
+      imgElemArray.forEach(element => {
+        element.src = element.src.substring(0, 37) + ".png";
+      });
+    }
+    // FIN
 
 
 
+    // Proc du "mélange!" sur le deck, puis suppression apres fin d'anim?:
+    var melangeAlert = document.createElement("div");
+    melangeAlert.setAttribute("id", "melangeAlertDiv");
+    melangeAlert.innerHTML = "Mélange!";
 
+    setTimeout(function() {
+      document.getElementById("deckContainer").appendChild(melangeAlert);
+      // Si l'anim marche pas: ajouter une classe juste avec l'anim   
+    }, 1500);
+
+    // adapter le setTimeout du depop à l'anim
+    // setTimeout(function() {
+    //   document.getElementById("melangeAlertDiv").remove();
+    // }, 1300);
+    // FIN
+    
+
+
+    return compteurDeck;
   }
 

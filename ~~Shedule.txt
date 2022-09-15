@@ -1,17 +1,14 @@
-border top du footer adapté cian/violet (pair/21+3)
-retourArriere bouton adapté aussi (et avec les tableau sideBets parallèles et toggle entre et tout)
+Le decrement CompteurDeck de la carte caché du croupier doit pas se faire lors du reveal mais lors de la distrib
+
+
+Faire les misesBDD  (les 3) + refresh credits front (+ les sideBets)
 
 Puis enfin passer à la prise en compte mise (et par la meme retravailler la miseBDD et les messages d'alertes si userLeave, ET Melange des cartes pour pas softBlock !)
 
 Mettre les sideBetMiseEnCours inline-flex avec le sou pour centrer (pour l'instant juste chiffre + <img> dans la div) 
 
 
-Bug du toggleSpeed undefined quand switch from DM to LM en mode Invite pendant phase mise
-
-
-TRES IMPORTANT: Compression des tokens (ils sont encore trop detaillés et lourds) chaud pour le switch SideBets !
-Enlever le color du MiseEnCours (normal) en blanc 
-fix retourArriereCian et add flecheCollapse cyan
+(pas bloquant?) Bug du toggleSpeed undefined quand switch from DM to LM en mode Invite pendant phase mise
 
 
 
