@@ -41,6 +41,8 @@
       let logTokenValuesPair = [];
       let logTokenValues213 = [];
 
+      let cartesSortiesPartie = [];
+
       var nbrCardsJoueur;
 
       var credits = 0;
@@ -57,6 +59,8 @@
       var misePairEnCours;
       var mise213EnCours;
       var miseLocked;
+      var misePairLocked;
+      var mise213Locked;
 
       var compteurDeck = cards.length;
       var compteurDeckMax = cards.length;
@@ -571,6 +575,14 @@
 
 
 
+      function checkPairResult() {
+        // si vérifié, adapté le gain en fonction du ratio 
+      }
+      function check213Result() {
+        // si vérifié, adapté le gain en fonction du ratio 
+      }
+
+
 
 
 
@@ -1031,10 +1043,10 @@
             if (misePairEnCours != 0) {
               misePairEnCours = misePairEnCours - logTokenValuesPair[0];
               if (isConnected == true) {
-                document.getElementById("sideBet1Mise").innerHTML = misePairEnCours + "<img src='Images/souBarre.png' class=\"imageSouSideBets\">";
+                document.getElementById("sideBet1Mise").innerHTML = "<span>" + misePairEnCours + "</span><img src='Images/souBarre.png' class=\"imageSouSideBets\">";
               }
               else {
-                document.getElementById("sideBet1Mise").innerHTML = misePairEnCours + "<img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
+                document.getElementById("sideBet1Mise").innerHTML = "<span>" + misePairEnCours + "</span><img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
               }
 
               // Enlever le sou si mise la mise passe à 0 apres calcul retourArriere
@@ -1058,10 +1070,10 @@
             if (mise213EnCours != 0) {
               mise213EnCours = mise213EnCours - logTokenValues213[0];
               if (isConnected == true) {
-                document.getElementById("sideBet2Mise").innerHTML = mise213EnCours + "<img src='Images/souBarre.png' class=\"imageSouSideBets\">";
+                document.getElementById("sideBet2Mise").innerHTML = "<span>" + mise213EnCours + "</span><img src='Images/souBarre.png' class=\"imageSouSideBets\">";
               }
               else {
-                document.getElementById("sideBet2Mise").innerHTML = mise213EnCours + "<img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
+                document.getElementById("sideBet2Mise").innerHTML = "<span>" + mise213EnCours + "</span><img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
               }
 
               // Enlever le sou si mise la mise passe à 0 apres calcul retourArriere
@@ -1499,6 +1511,7 @@
                   removed = false;
 
                   logTokenValues = [];
+                  cartesSortiesPartie = [];
 
                   nbrCardsJoueur = 0;
 
@@ -2057,6 +2070,8 @@
                 document.getElementById("compteurDeckMax").innerHTML = compteurDeck;  // marche pas ?           
               }
 
+              cartesSortiesPartie = [];
+
               asJoueur = false;
               nbrCardsJoueur = 0;
               removed = false;
@@ -2606,6 +2621,10 @@
           document.querySelector("#boutonMiser").style.opacity = "0.4";
           
           miseLocked = miseEnCours;
+          misePairLocked = misePairEnCours;
+          mise213Locked = mise213EnCours;
+
+          console.log("Mises Lockées: \n" + "miseLocked: " + miseLocked + ",\n" + "misePairLocked: " + misePairLocked + ",\n" + "mise213Locked: " + mise213EnCours + ".");
 
           // Apparition du miseLock
           let miseLockedElement = document.createElement('span');
@@ -3594,18 +3613,18 @@
         }
         else if (casMise == "pair") {
           if (isConnected == true) {
-            document.getElementById("sideBet1Mise").innerHTML = misePairEnCours + "<img src='Images/souBarre.png' class=\"imageSouSideBets\">";
+            document.getElementById("sideBet1Mise").innerHTML = "<span>" + misePairEnCours + "</span><img src='Images/souBarre.png' class=\"imageSouSideBets\">";
           }
           else {
-            document.getElementById("sideBet1Mise").innerHTML = misePairEnCours + "<img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
+            document.getElementById("sideBet1Mise").innerHTML = "<span>" + misePairEnCours + "</span><img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
           }
         }
         else if (casMise == "21+3") {
           if (isConnected == true) {
-            document.getElementById("sideBet2Mise").innerHTML = mise213EnCours + "<img src='Images/souBarre.png' class=\"imageSouSideBets\">";
+            document.getElementById("sideBet2Mise").innerHTML = "<span>" + mise213EnCours + "</span><img src='Images/souBarre.png' class=\"imageSouSideBets\">";
           }
           else {
-            document.getElementById("sideBet2Mise").innerHTML = mise213EnCours + "<img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
+            document.getElementById("sideBet2Mise").innerHTML = "<span>" + mise213EnCours + "</span><img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
           }
         }
       }
@@ -4470,7 +4489,7 @@
 
 
 
-
+      //
       // Envoi/Refresh du crédits et appel historiqueDB();
       if (isConnected == true) {
         function ajoutGain(gain) {

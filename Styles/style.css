@@ -429,19 +429,26 @@ input:-webkit-autofill{
 
 #sideBet1Mise {
 	font-size: 1.5em;
-    top: 25%;
-    position: relative;
-    transform: translateY(-50%);
 	font-family: "Holtwood One SC", serif;
+
+	position: relative;
+    top: 25%;
+	left: 11px;
+    transform: translateY(-50%);
+
+	text-align: center;
+	margin: 0 auto;
 
 	opacity: 0.3;
 }
 #sideBet2Mise {
 	font-size: 1.5em;
-    top: 25%;
-    position: relative;
-    transform: translateY(-50%);
 	font-family: "Holtwood One SC", serif;
+
+	position: relative;
+    top: 25%;
+	left: 11px;
+    transform: translateY(-50%);
 
 	opacity: 0.3;
 }
@@ -795,7 +802,9 @@ button, input[type="submit"], input[type="reset"] {
 }
 .imageSouSideBets {
 	height: 35px;
-    position: absolute;
+    /* position: absolute; */
+	position: relative;
+	top: 7px;
 	opacity: 0.8;
 }
 .imagesSouResultat {
@@ -3717,7 +3726,7 @@ p {
 
 
 #miseLockedFooter {
-	font-size: 3em;
+	font-size: 2.3em;
 	font-family: "Holtwood One SC", serif;
 
 	margin-right: 50px;
