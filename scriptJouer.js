@@ -654,6 +654,10 @@
               document.getElementById("sideBetDiv").remove();
             }
 
+            if (document.getElementById("footer") !== null) {
+              document.getElementById("footer").remove();
+            }
+
 
             // MODE INVITÉ:
             if (isConnected == false) {
@@ -1015,11 +1019,13 @@
         if (bet == "pair") {
           sideBet1.style.borderColor = "rgba(0, 255, 234, 0.8)"; // cian
           sideBet1.style.backgroundColor = "rgba(0, 255, 234, 0.1)"; // cian
+          sideBet1.style.boxShadow = "-0px 0px 30px 5px rgba(0, 255, 234, 0.2)";
           sideBet1.style.borderWidth = "3px";
           sideBet1.style.transform = "translateY(2px)";
 
           sideBet2.style.borderColor = "rgb(239, 59, 46)";
           sideBet2.style.backgroundColor = "rgba(239, 59, 46, 0.2)"; 
+          sideBet2.style.boxShadow = "";
           sideBet2.style.borderWidth = "3px 3px 7px 3px";
           sideBet2.style.transform = "translateY(0px)";
 
@@ -1044,6 +1050,7 @@
           document.getElementById("footerTitle").innerHTML = " - Side Bet - ";
 
           document.getElementById("footer").style.borderTop = "4px solid rgba(0, 255, 234, 0.7)";
+          document.getElementById("footer").style.boxShadow = "-0px -3px 30px 5px rgba(0, 255, 234, 0.2)";
 
           document.getElementById("whiteToken").src = "Tokens/sideBet1TokenA.png";
           document.getElementById("redToken").src = "Tokens/sideBet1TokenB.png";
@@ -1057,12 +1064,14 @@
 
         else if (bet == "21+3") {
           sideBet2.style.borderColor = "rgba(255, 55, 250, 0.9)"; // purple
-          sideBet2.style.backgroundColor = "rgba(255, 55, 250, 0.1)"; // purple
+          sideBet2.style.backgroundColor = "rgba(255, 55, 250, 0.15)"; // purple
+          sideBet2.style.boxShadow = "-0px 0px 30px 5px rgba(255, 55, 250, 0.3)";
           sideBet2.style.borderWidth = "3px";
           sideBet2.style.transform = "translateY(2px)";
 
           sideBet1.style.borderColor = "rgb(239, 59, 46)";
           sideBet1.style.backgroundColor = "rgba(239, 59, 46, 0.2)"; 
+          sideBet1.style.boxShadow = "";
           sideBet1.style.borderWidth = "3px 3px 7px 3px";
           sideBet1.style.transform = "translateY(0px)";
 
@@ -1087,6 +1096,7 @@
           document.getElementById("footerTitle").innerHTML = " - Side Bet - ";
 
           document.getElementById("footer").style.borderTop = "4px solid rgba(255, 55, 250, 0.8)";
+          document.getElementById("footer").style.boxShadow = "-0px -3px 30px 5px rgba(255, 55, 250, 0.3)";
 
           document.getElementById("whiteToken").src = "Tokens/sideBet2TokenA.png";
           document.getElementById("redToken").src = "Tokens/sideBet2TokenB.png";
@@ -1115,6 +1125,9 @@
           sideBet1Title.style.color = "rgba(239, 59, 46, 0.9)";
           sideBet2Title.style.color = "rgba(239, 59, 46, 0.9)";
 
+          sideBet1.style.boxShadow = "";
+          sideBet2.style.boxShadow = "";
+
           if (mise213EnCours > 0) {
             document.getElementById("sideBet2Mise").style.opacity = "0.6";
           }
@@ -1134,6 +1147,7 @@
 
           // A adapter au DM state
             document.getElementById("footer").style.borderTop = "4px solid var(--footerBorderTop-Color)";
+            document.getElementById("footer").style.boxShadow = "-0px -3px 30px 5px rgba(239, 59, 46, 0.2)";
 
             document.getElementById("whiteToken").src = "Tokens/whiToken_darkMode.png";
             document.getElementById("redToken").src = "Tokens/redToken_darkMode.png";
@@ -1748,6 +1762,8 @@
 
                       document.getElementById("footer").classList.add('footerOnPartie');
 
+                      document.getElementById("footer").style.boxShadow = "-0px -3px 30px 5px rgba(239, 59, 46, 0.2)";
+
 
                       popSideBets();
 
@@ -2222,8 +2238,9 @@
                 success: function(response) {
                   $("#container3").html(response);
 
-                  popSideBets();
+                  document.getElementById("footer").style.boxShadow = "-0px -3px 30px 5px rgba(239, 59, 46, 0.2)";
 
+                  popSideBets();
 
                   // *Dark Mode State*
                   if (darkModeBool == true) {
