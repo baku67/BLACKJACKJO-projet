@@ -189,8 +189,8 @@
 
 
 	.pokerChips {
-		width: 4em;
-		height: 4em;
+		width: 4.5em;
+		height: 4.5em;
 		/* margin: 0.5em 0.3em; */
 		margin: 0em 1em 1em 0.3em;
 	}
@@ -435,13 +435,6 @@
 
 
 
-	#retourArriereImg {
-		width: 30px !important;
-		position: relative;
-		right: 185px;
-		top: 54px;
-		margin-top: 3px !important;
-	}
 
 
 
