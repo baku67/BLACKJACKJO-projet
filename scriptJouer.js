@@ -43,6 +43,7 @@
 
       let cartesSortiesPartie = [];
 
+
       var nbrCardsJoueur;
 
       var credits = 0;
@@ -61,6 +62,7 @@
       var miseLocked;
       var misePairLocked;
       var mise213Locked;
+
 
       var compteurDeck = cards.length;
       var compteurDeckMax = cards.length;
@@ -371,7 +373,7 @@
         var setTimeOutMultiplierBool = false;
         var darkModeBool = true;
         var SoundMuteBool = true;
-        // var toggleSpeed;
+        var toggleSpeed = false;
       }   
       
       
@@ -562,6 +564,7 @@
         credits = creditsConnected;
       }
       // ******************************** *
+
 
 
 
@@ -1204,6 +1207,8 @@
           document.getElementById("footer").style.borderTop = "4px solid rgba(0, 255, 234, 0.7)";
           document.getElementById("footer").style.boxShadow = "-0px -3px 30px 5px rgba(0, 255, 234, 0.2)";
 
+          document.getElementById("traitLumineuxFooter").style.background = "-webkit-linear-gradient(left, #10111b 0%, rgba(0, 255, 234, 0.8) 50%, #10111b 100%)";
+
           document.getElementById("whiteToken").src = "Tokens/sideBet1TokenA.png";
           document.getElementById("redToken").src = "Tokens/sideBet1TokenB.png";
           document.getElementById("greenToken").src = "Tokens/sideBet1TokenA.png";
@@ -1252,6 +1257,8 @@
 
           document.getElementById("footer").style.borderTop = "4px solid rgba(255, 55, 250, 0.8)";
           document.getElementById("footer").style.boxShadow = "-0px -3px 30px 5px rgba(255, 55, 250, 0.3)";
+
+          document.getElementById("traitLumineuxFooter").style.background = "-webkit-linear-gradient(left, #10111b 0%, rgba(255, 55, 250, 0.8) 50%, #10111b 100%)";
 
           document.getElementById("whiteToken").src = "Tokens/sideBet2TokenA.png";
           document.getElementById("redToken").src = "Tokens/sideBet2TokenB.png";
@@ -1305,6 +1312,8 @@
           // A adapter au DM state
             document.getElementById("footer").style.borderTop = "4px solid var(--footerBorderTop-Color)";
             document.getElementById("footer").style.boxShadow = "-0px -3px 30px 5px rgba(239, 59, 46, 0.4)";
+
+            document.getElementById("traitLumineuxFooter").style.background = "var(--traitFooterMise-color)";
 
             document.getElementById("whiteToken").src = "Tokens/whiToken_darkMode.png";
             document.getElementById("redToken").src = "Tokens/redToken_darkMode.png";
@@ -1888,6 +1897,7 @@
                           document.getElementById('backgroundToggleImage').src = "../Images/moonGrey.png";
                         }
 
+                        // toggleSpeed initteignable ici
                         if (document.querySelector('#speedToggleImage') !== null) {
                           if (toggleSpeed == true) {
                             document.querySelector('#speedToggleImage').src = "../Images/fastForwardWhite.png";
