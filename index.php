@@ -36,6 +36,8 @@
 				<script> 
 					isConnected = false; 
 					console.log('estPasConnecté');  
+					var toggleSpeed = false;
+
 				</script>
 
 		<?php

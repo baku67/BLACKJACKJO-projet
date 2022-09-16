@@ -373,7 +373,7 @@
         var setTimeOutMultiplierBool = false;
         var darkModeBool = true;
         var SoundMuteBool = true;
-        var toggleSpeed = false;
+        // var toggleSpeed = false;
       }   
       
       
@@ -3968,7 +3968,10 @@
         // Créer l'élément <img/>
         var img = document.createElement('img');
         // Pick l'objet et le stock dans une VAR
-        let pickedCardObject = cards[Math.floor(Math.random()*cards.length)]
+        let pickedCardObject = cards[Math.floor(Math.random()*cards.length)];
+        // Ajout de la carte pickée dans l'array cartesSortiesPartie
+        cartesSortiesPartie.unshift(pickedCardObject);
+        console.log("Tableau des cartes sorties *partie*: " + JSON.stringify(cartesSortiesPartie));
         // Associe la VALUE de la KEY "cardImageUrl", à l'attribut HTML de l'<img> créé
         img.src = pickedCardObject.cardImageURL;
 
@@ -4084,6 +4087,10 @@
 
         var img = document.createElement('img');
         let pickedCardObject = cards[Math.floor(Math.random()*cards.length)];
+        // Ajout de la carte pickée dans l'array cartesSortiesPartie
+        cartesSortiesPartie.unshift(pickedCardObject);
+        console.log("Tableau des cartes sorties *partie*: " + JSON.stringify(cartesSortiesPartie));
+        // Association de l'url image à la carte pickée
         img.src = pickedCardObject.cardImageURL;
         
 
