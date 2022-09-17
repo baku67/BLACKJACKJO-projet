@@ -575,40 +575,19 @@
 
 
 
-      // si vérifié, adapté le gain en fonction du ratio
-
       function checkPairResult() {
-        // A deplacer surement plus globalement à la partie:
         let pairBet = "null";
         let gainPairBet = 0;
 
 
         // "Pair" prend en compte les 2 premieres cards Joueur (les autres osef)
-        if ((cartesJoueurSortiesPartie[0].cardValue == cartesJoueurSortiesPartie[1].cardValue) && (cartesJoueurSortiesPartie[0].cardColor != cartesJoueurSortiesPartie[1].cardColor) && (cartesJoueurSortiesPartie[0].cardFamily != cartesJoueurSortiesPartie[1].cardFamily)) {
+        if ((cartesJoueurSortiesPartie[0].cardName == cartesJoueurSortiesPartie[1].cardName) && (cartesJoueurSortiesPartie[0].cardColor != cartesJoueurSortiesPartie[1].cardColor) && (cartesJoueurSortiesPartie[0].cardFamily != cartesJoueurSortiesPartie[1].cardFamily)) {
           pairBet = "mixedPair";
         }
-        else if ((cartesJoueurSortiesPartie[0].cardValue == cartesJoueurSortiesPartie[1].cardValue) && (cartesJoueurSortiesPartie[0].cardColor == cartesJoueurSortiesPartie[1].cardColor) && (cartesJoueurSortiesPartie[0].cardFamily != cartesJoueurSortiesPartie[1].cardFamily)) {
+        else if ((cartesJoueurSortiesPartie[0].cardName == cartesJoueurSortiesPartie[1].cardName) && (cartesJoueurSortiesPartie[0].cardColor == cartesJoueurSortiesPartie[1].cardColor) && (cartesJoueurSortiesPartie[0].cardFamily != cartesJoueurSortiesPartie[1].cardFamily)) {
           pairBet = "coloredPair";
         }
-        else if ((cartesJoueurSortiesPartie[0].cardValue == cartesJoueurSortiesPartie[1].cardValue) && (cartesJoueurSortiesPartie[0].cardColor == cartesJoueurSortiesPartie[1].cardColor) && (cartesJoueurSortiesPartie[0].cardFamily == cartesJoueurSortiesPartie[1].cardFamily)) {
-          pairBet = "perfectPair";
-        }
-        else {
-          // Au cas ou
-          pairBet = "null";
-        };
-        
-
-
-
-
-        if ((cartesJoueurSortiesPartie[0].cardValue == cartesJoueurSortiesPartie[1].cardValue) && (cartesJoueurSortiesPartie[0].cardColor != cartesJoueurSortiesPartie[1].cardColor) && (cartesJoueurSortiesPartie[0].cardFamily != cartesJoueurSortiesPartie[1].cardFamily)) {
-          pairBet = "mixedPair";
-        }
-        else if ((cartesJoueurSortiesPartie[0].cardValue == cartesJoueurSortiesPartie[1].cardValue) && (cartesJoueurSortiesPartie[0].cardColor == cartesJoueurSortiesPartie[1].cardColor) && (cartesJoueurSortiesPartie[0].cardFamily != cartesJoueurSortiesPartie[1].cardFamily)) {
-          pairBet = "coloredPair";
-        }
-        else if ((cartesJoueurSortiesPartie[0].cardValue == cartesJoueurSortiesPartie[1].cardValue) && (cartesJoueurSortiesPartie[0].cardColor == cartesJoueurSortiesPartie[1].cardColor) && (cartesJoueurSortiesPartie[0].cardFamily == cartesJoueurSortiesPartie[1].cardFamily)) {
+        else if ((cartesJoueurSortiesPartie[0].cardName == cartesJoueurSortiesPartie[1].cardName) && (cartesJoueurSortiesPartie[0].cardColor == cartesJoueurSortiesPartie[1].cardColor) && (cartesJoueurSortiesPartie[0].cardFamily == cartesJoueurSortiesPartie[1].cardFamily)) {
           pairBet = "perfectPair";
         }
         else {
@@ -624,17 +603,19 @@
             break;
 
           case "mixedPair":
-            gainPairBet = misePairLocked * 5;
+            gainPairBet = misePairLocked * 6;
             break;
 
           case "coloredPair": 
-            gainPairBet = misePairLocked * 10;
+            gainPairBet = misePairLocked * 12;
             break;
+
           case "perfectPair": 
-            gainPairBet = misePairLocked * 30;
+            gainPairBet = misePairLocked * 25;
           break;
         }
 
+        alert("[TEST] SideBet PAIR gain: " + pairBet + ", +" + gainPairBet);  
         return gainPairBet;
 
       }
@@ -643,6 +624,74 @@
 
 
       function check213Result() {
+
+        let bet213 = "null";
+        let gain213Bet = 0;
+
+        // 21+3 Prend en compte les 2 cartes joueurs et la première carte Croupier revealed (ici pas de card.color, seul la famille compte)
+        if (cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily == cartesSortiesPartie[2].cardFamily) {
+          bet213 = "flush" // 3 cartes meme FAMILLE
+        }
+        else {
+          // PAS FAIT: ATTENTION cardOrdre du AS = 14 ou 1 !   "Three cards of consecutive values, such as 2-3-4. Aces can be high or low"
+
+          // Si la valeur absolue de la diffrence entre les 2 premieres cardOrdre == 1 mais que famille différente (car straightFlush plus loin et plus importante), comparer l'une des deux à la troisieme et si diff == 1 encore, true (plus besoin de comparer les famille apres)
+          if (((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[1].cardOrdre) == 1) && (cartesSortiesPartie[0].cardFamily !== cartesSortiesPartie[1].cardFamily)) 
+            && ((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) || (Math.abs(cartesSortiesPartie[1].cardOrdre - cartesSortiesPartie[2].cardOrdre)))) {
+              bet213 = "straight"; // 3 cartes de suite
+          }
+          else {
+            if ((cartesJoueurSortiesPartie[0].cardName == cartesJoueurSortiesPartie[1].cardName) && (cartesJoueurSortiesPartie[0].cardName == cartesJoueurSortiesPartie[2].cardName)) {
+              bet213 = "Three of a kind"; // Brelan (3 cartes memes NOMS)
+            }
+            else {
+              if (((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[1].cardOrdre) == 1) && (cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily)) 
+                && ((((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) || (Math.abs(cartesSortiesPartie[1].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1)) && (cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[2].cardFamily)))) {
+                  bet213 = "Straight flush"; // 3 cartes de suite de la même FAMILLE
+              }
+              else {
+                if ((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily == cartesSortiesPartie[2].cardFamily) && (cartesSortiesPartie[0].cardName == cartesSortiesPartie[1].cardName == cartesSortiesPartie[2].cardName)) {
+                  bet213 = "Suited Trips"; // 3 cartes de la meme FAMILLE et meme NOMS
+                }
+                else {
+                  bet213 = "null"; // au cas ou
+                }
+              }
+            }
+          }
+        }
+
+        switch (bet213) {
+
+          case "null":
+            gain213Bet = 0;
+            break;
+
+          case "flush":
+            gain213Bet = mise213Locked * 5;
+            break;
+
+          case "straight": 
+            gain213Bet = mise213Locked * 10;
+            break;
+
+          case "Three of a kind": 
+            gain213Bet = mise213Locked * 30;
+            break;
+
+          case "Straight flush": 
+            gain213Bet = mise213Locked * 40;
+            break;
+
+          case "Suited Trips": 
+            gain213Bet = mise213Locked * 100;
+            break;
+
+        }
+
+        alert("[TEST] SideBet 21+3 gain: " + bet213 + ", +" + gain213Bet);  
+        return gain213Bet;
+
       }
 
 
@@ -2101,6 +2150,9 @@
 
         $("#relancer").click(function(){
 
+          // Evite le spam du reload():
+          document.querySelector("#relancer").disabled = true;
+
           if (document.getElementById("creditsConnected") !== null) {
             document.getElementById("creditsConnected").classList.remove("refreshCreditAnim");
           }
@@ -2906,10 +2958,16 @@
             addBackCardCroupier();
           }, (7250 * setTimeOutMultiplier));
 
+
           // Check le betPair (apres les 2 premieres cardJoueur), et return le gain:
           setTimeout( function() {
+
             gainPairBet = checkPairResult();
             console.log("SIDE BET PAIR GAIN: " + gainPairBet);  
+
+            gain213Bet = check213Result();
+            console.log("SIDE BET 21+3 GAIN: " + gain213Bet);  
+
           }, (6000 * setTimeOutMultiplier));
 
         })
@@ -3270,7 +3328,8 @@
                     setTimeout( function() {
                       gain = -miseLocked;
                       ajoutGain(gain);
-                      
+
+
 
                       winLose = -1;
                       winLoseDB(winLose);
@@ -3782,6 +3841,7 @@
         
           document.getElementById("whiteToken").addEventListener("click", function() {
           
+            // Les conditions sur mise normal affectent les sideBets
             if ((credits-miseEnCours) >= 1) {
     
               if (SoundMuteBool == false) {

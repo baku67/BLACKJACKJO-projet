@@ -1,3 +1,5 @@
+BUG SPAM RELOAD: il faut enlever le click sur le reload apres le 1er click ?!?!...  ......
+
 Le decrement CompteurDeck de la carte caché du croupier doit pas se faire lors du reveal mais lors de la distrib
 
 
