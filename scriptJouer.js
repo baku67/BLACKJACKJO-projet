@@ -41,13 +41,15 @@
       let logTokenValuesPair = [];
       let logTokenValues213 = [];
 
-      let cartesSortiesPartie = [];
+      var cartesSortiesPartie = [];
+      var cartesJoueurSortiesPartie = [];
 
 
       var nbrCardsJoueur;
 
       var credits = 0;
       var gain = 0;
+      var gainPairBet = 0;
 
       var newValue;
       var score = 0;
@@ -573,16 +575,74 @@
 
 
 
-
-
-
-
+      // si vérifié, adapté le gain en fonction du ratio
 
       function checkPairResult() {
-        // si vérifié, adapté le gain en fonction du ratio 
+        // A deplacer surement plus globalement à la partie:
+        let pairBet = "null";
+        let gainPairBet = 0;
+
+
+        // "Pair" prend en compte les 2 premieres cards Joueur (les autres osef)
+        if ((cartesJoueurSortiesPartie[0].cardValue == cartesJoueurSortiesPartie[1].cardValue) && (cartesJoueurSortiesPartie[0].cardColor != cartesJoueurSortiesPartie[1].cardColor) && (cartesJoueurSortiesPartie[0].cardFamily != cartesJoueurSortiesPartie[1].cardFamily)) {
+          pairBet = "mixedPair";
+        }
+        else if ((cartesJoueurSortiesPartie[0].cardValue == cartesJoueurSortiesPartie[1].cardValue) && (cartesJoueurSortiesPartie[0].cardColor == cartesJoueurSortiesPartie[1].cardColor) && (cartesJoueurSortiesPartie[0].cardFamily != cartesJoueurSortiesPartie[1].cardFamily)) {
+          pairBet = "coloredPair";
+        }
+        else if ((cartesJoueurSortiesPartie[0].cardValue == cartesJoueurSortiesPartie[1].cardValue) && (cartesJoueurSortiesPartie[0].cardColor == cartesJoueurSortiesPartie[1].cardColor) && (cartesJoueurSortiesPartie[0].cardFamily == cartesJoueurSortiesPartie[1].cardFamily)) {
+          pairBet = "perfectPair";
+        }
+        else {
+          // Au cas ou
+          pairBet = "null";
+        };
+        
+
+
+
+
+        if ((cartesJoueurSortiesPartie[0].cardValue == cartesJoueurSortiesPartie[1].cardValue) && (cartesJoueurSortiesPartie[0].cardColor != cartesJoueurSortiesPartie[1].cardColor) && (cartesJoueurSortiesPartie[0].cardFamily != cartesJoueurSortiesPartie[1].cardFamily)) {
+          pairBet = "mixedPair";
+        }
+        else if ((cartesJoueurSortiesPartie[0].cardValue == cartesJoueurSortiesPartie[1].cardValue) && (cartesJoueurSortiesPartie[0].cardColor == cartesJoueurSortiesPartie[1].cardColor) && (cartesJoueurSortiesPartie[0].cardFamily != cartesJoueurSortiesPartie[1].cardFamily)) {
+          pairBet = "coloredPair";
+        }
+        else if ((cartesJoueurSortiesPartie[0].cardValue == cartesJoueurSortiesPartie[1].cardValue) && (cartesJoueurSortiesPartie[0].cardColor == cartesJoueurSortiesPartie[1].cardColor) && (cartesJoueurSortiesPartie[0].cardFamily == cartesJoueurSortiesPartie[1].cardFamily)) {
+          pairBet = "perfectPair";
+        }
+        else {
+          // Au cas ou
+          pairBet = "null";
+        };
+
+
+        switch (pairBet) {
+
+          case "null":
+            gainPairBet = 0;
+            break;
+
+          case "mixedPair":
+            gainPairBet = misePairLocked * 5;
+            break;
+
+          case "coloredPair": 
+            gainPairBet = misePairLocked * 10;
+            break;
+          case "perfectPair": 
+            gainPairBet = misePairLocked * 30;
+          break;
+        }
+
+        return gainPairBet;
+
       }
+
+
+
+
       function check213Result() {
-        // si vérifié, adapté le gain en fonction du ratio 
       }
 
 
@@ -1520,7 +1580,9 @@
                   removed = false;
 
                   logTokenValues = [];
+
                   cartesSortiesPartie = [];
+                  cartesJoueurSortiesPartie = [];
 
                   nbrCardsJoueur = 0;
 
@@ -2081,6 +2143,7 @@
               }
 
               cartesSortiesPartie = [];
+              cartesJoueurSortiesPartie = [];
 
               asJoueur = false;
               nbrCardsJoueur = 0;
@@ -2707,20 +2770,23 @@
                     }
                   }
 
-                document.getElementById("hit").addEventListener("click", function() {
+                if (document.getElementById("hit") !== null) {
+                  document.getElementById("hit").addEventListener("click", function() {
 
 
-                  document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
+                    document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
+  
+                    animAlertOnClickChoix();
+  
+                    
+                    animsBouton("hit");
+                    // setTimeout(function() {
+                      hit();
+                    // }, 750)
+  
+                  });
+                }
 
-                  animAlertOnClickChoix();
-
-                  
-                  animsBouton("hit");
-                  // setTimeout(function() {
-                    hit();
-                  // }, 750)
-
-                });
                 
                 //***  shortcut Hit
                   function doc_keyHit(e) {
@@ -2731,36 +2797,38 @@
                   document.addEventListener('keyup', doc_keyHit, false);
                 // *** FIN
 
+                if (document.getElementById("stand") !== null) {
+                  document.getElementById("stand").addEventListener("click", function() {
 
-                document.getElementById("stand").addEventListener("click", function() {
-
-                  document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
-                  document.getElementById('traitUnderlineInverseChoix').classList.add("traitUnderlineInverse2FlashChoix");
-
-
-                  // Plutot mettre un fade out ou voir l'anim (trop brusque le depop) TimeOut trop long 
-                  document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
-                  document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert2");
-                  setTimeout(function() {
-                    if (document.getElementById("phaseChoixAlert") !==null ) {
-                      document.getElementById("phaseChoixAlert").remove();
+                    document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
+                    document.getElementById('traitUnderlineInverseChoix').classList.add("traitUnderlineInverse2FlashChoix");
+  
+  
+                    // Plutot mettre un fade out ou voir l'anim (trop brusque le depop) TimeOut trop long 
+                    document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
+                    document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert2");
+                    setTimeout(function() {
+                      if (document.getElementById("phaseChoixAlert") !==null ) {
+                        document.getElementById("phaseChoixAlert").remove();
+                      }
+                    }, 2901);
+  
+                    
+                    // Si AS parmis les 2 premieres cartes distribuées: (on est dans miseLock() )
+                    if (asJoueur == true) {
+                      if (scoreTotalJoueur + 10 < 22) {
+                        scoreTotalJoueur = scoreTotalJoueur + 10;
+                      }
+                      document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;
                     }
-                  }, 2901);
+                    animsBouton("stand");
+                    setTimeout(function() {
+                      lancerPhaseCroupier();
+                    }, 750)
+  
+                  });
+                }
 
-                  
-                  // Si AS parmis les 2 premieres cartes distribuées: (on est dans miseLock() )
-                  if (asJoueur == true) {
-                    if (scoreTotalJoueur + 10 < 22) {
-                      scoreTotalJoueur = scoreTotalJoueur + 10;
-                    }
-                    document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;
-                  }
-                  animsBouton("stand");
-                  setTimeout(function() {
-                    lancerPhaseCroupier();
-                  }, 750)
-
-                });
 
                   //***  shortcut Stand
                   function doc_keyStand(e) {
@@ -2771,29 +2839,33 @@
                   document.addEventListener('keyup', doc_keyStand, false);
                   //*** FIN
 
-                document.getElementById("double").addEventListener("click", function() {
 
-                  document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
-                  document.getElementById('traitUnderlineInverseChoix').classList.add("traitUnderlineInverse2FlashChoix");
+                if (document.getElementById("double") !== null) {
+                  document.getElementById("double").addEventListener("click", function() {
 
+                    document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
+                    document.getElementById('traitUnderlineInverseChoix').classList.add("traitUnderlineInverse2FlashChoix");
+  
+  
+                    // Plutot mettre un fade out ou voir l'anim (trop brusque le depop) TimeOut trop long 
+                    document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
+                    document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert2");
+                    setTimeout(function() {
+                      if (document.getElementById("phaseChoixAlert") !==null ) {
+                        document.getElementById("phaseChoixAlert").remove();
+                      }
+                    }, 2901);
+  
+                    // animAlertOnClickChoix();
+  
+                    animsBouton("double");
+                    setTimeout(function() {
+                      double();
+                    }, 750)
+  
+                  });
+                }
 
-                  // Plutot mettre un fade out ou voir l'anim (trop brusque le depop) TimeOut trop long 
-                  document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
-                  document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert2");
-                  setTimeout(function() {
-                    if (document.getElementById("phaseChoixAlert") !==null ) {
-                      document.getElementById("phaseChoixAlert").remove();
-                    }
-                  }, 2901);
-
-                  // animAlertOnClickChoix();
-
-                  animsBouton("double");
-                  setTimeout(function() {
-                    double();
-                  }, 750)
-
-                });
 
                 //***  shortcut Double
                 function doc_keyDouble(e) {
@@ -2833,6 +2905,12 @@
           setTimeout(function() {
             addBackCardCroupier();
           }, (7250 * setTimeOutMultiplier));
+
+          // Check le betPair (apres les 2 premieres cardJoueur), et return le gain:
+          setTimeout( function() {
+            gainPairBet = checkPairResult();
+            console.log("SIDE BET PAIR GAIN: " + gainPairBet);  
+          }, (6000 * setTimeOutMultiplier));
 
         })
       }
@@ -3192,6 +3270,7 @@
                     setTimeout( function() {
                       gain = -miseLocked;
                       ajoutGain(gain);
+                      
 
                       winLose = -1;
                       winLoseDB(winLose);
@@ -4089,6 +4168,7 @@
         let pickedCardObject = cards[Math.floor(Math.random()*cards.length)];
         // Ajout de la carte pickée dans l'array cartesSortiesPartie
         cartesSortiesPartie.unshift(pickedCardObject);
+        cartesJoueurSortiesPartie.unshift(pickedCardObject);
         console.log("Tableau des cartes sorties *partie*: " + JSON.stringify(cartesSortiesPartie));
         // Association de l'url image à la carte pickée
         img.src = pickedCardObject.cardImageURL;
