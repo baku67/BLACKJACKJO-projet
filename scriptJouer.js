@@ -574,13 +574,13 @@
 
 
 
-
+      // Le proc pair empeche le proc 21+3 'brelan'? (Sinon je check d'abors pour le 21+3, toujours supérieur??)
+      // "Pair" prend en compte les 2 premieres cards Joueur (les autres osef)
       function checkPairResult() {
+
         let pairBet = "null";
         let gainPairBet = 0;
 
-
-        // "Pair" prend en compte les 2 premieres cards Joueur (les autres osef)
         if ((cartesJoueurSortiesPartie[0].cardName == cartesJoueurSortiesPartie[1].cardName) && (cartesJoueurSortiesPartie[0].cardColor != cartesJoueurSortiesPartie[1].cardColor) && (cartesJoueurSortiesPartie[0].cardFamily != cartesJoueurSortiesPartie[1].cardFamily)) {
           pairBet = "mixedPair";
         }
@@ -622,13 +622,12 @@
 
 
 
-
+      // 21+3 Prend en compte les 2 cartes joueurs et la première carte Croupier revealed (ici pas de card.color, seul la famille compte)
       function check213Result() {
 
         let bet213 = "null";
         let gain213Bet = 0;
 
-        // 21+3 Prend en compte les 2 cartes joueurs et la première carte Croupier revealed (ici pas de card.color, seul la famille compte)
         if (cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily == cartesSortiesPartie[2].cardFamily) {
           bet213 = "flush" // 3 cartes meme FAMILLE
         }
@@ -636,12 +635,13 @@
           // PAS FAIT: ATTENTION cardOrdre du AS = 14 ou 1 !   "Three cards of consecutive values, such as 2-3-4. Aces can be high or low"
 
           // Si la valeur absolue de la diffrence entre les 2 premieres cardOrdre == 1 mais que famille différente (car straightFlush plus loin et plus importante), comparer l'une des deux à la troisieme et si diff == 1 encore, true (plus besoin de comparer les famille apres)
-          if (((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[1].cardOrdre) == 1) && (cartesSortiesPartie[0].cardFamily !== cartesSortiesPartie[1].cardFamily)) 
-            && ((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) || (Math.abs(cartesSortiesPartie[1].cardOrdre - cartesSortiesPartie[2].cardOrdre)))) {
-              bet213 = "straight"; // 3 cartes de suite
+          if (((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[1].cardOrdre) == 1) && ((cartesSortiesPartie[0].cardFamily !== cartesSortiesPartie[1].cardFamily) || (cartesSortiesPartie[1].cardFamily !== cartesSortiesPartie[2].cardFamily))) 
+            && ((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) && (Math.abs(cartesSortiesPartie[1].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1))) {
+              console.log("********************tb cartes sorties (global): " + JSON.stringify(cartesSortiesPartie));
+              bet213 = "straight"; // 3 cartes de suite+
           }
           else {
-            if ((cartesJoueurSortiesPartie[0].cardName == cartesJoueurSortiesPartie[1].cardName) && (cartesJoueurSortiesPartie[0].cardName == cartesJoueurSortiesPartie[2].cardName)) {
+            if ((cartesSortiesPartie[0].cardName == cartesSortiesPartie[1].cardName) && (cartesSortiesPartie[0].cardName == cartesSortiesPartie[2].cardName)) {
               bet213 = "Three of a kind"; // Brelan (3 cartes memes NOMS)
             }
             else {
@@ -1420,7 +1420,7 @@
 
           // A adapter au DM state
             document.getElementById("footer").style.borderTop = "4px solid var(--footerBorderTop-Color)";
-            document.getElementById("footer").style.boxShadow = "-0px -3px 30px 5px rgba(239, 59, 46, 0.4)";
+            document.getElementById("footer").style.boxShadow = "-0px -3px 30px 5px rgba(239, 59, 46, 0.5)";
 
             document.getElementById("traitLumineuxFooter").style.background = "var(--traitFooterMise-color)";
 
@@ -2172,6 +2172,9 @@
           }, 0);
           // Fin refresh
 
+          toggleSideBet = "normal";
+          document.getElementById("traitLumineuxFooter").style.background = "var(--traitFooterMise-color)";
+
           var winLose = 0;
 
           doubleBool = 0;
@@ -2717,7 +2720,9 @@
 
           // Depop du sideBet et retour borderTopFooter normal
           document.getElementById("sideBetDiv").remove();
+          document.getElementById("traitLumineuxFooter").style.background = "var(--traitFooterMise-color)";
           document.getElementById("footer").style.borderTop = "4px solid var(--footerBorderTop-Color)";
+          document.getElementById("footer").style.boxShadow = "";
 
           // Anims miserAlert
           document.getElementById('textMise').classList.add("phaseMiserAlert2Flash");
@@ -2811,6 +2816,7 @@
               success: function(response) {
                 $("#chipsContainer").html(response);
 
+                document.getElementById("footer").style.boxShadow = "-0px -3px 30px 5px rgba(239, 59, 46, 0.5)";
 
                 ChoixActif = true;
                 document.getElementById("footerTitle").innerHTML = " - Choix -";
@@ -3022,7 +3028,7 @@
             success: function(response) {
               ChoixActif = true;
 
-              
+              document.getElementById("footer").style.boxShadow = "-0px -3px 30px 5px rgba(239, 59, 46, 0.5)";
 
               $("#chipsContainer").html(response);
               document.getElementById("footerTitle").innerHTML = " - Choix -";
@@ -4110,7 +4116,7 @@
         let pickedCardObject = cards[Math.floor(Math.random()*cards.length)];
         // Ajout de la carte pickée dans l'array cartesSortiesPartie
         cartesSortiesPartie.unshift(pickedCardObject);
-        console.log("Tableau des cartes sorties *partie*: " + JSON.stringify(cartesSortiesPartie));
+        // console.log("Tableau des cartes sorties *partie*: " + JSON.stringify(cartesSortiesPartie));
         // Associe la VALUE de la KEY "cardImageUrl", à l'attribut HTML de l'<img> créé
         img.src = pickedCardObject.cardImageURL;
 
@@ -4229,7 +4235,7 @@
         // Ajout de la carte pickée dans l'array cartesSortiesPartie
         cartesSortiesPartie.unshift(pickedCardObject);
         cartesJoueurSortiesPartie.unshift(pickedCardObject);
-        console.log("Tableau des cartes sorties *partie*: " + JSON.stringify(cartesSortiesPartie));
+        // console.log("Tableau des cartes sorties *partie*: " + JSON.stringify(cartesSortiesPartie));
         // Association de l'url image à la carte pickée
         img.src = pickedCardObject.cardImageURL;
         

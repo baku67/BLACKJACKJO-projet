@@ -1,5 +1,11 @@
 BUG SPAM RELOAD: il faut enlever le click sur le reload apres le 1er click ?!?!...  ......
 
+IDEE d'un casino: 1) Buster blackjack features a side bet that allows the player to bet that the ... initial four cards: four of a kind, two pair, three of a kind, and pair;.
+5-Card Charlie and its counterparts 6- and 7-Card Charlie alternate as a table rule or side bet in blackjack casinos. As a table rule, if you are dealt five cards and don't bust (and the dealer doesn't have blackjack), you have a 5-Card Charlie and win. The side bet has the same objective and rules, only you have to wager on yourself landing it.
+Alternatively called Lucky 7s or Crazy 7s, Super 7s is a side bet made on your first two cards and the dealer's upcard. If your first card is a seven, you win the wager. The payout increases if your second card and the dealer's upcard are sevens too, and of the same suit.
+Lucky Ladies
+This side bet takes the most common great hand in blackjack (20) and turns it into a fun wager with amazing payouts. You are betting on your first two cards totaling 20 and ideally containing at least one Queen. If your hand has more Queens, or matching suits, your payout increases greatly:
+
 Le decrement CompteurDeck de la carte caché du croupier doit pas se faire lors du reveal mais lors de la distrib
 
 
