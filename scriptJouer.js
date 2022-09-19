@@ -59,10 +59,10 @@
       var isPhaseMise = false;
 
       var miseEnCours;
-      var misePairEnCours;
+      var misePairEnCours = 0;
       var mise213EnCours;
       var miseLocked;
-      var misePairLocked;
+      var misePairLocked = 0;
       var mise213Locked;
 
 
@@ -578,7 +578,7 @@
       // "Pair" prend en compte les 2 premieres cards Joueur (les autres osef)
       function checkPairResult() {
 
-        let pairBet = "null";
+        let pairBet = "Lost";
         let gainPairBet = 0;
 
         if ((cartesJoueurSortiesPartie[0].cardName == cartesJoueurSortiesPartie[1].cardName) && (cartesJoueurSortiesPartie[0].cardColor != cartesJoueurSortiesPartie[1].cardColor) && (cartesJoueurSortiesPartie[0].cardFamily != cartesJoueurSortiesPartie[1].cardFamily)) {
@@ -591,14 +591,13 @@
           pairBet = "perfectPair";
         }
         else {
-          // Au cas ou
-          pairBet = "null";
+          pairBet = "Lost";
         };
 
 
         switch (pairBet) {
 
-          case "null":
+          case "Lost":
             gainPairBet = 0;
             break;
 
@@ -615,21 +614,33 @@
           break;
         }
 
-        alert("[TEST] SideBet PAIR gain: " + pairBet + ", +" + gainPairBet);  
-        return gainPairBet;
+        setTimeout(function() {
+          // Autre que perdu, proc que si miseBet présente:
+          if ((pairBet != "Lost") && (misePairLocked > 0)) {
+            var pairBetText;
+            if(pairBet == "mixedPair") {pairBetText = "Mixed Pair"} else if(pairBet == "coloredPair") {pairBetText = "Colored Pair";} else if(pairBet == "perfectPair") {pairBetText = "Perfect Pair";}
+            document.getElementById("misePairLocked").innerHTML = pairBetText; 
+            document.getElementById("misePairLocked").classList.add("misePairProcTextAnim");  
+          }
+          // Perdu avec miseBet présente:
+          else if ((pairBet == "Lost") && (misePairLocked > 0)) {
+            document.getElementById("misePairLocked").innerHTML = "<span style='font-size:1.7rem; font-weight:bold;'>&#10008;</span> Lost";
+            document.getElementById("misePairLocked").classList.add("misePairProcTextAnim");  
+          }  
+        }, 750)      
 
+        return gainPairBet;
       }
 
 
 
-      // 21+3 Prend en compte les 2 cartes joueurs et la première carte Croupier revealed (ici pas de card.color, seul la famille compte)
       function check213Result() {
 
-        let bet213 = "null";
+        let bet213 = "Lost";
         let gain213Bet = 0;
 
         if (cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily == cartesSortiesPartie[2].cardFamily) {
-          bet213 = "flush" // 3 cartes meme FAMILLE
+          bet213 = "Flush" // 3 cartes meme FAMILLE
         }
         else {
           // PAS FAIT: ATTENTION cardOrdre du AS = 14 ou 1 !   "Three cards of consecutive values, such as 2-3-4. Aces can be high or low"
@@ -637,8 +648,7 @@
           // Si la valeur absolue de la diffrence entre les 2 premieres cardOrdre == 1 mais que famille différente (car straightFlush plus loin et plus importante), comparer l'une des deux à la troisieme et si diff == 1 encore, true (plus besoin de comparer les famille apres)
           if (((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[1].cardOrdre) == 1) && ((cartesSortiesPartie[0].cardFamily !== cartesSortiesPartie[1].cardFamily) || (cartesSortiesPartie[1].cardFamily !== cartesSortiesPartie[2].cardFamily))) 
             && ((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) && (Math.abs(cartesSortiesPartie[1].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1))) {
-              console.log("********************tb cartes sorties (global): " + JSON.stringify(cartesSortiesPartie));
-              bet213 = "straight"; // 3 cartes de suite+
+              bet213 = "Straight"; // 3 cartes de suite
           }
           else {
             if ((cartesSortiesPartie[0].cardName == cartesSortiesPartie[1].cardName) && (cartesSortiesPartie[0].cardName == cartesSortiesPartie[2].cardName)) {
@@ -647,14 +657,14 @@
             else {
               if (((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[1].cardOrdre) == 1) && (cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily)) 
                 && ((((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) || (Math.abs(cartesSortiesPartie[1].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1)) && (cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[2].cardFamily)))) {
-                  bet213 = "Straight flush"; // 3 cartes de suite de la même FAMILLE
+                  bet213 = "Straight Flush"; // 3 cartes de suite de la même FAMILLE
               }
               else {
                 if ((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily == cartesSortiesPartie[2].cardFamily) && (cartesSortiesPartie[0].cardName == cartesSortiesPartie[1].cardName == cartesSortiesPartie[2].cardName)) {
                   bet213 = "Suited Trips"; // 3 cartes de la meme FAMILLE et meme NOMS
                 }
                 else {
-                  bet213 = "null"; // au cas ou
+                  bet213 = "Lost"; 
                 }
               }
             }
@@ -663,15 +673,15 @@
 
         switch (bet213) {
 
-          case "null":
+          case "Lost":
             gain213Bet = 0;
             break;
 
-          case "flush":
+          case "Flush":
             gain213Bet = mise213Locked * 5;
             break;
 
-          case "straight": 
+          case "Straight": 
             gain213Bet = mise213Locked * 10;
             break;
 
@@ -679,7 +689,7 @@
             gain213Bet = mise213Locked * 30;
             break;
 
-          case "Straight flush": 
+          case "Straight Flush": 
             gain213Bet = mise213Locked * 40;
             break;
 
@@ -689,7 +699,19 @@
 
         }
 
-        alert("[TEST] SideBet 21+3 gain: " + bet213 + ", +" + gain213Bet);  
+        setTimeout( function() {
+          // Autre que perdu, proc que si miseBet présente:
+          if ((bet213 != "Lost") && (mise213Locked > 0)) {
+              document.getElementById("mise213Locked").innerHTML = bet213;
+                document.getElementById("mise213Locked").classList.add("mise213ProcTextAnim");   
+          }
+          // Perdu avec miseBet présente:
+          else if ((bet213 == "Lost") && (mise213Locked > 0)) {
+            document.getElementById("mise213Locked").innerHTML = "<span style='font-size:1.7rem; font-weight:bold;'>&#10008;</span> Lost";
+              document.getElementById("mise213Locked").classList.add("mise213ProcTextAnim");   
+          }
+        }, 750)
+                
         return gain213Bet;
 
       }
@@ -2550,50 +2572,151 @@
 
     
       function DecrementGain() {
-
-        if (SoundMuteBool == false) {
-          audioDecompte.play();
-        }
+          if (SoundMuteBool == false) {
+            audioDecompte.play();
+          }
 
         setTimeout( function() {
             if (miseLocked > 0) {
             miseLocked = miseLocked - 1;
             if ( isConnected == true) {
-              document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBarre.png" class="imagesSouResultat">';
+              document.getElementById("miseResultatTxt").innerHTML = miseLocked;
             }
             else {
-              document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBlancBarre.png" class="imagesSouResultat">';
+              document.getElementById("miseResultatTxt").innerHTML = miseLocked;
             }            
-            document.getElementById("miseResultat").classList.add("addColorToResultatRed");
+            document.getElementById("miseResultatTxt").classList.add("addColorToResultatRed");
             DecrementGain();
             }
         }, (210/miseLocked) * setTimeOutMultiplier);
       } 
 
-
-
       function IncrementGain(miseLockedMultiplied) {
-
-        if (SoundMuteBool == false) {
-          audioDecompte.play();
-        }
-
-        misesResultatDiff = miseLockedMultiplied - miseLocked;
+          if (SoundMuteBool == false) {
+            audioDecompte.play();
+          }
+          misesResultatDiff = miseLockedMultiplied - miseLocked;
 
         setTimeout( function() {
             if (miseLocked < miseLockedMultiplied) {
-            miseLocked = miseLocked + 1;
-            if ( isConnected == true) {
-              document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBarre.png" class="imagesSouResultat">';
-            }
-            else {
-              document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBlancBarre.png" class="imagesSouResultat">';
-            }            
-            document.getElementById("miseResultat").classList.add("addColorToResultatBJ");
-            IncrementGain(miseLockedMultiplied);
+              miseLocked = miseLocked + 1;
+              if ( isConnected == true) {
+                document.getElementById("miseResultatTxt").innerHTML = miseLocked;
+              }
+              else {
+                document.getElementById("miseResultatTxt").innerHTML = miseLocked;
+              }            
+              document.getElementById("miseResultatTxt").classList.add("addColorToResultatBJ");
+              IncrementGain(miseLockedMultiplied);
             }
         }, (210/misesResultatDiff) * setTimeOutMultiplier);
       } 
+    
+
+
+
+
+      function IncrDecrGainPair(gainPairBet) {
+
+        var resultatPairDiff = Math.abs(gainPairBet - misePairLocked);
+
+        if (gainPairBet > 0) {
+          IncrementGainPair(gainPairBet);
+        }
+        else {
+          decrementPairGain();
+        }
+
+        function IncrementGainPair(gainPairBet) {
+          setTimeout( function() {
+            if (misePairLocked < gainPairBet) {
+              misePairLocked = misePairLocked + 1;
+              if ( isConnected == true) {
+                document.getElementById("misePairResultatTxt").innerHTML = misePairLocked;
+              }
+              else {
+                document.getElementById("misePairResultatTxt").innerHTML = misePairLocked;
+              }            
+              // document.getElementById("miseResultatTxt").classList.add("addColorToResultatBJ");
+              IncrementGainPair(gainPairBet);
+            }
+          }, (210/resultatPairDiff) * setTimeOutMultiplier);
+        }
+
+        function decrementPairGain() {
+          setTimeout( function() {
+            if (misePairLocked > 0) {
+              misePairLocked = misePairLocked - 1;
+            if ( isConnected == true) {
+              document.getElementById("misePairResultatTxt").innerHTML = misePairLocked;
+            }
+            else {
+              document.getElementById("misePairResultatTxt").innerHTML = misePairLocked;
+            }            
+            // document.getElementById("miseResultatTxt").classList.add("addColorToResultatBJ");
+            decrementPairGain();
+            }
+          }, (210/resultatPairDiff) * setTimeOutMultiplier);
+        }
+      }
+
+
+
+
+
+      function IncrDecrGain213(gain213Bet) {
+
+        var resultatPairDiff = Math.abs(gain213Bet - mise213Locked);
+
+        if (gain213Bet > 0) {
+          IncrementGain213(gain213Bet);
+        }
+        else {
+          decrement213Gain();
+        }
+
+        function IncrementGain213(gain213Bet) {
+          setTimeout( function() {
+            if (mise213Locked < gain213Bet) {
+              mise213Locked = mise213Locked + 1;
+              if ( isConnected == true) {
+                document.getElementById("mise213ResultatTxt").innerHTML = mise213Locked;
+              }
+              else {
+                document.getElementById("mise213ResultatTxt").innerHTML = mise213Locked;
+              }            
+              // document.getElementById("miseResultatTxt").classList.add("addColorToResultatBJ");
+              IncrementGain213(gain213Bet);
+            }
+          }, (210/resultatPairDiff) * setTimeOutMultiplier);
+        }
+
+        function decrement213Gain() {
+          setTimeout( function() {
+            if (mise213Locked > 0) {
+              mise213Locked = mise213Locked - 1;
+            if ( isConnected == true) {
+              document.getElementById("mise213ResultatTxt").innerHTML = mise213Locked;
+            }
+            else {
+              document.getElementById("mise213ResultatTxt").innerHTML = mise213Locked;
+            }            
+            // document.getElementById("miseResultatTxt").classList.add("addColorToResultatBJ");
+            decrement213Gain();
+            }
+          }, (210/resultatPairDiff) * setTimeOutMultiplier);
+        }
+      }
+      
+
+      
+    
+  
+    
+
+        
+        
+      
 
 
 
@@ -2750,34 +2873,86 @@
 
           document.querySelector("#boutonMiser").style.opacity = "0.4";
           
+          // Vérouillage des mises
           miseLocked = miseEnCours;
           misePairLocked = misePairEnCours;
           mise213Locked = mise213EnCours;
 
           console.log("Mises Lockées: \n" + "miseLocked: " + miseLocked + ",\n" + "misePairLocked: " + misePairLocked + ",\n" + "mise213Locked: " + mise213EnCours + ".");
 
-          // Apparition du miseLock
+
+          // Creation des elem avant Apparition des mises Locked sous le deck
           let miseLockedElement = document.createElement('span');
           miseLockedElement.setAttribute('id', 'miseLocked');
-          miseLockedElement.setAttribute('style', 'font-family:"Holtwood One SC", serif;');
-
           document.getElementById("deckContainer").append(miseLockedElement);
           document.getElementById("miseLocked").classList.add('miseLockedAnim');
 
+          // Saut de ligne 
+          document.getElementById("deckContainer").append(document.createElement("br"));
 
+          let misePairLockedElement = document.createElement("span");
+          misePairLockedElement.setAttribute("id", "misePairLocked");
+          misePairLockedElement.classList.add("misePairLockedAnim");
+          document.getElementById("deckContainer").append(misePairLockedElement);
+
+          // Saut de ligne 
+          document.getElementById("deckContainer").append(document.createElement("br"));
+
+          let mise213LockedElement = document.createElement("span");
+          mise213LockedElement.setAttribute("id", "mise213Locked");
+          mise213LockedElement.classList.add("mise213LockedAnim");
+          document.getElementById("deckContainer").append(mise213LockedElement);
+          // Fin
+
+
+          // SideBets miselocked grisés si == 0
+          // if (misePairLocked == 0) {
+          //   document.getElementById("misePairLocked").style.opacity = "0.4";
+          //   document.getElementById("misePairLocked").style.color = "grey";
+          //   // Image Sou grisé et ajout ID ci-dessous ducoup
+          // }
+          // if (mise213Locked == 0) {
+          //   document.getElementById("mise213Locked").style.opacity = "0.4";
+          //   document.getElementById("mise213Locked").style.color = "grey";
+          //   // Image Sou grisé et ajout ID ci-dessous ducoup
+          // }
+          // Fin
+
+
+          // Pop des misesLocked sous le deck
           if (isConnected == false) {
             // TimeOut pour ajouter le chiffre apres l'anim du miseLockContainer (bugué):
             // setTimeout(function() {
               document.getElementById("miseLocked").innerHTML = 
               "<span id='miseLockedNbr'>" + miseLocked + "</span><img src='Images/souBlancBarre.png' class='imageSouPetit' style='margin-left:2px;'/>";
-            // }, 800)
+            
+              if (misePairLocked > 0) {
+                document.getElementById("misePairLocked").innerHTML = 
+                "<span id='misePairLockedNbr'>" + misePairLocked + "</span><img src='Images/souBlancBarre.png' class='imageSouSideBets' style='margin-left:2px;'/>";  
+              }
+              
+              if (mise213Locked > 0) {
+                document.getElementById("mise213Locked").innerHTML = 
+                "<span id='mise213LockedNbr'>" + mise213Locked + "</span><img src='Images/souBlancBarre.png' class='imageSouSideBets' style='margin-left:2px;'/>";  
+              }
+              // }, 800)
           }
           else if (isConnected == true) {
             // TimeOut pour ajouter le chiffre apres l'anim du miseLockContainer (bugué):
             // setTimeout(function() {
               document.getElementById("miseLocked").innerHTML = 
               "<span id='miseLockedNbr'>" + miseLocked + "</span><img src='Images/souBarre.png' class='imageSouPetit' style='margin-left:2px;'/>";
-            // }, 800)
+            
+              if (misePairLocked > 0) {
+                document.getElementById("misePairLocked").innerHTML = 
+                "<span id='misePairLockedNbr'>" + misePairLocked + "</span><img src='Images/souBarre.png' class='imageSouSideBets' style='margin-left:2px;'/>";
+              }
+            
+              if (mise213Locked > 0) {
+                document.getElementById("mise213Locked").innerHTML = 
+                "<span id='mise213LockedNbr'>" + mise213Locked + "</span><img src='Images/souBarre.png' class='imageSouSideBets' style='margin-left:2px;'/>";  
+              }
+              // }, 800)
           }
 
           if (isConnected == false) {
@@ -3240,6 +3415,25 @@
 
 
 
+      function removeSideBetsFooter() {
+        if (misePairLocked == 0) {
+          document.getElementById("footerResultatLinePair").remove();
+        }
+        if (mise213Locked == 0) {
+          document.getElementById("footerResultatLine213").remove();
+        } 
+        if ((misePairLocked == 0) && (mise213Locked == 0)) {
+          document.getElementById("footerResultatLine").style.top = "50%";
+          document.getElementById("footerResultatLine").style.transform = "translateX(20px)";
+          document.getElementById("footerResultatLine").style.transform = "translateY(-50%)";
+        }
+        // XOR existe pas en JS
+        else if ((misePairLocked != 0) && (mise213Locked == 0) || (misePairLocked == 0) && (mise213Locked != 0)) {
+          // Pour bien centré si i y a 1 seul bet (mais bon)
+        }
+      }
+
+
 
 
 
@@ -3311,24 +3505,39 @@
                     $("#container3").html(response);
                     console.log(scoreTotalCroupier);
                     ChoixActif = false;
-                    document.getElementById("footerTitle").innerHTML = " - Résultat -";
+                    document.getElementById("footerTitle").innerHTML = " - Gains -";
 
                     document.getElementById("gainExp").innerText = "+20 XP";
 
                     // Mise lockée
                     document.getElementById("miseLockedFooter").innerHTML = miseLocked;
+                    document.getElementById("misePairLockedFooter").innerHTML = misePairLocked;
+                    document.getElementById("mise213LockedFooter").innerHTML = mise213Locked;
                     // fin
 
                     // Résultat Gains 
                     if ( isConnected == true) {
-                      document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBarre.png" class="imagesSouResultat">';
+                      document.getElementById("miseResultat").innerHTML = "<span id='miseResultatTxt'>" + miseLocked + '</span><img src="Images/souBarre.png" class="imagesSouResultat">';
+                      document.getElementById("misePairResultat").innerHTML = "<span id='misePairResultatTxt'>" + misePairLocked + '</span><img src="Images/souBarre.png" class="imageSouSideBets">';
+                      document.getElementById("mise213Resultat").innerHTML = "<span id='mise213ResultatTxt'>" + mise213Locked + '</span><img src="Images/souBarre.png" class="imageSouSideBets">';
                     }
                     else {
-                      document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBlancBarre.png" class="imagesSouResultat">';
-                    }                    
+                      document.getElementById("miseResultat").innerHTML = "<span id='miseResultatTxt'>" + miseLocked + '</span><img src="Images/souBlancBarre.png" class="imagesSouResultat">';
+                      document.getElementById("misePairResultat").innerHTML = "<span id='misePairResultatTxt'>" + misePairLocked + '</span><img src="Images/souBlancBarre.png" class="imageSouSideBets">';
+                      document.getElementById("mise213Resultat").innerHTML = "<span id='mise213ResultatTxt'>" + mise213Locked + '</span><img src="Images/souBlancBarre.png" class="imageSouSideBets">';
+                    }       
+                    
+                    removeSideBetsFooter();
+
                     setTimeout( function() {
                       DecrementGain();
                     }, 1500); 
+                    setTimeout( function() {
+                      IncrDecrGainPair(gainPairBet);
+                    }, 1750);
+                    setTimeout( function() {
+                      IncrDecrGain213(gain213Bet);
+                    }, 2000);
 
                     // WIP gain (ajouter effet refresh CSS)
                     setTimeout( function() {
@@ -3429,24 +3638,39 @@
                     success: function(response) {
                       $("#container3").html(response);
                       ChoixActif = false;
-                      document.getElementById("footerTitle").innerHTML = " - Résultat -";
+                      document.getElementById("footerTitle").innerHTML = " - Gains -";
 
                         document.getElementById("gainExp").innerText = "+100 XP";
     
                         // Mise lockée
                         document.getElementById("miseLockedFooter").innerHTML = miseLocked;
+                        document.getElementById("misePairLockedFooter").innerHTML = misePairLocked;
+                        document.getElementById("mise213LockedFooter").innerHTML = mise213Locked;
                         // fin
     
                         // Résultat Gains 
                         if ( isConnected == true) {
-                          document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBarre.png" class="imagesSouResultat">';
+                          document.getElementById("miseResultat").innerHTML = "<span id='miseResultatTxt'>" + miseLocked + '</span><img src="Images/souBarre.png" class="imagesSouResultat">';
+                          document.getElementById("misePairResultat").innerHTML = "<span id='misePairResultatTxt'>" + misePairLocked + '</span><img src="Images/souBarre.png" class="imageSouSideBets">';
+                          document.getElementById("mise213Resultat").innerHTML = "<span id='mise213ResultatTxt'>" + mise213Locked + '</span><img src="Images/souBarre.png" class="imageSouSideBets">';
                         }
                         else {
-                          document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBlancBarre.png" class="imagesSouResultat">';
-                        }                      
+                          document.getElementById("miseResultat").innerHTML = "<span id='miseResultatTxt'>" + miseLocked + '</span><img src="Images/souBlancBarre.png" class="imagesSouResultat">';
+                          document.getElementById("misePairResultat").innerHTML = "<span id='misePairResultatTxt'>" + misePairLocked + '</span><img src="Images/souBlancBarre.png" class="imageSouSideBets">';
+                          document.getElementById("mise213Resultat").innerHTML = "<span id='mise213ResultatTxt'>" + mise213Locked + '</span><img src="Images/souBlancBarre.png" class="imageSouSideBets">';
+                        }  
+                        
+                        removeSideBetsFooter();
+
                         setTimeout( function() {
                           IncrementGain(miseLockedMultiplied);
                         }, 1500);
+                        setTimeout( function() {
+                          IncrDecrGainPair(gainPairBet);
+                        }, 1750);
+                        setTimeout( function() {
+                          IncrDecrGain213(gain213Bet);
+                        }, 2000);
 
                         setTimeout( function() {
                           gain = miseLocked;
@@ -3538,24 +3762,39 @@
                     success: function(response) {
                       $("#container3").html(response);
                       ChoixActif = false;
-                      document.getElementById("footerTitle").innerHTML = " - Résultat -";
+                      document.getElementById("footerTitle").innerHTML = " - Gains -";
 
                       document.getElementById("gainExp").innerText = "+100 XP";
     
                       // Mise lockée
                       document.getElementById("miseLockedFooter").innerHTML = miseLocked;
+                      document.getElementById("misePairLockedFooter").innerHTML = misePairLocked;
+                      document.getElementById("mise213LockedFooter").innerHTML = mise213Locked;
                       // fin
   
                       // Résultat Gains 
                       if ( isConnected == true) {
-                        document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBarre.png" class="imagesSouResultat">';
+                        document.getElementById("miseResultat").innerHTML = "<span id='miseResultatTxt'>" + miseLocked + '</span><img src="Images/souBarre.png" class="imagesSouResultat">';
+                        document.getElementById("misePairResultat").innerHTML = "<span id='misePairResultatTxt'>" + misePairLocked + '</span><img src="Images/souBarre.png" class="imageSouSideBets">';
+                        document.getElementById("mise213Resultat").innerHTML = "<span id='mise213ResultatTxt'>" + mise213Locked + '</span><img src="Images/souBarre.png" class="imageSouSideBets">';
                       }
                       else {
-                        document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBlancBarre.png" class="imagesSouResultat">';
-                      }                        
+                        document.getElementById("miseResultat").innerHTML = "<span id='miseResultatTxt'>" + miseLocked + '</span><img src="Images/souBlancBarre.png" class="imagesSouResultat">';
+                        document.getElementById("misePairResultat").innerHTML = "<span id='misePairResultatTxt'>" + misePairLocked + '</span><img src="Images/souBlancBarre.png" class="imageSouSideBets">';
+                        document.getElementById("mise213Resultat").innerHTML = "<span id='mise213ResultatTxt'>" + mise213Locked + '</span><img src="Images/souBlancBarre.png" class="imageSouSideBets">';
+                      }   
+                      
+                      removeSideBetsFooter();
+
                       setTimeout( function() {
                         IncrementGain(miseLockedMultiplied);
                       }, 1500);
+                      setTimeout( function() {
+                        IncrDecrGainPair(gainPairBet);
+                      }, 1750);
+                      setTimeout( function() {
+                        IncrDecrGain213(gain213Bet);
+                      }, 2000);
 
                       setTimeout( function() {
                         gain = miseLocked;
@@ -3640,21 +3879,30 @@
                   success: function(response) {
                     $("#container3").html(response);
                     ChoixActif = false;
-                    document.getElementById("footerTitle").innerHTML = " - Résultat -";
+                    document.getElementById("footerTitle").innerHTML = " - Gains -";
 
                     document.getElementById("gainExp").innerText = "+50 XP";
     
                     // Mise lockée
                     document.getElementById("miseLockedFooter").innerHTML = miseLocked;
+                    document.getElementById("misePairLockedFooter").innerHTML = misePairLocked;
+                    document.getElementById("mise213LockedFooter").innerHTML = mise213Locked;
                     // fin
 
                     // Résultat Gains 
                     if ( isConnected == true) {
-                      document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBarre.png" class="imagesSouResultat">';
+                      document.getElementById("miseResultat").innerHTML = "<span id='miseResultatTxt'>" + miseLocked + '</span><img src="Images/souBarre.png" class="imagesSouResultat">';
+                      document.getElementById("misePairResultat").innerHTML = "<span id='misePairResultatTxt'>" + misePairLocked + '</span><img src="Images/souBarre.png" class="imageSouSideBets">';
+                      document.getElementById("mise213Resultat").innerHTML = "<span id='mise213ResultatTxt'>" + mise213Locked + '</span><img src="Images/souBarre.png" class="imageSouSideBets">';
                     }
                     else {
-                      document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBlancBarre.png" class="imagesSouResultat">';
+                      document.getElementById("miseResultat").innerHTML = "<span id='miseResultatTxt'>" + miseLocked + '</span><img src="Images/souBlancBarre.png" class="imagesSouResultat">';
+                      document.getElementById("misePairResultat").innerHTML = "<span id='misePairResultatTxt'>" + misePairLocked + '</span><img src="Images/souBlancBarre.png" class="imageSouSideBets">';
+                      document.getElementById("mise213Resultat").innerHTML = "<span id='mise213ResultatTxt'>" + mise213Locked + '</span><img src="Images/souBlancBarre.png" class="imageSouSideBets">';
                     }
+
+                    removeSideBetsFooter();
+
                     setTimeout( function() {
                       gain = 0;
                       ajoutGain(gain);
@@ -3663,6 +3911,13 @@
 
                     }, 500);
 
+                    setTimeout( function() {
+                      IncrDecrGainPair(gainPairBet);
+                    }, 1750);
+                    setTimeout( function() {
+                      IncrDecrGain213(gain213Bet);
+                    }, 2000);
+                    
                     expDB(50);
 
                     refreshLvl();
@@ -4729,24 +4984,39 @@
                 success: function(response) {
                   $("#container3").html(response);
                   ChoixActif = false;
-                  document.getElementById("footerTitle").innerHTML = " - Résultat -";
+                  document.getElementById("footerTitle").innerHTML = " - Gains -";
 
                     document.getElementById("gainExp").innerText = "+20 XP";
 
                     // Mise lockée
                     document.getElementById("miseLockedFooter").innerHTML = miseLocked;
+                    document.getElementById("misePairLockedFooter").innerHTML = misePairLocked;
+                    document.getElementById("mise213LockedFooter").innerHTML = mise213Locked;
                     // fin
 
                     // Résultat Gains 
                     if ( isConnected == true) {
-                      document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBarre.png" class="imagesSouResultat">';
+                      document.getElementById("miseResultat").innerHTML = "<span id='miseResultatTxt'>" + miseLocked + '</span><img src="Images/souBarre.png" class="imagesSouResultat">';
+                      document.getElementById("misePairResultat").innerHTML = "<span id='misePairResultatTxt'>" + misePairLocked + '</span><img src="Images/souBarre.png" class="imageSouSideBets">';
+                      document.getElementById("mise213Resultat").innerHTML = "<span id='mise213ResultatTxt'>" + mise213Locked + '</span><img src="Images/souBarre.png" class="imageSouSideBets">';
                     }
                     else {
-                      document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBlancBarre.png" class="imagesSouResultat">';
-                    }                    
+                      document.getElementById("miseResultat").innerHTML = "<span id='miseResultatTxt'>" + miseLocked + '</span><img src="Images/souBlancBarre.png" class="imagesSouResultat">';
+                      document.getElementById("misePairResultat").innerHTML = "<span id='misePairResultatTxt'>" + misePairLocked + '</span><img src="Images/souBlancBarre.png" class="imageSouSideBets">';
+                      document.getElementById("mise213Resultat").innerHTML = "<span id='mise213ResultatTxt'>" + mise213Locked + '</span><img src="Images/souBlancBarre.png" class="imageSouSideBets">';
+                    }  
+                    
+                    removeSideBetsFooter();
+
                     setTimeout( function() {
                       DecrementGain();
                     }, 1500);
+                    setTimeout( function() {
+                      IncrDecrGainPair(gainPairBet);
+                    }, 1750);
+                    setTimeout( function() {
+                      IncrDecrGain213(gain213Bet);
+                    }, 2000);
 
                     // WIP gain (ajouter effet refresh CSS)
                       setTimeout( function() {
@@ -4875,25 +5145,40 @@
               success: function(response) {
                 $("#container3").html(response);
                 ChoixActif = false;
-                document.getElementById("footerTitle").innerHTML = " - Résultat -";
+                document.getElementById("footerTitle").innerHTML = " - Gains -";
 
                   document.getElementById("gainExp").innerText = "+250 XP";
 
                   // Mise lockée
                   document.getElementById("miseLockedFooter").innerHTML = miseLocked;
+                  document.getElementById("misePairLockedFooter").innerHTML = misePairLocked;
+                  document.getElementById("mise213LockedFooter").innerHTML = mise213Locked;
                   // fin
 
                   // Résultat Gains 
                   var miseLockedMultiplied = 3 * miseLocked;
                   if ( isConnected == true) {
-                    document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBarre.png" class="imagesSouResultat">';
+                    document.getElementById("miseResultat").innerHTML = "<span id='miseResultatTxt'>" + miseLocked + '</span><img src="Images/souBarre.png" class="imagesSouResultat">';
+                    document.getElementById("misePairResultat").innerHTML = "<span id='misePairResultatTxt'>" + misePairLocked + '</span><img src="Images/souBarre.png" class="imageSouSideBets">';
+                    document.getElementById("mise213Resultat").innerHTML = "<span id='mise213ResultatTxt'>" + mise213Locked + '</span><img src="Images/souBarre.png" class="imageSouSideBets">';
                   }
                   else {
-                    document.getElementById("miseResultat").innerHTML = miseLocked + '<img src="Images/souBlancBarre.png" class="imagesSouResultat">';
-                  }                  
+                    document.getElementById("miseResultat").innerHTML = "<span id='miseResultatTxt'>" + miseLocked + '</span><img src="Images/souBlancBarre.png" class="imagesSouResultat">';
+                    document.getElementById("misePairResultat").innerHTML = "<span id='misePairResultatTxt'>" + misePairLocked + '</span><img src="Images/souBlancBarre.png" class="imageSouSideBets">';
+                    document.getElementById("mise213Resultat").innerHTML = "<span id='mise213ResultatTxt'>" + mise213Locked + '</span><img src="Images/souBlancBarre.png" class="imageSouSideBets">';
+                  }    
+                  
+                  removeSideBetsFooter();
+
                   setTimeout( function() {
                     IncrementGain(miseLockedMultiplied);
                   }, 1500);
+                  setTimeout( function() {
+                    IncrDecrGainPair(gainPairBet);
+                  }, 1750);
+                  setTimeout( function() {
+                    IncrDecrGain213(gain213Bet);
+                  }, 2000);
                   
                   // WIP gain (ajouter effet refresh CSS)
                   setTimeout( function() {

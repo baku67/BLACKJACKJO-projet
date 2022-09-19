@@ -177,13 +177,6 @@
 
 
 
-
-			<!-- WIP jauge Streak -->
-			<!-- <div id="jaugeStreakBarre" style="position:relative; margin:auto; width:53%; height:2px; background-color:white; top:-10px;">
-			</div> -->
-			<!-- Fin WIP jauge -->
-
-
 			<!-- WIP jauge -->
 
 				

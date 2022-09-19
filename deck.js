@@ -1,5 +1,167 @@
 
   let cards = [
+    
+    // *** TEST: proc pair
+    // C2a = {
+    //   cardImageURL: "cartes\\2S.png",
+    //   cardValue: 2,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "2",
+    //   cardOrdre: 2
+    // },
+    // C2b = {
+    //   cardImageURL: "cartes\\2D.png",
+    //   cardValue: 2,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "2",
+    //   cardOrdre: 2
+    // },
+    // C2c = {
+    //   cardImageURL: "cartes\\2S.png",
+    //   cardValue: 2,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "2",
+    //   cardOrdre: 2
+    // },
+    // C2d = {
+    //   cardImageURL: "cartes\\2D.png",
+    //   cardValue: 2,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "2",
+    //   cardOrdre: 2
+    // },
+    // C2e = {
+    //   cardImageURL: "cartes\\2S.png",
+    //   cardValue: 2,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "2",
+    //   cardOrdre: 2
+    // },
+    // C2f = {
+    //   cardImageURL: "cartes\\2D.png",
+    //   cardValue: 2,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "2",
+    //   cardOrdre: 2
+    // },
+    // C2g = {
+    //   cardImageURL: "cartes\\2S.png",
+    //   cardValue: 2,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "2",
+    //   cardOrdre: 2
+    // },
+    // C2h = {
+    //   cardImageURL: "cartes\\2D.png",
+    //   cardValue: 2,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "2",
+    //   cardOrdre: 2
+    // },
+    // C2i = {
+    //   cardImageURL: "cartes\\2S.png",
+    //   cardValue: 2,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "2",
+    //   cardOrdre: 2
+    // },
+    // C2j = {
+    //   cardImageURL: "cartes\\2D.png",
+    //   cardValue: 2,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "2",
+    //   cardOrdre: 2
+    // },
+    // C2k = {
+    //   cardImageURL: "cartes\\2S.png",
+    //   cardValue: 2,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "2",
+    //   cardOrdre: 2
+    // },
+    // C2l = {
+    //   cardImageURL: "cartes\\2D.png",
+    //   cardValue: 2,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "2",
+    //   cardOrdre: 2
+    // },
+    // C2m = {
+    //   cardImageURL: "cartes\\2S.png",
+    //   cardValue: 2,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "2",
+    //   cardOrdre: 2
+    // },
+    // C2n = {
+    //   cardImageURL: "cartes\\2D.png",
+    //   cardValue: 2,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "2",
+    //   cardOrdre: 2
+    // },
+    // C2o = {
+    //   cardImageURL: "cartes\\2S.png",
+    //   cardValue: 2,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "2",
+    //   cardOrdre: 2
+    // },
+    // C2p = {
+    //   cardImageURL: "cartes\\2D.png",
+    //   cardValue: 2,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "2",
+    //   cardOrdre: 2
+    // },
+    // C2q = {
+    //   cardImageURL: "cartes\\2S.png",
+    //   cardValue: 2,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "2",
+    //   cardOrdre: 2
+    // },
+    // C2r = {
+    //   cardImageURL: "cartes\\2D.png",
+    //   cardValue: 2,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "2",
+    //   cardOrdre: 2
+    // },C2s = {
+    //   cardImageURL: "cartes\\2S.png",
+    //   cardValue: 2,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "2",
+    //   cardOrdre: 2
+    // },
+    // C2t = {
+    //   cardImageURL: "cartes\\2D.png",
+    //   cardValue: 2,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "2",
+    //   cardOrdre: 2
+    // }
+
     // 1er Deck
     C2a = {
       cardImageURL: "cartes\\2S.png",

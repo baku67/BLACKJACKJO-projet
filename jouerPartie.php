@@ -6,7 +6,7 @@
     <span id="compteurDeck"></span> &nbsp; / &nbsp; <span id="compteurDeckMax"></span><!--<img src="Images/deckIcon.png" style="width:40px;"/>-->
     <br>
     <img id="imgCardDeck" class="imgPartie" style="margin-top: 5px;">
-    <br><br>
+    <br>
     
     <!-- MiseLocked popé from JS -->
     <!-- <span id="miseLocked" style="font-family:'Holtwood One SC', serif;"></span> -->
@@ -61,23 +61,6 @@
                 </div>            
             </li>
         </ul>
-
-
-
-
-
-
-
-        <!-- Trait lumineux -->
-        <!-- <div id="traitLumineux" class="divider light" style="visibility: hidden;"></div>
-        <br> -->
-        <!-- Fin -->
-
-        <!-- WIP jauge -->
-        <!-- <div id="jaugeContainer">
-            
-        </div> -->
-        <!-- Fin WIP jauge -->
 
 
 

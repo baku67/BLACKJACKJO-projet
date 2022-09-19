@@ -1,4 +1,19 @@
-BUG SPAM RELOAD: il faut enlever le click sur le reload apres le 1er click ?!?!...  ......
+IDEE footerResultat: au milieu le gain globale (additions des 3 mises (+X2?)  ->  Additions des 3 gains), et les 3 détails en petits à gauche ?
+Anim/FADE IN des resultats gain !! (truc stylé c'est important ici)
+
+
+ALORS: le flash degeueu du coin onResultat c'est parce que la fonction Increment/decrement re-rend la ligne avec le sou inclu a chaque +/- 1 !!!  (Pire optimisation)
+
+
+
+SIDE BETS MISE ET PROC A DROITE ET MISE NORMALE A GAUCHE ????
+Jusqu'à mises Lock: affichage Param, après: aaffichage sideBets (file:///C:/Users/basil/OneDrive/Documents/ShareX/Screenshots/2022-09/DCtGXvp4f7.png)
+
+
+
+
+
+
 
 IDEE d'un casino: 1) Buster blackjack features a side bet that allows the player to bet that the ... initial four cards: four of a kind, two pair, three of a kind, and pair;.
 5-Card Charlie and its counterparts 6- and 7-Card Charlie alternate as a table rule or side bet in blackjack casinos. As a table rule, if you are dealt five cards and don't bust (and the dealer doesn't have blackjack), you have a 5-Card Charlie and win. The side bet has the same objective and rules, only you have to wager on yourself landing it.
@@ -14,9 +29,6 @@ Faire les misesBDD  (les 3) + refresh credits front (+ les sideBets)
 Puis enfin passer à la prise en compte mise (et par la meme retravailler la miseBDD et les messages d'alertes si userLeave, ET Melange des cartes pour pas softBlock !)
 
 Mettre les sideBetMiseEnCours inline-flex avec le sou pour centrer (pour l'instant juste chiffre + <img> dans la div) 
-
-
-(pas bloquant?) Bug du toggleSpeed undefined quand switch from DM to LM en mode Invite pendant phase mise
 
 
 

@@ -1,20 +1,34 @@
 <div id="footerResultatContainer">
 
-    <h1 id="resultatFooter" style="text-align:center; margin-block-start:0.2em;">Gains</h1>
+    <!-- <h1 id="resultatFooter" style="text-align:center; margin-block-start:0.2em;">Gains</h1> -->
 
     <div id="footerResultatLine">
         <p id="miseLockedFooter"></p>
-        <img src="Images/arrowResultat.png" id="arrowResultat">
+        <img src="Images/arrowResultat.png" class="arrowResultat">
         <p id="miseResultat"></p>
+    </div>
+    <br>
+    <div id="footerResultatLinePair">
+        <p id="misePairLockedFooter"></p>
+        <img src="Images/arrowResultat.png" class="arrowResultatSideBets">
+        <p id="misePairResultat"></p>
+    </div>
+    <br>
+    <div id="footerResultatLine213">
+        <p id="mise213LockedFooter"></p>
+        <img src="Images/arrowResultat.png" class="arrowResultatSideBets">
+        <p id="mise213Resultat"></p>
     </div>
 
 
     <script>
         if (isConnected == false) {
-            document.getElementById("gainExp").style.opacity = "0";
+            document.getElementById("gainExp").style.color = "grey";
+            document.getElementById("gainExp").style.opacity = "0.7";
         }
     </script>
     <p id="gainExp"></p>
+    <!-- Jauge XP miniature ? -->
 
 
 </div>

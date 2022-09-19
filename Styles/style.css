@@ -592,11 +592,13 @@ input:-webkit-autofill{
 
 
 
-
 #gainExp {
-	color:gold; 
-	margin-top:2vh; 
-	font-size:2.5vh;
+	color: gold; 
+	font-size: 3.5vh;
+	position: absolute;
+	left: 7%;
+	top: 50%;
+	opacity: 0.9;
 }
 
 
@@ -752,9 +754,9 @@ button, input[type="submit"], input[type="reset"] {
 	/* Pour le line-height:  */
 	font-size: 1.5em;
 
-	border-color: var(--borderColor-miseLocked);
+	/* border-color: var(--borderColor-miseLocked);
 	border-style: solid;
-	border-width: 0px;
+	border-width: 0px; */
 
 
     border-radius: 0px;
@@ -762,7 +764,7 @@ button, input[type="submit"], input[type="reset"] {
 	padding: 0px 0px 0px 0px;
 }
 .miseLockedAnim {
-	animation: miseLockedContainerPop1 0.33s ease-in-out forwards, miseLockedContainerPop2 0.33s 0.6s ease-in-out forwards !important;
+	/* animation: miseLockedContainerPop1 0.33s ease-in-out forwards, miseLockedContainerPop2 0.33s 0.6s ease-in-out forwards !important; */
 }
 /* Tant qu'on met pas en place le pop de l'element miseLockedNbr, pas d'adaptation du padding pour combler l'espace vide  */
 @keyframes miseLockedContainerPop1 {
@@ -793,7 +795,76 @@ button, input[type="submit"], input[type="reset"] {
 	color:rgb(241 205 92 / 95%); 
 	font-size:1.8rem; 
 	text-shadow: 0 0 4px rgb(255 213 2);
+	font-family: "Holtwood One SC", serif;
 }
+#misePairLockedNbr {
+	color:rgba(0, 255, 234, 0.95); 
+	font-size:1.3rem; 
+	text-shadow: 0 0 4px rgba(0, 255, 234, 1);
+	font-family: "Holtwood One SC", serif;
+}
+#mise213LockedNbr {
+	color:rgba(255, 55, 250, 0.95); 
+	font-size:1.3rem; 
+	text-shadow: 0 0 4px rgba(255, 55, 250, 1);
+	font-family: "Holtwood One SC", serif;
+}
+.misePairProcTextAnim {
+	color:rgba(0, 255, 234, 0.7); 
+	font-family: 'Kavoon', cursive;
+	font-size: 1.3rem; 
+	/* letter-spacing: 2px; */
+	font-weight: 100;
+	text-shadow: 0 0 4px rgba(0, 255, 234, 0.4);
+
+	position: relative;
+	top: 10px;
+
+	width: 88px;
+	display: inline-block;
+
+	/* fadeIN */
+	opacity: 0;
+	animation: fadeInBetProc 0.5s 1 forwards normal ease-in-out;
+}
+.mise213ProcTextAnim {
+	color:rgba(255, 55, 250, 0.80); 
+	font-family: 'Kavoon', cursive;
+	font-size: 1.3rem; 
+	/* letter-spacing: 2px; */
+	font-weight: 100;
+	text-shadow: 0 0 4px rgba(255, 55, 250, 0.4);
+
+	position: relative;
+	top: 20px;
+
+	width: 88px;
+	display: inline-block;
+
+	/* fadeIN */
+	opacity: 0;
+	animation: fadeInBetProc 0.5s 1 forwards normal ease-in-out;
+}
+@keyframes fadeInBetProc {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+.misePairProcTextAnimFadeOut {
+	animation: fadeOutBetProc 0.5s 1 forwards normal ease-in-out;
+}
+@keyframes fadeOutBetProc {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
 .imageSouPetit {
 	height: 45px; 
 	position: relative; 
@@ -815,9 +886,8 @@ button, input[type="submit"], input[type="reset"] {
 }
 .imagesSouResultat {
 	height: 140px; 
-	position: absolute; 
-	bottom: 35px;
-	/* nice */
+	/* position: absolute; 
+	bottom: 35px; */
 	opacity: 0.9;
 }
 .imageSouDeco {
@@ -3738,26 +3808,99 @@ p {
 
 
 
+#footerResultatContainer {
+	margin-top: 7px;
+}
+#footerResultatLinePair {
+	margin-top: 7px;
+
+	display: inline-flex;
+	height: 3em;
+
+	position: relative;
+	transform: translateX(15px);
+}
+#footerResultatLine213 {
+	margin-bottom: 0px;
+
+	display: inline-flex;
+	height: 3em;
+
+	position: relative;
+	transform: translateX(15px);
+}
+
 #miseLockedFooter {
-	font-size: 2.3em;
+	font-size: 2.2em;
 	font-family: "Holtwood One SC", serif;
 
-	margin-right: 50px;
+	margin-right: 35px;
+}
+#misePairLockedFooter {
+	font-size: 1.5em;
+	font-family: "Holtwood One SC", serif;
+	margin-right: 20px;
+
+	position: relative;
+	top: 12%;
+	/* transform: translateY(-50%); */
+}
+#mise213LockedFooter {
+	font-size: 1.5em;
+	font-family: "Holtwood One SC", serif;
+	margin-right: 20px;
+
+	position: relative;
+	top: 12%;
+	/* transform: translateY(-50%); */
 }
 #miseResultat {
 	font-size: 2.3em;
 	font-family: "Holtwood One SC", serif;
 
-	margin-left: 50px;
+	margin-left: 35px;
+}
+#miseResultatTxt {
+	position: relative;
+	bottom: 35%;
+}
+#misePairResultat {
+	font-size: 1.5em;
+	font-family: "Holtwood One SC", serif;
+
+	margin-left: 20px;
+}
+#mise213Resultat {
+	font-size: 1.5em;
+	font-family: "Holtwood One SC", serif;
+
+	margin-left: 20px;
 }
 #footerResultatLine {
 	display: inline-flex;
 	height: 3em;
+
+	position: relative;
+	transform: translateX(20px);
 }
-#arrowResultat {
+/* #footerResultatLineSideBets {
+	display: inline-flex;
+	height: 3em;
+
+	position: relative;
+	transform: translateX(15px);
+} */
+.arrowResultat {
 	height: 40px;
 	position: relative;
 	top: 8px;
+}
+.arrowResultatSideBets {
+	height: 20px;
+
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 .addColorToResultatRed {
