@@ -818,7 +818,7 @@ button, input[type="submit"], input[type="reset"] {
 	text-shadow: 0 0 4px rgba(0, 255, 234, 0.4);
 
 	position: relative;
-	top: 10px;
+	/* top: 10px; */
 
 	width: 88px;
 	display: inline-block;
@@ -836,7 +836,7 @@ button, input[type="submit"], input[type="reset"] {
 	text-shadow: 0 0 4px rgba(255, 55, 250, 0.4);
 
 	position: relative;
-	top: 20px;
+	/* top: 20px; */
 
 	width: 88px;
 	display: inline-block;

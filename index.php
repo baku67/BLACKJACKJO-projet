@@ -84,6 +84,9 @@
 		<!-- Modal dailyReward -->
 		<div id="dailyRewardDiv" style="display:none; opacity:0; position:absolute; left:100%; border-radius:10px; box-shadow: 0px 9px 0px rgba(0, 0, 0, 0.9); width:54%; height:9%; padding:2% 4% 4% 4%; font-weight:400; top:50%; left:50%; transform:translate(-50%, -50%); z-index:2; background-color:rgba(239, 59, 46, 1); text-align:center; font-size:1.9em; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color:rgb(17 19 31); border:3px solid black;">Daily Reward: <br><p id="amountDailyReward" style="position:relative; top:50%; transform:translateY(-50%); padding:17px 20px; width:40%; text-align:center; margin:auto; border-radius:7px; border:3px solid rgb(42 37 37 / 80%); background-color:rgb(215 47 35); box-shadow:rgb(0 0 0 / 90%);"><i class="fa-solid fa-meteor fa-beat" style="position:fixed; left:10%; bottom:13%; color:#11131f; font-size:1.7em; opacity:0.9;"></i> +100</p></div>
 		
+		<!-- Modal confirmation leave Game -->
+		<div id="modalLeave" style="display:none; opacity:0; position:absolute; left:100%; border-radius:10px; box-shadow: 0px 9px 0px rgba(0, 0, 0, 0.9); width:54%; height:15%; padding:2% 4% 4% 4%; font-weight:400; top:50%; left:50%; transform:translate(-50%, -50%); z-index:2; background-color:rgba(239, 59, 46, 1); text-align:center; font-size:1.9em; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color:rgb(17 19 31); border:3px solid black;">Si vous quittez la partie maintenant, vos mises seront perdues. Continuer ?<br><br><div style="display:inline;"><button id="confirm">Oui</button><button id="cancel">Annuler</button></div></div>
+
 		<!-- Fin -->
 
 
@@ -99,7 +102,11 @@
 					<ul id="onglets" class="indexFadeInOnglets1">
 						<li class="onglet"><button id="guide">Guide</button></li>
 						<li class="onglet" ><a id="jouer" href="index.php" >JOUER !</a></li>
-						<li class="onglet"><button id="historique">Historique</button></li>
+						<?php  if (!isset($_SESSION['username'])) : ?>
+							<li class="onglet"><button id="historique">Historique</button></li>
+						<?php  elseif (isset($_SESSION['username'])) : ?>
+							<li class="onglet"><button id="historique">Compte</button></li>
+						<?php endif ?>
 					</ul>
 				</div>
 			</header>

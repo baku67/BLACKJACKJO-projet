@@ -2,11 +2,12 @@ IDEE footerResultat: au milieu le gain globale (additions des 3 mises (+X2?)  ->
 Anim/FADE IN des resultats gain !! (truc stylé c'est important ici)
 
 
-ALORS: le flash degeueu du coin onResultat c'est parce que la fonction Increment/decrement re-rend la ligne avec le sou inclu a chaque +/- 1 !!!  (Pire optimisation)
+
+Faire deja le FRONT: miseLockBets (credits-) et le gainBet (credits+)
 
 
+onMiseLock: faire slide vers le centre le mise et les sideBets (Pour sideBets, remplace les param?)
 
-SIDE BETS MISE ET PROC A DROITE ET MISE NORMALE A GAUCHE ????
 Jusqu'à mises Lock: affichage Param, après: aaffichage sideBets (file:///C:/Users/basil/OneDrive/Documents/ShareX/Screenshots/2022-09/DCtGXvp4f7.png)
 
 

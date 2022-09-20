@@ -21,12 +21,13 @@
     <div style="display:inline-flex;">
         <p style="font-weight:bold; font-size:1.5em; opacity:0.6;">100 </p><!--<img class="imagesSou" src="Images/souBlanc.png"/>-->
     </div>
-    <br/><br/>
+    <br>
     <p style="position:relative; width:100%; font-size:1.35em; padding-right:35px; opacity:0.4;">Decks</p>
     
     <div style="display:inline-flex;">
         <p style="font-weight:bold; font-size:1.5em; opacity:0.6;">2 </p><!--<img class="imagesSou" src="Images/paquets.png"/>-->
     </div>
+    <br><br>
 </div>
 
 

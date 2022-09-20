@@ -49,7 +49,10 @@
 
       var credits = 0;
       var gain = 0;
+      var gainFront = 0;
       var gainPairBet = 0;
+
+      var ingame = false;
 
       var newValue;
       var score = 0;
@@ -264,6 +267,7 @@
           })  
         }, 600);
       }
+
 
 
 
@@ -708,7 +712,12 @@
           // Perdu avec miseBet présente:
           else if ((bet213 == "Lost") && (mise213Locked > 0)) {
             document.getElementById("mise213Locked").innerHTML = "<span style='font-size:1.7rem; font-weight:bold;'>&#10008;</span> Lost";
-              document.getElementById("mise213Locked").classList.add("mise213ProcTextAnim");   
+              document.getElementById("mise213Locked").classList.add("mise213ProcTextAnim");  
+          }
+            
+          // Si les 2 bets actif, position du 21+3
+          if ((misePairLocked > 0) && (mise213Locked > 0)) {
+            document.getElementById("mise213Locked").style.top = "10px";
           }
         }, 750)
                 
@@ -790,334 +799,398 @@
 
 
 
-        // A mettre dans un fichier différent
         $("#historique").click(function() {
 
+          // Modal Confirmation if ingame (ingame Fait), à ajouter pour Jouer et Guide aussi
+          
+          // Cancel
+          document.getElementById("cancel").addEventListener("click", function() {
+            setTimeout(function() {
+              document.getElementById("modalLeave").style.display = "none";
+              document.getElementById("modalLeave").style.left = "-50% !important";
+            }, 500)
 
-          $("#container1").load("historique.php", function() {
+            setTimeout(function() {
+              document.getElementById("modalLeave").classList.remove('fadeInDailyReward');
+              document.getElementById("modalLeave").classList.add('fadeOutDailyRewards');
+            }, 50)    
+
+            document.getElementById('footer').classList.remove("is-blurred");
+            document.getElementById('header').classList.remove("is-blurred");
+            document.getElementById('container1').classList.remove("is-blurred");
+            document.getElementById('connectionContainer').classList.remove("is-blurred");
+            document.getElementById('jaugeContainerMaster').classList.remove("is-blurred");    
+          })
+
+          if (ingame == true) {
+            document.getElementById("modalLeave").style.display = "block";
+            document.getElementById("modalLeave").classList.remove('fadeOutDailyRewards');
+            document.getElementById("modalLeave").classList.add('fadeInDailyReward');
+
+            document.getElementById('footer').classList.add("is-blurred");
+            document.getElementById('header').classList.add("is-blurred");
+            document.getElementById('container1').classList.add("is-blurred");
+            document.getElementById('connectionContainer').classList.add("is-blurred");
+            document.getElementById('jaugeContainerMaster').classList.add("is-blurred");
+
+            // Confirm
+            document.getElementById("confirm").addEventListener("click", function() {
+
+              setTimeout(function() {
+                document.getElementById("modalLeave").style.display = "none";
+                document.getElementById("modalLeave").style.left = "-50% !important";
+              }, 500)
+  
+              setTimeout(function() {
+                document.getElementById("modalLeave").classList.remove('fadeInDailyReward');
+                document.getElementById("modalLeave").classList.add('fadeOutDailyRewards');
+              }, 50)    
+  
+              document.getElementById('footer').classList.remove("is-blurred");
+              document.getElementById('header').classList.remove("is-blurred");
+              document.getElementById('container1').classList.remove("is-blurred");
+              document.getElementById('connectionContainer').classList.remove("is-blurred");
+              document.getElementById('jaugeContainerMaster').classList.remove("is-blurred");
+
+              loadHistoriqueOnglet();
+            })
+          }
+          else {
+            loadHistoriqueOnglet();
+          }
+
+
+
+          function loadHistoriqueOnglet() {
+
+
+            $("#container1").load("historique.php", function() {
     
-            if (document.getElementById("sideBetDiv") !== null) {
-              document.getElementById("sideBetDiv").remove();
-            }
-
-            if (document.getElementById("footer") !== null) {
-              document.getElementById("footer").remove();
-            }
-
-
-            // MODE INVITÉ:
-            if (isConnected == false) {
-
-                console.log("Array utilisée par getHistoriqueInvite.html: " + historiqueInviteArray);
-
-                var limit = 50;
-
-                $("#historiqueListContainer").append(
-                "<ul id='listHistorique' style='font-size:2em;'>"
-                );
-
-                for (var i = 0; i < historiqueInviteArray.length; i++) 
-                {
-                    console.log("Ligne de l'array utilisée: " + historiqueInviteArray[i]);
-
-                    // Transformation bool(TINYINT) double en string pour style
-                    if (historiqueInviteArray[i][5] == 1) {
-                      var double = " x2";
-                    }
-                    else {
-                      var double = " x1";
-                    }
-
-                    // Pour le doubleBool: traduire le TINYINT en ' x2' ou ' x1'
-                    $('#listHistorique').append(
+              if (document.getElementById("sideBetDiv") !== null) {
+                document.getElementById("sideBetDiv").remove();
+              }
+  
+              if (document.getElementById("footer") !== null) {
+                document.getElementById("footer").remove();
+              }
+  
+  
+              // MODE INVITÉ:
+              if (isConnected == false) {
+  
+                  console.log("Array utilisée par getHistoriqueInvite.html: " + historiqueInviteArray);
+  
+                  var limit = 50;
+  
+                  $("#historiqueListContainer").append(
+                  "<ul id='listHistorique' style='font-size:2em;'>"
+                  );
+  
+                  for (var i = 0; i < historiqueInviteArray.length; i++) 
+                  {
+                      console.log("Ligne de l'array utilisée: " + historiqueInviteArray[i]);
+  
+                      // Transformation bool(TINYINT) double en string pour style
+                      if (historiqueInviteArray[i][5] == 1) {
+                        var double = " x2";
+                      }
+                      else {
+                        var double = " x1";
+                      }
+  
+                      // Pour le doubleBool: traduire le TINYINT en ' x2' ou ' x1'
+                      $('#listHistorique').append(
+                          "<li class='historiqueLine'>" +
+                            "<div class='traitBlancHistoriqueLineHaut'></div>" +
+                              "<p style='margin: 0 5%; display:grid; grid-template-columns: 1.1fr 1fr 1.1fr; grid-template-rows: 1fr; gap: 0px 10px; grid-template-areas: \"resultats gains dates\"; '>" +
+                              "<span style='gridArea: resultats;' class='resultatCasHistorique'>" + historiqueInviteArray[i][0] + "</span>" + 
+                              "<span style='gridArea: gains;'><span class='gainHistorique'>" + historiqueInviteArray[i][2] + "</span>" + 
+                              "<span class='doubleBoolHistorique'>" + double + "</span></span>" + 
+                              "<span style='gridArea: dates;' class='dateHistorique'>" + historiqueInviteArray[i][6] + "</span>" +
+                              "</p>" +
+                            "<div class='traitBlancHistoriqueLineBas'></div>" + 
+                          "<br/>" + 
+                          "</li>"
+                      ); 
+                  }
+  
+                  // Complétion avec lignes vides:
+                  for (var i = 0; i < limit-historiqueInviteArray.length; i++) 
+                  {
+                      $('#listHistorique').append(
                         "<li class='historiqueLine'>" +
                           "<div class='traitBlancHistoriqueLineHaut'></div>" +
                             "<p style='margin: 0 5%; display:grid; grid-template-columns: 1.1fr 1fr 1.1fr; grid-template-rows: 1fr; gap: 0px 10px; grid-template-areas: \"resultats gains dates\"; '>" +
-                            "<span style='gridArea: resultats;' class='resultatCasHistorique'>" + historiqueInviteArray[i][0] + "</span>" + 
-                            "<span style='gridArea: gains;'><span class='gainHistorique'>" + historiqueInviteArray[i][2] + "</span>" + 
-                            "<span class='doubleBoolHistorique'>" + double + "</span></span>" + 
-                            "<span style='gridArea: dates;' class='dateHistorique'>" + historiqueInviteArray[i][6] + "</span>" +
+                            "<span style='gridArea: resultats;' >" + "--" + "</span>" + 
+                            "<span style='gridArea: gains;'><span >" + "--" + "</span>" + 
+                            "<span class='doubleBoolHistorique'>" + " x1" + "</span></span>" + 
+                            "<span style='gridArea: dates; position: relative; top: 4px'>" + "--" + "</span>" +
                             "</p>" +
                           "<div class='traitBlancHistoriqueLineBas'></div>" + 
                         "<br/>" + 
                         "</li>"
-                    ); 
-                }
-
-                // Complétion avec lignes vides:
-                for (var i = 0; i < limit-historiqueInviteArray.length; i++) 
-                {
-                    $('#listHistorique').append(
-                      "<li class='historiqueLine'>" +
-                        "<div class='traitBlancHistoriqueLineHaut'></div>" +
-                          "<p style='margin: 0 5%; display:grid; grid-template-columns: 1.1fr 1fr 1.1fr; grid-template-rows: 1fr; gap: 0px 10px; grid-template-areas: \"resultats gains dates\"; '>" +
-                          "<span style='gridArea: resultats;' >" + "--" + "</span>" + 
-                          "<span style='gridArea: gains;'><span >" + "--" + "</span>" + 
-                          "<span class='doubleBoolHistorique'>" + " x1" + "</span></span>" + 
-                          "<span style='gridArea: dates; position: relative; top: 4px'>" + "--" + "</span>" +
-                          "</p>" +
-                        "<div class='traitBlancHistoriqueLineBas'></div>" + 
-                      "<br/>" + 
-                      "</li>"
-                    ); 
-                };
-
-                $("#historiqueListContainer").append(
-                "</ul>"
-                );
-
-            }
-
-
-    
-            //*** Style des backgrounds
-            for (let i = 0; i < 30; i++) {
-    
-              let HistoriqueLineContainer = document.getElementsByClassName("historiqueLine")[i];
-              let resultatCasHistoriqueLine = document.getElementsByClassName("resultatCasHistorique")[i];
-    
-              if (resultatCasHistoriqueLine.innerHTML == 'LOSE') {
-                HistoriqueLineContainer.classList.add('historiqueLineLose');
-              }
-              else if (resultatCasHistoriqueLine.innerHTML == 'WIN') {
-                HistoriqueLineContainer.classList.add('historiqueLineWin');
-              }
-              else if (resultatCasHistoriqueLine.innerHTML == 'PUSH') {
-                HistoriqueLineContainer.classList.add('historiqueLinePush');
-              }
-              else if (resultatCasHistoriqueLine.innerHTML == 'BJ') {
-                HistoriqueLineContainer.classList.add('historiqueLineBJ');
-              }
-              else {
-              }
-              //***  FIN backgrounds
-    
+                      ); 
+                  };
   
-    
-              //***  Style des resultatCas    
-              var historiqueBjBool = false;
-    
-              if (resultatCasHistoriqueLine.innerHTML == 'LOSE') {
-                resultatCasHistoriqueLine.style.color = "#df2c2c";
-                resultatCasHistoriqueLine.style.border = "1px solid rgba(216, 52, 52, 0.5)";
-                resultatCasHistoriqueLine.classList.add('backgroundLose');
+                  $("#historiqueListContainer").append(
+                  "</ul>"
+                  );
+  
               }
-              else if (resultatCasHistoriqueLine.innerHTML == 'WIN') {
-                resultatCasHistoriqueLine.style.color = "rgb(0 255 111)";
-                resultatCasHistoriqueLine.style.border = "1px solid rgba(154,255,121,0.5)";
-                resultatCasHistoriqueLine.classList.add('backgroundWin');
-              }
-              else if (resultatCasHistoriqueLine.innerHTML == 'PUSH') {
-                resultatCasHistoriqueLine.style.color = "#bebe5e";
-              }
-              else if (resultatCasHistoriqueLine.innerHTML == 'BJ') {
-                resultatCasHistoriqueLine.style.color = "rgba(255,214,0,0.9)";
-                resultatCasHistoriqueLine.style.letterSpacing = "3px";
-                resultatCasHistoriqueLine.style.fontWeight = "bold";
-                resultatCasHistoriqueLine.style.border = "1px solid rgba(255,186,4,0.7)";
-                resultatCasHistoriqueLine.style.textShadow = "-1px -1px 0 rgba(0,0,0,0.5), 1px -1px 0 rgba(0,0,0,0.5), -1px 1px 0 rgba(0,0,0,0.5), 1px 1px 0 rgba(0,0,0,0.5)";
-                resultatCasHistoriqueLine.classList.add('backgroundBJ');
-
-                historiqueBjBool = true;
-              }
-              else {
-              }
-              //***  FIN resultatCas
-    
-    
-              //***  Style des gains    
-              let gainsHistoriqueLine = document.getElementsByClassName("gainHistorique")[i];
-    
-              if (parseInt(gainsHistoriqueLine.innerHTML) < 0) {
-                gainsHistoriqueLine.style.color = "rgb(255 77 77)";
-              }
-              else if (parseInt(gainsHistoriqueLine.innerHTML) > 0) {
-                if (historiqueBjBool == true) {
-                  gainsHistoriqueLine.style.color = "rgba(255,214,0,0.9)";
-                  historiqueBjBool = false;
+  
+  
+      
+              //*** Style des backgrounds
+              for (let i = 0; i < 30; i++) {
+      
+                let HistoriqueLineContainer = document.getElementsByClassName("historiqueLine")[i];
+                let resultatCasHistoriqueLine = document.getElementsByClassName("resultatCasHistorique")[i];
+      
+                if (resultatCasHistoriqueLine.innerHTML == 'LOSE') {
+                  HistoriqueLineContainer.classList.add('historiqueLineLose');
+                }
+                else if (resultatCasHistoriqueLine.innerHTML == 'WIN') {
+                  HistoriqueLineContainer.classList.add('historiqueLineWin');
+                }
+                else if (resultatCasHistoriqueLine.innerHTML == 'PUSH') {
+                  HistoriqueLineContainer.classList.add('historiqueLinePush');
+                }
+                else if (resultatCasHistoriqueLine.innerHTML == 'BJ') {
+                  HistoriqueLineContainer.classList.add('historiqueLineBJ');
                 }
                 else {
-                  gainsHistoriqueLine.style.color = "#14e56f";
                 }
-              }
-              else if (parseInt(gainsHistoriqueLine.innerHTML) == 0) {
-                gainsHistoriqueLine.style.color = "rgba(228, 228, 183, 0.7)";
-              }
-              else {
-              }
+                //***  FIN backgrounds
+      
     
-              //Style double:
-              let doubleBoolHistoriqueLine = document.getElementsByClassName("doubleBoolHistorique")[i];
-    
-              if (doubleBoolHistoriqueLine.innerHTML == ' x2') {
-                gainsHistoriqueLine.style.border = "2px solid rgba(255,215,0,0.4)";
-                gainsHistoriqueLine.style.padding = "2px 10px";
-                gainsHistoriqueLine.style.borderRadius = "6px";
-                doubleBoolHistoriqueLine.style.display = "inline-block";
-                doubleBoolHistoriqueLine.style.fontSize = "0.8em";
-                doubleBoolHistoriqueLine.style.color = "rgba(255,215,0,0.8)";
-
-                gainsHistoriqueLine.style.position = "relative";
-                gainsHistoriqueLine.style.left = "12px";
-                gainsHistoriqueLine.style.top = "-1px";
-                gainsHistoriqueLine.style.backgroundColor = "rgba(255, 215, 0, 0.05)";
-    
-              }
-              else if (doubleBoolHistoriqueLine.innerHTML == ' x1') {
-                gainsHistoriqueLine.style.border = "0px solid gold";
-              }
-              else {
-              }
-              //*** FIN gains
-    
-    
-    
-              // Style et Formattage Date  
-              let dateHistoriqueElem = document.getElementsByClassName("dateHistorique")[i];
-              let dateHtml = dateHistoriqueElem.innerHTML.slice(0, -3);
-    
-              // fonction qui compare la date avec la date actuelle et qui retourne la différence sous la forme "il y a ... sec/min/h/jour"
-              console.log(i, dateHistoriqueElem, dateHtml);
-              
-              var year = parseInt(dateHtml.charAt(0)+ dateHtml.charAt(1) + dateHtml.charAt(2) + dateHtml.charAt(3));
-              console.log("Année: " + year);
-    
-              var month = parseInt(dateHtml.charAt(5) + dateHtml.charAt(6));
-              console.log("Moi: " + month);
-    
-              var day = parseInt(dateHtml.charAt(8) + dateHtml.charAt(9));
-              console.log("Jour: " + day);
-    
-              var hour = parseInt(dateHtml.charAt(11) + dateHtml.charAt(12));
-              console.log("Heures: " + hour);
-    
-              var minute = parseInt(dateHtml.charAt(14) + dateHtml.charAt(15));
-              console.log("Minutes: " + minute);
-    
-              console.log("Date partie: " + hour + ":" + minute + ", " + day + "/" + month + "/" + year);
-    
-              
-              let todayDate = new Date();
-              anneeActuelle = todayDate.getFullYear();
-              moiActuel = (todayDate.getMonth() +1);
-              jourActuel = todayDate.getDate(); 
-              heureActuelle = todayDate.getHours();
-              minuteActuelle = todayDate.getMinutes();
-    
-    
-              console.log("Date partie: " + hour + ":" + minute + ", " + day + "/" + month + "/" + year);
-              console.log("Date actuelle: " + "" + jourActuel + "/" + moiActuel + "/" + anneeActuelle);
-    
-              var suffixePluriel;
-    
-              if (year != anneeActuelle) {
-                if (anneeActuelle-year > 1) { suffixePluriel = "s"; }
-                else { suffixePluriel = ''; }
-                document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (anneeActuelle - year) + " an" + suffixePluriel;
-              }
-              else if ((year == anneeActuelle) && (month != moiActuel)) {
-                document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (moiActuel - month) + " mois";
-              }
-              else if ((year == anneeActuelle) && (month == moiActuel) && (day != jourActuel)) {
-                if (jourActuel-day > 1) { suffixePluriel = "s"; }
-                else { suffixePluriel = ''; }
-    
-                if (jourActuel-day == 1) {
-                  document.getElementsByClassName("dateHistorique")[i].innerHTML = "Hier";
+      
+                //***  Style des resultatCas    
+                var historiqueBjBool = false;
+      
+                if (resultatCasHistoriqueLine.innerHTML == 'LOSE') {
+                  resultatCasHistoriqueLine.style.color = "#df2c2c";
+                  resultatCasHistoriqueLine.style.border = "1px solid rgba(216, 52, 52, 0.5)";
+                  resultatCasHistoriqueLine.classList.add('backgroundLose');
                 }
-                else if (jourActuel-day == 2) {
-                  document.getElementsByClassName("dateHistorique")[i].innerHTML = "Avant-hier";
+                else if (resultatCasHistoriqueLine.innerHTML == 'WIN') {
+                  resultatCasHistoriqueLine.style.color = "rgb(0 255 111)";
+                  resultatCasHistoriqueLine.style.border = "1px solid rgba(154,255,121,0.5)";
+                  resultatCasHistoriqueLine.classList.add('backgroundWin');
+                }
+                else if (resultatCasHistoriqueLine.innerHTML == 'PUSH') {
+                  resultatCasHistoriqueLine.style.color = "#bebe5e";
+                }
+                else if (resultatCasHistoriqueLine.innerHTML == 'BJ') {
+                  resultatCasHistoriqueLine.style.color = "rgba(255,214,0,0.9)";
+                  resultatCasHistoriqueLine.style.letterSpacing = "3px";
+                  resultatCasHistoriqueLine.style.fontWeight = "bold";
+                  resultatCasHistoriqueLine.style.border = "1px solid rgba(255,186,4,0.7)";
+                  resultatCasHistoriqueLine.style.textShadow = "-1px -1px 0 rgba(0,0,0,0.5), 1px -1px 0 rgba(0,0,0,0.5), -1px 1px 0 rgba(0,0,0,0.5), 1px 1px 0 rgba(0,0,0,0.5)";
+                  resultatCasHistoriqueLine.classList.add('backgroundBJ');
+  
+                  historiqueBjBool = true;
                 }
                 else {
-                  document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (jourActuel - day) + " jour" + suffixePluriel;
                 }
-                
-              }
-              // BUG: affiche il y a 1h au changement d'heure:     Pour différence heure (afficher en heure que si differences Minutes >= 60 !)
-              // Et afficher 'à l'instant' de 0 à 1min (prendre en compte les secondes et faire pareil différence>60 ?)
-              else if ((year == anneeActuelle) && (month == moiActuel) && (day == jourActuel) && (hour != heureActuelle)) {
-                if (heureActuelle-hour > 1) { suffixePluriel = "s"; }
-                else { suffixePluriel = ''; }
-
-                document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (heureActuelle - hour) + " heure" + suffixePluriel;
-              }
-              else if ((year == anneeActuelle) && (month == moiActuel) && (day == jourActuel) && (hour == heureActuelle) && (minute != minuteActuelle)) {
-                if (minuteActuelle-minute > 1) { suffixePluriel = "s"; }
-                else { suffixePluriel = ''; }
-                document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (minuteActuelle - minute) + " minute" + suffixePluriel;
-              }
-              else {
-                document.getElementsByClassName("dateHistorique")[i].innerHTML = "à l'instant";
-              }
-    
-            }
-            //*** FIN Date
-
-
-
-
-            //Style de la liste Users (ADMIN)
-            for (let i = 0; i <= 15; i++) {
-              if(document.getElementsByClassName("username")[i] !== null){
-              
-                let UserLineContainer = document.getElementsByClassName("historiqueLineAdmin")[i];
-                let roleUserLine = document.getElementsByClassName("roleUsers")[i];
-
-                if (roleUserLine.innerHTML == 'admin') {
-                  roleUserLine.style.color = 'rgba(251,226,87,1)';
-                  UserLineContainer.classList.add('historiqueLineBJ');
+                //***  FIN resultatCas
+      
+      
+                //***  Style des gains    
+                let gainsHistoriqueLine = document.getElementsByClassName("gainHistorique")[i];
+      
+                if (parseInt(gainsHistoriqueLine.innerHTML) < 0) {
+                  gainsHistoriqueLine.style.color = "rgb(255 77 77)";
                 }
-                else if (roleUserLine.innerHTML == 'joueur') {
-                  roleUserLine.style.color = 'rgba(215,235,251,1)';
-                  UserLineContainer.classList.add('historiqueLinePush');
-                }
-
-                // Bouton DELETE
-                let deleteUserButtonLine = document.getElementsByClassName("deleteUserButton")[i];
-
-                  var usernameLineToPhp = {};
-                  usernameLineToPhp.value = document.getElementsByClassName("username")[i].innerText;  
-
-                  // 1er click: Opacity+Border WARNING,  2eme click: Comfirmation suppression
-                  if (roleUserLine.innerHTML == 'joueur') {
-                    deleteUserButtonLine.addEventListener("click", function() {
-                      document.getElementsByClassName("deleteUserButton")[i].style.backgroundColor = 'rgba(226,5,61,1)';
-                      document.getElementsByClassName("deleteUserButton")[i].style.padding = '7px 3px';
-                      document.getElementsByClassName("deleteUserButton")[i].style.bottom = '5px';
-                      document.getElementsByClassName("deleteUserButton")[i].style.left = '1px';
-                      document.getElementsByClassName("deleteUserButton")[i].style.borderRadius = '4px';
-
-                      document.getElementsByClassName("deleteUserButton")[i].classList.add('deleteUserRed');
-                      document.getElementsByClassName("historiqueLineAdmin")[i].style.border = '5px solid rgba(226,5,61,0.8)';
-                      document.getElementsByClassName("historiqueLineAdmin")[i].style.borderRadius = '12px';
-
-                      let deleteUserButtonLine1 = document.getElementsByClassName("deleteUserButton")[i];
-
-
-                      deleteUserButtonLine1.addEventListener("click", function() {
-                        $.ajax({
-                          url: "deleteUser.php",
-                          method: "post",
-                          data: usernameLineToPhp,
-                          success: function() {
-                            console.log("Ajax delete user success: " + usernameLineToPhp);
-                            location.reload();
-                          }
-                        })
-                      });
-
-                    });
+                else if (parseInt(gainsHistoriqueLine.innerHTML) > 0) {
+                  if (historiqueBjBool == true) {
+                    gainsHistoriqueLine.style.color = "rgba(255,214,0,0.9)";
+                    historiqueBjBool = false;
                   }
+                  else {
+                    gainsHistoriqueLine.style.color = "#14e56f";
+                  }
+                }
+                else if (parseInt(gainsHistoriqueLine.innerHTML) == 0) {
+                  gainsHistoriqueLine.style.color = "rgba(228, 228, 183, 0.7)";
+                }
+                else {
+                }
+      
+                //Style double:
+                let doubleBoolHistoriqueLine = document.getElementsByClassName("doubleBoolHistorique")[i];
+      
+                if (doubleBoolHistoriqueLine.innerHTML == ' x2') {
+                  gainsHistoriqueLine.style.border = "2px solid rgba(255,215,0,0.4)";
+                  gainsHistoriqueLine.style.padding = "2px 10px";
+                  gainsHistoriqueLine.style.borderRadius = "6px";
+                  doubleBoolHistoriqueLine.style.display = "inline-block";
+                  doubleBoolHistoriqueLine.style.fontSize = "0.8em";
+                  doubleBoolHistoriqueLine.style.color = "rgba(255,215,0,0.8)";
+  
+                  gainsHistoriqueLine.style.position = "relative";
+                  gainsHistoriqueLine.style.left = "12px";
+                  gainsHistoriqueLine.style.top = "-1px";
+                  gainsHistoriqueLine.style.backgroundColor = "rgba(255, 215, 0, 0.05)";
+      
+                }
+                else if (doubleBoolHistoriqueLine.innerHTML == ' x1') {
+                  gainsHistoriqueLine.style.border = "0px solid gold";
+                }
+                else {
+                }
+                //*** FIN gains
+      
+      
+      
+                // Style et Formattage Date  
+                let dateHistoriqueElem = document.getElementsByClassName("dateHistorique")[i];
+                let dateHtml = dateHistoriqueElem.innerHTML.slice(0, -3);
+      
+                // fonction qui compare la date avec la date actuelle et qui retourne la différence sous la forme "il y a ... sec/min/h/jour"
+                console.log(i, dateHistoriqueElem, dateHtml);
+                
+                var year = parseInt(dateHtml.charAt(0)+ dateHtml.charAt(1) + dateHtml.charAt(2) + dateHtml.charAt(3));
+                console.log("Année: " + year);
+      
+                var month = parseInt(dateHtml.charAt(5) + dateHtml.charAt(6));
+                console.log("Moi: " + month);
+      
+                var day = parseInt(dateHtml.charAt(8) + dateHtml.charAt(9));
+                console.log("Jour: " + day);
+      
+                var hour = parseInt(dateHtml.charAt(11) + dateHtml.charAt(12));
+                console.log("Heures: " + hour);
+      
+                var minute = parseInt(dateHtml.charAt(14) + dateHtml.charAt(15));
+                console.log("Minutes: " + minute);
+      
+                console.log("Date partie: " + hour + ":" + minute + ", " + day + "/" + month + "/" + year);
+      
+                
+                let todayDate = new Date();
+                anneeActuelle = todayDate.getFullYear();
+                moiActuel = (todayDate.getMonth() +1);
+                jourActuel = todayDate.getDate(); 
+                heureActuelle = todayDate.getHours();
+                minuteActuelle = todayDate.getMinutes();
+      
+      
+                console.log("Date partie: " + hour + ":" + minute + ", " + day + "/" + month + "/" + year);
+                console.log("Date actuelle: " + "" + jourActuel + "/" + moiActuel + "/" + anneeActuelle);
+      
+                var suffixePluriel;
+      
+                if (year != anneeActuelle) {
+                  if (anneeActuelle-year > 1) { suffixePluriel = "s"; }
+                  else { suffixePluriel = ''; }
+                  document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (anneeActuelle - year) + " an" + suffixePluriel;
+                }
+                else if ((year == anneeActuelle) && (month != moiActuel)) {
+                  document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (moiActuel - month) + " mois";
+                }
+                else if ((year == anneeActuelle) && (month == moiActuel) && (day != jourActuel)) {
+                  if (jourActuel-day > 1) { suffixePluriel = "s"; }
+                  else { suffixePluriel = ''; }
+      
+                  if (jourActuel-day == 1) {
+                    document.getElementsByClassName("dateHistorique")[i].innerHTML = "Hier";
+                  }
+                  else if (jourActuel-day == 2) {
+                    document.getElementsByClassName("dateHistorique")[i].innerHTML = "Avant-hier";
+                  }
+                  else {
+                    document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (jourActuel - day) + " jour" + suffixePluriel;
+                  }
+                  
+                }
+                // BUG: affiche il y a 1h au changement d'heure:     Pour différence heure (afficher en heure que si differences Minutes >= 60 !)
+                // Et afficher 'à l'instant' de 0 à 1min (prendre en compte les secondes et faire pareil différence>60 ?)
+                else if ((year == anneeActuelle) && (month == moiActuel) && (day == jourActuel) && (hour != heureActuelle)) {
+                  if (heureActuelle-hour > 1) { suffixePluriel = "s"; }
+                  else { suffixePluriel = ''; }
+  
+                  document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (heureActuelle - hour) + " heure" + suffixePluriel;
+                }
+                else if ((year == anneeActuelle) && (month == moiActuel) && (day == jourActuel) && (hour == heureActuelle) && (minute != minuteActuelle)) {
+                  if (minuteActuelle-minute > 1) { suffixePluriel = "s"; }
+                  else { suffixePluriel = ''; }
+                  document.getElementsByClassName("dateHistorique")[i].innerHTML = "il y a " + (minuteActuelle - minute) + " minute" + suffixePluriel;
+                }
+                else {
+                  document.getElementsByClassName("dateHistorique")[i].innerHTML = "à l'instant";
+                }
+      
               }
-            }
-            // FIN
+              //*** FIN Date
+  
+  
+  
+  
+              //Style de la liste Users (ADMIN)
+              for (let i = 0; i <= 15; i++) {
+                if(document.getElementsByClassName("username")[i] !== null){
+                
+                  let UserLineContainer = document.getElementsByClassName("historiqueLineAdmin")[i];
+                  let roleUserLine = document.getElementsByClassName("roleUsers")[i];
+  
+                  if (roleUserLine.innerHTML == 'admin') {
+                    roleUserLine.style.color = 'rgba(251,226,87,1)';
+                    UserLineContainer.classList.add('historiqueLineBJ');
+                  }
+                  else if (roleUserLine.innerHTML == 'joueur') {
+                    roleUserLine.style.color = 'rgba(215,235,251,1)';
+                    UserLineContainer.classList.add('historiqueLinePush');
+                  }
+  
+                  // Bouton DELETE
+                  let deleteUserButtonLine = document.getElementsByClassName("deleteUserButton")[i];
+  
+                    var usernameLineToPhp = {};
+                    usernameLineToPhp.value = document.getElementsByClassName("username")[i].innerText;  
+  
+                    // 1er click: Opacity+Border WARNING,  2eme click: Comfirmation suppression
+                    if (roleUserLine.innerHTML == 'joueur') {
+                      deleteUserButtonLine.addEventListener("click", function() {
+                        document.getElementsByClassName("deleteUserButton")[i].style.backgroundColor = 'rgba(226,5,61,1)';
+                        document.getElementsByClassName("deleteUserButton")[i].style.padding = '7px 3px';
+                        document.getElementsByClassName("deleteUserButton")[i].style.bottom = '5px';
+                        document.getElementsByClassName("deleteUserButton")[i].style.left = '1px';
+                        document.getElementsByClassName("deleteUserButton")[i].style.borderRadius = '4px';
+  
+                        document.getElementsByClassName("deleteUserButton")[i].classList.add('deleteUserRed');
+                        document.getElementsByClassName("historiqueLineAdmin")[i].style.border = '5px solid rgba(226,5,61,0.8)';
+                        document.getElementsByClassName("historiqueLineAdmin")[i].style.borderRadius = '12px';
+  
+                        let deleteUserButtonLine1 = document.getElementsByClassName("deleteUserButton")[i];
+  
+  
+                        deleteUserButtonLine1.addEventListener("click", function() {
+                          $.ajax({
+                            url: "deleteUser.php",
+                            method: "post",
+                            data: usernameLineToPhp,
+                            success: function() {
+                              console.log("Ajax delete user success: " + usernameLineToPhp);
+                              location.reload();
+                            }
+                          })
+                        });
+  
+                      });
+                    }
+                }
+              }
+              // FIN
+  
+              // Onclick Button addUser (ADMIN)
+              document.getElementById('addUserButton').addEventListener("click", function() {
+                alert('Fonctionalité à venir...');
+              })
+            
+            });
+          }
 
-            // Onclick Button addUser (ADMIN)
-            document.getElementById('addUserButton').addEventListener("click", function() {
-              alert('Fonctionalité à venir...');
-            })
           
-          });
       });
 
 
@@ -2172,6 +2245,8 @@
 
         $("#relancer").click(function(){
 
+          ingame = false;
+
           // Evite le spam du reload():
           document.querySelector("#relancer").disabled = true;
 
@@ -2841,6 +2916,8 @@
       function miseLock() {
         document.getElementById("boutonMiser").addEventListener("click", function() {
 
+          ingame = true;
+
           // Depop du sideBet et retour borderTopFooter normal
           document.getElementById("sideBetDiv").remove();
           document.getElementById("traitLumineuxFooter").style.background = "var(--traitFooterMise-color)";
@@ -2888,35 +2965,30 @@
           document.getElementById("miseLocked").classList.add('miseLockedAnim');
 
           // Saut de ligne 
-          document.getElementById("deckContainer").append(document.createElement("br"));
+          if (misePairLocked > 0) {
+            // document.getElementById("deckContainer").append(document.createElement("br"));
+            document.getElementById("parametresPartieDiv").append(document.createElement("br"));
 
-          let misePairLockedElement = document.createElement("span");
-          misePairLockedElement.setAttribute("id", "misePairLocked");
-          misePairLockedElement.classList.add("misePairLockedAnim");
-          document.getElementById("deckContainer").append(misePairLockedElement);
+            let misePairLockedElement = document.createElement("span");
+            misePairLockedElement.setAttribute("id", "misePairLocked");
+            misePairLockedElement.classList.add("misePairLockedAnim");
+            // document.getElementById("deckContainer").append(misePairLockedElement);  
+            document.getElementById("parametresPartieDiv").append(misePairLockedElement);  
+          }
 
-          // Saut de ligne 
-          document.getElementById("deckContainer").append(document.createElement("br"));
+          if (mise213Locked > 0) {
+            // Saut de ligne 
+            // document.getElementById("deckContainer").append(document.createElement("br"));
+            document.getElementById("parametresPartieDiv").append(document.createElement("br"));
 
-          let mise213LockedElement = document.createElement("span");
-          mise213LockedElement.setAttribute("id", "mise213Locked");
-          mise213LockedElement.classList.add("mise213LockedAnim");
-          document.getElementById("deckContainer").append(mise213LockedElement);
+            let mise213LockedElement = document.createElement("span");
+            mise213LockedElement.setAttribute("id", "mise213Locked");
+            mise213LockedElement.classList.add("mise213LockedAnim");
+            // document.getElementById("deckContainer").append(mise213LockedElement);
+            document.getElementById("parametresPartieDiv").append(mise213LockedElement);
+          }
           // Fin
 
-
-          // SideBets miselocked grisés si == 0
-          // if (misePairLocked == 0) {
-          //   document.getElementById("misePairLocked").style.opacity = "0.4";
-          //   document.getElementById("misePairLocked").style.color = "grey";
-          //   // Image Sou grisé et ajout ID ci-dessous ducoup
-          // }
-          // if (mise213Locked == 0) {
-          //   document.getElementById("mise213Locked").style.opacity = "0.4";
-          //   document.getElementById("mise213Locked").style.color = "grey";
-          //   // Image Sou grisé et ajout ID ci-dessous ducoup
-          // }
-          // Fin
 
 
           // Pop des misesLocked sous le deck
@@ -2955,13 +3027,27 @@
               // }, 800)
           }
 
+          // Refresh du credits Front
           if (isConnected == false) {
             document.getElementById("credits").innerHTML = "<i class='fa-solid fa-star'></i> Invité &nbsp;&nbsp;<span id=\"creditsInvite\">" + (credits - miseLocked) + "</span>" + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
           }
           else if (isConnected == true) {
-            document.getElementById("creditsConnected").innerHTML = (credits - miseLocked);
+            document.getElementById("creditsConnected").innerHTML = (credits - (miseLocked + misePairLocked + mise213Locked));
             // Anim creditFlash rouge ?
           }
+
+          // Mise BDD (A revoir si besoin des mises différenciées par bet pour historique par exemple)
+          var misesToPhp = {};
+          misesToPhp.value = (miseLocked+mise213Locked+misePairLocked);
+
+          $.ajax({
+            url: "setMises.php",
+            method: "post",
+            data: misesToPhp,
+            success: function(res) {
+              console.log("MISES ENVOYEES");
+            }
+          });
     
           document.getElementById("miseEnCours").classList.add("fadeOut");
 
@@ -3424,8 +3510,7 @@
         } 
         if ((misePairLocked == 0) && (mise213Locked == 0)) {
           document.getElementById("footerResultatLine").style.top = "50%";
-          document.getElementById("footerResultatLine").style.transform = "translateX(20px)";
-          document.getElementById("footerResultatLine").style.transform = "translateY(-50%)";
+          document.getElementById("footerResultatLine").style.transform = "translate(10%, -50%)";
         }
         // XOR existe pas en JS
         else if ((misePairLocked != 0) && (mise213Locked == 0) || (misePairLocked == 0) && (mise213Locked != 0)) {
@@ -3541,9 +3626,12 @@
 
                     // WIP gain (ajouter effet refresh CSS)
                     setTimeout( function() {
-                      gain = -miseLocked;
-                      ajoutGain(gain);
 
+                      // gain = -miseLocked;
+                      gainHistorique = -miseLocked;
+                      gain = 0;
+                      ajoutGain(gain);
+                      ingame = false;
 
 
                       winLose = -1;
@@ -3673,8 +3761,13 @@
                         }, 2000);
 
                         setTimeout( function() {
-                          gain = miseLocked;
+
+                          // gain = miseLocked;
+                          gainHistorique = miseLocked;
+                          gainFront = miseLocked;
+                          gain = (miseLocked*2);
                           ajoutGain(gain);
+                          ingame = false;
 
                           winLose = 1;
                           winLoseDB(winLose);
@@ -3797,8 +3890,13 @@
                       }, 2000);
 
                       setTimeout( function() {
-                        gain = miseLocked;
+
+                        // gain = miseLocked;
+                        gainHistorique = miseLocked;
+                        gainFront = miseLocked;
+                        gain = (miseLocked*2);
                         ajoutGain(gain);
+                        ingame = false;
 
                         winLose = 1;
                         winLoseDB(winLose);
@@ -3904,8 +4002,11 @@
                     removeSideBetsFooter();
 
                     setTimeout( function() {
+
                       gain = 0;
+                      gainHistorique = 0;
                       ajoutGain(gain);
+                      ingame = false;
 
                       majStreak(WinLose);
 
@@ -4613,7 +4714,7 @@
 
 
 
-      function historiqueDB(WinLose, resultatCas, gain) {
+      function historiqueDB(WinLose, resultatCas, gainHistorique) {
 
         // Ancienne méthode: fuseau horaire non pris en compte
         // var date = new Date().toISOString().slice(0, 19).replace('T', ' ');
@@ -4634,7 +4735,7 @@
         var historiqueToPhp = [];
         historiqueToPhp[0] = WinLose;
         historiqueToPhp[1] = resultatCas;
-        historiqueToPhp[2] = gain;
+        historiqueToPhp[2] = gainHistorique;
         historiqueToPhp[3] = scoreTotalJoueur;
         historiqueToPhp[4] = scoreTotalCroupier;
         historiqueToPhp[5] = doubleBool;
@@ -4669,7 +4770,7 @@
 
 
 
-      function historiqueInvite(WinLose, resultatCas, gain) {
+      function historiqueInvite(WinLose, resultatCas, gainHistorique) {
 
         // Ancienne méthode: fuseau horaire non pris en compte
         // var date = new Date().toISOString().slice(0, 19).replace('T', ' ');
@@ -4688,7 +4789,7 @@
         var historiqueInviteLine = [];
         historiqueInviteLine[0] = WinLose;
         historiqueInviteLine[1] = resultatCas;
-        historiqueInviteLine[2] = gain;
+        historiqueInviteLine[2] = gainHistorique;
         historiqueInviteLine[3] = scoreTotalJoueur;
         historiqueInviteLine[4] = scoreTotalCroupier;
         historiqueInviteLine[5] = doubleBool;
@@ -4907,28 +5008,35 @@
 
 
 
+
       //
       // Envoi/Refresh du crédits et appel historiqueDB();
       if (isConnected == true) {
         function ajoutGain(gain) {
 
-          // setTimeout(function() {
-            if (WinLose == "WIN") {
-              document.getElementById("creditsConnected").classList.add("refreshCreditAnim");
-              document.getElementById("creditsConnected").innerHTML = (credits + gain);
-            }
-            else if (WinLose == "BJ") {
+          if (WinLose == "WIN") {
+            document.getElementById("creditsConnected").classList.add("refreshCreditAnim");
+            document.getElementById("creditsConnected").innerHTML = (credits + gainFront + gainPairBet + gain213Bet);
+          }
+          else if (WinLose == "BJ") {
+            document.getElementById("creditsConnected").classList.add("refreshCreditAnimBJ");
+            document.getElementById("creditsConnected").innerHTML = (credits + gainFront + gainPairBet + gain213Bet);
+          }
+          else {
+            // Refresh Credits front meme si lose, si il ya des gain SideBets:
+            if ((gainPairBet > 0) || (gain213Bet > 0)) {
               document.getElementById("creditsConnected").classList.add("refreshCreditAnimBJ");
-              document.getElementById("creditsConnected").innerHTML = (credits + gain);
+              document.getElementById("creditsConnected").innerHTML = (credits + gainPairBet + gain213Bet);
             }
-            document.getElementById("creditsConnected").innerHTML = (credits + gain);
-          // }, 200)
+          }
+          
 
 
-          credits = credits + gain;
+          credits = credits + gainFront;
 
           var gainToPhp = {};
-          gainToPhp.value = gain;
+          // Est-ce que le gain des sideBets prend en compte le decompte des misesSideBets? (BDD mises fait)
+          gainToPhp.value = (gain + gainPairBet + gain213Bet);
 
 
           console.log("(JS) Gain: " + gain);
@@ -4942,20 +5050,20 @@
           });
 
           // A replacer la ou est appelé ajoutGain();
-          historiqueDB(WinLose, resultatCas, gain);
+          historiqueDB(WinLose, resultatCas, gainHistorique);
         }
       }
       else if (isConnected == false) {
         function ajoutGain(gain) {
 
           // flash crédits Invite à faire
-          document.getElementById("credits").innerHTML = "<i class='fa-solid fa-star'></i> Invité &nbsp;&nbsp;<span id=\"creditsInvite\">" + (credits + gain) + "</span>" + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
+          document.getElementById("credits").innerHTML = "<i class='fa-solid fa-star'></i> Invité &nbsp;&nbsp;<span id=\"creditsInvite\">" + (credits + gainFront) + "</span>" + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
           
-          credits = credits + gain;
+          credits = credits + gainFront;
 
-          historiqueInvite(WinLose, resultatCas, gain);
+          historiqueInvite(WinLose, resultatCas, gainHistorique);
 
-          historiqueDB(WinLose, resultatCas, gain);
+          historiqueDB(WinLose, resultatCas, gainHistorique);
         }
       }
       
@@ -5020,8 +5128,12 @@
 
                     // WIP gain (ajouter effet refresh CSS)
                       setTimeout( function() {
-                        gain = -miseLocked;
+
+                        // gain = -miseLocked;
+                        gainHistorique = -miseLocked;
+                        gain = 0;
                         ajoutGain(gain);
+                        ingame = false;
 
                         winLose = -1;
                         winLoseDB(winLose);
@@ -5182,8 +5294,11 @@
                   
                   // WIP gain (ajouter effet refresh CSS)
                   setTimeout( function() {
-                    gain = miseLocked * 2;
+                    gainHistorique = (miseLocked * 2);
+                    gainFront = (miseLocked * 2);
+                    gain = (miseLocked * 3);
                     ajoutGain(gain);
+                    ingame = false;
 
                     winLose = 1;
                     winLoseDB(winLose);
