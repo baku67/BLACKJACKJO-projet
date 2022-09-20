@@ -1,167 +1,6 @@
 
   let cards = [
     
-    // *** TEST: proc pair
-    // C2a = {
-    //   cardImageURL: "cartes\\2S.png",
-    //   cardValue: 2,
-    //   cardFamily: "spade",
-    //   cardColor: "black",
-    //   cardName: "2",
-    //   cardOrdre: 2
-    // },
-    // C2b = {
-    //   cardImageURL: "cartes\\2D.png",
-    //   cardValue: 2,
-    //   cardFamily: "diamond",
-    //   cardColor: "red",
-    //   cardName: "2",
-    //   cardOrdre: 2
-    // },
-    // C2c = {
-    //   cardImageURL: "cartes\\2S.png",
-    //   cardValue: 2,
-    //   cardFamily: "spade",
-    //   cardColor: "black",
-    //   cardName: "2",
-    //   cardOrdre: 2
-    // },
-    // C2d = {
-    //   cardImageURL: "cartes\\2D.png",
-    //   cardValue: 2,
-    //   cardFamily: "diamond",
-    //   cardColor: "red",
-    //   cardName: "2",
-    //   cardOrdre: 2
-    // },
-    // C2e = {
-    //   cardImageURL: "cartes\\2S.png",
-    //   cardValue: 2,
-    //   cardFamily: "spade",
-    //   cardColor: "black",
-    //   cardName: "2",
-    //   cardOrdre: 2
-    // },
-    // C2f = {
-    //   cardImageURL: "cartes\\2D.png",
-    //   cardValue: 2,
-    //   cardFamily: "diamond",
-    //   cardColor: "red",
-    //   cardName: "2",
-    //   cardOrdre: 2
-    // },
-    // C2g = {
-    //   cardImageURL: "cartes\\2S.png",
-    //   cardValue: 2,
-    //   cardFamily: "spade",
-    //   cardColor: "black",
-    //   cardName: "2",
-    //   cardOrdre: 2
-    // },
-    // C2h = {
-    //   cardImageURL: "cartes\\2D.png",
-    //   cardValue: 2,
-    //   cardFamily: "diamond",
-    //   cardColor: "red",
-    //   cardName: "2",
-    //   cardOrdre: 2
-    // },
-    // C2i = {
-    //   cardImageURL: "cartes\\2S.png",
-    //   cardValue: 2,
-    //   cardFamily: "spade",
-    //   cardColor: "black",
-    //   cardName: "2",
-    //   cardOrdre: 2
-    // },
-    // C2j = {
-    //   cardImageURL: "cartes\\2D.png",
-    //   cardValue: 2,
-    //   cardFamily: "diamond",
-    //   cardColor: "red",
-    //   cardName: "2",
-    //   cardOrdre: 2
-    // },
-    // C2k = {
-    //   cardImageURL: "cartes\\2S.png",
-    //   cardValue: 2,
-    //   cardFamily: "spade",
-    //   cardColor: "black",
-    //   cardName: "2",
-    //   cardOrdre: 2
-    // },
-    // C2l = {
-    //   cardImageURL: "cartes\\2D.png",
-    //   cardValue: 2,
-    //   cardFamily: "diamond",
-    //   cardColor: "red",
-    //   cardName: "2",
-    //   cardOrdre: 2
-    // },
-    // C2m = {
-    //   cardImageURL: "cartes\\2S.png",
-    //   cardValue: 2,
-    //   cardFamily: "spade",
-    //   cardColor: "black",
-    //   cardName: "2",
-    //   cardOrdre: 2
-    // },
-    // C2n = {
-    //   cardImageURL: "cartes\\2D.png",
-    //   cardValue: 2,
-    //   cardFamily: "diamond",
-    //   cardColor: "red",
-    //   cardName: "2",
-    //   cardOrdre: 2
-    // },
-    // C2o = {
-    //   cardImageURL: "cartes\\2S.png",
-    //   cardValue: 2,
-    //   cardFamily: "spade",
-    //   cardColor: "black",
-    //   cardName: "2",
-    //   cardOrdre: 2
-    // },
-    // C2p = {
-    //   cardImageURL: "cartes\\2D.png",
-    //   cardValue: 2,
-    //   cardFamily: "diamond",
-    //   cardColor: "red",
-    //   cardName: "2",
-    //   cardOrdre: 2
-    // },
-    // C2q = {
-    //   cardImageURL: "cartes\\2S.png",
-    //   cardValue: 2,
-    //   cardFamily: "spade",
-    //   cardColor: "black",
-    //   cardName: "2",
-    //   cardOrdre: 2
-    // },
-    // C2r = {
-    //   cardImageURL: "cartes\\2D.png",
-    //   cardValue: 2,
-    //   cardFamily: "diamond",
-    //   cardColor: "red",
-    //   cardName: "2",
-    //   cardOrdre: 2
-    // },C2s = {
-    //   cardImageURL: "cartes\\2S.png",
-    //   cardValue: 2,
-    //   cardFamily: "spade",
-    //   cardColor: "black",
-    //   cardName: "2",
-    //   cardOrdre: 2
-    // },
-    // C2t = {
-    //   cardImageURL: "cartes\\2D.png",
-    //   cardValue: 2,
-    //   cardFamily: "diamond",
-    //   cardColor: "red",
-    //   cardName: "2",
-    //   cardOrdre: 2
-    // }
-
     // 1er Deck
     C2a = {
       cardImageURL: "cartes\\2S.png",
@@ -355,234 +194,234 @@
       cardName: "7",
       cardOrdre: 7
     },
-    C8a = {
-      cardImageURL: "cartes\\8S.png",
-      cardValue: 8,
-      cardFamily: "spade",
-      cardColor: "black",
-      cardName: "8",
-      cardOrdre: 8
-    },
-    C8b = {
-      cardImageURL: "cartes\\8D.png",
-      cardValue: 8,
-      cardFamily: "diamond",
-      cardColor: "red",
-      cardName: "8",
-      cardOrdre: 8
-    },
-    C8c = {
-      cardImageURL: "cartes\\8C.png",
-      cardValue: 8,
-      cardFamily: "club",
-      cardColor: "black",
-      cardName: "8",
-      cardOrdre: 8
-    },
-    C8d = {
-      cardImageURL: "cartes\\8H.png",
-      cardValue: 8,
-      cardFamily: "heart",
-      cardColor: "red",
-      cardName: "8",
-      cardOrdre: 8
-    },
-    C9a = {
-      cardImageURL: "cartes\\9S.png",
-      cardValue: 9,
-      cardFamily: "spade",
-      cardColor: "black",
-      cardName: "9",
-      cardOrdre: 9
-    },
-    C9b = {
-      cardImageURL: "cartes\\9D.png",
-      cardValue: 9,
-      cardFamily: "diamond",
-      cardColor: "red",
-      cardName: "9",
-      cardOrdre: 9
-    },
-    C9c = {
-      cardImageURL: "cartes\\9C.png",
-      cardValue: 9,
-      cardFamily: "club",
-      cardColor: "black",
-      cardName: "9",
-      cardOrdre: 9
-    },
-    C9d = {
-      cardImageURL: "cartes\\9H.png",
-      cardValue: 9,
-      cardFamily: "heart",
-      cardColor: "red",
-      cardName: "9",
-      cardOrdre: 9
-    },
-    C10a = {
-      cardImageURL: "cartes\\ZS.png",
-      cardValue: 10,
-      cardFamily: "spade",
-      cardColor: "black",
-      cardName: "10",
-      cardOrdre: 10
-    },
-    C10b = {
-      cardImageURL: "cartes\\ZD.png",
-      cardValue: 10,
-      cardFamily: "diamond",
-      cardColor: "red",
-      cardName: "10",
-      cardOrdre: 10
-    },
-    C10c = {
-      cardImageURL: "cartes\\ZC.png",
-      cardValue: 10,
-      cardFamily: "club",
-      cardColor: "black",
-      cardName: "10",
-      cardOrdre: 10
-    },
-    C10d = {
-      cardImageURL: "cartes\\ZH.png",
-      cardValue: 10,
-      cardFamily: "heart",
-      cardColor: "red",
-      cardName: "10",
-      cardOrdre: 10
-    },
-    C11a = {
-      cardImageURL: "cartes\\JS.png",
-      cardValue: 10,
-      cardFamily: "spade",
-      cardColor: "black",
-      cardName: "joker",
-      cardOrdre: 11
-    },
-    C11b = {
-      cardImageURL: "cartes\\JD.png",
-      cardValue: 10,
-      cardFamily: "diamond",
-      cardColor: "red",
-      cardName: "joker",
-      cardOrdre: 11
-    },
-    C11c = {
-      cardImageURL: "cartes\\JC.png",
-      cardValue: 10,
-      cardFamily: "club",
-      cardColor: "black",
-      cardName: "joker",
-      cardOrdre: 11
-    },
-    C11d = {
-      cardImageURL: "cartes\\JH.png",
-      cardValue: 10,
-      cardFamily: "heart",
-      cardColor: "red",
-      cardName: "joker",
-      cardOrdre: 11
-    },
-    C12a = {
-      cardImageURL: "cartes\\QS.png",
-      cardValue: 10,
-      cardFamily: "spade",
-      cardColor: "black",
-      cardName: "queen",
-      cardOrdre: 12
-    },
-    C12b = {
-      cardImageURL: "cartes\\QD.png",
-      cardValue: 10,
-      cardFamily: "diamond",
-      cardColor: "red",
-      cardName: "queen",
-      cardOrdre: 12
-    },
-    C12c = {
-      cardImageURL: "cartes\\QC.png",
-      cardValue: 10,
-      cardFamily: "club",
-      cardColor: "black",
-      cardName: "queen",
-      cardOrdre: 12
-    },
-    C12d = {
-      cardImageURL: "cartes\\QH.png",
-      cardValue: 10,
-      cardFamily: "heart",
-      cardColor: "red",
-      cardName: "queen",
-      cardOrdre: 12
-    },
-    C13a = {
-      cardImageURL: "cartes\\KS.png",
-      cardValue: 10,
-      cardFamily: "spade",
-      cardColor: "black",
-      cardName: "king",
-      cardOrdre: 13
-    },
-    C13b = {
-      cardImageURL: "cartes\\KD.png",
-      cardValue: 10,
-      cardFamily: "diamond",
-      cardColor: "red",
-      cardName: "king",
-      cardOrdre: 13
-    },
-    C13c = {
-      cardImageURL: "cartes\\KC.png",
-      cardValue: 10,
-      cardFamily: "club",
-      cardColor: "black",
-      cardName: "king",
-      cardOrdre: 13
-    },
-    C13d = {
-      cardImageURL: "cartes\\KH.png",
-      cardValue: 10,
-      cardFamily: "heart",
-      cardColor: "red",
-      cardName: "king",
-      cardOrdre: 13
-    },
-    C1a = {
-      cardImageURL: "cartes\\AS.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "spade",
-      cardColor: "black",
-      cardName: "as",
-      cardOrdre: 14
-    },
-    C1b = {
-      cardImageURL: "cartes\\AD.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "diamond",
-      cardColor: "red",
-      cardName: "as",
-      cardOrdre: 14
-    },
-    C1c = {
-      cardImageURL: "cartes\\AC.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "club",
-      cardColor: "black",
-      cardName: "as",
-      cardOrdre: 14
-    },
-    C1d = {
-      cardImageURL: "cartes\\AH.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "heart",
-      cardColor: "red",
-      cardName: "as",
-      cardOrdre: 14
-    },
+    // C8a = {
+    //   cardImageURL: "cartes\\8S.png",
+    //   cardValue: 8,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "8",
+    //   cardOrdre: 8
+    // },
+    // C8b = {
+    //   cardImageURL: "cartes\\8D.png",
+    //   cardValue: 8,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "8",
+    //   cardOrdre: 8
+    // },
+    // C8c = {
+    //   cardImageURL: "cartes\\8C.png",
+    //   cardValue: 8,
+    //   cardFamily: "club",
+    //   cardColor: "black",
+    //   cardName: "8",
+    //   cardOrdre: 8
+    // },
+    // C8d = {
+    //   cardImageURL: "cartes\\8H.png",
+    //   cardValue: 8,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "8",
+    //   cardOrdre: 8
+    // },
+    // C9a = {
+    //   cardImageURL: "cartes\\9S.png",
+    //   cardValue: 9,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "9",
+    //   cardOrdre: 9
+    // },
+    // C9b = {
+    //   cardImageURL: "cartes\\9D.png",
+    //   cardValue: 9,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "9",
+    //   cardOrdre: 9
+    // },
+    // C9c = {
+    //   cardImageURL: "cartes\\9C.png",
+    //   cardValue: 9,
+    //   cardFamily: "club",
+    //   cardColor: "black",
+    //   cardName: "9",
+    //   cardOrdre: 9
+    // },
+    // C9d = {
+    //   cardImageURL: "cartes\\9H.png",
+    //   cardValue: 9,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "9",
+    //   cardOrdre: 9
+    // },
+    // C10a = {
+    //   cardImageURL: "cartes\\ZS.png",
+    //   cardValue: 10,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "10",
+    //   cardOrdre: 10
+    // },
+    // C10b = {
+    //   cardImageURL: "cartes\\ZD.png",
+    //   cardValue: 10,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "10",
+    //   cardOrdre: 10
+    // },
+    // C10c = {
+    //   cardImageURL: "cartes\\ZC.png",
+    //   cardValue: 10,
+    //   cardFamily: "club",
+    //   cardColor: "black",
+    //   cardName: "10",
+    //   cardOrdre: 10
+    // },
+    // C10d = {
+    //   cardImageURL: "cartes\\ZH.png",
+    //   cardValue: 10,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "10",
+    //   cardOrdre: 10
+    // },
+    // C11a = {
+    //   cardImageURL: "cartes\\JS.png",
+    //   cardValue: 10,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "joker",
+    //   cardOrdre: 11
+    // },
+    // C11b = {
+    //   cardImageURL: "cartes\\JD.png",
+    //   cardValue: 10,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "joker",
+    //   cardOrdre: 11
+    // },
+    // C11c = {
+    //   cardImageURL: "cartes\\JC.png",
+    //   cardValue: 10,
+    //   cardFamily: "club",
+    //   cardColor: "black",
+    //   cardName: "joker",
+    //   cardOrdre: 11
+    // },
+    // C11d = {
+    //   cardImageURL: "cartes\\JH.png",
+    //   cardValue: 10,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "joker",
+    //   cardOrdre: 11
+    // },
+    // C12a = {
+    //   cardImageURL: "cartes\\QS.png",
+    //   cardValue: 10,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "queen",
+    //   cardOrdre: 12
+    // },
+    // C12b = {
+    //   cardImageURL: "cartes\\QD.png",
+    //   cardValue: 10,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "queen",
+    //   cardOrdre: 12
+    // },
+    // C12c = {
+    //   cardImageURL: "cartes\\QC.png",
+    //   cardValue: 10,
+    //   cardFamily: "club",
+    //   cardColor: "black",
+    //   cardName: "queen",
+    //   cardOrdre: 12
+    // },
+    // C12d = {
+    //   cardImageURL: "cartes\\QH.png",
+    //   cardValue: 10,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "queen",
+    //   cardOrdre: 12
+    // },
+    // C13a = {
+    //   cardImageURL: "cartes\\KS.png",
+    //   cardValue: 10,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "king",
+    //   cardOrdre: 13
+    // },
+    // C13b = {
+    //   cardImageURL: "cartes\\KD.png",
+    //   cardValue: 10,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "king",
+    //   cardOrdre: 13
+    // },
+    // C13c = {
+    //   cardImageURL: "cartes\\KC.png",
+    //   cardValue: 10,
+    //   cardFamily: "club",
+    //   cardColor: "black",
+    //   cardName: "king",
+    //   cardOrdre: 13
+    // },
+    // C13d = {
+    //   cardImageURL: "cartes\\KH.png",
+    //   cardValue: 10,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "king",
+    //   cardOrdre: 13
+    // },
+    // C1a = {
+    //   cardImageURL: "cartes\\AS.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
+    // C1b = {
+    //   cardImageURL: "cartes\\AD.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
+    // C1c = {
+    //   cardImageURL: "cartes\\AC.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "club",
+    //   cardColor: "black",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
+    // C1d = {
+    //   cardImageURL: "cartes\\AH.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
 
 
     // 2eme Deck
@@ -778,444 +617,439 @@
       cardName: "7",
       cardOrdre: 7
     },
-    C8a = {
-      cardImageURL: "cartes\\8S.png",
-      cardValue: 8,
-      cardFamily: "spade",
-      cardColor: "black",
-      cardName: "8",
-      cardOrdre: 8
-    },
-    C8b = {
-      cardImageURL: "cartes\\8D.png",
-      cardValue: 8,
-      cardFamily: "diamond",
-      cardColor: "red",
-      cardName: "8",
-      cardOrdre: 8
-    },
-    C8c = {
-      cardImageURL: "cartes\\8C.png",
-      cardValue: 8,
-      cardFamily: "club",
-      cardColor: "black",
-      cardName: "8",
-      cardOrdre: 8
-    },
-    C8d = {
-      cardImageURL: "cartes\\8H.png",
-      cardValue: 8,
-      cardFamily: "heart",
-      cardColor: "red",
-      cardName: "8",
-      cardOrdre: 8
-    },
-    C9a = {
-      cardImageURL: "cartes\\9S.png",
-      cardValue: 9,
-      cardFamily: "spade",
-      cardColor: "black",
-      cardName: "9",
-      cardOrdre: 9
-    },
-    C9b = {
-      cardImageURL: "cartes\\9D.png",
-      cardValue: 9,
-      cardFamily: "diamond",
-      cardColor: "red",
-      cardName: "9",
-      cardOrdre: 9
-    },
-    C9c = {
-      cardImageURL: "cartes\\9C.png",
-      cardValue: 9,
-      cardFamily: "club",
-      cardColor: "black",
-      cardName: "9",
-      cardOrdre: 9
-    },
-    C9d = {
-      cardImageURL: "cartes\\9H.png",
-      cardValue: 9,
-      cardFamily: "heart",
-      cardColor: "red",
-      cardName: "9",
-      cardOrdre: 9
-    },
-    C10a = {
-      cardImageURL: "cartes\\ZS.png",
-      cardValue: 10,
-      cardFamily: "spade",
-      cardColor: "black",
-      cardName: "10",
-      cardOrdre: 10
-    },
-    C10b = {
-      cardImageURL: "cartes\\ZD.png",
-      cardValue: 10,
-      cardFamily: "diamond",
-      cardColor: "red",
-      cardName: "10",
-      cardOrdre: 10
-    },
-    C10c = {
-      cardImageURL: "cartes\\ZC.png",
-      cardValue: 10,
-      cardFamily: "club",
-      cardColor: "black",
-      cardName: "10",
-      cardOrdre: 10
-    },
-    C10d = {
-      cardImageURL: "cartes\\ZH.png",
-      cardValue: 10,
-      cardFamily: "heart",
-      cardColor: "red",
-      cardName: "10",
-      cardOrdre: 10
-    },
-    C11a = {
-      cardImageURL: "cartes\\JS.png",
-      cardValue: 10,
-      cardFamily: "spade",
-      cardColor: "black",
-      cardName: "joker",
-      cardOrdre: 11
-    },
-    C11b = {
-      cardImageURL: "cartes\\JD.png",
-      cardValue: 10,
-      cardFamily: "diamond",
-      cardColor: "red",
-      cardName: "joker",
-      cardOrdre: 11
-    },
-    C11c = {
-      cardImageURL: "cartes\\JC.png",
-      cardValue: 10,
-      cardFamily: "club",
-      cardColor: "black",
-      cardName: "joker",
-      cardOrdre: 11
-    },
-    C11d = {
-      cardImageURL: "cartes\\JH.png",
-      cardValue: 10,
-      cardFamily: "heart",
-      cardColor: "red",
-      cardName: "joker",
-      cardOrdre: 11
-    },
-    C12a = {
-      cardImageURL: "cartes\\QS.png",
-      cardValue: 10,
-      cardFamily: "spade",
-      cardColor: "black",
-      cardName: "queen",
-      cardOrdre: 12
-    },
-    C12b = {
-      cardImageURL: "cartes\\QD.png",
-      cardValue: 10,
-      cardFamily: "diamond",
-      cardColor: "red",
-      cardName: "queen",
-      cardOrdre: 12
-    },
-    C12c = {
-      cardImageURL: "cartes\\QC.png",
-      cardValue: 10,
-      cardFamily: "club",
-      cardColor: "black",
-      cardName: "queen",
-      cardOrdre: 12
-    },
-    C12d = {
-      cardImageURL: "cartes\\QH.png",
-      cardValue: 10,
-      cardFamily: "heart",
-      cardColor: "red",
-      cardName: "queen",
-      cardOrdre: 12
-    },
-    C13a = {
-      cardImageURL: "cartes\\KS.png",
-      cardValue: 10,
-      cardFamily: "spade",
-      cardColor: "black",
-      cardName: "king",
-      cardOrdre: 13
-    },
-    C13b = {
-      cardImageURL: "cartes\\KD.png",
-      cardValue: 10,
-      cardFamily: "diamond",
-      cardColor: "red",
-      cardName: "king",
-      cardOrdre: 13
-    },
-    C13c = {
-      cardImageURL: "cartes\\KC.png",
-      cardValue: 10,
-      cardFamily: "club",
-      cardColor: "black",
-      cardName: "king",
-      cardOrdre: 13
-    },
-    C13d = {
-      cardImageURL: "cartes\\KH.png",
-      cardValue: 10,
-      cardFamily: "heart",
-      cardColor: "red",
-      cardName: "king",
-      cardOrdre: 13
-    },
-    C1a = {
-      cardImageURL: "cartes\\AS.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "spade",
-      cardColor: "black",
-      cardName: "as",
-      cardOrdre: 14
-    },
-    C1b = {
-      cardImageURL: "cartes\\AD.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "diamond",
-      cardColor: "red",
-      cardName: "as",
-      cardOrdre: 14
-    },
-    C1c = {
-      cardImageURL: "cartes\\AC.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "club",
-      cardColor: "black",
-      cardName: "as",
-      cardOrdre: 14
-    },
-    C1d = {
-      cardImageURL: "cartes\\AH.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "heart",
-      cardColor: "red",
-      cardName: "as",
-      cardOrdre: 14
-    },
-    // TRICHE TEST AS (attention virgule)
-    C1e = {
-      cardImageURL: "cartes\\AS.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "spade",
-      cardColor: "black",
-      cardName: "as",
-      cardOrdre: 14
-    },
-    C1f = {
-      cardImageURL: "cartes\\AD.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "diamond",
-      cardColor: "red",
-      cardName: "as",
-      cardOrdre: 14
-    },
-    C1g = {
-      cardImageURL: "cartes\\AC.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "club",
-      cardColor: "black",
-      cardName: "as",
-      cardOrdre: 14
-    },
-    C1h = {
-      cardImageURL: "cartes\\AH.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "heart",
-      cardColor: "red",
-      cardName: "as",
-      cardOrdre: 14
-    },
-    C1i = {
-      cardImageURL: "cartes\\AS.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "spade",
-      cardColor: "black",
-      cardName: "as",
-      cardOrdre: 14
-    },
-    C1j = {
-      cardImageURL: "cartes\\AD.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "diamond",
-      cardColor: "red",
-      cardName: "as",
-      cardOrdre: 14
-    },
-    C1k = {
-      cardImageURL: "cartes\\AC.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "club",
-      cardColor: "black",
-      cardName: "as",
-      cardOrdre: 14
-    },
-    C1l = {
-      cardImageURL: "cartes\\AH.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "heart",
-      cardColor: "red",
-      cardName: "as",
-      cardOrdre: 14
-    },
-    C1m = {
-      cardImageURL: "cartes\\AS.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "spade",
-      cardColor: "black",
-      cardName: "as",
-      cardOrdre: 14
-    },
-    C1n = {
-      cardImageURL: "cartes\\AD.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "diamond",
-      cardColor: "red",
-      cardName: "as",
-      cardOrdre: 14
-    },
-    C1o = {
-      cardImageURL: "cartes\\AC.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "club",
-      cardColor: "black",
-      cardName: "as",
-      cardOrdre: 14
-    },
-    C1p = {
-      cardImageURL: "cartes\\AH.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "heart",
-      cardColor: "red",
-      cardName: "as",
-      cardOrdre: 14
-    },
-    C1q = {
-      cardImageURL: "cartes\\AS.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "spade",
-      cardColor: "black",
-      cardName: "as",
-      cardOrdre: 14
-    },
-    C1r = {
-      cardImageURL: "cartes\\AD.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "diamond",
-      cardColor: "red",
-      cardName: "as",
-      cardOrdre: 14
-    },
-    C1s = {
-      cardImageURL: "cartes\\AC.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "club",
-      cardColor: "black",
-      cardName: "as",
-      cardOrdre: 14
-    },
-    C1t = {
-      cardImageURL: "cartes\\AH.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "heart",
-      cardColor: "red",
-      cardName: "as",
-      cardOrdre: 14
-    },
-    C1u = {
-      cardImageURL: "cartes\\AS.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "spade",
-      cardColor: "black",
-      cardName: "as",
-      cardOrdre: 14
-    },
-    C1v = {
-      cardImageURL: "cartes\\AD.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "diamond",
-      cardColor: "red",
-      cardName: "as",
-      cardOrdre: 14
-    },
-    C1w = {
-      cardImageURL: "cartes\\AC.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "club",
-      cardColor: "black",
-      cardName: "as",
-      cardOrdre: 14
-    },
-    C1x = {
-      cardImageURL: "cartes\\AH.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "heart",
-      cardColor: "red",
-      cardName: "as",
-      cardOrdre: 14
-    },
-    C1y = {
-      cardImageURL: "cartes\\AC.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "club",
-      cardColor: "black",
-      cardName: "as",
-      cardOrdre: 14
-    },
-    C1z = {
-      cardImageURL: "cartes\\AH.png",
-      cardValue: 1,
-      cardValue2: 10,
-      cardFamily: "heart",
-      cardColor: "red",
-      cardName: "as",
-      cardOrdre: 14
-    }
+    // C8a = {
+    //   cardImageURL: "cartes\\8S.png",
+    //   cardValue: 8,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "8",
+    //   cardOrdre: 8
+    // },
+    // C8b = {
+    //   cardImageURL: "cartes\\8D.png",
+    //   cardValue: 8,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "8",
+    //   cardOrdre: 8
+    // },
+    // C8c = {
+    //   cardImageURL: "cartes\\8C.png",
+    //   cardValue: 8,
+    //   cardFamily: "club",
+    //   cardColor: "black",
+    //   cardName: "8",
+    //   cardOrdre: 8
+    // },
+    // C8d = {
+    //   cardImageURL: "cartes\\8H.png",
+    //   cardValue: 8,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "8",
+    //   cardOrdre: 8
+    // },
+    // C9a = {
+    //   cardImageURL: "cartes\\9S.png",
+    //   cardValue: 9,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "9",
+    //   cardOrdre: 9
+    // },
+    // C9b = {
+    //   cardImageURL: "cartes\\9D.png",
+    //   cardValue: 9,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "9",
+    //   cardOrdre: 9
+    // },
+    // C9c = {
+    //   cardImageURL: "cartes\\9C.png",
+    //   cardValue: 9,
+    //   cardFamily: "club",
+    //   cardColor: "black",
+    //   cardName: "9",
+    //   cardOrdre: 9
+    // },
+    // C9d = {
+    //   cardImageURL: "cartes\\9H.png",
+    //   cardValue: 9,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "9",
+    //   cardOrdre: 9
+    // },
+    // C10a = {
+    //   cardImageURL: "cartes\\ZS.png",
+    //   cardValue: 10,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "10",
+    //   cardOrdre: 10
+    // },
+    // C10b = {
+    //   cardImageURL: "cartes\\ZD.png",
+    //   cardValue: 10,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "10",
+    //   cardOrdre: 10
+    // },
+    // C10c = {
+    //   cardImageURL: "cartes\\ZC.png",
+    //   cardValue: 10,
+    //   cardFamily: "club",
+    //   cardColor: "black",
+    //   cardName: "10",
+    //   cardOrdre: 10
+    // },
+    // C10d = {
+    //   cardImageURL: "cartes\\ZH.png",
+    //   cardValue: 10,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "10",
+    //   cardOrdre: 10
+    // },
+    // C11a = {
+    //   cardImageURL: "cartes\\JS.png",
+    //   cardValue: 10,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "joker",
+    //   cardOrdre: 11
+    // },
+    // C11b = {
+    //   cardImageURL: "cartes\\JD.png",
+    //   cardValue: 10,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "joker",
+    //   cardOrdre: 11
+    // },
+    // C11c = {
+    //   cardImageURL: "cartes\\JC.png",
+    //   cardValue: 10,
+    //   cardFamily: "club",
+    //   cardColor: "black",
+    //   cardName: "joker",
+    //   cardOrdre: 11
+    // },
+    // C11d = {
+    //   cardImageURL: "cartes\\JH.png",
+    //   cardValue: 10,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "joker",
+    //   cardOrdre: 11
+    // },
+    // C12a = {
+    //   cardImageURL: "cartes\\QS.png",
+    //   cardValue: 10,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "queen",
+    //   cardOrdre: 12
+    // },
+    // C12b = {
+    //   cardImageURL: "cartes\\QD.png",
+    //   cardValue: 10,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "queen",
+    //   cardOrdre: 12
+    // },
+    // C12c = {
+    //   cardImageURL: "cartes\\QC.png",
+    //   cardValue: 10,
+    //   cardFamily: "club",
+    //   cardColor: "black",
+    //   cardName: "queen",
+    //   cardOrdre: 12
+    // },
+    // C12d = {
+    //   cardImageURL: "cartes\\QH.png",
+    //   cardValue: 10,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "queen",
+    //   cardOrdre: 12
+    // },
+    // C13a = {
+    //   cardImageURL: "cartes\\KS.png",
+    //   cardValue: 10,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "king",
+    //   cardOrdre: 13
+    // },
+    // C13b = {
+    //   cardImageURL: "cartes\\KD.png",
+    //   cardValue: 10,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "king",
+    //   cardOrdre: 13
+    // },
+    // C13c = {
+    //   cardImageURL: "cartes\\KC.png",
+    //   cardValue: 10,
+    //   cardFamily: "club",
+    //   cardColor: "black",
+    //   cardName: "king",
+    //   cardOrdre: 13
+    // },
+    // C13d = {
+    //   cardImageURL: "cartes\\KH.png",
+    //   cardValue: 10,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "king",
+    //   cardOrdre: 13
+    // },
+    // C1a = {
+    //   cardImageURL: "cartes\\AS.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
+    // C1b = {
+    //   cardImageURL: "cartes\\AD.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
+    // C1c = {
+    //   cardImageURL: "cartes\\AC.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "club",
+    //   cardColor: "black",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
+    // C1d = {
+    //   cardImageURL: "cartes\\AH.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
+    // // TRICHE TEST AS (attention virgule)
+    // C1e = {
+    //   cardImageURL: "cartes\\AS.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
+    // C1f = {
+    //   cardImageURL: "cartes\\AD.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
+    // C1g = {
+    //   cardImageURL: "cartes\\AC.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "club",
+    //   cardColor: "black",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
+    // C1h = {
+    //   cardImageURL: "cartes\\AH.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
+    // C1i = {
+    //   cardImageURL: "cartes\\AS.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
+    // C1j = {
+    //   cardImageURL: "cartes\\AD.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
+    // C1k = {
+    //   cardImageURL: "cartes\\AC.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "club",
+    //   cardColor: "black",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
+    // C1l = {
+    //   cardImageURL: "cartes\\AH.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
+    // C1m = {
+    //   cardImageURL: "cartes\\AS.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
+    // C1n = {
+    //   cardImageURL: "cartes\\AD.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
+    // C1o = {
+    //   cardImageURL: "cartes\\AC.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "club",
+    //   cardColor: "black",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
+    // C1p = {
+    //   cardImageURL: "cartes\\AH.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
+    // C1q = {
+    //   cardImageURL: "cartes\\AS.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
+    // C1r = {
+    //   cardImageURL: "cartes\\AD.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
+    // C1s = {
+    //   cardImageURL: "cartes\\AC.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "club",
+    //   cardColor: "black",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
+    // C1t = {
+    //   cardImageURL: "cartes\\AH.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
+    // C1u = {
+    //   cardImageURL: "cartes\\AS.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
+    // C1v = {
+    //   cardImageURL: "cartes\\AD.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
+    // C1w = {
+    //   cardImageURL: "cartes\\AC.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "club",
+    //   cardColor: "black",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
+    // C1x = {
+    //   cardImageURL: "cartes\\AH.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
+    // C1y = {
+    //   cardImageURL: "cartes\\AC.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "club",
+    //   cardColor: "black",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // },
+    // C1z = {
+    //   cardImageURL: "cartes\\AH.png",
+    //   cardValue: 1,
+    //   cardValue2: 10,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "as",
+    //   cardOrdre: 14
+    // }
     // FIN TRICHE
   ];
 
 
 
-  // Mélange DEGUEULASSE
-  // Au moment d'un reload, apres le load jouerPartie, mettre un (if cards length < 60) function de reinit du deck
-
   function melangeDeck(darkModeBool) {
-
-
 
     cards = [
       // 1er Deck

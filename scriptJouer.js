@@ -643,33 +643,94 @@
         let bet213 = "Lost";
         let gain213Bet = 0;
 
-        if (cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily == cartesSortiesPartie[2].cardFamily) {
-          bet213 = "Flush" // 3 cartes meme FAMILLE
-        }
-        else {
-          // PAS FAIT: ATTENTION cardOrdre du AS = 14 ou 1 !   "Three cards of consecutive values, such as 2-3-4. Aces can be high or low"
 
-          // Si la valeur absolue de la diffrence entre les 2 premieres cardOrdre == 1 mais que famille différente (car straightFlush plus loin et plus importante), comparer l'une des deux à la troisieme et si diff == 1 encore, true (plus besoin de comparer les famille apres)
-          if (((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[1].cardOrdre) == 1) && ((cartesSortiesPartie[0].cardFamily !== cartesSortiesPartie[1].cardFamily) || (cartesSortiesPartie[1].cardFamily !== cartesSortiesPartie[2].cardFamily))) 
-            && ((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) && (Math.abs(cartesSortiesPartie[1].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1))) {
-              bet213 = "Straight"; // 3 cartes de suite
+        // PAS FAIT: ATTENTION cardOrdre du AS = 14 ou 1 !   "Three cards of consecutive values, such as 2-3-4. Aces can be high or low"
+        // Si As, check conditions normales, si faux, check si As[i].cardOrdre + 10 valide les conditions ?
+        // Si as, le comparer d'abord au 2 autres pour adapter sa valeur si y'a match ?
+        // Le compte de As parmis les 3 premiere doit etre de 1 (sinon pas conditions straight)
+        // Si y'a prévision de match (avec 13 ou 1), changer directement la valeur carte[x].cardValue
+        let asCount = 0;
+        let asdiff = -13;
+
+        if (cartesSortiesPartie[0].cardOrdre == 14) {
+          asCount += 1;
+        }
+        if (cartesSortiesPartie[1].cardOrdre == 14) {
+          asCount += 1;
+        }
+        if (cartesSortiesPartie[2].cardOrdre == 14) {
+          asCount += 1;
+        }
+
+        if ( asCount == 1 ) {
+          // if (cartesSortiesPartie[0].cardOrdre == 14) {
+          //   if (cartesSortiesPartie[1].cardOrdre == 13) || (cartesSortiesPartie[2].cardOrdre == 13) || 
+          // }
+        }
+
+
+        // Factoriser les if en ET
+        if (Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[1].cardOrdre) == 1) {
+          if (((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) && (Math.abs(cartesSortiesPartie[1].cardOrdre - cartesSortiesPartie[2].cardOrdre) != 1)) ||
+          ((Math.abs(cartesSortiesPartie[1].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) && (Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[2].cardOrdre) != 1)))  {
+            // check pour vérifier qu'il y ait pas de paire 
+            if ((cartesSortiesPartie[0].cardOrdre != cartesSortiesPartie[1].cardOrdre) && (cartesSortiesPartie[0].cardOrdre != cartesSortiesPartie[2].cardOrdre)) {
+              if ((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily) && (cartesSortiesPartie[1].cardFamily == cartesSortiesPartie[2].cardFamily)) {
+                bet213 = "Straight Flush"; // 3 cartes de suite de la même FAMILLE
+              }
+              else {
+                bet213 = "Straight"; // 3 cartes de suite
+              }
+            }
+          }
+        }
+        else if (Math.abs(cartesSortiesPartie[1].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) {
+          if (((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[1].cardOrdre) == 1) && (Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[2].cardOrdre) != 1)) ||
+          ((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) && (Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[1].cardOrdre) != 1)))  {
+            // check pour vérifier qu'il y ait pas de paire 
+            if ((cartesSortiesPartie[0].cardOrdre != cartesSortiesPartie[1].cardOrdre) && (cartesSortiesPartie[0].cardOrdre != cartesSortiesPartie[2].cardOrdre)) {
+              if ((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily) && (cartesSortiesPartie[1].cardFamily == cartesSortiesPartie[2].cardFamily)) {
+                bet213 = "Straight Flush"; // 3 cartes de suite de la même FAMILLE
+              }
+              else {
+                bet213 = "Straight"; // 3 cartes de suite
+              }
+            }
+          }
+        }
+        else if (Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) {
+          if (((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[1].cardOrdre) == 1) && (Math.abs(cartesSortiesPartie[1].cardOrdre - cartesSortiesPartie[2].cardOrdre) != 1)) ||
+          ((Math.abs(cartesSortiesPartie[1].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) && (Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[1].cardOrdre) != 1)))  {
+            // check pour vérifier qu'il y ait pas de paire 
+            if ((cartesSortiesPartie[0].cardOrdre != cartesSortiesPartie[1].cardOrdre) && (cartesSortiesPartie[0].cardOrdre != cartesSortiesPartie[2].cardOrdre)) {
+              if ((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily) && (cartesSortiesPartie[1].cardFamily == cartesSortiesPartie[2].cardFamily)) {
+                bet213 = "Straight Flush"; // 3 cartes de suite de la même FAMILLE
+              }
+              else {
+                bet213 = "Straight"; // 3 cartes de suite
+              }
+            }
+          }
+        }
+        // Il faut refaire les 3 test ci dessus pour chaque cas:
+        // else if asCount = 1 et carteSortie[1]: faire les 3 en remplacant les [1].value par [1].value+asDiff1
+        // ...
+        
+        else {
+          if (((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily) && (cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[2].cardFamily)) && ((cartesSortiesPartie[0].cardName == cartesSortiesPartie[1].cardName) && (cartesSortiesPartie[0].cardName == cartesSortiesPartie[2].cardName))) {
+            bet213 = "Suited Trips"; // 3 cartes de la meme FAMILLE et meme NOMS
           }
           else {
+            // Attention, marche que si 3+ decks !
             if ((cartesSortiesPartie[0].cardName == cartesSortiesPartie[1].cardName) && (cartesSortiesPartie[0].cardName == cartesSortiesPartie[2].cardName)) {
               bet213 = "Three of a kind"; // Brelan (3 cartes memes NOMS)
             }
             else {
-              if (((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[1].cardOrdre) == 1) && (cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily)) 
-                && ((((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) || (Math.abs(cartesSortiesPartie[1].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1)) && (cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[2].cardFamily)))) {
-                  bet213 = "Straight Flush"; // 3 cartes de suite de la même FAMILLE
+              if ((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily) && ( cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[2].cardFamily)) {
+                bet213 = "Flush" // 3 cartes meme FAMILLE
               }
               else {
-                if ((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily == cartesSortiesPartie[2].cardFamily) && (cartesSortiesPartie[0].cardName == cartesSortiesPartie[1].cardName == cartesSortiesPartie[2].cardName)) {
-                  bet213 = "Suited Trips"; // 3 cartes de la meme FAMILLE et meme NOMS
-                }
-                else {
-                  bet213 = "Lost"; 
-                }
+                bet213 = "Lost"; 
               }
             }
           }
@@ -801,8 +862,8 @@
 
         $("#historique").click(function() {
 
+
           // Modal Confirmation if ingame (ingame Fait), à ajouter pour Jouer et Guide aussi
-          
           // Cancel
           document.getElementById("cancel").addEventListener("click", function() {
             setTimeout(function() {
@@ -5008,6 +5069,7 @@
 
 
 
+        
 
       //
       // Envoi/Refresh du crédits et appel historiqueDB();
