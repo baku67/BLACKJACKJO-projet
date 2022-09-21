@@ -623,7 +623,7 @@
           if ((pairBet != "Lost") && (misePairLocked > 0)) {
             var pairBetText;
             if(pairBet == "mixedPair") {pairBetText = "Mixed Pair"} else if(pairBet == "coloredPair") {pairBetText = "Colored Pair";} else if(pairBet == "perfectPair") {pairBetText = "Perfect Pair";}
-            document.getElementById("misePairLocked").innerHTML = pairBetText; 
+            document.getElementById("misePairLocked").innerHTML = "<span style='font-size:1.7rem; font-weight:bold;'>&#10003;</span>" + pairBet;
             document.getElementById("misePairLocked").classList.add("misePairProcTextAnim");  
           }
           // Perdu avec miseBet présente:
@@ -674,7 +674,7 @@
           if (((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) && (Math.abs(cartesSortiesPartie[1].cardOrdre - cartesSortiesPartie[2].cardOrdre) != 1)) ||
           ((Math.abs(cartesSortiesPartie[1].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) && (Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[2].cardOrdre) != 1)))  {
             // check pour vérifier qu'il y ait pas de paire 
-            if ((cartesSortiesPartie[0].cardOrdre != cartesSortiesPartie[1].cardOrdre) && (cartesSortiesPartie[0].cardOrdre != cartesSortiesPartie[2].cardOrdre)) {
+            if ((cartesSortiesPartie[0].cardOrdre != cartesSortiesPartie[1].cardOrdre) && (cartesSortiesPartie[0].cardOrdre != cartesSortiesPartie[2].cardOrdre) && (cartesSortiesPartie[1].cardOrdre != cartesSortiesPartie[2].cardOrdre)) {
               if ((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily) && (cartesSortiesPartie[1].cardFamily == cartesSortiesPartie[2].cardFamily)) {
                 bet213 = "Straight Flush"; // 3 cartes de suite de la même FAMILLE
               }
@@ -688,7 +688,7 @@
           if (((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[1].cardOrdre) == 1) && (Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[2].cardOrdre) != 1)) ||
           ((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) && (Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[1].cardOrdre) != 1)))  {
             // check pour vérifier qu'il y ait pas de paire 
-            if ((cartesSortiesPartie[0].cardOrdre != cartesSortiesPartie[1].cardOrdre) && (cartesSortiesPartie[0].cardOrdre != cartesSortiesPartie[2].cardOrdre)) {
+            if ((cartesSortiesPartie[0].cardOrdre != cartesSortiesPartie[1].cardOrdre) && (cartesSortiesPartie[0].cardOrdre != cartesSortiesPartie[2].cardOrdre) && (cartesSortiesPartie[1].cardOrdre != cartesSortiesPartie[2].cardOrdre)) {
               if ((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily) && (cartesSortiesPartie[1].cardFamily == cartesSortiesPartie[2].cardFamily)) {
                 bet213 = "Straight Flush"; // 3 cartes de suite de la même FAMILLE
               }
@@ -702,7 +702,7 @@
           if (((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[1].cardOrdre) == 1) && (Math.abs(cartesSortiesPartie[1].cardOrdre - cartesSortiesPartie[2].cardOrdre) != 1)) ||
           ((Math.abs(cartesSortiesPartie[1].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) && (Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[1].cardOrdre) != 1)))  {
             // check pour vérifier qu'il y ait pas de paire 
-            if ((cartesSortiesPartie[0].cardOrdre != cartesSortiesPartie[1].cardOrdre) && (cartesSortiesPartie[0].cardOrdre != cartesSortiesPartie[2].cardOrdre)) {
+            if ((cartesSortiesPartie[0].cardOrdre != cartesSortiesPartie[1].cardOrdre) && (cartesSortiesPartie[0].cardOrdre != cartesSortiesPartie[2].cardOrdre) && (cartesSortiesPartie[1].cardOrdre != cartesSortiesPartie[2].cardOrdre)) {
               if ((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily) && (cartesSortiesPartie[1].cardFamily == cartesSortiesPartie[2].cardFamily)) {
                 bet213 = "Straight Flush"; // 3 cartes de suite de la même FAMILLE
               }
@@ -767,7 +767,7 @@
         setTimeout( function() {
           // Autre que perdu, proc que si miseBet présente:
           if ((bet213 != "Lost") && (mise213Locked > 0)) {
-              document.getElementById("mise213Locked").innerHTML = bet213;
+              document.getElementById("mise213Locked").innerHTML = "<span style='font-size:1.7rem; font-weight:bold;'>&#10003;</span>" + bet213;
                 document.getElementById("mise213Locked").classList.add("mise213ProcTextAnim");   
           }
           // Perdu avec miseBet présente:
@@ -2979,6 +2979,10 @@
 
           ingame = true;
 
+          // Remplacement Param par sideBets si il y a pour l'instant, sinon afficher sideBets nul
+          // FadeOut/FadeIn
+          document.getElementById("parametresPartieDiv").innerHTML = "";
+
           // Depop du sideBet et retour borderTopFooter normal
           document.getElementById("sideBetDiv").remove();
           document.getElementById("traitLumineuxFooter").style.background = "var(--traitFooterMise-color)";
@@ -3015,20 +3019,34 @@
           miseLocked = miseEnCours;
           misePairLocked = misePairEnCours;
           mise213Locked = mise213EnCours;
-
           console.log("Mises Lockées: \n" + "miseLocked: " + miseLocked + ",\n" + "misePairLocked: " + misePairLocked + ",\n" + "mise213Locked: " + mise213EnCours + ".");
 
 
-          // Creation des elem avant Apparition des mises Locked sous le deck
+          // Titre Mise Normale
+          let miseTitle = document.createElement("h6");
+          miseTitle.setAttribute("id", "miseTitle");
+          miseTitle.innerText = "Mise";
+          document.getElementById("deckContainer").append(miseTitle); 
+
+          // Titre sideBets
+          let sideBetsTitle = document.createElement("h6");
+          sideBetsTitle.setAttribute("id", "sideBetsTitle");
+          sideBetsTitle.innerText = "Side Bets";
+          document.getElementById("parametresPartieDiv").append(sideBetsTitle); 
+
+          // Ajout border lors switch param/sideBets:
+          document.getElementById("parametresPartieDiv").classList.add("borderParamPartie");
+          
+
+          // Creation des elem avant Apparition des mises Locked sous le deck / sideBets
           let miseLockedElement = document.createElement('span');
           miseLockedElement.setAttribute('id', 'miseLocked');
           document.getElementById("deckContainer").append(miseLockedElement);
           document.getElementById("miseLocked").classList.add('miseLockedAnim');
 
-          // Saut de ligne 
           if (misePairLocked > 0) {
-            // document.getElementById("deckContainer").append(document.createElement("br"));
-            document.getElementById("parametresPartieDiv").append(document.createElement("br"));
+            // Saut de ligne 
+            // document.getElementById("parametresPartieDiv").append(document.createElement("br"));
 
             let misePairLockedElement = document.createElement("span");
             misePairLockedElement.setAttribute("id", "misePairLocked");
@@ -3039,7 +3057,6 @@
 
           if (mise213Locked > 0) {
             // Saut de ligne 
-            // document.getElementById("deckContainer").append(document.createElement("br"));
             document.getElementById("parametresPartieDiv").append(document.createElement("br"));
 
             let mise213LockedElement = document.createElement("span");

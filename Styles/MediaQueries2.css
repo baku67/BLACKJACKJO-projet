@@ -247,9 +247,12 @@
 	}
 
 	#parametresPartieDiv {
-		bottom: 50%;
-		right: 5%;
-		height: 75px;
+		/* bottom: 48%; */
+		bottom: 49%;
+		transform: translateY(49%);
+
+		/* right: 5%; */
+		right: 2%;
 	}
 
 

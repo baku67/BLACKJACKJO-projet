@@ -362,9 +362,30 @@ input:-webkit-autofill{
 
 
 
+#miseTitle {
+	margin-block-start: 0.6em;
+	margin-block-end: 0em;
 
+	font-size:1.6em;
+	font-weight:100;
+	letter-spacing:1px;
+	opacity:0.8;
+	font-family: 'Kavoon';
 
+	/* Achtung */
+	position: relative;
+	top: 8px;
+}
+#sideBetsTitle {
+	margin-block-start: 0;
+	margin-block-end: 0.4em;
 
+	font-size:1.3em;
+	font-weight:100;
+	letter-spacing:1px;
+	opacity:0.8;
+	font-family: 'Kavoon';
+}
 
 
 
@@ -826,6 +847,8 @@ button, input[type="submit"], input[type="reset"] {
 	/* fadeIN */
 	opacity: 0;
 	animation: fadeInBetProc 0.5s 1 forwards normal ease-in-out;
+
+	letter-spacing: 1px;
 }
 .mise213ProcTextAnim {
 	color:rgba(255, 55, 250, 0.80); 
@@ -844,6 +867,8 @@ button, input[type="submit"], input[type="reset"] {
 	/* fadeIN */
 	opacity: 0;
 	animation: fadeInBetProc 0.5s 1 forwards normal ease-in-out;
+
+	letter-spacing: 1px;
 }
 @keyframes fadeInBetProc {
 	from {
@@ -2694,17 +2719,28 @@ p {
 	font-family: 1.37em;
 
 	position: absolute; 
-	bottom: 44%;
+	/* bottom: 48%; */
+	bottom: 49%;
+	transform: translateY(49%);
 	right: 25%;
 
-	height: 125px;
+	/* height: 125px; */
 
 	opacity: 0;
 	animation: fadeInAnimationPartieScore 2s 1s ease; 
 	animation-iteration-count: 1; 
 	animation-fill-mode: forwards; 
 
-	padding-bottom: 2px;
+	padding: 17px 17px 29px 17px;
+	/* border-top: solid 1px rgba(255,255,255,0.1);
+	border-bottom: solid 1px rgba(255,255,255,0.1); */
+}
+.borderParamPartie {
+	/* padding: 17px 17px 29px 17px; */
+	/* A TESTER */
+	/* border: solid 1px rgba(255,255,255,0.05); */
+	border-top: solid 1px rgba(255,255,255,0.1);
+	border-bottom: solid 1px rgba(255,255,255,0.1);
 }
 
 /* C'est IMMONDE !  */
