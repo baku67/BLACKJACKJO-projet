@@ -623,13 +623,16 @@
           if ((pairBet != "Lost") && (misePairLocked > 0)) {
             var pairBetText;
             if(pairBet == "mixedPair") {pairBetText = "Mixed Pair"} else if(pairBet == "coloredPair") {pairBetText = "Colored Pair";} else if(pairBet == "perfectPair") {pairBetText = "Perfect Pair";}
-            document.getElementById("misePairLocked").innerHTML = "<span style='font-size:1.7rem; font-weight:bold;'>&#10003;</span>" + pairBet;
+            document.getElementById("misePairLocked").innerHTML = "<span style='font-size:1.7rem; font-weight:bold;'>&#10003;</span> " + pairBetText;
             document.getElementById("misePairLocked").classList.add("misePairProcTextAnim");  
           }
           // Perdu avec miseBet présente:
           else if ((pairBet == "Lost") && (misePairLocked > 0)) {
             document.getElementById("misePairLocked").innerHTML = "<span style='font-size:1.7rem; font-weight:bold;'>&#10008;</span> Lost";
-            document.getElementById("misePairLocked").classList.add("misePairProcTextAnim");  
+            document.getElementById("misePairLocked").classList.add("misePairProcTextAnim"); 
+            document.getElementById("misePairLocked").classList.add("styleLost"); 
+            // Si lost, color orange (DM/LM à mettre)
+            document.getElementById("misePairLocked").style.color = "rgba(239, 59, 46, 0.75)";
           }  
         }, 750)      
 
@@ -767,13 +770,16 @@
         setTimeout( function() {
           // Autre que perdu, proc que si miseBet présente:
           if ((bet213 != "Lost") && (mise213Locked > 0)) {
-              document.getElementById("mise213Locked").innerHTML = "<span style='font-size:1.7rem; font-weight:bold;'>&#10003;</span>" + bet213;
+              document.getElementById("mise213Locked").innerHTML = "<span style='font-size:1.7rem; font-weight:bold;'>&#10003;</span> " + bet213;
                 document.getElementById("mise213Locked").classList.add("mise213ProcTextAnim");   
           }
           // Perdu avec miseBet présente:
           else if ((bet213 == "Lost") && (mise213Locked > 0)) {
             document.getElementById("mise213Locked").innerHTML = "<span style='font-size:1.7rem; font-weight:bold;'>&#10008;</span> Lost";
               document.getElementById("mise213Locked").classList.add("mise213ProcTextAnim");  
+              document.getElementById("mise213Locked").classList.add("styleLost"); 
+              // Si lost, color orange (DM/LM à mettre)
+              document.getElementById("mise213Locked").style.color = "rgba(239, 59, 46, 0.75)";
           }
             
           // Si les 2 bets actif, position du 21+3
@@ -3033,6 +3039,14 @@
           sideBetsTitle.setAttribute("id", "sideBetsTitle");
           sideBetsTitle.innerText = "Side Bets";
           document.getElementById("parametresPartieDiv").append(sideBetsTitle); 
+          
+          // Traits SideBets et Mise
+          let traitSouligneBet = document.createElement("div");
+          traitSouligneBet.setAttribute("id", "traitSouligneBet");
+          document.getElementById("parametresPartieDiv").append(traitSouligneBet); 
+          let traitSouligneMise = document.createElement("div");
+          traitSouligneMise.setAttribute("id", "traitSouligneMise");
+          document.getElementById("deckContainer").append(traitSouligneMise); 
 
           // Ajout border lors switch param/sideBets:
           document.getElementById("parametresPartieDiv").classList.add("borderParamPartie");
@@ -3095,12 +3109,12 @@
             
               if (misePairLocked > 0) {
                 document.getElementById("misePairLocked").innerHTML = 
-                "<span id='misePairLockedNbr'>" + misePairLocked + "</span><img src='Images/souBarre.png' class='imageSouSideBets' style='margin-left:2px;'/>";
+                "<span>Pair:</span><span id='misePairLockedNbr'>" + misePairLocked + "</span><img src='Images/souBarre.png' class='imageSouSideBets' style='margin-left:2px;'/>";
               }
             
               if (mise213Locked > 0) {
                 document.getElementById("mise213Locked").innerHTML = 
-                "<span id='mise213LockedNbr'>" + mise213Locked + "</span><img src='Images/souBarre.png' class='imageSouSideBets' style='margin-left:2px;'/>";  
+                "<span>21+3:</span><span id='mise213LockedNbr'>" + mise213Locked + "</span><img src='Images/souBarre.png' class='imageSouSideBets' style='margin-left:2px;'/>";  
               }
               // }, 800)
           }

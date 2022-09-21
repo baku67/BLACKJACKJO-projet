@@ -237,7 +237,8 @@
 	}
 
 	#deckContainer {
-		left: 5%; 
+		/* left: 5%;  */
+		left: 1%;
 		bottom: 43%; 
 		height: 187px;
 
@@ -252,7 +253,8 @@
 		transform: translateY(49%);
 
 		/* right: 5%; */
-		right: 2%;
+		/* right: 2%; */
+		right: 0%;
 	}
 
 

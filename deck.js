@@ -162,38 +162,38 @@
       cardName: "6",
       cardOrdre: 6
     },
-    C7a = {
-      cardImageURL: "cartes\\7S.png",
-      cardValue: 7,
-      cardFamily: "spade",
-      cardColor: "black",
-      cardName: "7",
-      cardOrdre: 7
-    },
-    C7b = {
-      cardImageURL: "cartes\\7D.png",
-      cardValue: 7,
-      cardFamily: "diamond",
-      cardColor: "red",
-      cardName: "7",
-      cardOrdre: 7
-    },
-    C7c = {
-      cardImageURL: "cartes\\7C.png",
-      cardValue: 7,
-      cardFamily: "club",
-      cardColor: "black",
-      cardName: "7",
-      cardOrdre: 7
-    },
-    C7d = {
-      cardImageURL: "cartes\\7H.png",
-      cardValue: 7,
-      cardFamily: "heart",
-      cardColor: "red",
-      cardName: "7",
-      cardOrdre: 7
-    },
+    // C7a = {
+    //   cardImageURL: "cartes\\7S.png",
+    //   cardValue: 7,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "7",
+    //   cardOrdre: 7
+    // },
+    // C7b = {
+    //   cardImageURL: "cartes\\7D.png",
+    //   cardValue: 7,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "7",
+    //   cardOrdre: 7
+    // },
+    // C7c = {
+    //   cardImageURL: "cartes\\7C.png",
+    //   cardValue: 7,
+    //   cardFamily: "club",
+    //   cardColor: "black",
+    //   cardName: "7",
+    //   cardOrdre: 7
+    // },
+    // C7d = {
+    //   cardImageURL: "cartes\\7H.png",
+    //   cardValue: 7,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "7",
+    //   cardOrdre: 7
+    // },
     // C8a = {
     //   cardImageURL: "cartes\\8S.png",
     //   cardValue: 8,
@@ -585,38 +585,38 @@
       cardName: "6",
       cardOrdre: 6
     },
-    C7a = {
-      cardImageURL: "cartes\\7S.png",
-      cardValue: 7,
-      cardFamily: "spade",
-      cardColor: "black",
-      cardName: "7",
-      cardOrdre: 7
-    },
-    C7b = {
-      cardImageURL: "cartes\\7D.png",
-      cardValue: 7,
-      cardFamily: "diamond",
-      cardColor: "red",
-      cardName: "7",
-      cardOrdre: 7
-    },
-    C7c = {
-      cardImageURL: "cartes\\7C.png",
-      cardValue: 7,
-      cardFamily: "club",
-      cardColor: "black",
-      cardName: "7",
-      cardOrdre: 7
-    },
-    C7d = {
-      cardImageURL: "cartes\\7H.png",
-      cardValue: 7,
-      cardFamily: "heart",
-      cardColor: "red",
-      cardName: "7",
-      cardOrdre: 7
-    },
+    // C7a = {
+    //   cardImageURL: "cartes\\7S.png",
+    //   cardValue: 7,
+    //   cardFamily: "spade",
+    //   cardColor: "black",
+    //   cardName: "7",
+    //   cardOrdre: 7
+    // },
+    // C7b = {
+    //   cardImageURL: "cartes\\7D.png",
+    //   cardValue: 7,
+    //   cardFamily: "diamond",
+    //   cardColor: "red",
+    //   cardName: "7",
+    //   cardOrdre: 7
+    // },
+    // C7c = {
+    //   cardImageURL: "cartes\\7C.png",
+    //   cardValue: 7,
+    //   cardFamily: "club",
+    //   cardColor: "black",
+    //   cardName: "7",
+    //   cardOrdre: 7
+    // },
+    // C7d = {
+    //   cardImageURL: "cartes\\7H.png",
+    //   cardValue: 7,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "7",
+    //   cardOrdre: 7
+    // },
     // C8a = {
     //   cardImageURL: "cartes\\8S.png",
     //   cardValue: 8,
