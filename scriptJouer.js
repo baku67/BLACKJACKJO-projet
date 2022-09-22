@@ -4372,75 +4372,86 @@
       function tokensClick() {
         
           document.getElementById("whiteToken").addEventListener("click", function() {
-          
-            // Les conditions sur mise normal affectent les sideBets
-            if ((credits-miseEnCours) >= 1) {
-    
-              if (SoundMuteBool == false) {
-                audioToken.play();
-              }
-    
-              if (miseEnCours < 100) {
 
-                if (toggleSideBet == "normal") {
-                  addLastTokenClickToTab(1);
-                  miseEnCours += 1;
-                  refreshEraseOpacity(toggleSideBet);
-                }
-                else if (toggleSideBet == "pair") {
-                  addLastTokenClickToTabPair(1);
-                  misePairEnCours += 1;
-                  refreshEraseOpacity(toggleSideBet);
-                }
-                else if (toggleSideBet == "21+3") {
-                  addLastTokenClickToTab213(1);
-                  mise213EnCours += 1;
-                  refreshEraseOpacity(toggleSideBet);
-                }
-
-              }
-
-              refreshMisesEnCours(toggleSideBet);
-
-              miseBoutonStyle();
-              cssMiseEnCours();
+            if (SoundMuteBool == false) {
+              audioToken.play();
             }
+
+            if (toggleSideBet == "normal") {
+              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 1) && (miseEnCours < 100)) {
+                addLastTokenClickToTab(1);
+                miseEnCours += 1;
+                refreshEraseOpacity(toggleSideBet);
+
+                refreshMisesEnCours(toggleSideBet);
+                miseBoutonStyle();
+                cssMiseEnCours();  
+              }
+            }
+            else if (toggleSideBet == "pair") {
+              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 1) && (misePairEnCours < 100)) {
+                addLastTokenClickToTabPair(1);
+                misePairEnCours += 1;
+                refreshEraseOpacity(toggleSideBet);
+
+                refreshMisesEnCours(toggleSideBet);
+                miseBoutonStyle();
+                cssMiseEnCours();
+              }
+            }
+            else if (toggleSideBet == "21+3") {
+              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 1) && (mise213EnCours < 100)) {
+                addLastTokenClickToTab213(1);
+                mise213EnCours += 1;
+                refreshEraseOpacity(toggleSideBet);
+
+                refreshMisesEnCours(toggleSideBet);
+                miseBoutonStyle();
+                cssMiseEnCours();
+              }
+            }
+          
           })
 
 
           document.getElementById("redToken").addEventListener("click", function() {
 
-            if ((credits-miseEnCours) >= 5) {
+            if (SoundMuteBool == false) {
+              audioToken.play();
+            }
 
-              if (SoundMuteBool == false) {
-                audioToken.play();
+            if (toggleSideBet == "normal") {
+              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 5) && (miseEnCours < 100)) {
+                addLastTokenClickToTab(5);
+                miseEnCours += 5;
+                refreshEraseOpacity(toggleSideBet);
+
+                refreshMisesEnCours(toggleSideBet);
+                miseBoutonStyle();
+                cssMiseEnCours();  
               }
+            }
+            else if (toggleSideBet == "pair") {
+              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 5) && (misePairEnCours < 100)) {
+                addLastTokenClickToTabPair(5);
+                misePairEnCours += 5;
+                refreshEraseOpacity(toggleSideBet);
 
-
-              if (miseEnCours <= 95) {
-
-                if (toggleSideBet == "normal") {
-                  addLastTokenClickToTab(5);
-                  miseEnCours += 5;
-                  refreshEraseOpacity(toggleSideBet);
-                }
-                else if (toggleSideBet == "pair") {
-                  addLastTokenClickToTabPair(5);
-                  misePairEnCours += 5;
-                  refreshEraseOpacity(toggleSideBet);
-                }
-                else if (toggleSideBet == "21+3") {
-                  addLastTokenClickToTab213(5);
-                  mise213EnCours += 5;
-                  refreshEraseOpacity(toggleSideBet);
-                }
-
+                refreshMisesEnCours(toggleSideBet);
+                miseBoutonStyle();
+                cssMiseEnCours();
               }
+            }
+            else if (toggleSideBet == "21+3") {
+              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 5) && (mise213EnCours < 100)) {
+                addLastTokenClickToTab213(5);
+                mise213EnCours += 5;
+                refreshEraseOpacity(toggleSideBet);
 
-              refreshMisesEnCours(toggleSideBet);
-
-              miseBoutonStyle();
-              cssMiseEnCours();
+                refreshMisesEnCours(toggleSideBet);
+                miseBoutonStyle();
+                cssMiseEnCours();
+              }
             }
 
           })
@@ -4448,34 +4459,42 @@
 
           document.getElementById("greenToken").addEventListener("click", function() {
 
-            if ((credits-miseEnCours) >= 10) {
+            if (SoundMuteBool == false) {
+              audioToken.play();
+            }
 
-              if (SoundMuteBool == false) {
-                audioToken.play();
+            if (toggleSideBet == "normal") {
+              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 10) && (miseEnCours < 100)) {
+                addLastTokenClickToTab(10);
+                miseEnCours += 10;
+                refreshEraseOpacity(toggleSideBet);
+
+                refreshMisesEnCours(toggleSideBet);
+                miseBoutonStyle();
+                cssMiseEnCours();  
               }
+            }
+            else if (toggleSideBet == "pair") {
+              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 10) && (misePairEnCours < 100)) {
+                addLastTokenClickToTabPair(10);
+                misePairEnCours += 10;
+                refreshEraseOpacity(toggleSideBet);
 
-              if (miseEnCours <= 90) {
-                if (toggleSideBet == "normal") {
-                  addLastTokenClickToTab(10);
-                  miseEnCours += 10;
-                  refreshEraseOpacity(toggleSideBet);
-                }
-                else if (toggleSideBet == "pair") {
-                  addLastTokenClickToTabPair(10);
-                  misePairEnCours += 10;
-                  refreshEraseOpacity(toggleSideBet);
-                }
-                else if (toggleSideBet == "21+3") {
-                  addLastTokenClickToTab213(10);
-                  mise213EnCours += 10;
-                  refreshEraseOpacity(toggleSideBet);
-                }
+                refreshMisesEnCours(toggleSideBet);
+                miseBoutonStyle();
+                cssMiseEnCours();
               }
+            }
+            else if (toggleSideBet == "21+3") {
+              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 10) && (mise213EnCours < 100)) {
+                addLastTokenClickToTab213(10);
+                mise213EnCours += 10;
+                refreshEraseOpacity(toggleSideBet);
 
-              refreshMisesEnCours(toggleSideBet);
-              
-              miseBoutonStyle();
-              cssMiseEnCours();
+                refreshMisesEnCours(toggleSideBet);
+                miseBoutonStyle();
+                cssMiseEnCours();
+              }
             }
 
           })
@@ -4483,35 +4502,42 @@
 
         document.getElementById("blueToken").addEventListener("click", function() {
 
-          if ((credits-miseEnCours) >= 25) {
-            
+          if (SoundMuteBool == false) {
+            audioToken.play();
+          }
 
-            if (SoundMuteBool == false) {
-              audioToken.play();
+          if (toggleSideBet == "normal") {
+            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 25) && (miseEnCours < 100)) {
+              addLastTokenClickToTab(25);
+              miseEnCours += 25;
+              refreshEraseOpacity(toggleSideBet);
+
+              refreshMisesEnCours(toggleSideBet);
+              miseBoutonStyle();
+              cssMiseEnCours();  
             }
+          }
+          else if (toggleSideBet == "pair") {
+            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 25) && (misePairEnCours < 100)) {
+              addLastTokenClickToTabPair(25);
+              misePairEnCours += 25;
+              refreshEraseOpacity(toggleSideBet);
 
-            if (miseEnCours <= 75) {
-              if (toggleSideBet == "normal") {
-                addLastTokenClickToTab(25);
-                miseEnCours += 25;
-                refreshEraseOpacity(toggleSideBet);
-              }
-              else if (toggleSideBet == "pair") {
-                addLastTokenClickToTabPair(25);
-                misePairEnCours += 25;
-                refreshEraseOpacity(toggleSideBet);
-              }
-              else if (toggleSideBet == "21+3") {
-                addLastTokenClickToTab213(25);
-                mise213EnCours += 25;
-                refreshEraseOpacity(toggleSideBet);
-              }
+              refreshMisesEnCours(toggleSideBet);
+              miseBoutonStyle();
+              cssMiseEnCours();
             }
+          }
+          else if (toggleSideBet == "21+3") {
+            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 25) && (mise213EnCours < 100)) {
+              addLastTokenClickToTab213(25);
+              mise213EnCours += 25;
+              refreshEraseOpacity(toggleSideBet);
 
-            refreshMisesEnCours(toggleSideBet);
-          
-            miseBoutonStyle();
-            cssMiseEnCours();
+              refreshMisesEnCours(toggleSideBet);
+              miseBoutonStyle();
+              cssMiseEnCours();
+            }
           }
 
         })
@@ -4520,37 +4546,44 @@
 
         document.getElementById("blackToken").addEventListener("click", function() {
 
-          if ((credits-miseEnCours) >= 100) {
+          if (SoundMuteBool == false) {
+            audioToken.play();
+          }
 
-            if (SoundMuteBool == false) {
-              audioToken.play();
+          if (toggleSideBet == "normal") {
+            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 100) && (miseEnCours < 100)) {
+              addLastTokenClickToTab(100);
+              miseEnCours += 100;
+              refreshEraseOpacity(toggleSideBet);
+
+              refreshMisesEnCours(toggleSideBet);
+              miseBoutonStyle();
+              cssMiseEnCours();  
             }
+          }
+          else if (toggleSideBet == "pair") {
+            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 100) && (misePairEnCours < 100)) {
+              addLastTokenClickToTabPair(100);
+              misePairEnCours += 100;
+              refreshEraseOpacity(toggleSideBet);
 
-            if (miseEnCours == 0) {
-              if (toggleSideBet == "normal") {
-                addLastTokenClickToTab(100);
-                miseEnCours += 100;
-                refreshEraseOpacity(toggleSideBet);
-              }
-              else if (toggleSideBet == "pair") {
-                addLastTokenClickToTabPair(100);
-                misePairEnCours += 100;
-                refreshEraseOpacity(toggleSideBet);
-              }
-              else if (toggleSideBet == "21+3") {
-                addLastTokenClickToTab213(100);
-                mise213EnCours += 100;
-                refreshEraseOpacity(toggleSideBet);
-              }
+              refreshMisesEnCours(toggleSideBet);
+              miseBoutonStyle();
+              cssMiseEnCours();
             }
+          }
+          else if (toggleSideBet == "21+3") {
+            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 100) && (mise213EnCours < 100)) {
+              addLastTokenClickToTab213(100);
+              mise213EnCours += 100;
+              refreshEraseOpacity(toggleSideBet);
 
-            refreshMisesEnCours(toggleSideBet);
-          
-            miseBoutonStyle();
-            cssMiseEnCours();
+              refreshMisesEnCours(toggleSideBet);
+              miseBoutonStyle();
+              cssMiseEnCours();
+            }
           }
         })
-
 
       }
 
@@ -4650,6 +4683,7 @@
         if (pickedCardObject.cardValue == 1) {
           asCroupier = true;
         }
+
 
         // Scores Total Croupier
         if (asCroupier == true) {
