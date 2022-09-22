@@ -192,7 +192,12 @@
 
 	--color-creditsInvite: rgba(239, 59, 46, 1) !important;
 
-	--header-background: #10111b !important;
+	/* Autre site sympa: https://mycolor.space/gradient?ori=to+right+top&hex=%23EF3B2E&hex2=%2310111B&sub=1 */
+	/* L'original --header-background: #10111b !important;
+	/* --header-background: linear-gradient(-45deg, rgba(16,17,27,1) 1%, rgba(16,17,27,1) 10%, rgba(16,17,27,1) 43%, rgba(168,46,40,0.6366120218579234) 48%, rgba(16,17,27,1) 53%, rgba(16,17,27,1) 65%, rgba(16,17,27,1) 98%) !important; */
+	/* Incroyable celui-la, par contre il faudrait quand meme qu'il soit plus eloigné au debut et qu'i ls'éloigne plus apres l'anim: --header-background: -webkit-linear-gradient(-45deg, rgba(16,17,27,1) 20%, rgba(168,46,40,0.9066001400560224) 50%, rgba(16,17,27,1) 80%) !important; */
+	--header-background: -webkit-linear-gradient(-45deg, rgba(16,17,27,1) 20%, rgba(168,46,40,0.9066001400560224) 50%, rgba(16,17,27,1) 80%) !important; 
+	/* --header-background: -webkit-linear-gradient(-45deg, rgba(16,17,27,1) 20%, rgba(10, 166, 180, 0.753) 50%, rgba(16,17,27,1) 80%) !important;  */
 	/* --header-bg-position: 35% 15%; */
 
 	--footerBorderTop-Color: rgba(239, 59, 46, 1);
@@ -1067,7 +1072,7 @@ button, input[type="submit"], input[type="reset"] {
 	/* border-bottom-left-radius:10%;
     border-bottom-right-radius:10%; */
 
-	animation: gradientAnimHeader 4s ease-in-out 1; 
+	animation: gradientAnimHeader 1.5s ease-in-out 1; 
 	animation-fill-mode: forwards;
 }
 @keyframes gradientAnimHeader {
@@ -1075,7 +1080,9 @@ button, input[type="submit"], input[type="reset"] {
 		background-position: 0% 0%;
 	}
 	100% {
-		background-position: 35% 15%;
+		/* Modifié pour caler le gradient HeaderIndex avec l'ombre du titre */
+		/* background-position: 35% 15%; */
+		background-position: 85% 15%;
 	}
 
 

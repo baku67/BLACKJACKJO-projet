@@ -2905,6 +2905,31 @@
 
         doubleBool = 1;
 
+        // Envoi de la miseLocked à retirer (Double)
+        if (isConnected) {
+          var miseDoublePhp = {};
+          miseDoublePhp.value = (miseLocked);
+          $.ajax({
+            url: "setMises.php",
+            method: "post",
+            data: miseDoublePhp,
+            success: function(res) {
+              console.log("MISE DOUBLE ENVOYEE");
+            }
+          });
+        }
+
+        credits = credits - miseLocked;
+
+        // Maj front du credits (Co,Deco)
+        if (isConnected == false) {
+          document.getElementById("creditsInvite").innerHTML = credits;
+        }
+        else {
+          document.getElementById("creditsConnected").innerHTML = credits;
+        }
+
+
         $.ajax({
           async: false,
           url: "Footers/footerDistribution.html",
@@ -2917,7 +2942,7 @@
         });
 
         miseLocked = miseLocked * 2;
-        document.getElementById("miseLocked").innerHTML = "<span style='color:rgb(241 205 92 / 95%); font-size:1.8rem; text-shadow: 0 0 4px rgb(255 213 2);'>" + miseLocked + "</span><img src='Images/souBarre.png' class='imageSouPetit'/> " ;
+        document.getElementById("miseLockedNbr").innerHTML =  miseLocked;
 
         setTimeout(function() {
           addCardJoueur();
@@ -3331,7 +3356,6 @@
                     }, 2901);
   
                     // animAlertOnClickChoix();
-  
                     animsBouton("double");
                     setTimeout(function() {
                       double();
