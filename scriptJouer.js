@@ -634,7 +634,7 @@
             // Si lost, color orange (DM/LM à mettre)
             document.getElementById("misePairLocked").style.color = "rgba(239, 59, 46, 0.75)";
           }  
-        }, 750)      
+        }, 1000)      
 
         return gainPairBet;
       }
@@ -786,7 +786,7 @@
           if ((misePairLocked > 0) && (mise213Locked > 0)) {
             document.getElementById("mise213Locked").style.top = "10px";
           }
-        }, 750)
+        }, 1000)
                 
         return gain213Bet;
 
@@ -2985,9 +2985,9 @@
 
           ingame = true;
 
-          // Remplacement Param par sideBets si il y a pour l'instant, sinon afficher sideBets nul
-          // FadeOut/FadeIn
+          // document.getElementById("parametresPartieDiv").classList.add("fadeOut2");
           document.getElementById("parametresPartieDiv").innerHTML = "";
+          document.getElementById("parametresPartieDiv").classList.add("fadeIn2");
 
           // Depop du sideBet et retour borderTopFooter normal
           document.getElementById("sideBetDiv").remove();
@@ -3033,6 +3033,7 @@
           miseTitle.setAttribute("id", "miseTitle");
           miseTitle.innerText = "Mise";
           document.getElementById("deckContainer").append(miseTitle); 
+          document.getElementById("miseTitle").classList.add("miseTitleAnim");
 
           // Titre sideBets
           let sideBetsTitle = document.createElement("h6");
@@ -3047,17 +3048,22 @@
           let traitSouligneMise = document.createElement("div");
           traitSouligneMise.setAttribute("id", "traitSouligneMise");
           document.getElementById("deckContainer").append(traitSouligneMise); 
+          document.getElementById("traitSouligneMise").classList.add("traitSouligneMiseAnim");
 
           // Ajout border lors switch param/sideBets:
           document.getElementById("parametresPartieDiv").classList.add("borderParamPartie");
           
 
-          // Creation des elem avant Apparition des mises Locked sous le deck / sideBets
+          // Creation des elem avant Apparition des mises Locked sous le deck / sideBets:
+          // Mise normale
           let miseLockedElement = document.createElement('span');
           miseLockedElement.setAttribute('id', 'miseLocked');
+          miseLockedElement.classList.add('miseLockedAnim');
           document.getElementById("deckContainer").append(miseLockedElement);
-          document.getElementById("miseLocked").classList.add('miseLockedAnim');
 
+          document.getElementById("miseLocked").classList.add('animMiseNormale');
+
+          // Mise Bets
           if (misePairLocked > 0) {
             // Saut de ligne 
             // document.getElementById("parametresPartieDiv").append(document.createElement("br"));
@@ -3065,21 +3071,36 @@
             let misePairLockedElement = document.createElement("span");
             misePairLockedElement.setAttribute("id", "misePairLocked");
             misePairLockedElement.classList.add("misePairLockedAnim");
-            // document.getElementById("deckContainer").append(misePairLockedElement);  
+            document.getElementById("parametresPartieDiv").append(misePairLockedElement);  
+          }
+          // Pour "None"
+          else {
+            document.getElementById("parametresPartieDiv").append(document.createElement("br"));
+
+            let misePairLockedElement = document.createElement("span");
+            misePairLockedElement.setAttribute("id", "misePairLockedNone");
             document.getElementById("parametresPartieDiv").append(misePairLockedElement);  
           }
 
           if (mise213Locked > 0) {
-            // Saut de ligne 
             document.getElementById("parametresPartieDiv").append(document.createElement("br"));
 
             let mise213LockedElement = document.createElement("span");
             mise213LockedElement.setAttribute("id", "mise213Locked");
             mise213LockedElement.classList.add("mise213LockedAnim");
-            // document.getElementById("deckContainer").append(mise213LockedElement);
             document.getElementById("parametresPartieDiv").append(mise213LockedElement);
           }
+          // Pour "None"
+          else {
+            document.getElementById("parametresPartieDiv").append(document.createElement("br"));
+            document.getElementById("parametresPartieDiv").append(document.createElement("br"));
+
+            let mise213LockedElement = document.createElement("span");
+            mise213LockedElement.setAttribute("id", "mise213LockedNone");
+            document.getElementById("parametresPartieDiv").append(mise213LockedElement); 
+          }
           // Fin
+       
 
 
 
@@ -3094,10 +3115,18 @@
                 document.getElementById("misePairLocked").innerHTML = 
                 "<span id='misePairLockedNbr'>" + misePairLocked + "</span><img src='Images/souBlancBarre.png' class='imageSouSideBets' style='margin-left:2px;'/>";  
               }
+              else {
+                document.getElementById("misePairLockedNone").innerHTML = 
+                "<span id='misePairLockedNbrNone'>None</span>";  
+              }
               
               if (mise213Locked > 0) {
                 document.getElementById("mise213Locked").innerHTML = 
                 "<span id='mise213LockedNbr'>" + mise213Locked + "</span><img src='Images/souBlancBarre.png' class='imageSouSideBets' style='margin-left:2px;'/>";  
+              }
+              else {
+                document.getElementById("mise213LockedNone").innerHTML = 
+                "<span id='mise213LockedNbrNone'>None</span>";  
               }
               // }, 800)
           }
@@ -3109,12 +3138,20 @@
             
               if (misePairLocked > 0) {
                 document.getElementById("misePairLocked").innerHTML = 
-                "<span>Pair:</span><span id='misePairLockedNbr'>" + misePairLocked + "</span><img src='Images/souBarre.png' class='imageSouSideBets' style='margin-left:2px;'/>";
+                "<span id='misePairLockedNbr'>" + misePairLocked + "</span><img src='Images/souBarre.png' class='imageSouSideBets' style='margin-left:2px;'/>";
+              }
+              else {
+                document.getElementById("misePairLockedNone").innerHTML = 
+                "<span id='misePairLockedNbrNone'>None</span>";
               }
             
               if (mise213Locked > 0) {
                 document.getElementById("mise213Locked").innerHTML = 
-                "<span>21+3:</span><span id='mise213LockedNbr'>" + mise213Locked + "</span><img src='Images/souBarre.png' class='imageSouSideBets' style='margin-left:2px;'/>";  
+                "<span id='mise213LockedNbr'>" + mise213Locked + "</span><img src='Images/souBarre.png' class='imageSouSideBets' style='margin-left:2px;'/>";  
+              }
+              else {
+                document.getElementById("mise213LockedNone").innerHTML = 
+                "<span id='mise213LockedNbrNone'>None</span>";  
               }
               // }, 800)
           }
@@ -5456,7 +5493,8 @@
                 relancer();
               }
             });
-          }, 1200);
+
+          }, 1700);
         }
       }
 

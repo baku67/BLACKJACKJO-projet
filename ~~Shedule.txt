@@ -1,3 +1,7 @@
+cardsJoueur ou croupier overflow (rapetisser)
+
+A chaque ajout de cred dans un slotMise, ptit fadeOut0.1s,fadeIn0.1s,InnerText (au lieu de juste changer l'innerText)
+
 Responsive:
 Faire un backup des mediaQueries+styles
 Prendre le mediaQuery2 et l'adapter en 1(ptit smartphone) et 3(tablette)

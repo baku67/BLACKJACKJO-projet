@@ -375,6 +375,20 @@ input:-webkit-autofill{
 	/* Achtung */
 	position: relative;
 	top: 4px;
+
+	/* Anim */
+	opacity: 0;
+}
+.miseTitleAnim {
+	animation: miseTitleFadeIn 0.3s 0.5s forwards ease;
+}
+@keyframes miseTitleFadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 #sideBetsTitle {
 	margin-block-start: 0em;
@@ -740,6 +754,28 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 
+.fadeOut2 {
+	animation: fadeOut2 0.5s 0s forwards ease;
+}
+@keyframes fadeOut2 {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+.fadeIn2 {
+	animation: fadeIn2 0.5s 0.5s forwards ease !important;
+}
+@keyframes fadeIn2 {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
 
 
 
@@ -779,7 +815,8 @@ button, input[type="submit"], input[type="reset"] {
 	padding: 0px 0px 0px 0px;
 
 	position: relative;
-	left: 8px;
+	/* left: 8px; ANIM slide */
+	left: -130px;
 }
 .miseLockedAnim {
 	/* animation: miseLockedContainerPop1 0.33s ease-in-out forwards, miseLockedContainerPop2 0.33s 0.6s ease-in-out forwards !important; */
@@ -821,11 +858,22 @@ button, input[type="submit"], input[type="reset"] {
 	text-shadow: 0 0 4px rgba(0, 255, 234, 1);
 	font-family: "Holtwood One SC", serif;
 }
+#misePairLockedNbrNone {
+	color: rgba(139, 139, 139, 0.5); 
+	font-size: 1.3rem; 
+	font-family: "Kavoon";
+}
+
 #mise213LockedNbr {
 	color:rgba(255, 55, 250, 0.85); 
 	font-size:1.3rem; 
 	text-shadow: 0 0 4px rgba(255, 55, 250, 1);
 	font-family: "Holtwood One SC", serif;
+}
+#mise213LockedNbrNone {
+	color: rgba(139, 139, 139, 0.5); 
+	font-size: 1.3rem; 
+	font-family: "Kavoon";
 }
 .misePairProcTextAnim {
 	color:rgba(0, 255, 234, 0.7); 
@@ -2715,7 +2763,30 @@ p {
 }
 
 
+.animMiseNormale {
+	/* Faire pop fadeIn le title à la fin de l'anim */
+	animation: slideMiseLocked 0.5s 0.1s forwards normal ease-out;
+}
+@keyframes slideMiseLocked {
+	from {
+		left: -130px;
+	}
+	to {
+		left: 8px;
+	}
+}
 
+.animMiseBet {
+	animation: slideBetsLocked 0.5s 0.1s forwards normal ease-out;
+}
+@keyframes slideBetsLocked {
+	from {
+
+	}
+	to {
+
+	}
+}
 
 
 #parametresPartieDiv {
@@ -2737,7 +2808,7 @@ p {
 	animation-iteration-count: 1; 
 	animation-fill-mode: forwards; 
 
-	padding: 17px 12px 29px 17px;
+	padding: 17px 17px 29px 17px;
 
 	/* Pour eviter decalage lors proc des sideBets plus longs? */
 	width: 120px;
@@ -2750,7 +2821,7 @@ p {
 
 #traitSouligneBet {
 	width: 100%;
-	opacity: 0.8;
+	opacity: 1;
 	text-align: center;
 	height: 1px;
 	margin: 0px auto;
@@ -2765,6 +2836,11 @@ p {
 	margin: 0px auto;
 	background: -webkit-linear-gradient(left, #11131f 0%, rgba(255, 255, 255, 0.8) 50%, #11131f 100%);
 	margin-bottom: 0em;
+	/* Anim */
+	opacity: 0;
+}
+.traitSouligneMiseAnim {
+	animation: miseTitleFadeIn 0.3s 0.5s forwards ease;
 }
 
 
