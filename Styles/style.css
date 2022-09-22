@@ -387,7 +387,7 @@ input:-webkit-autofill{
 		opacity: 0;
 	}
 	to {
-		opacity: 1;
+		opacity: 0.9;
 	}
 }
 #sideBetsTitle {
@@ -2823,7 +2823,7 @@ p {
 	width: 100%;
 	opacity: 1;
 	text-align: center;
-	height: 1px;
+	height: 2px;
 	margin: 0px auto;
 	background: -webkit-linear-gradient(left, #11131f 0%, rgba(255, 255, 255, 0.8) 50%, #11131f 100%);
 	margin-bottom: 0.4em;
@@ -3132,7 +3132,7 @@ figure:active {
 }
 /* Class ajoutée si miseEnCours > 0 pour centrer propre */
 .miseEnCours {
-	left: 10px;
+	right: 15px;
 }
 
 

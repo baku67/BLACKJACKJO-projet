@@ -1766,10 +1766,13 @@
 
 
 
+
       function newGameListener() {
 
         // JQUERY JAX : load Partie
         $("#newGame").click(function(){
+
+            document.querySelector("#newGame").disabled = true;
 
             document.getElementById("newGameLink").classList.add("newGameLinkFadeOut");
             // Disparition du textLink et adaptation du bouton avant les anims
@@ -2315,6 +2318,7 @@
 
           ingame = false;
           WinLose = "";
+          gainFront = 0;
 
           // Evite le spam du reload():
           document.querySelector("#relancer").disabled = true;
@@ -3255,6 +3259,10 @@
                 if (document.getElementById("stand") !== null) {
                   document.getElementById("stand").addEventListener("click", function() {
 
+                    document.querySelector("#hit").disabled = true;
+                    document.querySelector("#stand").disabled = true;
+                    document.querySelector("#double").disabled = true;
+
                     document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
                     document.getElementById('traitUnderlineInverseChoix').classList.add("traitUnderlineInverse2FlashChoix");
   
@@ -3297,6 +3305,10 @@
 
                 if (document.getElementById("double") !== null) {
                   document.getElementById("double").addEventListener("click", function() {
+
+                    document.querySelector("#hit").disabled = true;
+                    document.querySelector("#stand").disabled = true;
+                    document.querySelector("#double").disabled = true;
 
                     document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
                     document.getElementById('traitUnderlineInverseChoix').classList.add("traitUnderlineInverse2FlashChoix");
@@ -3405,6 +3417,10 @@
 
       function hit() {
 
+        document.querySelector("#hit").disabled = true;
+        document.querySelector("#stand").disabled = true;
+        document.querySelector("#double").disabled = true;
+
         $.ajax({
           async: false,
           url: "Footers/footerDistribution.html",
@@ -3464,6 +3480,10 @@
 
               document.getElementById("stand").addEventListener("click", function() {
 
+                document.querySelector("#hit").disabled = true;
+                document.querySelector("#stand").disabled = true;
+                document.querySelector("#double").disabled = true;
+
                 choix = "stand";
 
                 document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
@@ -3502,6 +3522,10 @@
 
 
               document.getElementById("double").addEventListener("click", function() {
+
+                document.querySelector("#hit").disabled = true;
+                document.querySelector("#stand").disabled = true;
+                document.querySelector("#double").disabled = true;
 
                 choix = "double";
 
@@ -5154,24 +5178,21 @@
       if (isConnected == true) {
         function ajoutGain(gain) {
 
-          // console.log("PairBet: " + pairBetText + ", 213Bet: " + bet213 + ".");
-          console.log("Crédits avant refresh: " + credits);
+          console.log("Credits avant mise: " + (credits + miseLocked + mise213Locked + misePairEnCours));
+          console.log("Crédits avant refresh res: " + credits);
           console.log("MiseNormale: " + miseLocked + ", MisePair: " + misePairLocked + ", Mise213: " + mise213Locked + ".");
           console.log("GainNormal: " + gainFront + ", GainPair: " + gainPairBet + ", Gain213: " + gain213Bet + ".");
-          console.log("Crédits après refresh: " + (credits + gainFront + gainPairBet + gain213Bet));
+          console.log("Crédits après refresh res: " + (credits + gainFront + gainPairBet + gain213Bet));
           alert(
+            "Credits avant mise: " + (credits + miseLocked + mise213Locked + misePairEnCours) + "\n" + 
+            "Crédits avant refresh: " + credits + "\n" +
             "MiseNormale: " + miseLocked + ", MisePair: " + misePairLocked + ", Mise213: " + mise213Locked + ".\n" + 
             "GainNormal: " + gainFront + ", GainPair: " + gainPairBet + ", Gain213: " + gain213Bet + ".\n" +
-            "Crédits avant refresh: " + credits + "\n" +
             "Crédits après refresh: " + (credits + gainFront + gainPairBet + gain213Bet) + "."
           );
 
-          if (WinLose == "WIN") {
+          if ((WinLose == "WIN") || (WinLose == "BJ")) {
             document.getElementById("creditsConnected").classList.add("refreshCreditAnim");
-            document.getElementById("creditsConnected").innerHTML = (credits + gainFront + gainPairBet + gain213Bet);
-          }
-          else if (WinLose == "BJ") {
-            document.getElementById("creditsConnected").classList.add("refreshCreditAnimBJ");
             document.getElementById("creditsConnected").innerHTML = (credits + gainFront + gainPairBet + gain213Bet);
           }
           else {
@@ -5208,13 +5229,26 @@
       else if (isConnected == false) {
         function ajoutGain(gain) {
 
-          console.log("PairBet: " + pairBetText + ", 213Bet: " + bet213 + ".");
+          console.log("Credits avant mise: " + (credits + miseLocked + mise213Locked + misePairEnCours));
+          console.log("Crédits avant refresh res: " + credits);
           console.log("MiseNormale: " + miseLocked + ", MisePair: " + misePairLocked + ", Mise213: " + mise213Locked + ".");
           console.log("GainNormal: " + gainFront + ", GainPair: " + gainPairBet + ", Gain213: " + gain213Bet + ".");
+          console.log("Crédits après refresh res: " + (credits + gainFront + gainPairBet + gain213Bet));
 
           // flash crédits Invite à faire
-          document.getElementById("credits").innerHTML = "<i class='fa-solid fa-star'></i> Invité &nbsp;&nbsp;<span id=\"creditsInvite\">" + (credits + gainFront) + "</span>" + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
-          
+          if ((WinLose == "WIN") || (WinLose == "BJ")) {
+            document.getElementById("credits").classList.add("refreshCreditAnim");
+            document.getElementById("credits").innerHTML = "<i class='fa-solid fa-star'></i> Invité &nbsp;&nbsp;<span id=\"creditsInvite\">" + (credits + gainFront + gainPairBet + gain213Bet) + "</span>" + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
+          } 
+          else {
+            // Refresh Credits front meme si lose, si il ya des gain SideBets:
+            if ((gainPairBet > 0) || (gain213Bet > 0)) {
+              document.getElementById("credits").classList.add("refreshCreditAnim");
+              document.getElementById("credits").innerHTML = (credits + gainPairBet + gain213Bet);
+            }
+          }
+
+
           credits = (credits + gainFront + gainPairBet + gain213Bet);
 
           historiqueInvite(WinLose, resultatCas, gainHistorique);
@@ -5520,7 +5554,7 @@
               }
             });
 
-          }, 1900);
+          }, 1650);
         }
       }
 

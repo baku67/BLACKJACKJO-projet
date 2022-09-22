@@ -307,15 +307,15 @@
 				<?php  
 					if (!isset($_SESSION['username'])) : 
 				?>
-							<div id="newGame" class="module-border-wrap">
-								<a id="newGameLink" href="#" style="text-decoration: none;">Partie rapide !</a>
-							</div>
+						<button id="newGame" class="module-border-wrap">
+							<a id="newGameLink" href="#" style="text-decoration: none;">Partie rapide !</a>
+						</button>
 				<?php 
 					elseif (isset($_SESSION['username'])) : 
 				?>
-							<div id="newGame" class="module-border-wrap">
-								<a id="newGameLink" href="#" style="text-decoration: none;">Nouvelle Partie !</a>
-							</div>
+						<button id="newGame" class="module-border-wrap">
+							<a id="newGameLink" href="#" style="text-decoration: none;">Nouvelle Partie !</a>
+						</button>
 				<?php 
 					endif 
 				?>

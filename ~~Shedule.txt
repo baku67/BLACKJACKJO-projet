@@ -10,6 +10,10 @@ Prendre le mediaQuery2 et l'adapter en 1(ptit smartphone) et 3(tablette)
 Sur PC (styles), il manque pas grand chose pour que ce soit regardable (mais avant chaque modif du style, prendre la valeur et la mettre dans mediaQueries comme tout les test ont été fait sur mobile: le style est en fait plein de mediaQueries2  )
 
 
+Le X2: interdiction si credits insuffisant (facile), ajouter un visuel sur la miseLocked, voir si le gainFront et le gainBDD suivent bien.
+
+
+
 IDEE footerResultat: au milieu le gain globale (additions des 3 mises (+X2?)  ->  Additions des 3 gains), et les 3 détails en petits à gauche ?
 Anim/FADE IN des resultats gain !! (truc stylé c'est important ici)
 
