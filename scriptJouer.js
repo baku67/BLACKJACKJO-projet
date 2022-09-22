@@ -647,36 +647,33 @@
         let bet213 = "Lost";
         let gain213Bet = 0;
 
+        var diff0 = 0;
+        var diff1 = 0;
+        var diff2 = 0;
 
-        // PAS FAIT: ATTENTION cardOrdre du AS = 14 ou 1 !   "Three cards of consecutive values, such as 2-3-4. Aces can be high or low"
-        // Si As, check conditions normales, si faux, check si As[i].cardOrdre + 10 valide les conditions ?
-        // Si as, le comparer d'abord au 2 autres pour adapter sa valeur si y'a match ?
-        // Le compte de As parmis les 3 premiere doit etre de 1 (sinon pas conditions straight)
-        // Si y'a prévision de match (avec 13 ou 1), changer directement la valeur carte[x].cardValue
-        let asCount = 0;
-        let asdiff = -13;
-
-        if (cartesSortiesPartie[0].cardOrdre == 14) {
-          asCount += 1;
+        // Si premiere carte Unique AS
+        if ((cartesSortiesPartie[0].cardOrdre == 14) && (cartesSortiesPartie[1].cardOrdre != 14) && (cartesSortiesPartie[2].cardOrdre != 14)) {
+          diff0 = -13
         }
-        if (cartesSortiesPartie[1].cardOrdre == 14) {
-          asCount += 1;
+        // Si deuxieme carte Unique AS
+        if ((cartesSortiesPartie[1].cardOrdre == 14) && (cartesSortiesPartie[0].cardOrdre != 14) && (cartesSortiesPartie[2].cardOrdre != 14)) {
+          diff1 = -13;
         }
-        if (cartesSortiesPartie[2].cardOrdre == 14) {
-          asCount += 1;
-        }
-
-        if ( asCount == 1 ) {
-          // if (cartesSortiesPartie[0].cardOrdre == 14) {
-          //   if (cartesSortiesPartie[1].cardOrdre == 13) || (cartesSortiesPartie[2].cardOrdre == 13) || 
-          // }
+        // Si troisieme carte Unique AS
+        if ((cartesSortiesPartie[2].cardOrdre == 14) && (cartesSortiesPartie[0].cardOrdre != 14) && (cartesSortiesPartie[1].cardOrdre != 14)) {
+          diff2 = -13;
         }
 
 
-        // Factoriser les if en ET
-        if (Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[1].cardOrdre) == 1) {
-          if (((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) && (Math.abs(cartesSortiesPartie[1].cardOrdre - cartesSortiesPartie[2].cardOrdre) != 1)) ||
-          ((Math.abs(cartesSortiesPartie[1].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) && (Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[2].cardOrdre) != 1)))  {
+        // LES AS s'adaptent
+        if (((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[1].cardOrdre) == 1) &&
+        (((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) && (Math.abs(cartesSortiesPartie[1].cardOrdre - cartesSortiesPartie[2].cardOrdre) != 1)) ||
+        ((Math.abs(cartesSortiesPartie[1].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) && (Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[2].cardOrdre) != 1))))  
+        ||  
+        (((Math.abs((cartesSortiesPartie[0].cardOrdre + diff0) - (cartesSortiesPartie[1].cardOrdre + diff1)) == 1) &&
+        (((Math.abs((cartesSortiesPartie[0].cardOrdre + diff0) - (cartesSortiesPartie[2].cardOrdre + diff2) == 1) && (Math.abs((cartesSortiesPartie[1].cardOrdre + diff1) - (cartesSortiesPartie[2].cardOrdre + diff2) != 1)) ||
+        ((Math.abs((cartesSortiesPartie[1].cardOrdre + diff1) - (cartesSortiesPartie[2].cardOrdre + diff2) == 1) && (Math.abs((cartesSortiesPartie[0].cardOrdre + diff0) - (cartesSortiesPartie[2].cardOrdre + diff2) != 1))))
+        ))))))  {
             // check pour vérifier qu'il y ait pas de paire 
             if ((cartesSortiesPartie[0].cardOrdre != cartesSortiesPartie[1].cardOrdre) && (cartesSortiesPartie[0].cardOrdre != cartesSortiesPartie[2].cardOrdre) && (cartesSortiesPartie[1].cardOrdre != cartesSortiesPartie[2].cardOrdre)) {
               if ((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily) && (cartesSortiesPartie[1].cardFamily == cartesSortiesPartie[2].cardFamily)) {
@@ -686,11 +683,15 @@
                 bet213 = "Straight"; // 3 cartes de suite
               }
             }
-          }
         }
-        else if (Math.abs(cartesSortiesPartie[1].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) {
-          if (((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[1].cardOrdre) == 1) && (Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[2].cardOrdre) != 1)) ||
-          ((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) && (Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[1].cardOrdre) != 1)))  {
+        else if (((Math.abs(cartesSortiesPartie[1].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) &&
+        (((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[1].cardOrdre) == 1) && (Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[2].cardOrdre) != 1)) ||
+        ((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) && (Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[1].cardOrdre) != 1))))  
+        ||  
+        (((Math.abs((cartesSortiesPartie[1].cardOrdre + diff1) - (cartesSortiesPartie[2].cardOrdre + diff2)) == 1) &&
+        (((Math.abs((cartesSortiesPartie[0].cardOrdre + diff0) - (cartesSortiesPartie[1].cardOrdre + diff1) == 1) && (Math.abs((cartesSortiesPartie[0].cardOrdre + diff0) - (cartesSortiesPartie[2].cardOrdre + diff2) != 1)) ||
+        ((Math.abs((cartesSortiesPartie[0].cardOrdre + diff0) - (cartesSortiesPartie[2].cardOrdre + diff2) == 1) && (Math.abs((cartesSortiesPartie[0].cardOrdre + diff0) - (cartesSortiesPartie[1].cardOrdre + diff1) != 1))))
+        ))))))  {
             // check pour vérifier qu'il y ait pas de paire 
             if ((cartesSortiesPartie[0].cardOrdre != cartesSortiesPartie[1].cardOrdre) && (cartesSortiesPartie[0].cardOrdre != cartesSortiesPartie[2].cardOrdre) && (cartesSortiesPartie[1].cardOrdre != cartesSortiesPartie[2].cardOrdre)) {
               if ((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily) && (cartesSortiesPartie[1].cardFamily == cartesSortiesPartie[2].cardFamily)) {
@@ -700,11 +701,16 @@
                 bet213 = "Straight"; // 3 cartes de suite
               }
             }
-          }
         }
-        else if (Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) {
-          if (((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[1].cardOrdre) == 1) && (Math.abs(cartesSortiesPartie[1].cardOrdre - cartesSortiesPartie[2].cardOrdre) != 1)) ||
-          ((Math.abs(cartesSortiesPartie[1].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) && (Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[1].cardOrdre) != 1)))  {
+        else if (((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) &&
+        (((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[1].cardOrdre) == 1) && (Math.abs(cartesSortiesPartie[1].cardOrdre - cartesSortiesPartie[2].cardOrdre) != 1)) ||
+        ((Math.abs(cartesSortiesPartie[1].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) && (Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[1].cardOrdre) != 1))))
+        ||  
+        (((Math.abs((cartesSortiesPartie[0].cardOrdre + diff0) - (cartesSortiesPartie[2].cardOrdre + diff2)) == 1) &&
+        (((Math.abs((cartesSortiesPartie[0].cardOrdre + diff0) - (cartesSortiesPartie[1].cardOrdre + diff1) == 1) && (Math.abs((cartesSortiesPartie[1].cardOrdre + diff1) - (cartesSortiesPartie[2].cardOrdre + diff2) != 1)) ||
+        ((Math.abs((cartesSortiesPartie[1].cardOrdre + diff1) - (cartesSortiesPartie[2].cardOrdre + diff2) == 1) && (Math.abs((cartesSortiesPartie[0].cardOrdre + diff0) - (cartesSortiesPartie[1].cardOrdre + diff1) != 1))))
+        ))))))  {
+
             // check pour vérifier qu'il y ait pas de paire 
             if ((cartesSortiesPartie[0].cardOrdre != cartesSortiesPartie[1].cardOrdre) && (cartesSortiesPartie[0].cardOrdre != cartesSortiesPartie[2].cardOrdre) && (cartesSortiesPartie[1].cardOrdre != cartesSortiesPartie[2].cardOrdre)) {
               if ((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily) && (cartesSortiesPartie[1].cardFamily == cartesSortiesPartie[2].cardFamily)) {
@@ -714,11 +720,8 @@
                 bet213 = "Straight"; // 3 cartes de suite
               }
             }
-          }
         }
-        // Il faut refaire les 3 test ci dessus pour chaque cas:
-        // else if asCount = 1 et carteSortie[1]: faire les 3 en remplacant les [1].value par [1].value+asDiff1
-        // ...
+
         
         else {
           if (((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily) && (cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[2].cardFamily)) && ((cartesSortiesPartie[0].cardName == cartesSortiesPartie[1].cardName) && (cartesSortiesPartie[0].cardName == cartesSortiesPartie[2].cardName))) {
@@ -739,6 +742,9 @@
             }
           }
         }
+
+
+
 
         switch (bet213) {
 
@@ -2371,6 +2377,7 @@
               cartesJoueurSortiesPartie = [];
 
               asJoueur = false;
+              asCroupier = false;
               nbrCardsJoueur = 0;
               removed = false;
 
@@ -4635,25 +4642,30 @@
         let pickedCardObject = cards[Math.floor(Math.random()*cards.length)];
         // Ajout de la carte pickée dans l'array cartesSortiesPartie
         cartesSortiesPartie.unshift(pickedCardObject);
-        // console.log("Tableau des cartes sorties *partie*: " + JSON.stringify(cartesSortiesPartie));
         // Associe la VALUE de la KEY "cardImageUrl", à l'attribut HTML de l'<img> créé
         img.src = pickedCardObject.cardImageURL;
 
-        //Choix du AS non affiché pour le croupier (titre)
+        // Plutot mettre compteur d'AS croupier, si le compteur > 1, ...
+
         if (pickedCardObject.cardValue == 1) {
           asCroupier = true;
         }
-        //FIN
 
         // Scores Total Croupier
         if (asCroupier == true) {
 
           // WTF PAS TOUCHE A CE BOOL switch (sinon relance garde scoreCroupier précédent ************
           asCroupier = false;
+          // Si commenté, Si AS croupier first puis Tete, resultatTotalmCroupier = 31, le truc proc a chaque hitCroupier vu que AS true :/
+          //
 
           if (scoreTotalCroupier + 10 > 21) {
             scoreTotalCroupier += pickedCardObject.cardValue;
           }
+          // if ((scoreTotalCroupier + 10 == 21) && (nbrCardsCroupier)) {
+          //   // Cas du BJ Croupier (Work)
+          //   scoreTotalCroupier += (pickedCardObject.cardValue + 10);
+          // }
           else {
             scoreTotalCroupier += (pickedCardObject.cardValue + 10);
           }
@@ -4661,6 +4673,24 @@
         else {
           scoreTotalCroupier += pickedCardObject.cardValue;
         }
+
+        // Exemple As joueur (dans hit ou addCardJoueur)
+        // if (asJoueur == true) {
+        //   if ((scoreTotalJoueur + 10) > 21) {
+        //     document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;
+        //   }
+        //   else if ((scoreTotalJoueur + 10) == 21) {
+        //     document.getElementById('scoreJoueur').innerHTML = (scoreTotalJoueur + 10);
+        //     // ici Le check21horsBJ() est exécuté (appelé plus bas, conditions similaires)
+        //   }
+        //   else if ((scoreTotalJoueur + 10) < 21) {
+        //     document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur + "&nbsp;&nbsp;/&nbsp;&nbsp;" + (scoreTotalJoueur + 10);
+        //     scoreJoueur += 10;
+        //   }
+        // }
+        // else {
+        //   document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;
+        // }
 
         setTimeout (function() {
           // Refresh FadeInAnimation Score
@@ -5183,13 +5213,13 @@
           console.log("MiseNormale: " + miseLocked + ", MisePair: " + misePairLocked + ", Mise213: " + mise213Locked + ".");
           console.log("GainNormal: " + gainFront + ", GainPair: " + gainPairBet + ", Gain213: " + gain213Bet + ".");
           console.log("Crédits après refresh res: " + (credits + gainFront + gainPairBet + gain213Bet));
-          alert(
-            "Credits avant mise: " + (credits + miseLocked + mise213Locked + misePairEnCours) + "\n" + 
-            "Crédits avant refresh: " + credits + "\n" +
-            "MiseNormale: " + miseLocked + ", MisePair: " + misePairLocked + ", Mise213: " + mise213Locked + ".\n" + 
-            "GainNormal: " + gainFront + ", GainPair: " + gainPairBet + ", Gain213: " + gain213Bet + ".\n" +
-            "Crédits après refresh: " + (credits + gainFront + gainPairBet + gain213Bet) + "."
-          );
+          // alert(
+          //   "Credits avant mise: " + (credits + miseLocked + mise213Locked + misePairEnCours) + "\n" + 
+          //   "Crédits avant refresh: " + credits + "\n" +
+          //   "MiseNormale: " + miseLocked + ", MisePair: " + misePairLocked + ", Mise213: " + mise213Locked + ".\n" + 
+          //   "GainNormal: " + gainFront + ", GainPair: " + gainPairBet + ", Gain213: " + gain213Bet + ".\n" +
+          //   "Crédits après refresh: " + (credits + gainFront + gainPairBet + gain213Bet) + "."
+          // );
 
           if ((WinLose == "WIN") || (WinLose == "BJ")) {
             document.getElementById("creditsConnected").classList.add("refreshCreditAnim");
