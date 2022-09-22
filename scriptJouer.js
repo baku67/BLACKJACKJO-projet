@@ -44,6 +44,7 @@
       var cartesSortiesPartie = [];
       var cartesJoueurSortiesPartie = [];
 
+      var WinLose = "";
 
       var nbrCardsJoueur;
 
@@ -2313,6 +2314,7 @@
         $("#relancer").click(function(){
 
           ingame = false;
+          WinLose = "";
 
           // Evite le spam du reload():
           document.querySelector("#relancer").disabled = true;
@@ -3025,6 +3027,8 @@
           miseLocked = miseEnCours;
           misePairLocked = misePairEnCours;
           mise213Locked = mise213EnCours;
+
+          // credits = (credits - miseLocked - misePairLocked - mise213Locked);
           console.log("Mises Lockées: \n" + "miseLocked: " + miseLocked + ",\n" + "misePairLocked: " + misePairLocked + ",\n" + "mise213Locked: " + mise213EnCours + ".");
 
 
@@ -3061,7 +3065,8 @@
           miseLockedElement.classList.add('miseLockedAnim');
           document.getElementById("deckContainer").append(miseLockedElement);
 
-          document.getElementById("miseLocked").classList.add('animMiseNormale');
+          // Déplacé à la fin car laggy
+          // document.getElementById("miseLocked").classList.add('animMiseNormale');
 
           // Mise Bets
           if (misePairLocked > 0) {
@@ -3158,10 +3163,12 @@
 
           // Refresh du credits Front
           if (isConnected == false) {
-            document.getElementById("credits").innerHTML = "<i class='fa-solid fa-star'></i> Invité &nbsp;&nbsp;<span id=\"creditsInvite\">" + (credits - miseLocked) + "</span>" + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
+            document.getElementById("credits").innerHTML = "<i class='fa-solid fa-star'></i> Invité &nbsp;&nbsp;<span id=\"creditsInvite\">" + (credits - miseLocked - misePairLocked - mise213Locked) + "</span>" + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
+            credits = (credits - miseLocked - misePairLocked - mise213Locked);
           }
           else if (isConnected == true) {
             document.getElementById("creditsConnected").innerHTML = (credits - (miseLocked + misePairLocked + mise213Locked));
+            credits = (credits - miseLocked - misePairLocked - mise213Locked);
             // Anim creditFlash rouge ?
           }
 
@@ -3365,6 +3372,9 @@
             console.log("SIDE BET 21+3 GAIN: " + gain213Bet);  
 
           }, (6000 * setTimeOutMultiplier));
+
+          document.getElementById("miseLocked").classList.add('animMiseNormale');
+
 
         })
       }
@@ -3893,7 +3903,7 @@
 
                           // gain = miseLocked;
                           gainHistorique = miseLocked;
-                          gainFront = miseLocked;
+                          gainFront = (miseLocked*2);
                           gain = (miseLocked*2);
                           ajoutGain(gain);
                           ingame = false;
@@ -4022,7 +4032,7 @@
 
                         // gain = miseLocked;
                         gainHistorique = miseLocked;
-                        gainFront = miseLocked;
+                        gainFront = (miseLocked*2);
                         gain = (miseLocked*2);
                         ajoutGain(gain);
                         ingame = false;
@@ -5144,6 +5154,18 @@
       if (isConnected == true) {
         function ajoutGain(gain) {
 
+          // console.log("PairBet: " + pairBetText + ", 213Bet: " + bet213 + ".");
+          console.log("Crédits avant refresh: " + credits);
+          console.log("MiseNormale: " + miseLocked + ", MisePair: " + misePairLocked + ", Mise213: " + mise213Locked + ".");
+          console.log("GainNormal: " + gainFront + ", GainPair: " + gainPairBet + ", Gain213: " + gain213Bet + ".");
+          console.log("Crédits après refresh: " + (credits + gainFront + gainPairBet + gain213Bet));
+          alert(
+            "MiseNormale: " + miseLocked + ", MisePair: " + misePairLocked + ", Mise213: " + mise213Locked + ".\n" + 
+            "GainNormal: " + gainFront + ", GainPair: " + gainPairBet + ", Gain213: " + gain213Bet + ".\n" +
+            "Crédits avant refresh: " + credits + "\n" +
+            "Crédits après refresh: " + (credits + gainFront + gainPairBet + gain213Bet) + "."
+          );
+
           if (WinLose == "WIN") {
             document.getElementById("creditsConnected").classList.add("refreshCreditAnim");
             document.getElementById("creditsConnected").innerHTML = (credits + gainFront + gainPairBet + gain213Bet);
@@ -5162,7 +5184,7 @@
           
 
 
-          credits = credits + gainFront;
+          credits = (credits + gainFront + gainPairBet + gain213Bet);
 
           var gainToPhp = {};
           // Est-ce que le gain des sideBets prend en compte le decompte des misesSideBets? (BDD mises fait)
@@ -5186,10 +5208,14 @@
       else if (isConnected == false) {
         function ajoutGain(gain) {
 
+          console.log("PairBet: " + pairBetText + ", 213Bet: " + bet213 + ".");
+          console.log("MiseNormale: " + miseLocked + ", MisePair: " + misePairLocked + ", Mise213: " + mise213Locked + ".");
+          console.log("GainNormal: " + gainFront + ", GainPair: " + gainPairBet + ", Gain213: " + gain213Bet + ".");
+
           // flash crédits Invite à faire
           document.getElementById("credits").innerHTML = "<i class='fa-solid fa-star'></i> Invité &nbsp;&nbsp;<span id=\"creditsInvite\">" + (credits + gainFront) + "</span>" + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
           
-          credits = credits + gainFront;
+          credits = (credits + gainFront + gainPairBet + gain213Bet);
 
           historiqueInvite(WinLose, resultatCas, gainHistorique);
 
@@ -5425,7 +5451,7 @@
                   // WIP gain (ajouter effet refresh CSS)
                   setTimeout( function() {
                     gainHistorique = (miseLocked * 2);
-                    gainFront = (miseLocked * 2);
+                    gainFront = (miseLocked * 3);
                     gain = (miseLocked * 3);
                     ajoutGain(gain);
                     ingame = false;
@@ -5494,7 +5520,7 @@
               }
             });
 
-          }, 1700);
+          }, 1900);
         }
       }
 
