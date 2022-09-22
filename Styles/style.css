@@ -503,6 +503,7 @@ input:-webkit-autofill{
 	font-size: 1em; 
 	font-family:'Holtwood One SC', serif;
 	color: var(--color-creditsInvite);
+	letter-spacing: 1px;
 }
 
 
@@ -857,6 +858,7 @@ button, input[type="submit"], input[type="reset"] {
 	font-size:1.3rem; 
 	text-shadow: 0 0 4px rgba(0, 255, 234, 1);
 	font-family: "Holtwood One SC", serif;
+	letter-spacing: 2px;
 }
 #misePairLockedNbrNone {
 	color: rgba(139, 139, 139, 0.5); 
@@ -869,6 +871,7 @@ button, input[type="submit"], input[type="reset"] {
 	font-size:1.3rem; 
 	text-shadow: 0 0 4px rgba(255, 55, 250, 1);
 	font-family: "Holtwood One SC", serif;
+	letter-spacing: 2px;
 }
 #mise213LockedNbrNone {
 	color: rgba(139, 139, 139, 0.5); 
@@ -970,6 +973,7 @@ button, input[type="submit"], input[type="reset"] {
 	height: 40px;
     position: relative;
     top: 10px;
+	right: 6px;
     opacity: 0.9;
 }
 
@@ -1566,6 +1570,26 @@ button, input[type="submit"], input[type="reset"] {
 	}
 	100% {
 		font-size: 1.5em;
+		letter-spacing: 1px;
+		color: var(--creditsConnected-color);
+	}
+}
+.refreshCreditAnimInvite {
+	animation: flashCreditInviteRefresh 0.42s ease  forwards !important;
+}
+@keyframes flashCreditInviteRefresh {
+	0% {
+		font-size: 1em;
+		letter-spacing: 1px;
+		color: var(--creditsConnected-color);
+	}
+	50% {
+		font-size: 1.1em;
+		letter-spacing: 4px;
+		color: var(--creditsConnectedFlash-color);
+	}
+	100% {
+		font-size: 1em;
 		letter-spacing: 1px;
 		color: var(--creditsConnected-color);
 	}

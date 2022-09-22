@@ -1,5 +1,7 @@
 cardsJoueur ou croupier overflow (rapetisser)
 
+miseBet Lock, AS Croupier adaptatif puis BJ croupier et rework BJJoueur, , gradientsOnPartieDM, jauge XP compte d'abord
+
 A chaque ajout de cred dans un slotMise, ptit fadeOut0.1s,fadeIn0.1s,InnerText (au lieu de juste changer l'innerText)
 
 ANTI-SPAM: Désactiver button NouvellePartie (bets se stackent), ET boutonChoix (full bugued) onFirstClick

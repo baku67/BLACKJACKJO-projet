@@ -5237,14 +5237,14 @@
 
           // flash crédits Invite à faire
           if ((WinLose == "WIN") || (WinLose == "BJ")) {
-            document.getElementById("credits").classList.add("refreshCreditAnim");
             document.getElementById("credits").innerHTML = "<i class='fa-solid fa-star'></i> Invité &nbsp;&nbsp;<span id=\"creditsInvite\">" + (credits + gainFront + gainPairBet + gain213Bet) + "</span>" + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
+            document.getElementById("creditsInvite").classList.add("refreshCreditAnimInvite");
           } 
           else {
             // Refresh Credits front meme si lose, si il ya des gain SideBets:
             if ((gainPairBet > 0) || (gain213Bet > 0)) {
-              document.getElementById("credits").classList.add("refreshCreditAnim");
-              document.getElementById("credits").innerHTML = (credits + gainPairBet + gain213Bet);
+              document.getElementById("credits").innerHTML = "<i class='fa-solid fa-star'></i> Invité &nbsp;&nbsp;<span id=\"creditsInvite\">" + (credits + gainPairBet + gain213Bet) + "</span>" + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";;
+              document.getElementById("creditsInvite").classList.add("refreshCreditAnimInvite");
             }
           }
 
