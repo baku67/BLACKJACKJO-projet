@@ -447,7 +447,8 @@
 
 	#croupier {
 		/* A MODIFIE DANS MEDIAQUERIES (Height-responsive) */
-		margin-top: 10px;
+		/* margin-top: 10px; */
+		margin-top: 12px;
 		/* FIN */
 	}
 

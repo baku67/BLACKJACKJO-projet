@@ -47,6 +47,7 @@
       var WinLose = "";
 
       var nbrCardsJoueur;
+      var nbrCardsCroupier;
 
       var credits = 0;
       var gain = 0;
@@ -1849,6 +1850,7 @@
                   cartesJoueurSortiesPartie = [];
 
                   nbrCardsJoueur = 0;
+                  nbrCardsCroupier = 0;
 
                   var winLose = 0;
 
@@ -2435,6 +2437,7 @@
                 asJoueur = false;
                 asCroupier = false;
                 nbrCardsJoueur = 0;
+                nbrCardsCroupier = 0;
                 removed = false;
 
                 //** Récupérer le nouveau Crédits 
@@ -2704,6 +2707,7 @@
 
 
 
+
           setTimeout( function lancerPartie() {
               document.getElementById("compteurDeck").innerHTML = compteurDeck;
               document.getElementById("compteurDeckMax").innerHTML = compteurDeckMax;
@@ -2713,6 +2717,8 @@
                 dataType: "html",
                 success: function(response) {
                   $("#container3").html(response);
+
+                  checkTokenGrised();
 
                   document.getElementById("footer").style.boxShadow = "-0px -3px 30px 5px rgba(239, 59, 46, 0.2)";
 
@@ -3312,8 +3318,6 @@
               dataType: "html",
               success: function(response) {
                 $("#chipsContainer").html(response);
-
-                // checkTokenGrised();
 
                 document.getElementById("footer").style.boxShadow = "-0px -3px 30px 5px rgba(239, 59, 46, 0.5)";
 
@@ -4712,7 +4716,7 @@
           }
 
           if (toggleSideBet == "normal") {
-            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 100) && (miseEnCours < 100)) {
+            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 100) && (miseEnCours+100 <= 100)) {
               addLastTokenClickToTab(100);
               miseEnCours += 100;
               refreshEraseOpacity(toggleSideBet);
@@ -4723,7 +4727,7 @@
             }
           }
           else if (toggleSideBet == "pair") {
-            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 100) && (misePairEnCours < 100)) {
+            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 100) && (miseEnCours+100 <= 100)) {
               addLastTokenClickToTabPair(100);
               misePairEnCours += 100;
               refreshEraseOpacity(toggleSideBet);
@@ -4734,7 +4738,7 @@
             }
           }
           else if (toggleSideBet == "21+3") {
-            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 100) && (mise213EnCours < 100)) {
+            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 100) && (miseEnCours+100 <= 100)) {
               addLastTokenClickToTab213(100);
               mise213EnCours += 100;
               refreshEraseOpacity(toggleSideBet);
@@ -4919,6 +4923,41 @@
         document.getElementById("croupier").appendChild(img);
 
 
+        nbrCardsCroupier = nbrCardsCroupier + 1;
+        // Si nbrCard > 5, margin negative, puis de plus en plus:
+        if (nbrCardsCroupier > 6) {
+          var croupierDiv = document.getElementById("croupier").childNodes;
+          console.log(croupierDiv);
+          for (var i=0; i < croupierDiv.length; i++) {
+            if (croupierDiv[i].nodeName.toLowerCase() == 'img') {
+              croupierDiv[i].style.margin = "0em -1.6em";
+              joueurDiv[i].style.border = "1px solid rgb(36 36 36)";
+            }
+          }
+        }
+        else if (nbrCardsCroupier > 5) {
+          var croupierDiv = document.getElementById("croupier").childNodes;
+          console.log(croupierDiv);
+          for (var i=0; i < croupierDiv.length; i++) {
+            if (croupierDiv[i].nodeName.toLowerCase() == 'img') {
+              croupierDiv[i].style.margin = "0em -1.3em";
+              joueurDiv[i].style.border = "1px solid rgb(36 36 36)";
+            }
+          }
+        }
+        else if (nbrCardsCroupier > 4) {
+          var croupierDiv = document.getElementById("croupier").childNodes;
+          console.log(croupierDiv);
+          for (var i=0; i < croupierDiv.length; i++) {
+            if (croupierDiv[i].nodeName.toLowerCase() == 'img') {
+              croupierDiv[i].style.margin = "0em -1.1em";
+              joueurDiv[i].style.border = "1px solid rgb(36 36 36)";
+            }
+          }
+        }
+
+
+
         // if (burstJoueur == false) {
           decrementCompteurDeck();
         // }
@@ -4993,10 +5032,6 @@
         }
         //FIN
 
-
-        nbrCardsJoueur = nbrCardsJoueur + 1;
-        console.log("nbrCardsJoueur: " + nbrCardsJoueur);
-
         scoreTotalJoueur += pickedCardObject.cardValue;
 
         // MàJ score avec petit delai (et refresh CSS)
@@ -5045,9 +5080,69 @@
           audioCardSound.play();
         }
 
+        nbrCardsJoueur = nbrCardsJoueur + 1;
 
         setTimeout(function() {
+
           document.getElementById("joueur").appendChild(img);
+        // Ptit flash border anim lorsque la carte append
+
+
+
+          // WIP: Eventail
+          // (!) Ajouter un petit boutonToggle (icon:oeil ?), onClick pas d'éventail ?
+          // (!) Ajouter un border sur les cartes quand elles sont stack 
+          // Exemple 8 cartes: (faire au cas par cas car les valeurs n'ont pas l'air proportionnelles au nbrCard pour etre joli)
+            // (de la gauche vers la droite)
+
+            // carte1: rotate(345deg), relative, bottom-35px;
+            // carte2: rotate(349deg), relative, bottom-21px;
+            // carte3: rotate(353deg), relative, bottom-10px;
+            // carte4: rotate(357deg), relative, bottom-5px;
+            // carte5: rotate(2deg), relative, bottom-5px;
+            // carte6: rotate(6deg), relative, bottom-13px;
+            // carte7: rotate(10deg), relative, bottom-23px;
+            // carte8: rotate(15deg), relative, bottom-37px;
+
+            // + #jouer: bottom: 270px (mediaQueries2)  [remonter un peu la main]
+            // + #footer footerOnPartieBorderRadius qui s'adapte à l'angle de l'éventail? pour 8 cartes: border-radius: 50% 50% 0px 0px / 100px;  
+                // C:\Users\basil\OneDrive\Documents\ShareX\Screenshots\2022-09\opera_QHsCZu1KI4.png
+
+            // Le faire plus anguleux et rapproché ? -oui-
+
+
+          // Si nbrCard > 5, margin negative, puis de plus en plus:
+          if (nbrCardsJoueur > 6) {
+            var joueurDiv = document.getElementById("joueur").childNodes;
+            console.log(joueurDiv);
+            for (var i=0; i < joueurDiv.length; i++) {
+              if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+                joueurDiv[i].style.margin = "0em -1.6em";
+                joueurDiv[i].style.border = "1px solid rgb(36 36 36)";
+              }
+            }
+          }
+          else if (nbrCardsJoueur > 5) {
+            var joueurDiv = document.getElementById("joueur").childNodes;
+            console.log(joueurDiv);
+            for (var i=0; i < joueurDiv.length; i++) {
+              if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+                joueurDiv[i].style.margin = "0em -1.3em";
+                joueurDiv[i].style.border = "1px solid rgb(36 36 36)";
+              }
+            }
+          }
+          else if (nbrCardsJoueur > 4) {
+            var joueurDiv = document.getElementById("joueur").childNodes;
+            console.log(joueurDiv);
+            for (var i=0; i < joueurDiv.length; i++) {
+              if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+                joueurDiv[i].style.margin = "0em -1.1em";
+                joueurDiv[i].style.border = "1px solid rgb(36 36 36)";
+              }
+            }
+          }
+
         }, 470);
 
         decrementCompteurDeck()
