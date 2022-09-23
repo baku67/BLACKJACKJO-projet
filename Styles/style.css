@@ -761,7 +761,7 @@ button, input[type="submit"], input[type="reset"] {
 
 
 .fadeOut2 {
-	animation: fadeOut2 0.5s 0s forwards ease;
+	animation: fadeOut2 0.5s 0s forwards ease !important;
 }
 @keyframes fadeOut2 {
 	from {
