@@ -807,7 +807,44 @@
 
 
 
+        // OPacity des token réduite si indisponible
+        // Check a chaque click Token, et au moment du load phaseMise
+        function checkTokenGrised() {
+          if ((credits-miseEnCours-misePairEnCours-mise213EnCours) < 100) {
+            document.getElementById("blackToken").style.opacity = "0.3";
+          }
+          else {
+            document.getElementById("blackToken").style.opacity = "1";
+          }
+          
+          if ((credits-miseEnCours-misePairEnCours-mise213EnCours) < 25) {
+            document.getElementById("blueToken").style.opacity = "0.3";
+          }
+          else {
+            document.getElementById("blueToken").style.opacity = "1";
+          }
 
+          if ((credits-miseEnCours-misePairEnCours-mise213EnCours) < 10) {
+            document.getElementById("greenToken").style.opacity = "0.3";
+          }
+          else {
+            document.getElementById("greenToken").style.opacity = "1";
+          }
+
+          if ((credits-miseEnCours-misePairEnCours-mise213EnCours) < 5) {
+            document.getElementById("redToken").style.opacity = "0.3";
+          }
+          else {
+            document.getElementById("redToken").style.opacity = "1";
+          }
+
+          if ((credits-miseEnCours-misePairEnCours-mise213EnCours) < 1) {
+            document.getElementById("whiteToken").style.opacity = "0.3";
+          }
+          else {
+            document.getElementById("whiteToken").style.opacity = "1";
+          }
+        }
 
 
 
@@ -1373,6 +1410,9 @@
 
             } 
           }
+
+          checkTokenGrised();
+
         });
       }
 
@@ -1430,6 +1470,9 @@
             refreshEraseOpacity(toggleSideBet);
             } 
           }
+
+          checkTokenGrised();
+
         });
       }
 
@@ -2246,6 +2289,8 @@
                     dataType: "html",
                     success: function(response) {
                       $("#container3").html(response);
+
+                      checkTokenGrised();
 
                       document.getElementById("header").classList.add('headerOnPartie');
 
@@ -3255,6 +3300,8 @@
               dataType: "html",
               success: function(response) {
                 $("#chipsContainer").html(response);
+
+                // checkTokenGrised();
 
                 document.getElementById("footer").style.boxShadow = "-0px -3px 30px 5px rgba(239, 59, 46, 0.5)";
 
@@ -4459,8 +4506,7 @@
 
 
 
-      // OPacity des token réduite si indisponible
-
+      
 
 
 
@@ -4505,6 +4551,8 @@
                 cssMiseEnCours();
               }
             }
+
+            checkTokenGrised();
           
           })
 
@@ -4549,6 +4597,8 @@
               }
             }
 
+            checkTokenGrised();
+
           })
         
 
@@ -4591,6 +4641,8 @@
                 cssMiseEnCours();
               }
             }
+
+            checkTokenGrised();
 
           })
        
@@ -4635,6 +4687,8 @@
             }
           }
 
+          checkTokenGrised();
+
         })
 
         
@@ -4678,6 +4732,9 @@
               cssMiseEnCours();
             }
           }
+
+          checkTokenGrised();
+
         })
 
       }
