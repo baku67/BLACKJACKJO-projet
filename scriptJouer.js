@@ -2905,29 +2905,30 @@
 
         doubleBool = 1;
 
-        // Envoi de la miseLocked à retirer (Double)
-        if (isConnected) {
-          var miseDoublePhp = {};
-          miseDoublePhp.value = (miseLocked);
-          $.ajax({
-            url: "setMises.php",
-            method: "post",
-            data: miseDoublePhp,
-            success: function(res) {
-              console.log("MISE DOUBLE ENVOYEE");
-            }
-          });
-        }
+        // Déplacé en amont car delai sur l'appel
+        // // Envoi de la miseLocked à retirer (Double)
+        // if (isConnected) {
+        //   var miseDoublePhp = {};
+        //   miseDoublePhp.value = (miseLocked);
+        //   $.ajax({
+        //     url: "setMises.php",
+        //     method: "post",
+        //     data: miseDoublePhp,
+        //     success: function(res) {
+        //       console.log("MISE DOUBLE ENVOYEE");
+        //     }
+        //   });
+        // }
 
-        credits = credits - miseLocked;
+        // credits = credits - miseLocked;
 
-        // Maj front du credits (Co,Deco)
-        if (isConnected == false) {
-          document.getElementById("creditsInvite").innerHTML = credits;
-        }
-        else {
-          document.getElementById("creditsConnected").innerHTML = credits;
-        }
+        // // Maj front du credits (Co,Deco)
+        // if (isConnected == false) {
+        //   document.getElementById("creditsInvite").innerHTML = credits;
+        // }
+        // else {
+        //   document.getElementById("creditsConnected").innerHTML = credits;
+        // }
 
 
         $.ajax({
@@ -2941,8 +2942,14 @@
           }
         });
 
-        miseLocked = miseLocked * 2;
-        document.getElementById("miseLockedNbr").innerHTML =  miseLocked;
+        // Déplacé en amont à cause du delai sur l'appel
+        // miseLocked = miseLocked * 2;
+        // document.getElementById("miseLockedNbr").innerHTML =  miseLocked;
+        // // Ajout de l'indice x2 sous miseLocked ou a coté de mise ?
+        // // let x2Icon = document.createElement("span");
+        // // x2Icon.setAttribute("id", "x2Icon");
+        // document.getElementById("miseTitle").innerHTML = "Mise <span style='color:rgb(241, 205, 92); font-family:Calibri !important; font-weight:bold;'>x2</span>"
+
 
         setTimeout(function() {
           addCardJoueur();
@@ -3357,6 +3364,38 @@
   
                     // animAlertOnClickChoix();
                     animsBouton("double");
+
+                    // // Envoi de la miseLocked à retirer (Double)
+                    if (isConnected) {
+                      var miseDoublePhp = {};
+                      miseDoublePhp.value = (miseLocked);
+                      $.ajax({
+                        url: "setMises.php",
+                        method: "post",
+                        data: miseDoublePhp,
+                        success: function(res) {
+                          console.log("MISE DOUBLE ENVOYEE");
+                        }
+                      });
+                    }
+
+                    credits = credits - miseLocked;
+
+                    // Maj front du credits (Co,Deco)
+                    if (isConnected == false) {
+                      document.getElementById("creditsInvite").innerHTML = credits;
+                    }
+                    else {
+                      document.getElementById("creditsConnected").innerHTML = credits;
+                    }
+
+                    miseLocked = miseLocked * 2;
+                    document.getElementById("miseLockedNbr").innerHTML =  miseLocked;
+                    // Ajout de l'indice x2 sous miseLocked ou a coté de mise ?
+                    // let x2Icon = document.createElement("span");
+                    // x2Icon.setAttribute("id", "x2Icon");
+                    document.getElementById("miseTitle").innerHTML = "Mise <span style='color:rgb(241, 205, 92); font-family:Calibri !important; font-weight:bold;'>x2</span>"
+
                     setTimeout(function() {
                       double();
                     }, 750)
@@ -3569,8 +3608,40 @@
                   }                
                 }, 2901);
 
-
                 animsBouton("double");
+
+                // // Envoi de la miseLocked à retirer (Double)
+                if (isConnected) {
+                  var miseDoublePhp = {};
+                  miseDoublePhp.value = (miseLocked);
+                  $.ajax({
+                    url: "setMises.php",
+                    method: "post",
+                    data: miseDoublePhp,
+                    success: function(res) {
+                      console.log("MISE DOUBLE ENVOYEE");
+                    }
+                  });
+                }
+
+                credits = credits - miseLocked;
+
+                // Maj front du credits (Co,Deco)
+                if (isConnected == false) {
+                  document.getElementById("creditsInvite").innerHTML = credits;
+                }
+                else {
+                  document.getElementById("creditsConnected").innerHTML = credits;
+                }
+
+                miseLocked = miseLocked * 2;
+                document.getElementById("miseLockedNbr").innerHTML =  miseLocked;
+                // Ajout de l'indice x2 sous miseLocked ou a coté de mise ?
+                // let x2Icon = document.createElement("span");
+                // x2Icon.setAttribute("id", "x2Icon");
+                document.getElementById("miseTitle").innerHTML = "Mise <span style='color:rgb(241, 205, 92); font-family:Calibri !important; font-weight:bold;'>x2</span>"
+                
+
                 setTimeout(function() {
                   double();
                 }, 750)
@@ -4388,7 +4459,7 @@
 
 
 
-
+      // OPacity des token réduite si indisponible
 
 
 
