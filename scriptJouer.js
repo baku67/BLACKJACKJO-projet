@@ -1328,6 +1328,7 @@
 
 
 
+
       function retourArriereButtonListener() {
         document.getElementById("retourArriereButton").addEventListener("click", function() {
           // fonction de rafraichissement de la mise en cours (Si il y a matière)
@@ -1335,28 +1336,52 @@
             if (miseEnCours != 0) {
               miseEnCours = miseEnCours - logTokenValues[0];
               if (isConnected == true) {
-                document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBarre.png' class=\"imagesSou\">";
+                document.getElementById("miseEnCours").classList.add("fadeOutMiseEnCourReverse");
+                setTimeout(function() {
+                  document.getElementById("miseEnCours").classList.remove("fadeOutMiseEnCourReverse");
+                  document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBarre.png' class=\"imagesSou\">";
+                  document.getElementById("miseEnCours").classList.add("fadeInMiseEnCourReverse");
+                }, 150)
+                setTimeout(function() {
+                  document.getElementById("miseEnCours").classList.remove("fadeInMiseEnCourReverse");
+                }, 300)
               }
               else {
-                document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBlancBarre.png' class=\"imagesSou\">";
+                document.getElementById("miseEnCours").classList.add("fadeOutMiseEnCourReverse");
+                setTimeout(function() {
+                  document.getElementById("miseEnCours").classList.remove("fadeOutMiseEnCourReverse");    
+                  document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBlancBarre.png' class=\"imagesSou\">";
+                  document.getElementById("miseEnCours").classList.add("fadeOutMiseEnCourReverse");
+                }, 150)
+                setTimeout(function() {
+                  document.getElementById("miseEnCours").classList.remove("fadeInMiseEnCourReverse");
+                }, 300)
               }
 
               // Enlever le sou si mise la mise passe à 0 apres calcul retourArriere
               if (miseEnCours == 0) {
-                if (isConnected == true) {
-                  document.getElementById("miseEnCours").innerHTML = miseEnCours;
-                }
-                else {
-                  document.getElementById("miseEnCours").innerHTML = miseEnCours;
-                }  
+                // if (isConnected == true) {
+                  document.getElementById("miseEnCours").classList.add("fadeOutMiseEnCourReverse");
+                  setTimeout(function() {
+                    document.getElementById("miseEnCours").classList.remove("fadeOutMiseEnCourReverse");
+                    document.getElementById("miseEnCours").innerHTML = miseEnCours;
+                    document.getElementById("miseEnCours").classList.add("fadeInMiseEnCourReverse");
+                  }, 150)
+                  setTimeout(function() {
+                    document.getElementById("miseEnCours").classList.remove("fadeInMiseEnCourReverse")
+                  }, 300);
+                // }
+                // else {
+                //   document.getElementById("miseEnCours").innerHTML = miseEnCours;
+                // }  
               }
 
-            // fonction qui remove le premier var du tableau
-            logTokenValues.shift();
-            refreshEraseOpacity(toggleSideBet);
+              // fonction qui remove le premier var du tableau
+              logTokenValues.shift();
+              refreshEraseOpacity(toggleSideBet);
 
-            // Rafraichit l'état style du bouton (par exemple si denouveau = 0)
-            miseBoutonStyle();
+              // Rafraichit l'état style du bouton (par exemple si denouveau = 0)
+              miseBoutonStyle();
             } 
           }
 
@@ -1364,20 +1389,44 @@
             if (misePairEnCours != 0) {
               misePairEnCours = misePairEnCours - logTokenValuesPair[0];
               if (isConnected == true) {
-                document.getElementById("sideBet1Mise").innerHTML = "<span>" + misePairEnCours + "</span><img src='Images/souBarre.png' class=\"imageSouSideBets\">";
+                document.getElementById("sideBet1Mise").classList.add("fadeOutMiseEnCourReverse");
+                setTimeout(function() {
+                  document.getElementById("sideBet1Mise").classList.remove("fadeOutMiseEnCourReverse");
+                  document.getElementById("sideBet1Mise").innerHTML = "<span>" + misePairEnCours + "</span><img src='Images/souBarre.png' class=\"imageSouSideBets\">";
+                  document.getElementById("sideBet1Mise").classList.add("fadeInMiseEnCourReverse");
+                }, 150)
+                setTimeout(function() {
+                  document.getElementById("sideBet1Mise").classList.remove("fadeInMiseEnCourReverse")
+                }, 100);
               }
               else {
-                document.getElementById("sideBet1Mise").innerHTML = "<span>" + misePairEnCours + "</span><img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
+                document.getElementById("sideBet1Mise").classList.add("fadeOutMiseEnCourReverse");
+                setTimeout(function() {
+                  document.getElementById("sideBet1Mise").classList.remove("fadeOutMiseEnCourReverse");    
+                  document.getElementById("sideBet1Mise").innerHTML = "<span>" + misePairEnCours + "</span><img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
+                  document.getElementById("sideBet1Mise").classList.add("fadeInMiseEnCourReverse");
+                }, 150)
+                setTimeout(function() {
+                  document.getElementById("sideBet1Mise").classList.remove("fadeInMiseEnCourReverse")
+                }, 100);
               }
 
               // Enlever le sou si mise la mise passe à 0 apres calcul retourArriere
               if (misePairEnCours == 0) {
-                if (isConnected == true) {
-                  document.getElementById("sideBet1Mise").innerHTML = misePairEnCours;
-                }
-                else {
-                  document.getElementById("sideBet1Mise").innerHTML = misePairEnCours;
-                }  
+                // if (isConnected == true) {
+                  document.getElementById("sideBet1Mise").classList.add("fadeOutMiseEnCourReverse");
+                  setTimeout(function() {
+                    document.getElementById("sideBet1Mise").classList.remove("fadeOutMiseEnCourReverse");
+                    document.getElementById("sideBet1Mise").innerHTML = misePairEnCours;
+                    document.getElementById("sideBet1Mise").classList.add("fadeInMiseEnCourReverse");
+                  }, 150)
+                  setTimeout(function() {
+                    document.getElementById("sideBet1Mise").classList.remove("fadeInMiseEnCourReverse")
+                  }, 100);  
+                // }
+                // else {
+                //   document.getElementById("sideBet1Mise").innerHTML = misePairEnCours;
+                // }  
               }
 
             // fonction qui remove le premier var du tableau
@@ -1391,20 +1440,44 @@
             if (mise213EnCours != 0) {
               mise213EnCours = mise213EnCours - logTokenValues213[0];
               if (isConnected == true) {
-                document.getElementById("sideBet2Mise").innerHTML = "<span>" + mise213EnCours + "</span><img src='Images/souBarre.png' class=\"imageSouSideBets\">";
+                document.getElementById("sideBet2Mise").classList.add("fadeOutMiseEnCourReverse");
+                setTimeout(function() {
+                  document.getElementById("sideBet2Mise").classList.remove("fadeOutMiseEnCourReverse");
+                  document.getElementById("sideBet2Mise").innerHTML = "<span>" + mise213EnCours + "</span><img src='Images/souBarre.png' class=\"imageSouSideBets\">";
+                  document.getElementById("sideBet2Mise").classList.add("fadeInMiseEnCourReverse");
+                }, 150)
+                setTimeout(function() {
+                  document.getElementById("sideBet2Mise").classList.remove("fadeInMiseEnCourReverse")
+                }, 100);
               }
               else {
-                document.getElementById("sideBet2Mise").innerHTML = "<span>" + mise213EnCours + "</span><img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
+                document.getElementById("sideBet2Mise").classList.add("fadeOutMiseEnCourReverse");
+                setTimeout(function() {
+                  document.getElementById("sideBet2Mise").classList.remove("fadeOutMiseEnCourReverse");
+                  document.getElementById("sideBet2Mise").innerHTML = "<span>" + mise213EnCours + "</span><img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
+                  document.getElementById("sideBet2Mise").classList.add("fadeInMiseEnCourReverse");
+                }, 150)
+                setTimeout(function() {
+                  document.getElementById("sideBet2Mise").classList.remove("fadeInMiseEnCourReverse")
+                }, 100);
               }
 
               // Enlever le sou si mise la mise passe à 0 apres calcul retourArriere
               if (mise213EnCours == 0) {
-                if (isConnected == true) {
-                  document.getElementById("sideBet2Mise").innerHTML = mise213EnCours;
-                }
-                else {
-                  document.getElementById("sideBet2Mise").innerHTML = mise213EnCours;
-                }  
+                // if (isConnected == true) {
+                  document.getElementById("sideBet2Mise").classList.add("fadeOutMiseEnCourReverse");
+                  setTimeout(function() {
+                    document.getElementById("sideBet2Mise").classList.remove("fadeOutMiseEnCourReverse");  
+                    document.getElementById("sideBet2Mise").innerHTML = mise213EnCours;
+                    document.getElementById("sideBet2Mise").classList.add("fadeInMiseEnCourReverse");
+                  }, 150)
+                  setTimeout(function() {
+                    document.getElementById("sideBet2Mise").classList.remove("fadeInMiseEnCourReverse")
+                  }, 100);
+                // }
+                // else {
+                //   document.getElementById("sideBet2Mise").innerHTML = mise213EnCours;
+                // }  
               }
 
             // fonction qui remove le premier var du tableau
@@ -1511,19 +1584,20 @@
           sideBet1Title.style.color = "rgba(0, 255, 234, 0.8)";
           sideBet2Title.style.color = "rgba(239, 59, 46, 0.9)";
 
+          // Les opacity dynamique selon toggleBet ne marchent plus a cause de l'anim forwards fadeInMiseEnCours (effet cool)
           if (miseEnCours > 0) {
-            document.getElementById("miseEnCours").style.opacity = "0.6";
+            document.getElementById("miseEnCours").style.cssText = "opacity: 0.6 !important";
           }
           else {
-            document.getElementById("miseEnCours").style.opacity = "0.3";
+            document.getElementById("miseEnCours").style.cssText = "opacity: 0.3 !important";
           }
           if (mise213EnCours > 0) {
-            document.getElementById("sideBet2Mise").style.opacity = "0.6";
+            document.getElementById("sideBet2Mise").style.cssText = "opacity: 0.6 !important";
           }
           else {
-            document.getElementById("sideBet2Mise").style.opacity = "0.3";
+            document.getElementById("sideBet2Mise").style.cssText = "opacity: 0.3 !important";
           }
-          document.getElementById("sideBet1Mise").style.opacity = "1";
+          document.getElementById("sideBet1Mise").style.cssText = "opacity: 1";
 
 
           document.getElementById("footerTitle").innerHTML = " - Side Bet - ";
@@ -1562,19 +1636,20 @@
           sideBet1Title.style.color = "rgba(239, 59, 46, 0.9)";
           sideBet2Title.style.color = "rgba(255, 55, 250, 0.8)";
 
+          // Les opacity dynamique selon toggleBet ne marchent plus a cause de l'anim forwards fadeInMiseEnCours (effet cool)
           if (miseEnCours > 0) {
-            document.getElementById("miseEnCours").style.opacity = "0.6";
+            document.getElementById("miseEnCours").style.cssText = "opacity: 0.6 !important";
           }
           else {
-            document.getElementById("miseEnCours").style.opacity = "0.3";
+            document.getElementById("miseEnCours").style.cssText = "opacity: 0.3 !important";
           }
           if (misePairEnCours > 0) {
-            document.getElementById("sideBet1Mise").style.opacity = "0.6";
+            document.getElementById("sideBet1Mise").style.cssText = "opacity: 0.6 !important";
           }
           else {
-            document.getElementById("sideBet1Mise").style.opacity = "0.3";
+            document.getElementById("sideBet1Mise").style.cssText = "opacity: 0.3 !important";
           }
-          document.getElementById("sideBet2Mise").style.opacity = "1";
+          document.getElementById("sideBet2Mise").style.cssText = "opacity: 1 !important";
 
 
           document.getElementById("footerTitle").innerHTML = " - Side Bet - ";
@@ -1616,19 +1691,20 @@
           sideBet1.style.boxShadow = "";
           sideBet2.style.boxShadow = "";
 
+          // Les opacity dynamique selon toggleBet ne marchent plus a cause de l'anim forwards fadeInMiseEnCours (effet cool)
           if (mise213EnCours > 0) {
-            document.getElementById("sideBet2Mise").style.opacity = "0.6";
+            document.getElementById("sideBet2Mise").style.cssText = "opacity: 0.6 !important";
           }
           else {
-            document.getElementById("sideBet2Mise").style.opacity = "0.3";
+            document.getElementById("sideBet2Mise").style.cssText = "opacity: 0.3 !important";
           }
           if (misePairEnCours > 0) {
-            document.getElementById("sideBet1Mise").style.opacity = "0.6";
+            document.getElementById("sideBet1Mise").style.cssText = "opacity: 0.6 !important";
           }
           else {
-            document.getElementById("sideBet1Mise").style.opacity = "0.3";
+            document.getElementById("sideBet1Mise").style.cssText = "opacity: 0.3 !important";
           }
-          document.getElementById("miseEnCours").style.opacity = "1";
+          document.getElementById("miseEnCours").style.cssText = "opacity: 1 !important";
 
 
           document.getElementById("footerTitle").innerHTML = " - Mise - ";
@@ -2378,12 +2454,12 @@
           }
 
           // FadeOut/Anims
-          document.getElementById("footerResultatContainer").classList.add("fadeOut2");
-          document.getElementById("separateur").classList.add("fadeOut2");
-          document.getElementById("croupier").classList.add("fadeOut2");
-          document.getElementById("scoreCroupier").classList.add("fadeOut2"); // !important
-          document.getElementById("joueur").classList.add("fadeOut2");
-          document.getElementById("scoreJoueur").classList.add("fadeOut2");
+          document.getElementById("footerResultatContainer").classList.add("fadeOutFinDePartie");
+          document.getElementById("separateur").classList.add("fadeOutFinDePartie");
+          document.getElementById("croupier").classList.add("fadeOutFinDePartie");
+          document.getElementById("scoreCroupier").classList.add("fadeOutFinDePartie"); // !important
+          document.getElementById("joueur").classList.add("fadeOutFinDePartie");
+          document.getElementById("scoreJoueur").classList.add("fadeOutFinDePartie");
 
           firstProc = false;
 
@@ -3340,12 +3416,15 @@
                 ChoixActif = true;
                 document.getElementById("footerTitle").innerHTML = " - Choix -";
 
-                  if (scoreTotalJoueur > 8 && scoreTotalJoueur < 12) {
-                    if ((document.getElementById("double") !==null ) && (document.getElementById("choixDoubler") !== null)) {
-                      document.getElementById("double").style.opacity = 1;
-                      document.getElementById("choixDoubler").style.opacity = 1;  
-                    }
+                if (scoreTotalJoueur > 8 && scoreTotalJoueur < 12) {
+                  if ((document.getElementById("double") !==null ) && (document.getElementById("choixDoubler") !== null)) {
+                    document.getElementById("double").style.boxShadow = "-0px -3px 30px 5px rgba(252, 227, 3, 1)";
+                    document.getElementById("double").style.opacity = "1";
                   }
+                }
+                else {
+                  document.getElementById("double").style.opacity = "0.8";
+                }
 
                 if (document.getElementById("hit") !== null) {
                   document.getElementById("hit").addEventListener("click", function() {
@@ -3420,8 +3499,18 @@
                   document.addEventListener('keyup', doc_keyStand, false);
                   //*** FIN
 
-
-                if (document.getElementById("double") !== null) {
+                if ((document.getElementById("double") !== null) && (credits-miseLocked <= 0)) {
+                  document.getElementById("double").style.opacity = "0.3";
+                  document.getElementById("double").style.color = "grey";
+                  document.getElementById("double").style.border = "4px solid grey";
+                  document.getElementById("double").addEventListener("click", function() {
+                    document.getElementById("double").classList.add("shakeX2");
+                    setTimeout(function() {
+                      document.getElementById("double").classList.remove("shakeX2");
+                    }, 501)
+                  })  
+                }
+                else if ((document.getElementById("double") !== null) && (credits-miseLocked > 0)) {
                   document.getElementById("double").addEventListener("click", function() {
 
                     document.querySelector("#hit").disabled = true;
@@ -3598,6 +3687,18 @@
               $("#chipsContainer").html(response);
               document.getElementById("footerTitle").innerHTML = " - Choix -";
 
+              // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+              // Selon les règles Francaises ou US: On peut que doubler apres les 2 premieres cartes si elles totalisent 9,10 ou 11 (à commenter ?) (1/2)
+              if (scoreTotalJoueur > 8 && scoreTotalJoueur < 12) {
+                if ((document.getElementById("double") !==null ) && (document.getElementById("choixDoubler") !== null)) {
+                  document.getElementById("double").style.boxShadow = "-0px -3px 30px 5px rgba(252, 227, 3, 1)";
+                  document.getElementById("double").style.opacity = "1";
+                }
+              }
+              else {
+                document.getElementById("double").style.opacity = "0.8";
+              }
+
               if (document.getElementById('textChoix') !== null) {
                 document.getElementById('textChoix').classList.remove("phaseChoixAlert2Flash");
               }
@@ -3669,62 +3770,76 @@
               document.addEventListener('keyup', doc_keyStand, false);
               //*** FIN
 
+              // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+              // Selon les règles Francaises ou US: On peut que doubler apres les 2 premieres cartes si elles totalisent 9,10 ou 11 (à commenter ?) (2/2)
+              if (credits-miseLocked <= 0) {
+                document.getElementById("double").style.opacity = "0.3";
+                document.getElementById("double").style.color = "grey";
+                document.getElementById("double").style.border = "4px solid grey";
+                document.getElementById("double").addEventListener("click", function() {
+                  document.getElementById("double").classList.add("shakeX2");
+                  setTimeout(function() {
+                    document.getElementById("double").classList.remove("shakeX2");
+                  }, 501)
+                })
+              }
+              else if (credits-miseLocked > 0) {
+                document.getElementById("double").addEventListener("click", function() {
 
-              document.getElementById("double").addEventListener("click", function() {
+                  document.querySelector("#hit").disabled = true;
+                  document.querySelector("#stand").disabled = true;
+                  document.querySelector("#double").disabled = true;
 
-                document.querySelector("#hit").disabled = true;
-                document.querySelector("#stand").disabled = true;
-                document.querySelector("#double").disabled = true;
+                  choix = "double";
 
-                choix = "double";
+                  document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
+                  document.getElementById('traitUnderlineInverseChoix').classList.add("traitUnderlineInverse2FlashChoix");
+                  document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert2");
+                  setTimeout(function() {
+                    if (document.getElementById("phaseChoixAlert") !==null ) {
+                      document.getElementById("phaseChoixAlert").remove();
+                    }                
+                  }, 2901);
 
-                document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
-                document.getElementById('traitUnderlineInverseChoix').classList.add("traitUnderlineInverse2FlashChoix");
-                document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert2");
-                setTimeout(function() {
-                  if (document.getElementById("phaseChoixAlert") !==null ) {
-                    document.getElementById("phaseChoixAlert").remove();
-                  }                
-                }, 2901);
+                  animsBouton("double");
 
-                animsBouton("double");
+                  // // Envoi de la miseLocked à retirer (Double)
+                  if (isConnected) {
+                    var miseDoublePhp = {};
+                    miseDoublePhp.value = (miseLocked);
+                    $.ajax({
+                      url: "setMises.php",
+                      method: "post",
+                      data: miseDoublePhp,
+                      success: function(res) {
+                        console.log("MISE DOUBLE ENVOYEE");
+                      }
+                    });
+                  }
 
-                // // Envoi de la miseLocked à retirer (Double)
-                if (isConnected) {
-                  var miseDoublePhp = {};
-                  miseDoublePhp.value = (miseLocked);
-                  $.ajax({
-                    url: "setMises.php",
-                    method: "post",
-                    data: miseDoublePhp,
-                    success: function(res) {
-                      console.log("MISE DOUBLE ENVOYEE");
-                    }
-                  });
-                }
+                  credits = credits - miseLocked;
 
-                credits = credits - miseLocked;
+                  // Maj front du credits (Co,Deco)
+                  if (isConnected == false) {
+                    document.getElementById("creditsInvite").innerHTML = credits;
+                  }
+                  else {
+                    document.getElementById("creditsConnected").innerHTML = credits;
+                  }
 
-                // Maj front du credits (Co,Deco)
-                if (isConnected == false) {
-                  document.getElementById("creditsInvite").innerHTML = credits;
-                }
-                else {
-                  document.getElementById("creditsConnected").innerHTML = credits;
-                }
+                  miseLocked = miseLocked * 2;
+                  document.getElementById("miseLockedNbr").innerHTML =  miseLocked;
+                  // Ajout de l'indice x2 sous miseLocked ou a coté de mise ?
+                  // let x2Icon = document.createElement("span");
+                  // x2Icon.setAttribute("id", "x2Icon");
+                  document.getElementById("miseTitle").innerHTML = "Mise <span style='color:rgb(241, 205, 92); font-family:Calibri !important; font-weight:bold;'>x2</span>"
+                  
 
-                miseLocked = miseLocked * 2;
-                document.getElementById("miseLockedNbr").innerHTML =  miseLocked;
-                // Ajout de l'indice x2 sous miseLocked ou a coté de mise ?
-                // let x2Icon = document.createElement("span");
-                // x2Icon.setAttribute("id", "x2Icon");
-                document.getElementById("miseTitle").innerHTML = "Mise <span style='color:rgb(241, 205, 92); font-family:Calibri !important; font-weight:bold;'>x2</span>"
-                
-
-                setTimeout(function() {
-                  double();
-                }, 750)
-            });
+                  setTimeout(function() {
+                    double();
+                  }, 750)
+                });
+              }
               //***  shortcut Double
               function doc_keyDouble(e) {
                 if ((e.key === '*') && (ChoixActif == true)){
@@ -4426,7 +4541,7 @@
 
       function cssMiseEnCours() {
         if (miseEnCours > 0) {
-          document.getElementById("miseEnCours").className ="miseEnCours";
+          document.getElementById("miseEnCours").style.right ="15px";
         }
       }
 
@@ -4455,31 +4570,77 @@
 
 
 
-
+// Anim: fade out et slide vers le bas (rapide et blur), puis innerHML et anim vers le bas et fadeOut (-blur)
       function refreshMisesEnCours(casMise) {
         if (casMise == "normal") {
+
           if (isConnected == true) {
-            document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBarre.png' class=\"imagesSou\">";
+            document.getElementById("miseEnCours").classList.add("fadeOutMiseEnCour");
+            setTimeout(function() {
+              document.getElementById("miseEnCours").classList.remove("fadeOutMiseEnCour");
+              document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBarre.png' class=\"imagesSou\">";
+              document.getElementById("miseEnCours").classList.add("fadeInMiseEnCour");
+            }, 100)
+            setTimeout(function() {
+              document.getElementById("miseEnCours").classList.remove("fadeInMiseEnCour");
+            }, 200);
           }
           else {
-            document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBlancBarre.png' class=\"imagesSou\">";
+            document.getElementById("miseEnCours").classList.add("fadeOutMiseEnCour");
+            setTimeout(function() {
+              document.getElementById("miseEnCours").classList.remove("fadeOutMiseEnCour");
+              document.getElementById("miseEnCours").innerHTML = miseEnCours + "<img src='Images/souBlancBarre.png' class=\"imagesSou\">";
+              document.getElementById("miseEnCours").classList.add("fadeInMiseEnCour");
+            }, 100)
+            setTimeout(function() {
+              document.getElementById("miseEnCours").classList.remove("fadeInMiseEnCour");
+            }, 200);
           }
         }
         else if (casMise == "pair") {
           if (isConnected == true) {
-            document.getElementById("sideBet1Mise").innerHTML = "<span>" + misePairEnCours + "</span><img src='Images/souBarre.png' class=\"imageSouSideBets\">";
+            document.getElementById("sideBet1Mise").classList.add("fadeOutMiseEnCour");
+            setTimeout(function() {
+              document.getElementById("sideBet1Mise").classList.remove("fadeOutMiseEnCour");
+              document.getElementById("sideBet1Mise").innerHTML = "<span>" + misePairEnCours + "</span><img src='Images/souBarre.png' class=\"imageSouSideBets\">";
+              document.getElementById("sideBet1Mise").classList.add("fadeInMiseEnCour");
+            }, 100)
+            setTimeout(function() {
+              document.getElementById("sideBet1Mise").classList.remove("fadeInMiseEnCour")
+            }, 200);
           }
           else {
-            document.getElementById("sideBet1Mise").innerHTML = "<span>" + misePairEnCours + "</span><img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
-          }
+            document.getElementById("sideBet1Mise").classList.add("fadeOutMiseEnCour");
+            setTimeout(function() {
+              document.getElementById("sideBet1Mise").classList.remove("fadeOutMiseEnCour");
+              document.getElementById("sideBet1Mise").innerHTML = "<span>" + misePairEnCours + "</span><img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
+              document.getElementById("sideBet1Mise").classList.add("fadeInMiseEnCour");
+            }, 100)
+            setTimeout(function() {
+              document.getElementById("sideBet1Mise").classList.remove("fadeInMiseEnCour")
+            }, 200);          }
         }
         else if (casMise == "21+3") {
           if (isConnected == true) {
-            document.getElementById("sideBet2Mise").innerHTML = "<span>" + mise213EnCours + "</span><img src='Images/souBarre.png' class=\"imageSouSideBets\">";
-          }
+            document.getElementById("sideBet2Mise").classList.add("fadeOutMiseEnCour");
+            setTimeout(function() {
+              document.getElementById("sideBet2Mise").classList.remove("fadeOutMiseEnCour");
+              document.getElementById("sideBet2Mise").innerHTML = "<span>" + mise213EnCours + "</span><img src='Images/souBarre.png' class=\"imageSouSideBets\">";
+              document.getElementById("sideBet2Mise").classList.add("fadeInMiseEnCour");
+            }, 100)
+            setTimeout(function() {
+              document.getElementById("sideBet2Mise").classList.remove("fadeInMiseEnCour")
+            }, 200);          }
           else {
-            document.getElementById("sideBet2Mise").innerHTML = "<span>" + mise213EnCours + "</span><img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
-          }
+            document.getElementById("sideBet2Mise").classList.add("fadeOutMiseEnCour");
+            setTimeout(function() {
+              document.getElementById("sideBet2Mise").classList.remove("fadeOutMiseEnCour");
+              document.getElementById("sideBet2Mise").innerHTML = "<span>" + mise213EnCours + "</span><img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
+              document.getElementById("sideBet2Mise").classList.add("fadeInMiseEnCour");
+            }, 100)
+            setTimeout(function() {
+              document.getElementById("sideBet2Mise").classList.remove("fadeInMiseEnCour")
+            }, 200);          }
         }
       }
 
@@ -5142,7 +5303,7 @@
                 joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
               }
             }
-            if (firstProc == false) {
+            // if (firstProc == false) {
               joueurDiv[0].style.transform = "rotate(-26deg)";
               joueurDiv[0].style.position = "relative";
               joueurDiv[0].style.bottom = "-44px";
@@ -5173,7 +5334,7 @@
 
               document.getElementById("joueur").style.bottom = "273px";
               document.getElementById("scoreJoueur").style.bottom = "465px";
-            }
+            // }
 
           }
           else if (nbrCardsJoueur == 6) {
@@ -5186,7 +5347,7 @@
                 joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
               }
             }
-            if (firstProc == false) {
+            // if (firstProc == false) {
               joueurDiv[0].style.transform = "rotate(-21deg)";
               joueurDiv[0].style.position = "relative";
               joueurDiv[0].style.bottom = "-30px";
@@ -5213,7 +5374,7 @@
 
               document.getElementById("joueur").style.bottom = "273px";
               document.getElementById("scoreJoueur").style.bottom = "465px";
-            }
+            // }
 
             // Marche pas (class anim oblige)
             document.getElementById("footer").style.borderRadius = "50% 50% 0px 0px / 104px !important";
@@ -5228,7 +5389,7 @@
                 joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
               }
             }
-            if (firstProc == false) {
+            // if (firstProc == false) {
               joueurDiv[0].style.transform = "rotate(-16deg)";
               joueurDiv[0].style.position = "relative";
               joueurDiv[0].style.bottom = "-30px";
@@ -5251,7 +5412,7 @@
 
               document.getElementById("joueur").style.bottom = "273px";
               document.getElementById("scoreJoueur").style.bottom = "465px";
-            }
+            // }
 
             // Marche pas (class anim oblige)
             document.getElementById("footer").style.borderRadius = "50% 50% 0px 0px / 104px !important";
@@ -5266,7 +5427,7 @@
                 joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
               }
             }
-            if (firstProc == false) {
+            // if (firstProc == false) {
               joueurDiv[0].style.transform = "rotate(-16deg)";
               joueurDiv[0].style.position = "relative";
               joueurDiv[0].style.bottom = "-30px";
@@ -5285,7 +5446,7 @@
 
               document.getElementById("joueur").style.bottom = "273px";
               document.getElementById("scoreJoueur").style.bottom = "465px";
-            }
+            // }
 
             // Marche pas (class anim oblige)
             document.getElementById("footer").style.borderRadius = "50% 50% 0px 0px / 104px !important";
@@ -5300,7 +5461,7 @@
                 joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
               }
             }
-            if (firstProc == false) {
+            // if (firstProc == false) {
               joueurDiv[0].style.transform = "rotate(-16deg)";
               joueurDiv[0].style.position = "relative";
               joueurDiv[0].style.bottom = "-19px";          
@@ -5315,7 +5476,7 @@
 
               document.getElementById("joueur").style.bottom = "273px";
               document.getElementById("scoreJoueur").style.bottom = "465px";
-            }
+            // }
 
             // Marche pas (class anim oblige)
             document.getElementById("footer").style.borderRadius = "50% 50% 0px 0px / 104px !important";
