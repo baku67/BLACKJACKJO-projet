@@ -1397,7 +1397,7 @@
                 }, 150)
                 setTimeout(function() {
                   document.getElementById("sideBet1Mise").classList.remove("fadeInMiseEnCourReverse")
-                }, 100);
+                }, 300);
               }
               else {
                 document.getElementById("sideBet1Mise").classList.add("fadeOutMiseEnCourReverse");
@@ -1408,7 +1408,7 @@
                 }, 150)
                 setTimeout(function() {
                   document.getElementById("sideBet1Mise").classList.remove("fadeInMiseEnCourReverse")
-                }, 100);
+                }, 300);
               }
 
               // Enlever le sou si mise la mise passe à 0 apres calcul retourArriere
@@ -1422,7 +1422,7 @@
                   }, 150)
                   setTimeout(function() {
                     document.getElementById("sideBet1Mise").classList.remove("fadeInMiseEnCourReverse")
-                  }, 100);  
+                  }, 300);  
                 // }
                 // else {
                 //   document.getElementById("sideBet1Mise").innerHTML = misePairEnCours;
@@ -1448,7 +1448,7 @@
                 }, 150)
                 setTimeout(function() {
                   document.getElementById("sideBet2Mise").classList.remove("fadeInMiseEnCourReverse")
-                }, 100);
+                }, 300);
               }
               else {
                 document.getElementById("sideBet2Mise").classList.add("fadeOutMiseEnCourReverse");
@@ -1459,7 +1459,7 @@
                 }, 150)
                 setTimeout(function() {
                   document.getElementById("sideBet2Mise").classList.remove("fadeInMiseEnCourReverse")
-                }, 100);
+                }, 300);
               }
 
               // Enlever le sou si mise la mise passe à 0 apres calcul retourArriere
@@ -1473,7 +1473,7 @@
                   }, 150)
                   setTimeout(function() {
                     document.getElementById("sideBet2Mise").classList.remove("fadeInMiseEnCourReverse")
-                  }, 100);
+                  }, 300);
                 // }
                 // else {
                 //   document.getElementById("sideBet2Mise").innerHTML = mise213EnCours;
@@ -4606,7 +4606,7 @@
               document.getElementById("sideBet1Mise").classList.add("fadeInMiseEnCour");
             }, 100)
             setTimeout(function() {
-              document.getElementById("sideBet1Mise").classList.remove("fadeInMiseEnCour")
+              document.getElementById("sideBet1Mise").classList.remove("fadeInMiseEnCour");
             }, 200);
           }
           else {
@@ -4617,8 +4617,9 @@
               document.getElementById("sideBet1Mise").classList.add("fadeInMiseEnCour");
             }, 100)
             setTimeout(function() {
-              document.getElementById("sideBet1Mise").classList.remove("fadeInMiseEnCour")
-            }, 200);          }
+              document.getElementById("sideBet1Mise").classList.remove("fadeInMiseEnCour");
+            }, 200);          
+          }
         }
         else if (casMise == "21+3") {
           if (isConnected == true) {
@@ -4629,8 +4630,9 @@
               document.getElementById("sideBet2Mise").classList.add("fadeInMiseEnCour");
             }, 100)
             setTimeout(function() {
-              document.getElementById("sideBet2Mise").classList.remove("fadeInMiseEnCour")
-            }, 200);          }
+              document.getElementById("sideBet2Mise").classList.remove("fadeInMiseEnCour");
+            }, 200);
+          }
           else {
             document.getElementById("sideBet2Mise").classList.add("fadeOutMiseEnCour");
             setTimeout(function() {
@@ -4639,8 +4641,9 @@
               document.getElementById("sideBet2Mise").classList.add("fadeInMiseEnCour");
             }, 100)
             setTimeout(function() {
-              document.getElementById("sideBet2Mise").classList.remove("fadeInMiseEnCour")
-            }, 200);          }
+              document.getElementById("sideBet2Mise").classList.remove("fadeInMiseEnCour");
+            }, 200);          
+          }
         }
       }
 
