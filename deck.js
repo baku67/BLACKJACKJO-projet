@@ -2138,7 +2138,17 @@
     setTimeout(function() {
       document.getElementById("deckContainer").appendChild(melangeAlert);
       // Si l'anim marche pas: ajouter une classe juste avec l'anim   
-    }, 1500);
+    }, 1250);
+
+    // Anim du deck
+    setTimeout(function() {
+      document.getElementById("cardAnim").style.display = "none";
+      document.getElementById("imgCardDeck").classList.add("melangeRotateCard");
+      setTimeout(function() {
+        document.getElementById("cardAnim").style.display = "block";
+      }, 1000)
+    }, 1250)
+    
 
     // adapter le setTimeout du depop à l'anim
     // setTimeout(function() {

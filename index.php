@@ -26,6 +26,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Bellota:ital,wght@1,300;1,700&display=swap" rel="stylesheet">		
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		
+		<!-- <script src="dist/long-press.min.js"></script> -->
 		<script src="https://kit.fontawesome.com/698848973e.js" crossorigin="anonymous"></script>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

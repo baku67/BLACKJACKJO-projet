@@ -89,9 +89,7 @@
 
     
         <span id="scoreJoueur" class="scores" style="visibility: hidden;">0</span>
-        <div class="list2" id="joueur">
-            <!-- AJOUT DES CARTES ICI -->
-        </div>
+        <div class="list2" id="joueur"></div>
 
 
 

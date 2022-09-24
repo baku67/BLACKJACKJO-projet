@@ -1,10 +1,20 @@
+LORS MELANGE: transform:rotate3D du deck (+cardAnim, double effet?)
+
+
 cardsJoueur ou croupier overflow (rapetisser)
+
+IL FAUDRAIT QUE LES CARTES SE SUPERPOSENT LORSQUIL Y EN A TROP (faisable)
+Tant qu'a faire voire pour effet eventail ? (bon chance)
+aussi simple que de modifier le margin du .imgPartie (l'inversé, et de plus en plus marqué selon le nbr de cartes)
 
 miseBet Lock, AS Croupier adaptatif puis BJ croupier et rework BJJoueur, , gradientsOnPartieDM, jauge XP compte d'abord
 
 A chaque ajout de cred dans un slotMise, ptit fadeOut0.1s,fadeIn0.1s,InnerText (au lieu de juste changer l'innerText)
 
 ANTI-SPAM: Désactiver button NouvellePartie (bets se stackent), ET boutonChoix (full bugued) onFirstClick
+
+ATTENTION: les keyup des boutonChoix sont pas à jour et peuvent servir pour tricher (a bon entendeur)
+
 
 Responsive:
 Faire un backup des mediaQueries+styles

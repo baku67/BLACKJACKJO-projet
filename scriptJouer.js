@@ -70,6 +70,8 @@
       var misePairLocked = 0;
       var mise213Locked;
 
+      var firstProc = false;
+
 
       var compteurDeck = cards.length;
       var compteurDeckMax = cards.length;
@@ -2369,6 +2371,12 @@
 
         $("#relancer").click(function(){
 
+          // Le .remove() marche pas ici, ducoup workaround degueu:  :/
+          if (document.getElementById("toggleHandDiv") !== null ) { // cas BJ
+            document.getElementById("toggleHandDiv").innerHTML = "";
+            document.getElementById("toggleHandDiv").style.border = "0px solid red";
+          }
+
           // FadeOut/Anims
           document.getElementById("footerResultatContainer").classList.add("fadeOut2");
           document.getElementById("separateur").classList.add("fadeOut2");
@@ -2377,7 +2385,11 @@
           document.getElementById("joueur").classList.add("fadeOut2");
           document.getElementById("scoreJoueur").classList.add("fadeOut2");
 
+          firstProc = false;
 
+          mise213EnCours = 0;
+          misePairEnCours = 0;
+          miseEnCours = 0;
 
           ingame = false;
           WinLose = "";
@@ -2420,6 +2432,10 @@
               dataType: "html",
               success: function(response) {
                 $("#container1").html(response);
+
+                if (document.getElementById("toggleHandDiv") !== null ) {
+                  document.getElementById("toggleHandDiv").remove();
+                }
 
                 if (cards.length < 60) {
                   // Ancienne méthode:
@@ -4924,36 +4940,48 @@
 
 
         nbrCardsCroupier = nbrCardsCroupier + 1;
+
         // Si nbrCard > 5, margin negative, puis de plus en plus:
-        if (nbrCardsCroupier > 6) {
+        if (nbrCardsCroupier > 7) {
           var croupierDiv = document.getElementById("croupier").childNodes;
           console.log(croupierDiv);
           for (var i=0; i < croupierDiv.length; i++) {
             if (croupierDiv[i].nodeName.toLowerCase() == 'img') {
-              croupierDiv[i].style.margin = "0em -1.6em";
-              joueurDiv[i].style.border = "1px solid rgb(36 36 36)";
+              croupierDiv[i].style.margin = "0em -1.5em";
+              croupierDiv[i].style.border = "1px solid rgb(36 36 36)";
             }
           }
         }
-        else if (nbrCardsCroupier > 5) {
+        else if (nbrCardsCroupier == 7) {
           var croupierDiv = document.getElementById("croupier").childNodes;
           console.log(croupierDiv);
           for (var i=0; i < croupierDiv.length; i++) {
             if (croupierDiv[i].nodeName.toLowerCase() == 'img') {
               croupierDiv[i].style.margin = "0em -1.3em";
-              joueurDiv[i].style.border = "1px solid rgb(36 36 36)";
+              croupierDiv[i].style.border = "1px solid rgb(36 36 36)";
             }
           }
         }
-        else if (nbrCardsCroupier > 4) {
+        else if (nbrCardsCroupier == 6) {
           var croupierDiv = document.getElementById("croupier").childNodes;
           console.log(croupierDiv);
           for (var i=0; i < croupierDiv.length; i++) {
             if (croupierDiv[i].nodeName.toLowerCase() == 'img') {
-              croupierDiv[i].style.margin = "0em -1.1em";
-              joueurDiv[i].style.border = "1px solid rgb(36 36 36)";
+              croupierDiv[i].style.margin = "0em -1.2em";
+              croupierDiv[i].style.border = "1px solid rgb(36 36 36)";
             }
           }
+        }
+        else if (nbrCardsCroupier == 5) {
+          var croupierDiv = document.getElementById("croupier").childNodes;
+          console.log(croupierDiv);
+          for (var i=0; i < croupierDiv.length; i++) {
+            if (croupierDiv[i].nodeName.toLowerCase() == 'img') {
+              croupierDiv[i].style.margin = "0em -1em";
+              croupierDiv[i].style.border = "1px solid rgb(36 36 36)";
+            }
+          }
+
         }
 
 
@@ -5082,65 +5110,263 @@
 
         nbrCardsJoueur = nbrCardsJoueur + 1;
 
+
+
         setTimeout(function() {
 
           document.getElementById("joueur").appendChild(img);
-        // Ptit flash border anim lorsque la carte append
-
+          // Ptit flash border anim lorsque la carte append
 
 
           // WIP: Eventail
-          // (!) Ajouter un petit boutonToggle (icon:oeil ?), onClick pas d'éventail ?
-          // (!) Ajouter un border sur les cartes quand elles sont stack 
-          // Exemple 8 cartes: (faire au cas par cas car les valeurs n'ont pas l'air proportionnelles au nbrCard pour etre joli)
-            // (de la gauche vers la droite)
+          // Mettre un case plutot (plus opti?)
+          if (nbrCardsJoueur > 7) {
+            var joueurDiv = document.getElementById("joueur").childNodes;
+            console.log(joueurDiv);
+            for (var i=0; i < joueurDiv.length; i++) {
+              if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+                joueurDiv[i].style.margin = "0em -1.8em";
+                joueurDiv[i].style.border = "1px solid rgb(36 36 36)";
+              }
+            }
 
-            // carte1: rotate(345deg), relative, bottom-35px;
-            // carte2: rotate(349deg), relative, bottom-21px;
-            // carte3: rotate(353deg), relative, bottom-10px;
-            // carte4: rotate(357deg), relative, bottom-5px;
-            // carte5: rotate(2deg), relative, bottom-5px;
-            // carte6: rotate(6deg), relative, bottom-13px;
-            // carte7: rotate(10deg), relative, bottom-23px;
-            // carte8: rotate(15deg), relative, bottom-37px;
-
-            // + #jouer: bottom: 270px (mediaQueries2)  [remonter un peu la main]
-            // + #footer footerOnPartieBorderRadius qui s'adapte à l'angle de l'éventail? pour 8 cartes: border-radius: 50% 50% 0px 0px / 100px;  
-                // C:\Users\basil\OneDrive\Documents\ShareX\Screenshots\2022-09\opera_QHsCZu1KI4.png
-
-            // Le faire plus anguleux et rapproché ? -oui-
-
-
-          // Si nbrCard > 5, margin negative, puis de plus en plus:
-          if (nbrCardsJoueur > 6) {
+            document.getElementById("joueur").style.bottom = "273px";
+            document.getElementById("scoreJoueur").style.bottom = "465px";
+          }
+          else if (nbrCardsJoueur == 7) {
             var joueurDiv = document.getElementById("joueur").childNodes;
             console.log(joueurDiv);
             for (var i=0; i < joueurDiv.length; i++) {
               if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
                 joueurDiv[i].style.margin = "0em -1.6em";
-                joueurDiv[i].style.border = "1px solid rgb(36 36 36)";
+                joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
               }
             }
+            if (firstProc == false) {
+              joueurDiv[0].style.transform = "rotate(-26deg)";
+              joueurDiv[0].style.position = "relative";
+              joueurDiv[0].style.bottom = "-44px";
+
+              joueurDiv[1].style.transform = "rotate(-16deg)";
+              joueurDiv[1].style.position = "relative";
+              joueurDiv[1].style.bottom = "-20px";
+
+              joueurDiv[2].style.transform = "rotate(-7deg)";
+              joueurDiv[2].style.position = "relative";
+              joueurDiv[2].style.bottom = "-10px";
+
+              joueurDiv[3].style.transform = "rotate(0deg)";
+              joueurDiv[3].style.position = "relative";
+              joueurDiv[3].style.bottom = "-5px";
+
+              joueurDiv[4].style.transform = "rotate(6deg)";
+              joueurDiv[4].style.position = "relative";
+              joueurDiv[4].style.bottom = "-10px";
+
+              joueurDiv[5].style.transform = "rotate(15deg)";
+              joueurDiv[5].style.position = "relative";
+              joueurDiv[5].style.bottom = "-25px";
+
+              joueurDiv[6].style.transform = "rotate(25deg)";
+              joueurDiv[6].style.position = "relative";
+              joueurDiv[6].style.bottom = "-49px";
+
+              document.getElementById("joueur").style.bottom = "273px";
+              document.getElementById("scoreJoueur").style.bottom = "465px";
+            }
+
           }
-          else if (nbrCardsJoueur > 5) {
+          else if (nbrCardsJoueur == 6) {
+
             var joueurDiv = document.getElementById("joueur").childNodes;
-            console.log(joueurDiv);
+
             for (var i=0; i < joueurDiv.length; i++) {
               if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
-                joueurDiv[i].style.margin = "0em -1.3em";
-                joueurDiv[i].style.border = "1px solid rgb(36 36 36)";
+                joueurDiv[i].style.margin = "0em -1.4em";
+                joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
               }
             }
+            if (firstProc == false) {
+              joueurDiv[0].style.transform = "rotate(-21deg)";
+              joueurDiv[0].style.position = "relative";
+              joueurDiv[0].style.bottom = "-30px";
+
+              joueurDiv[1].style.transform = "rotate(-12deg)";
+              joueurDiv[1].style.position = "relative";
+              joueurDiv[1].style.bottom = "-10px";
+
+              joueurDiv[2].style.transform = "rotate(-3deg)";
+              joueurDiv[2].style.position = "relative";
+              joueurDiv[2].style.bottom = "-2px";
+
+              joueurDiv[3].style.transform = "rotate(3deg)";
+              joueurDiv[3].style.position = "relative";
+              joueurDiv[3].style.bottom = "-2px";
+
+              joueurDiv[4].style.transform = "rotate(12deg)";
+              joueurDiv[4].style.position = "relative";
+              joueurDiv[4].style.bottom = "-13px";
+
+              joueurDiv[5].style.transform = "rotate(21deg)";
+              joueurDiv[5].style.position = "relative";
+              joueurDiv[5].style.bottom = "-33px";
+
+              document.getElementById("joueur").style.bottom = "273px";
+              document.getElementById("scoreJoueur").style.bottom = "465px";
+            }
+
+            // Marche pas (class anim oblige)
+            document.getElementById("footer").style.borderRadius = "50% 50% 0px 0px / 104px !important";
           }
-          else if (nbrCardsJoueur > 4) {
+          else if (nbrCardsJoueur == 5) {
+
             var joueurDiv = document.getElementById("joueur").childNodes;
-            console.log(joueurDiv);
+
             for (var i=0; i < joueurDiv.length; i++) {
               if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
-                joueurDiv[i].style.margin = "0em -1.1em";
-                joueurDiv[i].style.border = "1px solid rgb(36 36 36)";
+                joueurDiv[i].style.margin = "0em -1.2em";
+                joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
               }
             }
+            if (firstProc == false) {
+              joueurDiv[0].style.transform = "rotate(-16deg)";
+              joueurDiv[0].style.position = "relative";
+              joueurDiv[0].style.bottom = "-30px";
+
+              joueurDiv[1].style.transform = "rotate(-7deg)";
+              joueurDiv[1].style.position = "relative";
+              joueurDiv[1].style.bottom = "-10px";
+
+              joueurDiv[2].style.transform = "rotate(0deg)";
+              joueurDiv[2].style.position = "relative";
+              joueurDiv[2].style.bottom = "-5px";
+
+              joueurDiv[3].style.transform = "rotate(6deg)";
+              joueurDiv[3].style.position = "relative";
+              joueurDiv[3].style.bottom = "-13px";
+
+              joueurDiv[4].style.transform = "rotate(15deg)";
+              joueurDiv[4].style.position = "relative";
+              joueurDiv[4].style.bottom = "-28px";
+
+              document.getElementById("joueur").style.bottom = "273px";
+              document.getElementById("scoreJoueur").style.bottom = "465px";
+            }
+
+            // Marche pas (class anim oblige)
+            document.getElementById("footer").style.borderRadius = "50% 50% 0px 0px / 104px !important";
+          }
+          else if (nbrCardsJoueur == 4) {
+
+            var joueurDiv = document.getElementById("joueur").childNodes;
+
+            for (var i=0; i < joueurDiv.length; i++) {
+              if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+                joueurDiv[i].style.margin = "0em -1em";
+                joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
+              }
+            }
+            if (firstProc == false) {
+              joueurDiv[0].style.transform = "rotate(-16deg)";
+              joueurDiv[0].style.position = "relative";
+              joueurDiv[0].style.bottom = "-30px";
+
+              joueurDiv[1].style.transform = "rotate(-7deg)";
+              joueurDiv[1].style.position = "relative";
+              joueurDiv[1].style.bottom = "-10px";
+
+              joueurDiv[2].style.transform = "rotate(6deg)";
+              joueurDiv[2].style.position = "relative";
+              joueurDiv[2].style.bottom = "-11px";
+
+              joueurDiv[3].style.transform = "rotate(15deg)";
+              joueurDiv[3].style.position = "relative";
+              joueurDiv[3].style.bottom = "-28px";
+
+              document.getElementById("joueur").style.bottom = "273px";
+              document.getElementById("scoreJoueur").style.bottom = "465px";
+            }
+
+            // Marche pas (class anim oblige)
+            document.getElementById("footer").style.borderRadius = "50% 50% 0px 0px / 104px !important";
+          }
+          else if (nbrCardsJoueur == 3) {
+
+            var joueurDiv = document.getElementById("joueur").childNodes;
+
+            for (var i=0; i < joueurDiv.length; i++) {
+              if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+                joueurDiv[i].style.margin = "0em -0.8em";
+                joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
+              }
+            }
+            if (firstProc == false) {
+              joueurDiv[0].style.transform = "rotate(-16deg)";
+              joueurDiv[0].style.position = "relative";
+              joueurDiv[0].style.bottom = "-19px";          
+
+              joueurDiv[1].style.transform = "rotate(0deg)";
+              joueurDiv[1].style.position = "relative";
+              joueurDiv[1].style.bottom = "-5px";
+
+              joueurDiv[2].style.transform = "rotate(15deg)";
+              joueurDiv[2].style.position = "relative";
+              joueurDiv[2].style.bottom = "-22px";
+
+              document.getElementById("joueur").style.bottom = "273px";
+              document.getElementById("scoreJoueur").style.bottom = "465px";
+            }
+
+            // Marche pas (class anim oblige)
+            document.getElementById("footer").style.borderRadius = "50% 50% 0px 0px / 104px !important";
+          }
+
+          // Sortir l'affichage du toggle de la fonction addCardCroupier (car se stack a chaque card)
+          // Il faut que ce soit un toggle, pour les futut cartes a pop s'adapte au toggle
+          if ((nbrCardsJoueur > 2) && (firstProc == false)) {
+            firstProc = true;
+
+            let toggleHandDiv = document.createElement("div");
+            toggleHandDiv.setAttribute("id", "toggleHandDiv");
+
+            let arrowLeft = document.createElement("span");
+            arrowLeft.setAttribute("id", "arrowLeft");
+            arrowLeft.classList.add("arrowsToggleHand");
+            arrowLeft.innerHTML = "&#8678;";
+            let toggleHandImg = document.createElement("img");
+            toggleHandImg.setAttribute("id", "toggleHandImg");
+            let arrowRight = document.createElement("span");
+            arrowRight.setAttribute("id", "arrowRight");
+            arrowRight.classList.add("arrowsToggleHand");
+            arrowRight.innerHTML = "&#8680;";
+
+
+            toggleHandDiv.appendChild(arrowLeft);
+            toggleHandDiv.appendChild(toggleHandImg);
+            toggleHandDiv.appendChild(arrowRight);
+
+            document.getElementById("footer").appendChild(toggleHandDiv);
+
+            document.getElementById("toggleHandDiv").addEventListener("click", function() {
+              var joueurDiv = document.getElementById("joueur").childNodes;
+
+              for (var i=0; i < joueurDiv.length; i++) {
+                if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+                  joueurDiv[i].style.margin = "0em -0.8em";
+                  joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
+
+                  joueurDiv[i].style.transform = "";
+                  joueurDiv[i].style.bottom = "";
+                }
+              }
+            })
+
+            // While pressed, pas eventail, ou toggle? ou les deux?
+            // document.getElementById("toggleHandDiv").addEventListener("mousedown", function() {
+            //   document.getElementById("toggleHandDiv").addEventListener("mouseup", function() {
+            //   }
+            // })
+
           }
 
         }, 470);
