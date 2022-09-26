@@ -5530,7 +5530,6 @@
           // Affichage du boutonToggle (1 unique fois)
           if ((nbrCardsJoueur > 2) && (firstProc == false)) {
             firstProc = true;
-            toggleHand = true;
 
             let toggleHandDiv = document.createElement("div");
             toggleHandDiv.setAttribute("id", "toggleHandDiv");
@@ -5559,6 +5558,7 @@
             document.getElementById("toggleHandDiv").addEventListener("click", function() {
 
               if (toggleHand == true) {
+                toggleHand = false;
                 //Changement de l'affichage du bouton: (petite anim fadeOut/fadeIn ?)
                 document.getElementById("toggleHandImg").style.content = "url('Images/toggleHandImg4.png')";
                 document.getElementById("arrowRight").innerHTML = "&#8678;";
@@ -5575,7 +5575,11 @@
                   }
                 }
               }
+
+
               else if (toggleHand == false) {
+                toggleHand = true;
+
                 // Remmettre l'affichage eventail pour les cartes deja présentes
                 //Changement de l'affichage du bouton: (petite anim fadeOut/fadeIn ?)
                 document.getElementById("toggleHandImg").style.content = "url('Images/toggleAlignImg4.png')";
@@ -5583,21 +5587,145 @@
                 document.getElementById("arrowLeft").innerHTML = "&#8678;";
 
                 var joueurDiv = document.getElementById("joueur").childNodes;
-                for (var i=0; i < joueurDiv.length; i++) {
-                  if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+                // for (var i=0; i < joueurDiv.length; i++) {
+                //   if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
 
+                    if (nbrCardsJoueur == 3) {
+                      for (var i=0; i < joueurDiv.length; i++) {
+                        if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+                            joueurDiv[i].style.margin = "0em -0.8em";
+                      }}
 
+                      joueurDiv[0].style.transform = "rotate(-16deg)";
+                      joueurDiv[0].style.position = "relative";
+                      joueurDiv[0].style.bottom = "-19px";          
+        
+                      joueurDiv[1].style.transform = "rotate(0deg)";
+                      joueurDiv[1].style.position = "relative";
+                      joueurDiv[1].style.bottom = "-5px";
+        
+                      joueurDiv[2].style.transform = "rotate(15deg)";
+                      joueurDiv[2].style.position = "relative";
+                      joueurDiv[2].style.bottom = "-22px";        
+                    }
+                    else if (nbrCardsJoueur == 4) {
+                      for (var i=0; i < joueurDiv.length; i++) {
+                        if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+                          joueurDiv[i].style.margin = "0em -1em";
+                      }}
 
+                      joueurDiv[0].style.transform = "rotate(-16deg)";
+                      joueurDiv[0].style.position = "relative";
+                      joueurDiv[0].style.bottom = "-30px";
+        
+                      joueurDiv[1].style.transform = "rotate(-7deg)";
+                      joueurDiv[1].style.position = "relative";
+                      joueurDiv[1].style.bottom = "-10px";
+        
+                      joueurDiv[2].style.transform = "rotate(6deg)";
+                      joueurDiv[2].style.position = "relative";
+                      joueurDiv[2].style.bottom = "-11px";
+        
+                      joueurDiv[3].style.transform = "rotate(15deg)";
+                      joueurDiv[3].style.position = "relative";
+                      joueurDiv[3].style.bottom = "-28px";        
+                    }
+                    else if (nbrCardsJoueur == 5) {
+                      for (var i=0; i < joueurDiv.length; i++) {
+                        if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+                          joueurDiv[i].style.margin = "0em -1.2em";
+                      }}
 
+                      joueurDiv[0].style.transform = "rotate(-16deg)";
+                      joueurDiv[0].style.position = "relative";
+                      joueurDiv[0].style.bottom = "-30px";
+        
+                      joueurDiv[1].style.transform = "rotate(-7deg)";
+                      joueurDiv[1].style.position = "relative";
+                      joueurDiv[1].style.bottom = "-10px";
+        
+                      joueurDiv[2].style.transform = "rotate(0deg)";
+                      joueurDiv[2].style.position = "relative";
+                      joueurDiv[2].style.bottom = "-5px";
+        
+                      joueurDiv[3].style.transform = "rotate(6deg)";
+                      joueurDiv[3].style.position = "relative";
+                      joueurDiv[3].style.bottom = "-13px";
+        
+                      joueurDiv[4].style.transform = "rotate(15deg)";
+                      joueurDiv[4].style.position = "relative";
+                      joueurDiv[4].style.bottom = "-28px";        
+                    }
+                    else if (nbrCardsJoueur == 6) {
+                      for (var i=0; i < joueurDiv.length; i++) {
+                        if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+                          joueurDiv[i].style.margin = "0em -1.4em";
+                      }}
 
+                      joueurDiv[0].style.transform = "rotate(-21deg)";
+                      joueurDiv[0].style.position = "relative";
+                      joueurDiv[0].style.bottom = "-30px";
+        
+                      joueurDiv[1].style.transform = "rotate(-12deg)";
+                      joueurDiv[1].style.position = "relative";
+                      joueurDiv[1].style.bottom = "-10px";
+        
+                      joueurDiv[2].style.transform = "rotate(-3deg)";
+                      joueurDiv[2].style.position = "relative";
+                      joueurDiv[2].style.bottom = "-2px";
+        
+                      joueurDiv[3].style.transform = "rotate(3deg)";
+                      joueurDiv[3].style.position = "relative";
+                      joueurDiv[3].style.bottom = "-2px";
+        
+                      joueurDiv[4].style.transform = "rotate(12deg)";
+                      joueurDiv[4].style.position = "relative";
+                      joueurDiv[4].style.bottom = "-13px";
+        
+                      joueurDiv[5].style.transform = "rotate(21deg)";
+                      joueurDiv[5].style.position = "relative";
+                      joueurDiv[5].style.bottom = "-33px";        
+                    }
+                    else if (nbrCardsJoueur == 7) {
+                      for (var i=0; i < joueurDiv.length; i++) {
+                        if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+                          joueurDiv[i].style.margin = "0em -1.6em";
+                      }}
 
+                      joueurDiv[0].style.transform = "rotate(-26deg)";
+                      joueurDiv[0].style.position = "relative";
+                      joueurDiv[0].style.bottom = "-44px";
+        
+                      joueurDiv[1].style.transform = "rotate(-16deg)";
+                      joueurDiv[1].style.position = "relative";
+                      joueurDiv[1].style.bottom = "-20px";
+        
+                      joueurDiv[2].style.transform = "rotate(-7deg)";
+                      joueurDiv[2].style.position = "relative";
+                      joueurDiv[2].style.bottom = "-10px";
+        
+                      joueurDiv[3].style.transform = "rotate(0deg)";
+                      joueurDiv[3].style.position = "relative";
+                      joueurDiv[3].style.bottom = "-5px";
+        
+                      joueurDiv[4].style.transform = "rotate(6deg)";
+                      joueurDiv[4].style.position = "relative";
+                      joueurDiv[4].style.bottom = "-10px";
+        
+                      joueurDiv[5].style.transform = "rotate(15deg)";
+                      joueurDiv[5].style.position = "relative";
+                      joueurDiv[5].style.bottom = "-25px";
+        
+                      joueurDiv[6].style.transform = "rotate(25deg)";
+                      joueurDiv[6].style.position = "relative";
+                      joueurDiv[6].style.bottom = "-49px";        
+                    }
+                    else if (nbrCardsJoueur > 7) {
 
+                    }
 
-
-
-
-                  }
-                }
+                //   }
+                // }
 
               }
 
