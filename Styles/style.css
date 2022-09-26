@@ -277,8 +277,8 @@ input:-webkit-autofill{
 
 
 .melangeRotateCard {
-	animation: melangeRotateCard 1s 1 forwards ease-in-out !important;
-	opacity: 0.8 !important;
+	animation: melangeRotateCard 1.55s 1 forwards ease-in-out !important;
+	opacity: 0.85 !important;
 }
 @keyframes melangeRotateCard {
 	from {
@@ -308,7 +308,7 @@ input:-webkit-autofill{
 
 	/* adapter l'anim duration au setTimeout */
 	opacity: 0;
-	animation: popMelangeAlert 1.12s ease 1 forwards;
+	animation: popMelangeAlert 1.85s ease 1 forwards;
 }
 @keyframes popMelangeAlert {
 	0% {
@@ -3227,7 +3227,7 @@ figure:active {
 
 #imgCardDeck {
 	content:var(--imgDeck-src);
-	z-index: -1;
+	z-index: -2;
 	
 	/* animation: deckRotateCard 1s 2s 1 forwards ease-in-out !important; */
 }

@@ -5531,20 +5531,34 @@
           if ((nbrCardsJoueur > 2) && (firstProc == false)) {
             firstProc = true;
 
-            let toggleHandDiv = document.createElement("div");
+            var toggleHandDiv = document.createElement("div");
             toggleHandDiv.setAttribute("id", "toggleHandDiv");
 
-            let arrowLeft = document.createElement("span");
-            arrowLeft.setAttribute("id", "arrowLeft");
-            arrowLeft.classList.add("arrowsToggleHand");
-            arrowLeft.innerHTML = "&#8678;";
-            let toggleHandImg = document.createElement("img");
-            toggleHandImg.setAttribute("id", "toggleHandImg");
-            let arrowRight = document.createElement("span");
-            arrowRight.setAttribute("id", "arrowRight");
-            arrowRight.classList.add("arrowsToggleHand");
-            arrowRight.innerHTML = "&#8680;";
-
+            if (toggleHand == true) {
+              var arrowLeft = document.createElement("span");
+              arrowLeft.setAttribute("id", "arrowLeft");
+              arrowLeft.classList.add("arrowsToggleHand");
+              arrowLeft.innerHTML = "&#8678;";
+              var toggleHandImg = document.createElement("img");
+              toggleHandImg.setAttribute("id", "toggleHandImg");
+              var arrowRight = document.createElement("span");
+              arrowRight.setAttribute("id", "arrowRight");
+              arrowRight.classList.add("arrowsToggleHand");
+              arrowRight.innerHTML = "&#8680;";
+            }
+            else {
+              var arrowLeft = document.createElement("span");
+              arrowLeft.setAttribute("id", "arrowLeft");
+              arrowLeft.classList.add("arrowsToggleHand");
+              arrowLeft.innerHTML = "&#8680;";
+              var toggleHandImg = document.createElement("img");
+              toggleHandImg.setAttribute("id", "toggleHandImg");
+              toggleHandImg.style.content = "url('Images/toggleHandImg4.png')";
+              var arrowRight = document.createElement("span");
+              arrowRight.setAttribute("id", "arrowRight");
+              arrowRight.classList.add("arrowsToggleHand");
+              arrowRight.innerHTML = "&#8678;";
+            }
 
             toggleHandDiv.appendChild(arrowLeft);
             toggleHandDiv.appendChild(toggleHandImg);
@@ -5759,7 +5773,7 @@
               });
               setTimeout(function() {
                 lancerPhaseCroupier(); 
-              }, 850);
+              }, 450);
             }, 490);
             
             // lancerPhaseCroupier(); 

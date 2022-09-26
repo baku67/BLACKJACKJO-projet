@@ -2149,17 +2149,14 @@
     setTimeout(function() {
       document.getElementById("deckContainer").appendChild(melangeAlert);
       // Si l'anim marche pas: ajouter une classe juste avec l'anim   
-    }, 1480);
+    }, 1500);
 
-    // Anim du deck
+    // Anim du deck et Shuffle
     setTimeout(function() {
       document.getElementById("cardAnim").style.display = "none";
+      document.getElementById("imgCardDeck").style.display = "none";
 
-
-      // Zindex fonctionne (la derniere carte est au dessus, l'anim Rotate commence par celle du dessus)
-      var zindex = 10;
       for (var i=0; i<4; i++) {
-        // zindex -= 1;
         // Création des cartes Shuffle
         eval("var " + "cardAnimShuffle" + [i] + " = " + "document.createElement('img');");
         eval("cardAnimShuffle" + [i] + ".style.zIndex = '" + -1 + "';");
@@ -2170,38 +2167,35 @@
       }
 
       var delai = 1;
-      for (var j=3; j>=0; j--) {
-        delai = delai - 0.1;
-      // for (var j=0; j<6; j++) {
+      // for (var j=3; j>=0; j--) {
+      for (var j=0; j<4; j++) {
+        delai = delai - 0.05;
         (function(j) {
             setTimeout(function() {
               console.log("document.getElementById('cardAnimShuffle" + [j] + "').classList.add('melangeRotateCard');");
               eval("document.getElementById('cardAnimShuffle" + [j] + "').classList.add('melangeRotateCard');");
-            }, 150 * j * delai); // <-- You need to multiply by i here.
+            }, 150 * j * delai);
         })(j);
       }
 
       // Supression des cardShuffle
       setTimeout(function() {
-        for (var j=3; j>=0; j--) {
+        // for (var j=3; j>=0; j--) {
+        for (var j=0; j<4; j++) {
           eval("document.getElementById('cardAnimShuffle" + [j] + "').remove()");
         }
-      }, 2000)
+      }, 2450)
       
-        
-
-      document.getElementById("imgCardDeck").classList.add("melangeRotateCard");
+      // Jeu de timeOut avec block du dessus pour éviter effet refresh du deckCard degueu
       setTimeout(function() {
+        document.getElementById("imgCardDeck").style.zIndex = 0;
+        document.getElementById("imgCardDeck").style.display = "block";
         document.getElementById("cardAnim").style.display = "block";
-      }, 1000)
-    }, 1480)
+      }, 2050)
+
+    }, 1500)
     
 
-    // adapter le setTimeout du depop à l'anim
-    // setTimeout(function() {
-    //   document.getElementById("melangeAlertDiv").remove();
-    // }, 1300);
-    // FIN
     
 
 
