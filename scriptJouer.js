@@ -33,6 +33,7 @@
       var audioMiser = new Audio("Audio/soundMise.wav");
       audioMiser.volume = 0.3;
 
+      var toggleHand = true;
       
       var removed = false;
 
@@ -5311,8 +5312,9 @@
           // WIP: Eventail
           // Mettre un case plutot (plus opti?)
           if (nbrCardsJoueur > 7) {
+
             var joueurDiv = document.getElementById("joueur").childNodes;
-            console.log(joueurDiv);
+              
             for (var i=0; i < joueurDiv.length; i++) {
               if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
                 joueurDiv[i].style.margin = "0em -1.8em";
@@ -5322,17 +5324,27 @@
 
             document.getElementById("joueur").style.bottom = "273px";
             document.getElementById("scoreJoueur").style.bottom = "465px";
+
+            if (toggleHand == true) {
+
+            }
+
           }
           else if (nbrCardsJoueur == 7) {
+
             var joueurDiv = document.getElementById("joueur").childNodes;
-            console.log(joueurDiv);
+
             for (var i=0; i < joueurDiv.length; i++) {
               if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
                 joueurDiv[i].style.margin = "0em -1.6em";
                 joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
               }
             }
-            // if (firstProc == false) {
+
+            document.getElementById("joueur").style.bottom = "273px";
+            document.getElementById("scoreJoueur").style.bottom = "465px";
+
+            if (toggleHand == true) {
               joueurDiv[0].style.transform = "rotate(-26deg)";
               joueurDiv[0].style.position = "relative";
               joueurDiv[0].style.bottom = "-44px";
@@ -5360,10 +5372,7 @@
               joueurDiv[6].style.transform = "rotate(25deg)";
               joueurDiv[6].style.position = "relative";
               joueurDiv[6].style.bottom = "-49px";
-
-              document.getElementById("joueur").style.bottom = "273px";
-              document.getElementById("scoreJoueur").style.bottom = "465px";
-            // }
+            }
 
           }
           else if (nbrCardsJoueur == 6) {
@@ -5376,7 +5385,14 @@
                 joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
               }
             }
-            // if (firstProc == false) {
+
+            document.getElementById("joueur").style.bottom = "273px";
+            document.getElementById("scoreJoueur").style.bottom = "465px";
+
+            // Marche pas (class anim oblige)
+            document.getElementById("footer").style.borderRadius = "50% 50% 0px 0px / 104px !important";
+
+            if (toggleHand == true) {
               joueurDiv[0].style.transform = "rotate(-21deg)";
               joueurDiv[0].style.position = "relative";
               joueurDiv[0].style.bottom = "-30px";
@@ -5400,13 +5416,8 @@
               joueurDiv[5].style.transform = "rotate(21deg)";
               joueurDiv[5].style.position = "relative";
               joueurDiv[5].style.bottom = "-33px";
+            }
 
-              document.getElementById("joueur").style.bottom = "273px";
-              document.getElementById("scoreJoueur").style.bottom = "465px";
-            // }
-
-            // Marche pas (class anim oblige)
-            document.getElementById("footer").style.borderRadius = "50% 50% 0px 0px / 104px !important";
           }
           else if (nbrCardsJoueur == 5) {
 
@@ -5418,7 +5429,14 @@
                 joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
               }
             }
-            // if (firstProc == false) {
+
+            document.getElementById("joueur").style.bottom = "273px";
+            document.getElementById("scoreJoueur").style.bottom = "465px";
+
+            // Marche pas (class anim oblige)
+            document.getElementById("footer").style.borderRadius = "50% 50% 0px 0px / 104px !important";
+
+            if (toggleHand == true) {
               joueurDiv[0].style.transform = "rotate(-16deg)";
               joueurDiv[0].style.position = "relative";
               joueurDiv[0].style.bottom = "-30px";
@@ -5438,13 +5456,8 @@
               joueurDiv[4].style.transform = "rotate(15deg)";
               joueurDiv[4].style.position = "relative";
               joueurDiv[4].style.bottom = "-28px";
+            }
 
-              document.getElementById("joueur").style.bottom = "273px";
-              document.getElementById("scoreJoueur").style.bottom = "465px";
-            // }
-
-            // Marche pas (class anim oblige)
-            document.getElementById("footer").style.borderRadius = "50% 50% 0px 0px / 104px !important";
           }
           else if (nbrCardsJoueur == 4) {
 
@@ -5456,7 +5469,14 @@
                 joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
               }
             }
-            // if (firstProc == false) {
+
+            document.getElementById("joueur").style.bottom = "273px";
+            document.getElementById("scoreJoueur").style.bottom = "465px";
+
+            // Marche pas (class anim oblige)
+            document.getElementById("footer").style.borderRadius = "50% 50% 0px 0px / 104px !important";
+
+            if (toggleHand == true) {
               joueurDiv[0].style.transform = "rotate(-16deg)";
               joueurDiv[0].style.position = "relative";
               joueurDiv[0].style.bottom = "-30px";
@@ -5472,15 +5492,10 @@
               joueurDiv[3].style.transform = "rotate(15deg)";
               joueurDiv[3].style.position = "relative";
               joueurDiv[3].style.bottom = "-28px";
+            }
 
-              document.getElementById("joueur").style.bottom = "273px";
-              document.getElementById("scoreJoueur").style.bottom = "465px";
-            // }
-
-            // Marche pas (class anim oblige)
-            document.getElementById("footer").style.borderRadius = "50% 50% 0px 0px / 104px !important";
           }
-          else if (nbrCardsJoueur == 3) {
+          else if (nbrCardsJoueur == 3)  {
 
             var joueurDiv = document.getElementById("joueur").childNodes;
 
@@ -5490,7 +5505,13 @@
                 joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
               }
             }
-            // if (firstProc == false) {
+            document.getElementById("joueur").style.bottom = "273px";
+            document.getElementById("scoreJoueur").style.bottom = "465px";
+
+            // Marche pas (class anim oblige)
+            document.getElementById("footer").style.borderRadius = "50% 50% 0px 0px / 104px !important";
+
+            if (toggleHand == true) {
               joueurDiv[0].style.transform = "rotate(-16deg)";
               joueurDiv[0].style.position = "relative";
               joueurDiv[0].style.bottom = "-19px";          
@@ -5502,19 +5523,14 @@
               joueurDiv[2].style.transform = "rotate(15deg)";
               joueurDiv[2].style.position = "relative";
               joueurDiv[2].style.bottom = "-22px";
-
-              document.getElementById("joueur").style.bottom = "273px";
-              document.getElementById("scoreJoueur").style.bottom = "465px";
-            // }
-
-            // Marche pas (class anim oblige)
-            document.getElementById("footer").style.borderRadius = "50% 50% 0px 0px / 104px !important";
+            }
           }
 
-          // Sortir l'affichage du toggle de la fonction addCardCroupier (car se stack a chaque card)
-          // Il faut que ce soit un toggle, pour les futut cartes a pop s'adapte au toggle
+
+          // Affichage du boutonToggle (1 unique fois)
           if ((nbrCardsJoueur > 2) && (firstProc == false)) {
             firstProc = true;
+            toggleHand = true;
 
             let toggleHandDiv = document.createElement("div");
             toggleHandDiv.setAttribute("id", "toggleHandDiv");
@@ -5536,33 +5552,91 @@
             toggleHandDiv.appendChild(arrowRight);
 
             document.getElementById("footer").appendChild(toggleHandDiv);
+          }
 
+          // Listener toggle hand
+          if (document.getElementById("toggleHandDiv") !== null) {
             document.getElementById("toggleHandDiv").addEventListener("click", function() {
-              var joueurDiv = document.getElementById("joueur").childNodes;
 
-              for (var i=0; i < joueurDiv.length; i++) {
-                if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
-                  joueurDiv[i].style.margin = "0em -0.8em";
-                  joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
+              if (toggleHand == true) {
+                //Changement de l'affichage du bouton: (petite anim fadeOut/fadeIn ?)
+                document.getElementById("toggleHandImg").style.content = "url('Images/toggleHandImg4.png')";
+                document.getElementById("arrowRight").innerHTML = "&#8678;";
+                document.getElementById("arrowLeft").innerHTML = "&#8680;";
 
-                  joueurDiv[i].style.transform = "";
-                  joueurDiv[i].style.bottom = "";
+                var joueurDiv = document.getElementById("joueur").childNodes;
+                for (var i=0; i < joueurDiv.length; i++) {
+                  if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+                    joueurDiv[i].style.margin = "0em -0.8em";
+                    joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
+
+                    joueurDiv[i].style.transform = "";
+                    joueurDiv[i].style.bottom = "";
+                  }
                 }
               }
+              else if (toggleHand == false) {
+                // Remmettre l'affichage eventail pour les cartes deja présentes
+                //Changement de l'affichage du bouton: (petite anim fadeOut/fadeIn ?)
+                document.getElementById("toggleHandImg").style.content = "url('Images/toggleAlignImg4.png')";
+                document.getElementById("arrowRight").innerHTML = "&#8680;";
+                document.getElementById("arrowLeft").innerHTML = "&#8678;";
+
+                var joueurDiv = document.getElementById("joueur").childNodes;
+                for (var i=0; i < joueurDiv.length; i++) {
+                  if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+
+
+
+
+
+
+
+
+
+
+
+                  }
+                }
+
+              }
+
             })
-
-            // While pressed, pas eventail, ou toggle? ou les deux?
-            // document.getElementById("toggleHandDiv").addEventListener("mousedown", function() {
-            //   document.getElementById("toggleHandDiv").addEventListener("mouseup", function() {
-            //   }
-            // })
-
           }
 
           decrementCompteurDeck()
 
           checkBurstJoueur();
-          check21noBJ();
+
+          // check21noBJ();
+          if ((scoreTotalJoueur == 21) && (nbrCardsJoueur > 2)) {
+
+            if ((document.getElementById("phaseChoixAlert") !==null) && (document.getElementById("traitUnderlineInverseChoix") !==null)) {
+              document.getElementById("phaseChoixAlert").remove();
+              document.getElementById("traitUnderlineInverseChoix").remove();
+            }
+  
+            // La phase Croupier se lance mais le footer change pas (parce que ducoup on est encore dans le addCardJoueur ?):/
+            // rajout manuelle du load footer à test :
+            setTimeout(function() {
+              $.ajax({
+                async: false,
+                url: "Footers/footerDistribution.html",
+                dataType: "html",
+                success: function(response) {
+                  $("#chipsContainer").html(response);
+                  ChoixActif = false;
+                  document.getElementById("footerTitle").innerHTML = " - En attente -";
+                }
+              });
+              setTimeout(function() {
+                lancerPhaseCroupier(); 
+              }, 850);
+            }, 490);
+            
+            // lancerPhaseCroupier(); 
+          }
+
           checkBJjoueur();
   
 
@@ -6128,7 +6202,7 @@
                   relancer();
                 }
               });
-            }, 1200);
+            }, 1050);
         }
 
         else if ((scoreTotalJoueur < 21) && (doubleBool==1)) {
@@ -6148,35 +6222,35 @@
 
 
       // 21 hors BlackJack: Enlever la possibilité de choisir (conditions non remplies quand AS ?)
-      function check21noBJ() {
-        if ((scoreTotalJoueur == 21) && (nbrCardsJoueur > 2)) {
+      // function check21noBJ() {
+      //   if ((scoreTotalJoueur == 21) && (nbrCardsJoueur > 2)) {
 
-          if ((document.getElementById("phaseChoixAlert") !==null) && (document.getElementById("traitUnderlineInverseChoix") !==null)) {
-            document.getElementById("phaseChoixAlert").remove();
-            document.getElementById("traitUnderlineInverseChoix").remove();
-          }
+      //     if ((document.getElementById("phaseChoixAlert") !==null) && (document.getElementById("traitUnderlineInverseChoix") !==null)) {
+      //       document.getElementById("phaseChoixAlert").remove();
+      //       document.getElementById("traitUnderlineInverseChoix").remove();
+      //     }
 
-          // La phase Croupier se lance mais le footer change pas (parce que ducoup on est encore dans le addCardJoueur ?):/
-          // rajout manuelle du load footer à test :
-          setTimeout(function() {
-            $.ajax({
-              async: false,
-              url: "Footers/footerDistribution.html",
-              dataType: "html",
-              success: function(response) {
-                $("#chipsContainer").html(response);
-                ChoixActif = false;
-                document.getElementById("footerTitle").innerHTML = " - En attente -";
-              }
-            });
-          }, 490);
+      //     // La phase Croupier se lance mais le footer change pas (parce que ducoup on est encore dans le addCardJoueur ?):/
+      //     // rajout manuelle du load footer à test :
+      //     setTimeout(function() {
+      //       $.ajax({
+      //         async: false,
+      //         url: "Footers/footerDistribution.html",
+      //         dataType: "html",
+      //         success: function(response) {
+      //           $("#chipsContainer").html(response);
+      //           ChoixActif = false;
+      //           document.getElementById("footerTitle").innerHTML = " - En attente -";
+      //         }
+      //       });
+      //     }, 490);
           
-          setTimeout(function() {
-            lancerPhaseCroupier(); 
-          }, 850);
+      //     setTimeout(function() {
+      //       lancerPhaseCroupier(); 
+      //     }, 850);
 
-        }
-      }
+      //   }
+      // }
 
 
 
@@ -6313,7 +6387,7 @@
               }
             });
 
-          }, 1650);
+          }, 1350);
         }
       }
 

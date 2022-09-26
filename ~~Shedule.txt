@@ -4,6 +4,8 @@ Rework boutons choix (DM: orange, cian et gold, sinon laisser pour LM) et symbol
 
 C'est les toggle qui chargent pas qui font que le compteur et le reste charge pas (pas bloquant mais à faire)
 
+Mélanges de cartes (2cartes s'écartent en profondeur càd la carte du dessus vers haut/gauche avec size 120%, la "derniere" carte reste statique, plein de cartes s'ajoutent sous la carte du haute, puis anim les faire défiler vers celle du bas rapidement)
+
 Dans le modal inscription: intégrer les avantages de la creation de compte (de maniere fUn et dYnaMiQik)
 Ajouter le "Pas encore de compte? S'inscrire" en bas du modal co (et inversement)
 
@@ -27,6 +29,7 @@ Les LightMode des sideBets Button (le seul truc DM/LM qui reste je crois)
 EXP: 
 - Afficher jauge progression lvl en cours dans "Compte" (+petit visuel/ mini-jauge lors gain XP footer ?)
 - Modal gainLevel (avec gainCredits + message débloquage de (miseMax,x2,sideBet1,sideBet2,Assuance, nbrDeck? ))
+- Les sideBets donne de l'xp supplémentaire (base+mise)
 
 JaugeStreak:
 - La jauge augmente d'un pourcentage le gain d'XP (intrasèquement gain de credits si systeme de lvl infini et bien fait)
