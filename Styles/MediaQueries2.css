@@ -438,6 +438,12 @@
 	} */
 
 
+	.w3-block{
+		display:block;
+		width:50%; 
+		margin: 0 auto;
+		padding: 11px 16px !important;
+	}
 
 
 

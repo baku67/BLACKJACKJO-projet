@@ -5,7 +5,7 @@
 <div id="deckContainer" style="text-align: center;">
     <span id="compteurDeck"></span> &nbsp; / &nbsp; <span id="compteurDeckMax"></span><!--<img src="Images/deckIcon.png" style="width:40px;"/>-->
     <br>
-    <img id="imgCardDeck" class="imgPartie" style="margin-top: 5px;">
+    <img id="imgCardDeck" class="imgPartie melangeRotateCard" style="margin-top: 5px;">
     <br>
     
     <!-- MiseLocked popé from JS -->
@@ -123,6 +123,7 @@
                 Choix
             </p>
         </div>
+        <!-- <div id="xAnim"></div> -->
         <div id="traitUnderlineInverseChoix"></div>
 
         <!-- FIN ANIMS -->

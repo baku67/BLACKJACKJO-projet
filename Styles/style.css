@@ -278,6 +278,7 @@ input:-webkit-autofill{
 
 .melangeRotateCard {
 	animation: melangeRotateCard 1s 1 forwards ease-in-out !important;
+	opacity: 0.8 !important;
 }
 @keyframes melangeRotateCard {
 	from {
@@ -290,6 +291,7 @@ input:-webkit-autofill{
 
 
 #melangeAlertDiv {
+	z-index: 9;
 	position: absolute;
 	font-size: 5vh;
 	color: white;
@@ -301,6 +303,8 @@ input:-webkit-autofill{
 	transform: translateX(-20%);
 
 	font-style: italic;
+	/* Pas de transitions sur le weight :/ */
+	font-weight: bold;
 
 	/* adapter l'anim duration au setTimeout */
 	opacity: 0;
@@ -310,24 +314,39 @@ input:-webkit-autofill{
 	0% {
 		opacity: 0;
 		transform: translateX(-20%);
+		/* font-weight: 100; */
+	}
+	15% {
+		opacity: 1;
+		transform: translateX(-6%);
+		/* font-weight: bold; */
+	}
+	85% {
+		opacity: 1;
+		transform: translateX(4%);
+		/* font-weight: bold; */
+	}
+	100% {
+		opacity: 0;
+		transform: translateX(-20%);
+		/* font-weight: 100; */
+		/* font-weight: bold; */
+	}
+}
+/* Test z-index: */
+/* @keyframes popMelangeAlert {
+	0% {
+		opacity: 0;
+		transform: translateX(-20%);
 		font-weight: 100;
 	}
-	20% {
+	100% {
 		opacity: 1;
 		transform: translateX(-4%);
 		font-weight: bold;
 	}
-	80% {
-		opacity: 1;
-		transform: translateX(5%);
-		font-weight: bold;
-	}
-	100% {
-		opacity: 0;
-		transform: translateX(30%);
-		font-weight: 100;
-	}
-}
+} */
+
 
 
 
@@ -847,9 +866,6 @@ button, input[type="submit"], input[type="reset"] {
 	position: relative;
 	/* left: 8px; ANIM slide */
 	left: -130px;
-}
-.miseLockedAnim {
-	/* animation: miseLockedContainerPop1 0.33s ease-in-out forwards, miseLockedContainerPop2 0.33s 0.6s ease-in-out forwards !important; */
 }
 /* Tant qu'on met pas en place le pop de l'element miseLockedNbr, pas d'adaptation du padding pour combler l'espace vide  */
 @keyframes miseLockedContainerPop1 {
@@ -1453,12 +1469,6 @@ button, input[type="submit"], input[type="reset"] {
 	transform: scale(1.2) !important;
 	/* text-decoration: underline rgb(223, 204, 204); */
 }
-#guide:hover {
-	/* text-decoration: underline rgb(223, 204, 204); */
-}
-#historique:hover {
-	/* text-decoration: underline rgb(223, 204, 204); */
-}
 
 /* #guide:hover {
 	text-decoration: underline overline rgb(206, 209, 221);
@@ -1893,10 +1903,6 @@ button, input[type="submit"], input[type="reset"] {
 	text-decoration: underline;
 	text-decoration-color: rgba(223, 204, 204, 0.4);
 } */
-#inscriptionButton {
-	/* text-decoration: underline;
-	text-decoration-color: rgba(223, 204, 204, 0.4); */
-}
 h2 {
 	/* font-size: 1.5em !important; */
 	font-size: 32px;
@@ -2035,6 +2041,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 !!! */
 
 #container1 {
+	z-index: -1;
 	height: 100%;
 }
 
@@ -2479,20 +2486,6 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	}
 }
 
-/* .flashMiserAlertOnLock {
-	animation: flashMiser 0.3s 1 forwards ease;
-}
-@keyframes flashMiser {
-	0% {
-		color: var(--color-miserAlert);
-	}
-	50% {
-		color: var(--color-miserAlertFlash);
-	}
-	100% {
-		color: var(--color-miserAlert);
-	}
-} */
 
 
 .glitchPhaseLente {
@@ -2759,6 +2752,7 @@ p {
 
 
 #deckContainer {
+	/* z-index: -1; */
 	color: rgba(223, 204, 204, 1) !important;
 	position: absolute; 
 	bottom: 42%; 
@@ -2777,6 +2771,7 @@ p {
 }
 
 #cardAnim {	
+	z-index: -1;
 	position: absolute;
 	content:var(--imgDeck-src);
 
@@ -2788,6 +2783,20 @@ p {
 	bottom: 44.3%;
 	opacity: 1;
 }
+.cardAnimShuffle {
+	z-index: 1;
+	position: absolute;
+	content:var(--imgDeck-src);
+
+	/* // Gérer le responsive */
+	width: 6em !important;
+	/* left: 6.2%; */
+	left: 2.2%;
+
+	bottom: 44.3%;
+	opacity: 1;
+}
+
 .animDistribCardJoueur {
 	animation: animDistribJoueur 0.5s ease-out 0s forwards !important;
 }
@@ -2870,11 +2879,7 @@ p {
 	/* Pour eviter decalage lors proc des sideBets plus longs? */
 	width: 120px;
 }
-.borderParamPartie {
-	/* border: solid 1px rgba(255,255,255,0.05); */
-	/* border-top: solid 1px rgba(255,255,255,0.05);
-	border-bottom: solid 1px rgba(255,255,255,0.05); */
-}
+
 
 #traitSouligneBet {
 	width: 100%;
@@ -3221,7 +3226,19 @@ figure:active {
 
 #imgCardDeck {
 	content:var(--imgDeck-src);
+	z-index: -1;
+	
+	/* animation: deckRotateCard 1s 2s 1 forwards ease-in-out !important; */
 }
+@keyframes deckRotateCard {
+	from {
+		transform: rotate3d(1, 1, 1, 0deg);
+	}
+	to {
+		transform: rotate3d(1, 1, 1, 360deg);
+	}
+}
+
 
 .img {
 	cursor: pointer;
@@ -3503,9 +3520,6 @@ figure:active {
 	background: radial-gradient(circle, rgba(204,0,0,1) 0%, rgba(0,96,95,1) 100%) !important;
 }
 
-.styleSeparateurWinDM {
-
-}
 
 .styleSeparateurBust {
 	/* background: linear-gradient(67deg, rgba(130,14,39,1) 47%, rgba(26,32,57,1) 53%); */
@@ -4206,7 +4220,80 @@ p {
 		bottom: 5px;
 	}
 }
+/* 
+#xAnim {
+	width: 0px;
+	height: 7px;
+	transform: rotate(67deg);
 
+	position: absolute;
+	left: 60.3%;
+	top: 51.5%;
+
+	background-color: rgba(239, 59, 46, 1);
+
+	opacity: 1;
+
+	animation: trucbiulleChouette 0.8s 1.2s normal forwards linear;
+}
+@keyframes trucbiulleChouette {
+	from {
+		width: 0px;
+	}
+	to {
+		width: 30px;
+	}
+} */
+
+
+#xAnimWrapper {
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+
+	position: absolute;
+	left: 55.5%;
+	top: 50.8%;
+}
+
+#xAnim {
+	width: 0px;
+	height: 8px;
+	transform: rotate(65.5deg);
+	margin: 0 auto;
+
+	/* position: absolute;
+	left: 58.5%;
+	top: 50.8%; */
+
+	background-color: rgba(239, 59, 46, 1);
+
+	opacity: 0;
+
+	animation: trucbiulleChouette 0.23s 1.8s normal forwards ease-out;
+}
+@keyframes trucbiulleChouette {
+	from {
+		opacity: 0;
+		width: 0px;
+	}
+	to {
+		opacity: 1;
+		width: 59px;
+	}
+}
+
+.xAnimReverse {
+	animation: trucbiulleChouetteReverse 0.1s 0s normal forwards ease-out !important;
+}
+@keyframes trucbiulleChouetteReverse {
+	from {
+		width: 59px;
+	}
+	to {
+		width: 0px;
+	}
+}
 
 
 
@@ -4265,20 +4352,6 @@ p {
 
 	background-image: radial-gradient(circle, rgba(14,100,107,0.8) 0%, rgba(36,46,87,0) 100%);
 }
-#double:hover {
-	/* opacity: 1;
-	background: rgba(252, 227, 3, 0.2); 
-	font-size: 5em;
-	color: rgba(252, 227, 3, 1);
-	border: 6px solid rgba(252, 227, 3, 1);
-
-	background: rgb(209,181,5);
-	background: -moz-radial-gradient(circle, rgba(209,181,5,0.7973564425770308) 50%, rgba(255,255,255,0) 100%);
-	background: -webkit-radial-gradient(circle, rgba(209,181,5,0.7973564425770308) 50%, rgba(255,255,255,0) 100%);
-	background: radial-gradient(circle, rgba(209,181,5,0.7973564425770308) 50%, rgba(255,255,255,0) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d1b505",endColorstr="#ffffff",GradientType=1);
-	text-shadow: 0 0 2px rgb(0, 0, 0); */
-}
 
 #hit {
 	color: rgba(44, 252, 3, 0.8);
@@ -4302,8 +4375,6 @@ p {
 
 	background-image: radial-gradient(circle, rgba(14,100,107,0.8) 0%, rgba(36,46,87,0) 100%);
 }
-#hit:hover {
-}
 
 #stand {
 	color: rgba(252, 0, 0, 1);
@@ -4322,8 +4393,6 @@ p {
 	transition-duration: 0.3s;
 
 	background-image: radial-gradient(circle, rgba(14,100,107,0.8) 0%, rgba(36,46,87,0) 100%);
-}
-#stand:hover {
 }
 
 

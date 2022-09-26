@@ -3429,6 +3429,7 @@
                 if (document.getElementById("hit") !== null) {
                   document.getElementById("hit").addEventListener("click", function() {
 
+                    // document.getElementById("xAnim").classList.add("xAnimReverse");
 
                     document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
   
@@ -3467,9 +3468,12 @@
                     // Plutot mettre un fade out ou voir l'anim (trop brusque le depop) TimeOut trop long 
                     document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
                     document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert2");
+                    // document.getElementById("xAnim").classList.add("xAnimReverse");
+
                     setTimeout(function() {
                       if (document.getElementById("phaseChoixAlert") !==null ) {
                         document.getElementById("phaseChoixAlert").remove();
+                        // document.getElementById("xAnim").classList.remove("xAnimReverse");
                       }
                     }, 2901);
   
@@ -3524,9 +3528,11 @@
                     // Plutot mettre un fade out ou voir l'anim (trop brusque le depop) TimeOut trop long 
                     document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
                     document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert2");
+                    // document.getElementById("xAnim").classList.add("xAnimReverse");
                     setTimeout(function() {
                       if (document.getElementById("phaseChoixAlert") !==null ) {
                         document.getElementById("phaseChoixAlert").remove();
+                        // document.getElementById("xAnim").classList.remove("xAnimReverse");
                       }
                     }, 2901);
   
@@ -3590,6 +3596,14 @@
               if ((document.getElementById("traitUnderlineInverseChoix")!=null) && (document.getElementById('phaseChoixAlert')!==null)) {
                 document.getElementById("traitUnderlineInverseChoix").classList.add("traitUnderlineInverseChoix1");
                 document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert1");
+
+                // let xAnimWrapper = document.createElement("div");
+                // xAnimWrapper.setAttribute("id", "xAnimWrapper");
+                // let xAnim = document.createElement("div");
+                // xAnim.setAttribute("id", "xAnim");
+                // xAnimWrapper.append(xAnim);
+
+                // document.getElementById("jouerContainer1").append(xAnimWrapper);
               }
               // Fin
             }, 8001 * setTimeOutMultiplier);
@@ -3703,6 +3717,10 @@
                 document.getElementById('textChoix').classList.remove("phaseChoixAlert2Flash");
               }
 
+              // if (document.getElementById("xAnim") !== null) {
+              //   document.getElementById("xAnim").classList.remove("xAnimReverse");
+              // }
+
               document.getElementById("hit").addEventListener("click", function() {
 
                 document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
@@ -3739,9 +3757,11 @@
                 document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
                 document.getElementById('traitUnderlineInverseChoix').classList.add("traitUnderlineInverse2FlashChoix");
                 document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert2");
+                // document.getElementById("xAnim").classList.add("xAnimReverse");
                 setTimeout(function() {
                   if (document.getElementById("phaseChoixAlert") !==null ) {
                     document.getElementById("phaseChoixAlert").remove();
+                    // document.getElementById("xAnim").classList.remove("xAnimReverse");
                   }
                 }, 2901);
 
@@ -3795,9 +3815,11 @@
                   document.getElementById('textChoix').classList.add("phaseChoixAlert2Flash");
                   document.getElementById('traitUnderlineInverseChoix').classList.add("traitUnderlineInverse2FlashChoix");
                   document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert2");
+                  // document.getElementById("xAnim").classList.add("xAnimReverse");
                   setTimeout(function() {
                     if (document.getElementById("phaseChoixAlert") !==null ) {
                       document.getElementById("phaseChoixAlert").remove();
+                      // document.getElementById("xAnim").classList.remove("xAnimReverse");
                     }                
                   }, 2901);
 
@@ -3865,6 +3887,10 @@
             if (document.getElementById('phaseChoixAlert') !== null) {
               document.getElementById('phaseChoixAlert').classList.add("phaseChoixAlert1");
             }
+            // if (document.getElementById("xAnim") !== null) {
+              
+            // }
+
           }
           
         }, 2251 * setTimeOutMultiplier*1.1);
@@ -5533,13 +5559,15 @@
 
           }
 
+          decrementCompteurDeck()
+
+          checkBurstJoueur();
+          check21noBJ();
+          checkBJjoueur();
+  
+
         }, 470);
 
-        decrementCompteurDeck()
-
-        checkBurstJoueur();
-        check21noBJ();
-        checkBJjoueur();
 
         // Mise a jour du score High-Low
         if (pickedCardObject.cardValue < 7) {
@@ -6119,7 +6147,7 @@
 
 
 
-      // 21 hors BlackJack: Enlever la possibilité de choisir 
+      // 21 hors BlackJack: Enlever la possibilité de choisir (conditions non remplies quand AS ?)
       function check21noBJ() {
         if ((scoreTotalJoueur == 21) && (nbrCardsJoueur > 2)) {
 
@@ -6128,7 +6156,25 @@
             document.getElementById("traitUnderlineInverseChoix").remove();
           }
 
-          lancerPhaseCroupier(); 
+          // La phase Croupier se lance mais le footer change pas (parce que ducoup on est encore dans le addCardJoueur ?):/
+          // rajout manuelle du load footer à test :
+          setTimeout(function() {
+            $.ajax({
+              async: false,
+              url: "Footers/footerDistribution.html",
+              dataType: "html",
+              success: function(response) {
+                $("#chipsContainer").html(response);
+                ChoixActif = false;
+                document.getElementById("footerTitle").innerHTML = " - En attente -";
+              }
+            });
+          }, 490);
+          
+          setTimeout(function() {
+            lancerPhaseCroupier(); 
+          }, 850);
+
         }
       }
 

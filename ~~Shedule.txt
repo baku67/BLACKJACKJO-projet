@@ -1,7 +1,23 @@
+FLEX BAC A SABLE: https://codepen.io/osublake/pen/dMLQJr
+
+Rework boutons choix (DM: orange, cian et gold, sinon laisser pour LM) et symboles (card avec +  au milieu, cards eventail couchées, et pile d'argent simpliste avec X2)
+
+C'est les toggle qui chargent pas qui font que le compteur et le reste charge pas (pas bloquant mais à faire)
+
+Dans le modal inscription: intégrer les avantages de la creation de compte (de maniere fUn et dYnaMiQik)
+Ajouter le "Pas encore de compte? S'inscrire" en bas du modal co (et inversement)
+
+Lors reload: (Anim 2 temps avec ptite pause milieu), les cartes des 2 camps se stackent vers le centre puis slide vers la droite
+
+FIX zindex Melange alert 
+Faire plusieurs anims de mélange et randomiser (prochaine: 2 cartes opposées du deck "s'écartent" en diagonale profondeur, et les cartes du millieu vont de la carte "haute" à la carte "basse" tres rapidement, voir si on peut meme courber un peu les cartes)
+
+LORS BJ: Si card eventail? ANIM chaque card pop/monte un peu chacun son tour (effet Hola)
 
 (FIX PAS BO) AU moment du lancerPartie: faire une anim de transition entre fin d'animSlideIndex et les footer/HeaderOnPartie
 (FAUT FAIRE CA) IDEE MELANGE: plein de cardAnim absolute superposées, et animRotate l'une apres l'autre avec un delai de 0.1s pour effet plein de cartes (Ca va etre trop bien)
 
+Finir le WIP evantail et toggle (et toggle BDD?)
 
 Si je m'ennui: chiffre des cartes plus gros et fix la marge de 2px des pngDarkMode
 Les LightMode des sideBets Button (le seul truc DM/LM qui reste je crois)
