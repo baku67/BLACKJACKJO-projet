@@ -2149,7 +2149,7 @@
     setTimeout(function() {
       document.getElementById("deckContainer").appendChild(melangeAlert);
       // Si l'anim marche pas: ajouter une classe juste avec l'anim   
-    }, 1500);
+    }, 1430);
 
     // Anim du deck et Shuffle
     setTimeout(function() {
@@ -2193,7 +2193,7 @@
         document.getElementById("cardAnim").style.display = "block";
       }, 2050)
 
-    }, 1500)
+    }, 1430)
     
 
     

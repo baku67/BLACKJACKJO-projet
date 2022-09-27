@@ -1572,7 +1572,7 @@
         if (bet == "pair") {
           sideBet1.style.borderColor = "rgba(0, 255, 234, 0.8)"; // cian
           sideBet1.style.backgroundColor = "rgba(0, 255, 234, 0.1)"; // cian
-          sideBet1.style.boxShadow = "-0px 0px 30px 5px rgba(0, 255, 234, 0.2)";
+          sideBet1.style.boxShadow = "-0px 0px 50px 5px rgba(0, 255, 234, 0.4)";
           sideBet1.style.borderWidth = "3px";
           sideBet1.style.transform = "translateY(2px)";
 
@@ -1604,7 +1604,7 @@
           document.getElementById("footerTitle").innerHTML = " - Side Bet - ";
 
           document.getElementById("footer").style.borderTop = "4px solid rgba(0, 255, 234, 0.7)";
-          document.getElementById("footer").style.boxShadow = "-0px -3px 30px 5px rgba(0, 255, 234, 0.2)";
+          document.getElementById("footer").style.boxShadow = "-0px -3px 50px 5px rgba(0, 255, 234, 0.4)";
 
           document.getElementById("traitLumineuxFooter").style.background = "-webkit-linear-gradient(left, #10111b 0%, rgba(0, 255, 234, 0.8) 50%, #10111b 100%)";
 
@@ -1624,7 +1624,7 @@
         else if (bet == "21+3") {
           sideBet2.style.borderColor = "rgba(255, 55, 250, 0.9)"; // purple
           sideBet2.style.backgroundColor = "rgba(255, 55, 250, 0.15)"; // purple
-          sideBet2.style.boxShadow = "-0px 0px 30px 5px rgba(255, 55, 250, 0.3)";
+          sideBet2.style.boxShadow = "-0px 0px 50px 5px rgba(255, 55, 250, 0.5)";
           sideBet2.style.borderWidth = "3px";
           sideBet2.style.transform = "translateY(2px)";
 
@@ -1656,7 +1656,7 @@
           document.getElementById("footerTitle").innerHTML = " - Side Bet - ";
 
           document.getElementById("footer").style.borderTop = "4px solid rgba(255, 55, 250, 0.8)";
-          document.getElementById("footer").style.boxShadow = "-0px -3px 30px 5px rgba(255, 55, 250, 0.3)";
+          document.getElementById("footer").style.boxShadow = "-0px -3px 50px 5px rgba(255, 55, 250, 0.5)";
 
           document.getElementById("traitLumineuxFooter").style.background = "-webkit-linear-gradient(left, #10111b 0%, rgba(255, 55, 250, 0.8) 50%, #10111b 100%)";
 
@@ -1712,7 +1712,7 @@
 
           // A adapter au DM state
             document.getElementById("footer").style.borderTop = "4px solid var(--footerBorderTop-Color)";
-            document.getElementById("footer").style.boxShadow = "-0px -3px 30px 5px rgba(239, 59, 46, 0.5)";
+            document.getElementById("footer").style.boxShadow = "-0px -3px 50px 5px rgba(239, 59, 46, 0.5)";
 
             document.getElementById("traitLumineuxFooter").style.background = "var(--traitFooterMise-color)";
 
@@ -2371,13 +2371,19 @@
                     success: function(response) {
                       $("#container3").html(response);
 
+                      // TEST vert lors mise
+                      document.getElementById("footer").style.boxShadow = "-0px -3px 11vh 5px rgba(239, 59, 46, 0.6)";
+                      // document.getElementById("footer").style.boxShadow = "-0px -3px 50px 5px rgba(246, 251, 17, 0.5)";
+                      document.getElementById("header").style.boxShadow = "";
+
+
                       checkTokenGrised();
 
                       document.getElementById("header").classList.add('headerOnPartie');
 
                       document.getElementById("footer").classList.add('footerOnPartie');
 
-                      document.getElementById("footer").style.boxShadow = "-0px -3px 30px 5px rgba(239, 59, 46, 0.2)";
+                      document.getElementById("footer").style.boxShadow = "-0px -3px 110 5px rgba(239, 59, 46, 0.6)";
 
 
                       popSideBets();
@@ -2447,6 +2453,9 @@
       function relancer() {
 
         $("#relancer").click(function(){
+
+          document.getElementById("footer").style.boxShadow = "";
+          document.getElementById("header").style.boxShadow = "";
 
           // Le .remove() marche pas ici, ducoup workaround degueu:  :/
           if (document.getElementById("toggleHandDiv") !== null ) { // cas BJ
@@ -2813,7 +2822,10 @@
 
                   checkTokenGrised();
 
-                  document.getElementById("footer").style.boxShadow = "-0px -3px 30px 5px rgba(239, 59, 46, 0.2)";
+                  // TEST vert lors mise
+                  document.getElementById("footer").style.boxShadow = "-0px -3px 11vh 5px rgba(239, 59, 46, 0.6)";
+                  // document.getElementById("footer").style.boxShadow = "-0px -3px 50px 5px rgba(246, 251, 17, 0.5)";
+                  document.getElementById("header").style.boxShadow = "";
 
                   popSideBets();
                   popRetourArriereErase();
@@ -3184,6 +3196,11 @@
       function miseLock() {
         document.getElementById("boutonMiser").addEventListener("click", function() {
 
+          setTimeout(function() {
+            document.getElementById("footer").style.boxShadow = "0px 3px 11vh 5px rgba(128, 128, 128, 0.42)";
+            document.getElementById("header").style.boxShadow = "0px 3px 11vh 5px rgba(128, 128, 128, 0.42)";
+          }, 50)
+
           ingame = true;
 
           // document.getElementById("parametresPartieDiv").classList.add("fadeOut2");
@@ -3412,7 +3429,10 @@
               success: function(response) {
                 $("#chipsContainer").html(response);
 
-                document.getElementById("footer").style.boxShadow = "-0px -3px 30px 5px rgba(239, 59, 46, 0.5)";
+                // TEST vert lors choix
+                // document.getElementById("footer").style.boxShadow = "-0px -3px 11vh 5px rgba(239, 59, 46, 0.6)";
+                document.getElementById("footer").style.boxShadow = "-0px -3px 15vh 5px rgba(17, 52, 251, 0.65)";
+                document.getElementById("header").style.boxShadow = "";
 
                 ChoixActif = true;
                 document.getElementById("footerTitle").innerHTML = " - Choix -";
@@ -3488,6 +3508,11 @@
                     }
                     animsBouton("stand");
                     setTimeout(function() {
+                      setTimeout(function() {
+                        document.getElementById("footer").style.boxShadow = "";
+                        document.getElementById("header").style.boxShadow = "0px 3px 11vh 5px rgba(128, 128, 128, 0.42)";
+                      }, 200);
+    
                       lancerPhaseCroupier();
                     }, 750)
   
@@ -3697,7 +3722,10 @@
             success: function(response) {
               ChoixActif = true;
 
-              document.getElementById("footer").style.boxShadow = "-0px -3px 30px 5px rgba(239, 59, 46, 0.5)";
+              // TEST vert lors choix
+              // document.getElementById("footer").style.boxShadow = "-0px -3px 11vh 5px rgba(239, 59, 46, 0.6)";
+              document.getElementById("footer").style.boxShadow = "-0px -3px 15vh 5px rgba(17, 52, 251, 0.65)";
+              document.getElementById("header").style.boxShadow = "";
 
               $("#chipsContainer").html(response);
               document.getElementById("footerTitle").innerHTML = " - Choix -";
@@ -3777,8 +3805,16 @@
 
                 }
                 animsBouton("stand");
+
                 setTimeout(function() {
+
+                  setTimeout(function() {
+                    document.getElementById("footer").style.boxShadow = "";
+                    document.getElementById("header").style.boxShadow = "0px 3px 11vh 5px rgba(128, 128, 128, 0.42)";
+                  }, 200);
+
                   lancerPhaseCroupier();
+
                 }, 750)
             });
 
@@ -3902,6 +3938,9 @@
 
 
       function lancerPhaseCroupierAfterBurst() {
+
+        document.getElementById("footer").style.boxShadow = "";
+        document.getElementById("header").style.boxShadow = "0px 3px 11vh 5px rgba(128, 128, 128, 0.42)";
 
         addCardCroupierRecursiveAfterBurst();
 
@@ -4068,6 +4107,29 @@
                 WinLose = 'LOSE';
                 resultatCas = 'Wasted';
 
+                setTimeout(function() {
+                  document.getElementById("footer").style.zIndex = "-1";
+                  document.getElementById("header").style.zIndex = "-1";
+                  document.getElementById("footer").style.boxShadow = "0px -3px 42vh 5px rgba(239, 59, 46, 0.9)";
+                  document.getElementById("header").style.boxShadow = "0px 3px 42vh 5px rgba(0, 255, 234, 0.55)";
+
+                  var handCroupier = document.getElementById("croupier").childNodes;
+                  for (var i=0; i < handCroupier.length; i++) {
+                    if (handCroupier[i].nodeName.toLowerCase() == 'img') {
+                      handCroupier[i].style.boxShadow = "0px 0px 20px 1px rgb(0 255 234 / 50%)";
+                    }
+                  }
+                  var handJoueur = document.getElementById("joueur").childNodes;
+                  for (var i=0; i < handJoueur.length; i++) {
+                    if (handJoueur[i].nodeName.toLowerCase() == 'img') {
+                      handJoueur[i].style.boxShadow = "0px 0px 20px 1px rgb(239 59 46 / 90%)";
+                    }
+                  }
+
+                }, 465)
+    
+
+
                 $.ajax({
                   async: false,
                   url: "Footers/footerResultat.html",
@@ -4194,6 +4256,28 @@
 
 
               if (scoreTotalCroupier > 21) {
+
+                setTimeout(function() {
+                  document.getElementById("footer").style.zIndex = "-1";
+                  document.getElementById("header").style.zIndex = "-1";
+                  document.getElementById("footer").style.boxShadow = "0px -3px 42vh 5px rgba(0, 255, 234, 0.55)";
+                  document.getElementById("header").style.boxShadow = "0px 3px 42vh 5px rgba(239, 59, 46, 0.9)";
+
+                  var handCroupier = document.getElementById("croupier").childNodes;
+                  for (var i=0; i < handCroupier.length; i++) {
+                    if (handCroupier[i].nodeName.toLowerCase() == 'img') {
+                      handCroupier[i].style.boxShadow = "0px 0px 20px 1px rgb(239 59 46 / 90%)";
+                    }
+                  }
+                  var handJoueur = document.getElementById("joueur").childNodes;
+                  for (var i=0; i < handJoueur.length; i++) {
+                    if (handJoueur[i].nodeName.toLowerCase() == 'img') {
+                      handJoueur[i].style.boxShadow = "0px 0px 20px 1px rgb(0 255 234 / 50%)";
+                    }
+                  }
+
+                }, 465)
+
 
                 if ((document.getElementById("phaseChoixAlert") !==null) && (document.getElementById("traitUnderlineInverseChoix") !==null)) {
                   document.getElementById("phaseChoixAlert").remove();
@@ -4325,6 +4409,28 @@
 
               if (scoreTotalJoueur > scoreTotalCroupier) {
 
+                setTimeout(function() {
+                  document.getElementById("footer").style.zIndex = "-1";
+                  document.getElementById("header").style.zIndex = "-1";
+                  document.getElementById("footer").style.boxShadow = "0px -3px 42vh 5px rgba(0, 255, 234, 0.55)";
+                  document.getElementById("header").style.boxShadow = "0px 3px 42vh 5px rgba(239, 59, 46, 0.9)";
+
+                  var handCroupier = document.getElementById("croupier").childNodes;
+                  for (var i=0; i < handCroupier.length; i++) {
+                    if (handCroupier[i].nodeName.toLowerCase() == 'img') {
+                      handCroupier[i].style.boxShadow = "0px 0px 20px 1px rgb(239 59 46 / 90%)";
+                    }
+                  }
+                  var handJoueur = document.getElementById("joueur").childNodes;
+                  for (var i=0; i < handJoueur.length; i++) {
+                    if (handJoueur[i].nodeName.toLowerCase() == 'img') {
+                      handJoueur[i].style.boxShadow = "0px 0px 20px 1px rgb(0 255 234 / 50%)";
+                    }
+                  }
+
+                }, 465)
+
+
                 if ((document.getElementById("phaseChoixAlert") !==null) && (document.getElementById("traitUnderlineInverseChoix") !==null)) {
                   document.getElementById("phaseChoixAlert").remove();
                   document.getElementById("traitUnderlineInverseChoix").remove();
@@ -4453,6 +4559,28 @@
                   document.getElementById("traitUnderlineInverseChoix").remove();
                 }
 
+                setTimeout(function() {
+                  document.getElementById("footer").style.zIndex = "-1";
+                  document.getElementById("header").style.zIndex = "-1";
+                  document.getElementById("footer").style.boxShadow = "0px -3px 42vh 5px rgba(164, 167, 0, 0.9)";
+                  document.getElementById("header").style.boxShadow = "0px 3px 42vh 5px rgba(164, 167, 0, 0.9)";
+
+                  var handCroupier = document.getElementById("croupier").childNodes;
+                  for (var i=0; i < handCroupier.length; i++) {
+                    if (handCroupier[i].nodeName.toLowerCase() == 'img') {
+                      handCroupier[i].style.boxShadow = "0px 0px 20px 1px rgb(164 167 0 / 90%)";
+                    }
+                  }
+                  var handJoueur = document.getElementById("joueur").childNodes;
+                  for (var i=0; i < handJoueur.length; i++) {
+                    if (handJoueur[i].nodeName.toLowerCase() == 'img') {
+                      handJoueur[i].style.boxShadow = "0px 0px 20px 1px rgb(164 167 0 / 90%)";
+                    }
+                  }
+
+                }, 465)
+
+                
                 WinLose = 'PUSH';
                 resultatCas = 'Push';
 
@@ -5347,31 +5475,31 @@
             if (toggleHand == true) {
               joueurDiv[0].style.transform = "rotate(-26deg)";
               joueurDiv[0].style.position = "relative";
-              joueurDiv[0].style.bottom = "-44px";
+              joueurDiv[0].style.bottom = "-39px";
 
               joueurDiv[1].style.transform = "rotate(-16deg)";
               joueurDiv[1].style.position = "relative";
-              joueurDiv[1].style.bottom = "-20px";
+              joueurDiv[1].style.bottom = "-15px";
 
               joueurDiv[2].style.transform = "rotate(-7deg)";
               joueurDiv[2].style.position = "relative";
-              joueurDiv[2].style.bottom = "-10px";
+              joueurDiv[2].style.bottom = "-5px";
 
               joueurDiv[3].style.transform = "rotate(0deg)";
               joueurDiv[3].style.position = "relative";
-              joueurDiv[3].style.bottom = "-5px";
+              joueurDiv[3].style.bottom = "0px";
 
               joueurDiv[4].style.transform = "rotate(6deg)";
               joueurDiv[4].style.position = "relative";
-              joueurDiv[4].style.bottom = "-10px";
+              joueurDiv[4].style.bottom = "-5px";
 
               joueurDiv[5].style.transform = "rotate(15deg)";
               joueurDiv[5].style.position = "relative";
-              joueurDiv[5].style.bottom = "-25px";
+              joueurDiv[5].style.bottom = "-20px";
 
               joueurDiv[6].style.transform = "rotate(25deg)";
               joueurDiv[6].style.position = "relative";
-              joueurDiv[6].style.bottom = "-49px";
+              joueurDiv[6].style.bottom = "-44px";
             }
 
           }
@@ -5395,27 +5523,27 @@
             if (toggleHand == true) {
               joueurDiv[0].style.transform = "rotate(-21deg)";
               joueurDiv[0].style.position = "relative";
-              joueurDiv[0].style.bottom = "-30px";
+              joueurDiv[0].style.bottom = "-25px";
 
               joueurDiv[1].style.transform = "rotate(-12deg)";
               joueurDiv[1].style.position = "relative";
-              joueurDiv[1].style.bottom = "-10px";
+              joueurDiv[1].style.bottom = "-5px";
 
               joueurDiv[2].style.transform = "rotate(-3deg)";
               joueurDiv[2].style.position = "relative";
-              joueurDiv[2].style.bottom = "-2px";
+              joueurDiv[2].style.bottom = "2px";
 
               joueurDiv[3].style.transform = "rotate(3deg)";
               joueurDiv[3].style.position = "relative";
-              joueurDiv[3].style.bottom = "-2px";
+              joueurDiv[3].style.bottom = "2px";
 
               joueurDiv[4].style.transform = "rotate(12deg)";
               joueurDiv[4].style.position = "relative";
-              joueurDiv[4].style.bottom = "-13px";
+              joueurDiv[4].style.bottom = "-8px";
 
               joueurDiv[5].style.transform = "rotate(21deg)";
               joueurDiv[5].style.position = "relative";
-              joueurDiv[5].style.bottom = "-33px";
+              joueurDiv[5].style.bottom = "-28px";
             }
 
           }
@@ -5439,23 +5567,23 @@
             if (toggleHand == true) {
               joueurDiv[0].style.transform = "rotate(-16deg)";
               joueurDiv[0].style.position = "relative";
-              joueurDiv[0].style.bottom = "-30px";
+              joueurDiv[0].style.bottom = "-25px";
 
               joueurDiv[1].style.transform = "rotate(-7deg)";
               joueurDiv[1].style.position = "relative";
-              joueurDiv[1].style.bottom = "-10px";
+              joueurDiv[1].style.bottom = "-5px";
 
               joueurDiv[2].style.transform = "rotate(0deg)";
               joueurDiv[2].style.position = "relative";
-              joueurDiv[2].style.bottom = "-5px";
+              joueurDiv[2].style.bottom = "-0px";
 
               joueurDiv[3].style.transform = "rotate(6deg)";
               joueurDiv[3].style.position = "relative";
-              joueurDiv[3].style.bottom = "-13px";
+              joueurDiv[3].style.bottom = "-6px";
 
               joueurDiv[4].style.transform = "rotate(15deg)";
               joueurDiv[4].style.position = "relative";
-              joueurDiv[4].style.bottom = "-28px";
+              joueurDiv[4].style.bottom = "-23px";
             }
 
           }
@@ -5479,19 +5607,19 @@
             if (toggleHand == true) {
               joueurDiv[0].style.transform = "rotate(-16deg)";
               joueurDiv[0].style.position = "relative";
-              joueurDiv[0].style.bottom = "-30px";
+              joueurDiv[0].style.bottom = "-25px";
 
               joueurDiv[1].style.transform = "rotate(-7deg)";
               joueurDiv[1].style.position = "relative";
-              joueurDiv[1].style.bottom = "-10px";
+              joueurDiv[1].style.bottom = "-5px";
 
               joueurDiv[2].style.transform = "rotate(6deg)";
               joueurDiv[2].style.position = "relative";
-              joueurDiv[2].style.bottom = "-11px";
+              joueurDiv[2].style.bottom = "-6px";
 
               joueurDiv[3].style.transform = "rotate(15deg)";
               joueurDiv[3].style.position = "relative";
-              joueurDiv[3].style.bottom = "-28px";
+              joueurDiv[3].style.bottom = "-23px";
             }
 
           }
@@ -5514,15 +5642,15 @@
             if (toggleHand == true) {
               joueurDiv[0].style.transform = "rotate(-16deg)";
               joueurDiv[0].style.position = "relative";
-              joueurDiv[0].style.bottom = "-19px";          
+              joueurDiv[0].style.bottom = "-14px";          
 
               joueurDiv[1].style.transform = "rotate(0deg)";
               joueurDiv[1].style.position = "relative";
-              joueurDiv[1].style.bottom = "-5px";
+              joueurDiv[1].style.bottom = "-0px";
 
               joueurDiv[2].style.transform = "rotate(15deg)";
               joueurDiv[2].style.position = "relative";
-              joueurDiv[2].style.bottom = "-22px";
+              joueurDiv[2].style.bottom = "-17px";
             }
           }
 
@@ -5546,7 +5674,7 @@
               arrowRight.classList.add("arrowsToggleHand");
               arrowRight.innerHTML = "&#8680;";
             }
-            else {
+            else if (toggleHand == false) {
               var arrowLeft = document.createElement("span");
               arrowLeft.setAttribute("id", "arrowLeft");
               arrowLeft.classList.add("arrowsToggleHand");
@@ -5565,199 +5693,214 @@
             toggleHandDiv.appendChild(arrowRight);
 
             document.getElementById("footer").appendChild(toggleHandDiv);
-          }
+          // }
 
-          // Listener toggle hand
-          if (document.getElementById("toggleHandDiv") !== null) {
-            document.getElementById("toggleHandDiv").addEventListener("click", function() {
+            // Listener toggle hand
+            if (document.getElementById("toggleHandDiv") !== null) {
+              document.getElementById("toggleHandDiv").addEventListener("click", function() {
 
-              if (toggleHand == true) {
-                toggleHand = false;
-                //Changement de l'affichage du bouton: (petite anim fadeOut/fadeIn ?)
-                document.getElementById("toggleHandImg").style.content = "url('Images/toggleHandImg4.png')";
-                document.getElementById("arrowRight").innerHTML = "&#8678;";
-                document.getElementById("arrowLeft").innerHTML = "&#8680;";
+                if (toggleHand == true) {
+                  toggleHand = false;
+                  //Changement de l'affichage du bouton: (petite anim fadeOut/fadeIn ?)
+                  document.getElementById("toggleHandImg").style.content = "url('Images/toggleHandImg4.png')";
+                  document.getElementById("arrowRight").innerHTML = "&#8678;";
+                  document.getElementById("arrowLeft").innerHTML = "&#8680;";
 
-                var joueurDiv = document.getElementById("joueur").childNodes;
-                for (var i=0; i < joueurDiv.length; i++) {
-                  if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
-                    joueurDiv[i].style.margin = "0em -0.8em";
-                    joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
+                  var joueurDiv = document.getElementById("joueur").childNodes;
+                  for (var i=0; i < joueurDiv.length; i++) {
+                    if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+                      joueurDiv[i].style.margin = "0em -0.8em";
+                      joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
 
-                    joueurDiv[i].style.transform = "";
-                    joueurDiv[i].style.bottom = "";
+                      joueurDiv[i].style.transform = "";
+                      joueurDiv[i].style.bottom = "";
+                    }
                   }
                 }
-              }
 
+                else if (toggleHand == false) {
+                  toggleHand = true;
 
-              else if (toggleHand == false) {
-                toggleHand = true;
+                  // Remmettre l'affichage eventail pour les cartes deja présentes
+                  //Changement de l'affichage du bouton: (petite anim fadeOut/fadeIn ?)
+                  document.getElementById("toggleHandImg").style.content = "url('Images/toggleAlignImg4.png')";
+                  document.getElementById("arrowRight").innerHTML = "&#8680;";
+                  document.getElementById("arrowLeft").innerHTML = "&#8678;";
 
-                // Remmettre l'affichage eventail pour les cartes deja présentes
-                //Changement de l'affichage du bouton: (petite anim fadeOut/fadeIn ?)
-                document.getElementById("toggleHandImg").style.content = "url('Images/toggleAlignImg4.png')";
-                document.getElementById("arrowRight").innerHTML = "&#8680;";
-                document.getElementById("arrowLeft").innerHTML = "&#8678;";
+                  var joueurDiv = document.getElementById("joueur").childNodes;
+                  // for (var i=0; i < joueurDiv.length; i++) {
+                  //   if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
 
-                var joueurDiv = document.getElementById("joueur").childNodes;
-                // for (var i=0; i < joueurDiv.length; i++) {
-                //   if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+                  if (nbrCardsJoueur == 3) {
+                    for (var i=0; i < joueurDiv.length; i++) {
+                      if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+                          joueurDiv[i].style.margin = "0em -0.8em";
+                    }}
 
-                    if (nbrCardsJoueur == 3) {
-                      for (var i=0; i < joueurDiv.length; i++) {
-                        if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
-                            joueurDiv[i].style.margin = "0em -0.8em";
-                      }}
+                    joueurDiv[0].style.transform = "rotate(-16deg)";
+                    joueurDiv[0].style.position = "relative";
+                    joueurDiv[0].style.bottom = "-14px";          
+      
+                    joueurDiv[1].style.transform = "rotate(0deg)";
+                    joueurDiv[1].style.position = "relative";
+                    joueurDiv[1].style.bottom = "-0px";
+      
+                    joueurDiv[2].style.transform = "rotate(15deg)";
+                    joueurDiv[2].style.position = "relative";
+                    joueurDiv[2].style.bottom = "-17px";        
+                  }
+                  else if (nbrCardsJoueur == 4) {
+                    for (var i=0; i < joueurDiv.length; i++) {
+                      if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+                        joueurDiv[i].style.margin = "0em -1em";
+                    }}
 
-                      joueurDiv[0].style.transform = "rotate(-16deg)";
-                      joueurDiv[0].style.position = "relative";
-                      joueurDiv[0].style.bottom = "-19px";          
-        
-                      joueurDiv[1].style.transform = "rotate(0deg)";
-                      joueurDiv[1].style.position = "relative";
-                      joueurDiv[1].style.bottom = "-5px";
-        
-                      joueurDiv[2].style.transform = "rotate(15deg)";
-                      joueurDiv[2].style.position = "relative";
-                      joueurDiv[2].style.bottom = "-22px";        
-                    }
-                    else if (nbrCardsJoueur == 4) {
-                      for (var i=0; i < joueurDiv.length; i++) {
-                        if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
-                          joueurDiv[i].style.margin = "0em -1em";
-                      }}
+                    joueurDiv[0].style.transform = "rotate(-16deg)";
+                    joueurDiv[0].style.position = "relative";
+                    joueurDiv[0].style.bottom = "-25px";
+      
+                    joueurDiv[1].style.transform = "rotate(-7deg)";
+                    joueurDiv[1].style.position = "relative";
+                    joueurDiv[1].style.bottom = "-5px";
+      
+                    joueurDiv[2].style.transform = "rotate(6deg)";
+                    joueurDiv[2].style.position = "relative";
+                    joueurDiv[2].style.bottom = "-6px";
+      
+                    joueurDiv[3].style.transform = "rotate(15deg)";
+                    joueurDiv[3].style.position = "relative";
+                    joueurDiv[3].style.bottom = "-23px";        
+                  }
+                  else if (nbrCardsJoueur == 5) {
+                    for (var i=0; i < joueurDiv.length; i++) {
+                      if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+                        joueurDiv[i].style.margin = "0em -1.2em";
+                    }}
 
-                      joueurDiv[0].style.transform = "rotate(-16deg)";
-                      joueurDiv[0].style.position = "relative";
-                      joueurDiv[0].style.bottom = "-30px";
-        
-                      joueurDiv[1].style.transform = "rotate(-7deg)";
-                      joueurDiv[1].style.position = "relative";
-                      joueurDiv[1].style.bottom = "-10px";
-        
-                      joueurDiv[2].style.transform = "rotate(6deg)";
-                      joueurDiv[2].style.position = "relative";
-                      joueurDiv[2].style.bottom = "-11px";
-        
-                      joueurDiv[3].style.transform = "rotate(15deg)";
-                      joueurDiv[3].style.position = "relative";
-                      joueurDiv[3].style.bottom = "-28px";        
-                    }
-                    else if (nbrCardsJoueur == 5) {
-                      for (var i=0; i < joueurDiv.length; i++) {
-                        if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
-                          joueurDiv[i].style.margin = "0em -1.2em";
-                      }}
+                    joueurDiv[0].style.transform = "rotate(-16deg)";
+                    joueurDiv[0].style.position = "relative";
+                    joueurDiv[0].style.bottom = "-25px";
+      
+                    joueurDiv[1].style.transform = "rotate(-7deg)";
+                    joueurDiv[1].style.position = "relative";
+                    joueurDiv[1].style.bottom = "-5px";
+      
+                    joueurDiv[2].style.transform = "rotate(0deg)";
+                    joueurDiv[2].style.position = "relative";
+                    joueurDiv[2].style.bottom = "-0px";
+      
+                    joueurDiv[3].style.transform = "rotate(6deg)";
+                    joueurDiv[3].style.position = "relative";
+                    joueurDiv[3].style.bottom = "-6px";
+      
+                    joueurDiv[4].style.transform = "rotate(15deg)";
+                    joueurDiv[4].style.position = "relative";
+                    joueurDiv[4].style.bottom = "-23px";        
+                  }
+                  else if (nbrCardsJoueur == 6) {
+                    for (var i=0; i < joueurDiv.length; i++) {
+                      if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+                        joueurDiv[i].style.margin = "0em -1.4em";
+                    }}
 
-                      joueurDiv[0].style.transform = "rotate(-16deg)";
-                      joueurDiv[0].style.position = "relative";
-                      joueurDiv[0].style.bottom = "-30px";
-        
-                      joueurDiv[1].style.transform = "rotate(-7deg)";
-                      joueurDiv[1].style.position = "relative";
-                      joueurDiv[1].style.bottom = "-10px";
-        
-                      joueurDiv[2].style.transform = "rotate(0deg)";
-                      joueurDiv[2].style.position = "relative";
-                      joueurDiv[2].style.bottom = "-5px";
-        
-                      joueurDiv[3].style.transform = "rotate(6deg)";
-                      joueurDiv[3].style.position = "relative";
-                      joueurDiv[3].style.bottom = "-13px";
-        
-                      joueurDiv[4].style.transform = "rotate(15deg)";
-                      joueurDiv[4].style.position = "relative";
-                      joueurDiv[4].style.bottom = "-28px";        
-                    }
-                    else if (nbrCardsJoueur == 6) {
-                      for (var i=0; i < joueurDiv.length; i++) {
-                        if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
-                          joueurDiv[i].style.margin = "0em -1.4em";
-                      }}
+                    joueurDiv[0].style.transform = "rotate(-21deg)";
+                    joueurDiv[0].style.position = "relative";
+                    joueurDiv[0].style.bottom = "-25px";
+      
+                    joueurDiv[1].style.transform = "rotate(-12deg)";
+                    joueurDiv[1].style.position = "relative";
+                    joueurDiv[1].style.bottom = "-5px";
+      
+                    joueurDiv[2].style.transform = "rotate(-3deg)";
+                    joueurDiv[2].style.position = "relative";
+                    joueurDiv[2].style.bottom = "2px";
+      
+                    joueurDiv[3].style.transform = "rotate(3deg)";
+                    joueurDiv[3].style.position = "relative";
+                    joueurDiv[3].style.bottom = "2px";
+      
+                    joueurDiv[4].style.transform = "rotate(12deg)";
+                    joueurDiv[4].style.position = "relative";
+                    joueurDiv[4].style.bottom = "-8px";
+      
+                    joueurDiv[5].style.transform = "rotate(21deg)";
+                    joueurDiv[5].style.position = "relative";
+                    joueurDiv[5].style.bottom = "-28px";        
+                  }
+                  else if (nbrCardsJoueur == 7) {
+                    for (var i=0; i < joueurDiv.length; i++) {
+                      if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+                        joueurDiv[i].style.margin = "0em -1.6em";
+                    }}
 
-                      joueurDiv[0].style.transform = "rotate(-21deg)";
-                      joueurDiv[0].style.position = "relative";
-                      joueurDiv[0].style.bottom = "-30px";
-        
-                      joueurDiv[1].style.transform = "rotate(-12deg)";
-                      joueurDiv[1].style.position = "relative";
-                      joueurDiv[1].style.bottom = "-10px";
-        
-                      joueurDiv[2].style.transform = "rotate(-3deg)";
-                      joueurDiv[2].style.position = "relative";
-                      joueurDiv[2].style.bottom = "-2px";
-        
-                      joueurDiv[3].style.transform = "rotate(3deg)";
-                      joueurDiv[3].style.position = "relative";
-                      joueurDiv[3].style.bottom = "-2px";
-        
-                      joueurDiv[4].style.transform = "rotate(12deg)";
-                      joueurDiv[4].style.position = "relative";
-                      joueurDiv[4].style.bottom = "-13px";
-        
-                      joueurDiv[5].style.transform = "rotate(21deg)";
-                      joueurDiv[5].style.position = "relative";
-                      joueurDiv[5].style.bottom = "-33px";        
-                    }
-                    else if (nbrCardsJoueur == 7) {
-                      for (var i=0; i < joueurDiv.length; i++) {
-                        if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
-                          joueurDiv[i].style.margin = "0em -1.6em";
-                      }}
+                    joueurDiv[0].style.transform = "rotate(-26deg)";
+                    joueurDiv[0].style.position = "relative";
+                    joueurDiv[0].style.bottom = "-39px";
+      
+                    joueurDiv[1].style.transform = "rotate(-16deg)";
+                    joueurDiv[1].style.position = "relative";
+                    joueurDiv[1].style.bottom = "-15px";
+      
+                    joueurDiv[2].style.transform = "rotate(-7deg)";
+                    joueurDiv[2].style.position = "relative";
+                    joueurDiv[2].style.bottom = "-5px";
+      
+                    joueurDiv[3].style.transform = "rotate(0deg)";
+                    joueurDiv[3].style.position = "relative";
+                    joueurDiv[3].style.bottom = "-0px";
+      
+                    joueurDiv[4].style.transform = "rotate(6deg)";
+                    joueurDiv[4].style.position = "relative";
+                    joueurDiv[4].style.bottom = "-5px";
+      
+                    joueurDiv[5].style.transform = "rotate(15deg)";
+                    joueurDiv[5].style.position = "relative";
+                    joueurDiv[5].style.bottom = "-20px";
+      
+                    joueurDiv[6].style.transform = "rotate(25deg)";
+                    joueurDiv[6].style.position = "relative";
+                    joueurDiv[6].style.bottom = "-44px";        
+                  }
+                  else if (nbrCardsJoueur > 7) {
 
-                      joueurDiv[0].style.transform = "rotate(-26deg)";
-                      joueurDiv[0].style.position = "relative";
-                      joueurDiv[0].style.bottom = "-44px";
-        
-                      joueurDiv[1].style.transform = "rotate(-16deg)";
-                      joueurDiv[1].style.position = "relative";
-                      joueurDiv[1].style.bottom = "-20px";
-        
-                      joueurDiv[2].style.transform = "rotate(-7deg)";
-                      joueurDiv[2].style.position = "relative";
-                      joueurDiv[2].style.bottom = "-10px";
-        
-                      joueurDiv[3].style.transform = "rotate(0deg)";
-                      joueurDiv[3].style.position = "relative";
-                      joueurDiv[3].style.bottom = "-5px";
-        
-                      joueurDiv[4].style.transform = "rotate(6deg)";
-                      joueurDiv[4].style.position = "relative";
-                      joueurDiv[4].style.bottom = "-10px";
-        
-                      joueurDiv[5].style.transform = "rotate(15deg)";
-                      joueurDiv[5].style.position = "relative";
-                      joueurDiv[5].style.bottom = "-25px";
-        
-                      joueurDiv[6].style.transform = "rotate(25deg)";
-                      joueurDiv[6].style.position = "relative";
-                      joueurDiv[6].style.bottom = "-49px";        
-                    }
-                    else if (nbrCardsJoueur > 7) {
-
-                    }
-
-                //   }
-                // }
-
-              }
-
-            })
+                  }
+                }
+              })
+            }
           }
 
           decrementCompteurDeck()
 
-          checkBurstJoueur();
+          // checkBurstJoueur();
+          if (checkBurstJoueur() == true) {
+            setTimeout(function() {
+              document.getElementById("footer").style.zIndex = "-1";
+              document.getElementById("header").style.zIndex = "-1";
+              document.getElementById("footer").style.boxShadow = "0px -3px 42vh 5px rgba(239, 59, 46, 0.9)";
+              document.getElementById("header").style.boxShadow = "0px 3px 42vh 5px rgba(0, 255, 234, 0.55)";
+
+              var handCroupier = document.getElementById("croupier").childNodes;
+              for (var i=0; i < handCroupier.length; i++) {
+                if (handCroupier[i].nodeName.toLowerCase() == 'img') {
+                  handCroupier[i].style.boxShadow = "0px 0px 20px 1px rgba(0, 255, 234, 0.55)";
+                }
+              }
+              var handJoueur = document.getElementById("joueur").childNodes;
+              for (var i=0; i < handJoueur.length; i++) {
+                if (handJoueur[i].nodeName.toLowerCase() == 'img') {
+                  handJoueur[i].style.boxShadow = "0px 0px 20px 1px rgba(239, 59, 46, 0.9)";
+                }
+              }
+
+            }, 1650)
+          }
 
           // check21noBJ();
           if ((scoreTotalJoueur == 21) && (nbrCardsJoueur > 2)) {
-
             if ((document.getElementById("phaseChoixAlert") !==null) && (document.getElementById("traitUnderlineInverseChoix") !==null)) {
               document.getElementById("phaseChoixAlert").remove();
               document.getElementById("traitUnderlineInverseChoix").remove();
             }
-  
             // La phase Croupier se lance mais le footer change pas (parce que ducoup on est encore dans le addCardJoueur ?):/
             // rajout manuelle du load footer à test :
             setTimeout(function() {
@@ -5772,19 +5915,44 @@
                 }
               });
               setTimeout(function() {
+                setTimeout(function() {
+                  document.getElementById("footer").style.boxShadow = "";
+                  document.getElementById("header").style.boxShadow = "0px 3px 11vh 5px rgba(128, 128, 128, 0.50)";
+                }, 150);
+
                 lancerPhaseCroupier(); 
-              }, 450);
-            }, 490);
-            
-            // lancerPhaseCroupier(); 
+              }, 550);
+            }, 470);
           }
 
-          checkBJjoueur();
-  
+          // Check BJ
+          if (checkBJjoueur() == true) {
+            setTimeout(function() {
+              document.getElementById("footer").style.zIndex = "-1";
+              document.getElementById("header").style.zIndex = "-1";
+              document.getElementById("footer").style.boxShadow = "0px -3px 42vh 5px rgba(255, 55, 250, 0.9)";
+              document.getElementById("header").style.boxShadow = "0px 3px 48vh 5px rgba(239, 59, 46, 0.9)";  
 
+              
+              var handCroupier = document.getElementById("croupier").childNodes;
+              for (var i=0; i < handCroupier.length; i++) {
+                if (handCroupier[i].nodeName.toLowerCase() == 'img') {
+                  handCroupier[i].style.boxShadow = "0px 0px 20px 1px rgba(239, 59, 46, 0.9)";
+                }
+              }
+              var handJoueur = document.getElementById("joueur").childNodes;
+              for (var i=0; i < handJoueur.length; i++) {
+                if (handJoueur[i].nodeName.toLowerCase() == 'img') {
+                  handJoueur[i].style.boxShadow = "0px 0px 20px 1px rgba(255, 55, 250, 0.9)";
+                }
+              }
+            }, 1650)
+          }
+  
         }, 470);
 
 
+        
         // Mise a jour du score High-Low
         if (pickedCardObject.cardValue < 7) {
           setTimeout(function() {
@@ -6345,10 +6513,16 @@
                 }
               });
             }, 1050);
+            return true;
         }
 
         else if ((scoreTotalJoueur < 21) && (doubleBool==1)) {
+
+          document.getElementById("footer").style.boxShadow = "";
+          document.getElementById("header").style.boxShadow = "0px 3px 11vh 5px rgba(128, 128, 128, 0.50)";
+
           lancerPhaseCroupier();
+          return false;
         }
 
       }
@@ -6363,46 +6537,9 @@
 
 
 
-      // 21 hors BlackJack: Enlever la possibilité de choisir (conditions non remplies quand AS ?)
-      // function check21noBJ() {
-      //   if ((scoreTotalJoueur == 21) && (nbrCardsJoueur > 2)) {
-
-      //     if ((document.getElementById("phaseChoixAlert") !==null) && (document.getElementById("traitUnderlineInverseChoix") !==null)) {
-      //       document.getElementById("phaseChoixAlert").remove();
-      //       document.getElementById("traitUnderlineInverseChoix").remove();
-      //     }
-
-      //     // La phase Croupier se lance mais le footer change pas (parce que ducoup on est encore dans le addCardJoueur ?):/
-      //     // rajout manuelle du load footer à test :
-      //     setTimeout(function() {
-      //       $.ajax({
-      //         async: false,
-      //         url: "Footers/footerDistribution.html",
-      //         dataType: "html",
-      //         success: function(response) {
-      //           $("#chipsContainer").html(response);
-      //           ChoixActif = false;
-      //           document.getElementById("footerTitle").innerHTML = " - En attente -";
-      //         }
-      //       });
-      //     }, 490);
-          
-      //     setTimeout(function() {
-      //       lancerPhaseCroupier(); 
-      //     }, 850);
-
-      //   }
-      // }
-
-
-
-
-
-
 
       
       function checkBJjoueur() {
-
         if ((scoreTotalJoueur + 10 == 21) && (nbrCardsJoueur == 2) && (asJoueur == true)) {
 
           if ((document.getElementById("phaseChoixAlert") !==null) && (document.getElementById("traitUnderlineInverseChoix") !==null)) {
@@ -6490,13 +6627,13 @@
                 document.getElementById("scoreCroupier").style.backgroundColor = "rgb(160 13 27)";
 
                 document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)";
-                document.getElementById("scoreJoueur").style.color = "rgba(255,245,0,1)";
+                document.getElementById("scoreJoueur").style.color = "rgba(254,101,250,1)";
 
                 document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)";
                 document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)";
 
                 document.getElementById("scoreCroupier").style.border = "1px solid rgba(255,1,49,0.5)";
-                document.getElementById("scoreJoueur").style.border = "1px solid rgba(255, 245, 0, 0.7)";
+                document.getElementById("scoreJoueur").style.border = "1px solid rgba(254, 101, 250, 0.85)";
 
                 document.getElementById('scoreJoueur').innerHTML = (scoreTotalJoueur + 10);
                 // Fin Perdu BURST
@@ -6529,7 +6666,11 @@
               }
             });
 
-          }, 1350);
+          }, 1100);
+          return true;
+        }
+        else {
+          return false;
         }
       }
 

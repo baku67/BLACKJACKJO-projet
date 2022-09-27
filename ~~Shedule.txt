@@ -1,10 +1,28 @@
+RÉORGANISER TOUT CA:
+
+Pub pour daily reward ?
+
+Peut être que les alert choix/mise sont trop rapides et ducoup un peu arrassant (ou mettre le setTimeoutMultiplier ? mais ça doit surement casser toute la synchro)
+
+IDEE LISIBILITÉ: au moment du proc d'une card, ajouter un span Hover d'1 seconde avec anim 'pop' avec le chiffre/tête 
+
+Lors resultat: ajouter le border des header et footer deja, et ajouter le box-shadow sur chaque carte (mais discret: tres TRES fin mais opaque)
+
+pas oublié de mettre le seum ":/" quand proc sideBets alors que "none 😕" (voir pour un smiley utf mignon :3 )
+
+SAuvegarde de deck BDD pour reprendre ou en est le deck (enfin du lours BDD) !!!
+
 FLEX BAC A SABLE: https://codepen.io/osublake/pen/dMLQJr
+
+zIndex sur les shadow footerHeader result ok? (sous les cards si possible)
 
 Rework boutons choix (DM: orange, cian et gold, sinon laisser pour LM) et symboles (card avec +  au milieu, cards eventail couchées, et pile d'argent simpliste avec X2)
 
 C'est les toggle qui chargent pas qui font que le compteur et le reste charge pas (pas bloquant mais à faire)
 
 Mélanges de cartes (2cartes s'écartent en profondeur càd la carte du dessus vers haut/gauche avec size 120%, la "derniere" carte reste statique, plein de cartes s'ajoutent sous la carte du haute, puis anim les faire défiler vers celle du bas rapidement)
+
+Inverser couleursDM du credit et miseEnCours (orange car en jeu = danger, gold pour les sous perso)
 
 Dans le modal inscription: intégrer les avantages de la creation de compte (de maniere fUn et dYnaMiQik)
 Ajouter le "Pas encore de compte? S'inscrire" en bas du modal co (et inversement)

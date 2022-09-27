@@ -1095,6 +1095,13 @@ button, input[type="submit"], input[type="reset"] {
 
 
 #header {
+	/* Pour les footerBox shadow result en dessous des cards */
+	z-index: -1;
+
+	box-sizing: border-box;
+
+	transition: all 0.5s;
+
 	padding: 0.5em 0em 3em 0em;
 
 	/* WIP DARK MODE (voir headerOnPartie aussi) */
@@ -3095,6 +3102,10 @@ p {
 
 
 #toggleHandDiv {
+	/* A mettre en var DM/LM: */
+	background-color: rgba(17,19,31,0.30);
+	/*  */
+
 	position: absolute;
 	width: 140px;
 	height: 45px;
@@ -3118,7 +3129,8 @@ p {
 	font-size: 2.1em;
 	/* font-weight: bold; */
 	position: relative;
-	bottom: 20%;
+	bottom: 22%;
+	transform: translateY(-22%);
 	font-weight: bold;
 
 	color: rgba(239, 59, 46, 1);
@@ -3265,7 +3277,7 @@ figure:active {
 		box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		-webkit-box-sizing: border-box;
-	transition: all 0.5s;
+	transition: all 0.45s;
 	margin: 0 0.4em 0 0.4em;
 
 	/* Carte Fade */
@@ -3646,11 +3658,16 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#33686c",endCo
 }
 
 #footer {
+	/* Pour les footerBox shadow result en dessous des cards */
+	z-index: -1;
+
 	box-sizing: border-box;
 	position: fixed;
     /* bottom: 0px: IMPORTANT FIX EN BAS */
   	bottom: 0px;
 	width: 100%;
+
+	transition: all 0.5s;
 
     margin-block-start: 0em;
     margin-block-end: 0em;
