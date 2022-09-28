@@ -514,6 +514,7 @@ input:-webkit-autofill{
 	transition: border-color 0.3s ease, background-color 0.3s ease; 
 }
 
+
 #sideBet1Title {
 	font-size: 1.5em;
 	font-weight: bold;
@@ -557,6 +558,64 @@ input:-webkit-autofill{
 
 	opacity: 0.3;
 }
+
+
+
+#previousBetsDiv {
+	position: absolute;
+
+	bottom: 20vh;
+	left: 50%;
+	transform: translateX(-50%);
+
+	width: 240px;
+	height: 75px;
+
+	/* border-width: 3px 3px 7px 3px; */
+	border-width: 2px 0px 2px 0px;
+	/* Effet bouton relief:  */
+	/* border-width: 0px 3px 7px; */
+
+	border-color: rgba(239, 59, 46, 1);
+	border-style: solid;
+
+	text-align: center;
+
+	/* background-color: rgba(239, 59, 46, 0.1); */
+	background: radial-gradient(circle, rgba(239,59,46,0.3) 0%, rgba(189,189,189,0) 90%);
+
+	border-radius: 5px;
+
+	transition: border-color 0.3s ease, background-color 0.3s ease; 
+
+	animation: fadeIn2 0.3s forwards ease;
+}
+
+#previousBetsTitle {
+	/* font-weight: bold; */
+	font-style: italic;
+	letter-spacing: 2px;
+	font-size:1.4em; 
+	color:rgb(251 168 162 / 90%); 
+	margin-top:5px;
+}
+
+#previousBetsLine {
+	font-size:1.3em; 
+	font-family: "Holtwood One SC", serif;
+	margin-top: 2px;
+}
+
+#previousMiseNormale {
+	color: rgba(238,182,50,0.9);
+}
+#previousMisePair {
+	color: rgba(0, 255, 234, 0.7);
+}
+#previousMise213 {
+	color: rgba(255, 55, 250, 0.9);
+}
+
 
 
 

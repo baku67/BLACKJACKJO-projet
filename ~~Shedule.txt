@@ -1,3 +1,7 @@
+Bouton Previous Bet que si 2x les memes mises de suites ! (fait)
+ajouter une fleche (ou double >>) juste colée à droite
+
+
 cracked effect: https://codepen.io/gabecrockett/pen/QWWzRvm
 
 reload: durant l'anim faire augmenter le padding et reduire a normal (rond grandissant puis retrecissant vers normal)

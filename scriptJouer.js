@@ -64,6 +64,12 @@
       var scoreTotalCroupier = 0;
       var isPhaseMise = false;
 
+      var PreviousMiseNormale = 0;
+      var PreviousMisePair = 0;
+      var PreviousMise213 = 0;
+
+      var consecutivBets = false;
+
       var miseEnCours;
       var misePairEnCours = 0;
       var mise213EnCours;
@@ -642,7 +648,7 @@
           }  
           // Proc None :/
           else if ((misePairLocked == 0) && (pairBet != "Lost")) {
-            document.getElementById("misePairLockedNbrNone").innerHTML = "None &nbsp;<span style='font-size:1.3rem; color:rgba(0, 255, 234, 0.8);'>:/</span>";
+            document.getElementById("misePairLockedNbrNone").innerHTML = "None &nbsp;<span style='font-size:1.3rem; color:rgba(0, 255, 234, 0.8);'>:(</span>";
           }
         }, 1000)      
 
@@ -799,7 +805,7 @@
           }
           // Proc None :/
           else if ((mise213Locked == 0) && (bet213 != "Lost")) {
-            document.getElementById("mise213LockedNbrNone").innerHTML = "None &nbsp;<span style='font-size:1.3rem; color:rgba(255, 55, 250, 1);'>:/</span>";
+            document.getElementById("mise213LockedNbrNone").innerHTML = "None &nbsp;<span style='font-size:1.3rem; color:rgba(255, 55, 250, 1);'>:(</span>";
           }
 
             
@@ -1647,7 +1653,7 @@
           sideBet1.style.transform = "translateY(0px)";
 
           sideBet1Title.style.color = "var(--color-sideBet1Title)";
-          sideBet2Title.style.color = "rgba(255, 55, 250, 0.8)";
+          sideBet2Title.style.color = "rgba(255, 55, 250, 1)";
 
           // Les opacity dynamique selon toggleBet ne marchent plus a cause de l'anim forwards fadeInMiseEnCours (effet cool)
           if (miseEnCours > 0) {
@@ -1791,7 +1797,7 @@
 
 
       function popSideBets() {
-        // Div contenant les sideBets (Rappel: indicateurs color sous les tokenChips ET borderTop footer ET retourArriere)
+        // Div contenant les sideBets 
         const sideBetDiv = document.createElement("div");
         sideBetDiv.setAttribute("id", "sideBetDiv");
 
@@ -1842,6 +1848,38 @@
 
         sideBetListeners();
       }
+
+
+      function popPreviousBets() {
+        // Pop du bouton "Previous Bet" si 2 mêmes mises de suite
+        if ((PreviousMiseNormale !== 0) && (consecutivBets == true)) {
+          setTimeout(function() {
+            const previousBetsDiv = document.createElement("div");
+            previousBetsDiv.setAttribute("id", "previousBetsDiv");
+            previousBetsDiv.innerHTML = 
+            "<p id='previousBetsTitle'>Previous Bet</p><p id='previousBetsLine'><span id='previousMiseNormale'>" + PreviousMiseNormale + "</span>&nbsp; / &nbsp;<span id='previousMisePair'>" + PreviousMisePair + "</span>&nbsp;&nbsp;<span id='previousMise213'>" + PreviousMise213 +"</span></p>";
+            document.getElementById("sideBetDiv").append(previousBetsDiv);  
+            if (PreviousMisePair == 0) {
+              document.getElementById("previousMisePair").style.color = "grey";
+              document.getElementById("previousMisePair").style.opacity = "0.7";
+            }
+            if (PreviousMise213 == 0) {
+              document.getElementById("previousMise213").style.color = "grey";
+              document.getElementById("previousMise213").style.opacity = "0.7";
+            }
+
+            document.getElementById("previousBetsDiv").addEventListener("click", function() {
+              miseEnCours = PreviousMiseNormale;
+              misePairEnCours = PreviousMisePair;
+              mise213EnCours = PreviousMise213;
+              setTimeout(function() {
+                miseLock();
+              }, 250)
+            })
+          }, 750)
+        }
+      }
+
 
 
       function popRetourArriereErase() {
@@ -2429,6 +2467,8 @@
 
 
                       popSideBets();
+                      // Ici logiquement pas besoin du previousMise:
+                      popPreviousBets();
                       popRetourArriereErase();
 
                       if ((darkModeBool == true) && (document.querySelectorAll('.pokerChips') !== null)) {
@@ -2472,7 +2512,9 @@
                     }
                   });
                   miseBoutonStyle();
-                  miseLock();  
+                  document.getElementById("boutonMiser").addEventListener("click", function() {
+                    miseLock();  
+                  })
 
                 }, 500)
             }, 790)
@@ -2495,6 +2537,10 @@
       function relancer() {
 
         $("#relancer").click(function(){
+
+          PreviousMiseNormale = miseEnCours;
+          PreviousMisePair = misePairEnCours;
+          PreviousMise213 = mise213EnCours;
 
           // Anim stack cards
           var imgElemArray = document.querySelectorAll('.imgPartie');
@@ -2898,6 +2944,7 @@
                   document.getElementById("header").style.boxShadow = "";
 
                   popSideBets();
+                  popPreviousBets();
                   popRetourArriereErase();
 
                   // *Dark Mode State*
@@ -2956,7 +3003,9 @@
                 }
               });
               miseBoutonStyle();
-              miseLock();  
+              document.getElementById("boutonMiser").addEventListener("click", function() {
+                miseLock();  
+              })
           }, 800)
         });
 
@@ -3276,7 +3325,6 @@
 
       // Lock de la mise
       function miseLock() {
-        document.getElementById("boutonMiser").addEventListener("click", function() {
 
           setTimeout(function() {
             document.getElementById("footer").style.boxShadow = "0px 3px 13vh 5px rgba(128, 128, 128, 0.55)";
@@ -3325,6 +3373,10 @@
           miseLocked = miseEnCours;
           misePairLocked = misePairEnCours;
           mise213Locked = mise213EnCours;
+
+          if ((miseLocked == PreviousMiseNormale) && (misePairLocked == PreviousMisePair) && (mise213Locked == PreviousMise213)) {
+            consecutivBets = true;
+          }
 
           // credits = (credits - miseLocked - misePairLocked - mise213Locked);
           console.log("Mises Lockées: \n" + "miseLocked: " + miseLocked + ",\n" + "misePairLocked: " + misePairLocked + ",\n" + "mise213Locked: " + mise213EnCours + ".");
@@ -3750,9 +3802,6 @@
           }, (6000 * setTimeOutMultiplier));
 
           document.getElementById("miseLocked").classList.add('animMiseNormale');
-
-
-        })
       }
 
 
