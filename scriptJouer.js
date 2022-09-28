@@ -2997,6 +2997,9 @@
         }
 
         function IncrementGainPair(gainPairBet) {
+          if (document.getElementById("misePairResultatTxt") !== null) {
+            document.getElementById("misePairResultatTxt").style.color = "rgba(0, 255, 234, 1)";
+          }
           setTimeout( function() {
             if (misePairLocked < gainPairBet) {
               misePairLocked = misePairLocked + 1;
@@ -3013,6 +3016,9 @@
         }
 
         function decrementPairGain() {
+          if (document.getElementById("misePairResultatTxt") !== null) {
+            document.getElementById("misePairResultatTxt").style.color = "rgba(239, 59, 46, 1)";
+          }
           setTimeout( function() {
             if (misePairLocked > 0) {
               misePairLocked = misePairLocked - 1;
@@ -3045,6 +3051,9 @@
         }
 
         function IncrementGain213(gain213Bet) {
+          if (document.getElementById("mise213ResultatTxt") !== null) {
+            document.getElementById("mise213ResultatTxt").style.color = "rgba(255, 55, 250, 1)";
+          }
           setTimeout( function() {
             if (mise213Locked < gain213Bet) {
               mise213Locked = mise213Locked + 1;
@@ -3061,6 +3070,9 @@
         }
 
         function decrement213Gain() {
+          if (document.getElementById("mise213ResultatTxt") !== null) {
+            document.getElementById("mise213ResultatTxt").style.color = "rgba(239, 59, 46, 1)";
+          }
           setTimeout( function() {
             if (mise213Locked > 0) {
               mise213Locked = mise213Locked - 1;
@@ -3851,6 +3863,14 @@
                   if (scoreTotalJoueur + 10 < 22) {
                     scoreTotalJoueur = scoreTotalJoueur + 10;
                   }
+                  else if (scoreTotalJoueur + 10 == 21) {
+                    setTimeout(function() {
+                      document.getElementById("footer").style.boxShadow = "";
+                      document.getElementById("header").style.boxShadow = "0px 3px 13vh 5px rgba(128, 128, 128, 0.55)";
+                    }, 200);
+
+                    lancerPhaseCroupier();
+                  }
                   document.getElementById('scoreJoueur').innerHTML = (scoreTotalJoueur);
 
                 }
@@ -4012,7 +4032,7 @@
           
           if (scoreTotalCroupier < 17) {
             setTimeout(function() {
-              addCardCroupier();
+              addCardCroupier(false, true);
               addCardCroupierRecursiveAfterBurst();
             }, 1200 * setTimeOutMultiplier)
           }
@@ -4020,9 +4040,9 @@
             // resultats
             if ((scoreTotalCroupier > 16) && (scoreTotalCroupier < 22)) {
               setTimeout(function() {
-                document.getElementById("scoreCroupier").style.color = "rgba(255,245,0,1)";
+                document.getElementById("scoreCroupier").style.color = "rgb(0 255 234 / 100%)";
                 document.getElementById("scoreCroupier").style.textShadow = "1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, -1px -1px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, -1px 0px 0 #000000, 0px -1px 0 #000000";
-                document.getElementById("scoreCroupier").style.border = "3px solid rgba(58,157,32, 1)";
+                document.getElementById("scoreCroupier").style.border = "3px solid rgb(0 255 234 / 70%)";
               }, 400);
             }
             else if (scoreTotalCroupier > 21) {
@@ -4162,9 +4182,14 @@
                 setTimeout(function() {
 
                   // Changements du background jauge et Connexion car ressort pas assez:
-                  document.getElementById("jaugeContainer").style.backgroundColor = "rgb(131, 131, 131)";
+                  document.getElementById("jaugeContainer").style.backgroundColor = "rgb(105, 105, 105)";
                   // moins marqué: "0 0 black"
-                  document.getElementById("credits").style.textShadow = "1px 1px black";
+                  if (isConnected) {
+                    document.getElementById("connectedLine").style.textShadow = "1px 1px black";
+                  }
+                  else {
+                    document.getElementById("credits").style.textShadow = "1px 1px black";
+                  }
                   if (document.getElementById("toggleHandDiv") !== null) {
                     document.getElementById("toggleHandDiv").style.boxShadow = "0px -1px black";
                   }
@@ -4261,13 +4286,13 @@
 
                     document.getElementById("scoreJoueur").style.backgroundColor = "rgb(160 13 27)";
 
-                    document.getElementById("scoreCroupier").style.color = "rgba(255,245,0,1)";
+                    document.getElementById("scoreCroupier").style.color = "rgb(0 255 234 / 100%)";
                     document.getElementById("scoreJoueur").style.color = "rgba(239,230,230,1)";
 
                     document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)";
                     document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)";
 
-                    document.getElementById("scoreCroupier").style.border = "1px solid rgba(255, 245, 0, 0.7)";
+                    document.getElementById("scoreCroupier").style.border = "1px solid rgb(0 255 234 / 70%)";
                     document.getElementById("scoreJoueur").style.border = "1px solid rgba(255,1,49,0.5)";                  
                     // Fin Perdu
 
@@ -4323,7 +4348,12 @@
                   // Changements du background jauge et Connexion car ressort pas assez:
                   document.getElementById("jaugeContainer").style.backgroundColor = "rgb(131, 131, 131)";
                   // moins marqué: "0 0 black"
-                  document.getElementById("credits").style.textShadow = "1px 1px black";
+                  if (isConnected) {
+                    document.getElementById("connectedLine").style.textShadow = "1px 1px black";
+                  }
+                  else {
+                    document.getElementById("credits").style.textShadow = "1px 1px black";
+                  }
                   if (document.getElementById("toggleHandDiv") !== null) {
                     document.getElementById("toggleHandDiv").style.boxShadow = "0px -1px black";
                   }
@@ -4436,13 +4466,13 @@
                       document.getElementById("scoreCroupier").style.backgroundColor = "rgb(160 13 27)";
 
                       document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)";
-                      document.getElementById("scoreJoueur").style.color = "rgba(255,245,0,1)";
+                      document.getElementById("scoreJoueur").style.color = "rgb(0 255 234 / 100%)";
 
                       document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)";
                       document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)";
 
                       document.getElementById("scoreCroupier").style.border = "1px solid rgba(255,1,49,0.5)";
-                      document.getElementById("scoreJoueur").style.border = "1px solid rgba(255, 245, 0, 0.7)";
+                      document.getElementById("scoreJoueur").style.border = "1px solid rgb(0 255 234 / 70%)";
 
 
                       // Séparateur
@@ -4484,7 +4514,12 @@
                   // Changements du background jauge et Connexion car ressort pas assez:
                   document.getElementById("jaugeContainer").style.backgroundColor = "rgb(131, 131, 131)";
                   // moins marqué: "0 0 black"
-                  document.getElementById("credits").style.textShadow = "1px 1px black";
+                  if (isConnected) {
+                    document.getElementById("connectedLine").style.textShadow = "1px 1px black";
+                  }
+                  else {
+                    document.getElementById("credits").style.textShadow = "1px 1px black";
+                  }                  
                   if (document.getElementById("toggleHandDiv") !== null) {
                     document.getElementById("toggleHandDiv").style.boxShadow = "0px -1px black";
                   }
@@ -4591,13 +4626,13 @@
                       document.getElementById("scoreCroupier").style.backgroundColor = "rgb(160 13 27)";
   
                       document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)";
-                      document.getElementById("scoreJoueur").style.color = "rgba(255,245,0,1)";
+                      document.getElementById("scoreJoueur").style.color = "rgb(0 255 234 / 100%)";
   
                       document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)";
                       document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)";
   
                       document.getElementById("scoreCroupier").style.border = "1px solid rgba(255,1,49,0.5)";
-                      document.getElementById("scoreJoueur").style.border = "1px solid rgba(255, 245, 0, 0.7)";
+                      document.getElementById("scoreJoueur").style.border = "1px solid rgb(0 255 234 / 70%)";
   
                       
                       // Séparateur
@@ -4643,7 +4678,12 @@
                   // Changements du background jauge et Connexion car ressort pas assez:
                   document.getElementById("jaugeContainer").style.backgroundColor = "rgb(131, 131, 131)";
                   // moins marqué: "0 0 black"
-                  document.getElementById("credits").style.textShadow = "1px 1px black";
+                  if (isConnected) {
+                    document.getElementById("connectedLine").style.textShadow = "1px 1px black";
+                  }
+                  else {
+                    document.getElementById("credits").style.textShadow = "1px 1px black";
+                  }                  
                   if (document.getElementById("toggleHandDiv") !== null) {
                     document.getElementById("toggleHandDiv").style.boxShadow = "0px -1px black";
                   }
@@ -5262,7 +5302,7 @@
 
 
       // NOUVELLE CARTE  > CROUPIER (+ScoreTOTAL)
-      function addCardCroupier(firstCardCroupierRevealed) {
+      function addCardCroupier(firstCardCroupierRevealed, shadow) {
 
         if (firstCardCroupierRevealed == true) {
           distribAnim("croupier");
@@ -5276,6 +5316,9 @@
         cartesSortiesPartie.unshift(pickedCardObject);
         // Associe la VALUE de la KEY "cardImageUrl", à l'attribut HTML de l'<img> créé
         img.src = pickedCardObject.cardImageURL;
+        if (shadow) {
+          img.style.boxShadow = "rgb(0 255 234 / 60%) 0px 0px 20px 3px";
+        }
 
         // Plutot mettre compteur d'AS croupier, si le compteur > 1, ...
 
@@ -5972,9 +6015,14 @@
             setTimeout(function() {
 
               // Changements du background jauge et Connexion car ressort pas assez:
-              document.getElementById("jaugeContainer").style.backgroundColor = "rgb(131, 131, 131)";
+              document.getElementById("jaugeContainer").style.backgroundColor = "rgb(105, 105, 105)";
               // moins marqué: "0 0 black"
-              document.getElementById("credits").style.textShadow = "1px 1px black";
+              if (isConnected) {
+                document.getElementById("connectedLine").style.textShadow = "1px 1px black";
+              }
+              else {
+                document.getElementById("credits").style.textShadow = "1px 1px black";
+              }              
               if (document.getElementById("toggleHandDiv") !== null) {
                 document.getElementById("toggleHandDiv").style.boxShadow = "0px -1px black";
               }
@@ -6036,8 +6084,12 @@
 
               // Changements du background jauge et Connexion car ressort pas assez:
               document.getElementById("jaugeContainer").style.backgroundColor = "rgb(131, 131, 131)";
-              // moins marqué: "0 0 black"
-              document.getElementById("credits").style.textShadow = "1px 1px black";
+              if (isConnected) {
+                document.getElementById("connectedLine").style.textShadow = "1px 1px black";
+              }
+              else {
+                document.getElementById("credits").style.textShadow = "1px 1px black";
+              }
               if (document.getElementById("toggleHandDiv") !== null) {
                 document.getElementById("toggleHandDiv").style.boxShadow = "0px -1px black";
               }
@@ -6589,6 +6641,8 @@
                   document.getElementById("scoreJoueur").style.textShadow = "1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, -1px -1px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, -1px 0px 0 #000000, 0px -1px 0 #000000";
                   document.getElementById("scoreJoueur").style.border = "3px solid rgba(130,14,39, 1)";
                   // Fin Perdu BURST
+
+
 
                   
                   // Séparateur

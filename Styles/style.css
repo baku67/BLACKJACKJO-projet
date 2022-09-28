@@ -632,7 +632,14 @@ input:-webkit-autofill{
 }
 
 
-
+#connectedLine {
+	position:relative;
+	left:29px; 
+	bottom:0.95em; 
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+	font-size:1.2em; 
+	color:rgba(223, 204, 204, 0.9);
+}
 
 #traitSeparateurConnecte {
 	font-size:1.6em; 
@@ -3937,7 +3944,7 @@ p {
 }
 
 .rotateReloadPng{
-	animation: rotationReload 0.8s ease;
+	animation: rotationReload 0.8s ease-in-out;
 } 
 @keyframes rotationReload {
 	from {
@@ -3948,18 +3955,27 @@ p {
 	}
 }
 .reloadColorAnim {
-	animation: reloadColorAnim 0.5s ease;
+	animation: reloadColorAnim 0.5s ease-in-out;
 }
 @keyframes reloadColorAnim {
 	0% {
+		opacity: 1;
+		transform: translateX(0px);
+		padding: 5px 10px 5px 10px;
 		background-image: var(--bgImage-reloadButton);
 		border: var(--border-reloadButton);
 	}
 	50% {
+		opacity: 1;
+		transform: translateX(4px);
+		padding: 7px 14px 7px 14px;
 		background-image: var(--bgImageFlash-reloadButton);
 		border: var(--borderFlash-reloadButton);
 	}
 	100% {
+		opacity: 0;
+		transform: translateX(0px);
+		padding: 5px 10px 5px 10px;
 		background-image: var(--bgImage-reloadButton);
 		border: var(--border-reloadButton);
 	}
@@ -3977,8 +3993,8 @@ p {
 	-webkit-box-sizing: border-box;
 	visibility: hidden;
 	position: absolute;
-	margin-left: 215px;
-	margin-top: 31px;
+	right: 20%;
+	bottom: 15%;
 	font-size: 2.5em;
 	padding: 5px 10px 5px 10px;
 
@@ -4088,7 +4104,8 @@ p {
 
 
 #footerResultatContainer {
-	margin-top: 7px;
+	transform: scale(0.9);
+	/* margin-top: 7px; */
 }
 #footerResultatLinePair {
 	margin-top: 7px;
@@ -4183,7 +4200,7 @@ p {
 }
 
 .addColorToResultatRed {
-	color: red;
+	color: rgba(239, 59, 46, 1);
 	text-shadow: 0 0 3px black;
 }
 .addColorToResultatGreen {

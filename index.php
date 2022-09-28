@@ -139,7 +139,7 @@
 					<!-- Fin test -->
 
 
-					<p style="position:relative; left:29px; bottom:0.95em; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:1.2em; color:rgba(223, 204, 204, 0.9);">
+					<p id="connectedLine">
 
 					
 						<strong style="font-size:1.4em; text-shadow:0 0 3px rgb(43 39 39);"><span style="color:rgba(238,182,50,1); font-size:1.5em; position:relative; top:2px; left:16px;"><i class="fa-solid fa-star"></i><span id="lvlText"><?php include('getLevel.php'); ?></span></span><span style="text-decoration:underline 4px rgba(238,182,50,1); position:relative; bottom:2px; left:7px;"><?php echo ucfirst($_SESSION['username']);?></span></strong>

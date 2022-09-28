@@ -1,3 +1,7 @@
+cracked effect: https://codepen.io/gabecrockett/pen/QWWzRvm
+
+reload: durant l'anim faire augmenter le padding et reduire a normal (rond grandissant puis retrecissant vers normal)
+
 mode light: shadow des cartes plus marqué et rouge loose aussi mais moins cian gagne (et plus cian car apparait blanc)
 + toggleHandDiv pas paramétré
 
@@ -84,6 +88,21 @@ Idee HS à savoir: filter blur anim vers l'infini sur un chiffre (miseEncours pa
 
 
 
+
+
+INFOS:
+Here are the odds of the dealer going on to bust when he is showing the following upcards:
+
+2 – 35.30%
+3 – 37.56%
+4 – 40.28%
+5 – 42.89%
+6 – 42.08%
+7 – 25.99%
+8 – 23.86%
+9 – 23.34%
+10,J,Q,K – 21.43%
+A – 11.65%
 
 
 

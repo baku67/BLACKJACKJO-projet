@@ -413,8 +413,10 @@
 
 	#relancer {
 		position: absolute;
-		margin-left: 58px;
-		margin-top: 21px;
+		/* margin-left: 58px;
+		margin-top: 21px; */
+		right: 5%;
+		bottom: 15%;
 		font-size: 2em;
 		padding: 5px 10px 5px 10px;
 	}
