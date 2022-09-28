@@ -4016,6 +4016,20 @@ p {
 	color: rgba(214, 228, 210, 0.8); */
 /* } */
 
+.allCardsFadeOutSlide {
+	opacity: 1;
+	animation: allCardsFadeOutSlide 0.3s 1 forwards ease-in-out;
+}
+@keyframes allCardsFadeOutSlide {
+	from {
+		opacity: 1;
+		transform: translateX(-60px);
+	}
+	to {
+		opacity: 0;
+		transform: translateX(500%);
+	}
+}
 
 
 

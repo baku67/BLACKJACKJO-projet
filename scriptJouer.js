@@ -2486,6 +2486,20 @@
 
         $("#relancer").click(function(){
 
+          // Anim stack cards
+          var imgElemArray = document.querySelectorAll('.imgPartie');
+          imgElemArray.forEach(element => {
+            element.style.margin = "0 -7.6em 0 0.4em";
+            element.style.transform = "rotate(0deg) translateX(-63px)";
+            element.style.bottom = "0px";
+          });
+          setTimeout(function() {
+            imgElemArray.forEach(element => {
+              element.classList.add('allCardsFadeOutSlide');
+            });
+          }, 450)
+
+
           document.getElementById("jaugeContainer").style.backgroundColor = "var(--bgColor-jaugeVide)";
 
           document.getElementById("footer").style.boxShadow = "";
@@ -2846,7 +2860,7 @@
 
               }
             });
-          }, 500);
+          }, 800);
 
 
           scoreTotalJoueur = 0;
@@ -2933,7 +2947,7 @@
               });
               miseBoutonStyle();
               miseLock();  
-          }, 500)
+          }, 800)
         });
 
       }
@@ -4775,14 +4789,14 @@
 
 
 
-                    document.getElementById("scoreCroupier").style.color = "rgb(11 136 6)";
-                    document.getElementById("scoreJoueur").style.color = "rgb(11 136 6)";
+                    document.getElementById("scoreCroupier").style.color = "rgb(61,61,61)";
+                    document.getElementById("scoreJoueur").style.color = "rgb(61,61,61)";
 
                     document.getElementById("scoreCroupier").style.textShadow = "#0d0d0d 0px 0px 1px";
                     document.getElementById("scoreJoueur").style.textShadow = "#0d0d0d 0px 0px 1px";
 
-                    document.getElementById("scoreCroupier").style.backgroundColor = "rgb(252 176 69)";
-                    document.getElementById("scoreJoueur").style.backgroundColor = "rgb(252 176 69)"; 
+                    document.getElementById("scoreCroupier").style.backgroundColor = "rgb(249 217 42)";
+                    document.getElementById("scoreJoueur").style.backgroundColor = "rgb(249 217 42)"; 
 
                     
                     // Séparateur
