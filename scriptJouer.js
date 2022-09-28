@@ -1852,31 +1852,35 @@
 
       function popPreviousBets() {
         // Pop du bouton "Previous Bet" si 2 mêmes mises de suite
-        if ((PreviousMiseNormale !== 0) && (consecutivBets == true)) {
-          setTimeout(function() {
-            const previousBetsDiv = document.createElement("div");
-            previousBetsDiv.setAttribute("id", "previousBetsDiv");
-            previousBetsDiv.innerHTML = 
-            "<p id='previousBetsTitle'>Previous Bet</p><p id='previousBetsLine'><span id='previousMiseNormale'>" + PreviousMiseNormale + "</span>&nbsp; / &nbsp;<span id='previousMisePair'>" + PreviousMisePair + "</span>&nbsp;&nbsp;<span id='previousMise213'>" + PreviousMise213 +"</span></p>";
-            document.getElementById("sideBetDiv").append(previousBetsDiv);  
-            if (PreviousMisePair == 0) {
-              document.getElementById("previousMisePair").style.color = "grey";
-              document.getElementById("previousMisePair").style.opacity = "0.7";
-            }
-            if (PreviousMise213 == 0) {
-              document.getElementById("previousMise213").style.color = "grey";
-              document.getElementById("previousMise213").style.opacity = "0.7";
-            }
+        // if ((PreviousMiseNormale !== 0) && (consecutivBets == true)) {
+          if (PreviousMiseNormale !== 0) {
+            setTimeout(function() {
+              const previousBetsDiv = document.createElement("div");
+              previousBetsDiv.setAttribute("id", "previousBetsDiv");
+              previousBetsDiv.innerHTML = 
+              "<p id='previousBetsTitle'>- Previous Bet -</p><p id='previousBetsLine'><span id='previousMiseNormale'>" + PreviousMiseNormale + "</span>&nbsp; <span id='firstSlash'>/</span> &nbsp;<span id='previousMisePair'>" + PreviousMisePair + "</span>&nbsp;<span id='secondSlash'>|</span>&nbsp;<span id='previousMise213'>" + PreviousMise213 +"</span></p>";
+              document.getElementById("sideBetDiv").append(previousBetsDiv);  
+              if (PreviousMisePair == 0) {
+                document.getElementById("previousMisePair").style.color = "grey";
+                document.getElementById("previousMisePair").style.opacity = "0.7";
+              }
+              if (PreviousMise213 == 0) {
+                document.getElementById("previousMise213").style.color = "grey";
+                document.getElementById("previousMise213").style.opacity = "0.7";
+              }
 
-            document.getElementById("previousBetsDiv").addEventListener("click", function() {
-              miseEnCours = PreviousMiseNormale;
-              misePairEnCours = PreviousMisePair;
-              mise213EnCours = PreviousMise213;
-              setTimeout(function() {
-                miseLock();
-              }, 250)
-            })
-          }, 750)
+              document.getElementById("previousBetsDiv").addEventListener("click", function() {
+                miseEnCours = PreviousMiseNormale;
+                misePairEnCours = PreviousMisePair;
+                mise213EnCours = PreviousMise213;
+                document.getElementById("previousBetsDiv").classList.add("previousBoutonClick");
+                document.getElementById("previousBetsTitle").classList.add("previousBoutonClick");
+
+                setTimeout(function() {
+                  miseLock();
+                }, 450)
+              })
+            }, 750)
         }
       }
 
@@ -2468,7 +2472,7 @@
 
                       popSideBets();
                       // Ici logiquement pas besoin du previousMise:
-                      popPreviousBets();
+                      // popPreviousBets();
                       popRetourArriereErase();
 
                       if ((darkModeBool == true) && (document.querySelectorAll('.pokerChips') !== null)) {
