@@ -1,3 +1,7 @@
+mode light: shadow des cartes plus marqué et rouge loose aussi mais moins cian gagne (et plus cian car apparait blanc)
++ toggleHandDiv pas paramétré
+
+
 RÉORGANISER TOUT CA:
 
 Pub pour daily reward ?

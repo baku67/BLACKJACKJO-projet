@@ -2,6 +2,15 @@
 	--bg-color: rgb(17 19 31);
 	--bg-url: url("../Images/backgroundMix2-compressed5.png");
 
+	--borderColor-sideBet1: rgba(255,255,255,0.7);
+	--borderColor-sideBet2: rgba(255,255,255,0.7);
+	--color-sideBet1Title: rgba(255,255,255,0.7);
+	--color-sideBet2Title: rgba(255,255,255,0.7);
+	--bgColor-sideBet1: rgba(255,255,255,0.1);
+	--bgColor-sideBet2: rgba(255,255,255,0.1);
+	/* --borderWidth-sideBet1: 3px 3px 7px 3px;
+	--borderWidth-sideBet1: 3px 3px 7px 3px; */
+
 	--traitFooterMise-color: -webkit-linear-gradient(left, rgba(90,90,90,0) 0%, rgba(255,255,255,0.7) 50%, rgba(90,90,90,0) 100%);
 
 	--title-color: rgb(223, 204, 204);
@@ -18,7 +27,7 @@
 	--imgErase-src: url("../Images/erase.png");
 
 	--imgReloadButton-src: url("../Images/reload.png");
-	--border-reloadButton: 2px solid rgba(223, 223, 223, 0.6);
+	--border-reloadButton: 2px solid rgba(223, 223, 223, 0.3);
 	--borderFlash-reloadButton: 2px solid rgba(0, 231, 254, 0.8);
 	--bgImage-reloadButton: radial-gradient(circle, rgba(14,100,107,0.8) 0%, rgba(36,46,87,0) 80%);
 	--bgImageFlash-reloadButton: radial-gradient(circle, rgba(14,100,107,0.8) 0%, rgba(36,46,87,0) 80%);
@@ -43,7 +52,7 @@
 
 	--distributionFooter-color: rgb(223, 204, 204);
 
-	--bgColor-jaugeVide: #696565;
+	--bgColor-jaugeVide: #686868;
 	--bgColor-jaugePleine: rgb(241 205 92);
 	--bgColorFlash-jaugePleine: #00e7fe;
 
@@ -54,9 +63,10 @@
 	--jaugePleine-boxShadowMax: 0 -1px 4px #fff, 0 -2px 10px #00ffea, 0 -5px 20px #00ffea, 0 -4px 20px #00ffea;
 	--jaugePleine-boxShadowMin: 0 -1px 4px #fff, 0 -2px 10px rgba(255, 255, 0, 0.3), 0 -5px 20px rgba(255, 128, 0, 0.3), 0 -4px 20px rgba(255, 0, 0, 0.3);
 
-	--color-miserAlert:aliceblue;
+	/* --color-miserAlert:aliceblue; */
+	--color-miserAlert:#d8e2eb;
 	/* flash sur lightMode non paramétré: */
-	--color-miserAlertFlash:#00e7fe;
+	--color-miserAlertFlash:#fe0077;
 
 	--borderColor-miseLocked: rgba(252, 227, 3, 0.8);
 
@@ -80,6 +90,13 @@
 	--bg-color: rgb(17 19 31);
 	--bg-url: url("../Images/backgroundMix2-compressed5.png");
 
+	--borderColor-sideBet1: rgba(255,255,255,0.7);
+	--borderColor-sideBet2: rgba(255,255,255,0.7);
+	--color-sideBet1Title: rgba(255,255,255,0.7);
+	--color-sideBet2Title: rgba(255,255,255,0.7);
+	--bgColor-sideBet1: rgba(255,255,255,0.1);
+	--bgColor-sideBet2: rgba(255,255,255,0.1);
+
 	--traitFooterMise-color: -webkit-linear-gradient(left, rgba(90,90,90,0) 0%, rgba(255,255,255,0.7) 50%, rgba(90,90,90,0) 100%);
 
 	--title-color: rgb(223, 204, 204);
@@ -96,7 +113,7 @@
 	--imgErase-src: url("../Images/erase.png");
 
 	--imgReloadButton-src: url("../Images/reload.png");
-	--border-reloadButton: 2px solid rgba(223, 223, 223, 0.6);
+	--border-reloadButton: 2px solid rgba(223, 223, 223, 0.3);
 	--borderFlash-reloadButton: 2px solid rgba(0, 231, 254, 0.8);
 	--bgImage-reloadButton: radial-gradient(circle, rgba(14,100,107,0.8) 0%, rgba(36,46,87,0) 80%);
 	--bgImageFlash-reloadButton: radial-gradient(circle, rgba(14,100,107,0.8) 0%, rgba(36,46,87,0) 80%);
@@ -124,7 +141,7 @@
 
 	--distributionFooter-color: rgb(223, 204, 204);
 
-	--bgColor-jaugeVide: #696565;
+	--bgColor-jaugeVide: #686868;
 	--bgColor-jaugePleine: rgb(241 205 92);
 	--bgColorFlash-jaugePleine: #00e7fe;
 
@@ -135,9 +152,10 @@
 	--jaugePleine-boxShadowMax: 0 -1px 4px #fff, 0 -2px 10px #00ffea, 0 -5px 20px #00ffea, 0 -4px 20px #00ffea;
 	--jaugePleine-boxShadowMin: 0 -1px 4px #fff, 0 -2px 10px rgba(255, 255, 0, 0.3), 0 -5px 20px rgba(255, 128, 0, 0.3), 0 -4px 20px rgba(255, 0, 0, 0.3);
 
-	--color-miserAlert:aliceblue;
+	/* --color-miserAlert:aliceblue; */
+	--color-miserAlert:#d8e2eb;
 	/* flash sur lightMode non paramétré: */
-	--color-miserAlertFlash:#00e7fe;
+	--color-miserAlertFlash:#fe0077;
 
 	--borderColor-miseLocked: rgba(252, 227, 3, 0.8);
 
@@ -161,6 +179,13 @@
 	--bg-color: rgb(17 19 31);
 	--bg-url: url();
 
+	--borderColor-sideBet1: rgba(239, 59, 46, 1);
+	--borderColor-sideBet2: rgba(239, 59, 46, 1);
+	--color-sideBet1Title: rgba(239, 59, 46, 1);
+	--color-sideBet2Title: rgba(239, 59, 46, 1);
+	--bgColor-sideBet1: rgba(239, 59, 46, 0.2);
+	--bgColor-sideBet2: rgba(239, 59, 46, 0.2);
+
 	--traitFooterMise-color: -webkit-linear-gradient(left, rgba(16, 17, 27, 0) 0%, rgba(239, 59, 46, 0.8) 50%, rgba(16, 17, 27, 0) 100%);
 
 	--title-color: rgba(239, 59, 46, 1);
@@ -177,7 +202,7 @@
 	--imgErase-src: url("../Images/erase_darkMode.png");
 
 	--imgReloadButton-src: url("../Images/reload_darkMode.png");
-	--border-reloadButton: 3px solid rgba(239, 59, 46, 0.7);
+	--border-reloadButton: 3px solid rgba(239, 59, 46, 0.2);
 	--borderFlash-reloadButton: 3px solid rgba(0, 231, 254, 0.8);
 	--bgImage-reloadButton: radial-gradient(circle, rgba(239, 59, 46, 0.5) 0%, rgba(36,46,87,0) 80%);
 	--bgImageFlash-reloadButton: radial-gradient(circle, rgba(10, 166, 180, 0.753) 0%, rgba(36,46,87,0) 80%);
@@ -207,7 +232,7 @@
 
 	--distributionFooter-color: rgba(239, 59, 46, 1);
 
-	--bgColor-jaugeVide: rgb(80, 71, 64);
+	--bgColor-jaugeVide: rgba(81,81,81,1);
 	--bgColor-jaugePleine: #ef3b2e;
 	--bgColorFlash-jaugePleine: #00ffea;
 
@@ -440,9 +465,6 @@ input:-webkit-autofill{
 
 
 #sideBetDiv {
-	/* width: 60px;
-	height: 60px; */
-	/* background-color: #000; */
 	display: inline-flex;
 
 	position: absolute;
@@ -457,13 +479,16 @@ input:-webkit-autofill{
 	width: 105px;
 	height: 75px;
 
+	/* border-width: var(--borderWidth-sideBet1); */
 	border-width: 3px 3px 7px 3px;
-	border-color: rgba(239, 59, 46, 1);
+
+	border-color: var(--borderColor-sideBet1);
 	border-style: solid;
 
 	text-align: center;
 
-	background-color: rgba(239, 59, 46, 0.2);
+	background-color: var(--bgColor-sideBet1);
+
 	border-radius: 9px;
 
 	transition: border-color 0.3s ease, background-color 0.3s ease; 
@@ -474,13 +499,16 @@ input:-webkit-autofill{
 	width: 105px;
 	height: 75px;
 
+	/* border-width: var(--borderWidth-sideBet2); */
 	border-width: 3px 3px 7px 3px;
-	border-color: rgba(239, 59, 46, 1);
+
+	border-color: var(--borderColor-sideBet2);
 	border-style: solid;
 
 	text-align: center;
 
-	background-color: rgba(239, 59, 46, 0.2);
+	background-color: var(--bgColor-sideBet2);
+
 	border-radius: 9px;
 
 	transition: border-color 0.3s ease, background-color 0.3s ease; 
@@ -490,7 +518,7 @@ input:-webkit-autofill{
 	font-size: 1.5em;
 	font-weight: bold;
 	font-family: " Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-	color: rgba(239, 59, 46, 1);
+	color: var(--color-sideBet1Title);
 
 	transition: color 0.3s ease; 
 }
@@ -499,7 +527,7 @@ input:-webkit-autofill{
 	font-size: 1.5em;
 	font-weight: bold;
 	font-family: " Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-	color: rgba(239, 59, 46, 1);
+	color: var(--color-sideBet2Title);
 
 	transition: color 0.3s ease; 
 }
@@ -510,7 +538,7 @@ input:-webkit-autofill{
 
 	position: relative;
     top: 25%;
-	left: 11px;
+	/* left: 11px; */
     transform: translateY(-50%);
 
 	text-align: center;
@@ -524,7 +552,7 @@ input:-webkit-autofill{
 
 	position: relative;
     top: 25%;
-	left: 11px;
+	/* left: 11px; */
     transform: translateY(-50%);
 
 	opacity: 0.3;
@@ -1115,7 +1143,7 @@ button, input[type="submit"], input[type="reset"] {
 	background-size: 400% 400%; 
 
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#820e27",endColorstr="#1a2039",GradientType=1);
-	border-bottom: 3px solid var(--headerBorderBottom-Color);
+	border-bottom: 4px solid var(--headerBorderBottom-Color);
 	/* border-bottom-left-radius:10%;
     border-bottom-right-radius:10%; */
 
@@ -3456,14 +3484,14 @@ figure:active {
 }
 .resultatTextPush {
 	font-family: 'Alfa Slab One', cursive;
-	color: rgb(68 64 122 / 90%);
+	color: rgb(50 50 50 / 90%);
 
-	font-size: 3.5em;
-	letter-spacing: 2px;
+	font-size: 3.6em;
+	letter-spacing: 3px;
 
 	/* Dégueulasse mais OK */
 	position: relative;
-	top: 22%;
+	top: 16%;
 }
 
 
@@ -3592,7 +3620,7 @@ figure:active {
 
 	box-sizing: border-box;
 	overflow: hidden;
-	background-image: url(""), linear-gradient(144deg, rgb(253 128 128) 0%, rgb(247 254 91) 100%);
+	background-image: url(""), linear-gradient(-45deg, rgba(156,156,156,0.8637532133676092) 10%, rgba(232,232,5,1) 50%, rgba(189,189,189,0.8714652956298201) 90%);
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position-x: 40%;
@@ -3952,8 +3980,10 @@ p {
 	margin-left: 215px;
 	margin-top: 31px;
 	font-size: 2.5em;
-	padding: 5px 15px 5px 15px;
-	border-radius: 12px;
+	padding: 5px 10px 5px 10px;
+
+	border-radius: 120px;
+	/* border-radius: 12px; */
 }
 /* #relancer:hover { */
 	/*  NEGATIVE MARGIN OMGG */
@@ -4202,6 +4232,21 @@ p {
 		opacity: 1;
 		filter: blur(0px);
 		bottom: 5px;
+	}
+}
+.fadeInMiseEnCourTest {
+	opacity: 0;
+	filter: blur(5px);
+	animation: fadeInMiseEnCourTest 0.1s 1 forwards ease;
+}
+@keyframes fadeInMiseEnCourTest {
+	from {
+		opacity: 0;
+		filter: blur(5px);
+	}
+	to {
+		opacity: 1;
+		filter: blur(0px);
 	}
 }
 

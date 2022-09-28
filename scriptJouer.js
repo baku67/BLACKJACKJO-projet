@@ -1573,17 +1573,18 @@
           sideBet1.style.borderColor = "rgba(0, 255, 234, 0.8)"; // cian
           sideBet1.style.backgroundColor = "rgba(0, 255, 234, 0.1)"; // cian
           sideBet1.style.boxShadow = "-0px 0px 50px 5px rgba(0, 255, 234, 0.4)";
-          sideBet1.style.borderWidth = "3px";
+          if (darkModeBool) {sideBet1.style.borderWidth = "3px";}
+          else {sideBet1.style.borderWidth = "4px";}
           sideBet1.style.transform = "translateY(2px)";
 
-          sideBet2.style.borderColor = "rgb(239, 59, 46)";
-          sideBet2.style.backgroundColor = "rgba(239, 59, 46, 0.2)"; 
+          sideBet2.style.borderColor = "var(--borderColor-sideBet2)";
+          sideBet2.style.backgroundColor = "var(--bgColor-sideBet2)"; 
           sideBet2.style.boxShadow = "";
           sideBet2.style.borderWidth = "3px 3px 7px 3px";
           sideBet2.style.transform = "translateY(0px)";
 
           sideBet1Title.style.color = "rgba(0, 255, 234, 0.8)";
-          sideBet2Title.style.color = "rgba(239, 59, 46, 0.9)";
+          sideBet2Title.style.color = "var(--color-sideBet2Title)";
 
           // Les opacity dynamique selon toggleBet ne marchent plus a cause de l'anim forwards fadeInMiseEnCours (effet cool)
           if (miseEnCours > 0) {
@@ -1625,16 +1626,17 @@
           sideBet2.style.borderColor = "rgba(255, 55, 250, 0.9)"; // purple
           sideBet2.style.backgroundColor = "rgba(255, 55, 250, 0.15)"; // purple
           sideBet2.style.boxShadow = "-0px 0px 50px 5px rgba(255, 55, 250, 0.5)";
-          sideBet2.style.borderWidth = "3px";
+          if (darkModeBool) {sideBet2.style.borderWidth = "3px";}
+          else {sideBet2.style.borderWidth = "4px";}
           sideBet2.style.transform = "translateY(2px)";
 
-          sideBet1.style.borderColor = "rgb(239, 59, 46)";
-          sideBet1.style.backgroundColor = "rgba(239, 59, 46, 0.2)"; 
+          sideBet1.style.borderColor = "var(--borderColor-sideBet1)";
+          sideBet1.style.backgroundColor = "var(--bgColor-sideBet1)"; 
           sideBet1.style.boxShadow = "";
           sideBet1.style.borderWidth = "3px 3px 7px 3px";
           sideBet1.style.transform = "translateY(0px)";
 
-          sideBet1Title.style.color = "rgba(239, 59, 46, 0.9)";
+          sideBet1Title.style.color = "var(--color-sideBet1Title)";
           sideBet2Title.style.color = "rgba(255, 55, 250, 0.8)";
 
           // Les opacity dynamique selon toggleBet ne marchent plus a cause de l'anim forwards fadeInMiseEnCours (effet cool)
@@ -1676,18 +1678,18 @@
         }
 
         else if (bet == "normal") {
-          sideBet1.style.borderColor = "rgb(239, 59, 46)";
-          sideBet1.style.backgroundColor = "rgba(239, 59, 46, 0.2)"; 
+          sideBet1.style.borderColor = "var(--borderColor-sideBet1)";
+          sideBet1.style.backgroundColor = "var(--bgColor-sideBet1)"; 
           sideBet1.style.borderWidth = "3px 3px 7px 3px";
           sideBet1.style.transform = "translateY(0px)";
 
-          sideBet2.style.borderColor = "rgb(239, 59, 46)";
-          sideBet2.style.backgroundColor = "rgba(239, 59, 46, 0.2)"; 
+          sideBet2.style.borderColor = "var(--borderColor-sideBet2)";
+          sideBet2.style.backgroundColor = "var(--bgColor-sideBet2)"; 
           sideBet2.style.borderWidth = "3px 3px 7px 3px";
           sideBet2.style.transform = "translateY(0px)";
 
-          sideBet1Title.style.color = "rgba(239, 59, 46, 0.9)";
-          sideBet2Title.style.color = "rgba(239, 59, 46, 0.9)";
+          sideBet1Title.style.color = "var(--color-sideBet1Title)";
+          sideBet2Title.style.color = "var(--color-sideBet2Title)";
 
           sideBet1.style.boxShadow = "";
           sideBet2.style.boxShadow = "";
@@ -1716,11 +1718,20 @@
 
             document.getElementById("traitLumineuxFooter").style.background = "var(--traitFooterMise-color)";
 
-            document.getElementById("whiteToken").src = "Tokens/whiToken_darkMode.png";
-            document.getElementById("redToken").src = "Tokens/redToken_darkMode.png";
-            document.getElementById("greenToken").src = "Tokens/greToken_darkMode.png";
-            document.getElementById("blueToken").src = "Tokens/bluToken_darkMode.png";
-            document.getElementById("blackToken").src = "Tokens/blaToken_darkMode.png";
+            if (darkModeBool == true) {
+              document.getElementById("whiteToken").src = "Tokens/whiToken_darkMode.png";
+              document.getElementById("redToken").src = "Tokens/redToken_darkMode.png";
+              document.getElementById("greenToken").src = "Tokens/greToken_darkMode.png";
+              document.getElementById("blueToken").src = "Tokens/bluToken_darkMode.png";
+              document.getElementById("blackToken").src = "Tokens/blaToken_darkMode.png";  
+            }
+            else {
+              document.getElementById("whiteToken").src = "Tokens/whiToken.png";
+              document.getElementById("redToken").src = "Tokens/redToken.png";
+              document.getElementById("greenToken").src = "Tokens/greToken.png";
+              document.getElementById("blueToken").src = "Tokens/bluToken.png";
+              document.getElementById("blackToken").src = "Tokens/blaToken.png";
+            }
 
             document.getElementById("retourArriereImg").src = "Images/retourArriereWhite_darkMode.png";
 
@@ -1953,7 +1964,13 @@
                     document.getElementById("speedToggleImage").style.opacity = "1";
                     
                     setTimeOutMultiplier = 0.65;
-                    document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
+
+                    if (darkModeBool) {
+                      document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
+                    }
+                    else {
+                      document.getElementById("speedToggleImage").src = 'Images/fastForwardGreyLM.png';
+                    }
                   }
                   //****
 
@@ -1972,7 +1989,12 @@
                     audioDecompte.volume = 0;
                     audioToken.volume = 0;
                     audioMiser.volume = 0;
-                    document.getElementById("soundToggleImage").src = 'Images/speakerMute.png';
+                    if (darkModeBool) {
+                      document.getElementById("soundToggleImage").src = 'Images/speakerMute.png';
+                    }
+                    else {
+                      document.getElementById("soundToggleImage").src = 'Images/speakerMuteLM.png';
+                    }
                   }
                   else if (document.getElementById("soundButtonContainer") !== null ) {
                     
@@ -2138,7 +2160,12 @@
                         audioDecompte.volume = 0;
                         audioToken.volume = 0;
                         audioMiser.volume = 0;
-                        document.getElementById("soundToggleImage").src = 'Images/speakerMute.png';
+                        if (darkModeBool) {
+                          document.getElementById("soundToggleImage").src = 'Images/speakerMute.png';
+                        }
+                        else {
+                          document.getElementById("soundToggleImage").src = 'Images/speakerMuteLM.png';
+                        }
                       }
                       var setSoundMuteBoolToPhp = {};
                       setSoundMuteBoolToPhp.value = SoundMuteBool;
@@ -2166,7 +2193,12 @@
                         setTimeOutMultiplierBool = false;
                         // document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
                         setTimeOutMultiplier = 0.65;
-                        document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
+                        if (darkModeBool) {
+                          document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
+                        }
+                        else {
+                          document.getElementById("speedToggleImage").src = 'Images/fastForwardGreyLM.png';
+                        }
                       }
                       else {
                         setTimeOutMultiplierBool = true;
@@ -2292,7 +2324,7 @@
 
                         if (document.getElementById('soundToggleImage') !== null) {
                           if (SoundMuteBool == true) {
-                            document.getElementById('soundToggleImage').src = "../Images/speakerMute.png";
+                            document.getElementById('soundToggleImage').src = "../Images/speakerMuteLM.png";
                           }
                           else {
                             document.getElementById('soundToggleImage').src = "../Images/speakerMax_sourceMax5.png";
@@ -2310,7 +2342,7 @@
                             document.querySelector('#speedToggleImage').src = "../Images/fastForwardWhite.png";
                           }
                           else {
-                            document.querySelector('#speedToggleImage').src = "../Images/fastForwardGrey.png";
+                            document.querySelector('#speedToggleImage').src = "../Images/fastForwardGreyLM.png";
                           }
                         }
 
@@ -2454,6 +2486,8 @@
 
         $("#relancer").click(function(){
 
+          document.getElementById("jaugeContainer").style.backgroundColor = "var(--bgColor-jaugeVide)";
+
           document.getElementById("footer").style.boxShadow = "";
           document.getElementById("header").style.boxShadow = "";
 
@@ -2558,8 +2592,12 @@
                 document.getElementById("soundToggleImage").style.opacity = "1";
 
                 if (SoundMuteBool == true) {
-                  document.getElementById("soundToggleImage").src = 'Images/speakerMute.png';
-                  // document.getElementById("soundToggleImage").style.marginLeft = "5px";
+                  if (darkModeBool) {
+                    document.getElementById("soundToggleImage").src = 'Images/speakerMute.png';
+                  }
+                  else {
+                    document.getElementById("soundToggleImage").src = 'Images/speakerMuteLM.png';
+                  }
                 }
                 else {
                   // SoundMuteBool = true;
@@ -2568,14 +2606,13 @@
                   }
                   else {
                     document.getElementById("soundToggleImage").src = 'Images/speakerMax_sourceMax5.png';
-                  }                // document.getElementById("soundToggleImage").style.marginLeft = "3px";
+                  }                
                 }
 
                 // *Speed*
                 document.getElementById("speedToggleImage").style.opacity = "1";
 
                 if (setTimeOutMultiplierBool == true) {
-                  // document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(130,14,39,0.8)";
                   if (darkModeBool == true) {
                     document.getElementById("speedToggleImage").src = 'Images/fastForward_darkMode.png';
                   }
@@ -2584,8 +2621,12 @@
                   }
                 }
                 else {
-                  // document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
-                  document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
+                  if (darkModeBool) {
+                    document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
+                  }
+                  else {
+                    document.getElementById("speedToggleImage").src = 'Images/fastForwardGreyLM.png';
+                  }
                 }
                 //****
 
@@ -2663,7 +2704,12 @@
                     setTimeOutMultiplierBool = false;
                     // document.getElementById("speedButtonContainer").style.backgroundColor = "rgba(25, 39, 95, 0.8)";
                     setTimeOutMultiplier = 0.65;
-                    document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
+                    if (darkModeBool) {
+                      document.getElementById("speedToggleImage").src = 'Images/fastForwardGrey.png';
+                    }
+                    else {
+                      document.getElementById("speedToggleImage").src = 'Images/fastForwardGreyLM.png';
+                    }
                   }
                   else {
                     setTimeOutMultiplierBool = true;
@@ -3197,9 +3243,9 @@
         document.getElementById("boutonMiser").addEventListener("click", function() {
 
           setTimeout(function() {
-            document.getElementById("footer").style.boxShadow = "0px 3px 11vh 5px rgba(128, 128, 128, 0.42)";
-            document.getElementById("header").style.boxShadow = "0px 3px 11vh 5px rgba(128, 128, 128, 0.42)";
-          }, 50)
+            document.getElementById("footer").style.boxShadow = "0px 3px 13vh 5px rgba(128, 128, 128, 0.55)";
+            document.getElementById("header").style.boxShadow = "0px 3px 13vh 5px rgba(128, 128, 128, 0.55)";
+          }, 650)
 
           ingame = true;
 
@@ -3429,8 +3475,7 @@
               success: function(response) {
                 $("#chipsContainer").html(response);
 
-                // TEST vert lors choix
-                // document.getElementById("footer").style.boxShadow = "-0px -3px 11vh 5px rgba(239, 59, 46, 0.6)";
+                // TEST bleu lors choix
                 document.getElementById("footer").style.boxShadow = "-0px -3px 15vh 5px rgba(17, 52, 251, 0.65)";
                 document.getElementById("header").style.boxShadow = "";
 
@@ -3478,6 +3523,8 @@
                 if (document.getElementById("stand") !== null) {
                   document.getElementById("stand").addEventListener("click", function() {
 
+                    document.getElementById("footer").style.boxShadow = "";
+
                     document.querySelector("#hit").disabled = true;
                     document.querySelector("#stand").disabled = true;
                     document.querySelector("#double").disabled = true;
@@ -3510,7 +3557,7 @@
                     setTimeout(function() {
                       setTimeout(function() {
                         document.getElementById("footer").style.boxShadow = "";
-                        document.getElementById("header").style.boxShadow = "0px 3px 11vh 5px rgba(128, 128, 128, 0.42)";
+                        document.getElementById("header").style.boxShadow = "0px 3px 13vh 5px rgba(128, 128, 128, 0.55)";
                       }, 200);
     
                       lancerPhaseCroupier();
@@ -3542,6 +3589,8 @@
                 }
                 else if ((document.getElementById("double") !== null) && (credits-miseLocked > 0)) {
                   document.getElementById("double").addEventListener("click", function() {
+
+                    document.getElementById("footer").style.boxShadow = "";
 
                     document.querySelector("#hit").disabled = true;
                     document.querySelector("#stand").disabled = true;
@@ -3722,8 +3771,7 @@
             success: function(response) {
               ChoixActif = true;
 
-              // TEST vert lors choix
-              // document.getElementById("footer").style.boxShadow = "-0px -3px 11vh 5px rgba(239, 59, 46, 0.6)";
+              // TEST bleu lors choix
               document.getElementById("footer").style.boxShadow = "-0px -3px 15vh 5px rgba(17, 52, 251, 0.65)";
               document.getElementById("header").style.boxShadow = "";
 
@@ -3777,6 +3825,8 @@
 
               document.getElementById("stand").addEventListener("click", function() {
 
+                document.getElementById("footer").style.boxShadow = "";
+
                 document.querySelector("#hit").disabled = true;
                 document.querySelector("#stand").disabled = true;
                 document.querySelector("#double").disabled = true;
@@ -3810,7 +3860,7 @@
 
                   setTimeout(function() {
                     document.getElementById("footer").style.boxShadow = "";
-                    document.getElementById("header").style.boxShadow = "0px 3px 11vh 5px rgba(128, 128, 128, 0.42)";
+                    document.getElementById("header").style.boxShadow = "0px 3px 13vh 5px rgba(128, 128, 128, 0.55)";
                   }, 200);
 
                   lancerPhaseCroupier();
@@ -3842,6 +3892,8 @@
               }
               else if (credits-miseLocked > 0) {
                 document.getElementById("double").addEventListener("click", function() {
+
+                  document.getElementById("footer").style.boxShadow = "";
 
                   document.querySelector("#hit").disabled = true;
                   document.querySelector("#stand").disabled = true;
@@ -3940,7 +3992,7 @@
       function lancerPhaseCroupierAfterBurst() {
 
         document.getElementById("footer").style.boxShadow = "";
-        document.getElementById("header").style.boxShadow = "0px 3px 11vh 5px rgba(128, 128, 128, 0.42)";
+        document.getElementById("header").style.boxShadow = "0px 3px 13vh 5px rgba(128, 128, 128, 0.55)";
 
         addCardCroupierRecursiveAfterBurst();
 
@@ -4108,21 +4160,30 @@
                 resultatCas = 'Wasted';
 
                 setTimeout(function() {
+
+                  // Changements du background jauge et Connexion car ressort pas assez:
+                  document.getElementById("jaugeContainer").style.backgroundColor = "rgb(131, 131, 131)";
+                  // moins marqué: "0 0 black"
+                  document.getElementById("credits").style.textShadow = "1px 1px black";
+                  if (document.getElementById("toggleHandDiv") !== null) {
+                    document.getElementById("toggleHandDiv").style.boxShadow = "0px -1px black";
+                  }
+
                   document.getElementById("footer").style.zIndex = "-1";
                   document.getElementById("header").style.zIndex = "-1";
-                  document.getElementById("footer").style.boxShadow = "0px -3px 42vh 5px rgba(239, 59, 46, 0.9)";
-                  document.getElementById("header").style.boxShadow = "0px 3px 42vh 5px rgba(0, 255, 234, 0.55)";
+                  document.getElementById("footer").style.boxShadow = "0px -3px 42vh 30px rgba(239, 59, 46, 0.9)";
+                  document.getElementById("header").style.boxShadow = "0px 3px 42vh 30px rgba(0, 255, 234, 0.55)";
 
                   var handCroupier = document.getElementById("croupier").childNodes;
                   for (var i=0; i < handCroupier.length; i++) {
                     if (handCroupier[i].nodeName.toLowerCase() == 'img') {
-                      handCroupier[i].style.boxShadow = "0px 0px 20px 1px rgb(0 255 234 / 50%)";
+                      handCroupier[i].style.boxShadow = "0px 0px 20px 3px rgb(0 255 234 / 60%)";
                     }
                   }
                   var handJoueur = document.getElementById("joueur").childNodes;
                   for (var i=0; i < handJoueur.length; i++) {
                     if (handJoueur[i].nodeName.toLowerCase() == 'img') {
-                      handJoueur[i].style.boxShadow = "0px 0px 20px 1px rgb(239 59 46 / 90%)";
+                      handJoueur[i].style.boxShadow = "0px 0px 20px 3px rgb(239 59 46 / 90%)";
                     }
                   }
 
@@ -4258,21 +4319,30 @@
               if (scoreTotalCroupier > 21) {
 
                 setTimeout(function() {
+
+                  // Changements du background jauge et Connexion car ressort pas assez:
+                  document.getElementById("jaugeContainer").style.backgroundColor = "rgb(131, 131, 131)";
+                  // moins marqué: "0 0 black"
+                  document.getElementById("credits").style.textShadow = "1px 1px black";
+                  if (document.getElementById("toggleHandDiv") !== null) {
+                    document.getElementById("toggleHandDiv").style.boxShadow = "0px -1px black";
+                  }
+
                   document.getElementById("footer").style.zIndex = "-1";
                   document.getElementById("header").style.zIndex = "-1";
-                  document.getElementById("footer").style.boxShadow = "0px -3px 42vh 5px rgba(0, 255, 234, 0.55)";
-                  document.getElementById("header").style.boxShadow = "0px 3px 42vh 5px rgba(239, 59, 46, 0.9)";
+                  document.getElementById("footer").style.boxShadow = "0px -3px 42vh 30px rgba(0, 255, 234, 0.55)";
+                  document.getElementById("header").style.boxShadow = "0px 3px 42vh 30px rgba(239, 59, 46, 0.9)";
 
                   var handCroupier = document.getElementById("croupier").childNodes;
                   for (var i=0; i < handCroupier.length; i++) {
                     if (handCroupier[i].nodeName.toLowerCase() == 'img') {
-                      handCroupier[i].style.boxShadow = "0px 0px 20px 1px rgb(239 59 46 / 90%)";
+                      handCroupier[i].style.boxShadow = "0px 0px 20px 3px rgb(239 59 46 / 90%)";
                     }
                   }
                   var handJoueur = document.getElementById("joueur").childNodes;
                   for (var i=0; i < handJoueur.length; i++) {
                     if (handJoueur[i].nodeName.toLowerCase() == 'img') {
-                      handJoueur[i].style.boxShadow = "0px 0px 20px 1px rgb(0 255 234 / 50%)";
+                      handJoueur[i].style.boxShadow = "0px 0px 20px 3px rgb(0 255 234 / 60%)";
                     }
                   }
 
@@ -4410,21 +4480,30 @@
               if (scoreTotalJoueur > scoreTotalCroupier) {
 
                 setTimeout(function() {
+
+                  // Changements du background jauge et Connexion car ressort pas assez:
+                  document.getElementById("jaugeContainer").style.backgroundColor = "rgb(131, 131, 131)";
+                  // moins marqué: "0 0 black"
+                  document.getElementById("credits").style.textShadow = "1px 1px black";
+                  if (document.getElementById("toggleHandDiv") !== null) {
+                    document.getElementById("toggleHandDiv").style.boxShadow = "0px -1px black";
+                  }
+
                   document.getElementById("footer").style.zIndex = "-1";
                   document.getElementById("header").style.zIndex = "-1";
-                  document.getElementById("footer").style.boxShadow = "0px -3px 42vh 5px rgba(0, 255, 234, 0.55)";
-                  document.getElementById("header").style.boxShadow = "0px 3px 42vh 5px rgba(239, 59, 46, 0.9)";
+                  document.getElementById("footer").style.boxShadow = "0px -3px 42vh 30px rgba(0, 255, 234, 0.55)";
+                  document.getElementById("header").style.boxShadow = "0px 3px 42vh 30px rgba(239, 59, 46, 0.9)";
 
                   var handCroupier = document.getElementById("croupier").childNodes;
                   for (var i=0; i < handCroupier.length; i++) {
                     if (handCroupier[i].nodeName.toLowerCase() == 'img') {
-                      handCroupier[i].style.boxShadow = "0px 0px 20px 1px rgb(239 59 46 / 90%)";
+                      handCroupier[i].style.boxShadow = "0px 0px 20px 3px rgb(239 59 46 / 90%)";
                     }
                   }
                   var handJoueur = document.getElementById("joueur").childNodes;
                   for (var i=0; i < handJoueur.length; i++) {
                     if (handJoueur[i].nodeName.toLowerCase() == 'img') {
-                      handJoueur[i].style.boxShadow = "0px 0px 20px 1px rgb(0 255 234 / 50%)";
+                      handJoueur[i].style.boxShadow = "0px 0px 20px 3px rgb(0 255 234 / 60%)";
                     }
                   }
 
@@ -4560,21 +4639,30 @@
                 }
 
                 setTimeout(function() {
+
+                  // Changements du background jauge et Connexion car ressort pas assez:
+                  document.getElementById("jaugeContainer").style.backgroundColor = "rgb(131, 131, 131)";
+                  // moins marqué: "0 0 black"
+                  document.getElementById("credits").style.textShadow = "1px 1px black";
+                  if (document.getElementById("toggleHandDiv") !== null) {
+                    document.getElementById("toggleHandDiv").style.boxShadow = "0px -1px black";
+                  }
+
                   document.getElementById("footer").style.zIndex = "-1";
                   document.getElementById("header").style.zIndex = "-1";
-                  document.getElementById("footer").style.boxShadow = "0px -3px 42vh 5px rgba(164, 167, 0, 0.9)";
-                  document.getElementById("header").style.boxShadow = "0px 3px 42vh 5px rgba(164, 167, 0, 0.9)";
+                  document.getElementById("footer").style.boxShadow = "0px -3px 42vh 30px rgba(164, 167, 0, 0.8)";
+                  document.getElementById("header").style.boxShadow = "0px 3px 42vh 30px rgba(164, 167, 0, 0.8)";
 
                   var handCroupier = document.getElementById("croupier").childNodes;
                   for (var i=0; i < handCroupier.length; i++) {
                     if (handCroupier[i].nodeName.toLowerCase() == 'img') {
-                      handCroupier[i].style.boxShadow = "0px 0px 20px 1px rgb(164 167 0 / 90%)";
+                      handCroupier[i].style.boxShadow = "0px 0px 20px 3px rgb(164 167 0 / 90%)";
                     }
                   }
                   var handJoueur = document.getElementById("joueur").childNodes;
                   for (var i=0; i < handJoueur.length; i++) {
                     if (handJoueur[i].nodeName.toLowerCase() == 'img') {
-                      handJoueur[i].style.boxShadow = "0px 0px 20px 1px rgb(164 167 0 / 90%)";
+                      handJoueur[i].style.boxShadow = "0px 0px 20px 3px rgb(164 167 0 / 90%)";
                     }
                   }
 
@@ -4758,10 +4846,10 @@
             setTimeout(function() {
               document.getElementById("sideBet1Mise").classList.remove("fadeOutMiseEnCour");
               document.getElementById("sideBet1Mise").innerHTML = "<span>" + misePairEnCours + "</span><img src='Images/souBarre.png' class=\"imageSouSideBets\">";
-              document.getElementById("sideBet1Mise").classList.add("fadeInMiseEnCour");
+              document.getElementById("sideBet1Mise").classList.add("fadeInMiseEnCourTest");
             }, 100)
             setTimeout(function() {
-              document.getElementById("sideBet1Mise").classList.remove("fadeInMiseEnCour");
+              document.getElementById("sideBet1Mise").classList.remove("fadeInMiseEnCourTest");
             }, 200);
           }
           else {
@@ -4769,10 +4857,10 @@
             setTimeout(function() {
               document.getElementById("sideBet1Mise").classList.remove("fadeOutMiseEnCour");
               document.getElementById("sideBet1Mise").innerHTML = "<span>" + misePairEnCours + "</span><img src='Images/souBlancBarre.png' class=\"imageSouSideBets\">";
-              document.getElementById("sideBet1Mise").classList.add("fadeInMiseEnCour");
+              document.getElementById("sideBet1Mise").classList.add("fadeInMiseEnCourTest");
             }, 100)
             setTimeout(function() {
-              document.getElementById("sideBet1Mise").classList.remove("fadeInMiseEnCour");
+              document.getElementById("sideBet1Mise").classList.remove("fadeInMiseEnCourTest");
             }, 200);          
           }
         }
@@ -4828,11 +4916,15 @@
         if (toggleSideBet == "pair") {
           // Si tableau vide, mise == 0 (Oui j'ai fait compliqué)
           if (logTokenValuesPair.length == 0) {
+            document.getElementById("sideBet1Mise").style.left = "0px";
+
             // Cyan ressort plus que les autres couleurs (need 0.2 mais pop pas adapté)
             document.getElementById("retourArriereImg").style.opacity = "0.4";
             document.getElementById("eraseImg").style.opacity = "0.4";
           }
           else {
+            document.getElementById("sideBet1Mise").style.left = "11px";
+
             document.getElementById("retourArriereImg").style.opacity = "1";
             document.getElementById("eraseImg").style.opacity = "1";
           }  
@@ -4841,10 +4933,14 @@
         if (toggleSideBet == "21+3") {
           // Si tableau vide, mise == 0 (Oui j'ai fait compliqué)
           if (logTokenValues213.length == 0) {
+            document.getElementById("sideBet2Mise").style.left = "0px";
+
             document.getElementById("retourArriereImg").style.opacity = "0.4";
             document.getElementById("eraseImg").style.opacity = "0.4";
           }
           else {
+            document.getElementById("sideBet2Mise").style.left = "11px";
+
             document.getElementById("retourArriereImg").style.opacity = "1";
             document.getElementById("eraseImg").style.opacity = "1";
           }  
@@ -5874,21 +5970,30 @@
           // checkBurstJoueur();
           if (checkBurstJoueur() == true) {
             setTimeout(function() {
+
+              // Changements du background jauge et Connexion car ressort pas assez:
+              document.getElementById("jaugeContainer").style.backgroundColor = "rgb(131, 131, 131)";
+              // moins marqué: "0 0 black"
+              document.getElementById("credits").style.textShadow = "1px 1px black";
+              if (document.getElementById("toggleHandDiv") !== null) {
+                document.getElementById("toggleHandDiv").style.boxShadow = "0px -1px black";
+              }
+
               document.getElementById("footer").style.zIndex = "-1";
               document.getElementById("header").style.zIndex = "-1";
-              document.getElementById("footer").style.boxShadow = "0px -3px 42vh 5px rgba(239, 59, 46, 0.9)";
-              document.getElementById("header").style.boxShadow = "0px 3px 42vh 5px rgba(0, 255, 234, 0.55)";
+              document.getElementById("footer").style.boxShadow = "0px -3px 42vh 30px rgba(239, 59, 46, 0.9)";
+              document.getElementById("header").style.boxShadow = "0px 3px 42vh 30px rgba(0, 255, 234, 0.55)";
 
               var handCroupier = document.getElementById("croupier").childNodes;
               for (var i=0; i < handCroupier.length; i++) {
                 if (handCroupier[i].nodeName.toLowerCase() == 'img') {
-                  handCroupier[i].style.boxShadow = "0px 0px 20px 1px rgba(0, 255, 234, 0.55)";
+                  handCroupier[i].style.boxShadow = "0px 0px 20px 3px rgba(0, 255, 234, 0.60)";
                 }
               }
               var handJoueur = document.getElementById("joueur").childNodes;
               for (var i=0; i < handJoueur.length; i++) {
                 if (handJoueur[i].nodeName.toLowerCase() == 'img') {
-                  handJoueur[i].style.boxShadow = "0px 0px 20px 1px rgba(239, 59, 46, 0.9)";
+                  handJoueur[i].style.boxShadow = "0px 0px 20px 3px rgba(239, 59, 46, 0.9)";
                 }
               }
 
@@ -5917,7 +6022,7 @@
               setTimeout(function() {
                 setTimeout(function() {
                   document.getElementById("footer").style.boxShadow = "";
-                  document.getElementById("header").style.boxShadow = "0px 3px 11vh 5px rgba(128, 128, 128, 0.50)";
+                  document.getElementById("header").style.boxShadow = "0px 3px 13vh 5px rgba(128, 128, 128, 0.55)";
                 }, 150);
 
                 lancerPhaseCroupier(); 
@@ -5928,22 +6033,31 @@
           // Check BJ
           if (checkBJjoueur() == true) {
             setTimeout(function() {
+
+              // Changements du background jauge et Connexion car ressort pas assez:
+              document.getElementById("jaugeContainer").style.backgroundColor = "rgb(131, 131, 131)";
+              // moins marqué: "0 0 black"
+              document.getElementById("credits").style.textShadow = "1px 1px black";
+              if (document.getElementById("toggleHandDiv") !== null) {
+                document.getElementById("toggleHandDiv").style.boxShadow = "0px -1px black";
+              }
+
               document.getElementById("footer").style.zIndex = "-1";
               document.getElementById("header").style.zIndex = "-1";
-              document.getElementById("footer").style.boxShadow = "0px -3px 42vh 5px rgba(255, 55, 250, 0.9)";
-              document.getElementById("header").style.boxShadow = "0px 3px 48vh 5px rgba(239, 59, 46, 0.9)";  
+              document.getElementById("footer").style.boxShadow = "0px -3px 42vh 30px rgba(255, 55, 250, 0.9)";
+              document.getElementById("header").style.boxShadow = "0px 3px 42vh 30px rgba(239, 59, 46, 0.9)";  
 
               
               var handCroupier = document.getElementById("croupier").childNodes;
               for (var i=0; i < handCroupier.length; i++) {
                 if (handCroupier[i].nodeName.toLowerCase() == 'img') {
-                  handCroupier[i].style.boxShadow = "0px 0px 20px 1px rgba(239, 59, 46, 0.9)";
+                  handCroupier[i].style.boxShadow = "0px 0px 20px 3px rgba(239, 59, 46, 0.9)";
                 }
               }
               var handJoueur = document.getElementById("joueur").childNodes;
               for (var i=0; i < handJoueur.length; i++) {
                 if (handJoueur[i].nodeName.toLowerCase() == 'img') {
-                  handJoueur[i].style.boxShadow = "0px 0px 20px 1px rgba(255, 55, 250, 0.9)";
+                  handJoueur[i].style.boxShadow = "0px 0px 20px 3px rgba(255, 55, 250, 0.9)";
                 }
               }
             }, 1650)
@@ -6519,7 +6633,7 @@
         else if ((scoreTotalJoueur < 21) && (doubleBool==1)) {
 
           document.getElementById("footer").style.boxShadow = "";
-          document.getElementById("header").style.boxShadow = "0px 3px 11vh 5px rgba(128, 128, 128, 0.50)";
+          document.getElementById("header").style.boxShadow = "0px 3px 13vh 30px rgba(128, 128, 128, 0.55)";
 
           lancerPhaseCroupier();
           return false;
