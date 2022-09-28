@@ -623,6 +623,7 @@
           break;
         }
 
+        
         setTimeout(function() {
           // Autre que perdu, proc que si miseBet présente:
           if ((pairBet != "Lost") && (misePairLocked > 0)) {
@@ -639,6 +640,10 @@
             // Si lost, color orange (DM/LM à mettre)
             document.getElementById("misePairLocked").style.color = "rgba(239, 59, 46, 0.75)";
           }  
+          // Proc None :/
+          else if ((misePairLocked == 0) && (pairBet != "Lost")) {
+            document.getElementById("misePairLockedNbrNone").innerHTML = "None &nbsp;<span style='font-size:1.3rem; color:rgba(0, 255, 234, 0.8);'>:/</span>";
+          }
         }, 1000)      
 
         return gainPairBet;
@@ -792,6 +797,11 @@
               // Si lost, color orange (DM/LM à mettre)
               document.getElementById("mise213Locked").style.color = "rgba(239, 59, 46, 0.75)";
           }
+          // Proc None :/
+          else if ((mise213Locked == 0) && (bet213 != "Lost")) {
+            document.getElementById("mise213LockedNbrNone").innerHTML = "None &nbsp;<span style='font-size:1.3rem; color:rgba(255, 55, 250, 1);'>:/</span>";
+          }
+
             
           // Si les 2 bets actif, position du 21+3
           if ((misePairLocked > 0) && (mise213Locked > 0)) {
@@ -3394,6 +3404,7 @@
           }
           // Fin
        
+
 
 
 
