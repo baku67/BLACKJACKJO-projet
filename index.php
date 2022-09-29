@@ -11,9 +11,10 @@
 		<link rel="icon" href="Images/favicon3.png">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
 		<meta charset="UTF-8">
-		<meta name="description" content="Application de BlackJack en ligne">
+		<meta name="theme-color" content="rgba(17, 19, 31, 0.8)">
+		<meta name="description" content="BlackJack en ligne sans argent réel">
 		<meta name="author" content="Basile Kuntz">
-		<meta name="keywords" content="Blackjack, Casino, Jeu">
+		<meta name="keywords" content="blackjack, casino, jeu, gratuit, cartes, croupier, carte">
 		<link rel="stylesheet" href="Styles/style.css" id="stylesheet_1">
 		<link rel="stylesheet" href="Styles/MediaQueries1.css" id="stylesheet_3">
 		<link rel="stylesheet" href="Styles/MediaQueries2.css" id="stylesheet_4">

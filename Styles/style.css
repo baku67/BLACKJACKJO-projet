@@ -568,7 +568,8 @@ input:-webkit-autofill{
 	left: 50%;
 	transform: translateX(-50%);
 
-	width: 240px;
+	/* width: 240px; */
+	width: 80%;
 	height: 75px;
 
 	/* border-width: 3px 3px 7px 3px; */
@@ -593,6 +594,9 @@ input:-webkit-autofill{
 
 #previousBetsTitle {
 	/* font-weight: bold; */
+	position: relative;
+	left: 8%;
+
 	font-style: italic;
 	letter-spacing: 2px;
 	font-size:1.4em; 
@@ -604,6 +608,8 @@ input:-webkit-autofill{
 	font-size:1.3em; 
 	font-family: "Holtwood One SC", serif;
 	margin-top: 2px;
+	position: relative;
+	left: 12%;
 }
 
 #previousMiseNormale {
@@ -651,11 +657,13 @@ input:-webkit-autofill{
 	} */
 	50% {
 		opacity: 1;
+		background: radial-gradient(circle, rgba(148, 255, 246, 0.2) 0%, rgba(189,189,189,0) 90%);
 		color: rgba(148, 255, 246, 0.9);
 		border-color: rgba(148, 255, 246, 0.9);
 	}
 	100% {
 		opacity: 0.6;
+		background: radial-gradient(circle, rgba(239,59,46,0.3) 0%, rgba(189,189,189,0) 90%);
 		border-color: rgb(239, 59, 46);
 		color: rgba(251, 168, 162, 0.9);
 	}
@@ -669,7 +677,66 @@ input:-webkit-autofill{
 	}
 }
 
+#flechePreviousBets {
+	position: absolute;
+	/* left: -14%; */
+	left: 1%;
+	top: 12%;
+	opacity: 0.20;
+	height: 55px;
+	width: 65px;
+	content: url("../Images/arrowPreviousVignette.png");
+	filter: blur(0px);
+}
+.flechePreviousAnim {
+	animation: flechePreviousAnim 0.55s forwards ease-in-out;
+}
+@keyframes flechePreviousAnim {
+	0% {
+		left: -14%;
+		opacity: 0.20;
+		filter: blur(0px);
+	}
+	50% {
+		/* left: 60%; */
+		opacity: 0.5;
+		/* filter: blur(1px); */
+	}
+	100% {
+		opacity: 0.1;
+		left: 180%;
+		filter: blur(3px);
+	}
+}
 
+
+#assuranceDiv {
+	position: absolute;
+	/* transform: translateY(-120px); */
+	top: 75%;
+	transform: translateY(-75%);
+	right: 5%;
+
+	/* border: 3px solid rgba(0, 255, 234, 0.2); */
+	border-radius: 13px;
+}
+#assuranceImg {
+	/* width: 100px;
+	height: 100px; */
+	width: 82px;
+	height: 82px;
+	padding: 0px 15px;
+	content: url("../Images/assurance3.png");
+}
+#assuranceMise {
+	position: relative;
+	bottom: 5px;
+	font-size: 1.2em;
+	font-family: "Holtwood One SC", serif;
+	letter-spacing: 1px;
+ 
+	transition: all 0.5s;
+}
 
 
 #credits {
@@ -2692,7 +2759,8 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	font-weight: bold;
 	font-family:' Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
 	position: fixed;  
-	top: 47%; 
+	/* top: 47%;  */
+	top: 48.5%;
 	-ms-transform: translateY(-50%); 
 	transform: translateY(-50%); 
 	left: 50%; 
@@ -2767,7 +2835,8 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 
 #traitUnderlineInverseChoix {
 	position: fixed;  
-	top: 52%; 
+	/* top: 52%;  */
+	top: 53%;
 	-ms-transform: translateY(-50%); 
 	transform: translateY(-50%); 
 	left: 50%; 
@@ -3460,6 +3529,11 @@ figure:active {
 	top: 48%;
     left: 0;
     right: 0;
+
+	/* height: 0px;
+	width: 2%; */
+
+	transition: opacity 0.5s;
 }
 
 .separateurContainerWidthAnim {
@@ -3475,7 +3549,7 @@ figure:active {
 		height: 0px;
 	}
 	to {
-		filter: blur(0px);
+		filter: blur(5px);
 		height: 135px;
 	}
 }
@@ -4552,7 +4626,7 @@ p {
 	width: 150px; 
 	margin: 5px 8px; 
 	border: 4px solid rgba(252, 227, 3, 0.8); 
-	border-radius: 13px;
+	border-radius: 9px;
 	transition-property: font-size;
 	transition-duration: 0.3s;
 
@@ -4570,7 +4644,7 @@ p {
 	width: 150px; 
 	margin: 5px 8px; 
 	border: 4px solid rgba(44, 252, 3, 0.7); 
-	border-radius: 13px;
+	border-radius: 9px;
 
 	
 
@@ -4594,7 +4668,7 @@ p {
 	width: 150px; 
 	margin: 5px 8px; 
 	border: 4px solid rgba(252, 0, 0, 1); 
-	border-radius: 13px;
+	border-radius: 9px;
 	transition-property: font-size;
 	transition-duration: 0.3s;
 

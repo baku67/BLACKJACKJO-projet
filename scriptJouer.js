@@ -87,6 +87,7 @@
 
       var asJoueur = new Boolean;
       var asCroupier = new Boolean;
+      var asCroupier2 = false;
       
       var ChoixActif = false;
 
@@ -1855,11 +1856,19 @@
         // if ((PreviousMiseNormale !== 0) && (consecutivBets == true)) {
           if (PreviousMiseNormale !== 0) {
             setTimeout(function() {
+
               const previousBetsDiv = document.createElement("div");
               previousBetsDiv.setAttribute("id", "previousBetsDiv");
               previousBetsDiv.innerHTML = 
               "<p id='previousBetsTitle'>- Previous Bet -</p><p id='previousBetsLine'><span id='previousMiseNormale'>" + PreviousMiseNormale + "</span>&nbsp; <span id='firstSlash'>/</span> &nbsp;<span id='previousMisePair'>" + PreviousMisePair + "</span>&nbsp;<span id='secondSlash'>|</span>&nbsp;<span id='previousMise213'>" + PreviousMise213 +"</span></p>";
-              document.getElementById("sideBetDiv").append(previousBetsDiv);  
+              
+              const flechePreviousBets = document.createElement("img");
+              flechePreviousBets.setAttribute("id", "flechePreviousBets");
+
+              previousBetsDiv.prepend(flechePreviousBets);
+              document.getElementById("sideBetDiv").append(previousBetsDiv); 
+
+
               if (PreviousMisePair == 0) {
                 document.getElementById("previousMisePair").style.color = "grey";
                 document.getElementById("previousMisePair").style.opacity = "0.7";
@@ -1873,12 +1882,13 @@
                 miseEnCours = PreviousMiseNormale;
                 misePairEnCours = PreviousMisePair;
                 mise213EnCours = PreviousMise213;
+                document.getElementById("flechePreviousBets").classList.add("flechePreviousAnim");
                 document.getElementById("previousBetsDiv").classList.add("previousBoutonClick");
                 document.getElementById("previousBetsTitle").classList.add("previousBoutonClick");
 
                 setTimeout(function() {
                   miseLock();
-                }, 450)
+                }, 550)
               })
             }, 750)
         }
@@ -2306,6 +2316,8 @@
                         darkModeBool = true;
                         this.dataset.mode = "light";
 
+                        document.querySelector('meta[name="theme-color"]').setAttribute("content", "#11131f");
+
                         if (isCollapsed == true) {
                           document.getElementById("arrowPng").setAttribute("src", "Images/arrowUpWhitePng_darkMode.png");
                         }
@@ -2365,6 +2377,8 @@
 
                         darkModeBool = false;
                         this.dataset.mode = "dark";
+
+                        document.querySelector('meta[name="theme-color"]').setAttribute("content", "#ffffff");
 
                         if (isCollapsed == true) {
                           document.getElementById("arrowPng").setAttribute("src", "Images/arrowUpWhitePng.png");
@@ -2542,6 +2556,31 @@
 
         $("#relancer").click(function(){
 
+          asCroupier = false;
+          asCroupier2 = false;
+
+          // *** Fadeout
+          document.getElementById("separateur").style.boxShadow = "";
+          document.getElementById("scoreCroupier").classList.add("fadeOut2");
+          document.getElementById("scoreJoueur").classList.add("fadeOut2");
+          var handCroupier = document.getElementById("croupier").childNodes;
+          for (var i=0; i < handCroupier.length; i++) {
+            if (handCroupier[i].nodeName.toLowerCase() == 'img') {
+              handCroupier[i].style.boxShadow = "";
+            }
+          }
+          var handJoueur = document.getElementById("joueur").childNodes;
+          for (var i=0; i < handJoueur.length; i++) {
+            if (handJoueur[i].nodeName.toLowerCase() == 'img') {
+              handJoueur[i].style.boxShadow = "";
+            }
+          }
+          document.getElementById("footerResultatContainer").classList.add("fadeOutFinDePartie");
+          document.getElementById("separateur").style.opacity = 0;
+          document.getElementById("scoreCroupier").classList.add("fadeOutFinDePartie"); // !important
+          document.getElementById("scoreJoueur").classList.add("fadeOutFinDePartie");
+          // ***Fin fadeout
+
           PreviousMiseNormale = miseEnCours;
           PreviousMisePair = misePairEnCours;
           PreviousMise213 = mise213EnCours;
@@ -2550,7 +2589,7 @@
           var imgElemArray = document.querySelectorAll('.imgPartie');
           imgElemArray.forEach(element => {
             element.style.margin = "0 -7.6em 0 0.4em";
-            element.style.transform = "rotate(0deg) translateX(-63px)";
+            element.style.transform = "rotate(0deg) translateX(-56px)";
             element.style.bottom = "0px";
           });
           setTimeout(function() {
@@ -2558,7 +2597,6 @@
               element.classList.add('allCardsFadeOutSlide');
             });
           }, 450)
-
 
           document.getElementById("jaugeContainer").style.backgroundColor = "var(--bgColor-jaugeVide)";
 
@@ -2570,14 +2608,6 @@
             document.getElementById("toggleHandDiv").innerHTML = "";
             document.getElementById("toggleHandDiv").style.border = "0px solid red";
           }
-
-          // FadeOut/Anims
-          document.getElementById("footerResultatContainer").classList.add("fadeOutFinDePartie");
-          document.getElementById("separateur").classList.add("fadeOutFinDePartie");
-          document.getElementById("croupier").classList.add("fadeOutFinDePartie");
-          document.getElementById("scoreCroupier").classList.add("fadeOutFinDePartie"); // !important
-          document.getElementById("joueur").classList.add("fadeOutFinDePartie");
-          document.getElementById("scoreJoueur").classList.add("fadeOutFinDePartie");
 
           firstProc = false;
 
@@ -2826,6 +2856,8 @@
                     this.dataset.mode = "light";
                     darkModeBool = true;
 
+                    document.querySelector('meta[name="theme-color"]').setAttribute("content", "#11131f");
+
                     if (isCollapsed == true) {
                       document.getElementById("arrowPng").setAttribute("src", "Images/arrowUpWhitePng_darkMode.png");
                     }
@@ -2864,6 +2896,8 @@
                     this.dataset.mode = "dark";
                     darkModeBool = false;
                     console.log("darkModeBool: " + darkModeBool);
+
+                    document.querySelector('meta[name="theme-color"]').setAttribute("content", "#ffffff");
 
                     if (isCollapsed == true) {
                       document.getElementById("arrowPng").setAttribute("src", "Images/arrowUpWhitePng.png");
@@ -3568,7 +3602,46 @@
               success: function(response) {
                 $("#chipsContainer").html(response);
 
-                // TEST bleu lors choix
+                // Assurance:
+                if (asCroupier2 == true) {
+                  const assuranceDiv = document.createElement("div");
+                  assuranceDiv.setAttribute("id", "assuranceDiv");
+                  const assuranceImg = document.createElement("img");
+                  assuranceImg.setAttribute("id", "assuranceImg");
+                  const assuranceMise = document.createElement("p");
+                  assuranceMise.setAttribute("id", "assuranceMise");
+                  assuranceMise.innerHTML = "TEST";
+                  assuranceDiv.append(assuranceImg);
+                  assuranceDiv.append(assuranceMise);
+
+                  document.getElementById("hitStandDoubleContainer").append(assuranceDiv);
+
+                  document.getElementById("assuranceMise").innerHTML = Math.ceil(miseLocked/2);
+
+                  // Envoi de la moitié de la miseNormal BDD
+                  document.getElementById("assuranceDiv").addEventListener("click", function() {
+
+                    document.getElementById("assuranceMise").style.color = "#2E5FFF";
+                    document.getElementById("assuranceMise").innerHTML = "&#10003;";
+
+                    var assuranceToPhp = {};
+                    assuranceToPhp.value = (miseLocked/2);
+
+                    $.ajax({
+                      url: "setMises.php",
+                      method: "post",
+                      data: assuranceToPhp,
+                      success: function(res) {
+                        console.log("Assurance ENVOYEE");
+                      }
+                    });
+
+                  })
+
+                }
+
+
+                // FooterShadow bleu lors choix
                 document.getElementById("footer").style.boxShadow = "-0px -3px 15vh 5px rgba(17, 52, 251, 0.65)";
                 document.getElementById("header").style.boxShadow = "";
 
@@ -3946,7 +4019,7 @@
                       document.getElementById("footer").style.boxShadow = "";
                       document.getElementById("header").style.boxShadow = "0px 3px 13vh 5px rgba(128, 128, 128, 0.55)";
                     }, 200);
-
+                    document.getElementById("scoreJoueur").innerHTML = (scoreTotalJoueur + 10);
                     lancerPhaseCroupier();
                   }
                   document.getElementById('scoreJoueur').innerHTML = (scoreTotalJoueur);
@@ -5402,6 +5475,7 @@
 
         if (pickedCardObject.cardValue == 1) {
           asCroupier = true;
+          asCroupier2 = true;
         }
 
 
@@ -5620,7 +5694,7 @@
               // ici Le check21horsBJ() est exécuté (appelé plus bas, conditions similaires)
             }
             else if ((scoreTotalJoueur + 10) < 21) {
-              document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur + "&nbsp;&nbsp;/&nbsp;&nbsp;" + (scoreTotalJoueur + 10);
+              document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur + "&nbsp/&nbsp;" + (scoreTotalJoueur + 10);
               // et scoreJoueur (la variable) = scoreJoueur + 10 ??
               scoreJoueur += 10;
             }
