@@ -631,6 +631,8 @@ input:-webkit-autofill{
 	color: rgba(251, 168, 162, 0.9);
 }
 #secondSlash {
+	position: relative;
+	bottom: 2px;
 	/* font-size:0.9em;  */
 	font-size: 1em;
 	/* font-weight: 100 !important; */

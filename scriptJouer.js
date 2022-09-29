@@ -3290,6 +3290,14 @@
 
         setTimeout(function() {
           addCardJoueur();
+          // (test: pb de 10/20 qui perd contre un 17 croupier (avec 1as), et affichage toujours 10/20)
+          if (asJoueur == true) {
+            if (scoreTotalJoueur + 10 < 22) {
+              scoreTotalJoueur = scoreTotalJoueur + 10;
+            }
+            document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;
+          }
+
         }, 1000);
 
       }
@@ -3714,12 +3722,13 @@
                     
                     // Si AS parmis les 2 premieres cartes distribuées: (on est dans miseLock() )
                     // Le pb c'est qu'ici le scoreTotal est deja +10 lors du pop (si parmi les 2 preieres card, j'ai test et si l'as est la troisieme cartes, ca stand bien avec le footerDistrib)
-                    // if (asJoueur == true) {
-                    //   if (scoreTotalJoueur + 10 < 22) {
-                    //     scoreTotalJoueur = scoreTotalJoueur + 10;
-                    //   }
-                    //   document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;
-                    // }
+                    if (asJoueur == true) {
+                      if (scoreTotalJoueur + 10 < 22) {
+                        scoreTotalJoueur = scoreTotalJoueur + 10;
+                      }
+                      document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;
+                    }
+
                     animsBouton("stand");
                     setTimeout(function() {
                       setTimeout(function() {
@@ -4893,11 +4902,13 @@
                       document.getElementById("mise213Resultat").innerHTML = "<span id='mise213ResultatTxt'>" + mise213Locked + '</span><img src="Images/souBlancBarre.png" class="imageSouSideBets">';
                     }
 
+                    
                     removeSideBetsFooter();
 
                     setTimeout( function() {
 
-                      gain = 0;
+                      gainFront = miseLocked;
+                      gain = miseLocked;
                       gainHistorique = 0;
                       ajoutGain(gain);
                       ingame = false;
@@ -5647,7 +5658,6 @@
 
 
 
-
       // NOUVELLE CARTE  > JOUEUR (+ScoreTOTAL)
       function addCardJoueur() {
 
@@ -5680,6 +5690,9 @@
           void elementScore.offsetWidth;
           elementScore.classList.add("scores");
 
+
+        // PB quand jai un AS parmis les 2 premieres et que j'obtioent un 21 avec la 3eme card, ca stand pas (si AS = 3eme cards, tout marche je crois)
+        // VOIR aussi le check21noBj
 
           //WIP AS 
           if (asJoueur == true) {
@@ -6265,7 +6278,7 @@
                   handJoueur[i].style.boxShadow = "0px 0px 20px 3px rgba(255, 55, 250, 0.9)";
                 }
               }
-            }, 1650)
+            }, 1600)
           }
   
         }, 470);
@@ -6635,8 +6648,12 @@
           //   "Crédits après refresh: " + (credits + gainFront + gainPairBet + gain213Bet) + "."
           // );
 
-          if ((WinLose == "WIN") || (WinLose == "BJ")) {
+          if ((WinLose == "WIN") || (WinLose == "BJ") ) {
             document.getElementById("creditsConnected").classList.add("refreshCreditAnim");
+            document.getElementById("creditsConnected").innerHTML = (credits + gainFront + gainPairBet + gain213Bet);
+          }
+          else if (WinLose == "PUSH") {
+            // Refresh credit front sans anim
             document.getElementById("creditsConnected").innerHTML = (credits + gainFront + gainPairBet + gain213Bet);
           }
           else {
@@ -6684,6 +6701,10 @@
             document.getElementById("credits").innerHTML = "<i class='fa-solid fa-star'></i> Invité &nbsp;&nbsp;<span id=\"creditsInvite\">" + (credits + gainFront + gainPairBet + gain213Bet) + "</span>" + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
             document.getElementById("creditsInvite").classList.add("refreshCreditAnimInvite");
           } 
+          else if (WinLose == "PUSH") {
+            // Refresh credit front sans anim
+            document.getElementById("creditsConnected").innerHTML = (credits + gainFront + gainPairBet + gain213Bet);
+          }
           else {
             // Refresh Credits front meme si lose, si il ya des gain SideBets:
             if ((gainPairBet > 0) || (gain213Bet > 0)) {
