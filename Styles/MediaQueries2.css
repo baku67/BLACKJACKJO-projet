@@ -1,5 +1,140 @@
 @media screen and (max-width:480px) and (min-width:341px) {
 	
+	#traitTitleSlide { 
+		width: 470px !important;
+	}
+	.jaugeContainer {
+		bottom: 7px;
+		width: 50%;
+		height: 6px;
+	}
+
+	#imgStreak {
+		left: 21%; 
+		top: 20%; 
+		width: 25px;	
+	}
+	#streakNumber {
+		left: 24%; 
+		top: 21.5%; 
+	}
+	#header {
+		/*  A la base il n'y avait pas de height  */
+		height: 32vh;
+	}
+
+	#cardAnim {
+		left: 2.2%;
+		width: 6em !important;
+		bottom: 44.3%;
+	}
+
+
+
+
+
+	.w3-modal{z-index:3;display:none;position:fixed;left:0;top:0;width: 100% !important;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.4);
+		display: block;
+		position: absolute;
+		margin: 0;
+		padding-top: 20%;
+	}
+	
+	#phaseMiserAlert {
+		font-size: 4.5em;
+	}
+
+
+	
+
+	#traitUnderlineInverse {
+		position: fixed;  
+		top: 52%; 
+		-ms-transform: translateY(-50%); 
+		transform: translateY(-50%); 
+		left: 50%; 
+		-ms-transform: translateX(-50%); 
+		transform: translateX(-50%);
+	
+	
+		height: 5px;
+		background-color: var(--color-miserAlert);
+		width: 22%;
+		/*  Mettre plutot une valeur dure correspondant à la longueur de l'alert (qui bouge pas?)  */
+		/* width: 6%; */
+		border-radius: 1px;
+	
+		opacity: 0;
+		animation: traitUnderlineSlide 0.6s 0.65s forwards ease-out, traitUnderlineSlideLent 1.2s 1.25s forwards linear;
+	}
+	@keyframes traitUnderlineSlide {
+		from {
+			opacity: 0;
+			filter: blur(3px);
+			left: 105%;
+		}
+		to {
+			opacity: 1;
+			filter: blur(0px);
+			left: 52%;
+		}
+	}
+	@keyframes traitUnderlineSlideLent {
+		from {
+			left: 52%;
+		}
+		to {
+			left: 50%;
+		}
+	}
+
+	#traitUnderlineInverseChoix {
+		position: fixed;  
+		/* top: 52%;  */
+		top: 53%;
+		-ms-transform: translateY(-50%); 
+		transform: translateY(-50%); 
+		left: 50%; 
+		-ms-transform: translateX(-50%); 
+		transform: translateX(-50%);
+	
+	
+		height: 5px;
+		background-color: var(--color-miserAlert);
+		width: 22%;
+		border-radius: 1px;
+	
+		opacity: 0;
+		/* animation à ajouter via une classe car anim pas native */
+		/* animation: traitUnderlineSlideChoix 0.6s 0.65s forwards ease-out, traitUnderlineSlideLentChoix 2s 1.25s forwards linear; */
+	}
+	.traitUnderlineInverseChoix1 {
+		animation: traitUnderlineSlideChoix 0.6s forwards ease-out, traitUnderlineSlideLentChoix 1.2s 0.60s forwards linear;
+	}
+	@keyframes traitUnderlineSlideChoix {
+		from {
+			opacity: 0;
+			filter: blur(3px);
+			left: 105%;
+		}
+		to {
+			opacity: 1;
+			filter: blur(0px);
+			left: 52%;
+		}
+	}
+	@keyframes traitUnderlineSlideLentChoix {
+		from {
+			left: 52%;
+		}
+		to {
+			left: 50%;
+		}
+	}
+	
+	
+
+
 
 	/* .topLineDiv {
 		text-align:center;

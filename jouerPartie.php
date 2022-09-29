@@ -13,7 +13,7 @@
 </div>
 
  <!-- WIP CARTE DE DISTRIBUTION (animation CSS) -->
-<img id="cardAnim" class="imgPartie">
+<img id="cardAnim" class="imgPartie fadeIn2" style="opacity:0;">
 
 <div id="parametresPartieDiv" style="text-align:center; visiblity: visible">
     <p style="position:relative; width:100%; font-size:1.35em; opacity:0.4;">Mise max</p>

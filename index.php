@@ -353,7 +353,7 @@
 				
 				<div id="classementDiv">
 
-					<h3 id="classementTitle" style="font-size:1.3em; color:rgb(223, 204, 204);">Classement</h3>
+					<h3 id="classementTitle">Classement</h3>
 
 					<div id="traitBlancClassement"></div>
 
