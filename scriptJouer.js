@@ -1888,7 +1888,7 @@
 
                 setTimeout(function() {
                   miseLock();
-                }, 550)
+                }, 500)
               })
             }, 750)
         }

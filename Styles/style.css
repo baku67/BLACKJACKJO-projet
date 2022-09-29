@@ -689,11 +689,11 @@ input:-webkit-autofill{
 	filter: blur(0px);
 }
 .flechePreviousAnim {
-	animation: flechePreviousAnim 0.55s forwards ease-in-out;
+	animation: flechePreviousAnim 0.35s forwards ease-in-out;
 }
 @keyframes flechePreviousAnim {
 	0% {
-		left: -14%;
+		left: -1%;
 		opacity: 0.20;
 		filter: blur(0px);
 	}
@@ -704,7 +704,7 @@ input:-webkit-autofill{
 	}
 	100% {
 		opacity: 0.1;
-		left: 180%;
+		left: 100%;
 		filter: blur(3px);
 	}
 }
@@ -1984,7 +1984,7 @@ button, input[type="submit"], input[type="reset"] {
 	overflow: hidden;
 
 	position: relative;
-	bottom: -20px;
+	/* bottom: -20px; */
 
 	/* width: 50%; */
 	/* height: 6px; */
@@ -2021,7 +2021,7 @@ button, input[type="submit"], input[type="reset"] {
 	position: absolute;
 	left: 42%; 
 	/* top: 18.5%;  */
-	top: 34vh;
+	top: 36vh;
 
 
 	font-size: 1.5em;
@@ -3157,7 +3157,7 @@ p {
 
 	position: relative;
 	top: 47px;
-	font-size: 3em;
+	font-size: 2.5em;
 	background-color: #415657;
 	z-index: 1;
 }
@@ -3168,8 +3168,8 @@ p {
 
 
 	/* bottom: 485px; */
-	bottom: 529px;
-	font-size: 3em;
+	bottom: 578px;
+	font-size: 2.5em;
 	background-color: #415657;
 	z-index: 1;
 
@@ -3397,7 +3397,7 @@ p {
 }
 #croupier {
 	/* A MODIFIE DANS MEDIAQUERIES (Height-responsive) */
-	margin-top: -11px;
+	margin-top: 42px;
 	/* FIN */
 
 	height: 169.05px;
@@ -3405,7 +3405,7 @@ p {
 #joueur {
 	height: 217.05px;
 	position: fixed;
-	bottom: 300px;
+	bottom: 340px;
 	display: flex;
 
 	left: 50%;
