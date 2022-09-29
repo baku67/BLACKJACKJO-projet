@@ -3713,12 +3713,13 @@
   
                     
                     // Si AS parmis les 2 premieres cartes distribuées: (on est dans miseLock() )
-                    if (asJoueur == true) {
-                      if (scoreTotalJoueur + 10 < 22) {
-                        scoreTotalJoueur = scoreTotalJoueur + 10;
-                      }
-                      document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;
-                    }
+                    // Le pb c'est qu'ici le scoreTotal est deja +10 lors du pop (si parmi les 2 preieres card, j'ai test et si l'as est la troisieme cartes, ca stand bien avec le footerDistrib)
+                    // if (asJoueur == true) {
+                    //   if (scoreTotalJoueur + 10 < 22) {
+                    //     scoreTotalJoueur = scoreTotalJoueur + 10;
+                    //   }
+                    //   document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;
+                    // }
                     animsBouton("stand");
                     setTimeout(function() {
                       setTimeout(function() {

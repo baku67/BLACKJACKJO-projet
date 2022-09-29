@@ -422,6 +422,114 @@
       cardName: "as",
       cardOrdre: 14
     },
+    C1a = {
+      cardImageURL: "cartes\\AS.png",
+      cardValue: 1,
+      cardValue2: 10,
+      cardFamily: "spade",
+      cardColor: "black",
+      cardName: "as",
+      cardOrdre: 14
+    },
+    C1b = {
+      cardImageURL: "cartes\\AD.png",
+      cardValue: 1,
+      cardValue2: 10,
+      cardFamily: "diamond",
+      cardColor: "red",
+      cardName: "as",
+      cardOrdre: 14
+    },
+    C1c = {
+      cardImageURL: "cartes\\AC.png",
+      cardValue: 1,
+      cardValue2: 10,
+      cardFamily: "club",
+      cardColor: "black",
+      cardName: "as",
+      cardOrdre: 14
+    },
+    C1d = {
+      cardImageURL: "cartes\\AH.png",
+      cardValue: 1,
+      cardValue2: 10,
+      cardFamily: "heart",
+      cardColor: "red",
+      cardName: "as",
+      cardOrdre: 14
+    },
+    C1a = {
+      cardImageURL: "cartes\\AS.png",
+      cardValue: 1,
+      cardValue2: 10,
+      cardFamily: "spade",
+      cardColor: "black",
+      cardName: "as",
+      cardOrdre: 14
+    },
+    C1b = {
+      cardImageURL: "cartes\\AD.png",
+      cardValue: 1,
+      cardValue2: 10,
+      cardFamily: "diamond",
+      cardColor: "red",
+      cardName: "as",
+      cardOrdre: 14
+    },
+    C1c = {
+      cardImageURL: "cartes\\AC.png",
+      cardValue: 1,
+      cardValue2: 10,
+      cardFamily: "club",
+      cardColor: "black",
+      cardName: "as",
+      cardOrdre: 14
+    },
+    C1d = {
+      cardImageURL: "cartes\\AH.png",
+      cardValue: 1,
+      cardValue2: 10,
+      cardFamily: "heart",
+      cardColor: "red",
+      cardName: "as",
+      cardOrdre: 14
+    },
+    C1a = {
+      cardImageURL: "cartes\\AS.png",
+      cardValue: 1,
+      cardValue2: 10,
+      cardFamily: "spade",
+      cardColor: "black",
+      cardName: "as",
+      cardOrdre: 14
+    },
+    C1b = {
+      cardImageURL: "cartes\\AD.png",
+      cardValue: 1,
+      cardValue2: 10,
+      cardFamily: "diamond",
+      cardColor: "red",
+      cardName: "as",
+      cardOrdre: 14
+    },
+    C1c = {
+      cardImageURL: "cartes\\AC.png",
+      cardValue: 1,
+      cardValue2: 10,
+      cardFamily: "club",
+      cardColor: "black",
+      cardName: "as",
+      cardOrdre: 14
+    },
+    C1d = {
+      cardImageURL: "cartes\\AH.png",
+      cardValue: 1,
+      cardValue2: 10,
+      cardFamily: "heart",
+      cardColor: "red",
+      cardName: "as",
+      cardOrdre: 14
+    },
 
 
     // 2eme Deck
