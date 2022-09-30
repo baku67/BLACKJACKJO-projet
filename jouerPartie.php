@@ -71,9 +71,7 @@
 
 
 
-        <ul class="list2" id="croupier">
-            <!-- AJOUT DES CARTES ICI -->
-        </ul>
+        <ul class="list2" id="croupier"></ul>
         <br> 
         <span id="scoreCroupier" class="scores" style="visibility: hidden">0</span>
 

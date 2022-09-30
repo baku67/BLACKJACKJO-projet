@@ -638,6 +638,15 @@
             if(pairBet == "mixedPair") {pairBetText = "Mixed Pair"} else if(pairBet == "coloredPair") {pairBetText = "Colored Pair";} else if(pairBet == "perfectPair") {pairBetText = "Perfect Pair";}
             document.getElementById("misePairLocked").innerHTML = "<span style='font-size:1.7rem; font-weight:bold;'>&#10003;</span> " + pairBetText;
             document.getElementById("misePairLocked").classList.add("misePairProcTextAnim");  
+
+            // Surbrillance des 2 cards Joueur: (adapter l'anim au degres de rareté, effet gold en plus?)
+            var handJoueur = document.getElementById("joueur").childNodes;
+            for (var i=0; i < 2; i++) {
+              if (handJoueur[i].nodeName.toLowerCase() == 'img') {
+                handJoueur[i].classList.add("surbrillanceCardsPair");
+              }
+            }
+  
           }
           // Perdu avec miseBet présente:
           else if ((pairBet == "Lost") && (misePairLocked > 0)) {
@@ -650,6 +659,15 @@
           // Proc None :/
           else if ((misePairLocked == 0) && (pairBet != "Lost")) {
             document.getElementById("misePairLockedNbrNone").innerHTML = "None &nbsp;<span style='font-size:1.3rem; color:rgba(0, 255, 234, 0.8);'>:(</span>";
+          
+            // Surbrillance grey des 2 cards Joueur: 
+            // var handJoueur = document.getElementById("joueur").childNodes;
+            // for (var i=0; i < 2; i++) {
+            //   if (handJoueur[i].nodeName.toLowerCase() == 'img') {
+            //     handJoueur[i].classList.add("surbrillanceCardsProcNone");
+            //   }
+            // }
+            
           }
         }, 1000)      
 
@@ -794,7 +812,35 @@
           // Autre que perdu, proc que si miseBet présente:
           if ((bet213 != "Lost") && (mise213Locked > 0)) {
               document.getElementById("mise213Locked").innerHTML = "<span style='font-size:1.7rem; font-weight:bold;'>&#10003;</span> " + bet213;
-                document.getElementById("mise213Locked").classList.add("mise213ProcTextAnim");   
+              document.getElementById("mise213Locked").classList.add("mise213ProcTextAnim");   
+
+              // Sinon mettre un delai avnt de faire les anim Purple
+
+              if ((gainPairBet != 0) && (misePairLocked > 0)) {
+                // // Cas ou le ProcPair est deja lancé sur les 2 cards Joueur (bleu), on ajoute juste la card Croupier purple
+                var handCroupier = document.getElementById("croupier").childNodes;
+                for (var i=0; i < 1; i++) {
+                  if (handCroupier[i].nodeName.toLowerCase() == 'img') {
+                    handCroupier[i].classList.add("surbrillanceCards213");
+                  }
+                }
+              }
+              else {
+                // Surbrillance des 2 cards Joueur et card Croupier: (adapter l'anim au degres de rareté, effet gold en plus?)
+                var handJoueur = document.getElementById("joueur").childNodes;
+                for (var i=0; i < 2; i++) {
+                  if (handJoueur[i].nodeName.toLowerCase() == 'img') {
+                    handJoueur[i].classList.add("surbrillanceCards213");
+                  }
+                }
+                var handCroupier = document.getElementById("croupier").childNodes;
+                for (var i=0; i < 1; i++) {
+                  if (handCroupier[i].nodeName.toLowerCase() == 'img') {
+                    handCroupier[i].classList.add("surbrillanceCards213");
+                  }
+                }
+
+              }
           }
           // Perdu avec miseBet présente:
           else if ((bet213 == "Lost") && (mise213Locked > 0)) {
@@ -807,6 +853,32 @@
           // Proc None :/
           else if ((mise213Locked == 0) && (bet213 != "Lost")) {
             document.getElementById("mise213LockedNbrNone").innerHTML = "None &nbsp;<span style='font-size:1.3rem; color:rgba(255, 55, 250, 1);'>:(</span>";
+          
+            // Surbrillance grey des cards (pas bo)
+            // if ((gainPairBet != 0) && (misePairLocked > 0)) {
+            //     // Cas ou le ProcPair est deja lancé sur les 2 cards Joueur (bleu), on ajoute juste la card Croupier grey
+            //     var handCroupier = document.getElementById("croupier").childNodes;
+            //     for (var i=0; i < 1; i++) {
+            //       if (handCroupier[i].nodeName.toLowerCase() == 'img') {
+            //         handCroupier[i].classList.add("surbrillanceCardsProcNone");
+            //       }
+            //     }          
+            // }
+            // else {
+            //   // SurbrillanceGrey des 2 cards Joueur et card Croupier:
+            //   var handJoueur = document.getElementById("joueur").childNodes;
+            //   for (var i=0; i < 2; i++) {
+            //     if (handJoueur[i].nodeName.toLowerCase() == 'img') {
+            //       handJoueur[i].classList.add("surbrillanceCardsProcNone");
+            //     }
+            //   }
+            //   var handCroupier = document.getElementById("croupier").childNodes;
+            //   for (var i=0; i < 1; i++) {
+            //     if (handCroupier[i].nodeName.toLowerCase() == 'img') {
+            //       handCroupier[i].classList.add("surbrillanceCardsProcNone");
+            //     }
+            //   }          
+            // }
           }
 
             
@@ -1879,6 +1951,15 @@
               }
 
               document.getElementById("previousBetsDiv").addEventListener("click", function() {
+
+                // Anims miserAlert
+                setTimeout( function() {
+                  document.getElementById('textMise').classList.add("phaseMiserAlert2Flash");
+                  document.getElementById('traitUnderlineInverse').classList.add("traitUnderlineInverse2Flash");
+                  document.getElementById('phaseMiserAlert').classList.add("phaseMiserAlert2");
+                }, 200)
+                // Fin anims
+
                 miseEnCours = PreviousMiseNormale;
                 misePairEnCours = PreviousMisePair;
                 mise213EnCours = PreviousMise213;
@@ -3389,6 +3470,7 @@
           document.getElementById("footer").style.borderTop = "4px solid var(--footerBorderTop-Color)";
           document.getElementById("footer").style.boxShadow = "";
 
+
           // Anims miserAlert
           document.getElementById('textMise').classList.add("phaseMiserAlert2Flash");
           document.getElementById('traitUnderlineInverse').classList.add("traitUnderlineInverse2Flash");
@@ -3628,6 +3710,13 @@
 
                   // Envoi de la moitié de la miseNormal BDD
                   document.getElementById("assuranceDiv").addEventListener("click", function() {
+
+                    if (isConnected == true) {
+                      document.getElementById("creditsConnected").innerHTML = credits - (miseLocked/2);
+                    }
+                    else {
+                      document.getElementById("creditsInvite").innerHTML = credits - (miseLocked/2);
+                    }
 
                     document.getElementById("assuranceMise").style.color = "#2E5FFF";
                     document.getElementById("assuranceMise").innerHTML = "&#10003;";
@@ -4360,15 +4449,19 @@
                   document.getElementById("footer").style.boxShadow = "0px -3px 42vh 30px rgba(239, 59, 46, 0.9)";
                   document.getElementById("header").style.boxShadow = "0px 3px 42vh 30px rgba(0, 255, 234, 0.55)";
 
+
                   var handCroupier = document.getElementById("croupier").childNodes;
                   for (var i=0; i < handCroupier.length; i++) {
                     if (handCroupier[i].nodeName.toLowerCase() == 'img') {
+                      handCroupier[i].classList.remove("surbrillanceCards213");
                       handCroupier[i].style.boxShadow = "0px 0px 20px 3px rgb(0 255 234 / 60%)";
                     }
                   }
                   var handJoueur = document.getElementById("joueur").childNodes;
                   for (var i=0; i < handJoueur.length; i++) {
                     if (handJoueur[i].nodeName.toLowerCase() == 'img') {
+                      handJoueur[i].classList.remove("surbrillanceCards213");
+                      handJoueur[i].classList.remove("surbrillanceCardsPair");
                       handJoueur[i].style.boxShadow = "0px 0px 20px 3px rgb(239 59 46 / 90%)";
                     }
                   }
@@ -4527,12 +4620,15 @@
                   var handCroupier = document.getElementById("croupier").childNodes;
                   for (var i=0; i < handCroupier.length; i++) {
                     if (handCroupier[i].nodeName.toLowerCase() == 'img') {
+                      handCroupier[i].classList.remove("surbrillanceCards213");
                       handCroupier[i].style.boxShadow = "0px 0px 20px 3px rgb(239 59 46 / 90%)";
                     }
                   }
                   var handJoueur = document.getElementById("joueur").childNodes;
                   for (var i=0; i < handJoueur.length; i++) {
                     if (handJoueur[i].nodeName.toLowerCase() == 'img') {
+                      handJoueur[i].classList.remove("surbrillanceCards213");
+                      handJoueur[i].classList.remove("surbrillanceCardsPair");
                       handJoueur[i].style.boxShadow = "0px 0px 20px 3px rgb(0 255 234 / 60%)";
                     }
                   }
@@ -4693,12 +4789,15 @@
                   var handCroupier = document.getElementById("croupier").childNodes;
                   for (var i=0; i < handCroupier.length; i++) {
                     if (handCroupier[i].nodeName.toLowerCase() == 'img') {
+                      handCroupier[i].classList.remove("surbrillanceCards213");
                       handCroupier[i].style.boxShadow = "0px 0px 20px 3px rgb(239 59 46 / 90%)";
                     }
                   }
                   var handJoueur = document.getElementById("joueur").childNodes;
                   for (var i=0; i < handJoueur.length; i++) {
                     if (handJoueur[i].nodeName.toLowerCase() == 'img') {
+                      handJoueur[i].classList.remove("surbrillanceCards213");
+                      handJoueur[i].classList.remove("surbrillanceCardsPair");
                       handJoueur[i].style.boxShadow = "0px 0px 20px 3px rgb(0 255 234 / 60%)";
                     }
                   }
@@ -4857,12 +4956,15 @@
                   var handCroupier = document.getElementById("croupier").childNodes;
                   for (var i=0; i < handCroupier.length; i++) {
                     if (handCroupier[i].nodeName.toLowerCase() == 'img') {
+                      handCroupier[i].classList.remove("surbrillanceCards213");
                       handCroupier[i].style.boxShadow = "0px 0px 20px 3px rgb(164 167 0 / 90%)";
                     }
                   }
                   var handJoueur = document.getElementById("joueur").childNodes;
                   for (var i=0; i < handJoueur.length; i++) {
                     if (handJoueur[i].nodeName.toLowerCase() == 'img') {
+                      handJoueur[i].classList.remove("surbrillanceCards213");
+                      handJoueur[i].classList.remove("surbrillanceCardsPair");
                       handJoueur[i].style.boxShadow = "0px 0px 20px 3px rgb(164 167 0 / 90%)";
                     }
                   }
@@ -6201,12 +6303,15 @@
               var handCroupier = document.getElementById("croupier").childNodes;
               for (var i=0; i < handCroupier.length; i++) {
                 if (handCroupier[i].nodeName.toLowerCase() == 'img') {
+                  handCroupier[i].classList.remove("surbrillanceCards213");
                   handCroupier[i].style.boxShadow = "0px 0px 20px 3px rgba(0, 255, 234, 0.60)";
                 }
               }
               var handJoueur = document.getElementById("joueur").childNodes;
               for (var i=0; i < handJoueur.length; i++) {
                 if (handJoueur[i].nodeName.toLowerCase() == 'img') {
+                  handJoueur[i].classList.remove("surbrillanceCards213");
+                  handJoueur[i].classList.remove("surbrillanceCardsPair");
                   handJoueur[i].style.boxShadow = "0px 0px 20px 3px rgba(239, 59, 46, 0.9)";
                 }
               }
@@ -6269,12 +6374,15 @@
               var handCroupier = document.getElementById("croupier").childNodes;
               for (var i=0; i < handCroupier.length; i++) {
                 if (handCroupier[i].nodeName.toLowerCase() == 'img') {
+                  handCroupier[i].classList.remove("surbrillanceCards213");
                   handCroupier[i].style.boxShadow = "0px 0px 20px 3px rgba(239, 59, 46, 0.9)";
                 }
               }
               var handJoueur = document.getElementById("joueur").childNodes;
               for (var i=0; i < handJoueur.length; i++) {
                 if (handJoueur[i].nodeName.toLowerCase() == 'img') {
+                  handJoueur[i].classList.remove("surbrillanceCards213");
+                  handJoueur[i].classList.remove("surbrillanceCardsPair");
                   handJoueur[i].style.boxShadow = "0px 0px 20px 3px rgba(255, 55, 250, 0.9)";
                 }
               }
