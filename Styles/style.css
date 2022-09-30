@@ -4263,21 +4263,21 @@ p {
 	0% {
 		opacity: 1;
 		transform: translateX(0px);
-		padding: 5px 10px 5px 10px;
+		padding: 10px 15px 10px 15px;
 		background-image: var(--bgImage-reloadButton);
 		border: var(--border-reloadButton);
 	}
 	50% {
 		opacity: 1;
-		transform: translateX(4px);
-		padding: 7px 14px 7px 14px;
+		transform: translateX(3px);
+		padding: 12px 17px 12px 17px;
 		background-image: var(--bgImageFlash-reloadButton);
 		border: var(--borderFlash-reloadButton);
 	}
 	100% {
 		opacity: 0;
 		transform: translateX(0px);
-		padding: 5px 10px 5px 10px;
+		padding: 10px 15px 10px 15px;
 		background-image: var(--bgImage-reloadButton);
 		border: var(--border-reloadButton);
 	}
@@ -4298,7 +4298,7 @@ p {
 	right: 20%;
 	bottom: 15%;
 	font-size: 2.5em;
-	padding: 5px 10px 5px 10px;
+	padding: 10px 15px 10px 15px;
 
 	border-radius: 120px;
 	/* border-radius: 12px; */
