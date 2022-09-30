@@ -2250,7 +2250,22 @@ h2 {
 
 
 
+#iframePC {
+	width: 815px;
+	height: 1750px;
 
+	position: absolute;
+	right: 50%;
+	top: 50%;
+	transform: translate(50%, -50%);
+
+	border-radius: 30px;
+	border-color: rgba(239, 59, 46, 1);
+	border-width: 3px;
+	padding: 5px 5px;
+	background-color: rgb(17, 19, 31);
+
+}
 
 
 
