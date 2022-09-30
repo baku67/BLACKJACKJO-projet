@@ -3700,13 +3700,12 @@
                   assuranceImg.setAttribute("id", "assuranceImg");
                   const assuranceMise = document.createElement("p");
                   assuranceMise.setAttribute("id", "assuranceMise");
-                  assuranceMise.innerHTML = "TEST";
                   assuranceDiv.append(assuranceImg);
                   assuranceDiv.append(assuranceMise);
 
                   document.getElementById("hitStandDoubleContainer").append(assuranceDiv);
 
-                  document.getElementById("assuranceMise").innerHTML = Math.ceil(miseLocked/2);
+                  document.getElementById("assuranceMise").innerHTML = Math.ceil(miseLocked/2) + "<img src='Images/souBarre_darkMode.png' id='souAssurance' class='imageSouPetit'>";
 
                   // Envoi de la moitié de la miseNormal BDD
                   document.getElementById("assuranceDiv").addEventListener("click", function() {
@@ -4384,6 +4383,8 @@
             }
           });
 
+          var scoreTotalCroupierTemp = scoreTotalCroupier;
+
           addCardCroupierRecursive();
 
             
@@ -4398,14 +4399,33 @@
               }, 2150 * setTimeOutMultiplier)
             }
 
-            
-            if (scoreTotalCroupier < 17) {
+            // if (asCroupier == true) )
+
+            // else {
+            //   if (scoreTotalCroupier < 17) {
+            //     setTimeout(function() {
+            //       if (firstCardRevealed == true) {
+            //         addCardCroupier(firstCardRevealed);  
+            //       }
+            //       else {
+            //         addCardCroupier(firstCardRevealed);
+            //         firstCardRevealed = true;
+            //       }
+            //       addCardCroupierRecursive();
+            //     }, 2150 * setTimeOutMultiplier)
+            //   }
+            //   else {
+            //     resultat();
+            //   }
+            // }
+
+            if (scoreTotalCroupierTemp < 17) {
               setTimeout(function() {
                 if (firstCardRevealed == true) {
-                  addCardCroupier(firstCardRevealed);  
+                  scoreTotalCroupierTemp = addCardCroupier(firstCardRevealed);  
                 }
                 else {
-                  addCardCroupier(firstCardRevealed);
+                  scoreTotalCroupierTemp = addCardCroupier(firstCardRevealed);
                   firstCardRevealed = true;
                 }
                 addCardCroupierRecursive();
@@ -4428,6 +4448,7 @@
 
                 WinLose = 'LOSE';
                 resultatCas = 'Wasted';
+                console.log("scoreTotalCroupier: " + scoreTotalCroupier);
 
                 setTimeout(function() {
 
@@ -4644,6 +4665,8 @@
 
                 WinLose = 'WIN';
                 resultatCas = 'Big Win';
+                console.log("scoreTotalCroupier: " + scoreTotalCroupier);
+
 
                 setTimeout(function() {
                   $.ajax({
@@ -4812,6 +4835,7 @@
 
                 WinLose = 'WIN';
                 resultatCas = 'Big Win';
+                console.log("scoreTotalCroupier: " + scoreTotalCroupier);
 
                 setTimeout(function() {
                   $.ajax({
@@ -4974,6 +4998,7 @@
                 
                 WinLose = 'PUSH';
                 resultatCas = 'Push';
+                console.log("scoreTotalCroupier: " + scoreTotalCroupier);
 
                 $.ajax({
                   async: false,
@@ -5573,6 +5598,8 @@
           distribAnim("croupier");
         }
 
+        nbrCardsCroupier = nbrCardsCroupier + 1;
+
         // Créer l'élément <img/>
         var img = document.createElement('img');
         // Pick l'objet et le stock dans une VAR
@@ -5594,45 +5621,7 @@
 
 
         // Scores Total Croupier
-        if (asCroupier == true) {
-
-          // WTF PAS TOUCHE A CE BOOL switch (sinon relance garde scoreCroupier précédent ************
-          asCroupier = false;
-          // Si commenté, Si AS croupier first puis Tete, resultatTotalmCroupier = 31, le truc proc a chaque hitCroupier vu que AS true :/
-          //
-
-          if (scoreTotalCroupier + 10 > 21) {
-            scoreTotalCroupier += pickedCardObject.cardValue;
-          }
-          // if ((scoreTotalCroupier + 10 == 21) && (nbrCardsCroupier)) {
-          //   // Cas du BJ Croupier (Work)
-          //   scoreTotalCroupier += (pickedCardObject.cardValue + 10);
-          // }
-          else {
-            scoreTotalCroupier += (pickedCardObject.cardValue + 10);
-          }
-        }
-        else {
-          scoreTotalCroupier += pickedCardObject.cardValue;
-        }
-
-        // Exemple As joueur (dans hit ou addCardJoueur)
-        // if (asJoueur == true) {
-        //   if ((scoreTotalJoueur + 10) > 21) {
-        //     document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;
-        //   }
-        //   else if ((scoreTotalJoueur + 10) == 21) {
-        //     document.getElementById('scoreJoueur').innerHTML = (scoreTotalJoueur + 10);
-        //     // ici Le check21horsBJ() est exécuté (appelé plus bas, conditions similaires)
-        //   }
-        //   else if ((scoreTotalJoueur + 10) < 21) {
-        //     document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur + "&nbsp;&nbsp;/&nbsp;&nbsp;" + (scoreTotalJoueur + 10);
-        //     scoreJoueur += 10;
-        //   }
-        // }
-        // else {
-        //   document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur;
-        // }
+        scoreTotalCroupier += pickedCardObject.cardValue;
 
         setTimeout (function() {
           // Refresh FadeInAnimation Score
@@ -5640,6 +5629,33 @@
           elementScore.classList.remove("scores");
           void elementScore.offsetWidth;
           elementScore.classList.add("scores");
+
+          //WIP AS 
+          if (asCroupier == true) {
+            if (scoreTotalCroupier + 10 > 21) {
+              document.getElementById('scoreCroupier').innerHTML = scoreTotalCroupier;
+            }
+            else if ((scoreTotalCroupier + 10) == 21) {
+              document.getElementById('scoreCroupier').innerHTML = (scoreTotalCroupier + 10);
+              scoreTotalCroupier += 10;
+            }
+            else if ((scoreTotalCroupier + 10) < 21) {
+              if (nbrCardsCroupier > 1) {
+                document.getElementById('scoreCroupier').innerHTML = scoreTotalCroupier + "&nbsp;/&nbsp;" + (scoreTotalCroupier + 10);
+                scoreTotalCroupier += 10;
+              }
+              else {
+                document.getElementById('scoreCroupier').innerHTML = scoreTotalCroupier + 10;
+                scoreTotalCroupier += 10;
+              }
+              // document.getElementById('scoreCroupier').innerHTML = scoreTotalCroupier + "&nbsp;&nbsp;/&nbsp;&nbsp;" + (scoreTotalCroupier + 10);
+              // scoreTotalCroupier += 10;
+            }
+          }
+          else {
+            document.getElementById('scoreCroupier').innerHTML = scoreTotalCroupier;
+          }
+          // FIN
 
           document.getElementById('scoreCroupier').innerHTML = scoreTotalCroupier;
 
@@ -5661,9 +5677,6 @@
         }
 
         document.getElementById("croupier").appendChild(img);
-
-
-        nbrCardsCroupier = nbrCardsCroupier + 1;
 
         // Si nbrCard > 5, margin negative, puis de plus en plus:
         if (nbrCardsCroupier > 7) {
@@ -5729,6 +5742,8 @@
           // ScoePop quand même (ou au moins un truc, genre rafraichissement)
         }
 
+        return scoreTotalCroupier;
+
       }
       // FIN
 
@@ -5793,8 +5808,8 @@
           elementScore.classList.add("scores");
 
 
-        // PB quand jai un AS parmis les 2 premieres et que j'obtioent un 21 avec la 3eme card, ca stand pas (si AS = 3eme cards, tout marche je crois)
-        // VOIR aussi le check21noBj
+          // PB quand jai un AS parmis les 2 premieres et que j'obtioent un 21 avec la 3eme card, ca stand pas (si AS = 3eme cards, tout marche je crois)
+          // VOIR aussi le check21noBj
 
           //WIP AS 
           if (asJoueur == true) {
@@ -6842,6 +6857,7 @@
           // Var pour array historiquePhp
           WinLose = 'LOSE';
           resultatCas = 'Bust';
+          console.log("scoreTotalCroupier: " + scoreTotalCroupier);
           // gain = gain
           // date est pris dans la fonction historiqueDB
 

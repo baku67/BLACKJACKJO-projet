@@ -1,3 +1,7 @@
+A faire: le Double reste Glow meme apres etre grisé (lors hit ou stand jsplus)
+
+DANS la phaseCroupier, si AS, il doit test avec +10 (pour >17), car test il a continuer à hit avec 7/17 
+
 Bouton Previous Bet que si 2x les memes mises de suites ! (fait)
 ajouter une fleche (ou double >>) juste colée à droite
 

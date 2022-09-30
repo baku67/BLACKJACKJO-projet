@@ -733,7 +733,8 @@ input:-webkit-autofill{
 #assuranceMise {
 	position: relative;
 	bottom: 5px;
-	font-size: 1.2em;
+	left: 6px;
+	font-size: 1.3em;
 	font-family: "Holtwood One SC", serif;
 	letter-spacing: 1px;
  
@@ -4317,6 +4318,13 @@ p {
 	/* border: 8px solid rgba(62, 219, 23, 0.8);
 	color: rgba(214, 228, 210, 0.8); */
 /* } */
+
+
+#souAssurance {
+	height: 30px;
+	top: 8px !important;
+	opacity: 0.9;
+}
 
 .allCardsFadeOutSlide {
 	opacity: 1;
