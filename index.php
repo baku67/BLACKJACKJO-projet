@@ -79,25 +79,28 @@
 
 
 
-	<body id="body2">
+	<body id="body" data-theme="dark">
 
 
 		<!-- Ce script doit rester dans body2 (pas dans head) -->
 		<script>
-			var x = window.matchMedia("(min-width: 800px)");
+
+			var x = window.matchMedia("(min-width: 767px)");
 
 			const iframe = document.createElement("iframe");
 			iframe.setAttribute("id", "iframePC");
-			iframe.setAttribute("src", "index2.php")
-			// document.getElementById("body2").append(iframe);
+			iframe.setAttribute("src", "indexBackup.php")
+
 
 			if (x.matches) {
-				document.getElementById("body2").append(iframe);
+				document.getElementById("body").append(iframe);
 			}
 			else {
-				alert("mobile (<800px width)");
-				$("#body2").load("index2.php");
+				alert("mobile (<767px width)");
+				// Les boutons marchent pas:
+				$("#body").load("index2.php");
 			}
+			
 			
 		</script>
 		<!-- <iframe id="iframePC" src="index2.php"></iframe> -->
