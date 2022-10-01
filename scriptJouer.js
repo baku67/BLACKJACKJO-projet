@@ -648,6 +648,7 @@
                 handJoueur[i].classList.add("surbrillanceCardsPair");
                 if (toggleCardSimplist) {
                   handJoueur[i].style.border = "4px solid rgba(0, 255, 234, 0.7)";
+                  
                 }
               // }
             }

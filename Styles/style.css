@@ -474,6 +474,8 @@ input:-webkit-autofill{
 	transform: translate(-50%, -17vh);
 }
 #sideBet1 {
+	cursor: pointer;
+
 	margin: 0px 25px;
 
 	width: 105px;
@@ -494,6 +496,8 @@ input:-webkit-autofill{
 	transition: border-color 0.3s ease, background-color 0.3s ease; 
 }
 #sideBet2 {
+	cursor: pointer;
+
 	margin: 0px 25px;
 
 	width: 105px;
@@ -562,6 +566,8 @@ input:-webkit-autofill{
 
 
 #previousBetsDiv {
+	cursor: pointer;
+
 	position: absolute;
 
 	bottom: 20vh;
