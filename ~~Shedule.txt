@@ -1,6 +1,12 @@
+Cards simplistes: Si Roi/Reine/Joker ajouter couronne gold petite au dessus du symbole (couronne roi en mode enfant, couronne reine d'angleterre, toque de bouffon)
+
+Proc Bet: adapter les cardsSimplistes
+
 A faire: if firefox: avertissement sous le iframe 
 A faire: les curseurs (hover?) pour l'iframe
 A faire: le Double reste Glow meme apres etre grisé (lors hit ou stand jsplus)
+
+Cards simplistes: inversé lordre nbr/icon pour le croupier
 
 DANS la phaseCroupier, si AS, il doit test avec +10 (pour >17), car test il a continuer à hit avec 7/17 
 

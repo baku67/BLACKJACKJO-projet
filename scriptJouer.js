@@ -79,6 +79,8 @@
 
       var firstProc = false;
 
+      var toggleCardSimplist = true;
+
 
       var compteurDeck = cards.length;
       var compteurDeckMax = cards.length;
@@ -642,9 +644,9 @@
             // Surbrillance des 2 cards Joueur: (adapter l'anim au degres de rareté, effet gold en plus?)
             var handJoueur = document.getElementById("joueur").childNodes;
             for (var i=0; i < 2; i++) {
-              if (handJoueur[i].nodeName.toLowerCase() == 'img') {
+              // if (handJoueur[i].nodeName.toLowerCase() == 'img') {
                 handJoueur[i].classList.add("surbrillanceCardsPair");
-              }
+              // }
             }
   
           }
@@ -820,25 +822,25 @@
                 // // Cas ou le ProcPair est deja lancé sur les 2 cards Joueur (bleu), on ajoute juste la card Croupier purple
                 var handCroupier = document.getElementById("croupier").childNodes;
                 for (var i=0; i < 1; i++) {
-                  if (handCroupier[i].nodeName.toLowerCase() == 'img') {
+                  // if (handCroupier[i].nodeName.toLowerCase() == 'img') {
                     handCroupier[i].classList.add("surbrillanceCards213");
-                  }
+                  // }
                 }
               }
               else {
                 // Surbrillance des 2 cards Joueur et card Croupier: (adapter l'anim au degres de rareté, effet gold en plus?)
                 var handJoueur = document.getElementById("joueur").childNodes;
                 for (var i=0; i < 2; i++) {
-                  if (handJoueur[i].nodeName.toLowerCase() == 'img') {
+                  // if (handJoueur[i].nodeName.toLowerCase() == 'img') {
                     handJoueur[i].classList.add("surbrillanceCards213");
-                  }
+                  // }
                 }
                 var handCroupier = document.getElementById("croupier").childNodes;
                 for (var i=0; i < 1; i++) {
-                  if (handCroupier[i].nodeName.toLowerCase() == 'img') {
+                  // if (handCroupier[i].nodeName.toLowerCase() == 'img') {
                     handCroupier[i].classList.add("surbrillanceCards213");
                   }
-                }
+                // }
 
               }
           }
@@ -2646,15 +2648,15 @@
           document.getElementById("scoreJoueur").classList.add("fadeOut2");
           var handCroupier = document.getElementById("croupier").childNodes;
           for (var i=0; i < handCroupier.length; i++) {
-            if (handCroupier[i].nodeName.toLowerCase() == 'img') {
+            // if (handCroupier[i].nodeName.toLowerCase() == 'img') {
               handCroupier[i].style.boxShadow = "";
-            }
+            // }
           }
           var handJoueur = document.getElementById("joueur").childNodes;
           for (var i=0; i < handJoueur.length; i++) {
-            if (handJoueur[i].nodeName.toLowerCase() == 'img') {
+            // if (handJoueur[i].nodeName.toLowerCase() == 'img') {
               handJoueur[i].style.boxShadow = "";
-            }
+            // }
           }
           document.getElementById("footerResultatContainer").classList.add("fadeOutFinDePartie");
           document.getElementById("separateur").style.opacity = 0;
@@ -4473,18 +4475,18 @@
 
                   var handCroupier = document.getElementById("croupier").childNodes;
                   for (var i=0; i < handCroupier.length; i++) {
-                    if (handCroupier[i].nodeName.toLowerCase() == 'img') {
+                    // if (handCroupier[i].nodeName.toLowerCase() == 'img') {
                       handCroupier[i].classList.remove("surbrillanceCards213");
                       handCroupier[i].style.boxShadow = "0px 0px 20px 3px rgb(0 255 234 / 60%)";
-                    }
+                    // }
                   }
                   var handJoueur = document.getElementById("joueur").childNodes;
                   for (var i=0; i < handJoueur.length; i++) {
-                    if (handJoueur[i].nodeName.toLowerCase() == 'img') {
+                    // if (handJoueur[i].nodeName.toLowerCase() == 'img') {
                       handJoueur[i].classList.remove("surbrillanceCards213");
                       handJoueur[i].classList.remove("surbrillanceCardsPair");
                       handJoueur[i].style.boxShadow = "0px 0px 20px 3px rgb(239 59 46 / 90%)";
-                    }
+                    // }
                   }
 
                 }, 465)
@@ -4640,18 +4642,18 @@
 
                   var handCroupier = document.getElementById("croupier").childNodes;
                   for (var i=0; i < handCroupier.length; i++) {
-                    if (handCroupier[i].nodeName.toLowerCase() == 'img') {
+                    // if (handCroupier[i].nodeName.toLowerCase() == 'img') {
                       handCroupier[i].classList.remove("surbrillanceCards213");
                       handCroupier[i].style.boxShadow = "0px 0px 20px 3px rgb(239 59 46 / 90%)";
-                    }
+                    // }
                   }
                   var handJoueur = document.getElementById("joueur").childNodes;
                   for (var i=0; i < handJoueur.length; i++) {
-                    if (handJoueur[i].nodeName.toLowerCase() == 'img') {
+                    // if (handJoueur[i].nodeName.toLowerCase() == 'img') {
                       handJoueur[i].classList.remove("surbrillanceCards213");
                       handJoueur[i].classList.remove("surbrillanceCardsPair");
                       handJoueur[i].style.boxShadow = "0px 0px 20px 3px rgb(0 255 234 / 60%)";
-                    }
+                    // }
                   }
 
                 }, 465)
@@ -4811,18 +4813,18 @@
 
                   var handCroupier = document.getElementById("croupier").childNodes;
                   for (var i=0; i < handCroupier.length; i++) {
-                    if (handCroupier[i].nodeName.toLowerCase() == 'img') {
+                    // if (handCroupier[i].nodeName.toLowerCase() == 'img') {
                       handCroupier[i].classList.remove("surbrillanceCards213");
                       handCroupier[i].style.boxShadow = "0px 0px 20px 3px rgb(239 59 46 / 90%)";
-                    }
+                    // }
                   }
                   var handJoueur = document.getElementById("joueur").childNodes;
                   for (var i=0; i < handJoueur.length; i++) {
-                    if (handJoueur[i].nodeName.toLowerCase() == 'img') {
+                    // if (handJoueur[i].nodeName.toLowerCase() == 'img') {
                       handJoueur[i].classList.remove("surbrillanceCards213");
                       handJoueur[i].classList.remove("surbrillanceCardsPair");
                       handJoueur[i].style.boxShadow = "0px 0px 20px 3px rgb(0 255 234 / 60%)";
-                    }
+                    // }
                   }
 
                 }, 465)
@@ -4979,18 +4981,18 @@
 
                   var handCroupier = document.getElementById("croupier").childNodes;
                   for (var i=0; i < handCroupier.length; i++) {
-                    if (handCroupier[i].nodeName.toLowerCase() == 'img') {
+                    // if (handCroupier[i].nodeName.toLowerCase() == 'img') {
                       handCroupier[i].classList.remove("surbrillanceCards213");
                       handCroupier[i].style.boxShadow = "0px 0px 20px 3px rgb(164 167 0 / 90%)";
-                    }
+                    // }
                   }
                   var handJoueur = document.getElementById("joueur").childNodes;
                   for (var i=0; i < handJoueur.length; i++) {
-                    if (handJoueur[i].nodeName.toLowerCase() == 'img') {
+                    // if (handJoueur[i].nodeName.toLowerCase() == 'img') {
                       handJoueur[i].classList.remove("surbrillanceCards213");
                       handJoueur[i].classList.remove("surbrillanceCardsPair");
                       handJoueur[i].style.boxShadow = "0px 0px 20px 3px rgb(164 167 0 / 90%)";
-                    }
+                    // }
                   }
 
                 }, 465)
@@ -5601,16 +5603,84 @@
         nbrCardsCroupier = nbrCardsCroupier + 1;
 
         // Créer l'élément <img/>
-        var img = document.createElement('img');
+        // var img = document.createElement('img');
         // Pick l'objet et le stock dans une VAR
         let pickedCardObject = cards[Math.floor(Math.random()*cards.length)];
+        if (toggleCardSimplist == false) {
+          var img = document.createElement('img');
+          img.src = pickedCardObject.cardImageURL;
+          if (shadow) {
+            img.style.boxShadow = "rgb(0 255 234 / 60%) 0px 0px 20px 3px";
+          }
+          document.getElementById("croupier").style.display = "block";
+        }
+        else {
+          document.getElementById("croupier").style.display = "inline-flex";
+          document.getElementById("croupier").style.marginBottom = "17px";
+
+          var imgSimpl = document.createElement("div");
+          imgSimpl.setAttribute("class", "imgSimpl1");
+
+          var imgSimplNbr = document.createElement("span");
+          imgSimplNbr.setAttribute("class", "imgSimplNbr");
+
+          var crown = document.createElement("img");
+          crown.setAttribute("class", "crown");
+          // Inversion crown pour croupier:
+          // crown.style.transform = "rotate(-15deg)";
+          // Crown en bas pour croupier:
+          crown.style.top = "85%";
+          // crown.style.transform = "rotate(180deg)";
+          crown.src = "Images/crown3.png";
+
+
+          if (pickedCardObject.cardName == "as") {
+            imgSimplNbr.innerHTML = "AS";
+          }
+          else if (pickedCardObject.cardName == "king") {
+            imgSimplNbr.innerHTML = "K";
+            imgSimpl.append(crown);
+            // ajouter la classe specifique a la tete
+          }
+          else if (pickedCardObject.cardName == "queen") {
+            imgSimplNbr.innerHTML = "Q";
+            imgSimpl.append(crown);
+            // ajouter la classe specifique a la tete
+          }
+          else if (pickedCardObject.cardName == "joker") {
+            imgSimplNbr.innerHTML = "J";
+            imgSimpl.append(crown);
+            // ajouter la classe specifique a la tete
+          }
+          else {
+            imgSimplNbr.innerHTML = pickedCardObject.cardValue;
+          }
+
+
+          var imgSimplSuit = document.createElement("img");
+          imgSimplSuit.setAttribute("class", "imgSimplSuit");
+          imgSimplSuit.src = "Images/" + pickedCardObject.cardFamily + ".png";
+
+          if ((pickedCardObject.cardFamily == "heart") || (pickedCardObject.cardFamily == "diamond")) {
+            imgSimpl.style.backgroundColor = "rgb(66 11 20)";
+          }
+
+          var br = document.createElement("br");
+          imgSimpl.append(imgSimplNbr);
+          imgSimpl.append(br);
+          imgSimpl.append(imgSimplSuit);
+
+          
+        }
+
+
         // Ajout de la carte pickée dans l'array cartesSortiesPartie
         cartesSortiesPartie.unshift(pickedCardObject);
         // Associe la VALUE de la KEY "cardImageUrl", à l'attribut HTML de l'<img> créé
-        img.src = pickedCardObject.cardImageURL;
-        if (shadow) {
-          img.style.boxShadow = "rgb(0 255 234 / 60%) 0px 0px 20px 3px";
-        }
+        // img.src = pickedCardObject.cardImageURL;
+        // if (shadow) {
+        //   img.style.boxShadow = "rgb(0 255 234 / 60%) 0px 0px 20px 3px";
+        // }
 
         // Plutot mettre compteur d'AS croupier, si le compteur > 1, ...
 
@@ -5669,54 +5739,73 @@
         // fin
 
         // Classe pour le darkMode
-        img.classList.add("imgPartie", "imgPartieDM");
+        if (toggleCardSimplist == false) {
+          img.classList.add("imgPartie", "imgPartieDM");
+        }
+        // img.classList.add("imgPartie", "imgPartieDM");
 
-        // Ajoute la var img à l'<ul> "#croupier"
+
         if (SoundMuteBool == false) {
           audioCardSound.play();
         }
 
-        document.getElementById("croupier").appendChild(img);
+        // Ajoute la var img à l'<ul> "#croupier"
+        if (toggleCardSimplist == false) {
+          document.getElementById("croupier").appendChild(img);
+        }
+        else {
+          document.getElementById("croupier").appendChild(imgSimpl);
+        }
+        // document.getElementById("croupier").appendChild(img);
+        // document.getElementById("croupier").appendChild(pickedCardObject.cardImageSimpl);
 
         // Si nbrCard > 5, margin negative, puis de plus en plus:
         if (nbrCardsCroupier > 7) {
           var croupierDiv = document.getElementById("croupier").childNodes;
           console.log(croupierDiv);
           for (var i=0; i < croupierDiv.length; i++) {
-            if (croupierDiv[i].nodeName.toLowerCase() == 'img') {
+            // if (croupierDiv[i].nodeName.toLowerCase() == 'img') {
               croupierDiv[i].style.margin = "0em -1.5em";
-              croupierDiv[i].style.border = "1px solid rgb(36 36 36)";
-            }
+              if (toggleCardSimplist == false) {
+                croupierDiv[i].style.border = "2px solid rgb(36 36 36)";
+              }            
+            // }
           }
         }
         else if (nbrCardsCroupier == 7) {
           var croupierDiv = document.getElementById("croupier").childNodes;
           console.log(croupierDiv);
           for (var i=0; i < croupierDiv.length; i++) {
-            if (croupierDiv[i].nodeName.toLowerCase() == 'img') {
+            // if (croupierDiv[i].nodeName.toLowerCase() == 'img') {
               croupierDiv[i].style.margin = "0em -1.3em";
-              croupierDiv[i].style.border = "1px solid rgb(36 36 36)";
-            }
+              if (toggleCardSimplist == false) {
+                croupierDiv[i].style.border = "2px solid rgb(36 36 36)";
+              }            
+            // }
           }
         }
         else if (nbrCardsCroupier == 6) {
           var croupierDiv = document.getElementById("croupier").childNodes;
           console.log(croupierDiv);
           for (var i=0; i < croupierDiv.length; i++) {
-            if (croupierDiv[i].nodeName.toLowerCase() == 'img') {
+            // if (croupierDiv[i].nodeName.toLowerCase() == 'img') {
               croupierDiv[i].style.margin = "0em -1.2em";
-              croupierDiv[i].style.border = "1px solid rgb(36 36 36)";
-            }
+              if (toggleCardSimplist == false) {
+                croupierDiv[i].style.border = "2px solid rgb(36 36 36)";
+              }
+            // }
           }
         }
         else if (nbrCardsCroupier == 5) {
           var croupierDiv = document.getElementById("croupier").childNodes;
           console.log(croupierDiv);
           for (var i=0; i < croupierDiv.length; i++) {
-            if (croupierDiv[i].nodeName.toLowerCase() == 'img') {
+            // if (croupierDiv[i].nodeName.toLowerCase() == 'img') {
               croupierDiv[i].style.margin = "0em -1em";
-              croupierDiv[i].style.border = "1px solid rgb(36 36 36)";
-            }
+              if (toggleCardSimplist == false) {
+                croupierDiv[i].style.border = "2px solid rgb(36 36 36)";
+              }
+            // }
           }
 
         }
@@ -5782,14 +5871,74 @@
         distribAnim("joueur");
         // FIN
 
-        var img = document.createElement('img');
+
+        // var img = document.createElement('img');
         let pickedCardObject = cards[Math.floor(Math.random()*cards.length)];
+
+        if (toggleCardSimplist == false) {
+          var img = document.createElement('img');
+          img.src = pickedCardObject.cardImageURL;
+          document.getElementById("croupier").style.display = "block";
+        }
+        else {
+          document.getElementById("croupier").style.display = "inline-flex";
+          document.getElementById("croupier").style.marginBottom = "17px";
+
+          var imgSimpl = document.createElement("div");
+          imgSimpl.setAttribute("class", "imgSimpl1");
+
+          var imgSimplNbr = document.createElement("span");
+          imgSimplNbr.setAttribute("class", "imgSimplNbr");
+          imgSimplNbr.innerHTML = pickedCardObject.cardValue;
+
+          var crown = document.createElement("img");
+          crown.setAttribute("class", "crown");
+          crown.src = "Images/crown3.png";
+
+          if (pickedCardObject.cardName == "as") {
+            imgSimplNbr.innerHTML = "AS";
+          }
+          else if (pickedCardObject.cardName == "king") {
+            imgSimplNbr.innerHTML = "K";
+            imgSimpl.append(crown);
+            // ajouter la classe specifique a la tete
+          }
+          else if (pickedCardObject.cardName == "queen") {
+            imgSimplNbr.innerHTML = "Q";
+            imgSimpl.append(crown);
+            // ajouter la classe specifique a la tete
+          }
+          else if (pickedCardObject.cardName == "joker") {
+            imgSimplNbr.innerHTML = "J";
+            imgSimpl.append(crown);
+            // ajouter la classe specifique a la tete
+          }
+          else {
+            imgSimplNbr.innerHTML = pickedCardObject.cardValue;
+          }
+
+          var imgSimplSuit = document.createElement("img");
+          imgSimplSuit.setAttribute("class", "imgSimplSuit");
+          imgSimplSuit.src = "Images/" + pickedCardObject.cardFamily + ".png";
+
+          if ((pickedCardObject.cardFamily == "heart") || (pickedCardObject.cardFamily == "diamond")) {
+            imgSimpl.style.backgroundColor = "rgb(66 11 20)";
+          }
+
+          var br = document.createElement("br");
+
+          imgSimpl.append(imgSimplNbr);
+          imgSimpl.append(br);
+          imgSimpl.append(imgSimplSuit);
+
+
+        }
         // Ajout de la carte pickée dans l'array cartesSortiesPartie
         cartesSortiesPartie.unshift(pickedCardObject);
         cartesJoueurSortiesPartie.unshift(pickedCardObject);
         // console.log("Tableau des cartes sorties *partie*: " + JSON.stringify(cartesSortiesPartie));
         // Association de l'url image à la carte pickée
-        img.src = pickedCardObject.cardImageURL;
+        // img.src = pickedCardObject.cardImageURL;
         
 
         //WIP AS
@@ -5843,7 +5992,10 @@
         cards.splice(picketCardIndex, 1);
 
         // Classe pour le darkMode
-        img.classList.add("imgPartie", "imgPartieDM");
+        if (toggleCardSimplist == false) {
+          img.classList.add("imgPartie", "imgPartieDM");
+        }
+        // img.classList.add("imgPartie", "imgPartieDM");
 
         if (SoundMuteBool == false) {
           audioCardSound.play();
@@ -5855,7 +6007,14 @@
 
         setTimeout(function() {
 
-          document.getElementById("joueur").appendChild(img);
+          if (toggleCardSimplist == false) {
+            document.getElementById("joueur").appendChild(img);
+          }
+          else {
+            document.getElementById("joueur").appendChild(imgSimpl);
+          }
+          // document.getElementById("joueur").appendChild(img);
+          // document.getElementById("joueur").appendChild(pickedCardObject.cardImageSimpl);
           // Ptit flash border anim lorsque la carte append
 
 
@@ -5866,10 +6025,12 @@
             var joueurDiv = document.getElementById("joueur").childNodes;
               
             for (var i=0; i < joueurDiv.length; i++) {
-              if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+              // if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
                 joueurDiv[i].style.margin = "0em -1.8em";
-                joueurDiv[i].style.border = "1px solid rgb(36 36 36)";
-              }
+                if (toggleCardSimplist == false) {
+                  joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
+                }
+              // }
             }
 
             document.getElementById("joueur").style.bottom = "273px";
@@ -5885,10 +6046,12 @@
             var joueurDiv = document.getElementById("joueur").childNodes;
 
             for (var i=0; i < joueurDiv.length; i++) {
-              if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+              // if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
                 joueurDiv[i].style.margin = "0em -1.6em";
-                joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
-              }
+                if (toggleCardSimplist == false) {
+                  joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
+                }
+              // }
             }
 
             document.getElementById("joueur").style.bottom = "273px";
@@ -5930,10 +6093,12 @@
             var joueurDiv = document.getElementById("joueur").childNodes;
 
             for (var i=0; i < joueurDiv.length; i++) {
-              if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+              // if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
                 joueurDiv[i].style.margin = "0em -1.4em";
-                joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
-              }
+                if (toggleCardSimplist == false) {
+                  joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
+                }
+              // }
             }
 
             document.getElementById("joueur").style.bottom = "273px";
@@ -5974,10 +6139,12 @@
             var joueurDiv = document.getElementById("joueur").childNodes;
 
             for (var i=0; i < joueurDiv.length; i++) {
-              if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+              // if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
                 joueurDiv[i].style.margin = "0em -1.2em";
-                joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
-              }
+                if (toggleCardSimplist == false) {
+                  joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
+                }
+              // }
             }
 
             document.getElementById("joueur").style.bottom = "273px";
@@ -6014,10 +6181,12 @@
             var joueurDiv = document.getElementById("joueur").childNodes;
 
             for (var i=0; i < joueurDiv.length; i++) {
-              if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+              // if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
                 joueurDiv[i].style.margin = "0em -1em";
-                joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
-              }
+                if (toggleCardSimplist == false) {
+                  joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
+                }
+            // }
             }
 
             document.getElementById("joueur").style.bottom = "273px";
@@ -6050,10 +6219,12 @@
             var joueurDiv = document.getElementById("joueur").childNodes;
 
             for (var i=0; i < joueurDiv.length; i++) {
-              if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+              // if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
                 joueurDiv[i].style.margin = "0em -0.8em";
-                joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
-              }
+                if (toggleCardSimplist == false) {
+                  joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
+                }
+              // }
             }
             document.getElementById("joueur").style.bottom = "273px";
             document.getElementById("scoreJoueur").style.bottom = "465px";
@@ -6130,13 +6301,14 @@
 
                   var joueurDiv = document.getElementById("joueur").childNodes;
                   for (var i=0; i < joueurDiv.length; i++) {
-                    if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+                    // if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
                       joueurDiv[i].style.margin = "0em -0.8em";
-                      joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
-
+                      if (toggleCardSimplist == false) {
+                        joueurDiv[i].style.border = "2px solid rgb(36 36 36)";
+                      }
                       joueurDiv[i].style.transform = "";
                       joueurDiv[i].style.bottom = "";
-                    }
+                    // }
                   }
                 }
 
@@ -6155,9 +6327,10 @@
 
                   if (nbrCardsJoueur == 3) {
                     for (var i=0; i < joueurDiv.length; i++) {
-                      if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+                      // if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
                           joueurDiv[i].style.margin = "0em -0.8em";
-                    }}
+                      // }
+                    }
 
                     joueurDiv[0].style.transform = "rotate(-16deg)";
                     joueurDiv[0].style.position = "relative";
@@ -6173,9 +6346,10 @@
                   }
                   else if (nbrCardsJoueur == 4) {
                     for (var i=0; i < joueurDiv.length; i++) {
-                      if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+                      // if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
                         joueurDiv[i].style.margin = "0em -1em";
-                    }}
+                      // }
+                    }
 
                     joueurDiv[0].style.transform = "rotate(-16deg)";
                     joueurDiv[0].style.position = "relative";
@@ -6195,9 +6369,10 @@
                   }
                   else if (nbrCardsJoueur == 5) {
                     for (var i=0; i < joueurDiv.length; i++) {
-                      if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+                      // if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
                         joueurDiv[i].style.margin = "0em -1.2em";
-                    }}
+                      // }
+                    }
 
                     joueurDiv[0].style.transform = "rotate(-16deg)";
                     joueurDiv[0].style.position = "relative";
@@ -6221,9 +6396,10 @@
                   }
                   else if (nbrCardsJoueur == 6) {
                     for (var i=0; i < joueurDiv.length; i++) {
-                      if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+                      // if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
                         joueurDiv[i].style.margin = "0em -1.4em";
-                    }}
+                      // }
+                    }
 
                     joueurDiv[0].style.transform = "rotate(-21deg)";
                     joueurDiv[0].style.position = "relative";
@@ -6251,9 +6427,10 @@
                   }
                   else if (nbrCardsJoueur == 7) {
                     for (var i=0; i < joueurDiv.length; i++) {
-                      if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
+                      // if (joueurDiv[i].nodeName.toLowerCase() == 'img') {
                         joueurDiv[i].style.margin = "0em -1.6em";
-                    }}
+                      // }
+                    }
 
                     joueurDiv[0].style.transform = "rotate(-26deg)";
                     joueurDiv[0].style.position = "relative";
@@ -6317,18 +6494,18 @@
 
               var handCroupier = document.getElementById("croupier").childNodes;
               for (var i=0; i < handCroupier.length; i++) {
-                if (handCroupier[i].nodeName.toLowerCase() == 'img') {
+                // if (handCroupier[i].nodeName.toLowerCase() == 'img') {
                   handCroupier[i].classList.remove("surbrillanceCards213");
                   handCroupier[i].style.boxShadow = "0px 0px 20px 3px rgba(0, 255, 234, 0.60)";
-                }
+                // }
               }
               var handJoueur = document.getElementById("joueur").childNodes;
               for (var i=0; i < handJoueur.length; i++) {
-                if (handJoueur[i].nodeName.toLowerCase() == 'img') {
+                // if (handJoueur[i].nodeName.toLowerCase() == 'img') {
                   handJoueur[i].classList.remove("surbrillanceCards213");
                   handJoueur[i].classList.remove("surbrillanceCardsPair");
                   handJoueur[i].style.boxShadow = "0px 0px 20px 3px rgba(239, 59, 46, 0.9)";
-                }
+                // }
               }
 
             }, 1650)
@@ -6388,18 +6565,18 @@
               
               var handCroupier = document.getElementById("croupier").childNodes;
               for (var i=0; i < handCroupier.length; i++) {
-                if (handCroupier[i].nodeName.toLowerCase() == 'img') {
+                // if (handCroupier[i].nodeName.toLowerCase() == 'img') {
                   handCroupier[i].classList.remove("surbrillanceCards213");
                   handCroupier[i].style.boxShadow = "0px 0px 20px 3px rgba(239, 59, 46, 0.9)";
-                }
+                // }
               }
               var handJoueur = document.getElementById("joueur").childNodes;
               for (var i=0; i < handJoueur.length; i++) {
-                if (handJoueur[i].nodeName.toLowerCase() == 'img') {
+                // if (handJoueur[i].nodeName.toLowerCase() == 'img') {
                   handJoueur[i].classList.remove("surbrillanceCards213");
                   handJoueur[i].classList.remove("surbrillanceCardsPair");
                   handJoueur[i].style.boxShadow = "0px 0px 20px 3px rgba(255, 55, 250, 0.9)";
-                }
+                // }
               }
             }, 1600)
           }
@@ -6826,7 +7003,12 @@
           } 
           else if (WinLose == "PUSH") {
             // Refresh credit front sans anim
-            document.getElementById("creditsConnected").innerHTML = (credits + gainFront + gainPairBet + gain213Bet);
+            if (isConnected) {
+              document.getElementById("creditsConnected").innerHTML = (credits + gainFront + gainPairBet + gain213Bet);
+            }
+            else {
+              document.getElementById("creditsInvite").innerHTML = (credits + gainFront + gainPairBet + gain213Bet);
+            }
           }
           else {
             // Refresh Credits front meme si lose, si il ya des gain SideBets:

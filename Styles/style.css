@@ -2267,6 +2267,50 @@ h2 {
 
 }
 
+.imgSimpl1 {
+	/* position: relative; indispensable pour la crown absolute "contenue" */
+	position: relative;
+
+	height: 158px;
+	width: 105px;
+
+	margin: 0 7px;
+
+	border: 4px solid rgba(239, 59, 46, 0.9);
+	border-radius: 9px;
+
+	background-color: rgb(17 19 31);
+
+	/* Ecrase le margin effetHand */
+	/* margin: auto 6px; */
+}
+
+.imgSimplNbr {
+	font-size: 3.5em;
+	position: relative;
+	top: 5%;
+	color: rgba(239, 59, 46, 1);
+	font-family: 'Lobster', cursive;
+}
+
+.imgSimplSuit {
+	height: 45px;
+	width: 45px;
+	position: relative;
+	top: 13px;
+}
+
+.crown {
+	position: absolute;
+	top: -15%;
+	/* transform: rotate(15deg); */
+	width: 45px;
+	z-index: 10;
+
+	right:50%;
+	transform: translateX(50%);
+}
+
 
 
 
@@ -3511,6 +3555,7 @@ p {
 	/* A MODIFIE DANS MEDIAQUERIES (Height-responsive) */
 	margin-top: 42px;
 	/* FIN */
+	display: inline-flex;
 
 	height: 169.05px;
 }
