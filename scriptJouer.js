@@ -1097,10 +1097,27 @@
   
             // let temp1 = document.querySelectorAll("#joueur .imgSimplSuit");
             // temp1.forEach(element => {
-            //   element.src = element.src.slice(0, -4) + "Push.png";
+            //   element.src = element.src.slice(0, -4) + "Bust.png";
             // });
   
           }
+          else if (hand == "croupier") {
+            var handCroupier = document.getElementById("croupier").childNodes;
+            for (var i=0; i < handCroupier.length; i++) {
+              handCroupier[i].style.color = "rgb(199 13 11 / 90%)";
+            }
+
+            let temp0 = document.querySelectorAll("#croupier .imgSimplNbr");
+            temp0.forEach(element => {
+              element.style.color = "rgb(199 13 11 / 90%)";
+            });
+  
+            // let temp1 = document.querySelectorAll("#croupier .imgSimplSuit");
+            // temp1.forEach(element => {
+            //   element.src = element.src.slice(0, -4) + "Bust.png";
+            // });
+          }
+
         }
 
 
@@ -4005,6 +4022,7 @@
                 if ((document.getElementById("double") !== null) && (credits-miseLocked <= 0)) {
                   document.getElementById("double").style.opacity = "0.3";
                   document.getElementById("double").style.color = "grey";
+                  document.getElementById("choixDoubler").style.color = "grey";
                   document.getElementById("double").style.border = "4px solid grey";
                   document.getElementById("double").addEventListener("click", function() {
                     document.getElementById("double").classList.add("shakeX2");
@@ -4329,6 +4347,7 @@
               if (credits-miseLocked <= 0) {
                 document.getElementById("double").style.opacity = "0.3";
                 document.getElementById("double").style.color = "grey";
+                document.getElementById("choixDoubler").style.color = "grey";
                 document.getElementById("double").style.border = "4px solid grey";
                 document.getElementById("double").addEventListener("click", function() {
                   document.getElementById("double").classList.add("shakeX2");
@@ -4470,6 +4489,7 @@
                 document.getElementById("scoreCroupier").style.color = "rgb(0 255 234 / 100%)";
                 document.getElementById("scoreCroupier").style.textShadow = "1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, -1px -1px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, -1px 0px 0 #000000, 0px -1px 0 #000000";
                 document.getElementById("scoreCroupier").style.border = "3px solid rgb(0 255 234 / 70%)";
+                // Glow reste bleu
               }, 400);
             }
             else if (scoreTotalCroupier > 21) {
@@ -4478,6 +4498,8 @@
                 document.getElementById("scoreCroupier").style.color = "rgba(239,230,230, 1)"
                 document.getElementById("scoreCroupier").style.textShadow = "1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, -1px -1px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, -1px 0px 0 #000000, 0px -1px 0 #000000";
                 document.getElementById("scoreCroupier").style.border = "3px solid rgba(130,14,39, 1)";
+                // Glow repasse a rouge (bustCroupier):
+                handBust("croupier"); 
               }, 400);
             }
 
@@ -5839,9 +5861,17 @@
 
           var imgSimpl = document.createElement("div");
           imgSimpl.setAttribute("class", "imgSimpl1");
+          if (shadow) {
+            imgSimpl.style.boxShadow = "rgb(0 255 234 / 60%) 0px 0px 20px 3px";
+            imgSimpl.style.borderColor = "rgb(0 255 234 / 70%)";
+          }
 
           var imgSimplNbr = document.createElement("span");
           imgSimplNbr.setAttribute("class", "imgSimplNbr");
+          if (toggleCardSimplist && shadow) {
+            imgSimplNbr.style.color = "rgb(0 255 234 / 70%)";
+          }
+
 
           var crown = document.createElement("img");
           crown.setAttribute("class", "crown");
@@ -5882,6 +5912,9 @@
           var imgSimplSuit = document.createElement("img");
           imgSimplSuit.setAttribute("class", "imgSimplSuit");
           imgSimplSuit.src = "Images/" + pickedCardObject.cardFamily + ".png";
+          if (toggleCardSimplist && shadow) {
+            imgSimplSuit.src = "Images/" + pickedCardObject.cardFamily + "WinPair.png";
+          }
 
           if ((pickedCardObject.cardFamily == "heart") || (pickedCardObject.cardFamily == "diamond")) {
             // imgSimpl.style.backgroundColor = "rgb(66 11 20)";
