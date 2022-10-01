@@ -646,6 +646,9 @@
             for (var i=0; i < 2; i++) {
               // if (handJoueur[i].nodeName.toLowerCase() == 'img') {
                 handJoueur[i].classList.add("surbrillanceCardsPair");
+                if (toggleCardSimplist) {
+                  handJoueur[i].style.border = "4px solid rgba(0, 255, 234, 0.7)";
+                }
               // }
             }
   
@@ -824,6 +827,9 @@
                 for (var i=0; i < 1; i++) {
                   // if (handCroupier[i].nodeName.toLowerCase() == 'img') {
                     handCroupier[i].classList.add("surbrillanceCards213");
+                    if (toggleCardSimplist) {
+                      handCroupier[i].style.border = "4px solid rgba(255, 55, 250, 0.9)";
+                    }
                   // }
                 }
               }
@@ -833,12 +839,18 @@
                 for (var i=0; i < 2; i++) {
                   // if (handJoueur[i].nodeName.toLowerCase() == 'img') {
                     handJoueur[i].classList.add("surbrillanceCards213");
+                    if (toggleCardSimplist) {
+                      handJoueur[i].style.border = "4px solid rgba(255, 55, 250, 0.9)";
+                    }
                   // }
                 }
                 var handCroupier = document.getElementById("croupier").childNodes;
                 for (var i=0; i < 1; i++) {
                   // if (handCroupier[i].nodeName.toLowerCase() == 'img') {
                     handCroupier[i].classList.add("surbrillanceCards213");
+                    if (toggleCardSimplist) {
+                      handCroupier[i].style.border = "4px solid rgba(255, 55, 250, 0.9)";
+                    }
                   }
                 // }
 
@@ -2669,17 +2681,32 @@
           PreviousMise213 = mise213EnCours;
 
           // Anim stack cards
-          var imgElemArray = document.querySelectorAll('.imgPartie');
-          imgElemArray.forEach(element => {
-            element.style.margin = "0 -7.6em 0 0.4em";
-            element.style.transform = "rotate(0deg) translateX(-56px)";
-            element.style.bottom = "0px";
-          });
-          setTimeout(function() {
+          if (toggleCardSimplist) {
+            var imgElemArray = document.querySelectorAll('.imgSimpl1');
             imgElemArray.forEach(element => {
-              element.classList.add('allCardsFadeOutSlide');
+              element.style.margin = "0 -7.6em 0 0.4em";
+              element.style.transform = "rotate(0deg) translateX(-56px)";
+              element.style.bottom = "0px";
             });
-          }, 450)
+            setTimeout(function() {
+              imgElemArray.forEach(element => {
+                element.classList.add('allCardsFadeOutSlide');
+              });
+            }, 450)
+          }
+          else {
+            var imgElemArray = document.querySelectorAll('.imgPartie');
+            imgElemArray.forEach(element => {
+              element.style.margin = "0 -7.6em 0 0.4em";
+              element.style.transform = "rotate(0deg) translateX(-56px)";
+              element.style.bottom = "0px";
+            });
+            setTimeout(function() {
+              imgElemArray.forEach(element => {
+                element.classList.add('allCardsFadeOutSlide');
+              });
+            }, 450)
+          }
 
           document.getElementById("jaugeContainer").style.backgroundColor = "var(--bgColor-jaugeVide)";
 
@@ -5649,6 +5676,8 @@
           }
           else if (pickedCardObject.cardName == "joker") {
             imgSimplNbr.innerHTML = "J";
+            // Spécifique font:
+            imgSimplNbr.style.fontSize = "3em";
             imgSimpl.append(crown);
             // ajouter la classe specifique a la tete
           }
@@ -5662,7 +5691,9 @@
           imgSimplSuit.src = "Images/" + pickedCardObject.cardFamily + ".png";
 
           if ((pickedCardObject.cardFamily == "heart") || (pickedCardObject.cardFamily == "diamond")) {
-            imgSimpl.style.backgroundColor = "rgb(66 11 20)";
+            // imgSimpl.style.backgroundColor = "rgb(66 11 20)";
+            imgSimpl.style.backgroundColor = "rgb(44 11 16)";
+            
           }
 
           var br = document.createElement("br");
@@ -5910,6 +5941,8 @@
           }
           else if (pickedCardObject.cardName == "joker") {
             imgSimplNbr.innerHTML = "J";
+            // Spécifique font:
+            imgSimplNbr.style.fontSize = "3em";
             imgSimpl.append(crown);
             // ajouter la classe specifique a la tete
           }
@@ -5922,7 +5955,8 @@
           imgSimplSuit.src = "Images/" + pickedCardObject.cardFamily + ".png";
 
           if ((pickedCardObject.cardFamily == "heart") || (pickedCardObject.cardFamily == "diamond")) {
-            imgSimpl.style.backgroundColor = "rgb(66 11 20)";
+            // imgSimpl.style.backgroundColor = "rgb(66 11 20)";
+            imgSimpl.style.backgroundColor = "rgb(44 11 16)";
           }
 
           var br = document.createElement("br");
@@ -7199,6 +7233,17 @@
           WinLose = 'BJ';
           resultatCas = 'BlackJack';
 
+
+          if (toggleCardSimplist) {
+            var imgElemArray = document.querySelectorAll('.imgSimpl1');
+            imgElemArray.forEach(element => {
+              element.style.margin = "0 -5px";
+              // Anim juste quand toggleSimpliste POur l'instant
+              element.classList.add("blackjackAnimCards");
+            });          
+          }
+
+          
           setTimeout(function() {
             $.ajax({
               async: false,
