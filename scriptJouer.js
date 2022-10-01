@@ -1009,6 +1009,135 @@
 
 
 
+        function handWin(hand) {
+          if (hand == "joueur") {
+            // var handJoueur = document.getElementById("joueur").childNodes;
+            // for (var i=0; i < handJoueur.length; i++) {
+            //   handJoueur[i].style.color = "rgba(0, 255, 234, 0.7)";
+            // }
+            var temp0 = document.querySelectorAll("#joueur .imgSimplNbr");
+            temp0.forEach(element => {
+              element.style.color = "rgba(0, 255, 234, 0.7)";
+            });
+
+            var temp1 = document.querySelectorAll("#joueur .imgSimplSuit");
+            temp1.forEach(element => {
+              var result = element.src.slice(0, -4) + "WinPair.png";
+              element.src = result;
+            });
+          }
+          else if (hand == "croupier") {
+            var handCroupier = document.getElementById("croupier").childNodes;
+            for (var i=0; i < handCroupier.length; i++) {
+              handCroupier[i].style.color = "rgba(0, 255, 234, 0.7)";
+            }
+
+            var temp2 = document.querySelectorAll("#croupier .imgSimplNbr");
+            temp2.forEach(element => {
+              element.style.color = "rgba(0, 255, 234, 0.7)";
+            });
+
+            var temp3 = document.querySelectorAll("#croupier .imgSimplSuit");
+            temp3.forEach(element => {
+              var result = element.src.slice(0, -4) + "WinPair.png";
+              element.src = result;
+            });
+          }
+        }
+
+
+        function handPush() {
+          var handJoueur = document.getElementById("joueur").childNodes;
+          var handCroupier = document.getElementById("croupier").childNodes;
+
+          for (var i=0; i < handCroupier.length; i++) {
+            handCroupier[i].style.color = "rgb(164 167 0 / 80%)";
+          }
+          for (var i=0; i < handJoueur.length; i++) {
+            handCroupier[i].style.color = "rgb(164 167 0 / 80%)";
+          }
+
+          let temp0 = document.querySelectorAll("#joueur .imgSimplNbr");
+          temp0.forEach(element => {
+            element.style.color = "rgb(164 167 0 / 80%)";
+          });
+
+          let temp1 = document.querySelectorAll("#joueur .imgSimplSuit");
+          temp1.forEach(element => {
+            element.src = element.src.slice(0, -4) + "Push.png";
+          });
+
+          let temp2 = document.querySelectorAll("#croupier .imgSimplNbr");
+          temp2.forEach(element => {
+            element.style.color = "rgb(164 167 0 / 80%)";
+          });
+
+          let temp3 = document.querySelectorAll("#croupier .imgSimplSuit");
+          temp3.forEach(element => {
+            element.src = element.src.slice(0, -4) + "Push.png";
+          });
+
+
+
+        }
+
+
+        function handBust(hand) {
+          if (hand == "joueur") {
+            var handJoueur = document.getElementById("joueur").childNodes;
+            for (var i=0; i < handJoueur.length; i++) {
+              handJoueur[i].style.color = "rgb(199 13 11 / 90%)";
+            }
+
+            let temp0 = document.querySelectorAll("#joueur .imgSimplNbr");
+            temp0.forEach(element => {
+              element.style.color = "rgb(199 13 11 / 90%)";
+            });
+  
+            // let temp1 = document.querySelectorAll("#joueur .imgSimplSuit");
+            // temp1.forEach(element => {
+            //   element.src = element.src.slice(0, -4) + "Push.png";
+            // });
+  
+          }
+        }
+
+
+        function handBJ(hand) {
+          if (hand == "joueur") {
+            var handJoueur = document.getElementById("joueur").childNodes;
+            for (var i=0; i < handJoueur.length; i++) {
+              handJoueur[i].style.color = "rgba(255, 55, 250, 0.9)";
+            }
+
+            let temp0 = document.querySelectorAll("#joueur .imgSimplNbr");
+            temp0.forEach(element => {
+              element.style.color = "rgba(255, 55, 250, 0.9)";
+            });
+  
+            let temp1 = document.querySelectorAll("#joueur .imgSimplSuit");
+            temp1.forEach(element => {
+              element.src = element.src.slice(0, -4) + "BJ.png";
+            });
+  
+          }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2687,6 +2816,7 @@
               element.style.margin = "0 -7.6em 0 0.4em";
               element.style.transform = "rotate(0deg) translateX(-56px)";
               element.style.bottom = "0px";
+              // Enlever aussi les border ici?
             });
             setTimeout(function() {
               imgElemArray.forEach(element => {
@@ -3777,9 +3907,11 @@
                   if ((document.getElementById("double") !==null ) && (document.getElementById("choixDoubler") !== null)) {
                     document.getElementById("double").style.boxShadow = "-0px -3px 30px 5px rgba(252, 227, 3, 1)";
                     document.getElementById("double").style.opacity = "1";
+                    document.getElementById("choixDoubler").style.opacity = "1";
                   }
                 }
                 else {
+                  document.getElementById("choixDoubler").style.opacity = "0.8";
                   document.getElementById("double").style.opacity = "0.8";
                 }
 
@@ -3993,6 +4125,20 @@
             addBackCardCroupier();
           }, (7250 * setTimeOutMultiplier));
 
+          // setTimeout(function() {
+          //   addCardJoueur();
+          // }, (2000 * (setTimeOutMultiplier+0.10)));
+          // setTimeout(function() {
+          //   distribAnim("croupier");
+          //   addCardCroupier();
+          // }, (3750 * (setTimeOutMultiplier+0.10)));
+          // setTimeout(function() {
+          //   addCardJoueur();
+          // }, (5500 * (setTimeOutMultiplier+0.10)));
+          // setTimeout(function() {
+          //   addBackCardCroupier();
+          // }, (7250 * (setTimeOutMultiplier+0.10)));
+
 
           // Check le betPair (apres les 2 premieres cardJoueur), et return le gain:
           setTimeout( function() {
@@ -4074,9 +4220,11 @@
                 if ((document.getElementById("double") !==null ) && (document.getElementById("choixDoubler") !== null)) {
                   document.getElementById("double").style.boxShadow = "-0px -3px 30px 5px rgba(252, 227, 3, 1)";
                   document.getElementById("double").style.opacity = "1";
+                  document.getElementById("choixDoubler").style.opacity = "1";
                 }
               }
               else {
+                document.getElementById("choixDoubler").style.opacity = "0.8";
                 document.getElementById("double").style.opacity = "0.8";
               }
 
@@ -4500,11 +4648,18 @@
                   document.getElementById("header").style.boxShadow = "0px 3px 42vh 30px rgba(0, 255, 234, 0.55)";
 
 
+                  if (toggleCardSimplist) {
+                    handWin("croupier");
+                  }
+
                   var handCroupier = document.getElementById("croupier").childNodes;
                   for (var i=0; i < handCroupier.length; i++) {
                     // if (handCroupier[i].nodeName.toLowerCase() == 'img') {
                       handCroupier[i].classList.remove("surbrillanceCards213");
                       handCroupier[i].style.boxShadow = "0px 0px 20px 3px rgb(0 255 234 / 60%)";
+                      if (toggleCardSimplist) {
+                        handCroupier[i].style.borderColor = "rgb(0 255 234 / 70%)";
+                      }
                     // }
                   }
                   var handJoueur = document.getElementById("joueur").childNodes;
@@ -4513,6 +4668,10 @@
                       handJoueur[i].classList.remove("surbrillanceCards213");
                       handJoueur[i].classList.remove("surbrillanceCardsPair");
                       handJoueur[i].style.boxShadow = "0px 0px 20px 3px rgb(239 59 46 / 90%)";
+                      if (toggleCardSimplist) {
+                        handJoueur[i].style.borderColor = "rgb(239 59 46 / 80%)";
+                      }
+
                     // }
                   }
 
@@ -4667,11 +4826,19 @@
                   document.getElementById("footer").style.boxShadow = "0px -3px 42vh 30px rgba(0, 255, 234, 0.55)";
                   document.getElementById("header").style.boxShadow = "0px 3px 42vh 30px rgba(239, 59, 46, 0.9)";
 
+                  if (toggleCardSimplist) {
+                    handWin("joueur");
+                  }
+
                   var handCroupier = document.getElementById("croupier").childNodes;
                   for (var i=0; i < handCroupier.length; i++) {
                     // if (handCroupier[i].nodeName.toLowerCase() == 'img') {
                       handCroupier[i].classList.remove("surbrillanceCards213");
                       handCroupier[i].style.boxShadow = "0px 0px 20px 3px rgb(239 59 46 / 90%)";
+                      if (toggleCardSimplist) {
+                        handCroupier[i].style.borderColor = "rgb(239 59 46 / 80%)";
+                      }
+
                     // }
                   }
                   var handJoueur = document.getElementById("joueur").childNodes;
@@ -4680,6 +4847,9 @@
                       handJoueur[i].classList.remove("surbrillanceCards213");
                       handJoueur[i].classList.remove("surbrillanceCardsPair");
                       handJoueur[i].style.boxShadow = "0px 0px 20px 3px rgb(0 255 234 / 60%)";
+                      if (toggleCardSimplist) {
+                        handJoueur[i].style.borderColor = "rgb(0 255 234 / 70%)";
+                      }
                     // }
                   }
 
@@ -4838,11 +5008,18 @@
                   document.getElementById("footer").style.boxShadow = "0px -3px 42vh 30px rgba(0, 255, 234, 0.55)";
                   document.getElementById("header").style.boxShadow = "0px 3px 42vh 30px rgba(239, 59, 46, 0.9)";
 
+                  if (toggleCardSimplist) {
+                    handWin("joueur");
+                  }
+
                   var handCroupier = document.getElementById("croupier").childNodes;
                   for (var i=0; i < handCroupier.length; i++) {
                     // if (handCroupier[i].nodeName.toLowerCase() == 'img') {
                       handCroupier[i].classList.remove("surbrillanceCards213");
                       handCroupier[i].style.boxShadow = "0px 0px 20px 3px rgb(239 59 46 / 90%)";
+                      if (toggleCardSimplist) {
+                        handCroupier[i].style.borderColor = "rgb(239 59 46 / 80%)";
+                      }
                     // }
                   }
                   var handJoueur = document.getElementById("joueur").childNodes;
@@ -4851,6 +5028,9 @@
                       handJoueur[i].classList.remove("surbrillanceCards213");
                       handJoueur[i].classList.remove("surbrillanceCardsPair");
                       handJoueur[i].style.boxShadow = "0px 0px 20px 3px rgb(0 255 234 / 60%)";
+                      if (toggleCardSimplist) {
+                        handJoueur[i].style.borderColor = "rgb(0 255 234 / 70%)";
+                      }
                     // }
                   }
 
@@ -5011,6 +5191,10 @@
                     // if (handCroupier[i].nodeName.toLowerCase() == 'img') {
                       handCroupier[i].classList.remove("surbrillanceCards213");
                       handCroupier[i].style.boxShadow = "0px 0px 20px 3px rgb(164 167 0 / 90%)";
+                      if (toggleCardSimplist) {
+                        handCroupier[i].style.borderColor = "rgb(164 167 0 / 80%)";
+                      }
+
                     // }
                   }
                   var handJoueur = document.getElementById("joueur").childNodes;
@@ -5019,8 +5203,15 @@
                       handJoueur[i].classList.remove("surbrillanceCards213");
                       handJoueur[i].classList.remove("surbrillanceCardsPair");
                       handJoueur[i].style.boxShadow = "0px 0px 20px 3px rgb(164 167 0 / 90%)";
+                      if (toggleCardSimplist) {
+                        handJoueur[i].style.borderColor = "rgb(164 167 0 / 80%)";
+                      }
                     // }
                   }
+                  if (toggleCardSimplist) {
+                    handPush();
+                  }
+
 
                 }, 465)
 
@@ -5663,6 +5854,7 @@
 
           if (pickedCardObject.cardName == "as") {
             imgSimplNbr.innerHTML = "AS";
+            imgSimplNbr.style.fontSize = "2.8em";
           }
           else if (pickedCardObject.cardName == "king") {
             imgSimplNbr.innerHTML = "K";
@@ -5677,7 +5869,7 @@
           else if (pickedCardObject.cardName == "joker") {
             imgSimplNbr.innerHTML = "J";
             // Spécifique font:
-            imgSimplNbr.style.fontSize = "3em";
+            imgSimplNbr.style.fontSize = "2.7em";
             imgSimpl.append(crown);
             // ajouter la classe specifique a la tete
           }
@@ -5928,6 +6120,7 @@
 
           if (pickedCardObject.cardName == "as") {
             imgSimplNbr.innerHTML = "AS";
+            imgSimplNbr.style.fontSize = "2.8em";
           }
           else if (pickedCardObject.cardName == "king") {
             imgSimplNbr.innerHTML = "K";
@@ -5942,7 +6135,7 @@
           else if (pickedCardObject.cardName == "joker") {
             imgSimplNbr.innerHTML = "J";
             // Spécifique font:
-            imgSimplNbr.style.fontSize = "3em";
+            imgSimplNbr.style.fontSize = "2.7em";
             imgSimpl.append(crown);
             // ajouter la classe specifique a la tete
           }
@@ -6526,11 +6719,20 @@
               document.getElementById("footer").style.boxShadow = "0px -3px 42vh 30px rgba(239, 59, 46, 0.9)";
               document.getElementById("header").style.boxShadow = "0px 3px 42vh 30px rgba(0, 255, 234, 0.55)";
 
+              if (toggleCardSimplist) {
+                handWin("croupier");
+                handBust("joueur");
+              }
+
               var handCroupier = document.getElementById("croupier").childNodes;
               for (var i=0; i < handCroupier.length; i++) {
                 // if (handCroupier[i].nodeName.toLowerCase() == 'img') {
                   handCroupier[i].classList.remove("surbrillanceCards213");
                   handCroupier[i].style.boxShadow = "0px 0px 20px 3px rgba(0, 255, 234, 0.60)";
+                  if (toggleCardSimplist) {
+                    handCroupier[i].style.borderColor = "rgba(0, 255, 234, 0.70)";
+                  }
+
                 // }
               }
               var handJoueur = document.getElementById("joueur").childNodes;
@@ -6539,6 +6741,9 @@
                   handJoueur[i].classList.remove("surbrillanceCards213");
                   handJoueur[i].classList.remove("surbrillanceCardsPair");
                   handJoueur[i].style.boxShadow = "0px 0px 20px 3px rgba(239, 59, 46, 0.9)";
+                  if (toggleCardSimplist) {
+                    handJoueur[i].style.borderColor = "rgba(239, 59, 46, 0.8)";
+                  }
                 // }
               }
 
@@ -6596,12 +6801,19 @@
               document.getElementById("footer").style.boxShadow = "0px -3px 42vh 30px rgba(255, 55, 250, 0.9)";
               document.getElementById("header").style.boxShadow = "0px 3px 42vh 30px rgba(239, 59, 46, 0.9)";  
 
+              if (toggleCardSimplist) {
+                handBJ("joueur");
+                // handBust("croupier");
+              }
               
               var handCroupier = document.getElementById("croupier").childNodes;
               for (var i=0; i < handCroupier.length; i++) {
                 // if (handCroupier[i].nodeName.toLowerCase() == 'img') {
                   handCroupier[i].classList.remove("surbrillanceCards213");
                   handCroupier[i].style.boxShadow = "0px 0px 20px 3px rgba(239, 59, 46, 0.9)";
+                  if (toggleCardSimplist) {
+                    handCroupier[i].style.borderColor = "rgba(239, 59, 46, 0.8)";
+                  }
                 // }
               }
               var handJoueur = document.getElementById("joueur").childNodes;
@@ -6610,6 +6822,9 @@
                   handJoueur[i].classList.remove("surbrillanceCards213");
                   handJoueur[i].classList.remove("surbrillanceCardsPair");
                   handJoueur[i].style.boxShadow = "0px 0px 20px 3px rgba(255, 55, 250, 0.9)";
+                  if (toggleCardSimplist) {
+                    handJoueur[i].style.borderColor = "rgba(255, 55, 250, 0.9)";
+                  }
                 // }
               }
             }, 1600)
@@ -7243,7 +7458,7 @@
             });          
           }
 
-          
+
           setTimeout(function() {
             $.ajax({
               async: false,

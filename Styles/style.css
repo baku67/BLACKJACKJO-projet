@@ -2294,7 +2294,7 @@ h2 {
 }
 
 .imgSimplNbr {
-	font-size: 3.5em;
+	font-size: 3.2em;
 	position: relative;
 	top: 5%;
 	color: rgba(239, 59, 46, 1);
@@ -2305,7 +2305,7 @@ h2 {
 	height: 45px;
 	width: 45px;
 	position: relative;
-	top: 23px;
+	top: 27px;
 }
 
 .crown {
@@ -4839,7 +4839,9 @@ p {
 }
 
 #hit {
-	color: rgba(44, 252, 3, 0.8);
+	/* color: rgba(44, 252, 3, 0.8); */
+	color: rgb(3 252 251 / 80%);
+
 	font-size: 5em;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	/* height: 90%;  */
@@ -4848,7 +4850,8 @@ p {
 	top: 16px;
 	width: 150px; 
 	margin: 5px 8px; 
-	border: 4px solid rgba(44, 252, 3, 0.7); 
+	/* border: 4px solid rgba(44, 252, 3, 0.7);  */
+	border: 4px solid rgb(3 252 251 / 70%); 
 	border-radius: 9px;
 
 	
@@ -4862,7 +4865,7 @@ p {
 }
 
 #stand {
-	color: rgba(252, 0, 0, 1);
+	color: rgba(239, 59, 46, 1);
 	font-size: 6.5em;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
@@ -4872,7 +4875,7 @@ p {
 
 	width: 150px; 
 	margin: 5px 8px; 
-	border: 4px solid rgba(252, 0, 0, 1); 
+	border: 4px solid rgba(239, 59, 46, 1); 
 	border-radius: 9px;
 	transition-property: font-size;
 	transition-duration: 0.3s;
