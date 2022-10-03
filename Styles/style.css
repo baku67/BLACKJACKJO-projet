@@ -474,6 +474,8 @@ input:-webkit-autofill{
 	transform: translate(-50%, -17vh);
 }
 #sideBet1 {
+	user-select: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	cursor: pointer;
 
 	margin: 0px 25px;
@@ -496,6 +498,8 @@ input:-webkit-autofill{
 	transition: border-color 0.3s ease, background-color 0.3s ease; 
 }
 #sideBet2 {
+	user-select: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	cursor: pointer;
 
 	margin: 0px 25px;
@@ -566,7 +570,9 @@ input:-webkit-autofill{
 
 
 #previousBetsDiv {
-	cursor: pointer;
+	/* user-select: none;
+	cursor: pointer; 
+	-webkit-tap-highlight-color: rgba(0,0,0,0); */
 
 	position: absolute;
 
@@ -599,6 +605,10 @@ input:-webkit-autofill{
 }
 
 #previousBetsTitle {
+	/* user-select: none; */
+	-webkit-tap-highlight-color: transparent; 
+
+
 	/* font-weight: bold; */
 	position: relative;
 	left: 8%;
@@ -611,6 +621,10 @@ input:-webkit-autofill{
 }
 
 #previousBetsLine {
+	/* user-select: none;
+	-webkit-tap-highlight-color: transparent; */
+
+
 	font-size:1.3em; 
 	font-family: "Holtwood One SC", serif;
 	margin-top: 2px;
@@ -2258,7 +2272,7 @@ h2 {
 
 #iframePC {
 	width: 767px;
-	height: 1550px;
+	height: 1500px;
 
 	position: absolute;
 	right: 50%;
@@ -2514,7 +2528,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 
 	/* padding: 0px 1000px; */
 	padding: 28px 55px; 
-	font-size: 1.3em !important;
+	/* font-size: 1.3em !important; */
 }
 
 /* .animBoutonPartiePop {

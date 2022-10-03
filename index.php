@@ -481,8 +481,10 @@
 				// Affichage emulateurMobil sur PC
 				document.body.innerHTML = "";
 				document.getElementById("body").append(iframe);
+				emulateurOn = true;
 			}
 			else {
+				emulateurOn = false;
 				// Affichage Mobile (min-width: 767px): laisse l'index normal
 				// $("#body").load("index2.php");	
 			}

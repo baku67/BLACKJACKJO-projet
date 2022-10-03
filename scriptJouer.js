@@ -12,6 +12,8 @@
         // setting.then(null, onError);
       // FIN FIX
 
+      var emulateurOn = false;
+
       var audioCardSound = new Audio("Audio/addCardSound.mp3");
       audioCardSound.volume = 0.4;
 
@@ -307,7 +309,7 @@
           document.getElementById('footer').classList.add("is-blurred");
           document.getElementById('header').classList.add("is-blurred");
           document.getElementById('classementDiv').classList.add("is-blurred");
-          document.getElementById('connectionContainer').classList.add("is-blurred");
+          document.getElementById('connectedLine').classList.add("is-blurred");
           document.getElementById('jaugeContainerMaster').classList.add("is-blurred");
         }
       }
@@ -2101,6 +2103,13 @@
               previousBetsDiv.prepend(flechePreviousBets);
               document.getElementById("sideBetDiv").append(previousBetsDiv); 
 
+              if (emulateurOn == false) {
+                // document.getElementById("previousBetsDiv").style.cursor = "pointer";
+                document.getElementById("previousBetsDiv").style.cssText = "-webkit-tap-highlight-color: rgba(0,0,0,0)";
+                document.getElementById("previousBetsLine").style.cssText = "-webkit-tap-highlight-color: rgba(0,0,0,0)";
+                document.getElementById("previousBetsTitle").style.cssText = "-webkit-tap-highlight-color: rgba(0,0,0,0)";
+              }
+
 
               if (PreviousMisePair == 0) {
                 document.getElementById("previousMisePair").style.color = "grey";
@@ -2111,29 +2120,41 @@
                 document.getElementById("previousMise213").style.opacity = "0.7";
               }
 
-              document.getElementById("previousBetsDiv").addEventListener("click", function() {
+              if ((credits - (PreviousMiseNormale + PreviousMisePair + PreviousMise213)) >= 0 ) {
+                document.getElementById("previousBetsDiv").addEventListener("click", function() {
 
-                // Anims miserAlert
-                setTimeout( function() {
-                  document.getElementById('textMise').classList.add("phaseMiserAlert2Flash");
-                  document.getElementById('traitUnderlineInverse').classList.add("traitUnderlineInverse2Flash");
-                  document.getElementById('phaseMiserAlert').classList.add("phaseMiserAlert2");
-                }, 200)
-                // Fin anims
+                  // Anims miserAlert
+                  setTimeout( function() {
+                    document.getElementById('textMise').classList.add("phaseMiserAlert2Flash");
+                    document.getElementById('traitUnderlineInverse').classList.add("traitUnderlineInverse2Flash");
+                    document.getElementById('phaseMiserAlert').classList.add("phaseMiserAlert2");
+                  }, 200)
+                  // Fin anims
+  
+                  miseEnCours = PreviousMiseNormale;
+                  misePairEnCours = PreviousMisePair;
+                  mise213EnCours = PreviousMise213;
+                  document.getElementById("flechePreviousBets").classList.add("flechePreviousAnim");
+                  document.getElementById("previousBetsDiv").classList.add("previousBoutonClick");
+                  document.getElementById("previousBetsTitle").classList.add("previousBoutonClick");
+  
+                  setTimeout(function() {
+                    miseLock();
+                  }, 500)
+                })
+              }
+              else {
+                // grisage du bouton si pas assez de sous:
+                document.getElementById("previousBetsDiv").style.opacity = "0.8";
+                document.getElementById("previousBetsDiv").style.borderColor = "rgba(128,128,128,1)";
+                document.getElementById("previousBetsDiv").style.background = "radial-gradient(circle, rgba(128,128,128,0.5) 0%, rgba(189,189,189,0) 90%)";
+                document.getElementById("previousBetsTitle").style.color = "rgba(128,128,128,1)";
+                
+              }
 
-                miseEnCours = PreviousMiseNormale;
-                misePairEnCours = PreviousMisePair;
-                mise213EnCours = PreviousMise213;
-                document.getElementById("flechePreviousBets").classList.add("flechePreviousAnim");
-                document.getElementById("previousBetsDiv").classList.add("previousBoutonClick");
-                document.getElementById("previousBetsTitle").classList.add("previousBoutonClick");
-
-                setTimeout(function() {
-                  miseLock();
-                }, 500)
-              })
+              
             }, 750)
-        }
+          }
       }
 
 
@@ -2829,31 +2850,93 @@
 
           // Anim stack cards
           if (toggleCardSimplist) {
-            var imgElemArray = document.querySelectorAll('.imgSimpl1');
-            imgElemArray.forEach(element => {
-              element.style.margin = "0 -7.6em 0 0.4em";
-              element.style.transform = "rotate(0deg) translateX(-56px)";
-              element.style.bottom = "0px";
-              // Enlever aussi les border ici?
-            });
-            setTimeout(function() {
+            if (document.getElementById("backCardCroupier") !== null) {
+
+              var imgElemArray = document.querySelectorAll('#croupier div, #croupier img');
               imgElemArray.forEach(element => {
-                element.classList.add('allCardsFadeOutSlide');
+                element.style.margin = "0 -7.4em 0 0.4em";
+                element.style.transform = "rotate(0deg) translateX(-56px)";
+                element.style.bottom = "0px";
+                // Enlever aussi les border ici?
               });
-            }, 450)
+              setTimeout(function() {
+                imgElemArray.forEach(element => {
+                  element.classList.add('allCardsFadeOutSlide');
+                });
+              }, 450)
+
+              var imgElemArray2 = document.querySelectorAll('#joueur .imgSimpl1');
+              imgElemArray2.forEach(element => {
+                element.style.margin = "0 -7.4em 0 0.4em";
+                element.style.transform = "rotate(0deg) translateX(-56px)";
+                element.style.bottom = "0px";
+                // Enlever aussi les border ici?
+              });
+              setTimeout(function() {
+                imgElemArray2.forEach(element => {
+                  element.classList.add('allCardsFadeOutSlide');
+                });
+              }, 450)
+            }
+            else {
+              var imgElemArray = document.querySelectorAll('.imgSimpl1');
+              imgElemArray.forEach(element => {
+                element.style.margin = "0 -7.4em 0 0.4em";
+                element.style.transform = "rotate(0deg) translateX(-56px)";
+                element.style.bottom = "0px";
+                // Enlever aussi les border ici?
+              });
+              setTimeout(function() {
+                imgElemArray.forEach(element => {
+                  element.classList.add('allCardsFadeOutSlide');
+                });
+              }, 450)
+            }
           }
           else {
-            var imgElemArray = document.querySelectorAll('.imgPartie');
-            imgElemArray.forEach(element => {
-              element.style.margin = "0 -7.6em 0 0.4em";
-              element.style.transform = "rotate(0deg) translateX(-56px)";
-              element.style.bottom = "0px";
-            });
-            setTimeout(function() {
+
+            if (document.getElementById("backCardCroupier") !== null) {
+
+              var imgElemArray = document.querySelectorAll('#croupier div, #croupier img');
               imgElemArray.forEach(element => {
-                element.classList.add('allCardsFadeOutSlide');
+                element.style.margin = "0 -7.4em 0 0.4em";
+                element.style.transform = "rotate(0deg) translateX(-56px)";
+                element.style.bottom = "0px";
               });
-            }, 450)
+              setTimeout(function() {
+                imgElemArray.forEach(element => {
+                  element.classList.add('allCardsFadeOutSlide');
+                });
+              }, 450)
+
+              var imgElemArray2 = document.querySelectorAll('#joueur .imgPartie');
+              imgElemArray2.forEach(element => {
+                element.style.margin = "0 -7.4em 0 0.4em";
+                element.style.transform = "rotate(0deg) translateX(-56px)";
+                element.style.bottom = "0px";
+              });
+              setTimeout(function() {
+                imgElemArray2.forEach(element => {
+                  element.classList.add('allCardsFadeOutSlide');
+                });
+              }, 450)
+            }
+
+            else {
+              var imgElemArray = document.querySelectorAll('.imgPartie');
+              imgElemArray.forEach(element => {
+                element.style.margin = "0 -7.4em 0 0.4em";
+                element.style.transform = "rotate(0deg) translateX(-56px)";
+                element.style.bottom = "0px";
+              });
+              setTimeout(function() {
+                imgElemArray.forEach(element => {
+                  element.classList.add('allCardsFadeOutSlide');
+                });
+              }, 450)
+            }
+
+            
           }
 
           document.getElementById("jaugeContainer").style.backgroundColor = "var(--bgColor-jaugeVide)";
@@ -3880,36 +3963,39 @@
                   assuranceDiv.append(assuranceImg);
                   assuranceDiv.append(assuranceMise);
 
-                  document.getElementById("hitStandDoubleContainer").append(assuranceDiv);
+                  if (document.getElementById("hitStandDoubleContainer") !== null) {
+                    document.getElementById("hitStandDoubleContainer").append(assuranceDiv);
 
-                  document.getElementById("assuranceMise").innerHTML = Math.ceil(miseLocked/2) + "<img src='Images/souBarre_darkMode.png' id='souAssurance' class='imageSouPetit'>";
-
-                  // Envoi de la moitié de la miseNormal BDD
-                  document.getElementById("assuranceDiv").addEventListener("click", function() {
-
-                    if (isConnected == true) {
-                      document.getElementById("creditsConnected").innerHTML = credits - (miseLocked/2);
-                    }
-                    else {
-                      document.getElementById("creditsInvite").innerHTML = credits - (miseLocked/2);
-                    }
-
-                    document.getElementById("assuranceMise").style.color = "#2E5FFF";
-                    document.getElementById("assuranceMise").innerHTML = "&#10003;";
-
-                    var assuranceToPhp = {};
-                    assuranceToPhp.value = (miseLocked/2);
-
-                    $.ajax({
-                      url: "setMises.php",
-                      method: "post",
-                      data: assuranceToPhp,
-                      success: function(res) {
-                        console.log("Assurance ENVOYEE");
+                    document.getElementById("assuranceMise").innerHTML = Math.ceil(miseLocked/2) + "<img src='Images/souBarre_darkMode.png' id='souAssurance' class='imageSouPetit'>";
+  
+                    // Envoi de la moitié de la miseNormal BDD
+                    document.getElementById("assuranceDiv").addEventListener("click", function() {
+  
+                      if (isConnected == true) {
+                        document.getElementById("creditsConnected").innerHTML = credits - (miseLocked/2);
                       }
-                    });
-
-                  })
+                      else {
+                        document.getElementById("creditsInvite").innerHTML = credits - (miseLocked/2);
+                      }
+  
+                      document.getElementById("assuranceMise").style.color = "#2E5FFF";
+                      document.getElementById("assuranceMise").innerHTML = "&#10003;";
+  
+                      var assuranceToPhp = {};
+                      assuranceToPhp.value = (miseLocked/2);
+  
+                      $.ajax({
+                        url: "setMises.php",
+                        method: "post",
+                        data: assuranceToPhp,
+                        success: function(res) {
+                          console.log("Assurance ENVOYEE");
+                        }
+                      });
+  
+                    })
+                  }
+                  
 
                 }
 
@@ -7484,7 +7570,7 @@
 
 
           if (toggleCardSimplist) {
-            var imgElemArray = document.querySelectorAll('.imgSimpl1');
+            var imgElemArray = document.querySelectorAll('#joueur .imgSimpl1');
             imgElemArray.forEach(element => {
               element.style.margin = "0 -5px";
               // Anim juste quand toggleSimpliste POur l'instant
