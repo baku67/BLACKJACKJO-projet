@@ -422,6 +422,21 @@ input:-webkit-autofill{
 }
 
 
+#errorCo {
+	opacity: 0;
+	text-align: center;
+	margin: 0 auto;
+	position: relative;
+	top: 20px;
+
+	color: red;
+	font-size: 1.3em;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+
+}
+
+
 
 #miseTitle {
 	margin-block-start: 0.6em;
@@ -573,6 +588,7 @@ input:-webkit-autofill{
 	/* user-select: none;
 	cursor: pointer; 
 	-webkit-tap-highlight-color: rgba(0,0,0,0); */
+	cursor: pointer; 
 
 	position: absolute;
 
@@ -661,6 +677,8 @@ input:-webkit-autofill{
 	color: rgba(251, 168, 162, 0.9);
 	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
+
+
 
 .previousBoutonClick {
 	opacity: 1;
@@ -2271,7 +2289,7 @@ h2 {
 
 
 #iframePC {
-	width: 767px;
+	width: 760px;
 	height: 1500px;
 
 	position: absolute;
@@ -2285,6 +2303,8 @@ h2 {
 	padding: 5px 5px;
 	background-color: rgb(17, 19, 31);
 
+	box-shadow: rgba(0, 255, 234, 0.4) 0px 0px 60px 4px;
+	/* box-shadow: rgba(239, 59, 46, 1) 0px 0px 25px 4px; */
 }
 
 .imgSimpl1 {
@@ -3404,6 +3424,7 @@ p {
 }
 
 .pokerChips {
+	user-select: none;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 
 	width: 6.3em; 

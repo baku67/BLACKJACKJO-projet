@@ -20,7 +20,8 @@
 		<link rel="stylesheet" href="Styles/MediaQueries2.css" id="stylesheet_4">
 		<link rel="stylesheet" href="Styles/MediaQueries3.css" id="stylesheet_5">
 		<link rel="stylesheet" href="Styles/styleW3.css" id="stylesheet_2">
-		<script type="text/javascript" src="scriptJouer.js"></script>
+		<!-- Script ajouté si Mobile -->
+		<!-- <script type="text/javascript" src="scriptJouer.js"></script> -->
 		<script type="text/javascript" src="deck.js"></script>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,6 +72,10 @@
 		<script>
 			var username="<?php echo $_SESSION['username']; ?>";
 		</script>
+
+
+
+
 
 
 
@@ -231,6 +236,21 @@
 				</script>
 			
 			<!-- Fin WIP jauge -->
+
+			<!-- Error si mdp/user faux -->
+			<?php 
+			if (isset($_SESSION['messageErrorCo'])) {
+			?>
+			<p id="errorCo" class="fadeIn2">
+				<?php
+				echo $_SESSION['messageErrorCo'];
+				unset($_SESSION['messageErrorCo']);
+				?>
+			</p>
+			<?php
+			}
+			?>
+			<!-- Fin errorCo -->
 
 
 
@@ -473,24 +493,54 @@
 
 			var x = window.matchMedia("(min-width: 767px)");
 
+			var emulateurOn;
+
 			const iframe = document.createElement("iframe");
 			iframe.setAttribute("id", "iframePC");
 			iframe.setAttribute("src", "indexBackup.php")
 
 			if (x.matches) {
 				// Affichage emulateurMobil sur PC
+
+				// Pas de script dans l'index (vide ici)
+				var script = document.createElement('script');
+				script.src = "";
+				document.head.appendChild(script);
+
 				document.body.innerHTML = "";
 				document.getElementById("body").append(iframe);
 				emulateurOn = true;
+				if (isConnected) {document.getElementById("iframePC").style.boxShadow = "rgba(0, 255, 234, 0.4) 0px 0px 60px 4px"}
+				else {document.getElementById("iframePC").style.boxShadow = "rgba(239, 59, 46, 0.5) 0px 0px 60px 4px"}
 			}
 			else {
+				// Affichage normal (mobile)
+				var script = document.createElement('script');
+				script.src = "scriptJouer.js";
+				document.head.appendChild(script);
+
 				emulateurOn = false;
-				// Affichage Mobile (min-width: 767px): laisse l'index normal
-				// $("#body").load("index2.php");	
 			}
 
 		</script>
 		<!-- FIN EMULATEUR -->
+
+		<script>
+		if (emulateurOn) {
+			<?php 
+				if (isset($_SESSION['username'])) :
+			?>
+					document.getElementById("iframePC").style.boxShadow = "rgba(0, 255, 234, 0.4) 0px 0px 60px 4px";
+
+			<?php 
+				else : 
+			?>
+					document.getElementById("iframePC").style.boxShadow = "rgba(239, 59, 46, 0.5) 0px 0px 60px 4px";
+			<?php 
+				endif;
+			?>
+		}
+	</script>
 
 
 

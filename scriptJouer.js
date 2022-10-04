@@ -12,7 +12,7 @@
         // setting.then(null, onError);
       // FIN FIX
 
-      var emulateurOn = false;
+      // var emulateurOn = false;
 
       var audioCardSound = new Audio("Audio/addCardSound.mp3");
       audioCardSound.volume = 0.4;
@@ -103,8 +103,14 @@
       let historiqueInviteArray = [];
 
 
+      // Au moment de co ou de deco, le redirect doit etre adapté (ce truc marche pas:)
+      // if (emulateurOn == true) {
+      //   console.log("proc verif boxShdow Iframe");
 
-
+      //   alert("proc verif boxShdow Iframe");
+			// 	if (isConnected) {document.getElementById("iframePC").style.boxShadow = "rgba(0, 255, 234, 0.4) 0px 0px 60px 4px"}
+			// 	else {document.getElementById("iframePC").style.boxShadow = "rgba(239, 59, 46, 0.5) 0px 0px 60px 4px"}
+      // }
 
 
 
@@ -338,7 +344,7 @@
           document.getElementById('footer').classList.remove("is-blurred");
           document.getElementById('header').classList.remove("is-blurred");
           document.getElementById('classementDiv').classList.remove("is-blurred");
-          document.getElementById('connectionContainer').classList.remove("is-blurred");
+          document.getElementById('connectedLine').classList.remove("is-blurred");
           document.getElementById('jaugeContainerMaster').classList.remove("is-blurred");
         }
       })
@@ -1054,15 +1060,15 @@
           var handCroupier = document.getElementById("croupier").childNodes;
 
           for (var i=0; i < handCroupier.length; i++) {
-            handCroupier[i].style.color = "rgb(164 167 0 / 80%)";
+            handCroupier[i].style.color = "rgb(164 167 0 / 100%)";
           }
           for (var i=0; i < handJoueur.length; i++) {
-            handCroupier[i].style.color = "rgb(164 167 0 / 80%)";
+            handCroupier[i].style.color = "rgb(164 167 0 / 100%)";
           }
 
           let temp0 = document.querySelectorAll("#joueur .imgSimplNbr");
           temp0.forEach(element => {
-            element.style.color = "rgb(164 167 0 / 80%)";
+            element.style.color = "rgb(164 167 0 / 100%)";
           });
 
           let temp1 = document.querySelectorAll("#joueur .imgSimplSuit");
@@ -1072,7 +1078,7 @@
 
           let temp2 = document.querySelectorAll("#croupier .imgSimplNbr");
           temp2.forEach(element => {
-            element.style.color = "rgb(164 167 0 / 80%)";
+            element.style.color = "rgb(164 167 0 / 100%)";
           });
 
           let temp3 = document.querySelectorAll("#croupier .imgSimplSuit");
@@ -2103,12 +2109,16 @@
               previousBetsDiv.prepend(flechePreviousBets);
               document.getElementById("sideBetDiv").append(previousBetsDiv); 
 
-              if (emulateurOn == false) {
-                // document.getElementById("previousBetsDiv").style.cursor = "pointer";
-                document.getElementById("previousBetsDiv").style.cssText = "-webkit-tap-highlight-color: rgba(0,0,0,0)";
-                document.getElementById("previousBetsLine").style.cssText = "-webkit-tap-highlight-color: rgba(0,0,0,0)";
-                document.getElementById("previousBetsTitle").style.cssText = "-webkit-tap-highlight-color: rgba(0,0,0,0)";
-              }
+              // if (emulateurOn == false) {
+              //   // document.getElementById("previousBetsDiv").style.cursor = "pointer";
+              //   document.getElementById("previousBetsDiv").style.cssText = "-webkit-tap-highlight-color: rgba(0,0,0,0)";
+              //   document.getElementById("previousBetsLine").style.cssText = "-webkit-tap-highlight-color: rgba(0,0,0,0)";
+              //   document.getElementById("previousBetsTitle").style.cssText = "-webkit-tap-highlight-color: rgba(0,0,0,0)";
+              // }
+              document.getElementById("previousBetsDiv").style.cssText = "-webkit-tap-highlight-color: rgba(0,0,0,0)";
+              document.getElementById("previousBetsLine").style.cssText = "-webkit-tap-highlight-color: rgba(0,0,0,0)";
+              document.getElementById("previousBetsTitle").style.cssText = "-webkit-tap-highlight-color: rgba(0,0,0,0)";
+
 
 
               if (PreviousMisePair == 0) {
@@ -2149,7 +2159,7 @@
                 document.getElementById("previousBetsDiv").style.borderColor = "rgba(128,128,128,1)";
                 document.getElementById("previousBetsDiv").style.background = "radial-gradient(circle, rgba(128,128,128,0.5) 0%, rgba(189,189,189,0) 90%)";
                 document.getElementById("previousBetsTitle").style.color = "rgba(128,128,128,1)";
-                
+
               }
 
               
@@ -2236,6 +2246,10 @@
 
         // JQUERY JAX : load Partie
         $("#newGame").click(function(){
+
+            if (document.getElementById("errorCo") !== null) {
+              document.getElementById("errorCo").remove();
+            }
 
             document.querySelector("#newGame").disabled = true;
 

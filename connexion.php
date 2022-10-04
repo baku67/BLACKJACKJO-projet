@@ -43,7 +43,7 @@ if(isset($_POST['connexion'])){
                                 
                 if(mysqli_num_rows($Requete) == 0) {
                     header('Location: https://www.blackjackjo.com/index.php');
-                    echo "Le pseudo ou le mot de passe est incorrect, le compte n'a pas été trouvé.";
+                    $_SESSION['messageErrorCo'] = 'Login ou mot de passe incorrect.';
                 } else {
                     //on ouvre la session avec $_SESSION:
                     //la session peut être appelée différemment et son contenu aussi peut être autre chose que le pseudo
