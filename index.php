@@ -88,6 +88,22 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		<!-- Zone de var Php non confidentiel, non affiché -->
 		<div id="dailyRewardBool" style="position:absolute; opacity:0; width:0; height:0; font-size:0px;"><?php include("getDailyProcBool.php");?></div>
 		<!-- Fin -->
@@ -481,6 +497,18 @@
 				// Affichage emulateurMobil sur PC
 				document.body.innerHTML = "";
 				document.getElementById("body").append(iframe);
+
+				// var sideLeftDiv = document.createElement("div");
+				// sideLeftDiv.setAttribute("id", "sideLeftDiv");
+				// sideLeftDiv.innerHTML = "<p class='titleSideDiv'>Règles</p>";
+
+				// var sideRightDiv = document.createElement("div");
+				// sideRightDiv.setAttribute("id", "sideRightDiv");
+				// sideRightDiv.innerHTML = "<p class='titleSideDiv'>Créez votre compte !</p>";
+
+
+				// document.getElementById("body").append(sideRightDiv);
+				// document.getElementById("body").append(sideLeftDiv);
 			}
 			else {
 				// Affichage Mobile (min-width: 767px): laisse l'index normal

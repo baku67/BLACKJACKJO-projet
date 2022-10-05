@@ -292,6 +292,31 @@
 
 
 
+
+
+      // appelé dans le index?
+      // function sideFramePC() {
+
+      //   var sideLeftDiv = document.createElement("div");
+      //   sideLeftDiv.setAttribute("id", "sideLeftDiv");
+      //   sideLeftDiv.innerHTML = "<p>sideLeftConseil</p>";
+
+      //   var sideRightDiv = document.createElement("div");
+      //   sideRightDiv.setAttribute("id", "sideRightDiv");
+      //   sideRightDiv.innerHTML = "<p>sideRightConseil</p>";
+
+
+      //   document.body.append(sideRightDiv);
+      //   document.body.append(sideLeftDiv);
+      // }
+
+
+
+
+
+
+
+
       // Front du dailyReward
       if ((isConnected == true) && (document.getElementById("dailyRewardBool") != null)) {
         // Bool switché onPurpose pour tester
@@ -1026,6 +1051,11 @@
               var result = element.src.slice(0, -4) + "WinPair.png";
               element.src = result;
             });
+
+            // var temp2 = document.querySelectorAll("#joueur .crown");
+            // temp2.forEach(element => {
+            //   element.src = "Images/crownWin.png";
+            // });
           }
           else if (hand == "croupier") {
             var handCroupier = document.getElementById("croupier").childNodes;
@@ -1043,6 +1073,11 @@
               var result = element.src.slice(0, -4) + "WinPair.png";
               element.src = result;
             });
+
+            // var temp4 = document.querySelectorAll("#croupier .crown");
+            // temp4.forEach(element => {
+            //   element.src = "Images/crownWin.png";
+            // });
           }
         }
 
