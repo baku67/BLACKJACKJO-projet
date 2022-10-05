@@ -310,23 +310,25 @@ input:-webkit-autofill{
 
 #sideLeftDiv {
 	position: absolute;
+
 	left: 15%;
 	transform: translateX(-25%);
-	top: 50%;
-	/* transform: translateY(-50%); */
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
+	top: 50%;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	background: radial-gradient(circle, rgba(239, 59, 46, 0.3) 0%, rgba(189, 189, 189, 0) 90%);
 }
 
 #sideRightDiv {
 	position: absolute;
-	right: 15%;
-	transform: translateX(25%);
-	top: 50%;
-	/* transform: translateY(-50%); */
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
+	/*  positionning spécifique car title long: (1024p/1440p friendly)*/
+	right: 12%;
+	transform: translateX(35%);
+	/* Fin */
+
+	top: 50%;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	background: radial-gradient(circle, rgba(239, 59, 46, 0.3) 0%, rgba(189, 189, 189, 0) 90%);
 }
 
@@ -501,6 +503,21 @@ input:-webkit-autofill{
 }
 
 
+#errorCo {
+	opacity: 0;
+	text-align: center;
+	margin: 0 auto;
+	position: relative;
+	top: 20px;
+
+	color: red;
+	font-size: 1.3em;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+
+}
+
+
 
 #miseTitle {
 	margin-block-start: 0.6em;
@@ -553,6 +570,8 @@ input:-webkit-autofill{
 	transform: translate(-50%, -17vh);
 }
 #sideBet1 {
+	user-select: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	cursor: pointer;
 
 	margin: 0px 25px;
@@ -575,6 +594,8 @@ input:-webkit-autofill{
 	transition: border-color 0.3s ease, background-color 0.3s ease; 
 }
 #sideBet2 {
+	user-select: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	cursor: pointer;
 
 	margin: 0px 25px;
@@ -645,7 +666,10 @@ input:-webkit-autofill{
 
 
 #previousBetsDiv {
-	cursor: pointer;
+	/* user-select: none;
+	cursor: pointer; 
+	-webkit-tap-highlight-color: rgba(0,0,0,0); */
+	cursor: pointer; 
 
 	position: absolute;
 
@@ -678,6 +702,10 @@ input:-webkit-autofill{
 }
 
 #previousBetsTitle {
+	/* user-select: none; */
+	-webkit-tap-highlight-color: transparent; 
+
+
 	/* font-weight: bold; */
 	position: relative;
 	left: 8%;
@@ -690,6 +718,10 @@ input:-webkit-autofill{
 }
 
 #previousBetsLine {
+	/* user-select: none;
+	-webkit-tap-highlight-color: transparent; */
+
+
 	font-size:1.3em; 
 	font-family: "Holtwood One SC", serif;
 	margin-top: 2px;
@@ -726,6 +758,8 @@ input:-webkit-autofill{
 	color: rgba(251, 168, 162, 0.9);
 	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
+
+
 
 .previousBoutonClick {
 	opacity: 1;
@@ -2336,8 +2370,8 @@ h2 {
 
 
 #iframePC {
-	width: 767px;
-	height: 1550px;
+	width: 760px;
+	height: 1500px;
 
 	position: absolute;
 	right: 50%;
@@ -2350,6 +2384,8 @@ h2 {
 	padding: 5px 5px;
 	background-color: rgb(17, 19, 31);
 
+	box-shadow: rgba(0, 255, 234, 0.4) 0px 0px 60px 4px;
+	/* box-shadow: rgba(239, 59, 46, 1) 0px 0px 25px 4px; */
 }
 
 .imgSimpl1 {
@@ -2593,7 +2629,7 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 
 	/* padding: 0px 1000px; */
 	padding: 28px 55px; 
-	font-size: 1.3em !important;
+	/* font-size: 1.3em !important; */
 }
 
 /* .animBoutonPartiePop {
@@ -3469,6 +3505,7 @@ p {
 }
 
 .pokerChips {
+	user-select: none;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 
 	width: 6.3em; 
