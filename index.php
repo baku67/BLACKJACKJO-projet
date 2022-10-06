@@ -278,6 +278,10 @@
 
 
 
+
+
+
+
 			<!-- MODALS Connection/Inscription -->
 			<div id="connectionModal" class="w3-modal">
 				<div class="w3-modal-content w3-animate-zoom">
@@ -655,7 +659,7 @@
 				// subscribeModal.style.transform = "scale(0.85)";
 				subscribeModal.style.cssText = "font-size:1.65em; transform:scale(0.9) translate(10px, -75px); opacity: 0;";
 
-				subscribeModal.innerHTML = '<form class="w3-container" action="inscription.php" method="post"><div class="w3-section"><label><b class="modalText">E-mail</b></label><input class="w3-input w3-border fixBoxSizing w3-margin-bottom maSauce" type="" placeholder="Entrez votre adresse mail" name="mail" required><label><b class="modalText">Identifiant</b></label><input class="w3-input w3-border w3-margin-bottom fixBoxSizing maSauce" type="text" placeholder="Entrer un identifiant" name="username" required><label><b class="modalText">Mot de passe</b></label><input class="w3-input w3-border fixBoxSizing w3-margin-bottom maSauce" type="password" placeholder="Entrer un mot de passe" name="password" required><label><b class="modalText">Confirmer le mot de passe</b></label><input class="w3-input w3-border fixBoxSizing maSauce" style="margin-bottom:75px;" type="password" placeholder="Réécrivez le mot de passe" name="password2" required><button class="w3-button w3-block w3-blue w3-section w3-padding maSauceSubmit" type="submit" value="S\'inscrire">Go !</button></div></form><div class="w3-container w3-padding-16 w3-light-grey"></div>';
+				subscribeModal.innerHTML = '<form class="w3-container" action="inscription.php" method="post"><div class="w3-section"><label><b class="modalText">E-mail</b></label><input class="w3-input w3-border fixBoxSizing w3-margin-bottom maSauce" type="" placeholder="Entrez votre adresse mail" name="mail" required><label><b class="modalText">Identifiant</b></label><input class="w3-input w3-border w3-margin-bottom fixBoxSizing maSauce" type="text" placeholder="Entrer un identifiant" name="username" required><label><b class="modalText">Mot de passe</b></label><input class="w3-input w3-border fixBoxSizing w3-margin-bottom maSauce" type="password" placeholder="Entrer un mot de passe" name="password" required><label><b class="modalText">Confirmation</b></label><input class="w3-input w3-border fixBoxSizing maSauce" style="margin-bottom:75px;" type="password" placeholder="Réécrivez le mot de passe" name="password2" required><button class="w3-button w3-block w3-blue w3-section w3-padding maSauceSubmit" type="submit" value="S\'inscrire">Go !</button></div></form><div class="w3-container w3-padding-16 w3-light-grey"></div>';
 				
 
 
@@ -749,6 +753,19 @@
 
 
 
+		<script>
+
+			window.onmessage = function(e) {
+				if (e.data == 'hello') {
+
+					// Fonctionne que lors du rafraischissment de l'indexParent, (le message s'envoi pas lors de la co dans l'iframe)
+					
+					// alert("co");
+					document.getElementById("iframePC").style.boxShadow = "rgba(0, 255, 234, 0.4) 0px 0px 60px 4px";
+
+				}
+			};
+		</script>
 
 
 
