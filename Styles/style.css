@@ -358,7 +358,7 @@ input:-webkit-autofill{
 #listSideLeft {
 	color: rgba(197, 197, 197, 0.6);
 	font-size: 2em;
-	line-height: 3em;
+	line-height: 2.4em;
 	text-align: center;
 	/* list-style: url('/media/examples/rocket.svg'); */
 	list-style: none;
@@ -366,7 +366,7 @@ input:-webkit-autofill{
 #listSideRight {
 	color: rgba(197, 197, 197, 0.6);
 	font-size: 2em;
-	line-height: 3em;
+	line-height: 2.4em;
 	text-align: center;
 	/* list-style: url('/media/examples/rocket.svg'); */
 	list-style: none;
@@ -380,7 +380,7 @@ input:-webkit-autofill{
 	position:absolute; 
 	right:-10px; 
 	top:3px; 
-	opacity:0.15; 
+	opacity:0.2; 
 	cursor:pointer; 
 	transition: all 0.3s;
 	/* color:rgba(239, 59, 46, 1); */
@@ -390,7 +390,7 @@ input:-webkit-autofill{
 	position:absolute; 
 	right:40px; 
 	top:3px; 
-	opacity:0.15; 
+	opacity:0.2; 
 	cursor:pointer; 
 	transition: all 0.3s;
 	/* color:rgba(239, 59, 46, 1); */
@@ -400,7 +400,7 @@ input:-webkit-autofill{
 	position:absolute; 
 	right:40px; 
 	top:3px; 
-	opacity:0.15; 
+	opacity:0.2; 
 	cursor:pointer; 
 	transition: all 0.3s;
 	/* color:rgba(239, 59, 46, 1); */
@@ -817,6 +817,10 @@ input:-webkit-autofill{
 	width: 71%;
 	/* border-width: 3px 0px 3px 0px; */
 	letter-spacing: 1.5px;
+	/* text-decoration: underline;
+	text-decoration-thickness: 1px; */
+
+
 
 }
 
@@ -824,6 +828,8 @@ input:-webkit-autofill{
 	font-size: 1em;
 	font-weight: bold;
 	font-style: italic;
+	line-height: 3em !important;
+	
 }
 
 
@@ -967,6 +973,47 @@ input:-webkit-autofill{
 	}
 }
 
+#subscribeModal {
+	opacity: 0;
+	text-align: center;
+	margin: 10px auto;
+	color: rgba(197, 197, 197, 0.6);
+    font-size: 2em;
+    /* line-height: 2.4em; */
+}
+.maSauce {
+	background-color: rgb(17 19 31);
+	border-radius: 6px;
+}
+.maSauceSubmit {
+	position: relative;
+
+	/* margin-top: 80px !important; */
+	/* margin: 80px auto 0px auto !important;  */
+	margin: 10px auto;
+	width: 75% !important;
+	height: 90px !important;
+	border-radius: 7px;
+	font-weight: bold;
+
+	transition: all 0.25s ease;
+}
+.maSauceSubmit:hover {
+	background-color: rgba(0, 255, 234, 0.8) !important;
+	font-size: 150%;
+	letter-spacing: 2px;
+
+}
+
+.subscribeButtonActiv {
+	border-radius: 0px !important;
+	background: radial-gradient(circle, rgba(0, 255, 234, 0.2) 0%, rgba(189, 189, 189, 0) 90%) !important;
+	border-color: rgba(0, 255, 234, 0.7) !important;
+	color: rgb(0, 231, 254) !important;
+	width: 71% !important;
+	letter-spacing: 1.5px !important;
+}
+
 #flecheSubscribe {
 	position: absolute;
 	left: 3%;
@@ -976,6 +1023,26 @@ input:-webkit-autofill{
 	width: 65px;
 	content: url("../Images/arrowPreviousVignette.png");
 	filter: blur(0px);
+}
+.flecheSubscribeAnim {
+	animation: flecheSubscribeAnim 0.25s forwards ease-in-out;
+}
+@keyframes flecheSubscribeAnim {
+	0% {
+		left: 3%;
+		opacity: 0.20;
+		filter: blur(0px);
+	}
+	50% {
+		/* left: 60%; */
+		opacity: 1;
+		/* filter: blur(1px); */
+	}
+	100% {
+		opacity: 0;
+		left: 90%;
+		filter: blur(3px);
+	}
 }
 
 #flechePreviousBets {
@@ -1413,6 +1480,18 @@ button, input[type="submit"], input[type="reset"] {
 		opacity: 0;
 	}
 }
+.fadeOut3 {
+	animation: fadeOut3 0.32s 0s forwards ease !important;
+}
+@keyframes fadeOut3 {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
 .fadeIn2 {
 	animation: fadeIn2 0.5s 0.5s forwards ease !important;
 }
@@ -1422,6 +1501,28 @@ button, input[type="submit"], input[type="reset"] {
 	}
 	to {
 		opacity: 1;
+	}
+}
+.fadeIn3 {
+	animation: fadeIn3 0.32s forwards ease !important;
+}
+@keyframes fadeIn3 {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+.fadeIn4 {
+	animation: fadeIn4 0.32s forwards ease !important;
+}
+@keyframes fadeIn4 {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 0.9;
 	}
 }
 
@@ -2849,10 +2950,10 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 	transition: all 0.2s;
 }
 #newGame:hover {
-	border: 2px solid rgba(34, 10, 141, 0.6);
+	/* border: 2px solid rgba(34, 10, 141, 0.6); */
 
 	/* padding: 0px 1000px; */
-	padding: 28px 55px; 
+	/* padding: 28px 55px;  */
 	/* font-size: 1.3em !important; */
 }
 
@@ -5177,11 +5278,15 @@ p {
 	width: 150px; 
 	margin: 5px 8px; 
 	border: 4px solid rgba(252, 227, 3, 0.8); 
+	border-bottom: 8px solid rgba(252, 227, 3, 0.8); 
 	border-radius: 9px;
 	transition-property: font-size;
 	transition-duration: 0.3s;
 
 	background-image: radial-gradient(circle, rgba(14,100,107,0.8) 0%, rgba(36,46,87,0) 100%);
+}
+#double:hover {
+	border-bottom: 6px solid rgba(252, 227, 3, 0.8); 
 }
 
 #hit {
@@ -5198,6 +5303,7 @@ p {
 	margin: 5px 8px; 
 	/* border: 4px solid rgba(44, 252, 3, 0.7);  */
 	border: 4px solid rgb(3 252 251 / 70%); 
+	border-bottom: 8px solid rgba(3, 252, 251, 0.7);
 	border-radius: 9px;
 
 	
@@ -5208,6 +5314,9 @@ p {
 	transition: font-size 0.3s;
 
 	background-image: radial-gradient(circle, rgba(14,100,107,0.8) 0%, rgba(36,46,87,0) 100%);
+}
+#hit:hover {
+	border-bottom: 6px solid rgba(3, 252, 251, 0.7);
 }
 
 #stand {
@@ -5222,11 +5331,15 @@ p {
 	width: 150px; 
 	margin: 5px 8px; 
 	border: 4px solid rgba(239, 59, 46, 1); 
+	border-bottom: 	8px solid rgba(239, 59, 46, 1); 
 	border-radius: 9px;
 	transition-property: font-size;
 	transition-duration: 0.3s;
 
 	background-image: radial-gradient(circle, rgba(14,100,107,0.8) 0%, rgba(36,46,87,0) 100%);
+}
+#stand:hover {
+	border-bottom: 	6px solid rgba(239, 59, 46, 1); 
 }
 
 

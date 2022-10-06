@@ -647,6 +647,33 @@
 				document.getElementById("body").append(sideLeftDiv);
 
 
+				// Anim subscribe button:
+				const subscribeModal = document.createElement("div");
+				subscribeModal.setAttribute("id", "subscribeModal");
+				// subscribeModal.innerHTML = "<p>TEST</p><br><p>TEST</p><br><p>TEST</p><br>";
+				// subscribeModal.style.fontSize = "1.8em";
+				// subscribeModal.style.transform = "scale(0.85)";
+				subscribeModal.style.cssText = "font-size:1.65em; transform:scale(0.9) translate(10px, -75px); opacity: 0;";
+
+				subscribeModal.innerHTML = '<form class="w3-container" action="inscription.php" method="post"><div class="w3-section"><label><b class="modalText">E-mail</b></label><input class="w3-input w3-border fixBoxSizing w3-margin-bottom maSauce" type="" placeholder="Entrez votre adresse mail" name="mail" required><label><b class="modalText">Identifiant</b></label><input class="w3-input w3-border w3-margin-bottom fixBoxSizing maSauce" type="text" placeholder="Entrer un identifiant" name="username" required><label><b class="modalText">Mot de passe</b></label><input class="w3-input w3-border fixBoxSizing w3-margin-bottom maSauce" type="password" placeholder="Entrer un mot de passe" name="password" required><label><b class="modalText">Confirmer le mot de passe</b></label><input class="w3-input w3-border fixBoxSizing maSauce" style="margin-bottom:75px;" type="password" placeholder="Réécrivez le mot de passe" name="password2" required><button class="w3-button w3-block w3-blue w3-section w3-padding maSauceSubmit" type="submit" value="S\'inscrire">Go !</button></div></form><div class="w3-container w3-padding-16 w3-light-grey"></div>';
+				
+
+
+
+				document.getElementById("subscribeButton").addEventListener("click", function() {
+					document.getElementById("flecheSubscribe").classList.add("flecheSubscribeAnim");
+					document.getElementById("subscribeButton").classList.add("subscribeButtonActiv");
+					setTimeout(function() {
+						document.getElementById("listSideLeft").classList.add("fadeOut3");
+						setTimeout(function() {
+							document.getElementById("listSideLeft").remove();
+
+							document.getElementById("sideLeftDiv").append(subscribeModal);
+							document.getElementById("subscribeModal").classList.add("fadeIn4");
+						}, 500)
+					}, 250)
+				})
+
 
 				// Pour l'instant: cross met juste un fadeOut puis remove et no way back (pas de collapsed)
 				document.getElementById("sideCrossRight").addEventListener("click", function() {
@@ -659,32 +686,45 @@
 					}, 500)
 				})
 				document.getElementById("sideCrossLeft").addEventListener("click", function() {
-					document.getElementById("listSideLeft").classList.add("fadeOut2");
-					setTimeout(function() {
-						document.getElementById("titleSideDivLeft").classList.add("fadeOut2");
-					}, 250)
-					setTimeout(function() {
-						document.getElementById("sideLeftDiv").classList.add("fadeOut2");
-					}, 500)
+					if (document.getElementById("listSideLeft") !== null) {
+						document.getElementById("listSideLeft").classList.add("fadeOut2");
+						setTimeout(function() {
+							document.getElementById("titleSideDivLeft").classList.add("fadeOut2");
+						}, 250)
+						setTimeout(function() {
+							document.getElementById("sideLeftDiv").classList.add("fadeOut2");
+						}, 500)
+					}
+					else {
+						document.getElementById("subscribeModal").classList.add("fadeOut3");
+						setTimeout(function() {
+							document.getElementById("subscribeModal").remove();
+							document.getElementById("titleSideDivLeft").classList.add("fadeOut2");
+						}, 300)
+						setTimeout(function() {
+							document.getElementById("sideLeftDiv").classList.add("fadeOut2");
+						}, 500)
+					}
+					
 				})
 
 
 				// Ici append l'iframe ou ajouter le src seulement si user click sur Oui ou OK etc
-				var ytIframe = document.createElement("div");
-				ytIframe.setAttribute("id", "ytIframe");
-				ytIframe.innerHTML = '<p id="titleSideDivYt" class="titleSideDiv">Youtube Player<span id="sideCrossYt">&#x2715;</span></p><br><iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com" frameborder="0"/>';
+				// var ytIframe = document.createElement("div");
+				// ytIframe.setAttribute("id", "ytIframe");
+				// ytIframe.innerHTML = '<p id="titleSideDivYt" class="titleSideDiv">Youtube Player<span id="sideCrossYt">&#x2715;</span></p><br><iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com" frameborder="0"/>';
 				
-				document.getElementById("body").append(ytIframe);
+				// document.getElementById("body").append(ytIframe);
 
-				document.getElementById("sideCrossYt").addEventListener("click", function() {
-					document.getElementById("ytplayer").classList.add("fadeOut2");
-					setTimeout(function() {
-						document.getElementById("titleSideDivYt").classList.add("fadeOut2");
-					}, 250)
-					setTimeout(function() {
-						document.getElementById("ytIframe").classList.add("fadeOut2");
-					}, 500)
-				})
+				// document.getElementById("sideCrossYt").addEventListener("click", function() {
+				// 	document.getElementById("ytplayer").classList.add("fadeOut2");
+				// 	setTimeout(function() {
+				// 		document.getElementById("titleSideDivYt").classList.add("fadeOut2");
+				// 	}, 250)
+				// 	setTimeout(function() {
+				// 		document.getElementById("ytIframe").classList.add("fadeOut2");
+				// 	}, 500)
+				// })
 				
 
 
