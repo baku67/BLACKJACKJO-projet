@@ -579,8 +579,18 @@
 				const list0 = document.createElement("li");
 				list0.setAttribute("id", "list0");
 				list0.classList.add("listX");
-				list0.innerHTML = "<p style='color:rgba(255,215,0,0.8);font-style:italic;font-weight:bolder;'>100% gratuit</p>";
+				list0.innerHTML = "<p style='color:rgba(255,215,0,0.7);font-style:italic;font-weight:bolder;'>* Aucun argent réel *</p>";
 				listSideLeft.append(list0);
+
+				const subscribeButton = document.createElement("li");
+				subscribeButton.setAttribute("id", "subscribeButton");
+				subscribeButton.innerHTML = "<p id='subscribText'>C'est parti !</p>";
+
+				const flecheSubscribe = document.createElement("img");
+				flecheSubscribe.setAttribute("id", "flecheSubscribe");
+				subscribeButton.prepend(flecheSubscribe);
+
+				listSideLeft.append(subscribeButton);
 
 				sideLeftDiv.append(listSideLeft);
 
@@ -657,6 +667,33 @@
 						document.getElementById("sideLeftDiv").classList.add("fadeOut2");
 					}, 500)
 				})
+
+
+				// Ici append l'iframe ou ajouter le src seulement si user click sur Oui ou OK etc
+				var ytIframe = document.createElement("div");
+				ytIframe.setAttribute("id", "ytIframe");
+				ytIframe.innerHTML = '<p id="titleSideDivYt" class="titleSideDiv">Youtube Player<span id="sideCrossYt">&#x2715;</span></p><br><iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com" frameborder="0"/>';
+				
+				document.getElementById("body").append(ytIframe);
+
+				document.getElementById("sideCrossYt").addEventListener("click", function() {
+					document.getElementById("ytplayer").classList.add("fadeOut2");
+					setTimeout(function() {
+						document.getElementById("titleSideDivYt").classList.add("fadeOut2");
+					}, 250)
+					setTimeout(function() {
+						document.getElementById("ytIframe").classList.add("fadeOut2");
+					}, 500)
+				})
+				
+
+
+
+
+				// Ajouter un "A propos du dev" redirect Portfolio
+
+
+
 			}
 			else {
 				// Affichage normal (mobile)
