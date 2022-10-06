@@ -7100,14 +7100,19 @@
                 element.src = "Images/crownBj.png";
               });
 
-              // var crownsjoueur = document.querySelectorAll("#croupier .crown");
-              // crownsjoueur.forEach(element => {
-              //   element.src = "Images/crown1.png";
-              // });
+              var crownsCroupier = document.querySelectorAll("#croupier .crown");
+              crownsCroupier.forEach(element => {
+                element.src = "Images/crown1.png";
+              });
 
               var starAsJoueur = document.querySelectorAll("#joueur .starAs");
               starAsJoueur.forEach(element => {
                 element.src = "Images/starAsPurple.png";
+              });
+
+              var starAsCroupier = document.querySelectorAll("#croupier .starAs");
+              starAsCroupier.forEach(element => {
+                element.src = "Images/starAsOrange.png";
               });
 
             }, 1600)
