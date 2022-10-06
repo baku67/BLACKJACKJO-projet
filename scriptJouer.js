@@ -1074,12 +1074,12 @@
               handCroupier[i].style.color = "rgba(0, 255, 234, 0.7)";
             }
 
-            var temp2 = document.querySelectorAll("#croupier .imgSimplNbr");
+            var temp2 = document.querySelectorAll("#croupier .imgSimplNbrCroupier");
             temp2.forEach(element => {
               element.style.color = "rgba(0, 255, 234, 0.7)";
             });
 
-            var temp3 = document.querySelectorAll("#croupier .imgSimplSuit");
+            var temp3 = document.querySelectorAll("#croupier .imgSimplSuitCroupier");
             temp3.forEach(element => {
               var result = element.src.slice(0, -4) + "WinPair.png";
               element.src = result;
@@ -1114,12 +1114,12 @@
             element.src = element.src.slice(0, -4) + "Push.png";
           });
 
-          let temp2 = document.querySelectorAll("#croupier .imgSimplNbr");
+          let temp2 = document.querySelectorAll("#croupier .imgSimplNbrCroupier");
           temp2.forEach(element => {
             element.style.color = "rgb(164 167 0 / 100%)";
           });
 
-          let temp3 = document.querySelectorAll("#croupier .imgSimplSuit");
+          let temp3 = document.querySelectorAll("#croupier .imgSimplSuitCroupier");
           temp3.forEach(element => {
             element.src = element.src.slice(0, -4) + "Push.png";
           });
@@ -1153,7 +1153,7 @@
               handCroupier[i].style.color = "rgb(199 13 11 / 90%)";
             }
 
-            let temp0 = document.querySelectorAll("#croupier .imgSimplNbr");
+            let temp0 = document.querySelectorAll("#croupier .imgSimplNbrCroupier");
             temp0.forEach(element => {
               element.style.color = "rgb(199 13 11 / 90%)";
             });
@@ -4839,6 +4839,24 @@
                     // }
                   }
 
+                  var crownsJoueur = document.querySelectorAll("#joueur .crown");
+                  crownsJoueur.forEach(element => {
+                    element.src = "Images/crown1.png";
+                  });
+                  var crownsCroupier = document.querySelectorAll("#croupier .crown");
+                  crownsCroupier.forEach(element => {
+                    element.src = "Images/crownWin.png";
+                  });
+
+                  var starAsJoueur = document.querySelectorAll("#joueur .starAs");
+                  starAsJoueur.forEach(element => {
+                    element.src = "Images/starAsOrange.png";
+                  });
+                  var starAsCroupier = document.querySelectorAll("#croupier .starAs");
+                  starAsCroupier.forEach(element => {
+                    element.src = "Images/starAsBlue.png";
+                  });
+
                 }, 465)
     
 
@@ -5016,6 +5034,24 @@
                       }
                     // }
                   }
+
+                  var crownsJoueur = document.querySelectorAll("#joueur .crown");
+                  crownsJoueur.forEach(element => {
+                    element.src = "Images/crownWin.png";
+                  });
+                  var crownsCroupier = document.querySelectorAll("#croupier .crown");
+                  crownsCroupier.forEach(element => {
+                    element.src = "Images/crown1.png";
+                  });
+
+                  var starAsJoueur = document.querySelectorAll("#joueur .starAs");
+                  starAsJoueur.forEach(element => {
+                    element.src = "Images/starAsBlue.png";
+                  });
+                  var starAsCroupier = document.querySelectorAll("#croupier .starAs");
+                  starAsCroupier.forEach(element => {
+                    element.src = "Images/starAsOrange.png";
+                  });
 
                 }, 465)
 
@@ -5198,6 +5234,24 @@
                     // }
                   }
 
+                  var crownsJoueur = document.querySelectorAll("#joueur .crown");
+                  crownsJoueur.forEach(element => {
+                    element.src = "Images/crownWin.png";
+                  });
+                  var crownsCroupier = document.querySelectorAll("#croupier .crown");
+                  crownsCroupier.forEach(element => {
+                    element.src = "Images/crown1.png";
+                  });
+
+                  var starAsJoueur = document.querySelectorAll("#joueur .starAs");
+                  starAsJoueur.forEach(element => {
+                    element.src = "Images/starAsBlue.png";
+                  });
+                  var starAsCroupier = document.querySelectorAll("#croupier .starAs");
+                  starAsCroupier.forEach(element => {
+                    element.src = "Images/starAsOrange.png";
+                  });
+
                 }, 465)
 
 
@@ -5375,6 +5429,16 @@
                   if (toggleCardSimplist) {
                     handPush();
                   }
+
+                  // var crownsjoueur = document.querySelectorAll("#joueur .crown");
+                  // crownsjoueur.forEach(element => {
+                  //   element.src = "Images/crown.png";
+                  // });
+
+                  // var crownsjoueur = document.querySelectorAll("#croupier .crown");
+                  // crownsjoueur.forEach(element => {
+                  //   element.src = "Images/crown.png";
+                  // });
 
 
                 }, 465)
@@ -6007,8 +6071,8 @@
             imgSimpl.style.borderColor = "rgb(0 255 234 / 70%)";
           }
 
-          var imgSimplNbr = document.createElement("span");
-          imgSimplNbr.setAttribute("class", "imgSimplNbr");
+          var imgSimplNbr = document.createElement("p");
+          imgSimplNbr.setAttribute("class", "imgSimplNbrCroupier");
           if (toggleCardSimplist && shadow) {
             imgSimplNbr.style.color = "rgb(0 255 234 / 70%)";
           }
@@ -6016,17 +6080,21 @@
 
           var crown = document.createElement("img");
           crown.setAttribute("class", "crown");
-          // Inversion crown pour croupier:
-          // crown.style.transform = "rotate(-15deg)";
-          // Crown en bas pour croupier:
-          crown.style.top = "85%";
-          // crown.style.transform = "rotate(180deg)";
-          crown.src = "Images/crown3.png";
+          crown.style.top = "97%";
+          crown.style.transform = "translateX(50%) rotate(180deg)";
+          crown.src = "Images/crown.png";
+
+          var starAs = document.createElement("img");
+          starAs.setAttribute("class", "starAs");
+          starAs.style.top = "94%";
+          starAs.style.transform = "translateX(50%) rotate(180deg)";
+          starAs.src = "Images/starAs.png";
 
 
           if (pickedCardObject.cardName == "as") {
             imgSimplNbr.innerHTML = "AS";
-            imgSimplNbr.style.fontSize = "2.8em";
+            imgSimplNbr.style.fontSize = "2.7em";
+            imgSimpl.append(starAs);
           }
           else if (pickedCardObject.cardName == "king") {
             imgSimplNbr.innerHTML = "K";
@@ -6051,7 +6119,7 @@
 
 
           var imgSimplSuit = document.createElement("img");
-          imgSimplSuit.setAttribute("class", "imgSimplSuit");
+          imgSimplSuit.setAttribute("class", "imgSimplSuitCroupier");
           imgSimplSuit.src = "Images/" + pickedCardObject.cardFamily + ".png";
           if (toggleCardSimplist && shadow) {
             imgSimplSuit.src = "Images/" + pickedCardObject.cardFamily + "WinPair.png";
@@ -6064,9 +6132,10 @@
           }
 
           var br = document.createElement("br");
-          imgSimpl.append(imgSimplNbr);
-          imgSimpl.append(br);
           imgSimpl.append(imgSimplSuit);
+          imgSimpl.append(br);
+          imgSimpl.append(imgSimplNbr);
+
 
           
         }
@@ -6291,11 +6360,18 @@
 
           var crown = document.createElement("img");
           crown.setAttribute("class", "crown");
-          crown.src = "Images/crown3.png";
+          crown.src = "Images/crown.png";
+
+          var starAs = document.createElement("img");
+          starAs.setAttribute("class", "starAs");
+          // crown.style.top = "95%";
+          // crown.style.transform = "translateX(50%) rotate(180deg)";
+          starAs.src = "Images/starAs.png";
 
           if (pickedCardObject.cardName == "as") {
             imgSimplNbr.innerHTML = "AS";
-            imgSimplNbr.style.fontSize = "2.8em";
+            imgSimplNbr.style.fontSize = "2.7em";
+            imgSimpl.append(starAs);
           }
           else if (pickedCardObject.cardName == "king") {
             imgSimplNbr.innerHTML = "K";
@@ -6901,26 +6977,42 @@
 
               var handCroupier = document.getElementById("croupier").childNodes;
               for (var i=0; i < handCroupier.length; i++) {
-                // if (handCroupier[i].nodeName.toLowerCase() == 'img') {
                   handCroupier[i].classList.remove("surbrillanceCards213");
                   handCroupier[i].style.boxShadow = "0px 0px 20px 3px rgba(0, 255, 234, 0.60)";
                   if (toggleCardSimplist) {
                     handCroupier[i].style.borderColor = "rgba(0, 255, 234, 0.70)";
                   }
-
-                // }
               }
+
               var handJoueur = document.getElementById("joueur").childNodes;
               for (var i=0; i < handJoueur.length; i++) {
-                // if (handJoueur[i].nodeName.toLowerCase() == 'img') {
                   handJoueur[i].classList.remove("surbrillanceCards213");
                   handJoueur[i].classList.remove("surbrillanceCardsPair");
                   handJoueur[i].style.boxShadow = "0px 0px 20px 3px rgba(239, 59, 46, 0.9)";
                   if (toggleCardSimplist) {
                     handJoueur[i].style.borderColor = "rgba(239, 59, 46, 0.8)";
                   }
-                // }
               }
+
+              var crownsJoueur = document.querySelectorAll("#joueur .crown");
+              crownsJoueur.forEach(element => {
+                element.src = "Images/crown1.png";
+              });
+
+              var crownsCroupier = document.querySelectorAll("#croupier .crown");
+              crownsCroupier.forEach(element => {
+                element.src = "Images/crownWin.png";
+              });
+
+              var starAsJoueur = document.querySelectorAll("#joueur .starAs");
+              starAsJoueur.forEach(element => {
+                element.src = "Images/starAsOrange.png";
+              });
+
+              var starAsCroupier = document.querySelectorAll("#croupier .starAs");
+              starAsCroupier.forEach(element => {
+                element.src = "Images/starAsBlue.png";
+              });
 
             }, 1650)
           }
@@ -7002,6 +7094,22 @@
                   }
                 // }
               }
+
+              var crownsJoueur = document.querySelectorAll("#joueur .crown");
+              crownsJoueur.forEach(element => {
+                element.src = "Images/crownBj.png";
+              });
+
+              // var crownsjoueur = document.querySelectorAll("#croupier .crown");
+              // crownsjoueur.forEach(element => {
+              //   element.src = "Images/crown1.png";
+              // });
+
+              var starAsJoueur = document.querySelectorAll("#joueur .starAs");
+              starAsJoueur.forEach(element => {
+                element.src = "Images/starAsPurple.png";
+              });
+
             }, 1600)
           }
   

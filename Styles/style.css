@@ -2746,6 +2746,13 @@ h2 {
 	color: rgba(239, 59, 46, 1);
 	font-family: 'Lobster', cursive;
 }
+.imgSimplNbrCroupier {
+	font-size: 3.2em;
+	position: relative;
+	bottom: -30px;
+	color: rgba(239, 59, 46, 1);
+	font-family: 'Lobster', cursive;
+}
 
 .imgSimplSuit {
 	height: 45px;
@@ -2753,16 +2760,37 @@ h2 {
 	position: relative;
 	top: 27px;
 }
+.imgSimplSuitCroupier {
+	height: 45px;
+	width: 45px;
+	position: relative;
+	top: 13%;
+}
 
 .crown {
 	position: absolute;
-	top: -15%;
+	top: -16%;
 	/* transform: rotate(15deg); */
 	width: 45px;
 	z-index: 10;
 
 	right:50%;
 	transform: translateX(50%);
+	opacity: 0.85;
+
+	z-index: -1;
+}
+
+.starAs {
+	position: absolute;
+	top: -15%;
+	/* transform: rotate(15deg); */
+	width: 35px;
+	z-index: 10;
+
+	right:50%;
+	transform: translateX(50%);
+	opacity: 0.85;
 }
 
 
