@@ -7,12 +7,12 @@
 
 <html lang="fr">
 	<head>
-		<title id="title">BlackJack Jo'</title>
+		<title id="title">BlackJack Jo' - Jeu de blackjack en ligne 100% gratuit</title>
 		<link rel="icon" href="Images/favicon3.png">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
 		<meta charset="UTF-8">
 		<meta name="theme-color" content="rgba(17, 19, 31, 0.8)">
-		<meta name="description" content="BlackJack en ligne sans argent réel">
+		<meta name="description" content="Jouez au BlackJack en ligne et sans argent réel! 100% Gratuit. Inscrivez-vous pour garder vos gains!">
 		<meta name="author" content="Basile Kuntz">
 		<meta name="keywords" content="blackjack, casino, jeu, gratuit, cartes, croupier, carte">
 		<link rel="stylesheet" href="Styles/style.css" id="stylesheet_1">
@@ -41,13 +41,15 @@
 					isConnected = false; 
 					console.log('estPasConnecté');  
 					var toggleSpeed = false;
-
 				</script>
 
 		<?php
 			else :
 		?>
-				<script> isConnected = true; console.log('estConnecté');</script>  
+				<script>
+					isConnected = true; 
+					console.log('estConnecté');
+				</script> 
 
 				<script type="text/javascript">
 
@@ -511,9 +513,25 @@
 
 			var emulateurOn;
 
+			// const iframeWrapper = document.createElement("div");
+			// iframeWrapper.setAttribute("id", "iframeWrapper");
+
 			const iframe = document.createElement("iframe");
 			iframe.setAttribute("id", "iframePC");
-			iframe.setAttribute("src", "indexBackup.php")
+			iframe.setAttribute("src", "indexBackup.php");
+			if (isConnected) {
+				iframe.style.boxShadow = "rgba(0, 255, 234, 0.4) 0px 0px 60px 4px";
+			}
+			else {
+				iframe.style.boxShadow = "rgba(239, 59, 46, 0.5) 0px 0px 60px 4px";
+			}
+
+			// Mauvaise idée:
+			// var resizeImg = document.createElement("img");
+			// resizeImg.setAttribute("id", "resizeImg");
+			// iframe.appendChild(resizeImg);
+
+			// iframeWrapper.append(iframe);
 
 			if (x.matches) {
 				// Affichage emulateurMobil sur PC
@@ -529,17 +547,116 @@
 				if (isConnected) {document.getElementById("iframePC").style.boxShadow = "rgba(0, 255, 234, 0.4) 0px 0px 60px 4px"}
 				else {document.getElementById("iframePC").style.boxShadow = "rgba(239, 59, 46, 0.5) 0px 0px 60px 4px"}
 
-				var sideLeftDiv = document.createElement("div");
+				const sideLeftDiv = document.createElement("div");
 				sideLeftDiv.setAttribute("id", "sideLeftDiv");
-				sideLeftDiv.innerHTML = "<p class='titleSideDiv'>Règles</p>";
+				sideLeftDiv.innerHTML = "<p id='titleSideDivLeft' class='titleSideDiv'>Créer un compte !<span id='sideCrossLeft'>&#x2715;</span></p>";
+				sideLeftDiv.append(document.createElement("br"));
 
-				var sideRightDiv = document.createElement("div");
+				const listSideLeft = document.createElement("ul");
+				listSideLeft.setAttribute("id", "listSideLeft");
+
+
+				const list1 = document.createElement("li");
+				list1.setAttribute("id", "list1");
+				list1.classList.add("listX");
+				list1.innerHTML = "<p>Sauvegardez vos gains</p>";
+				listSideLeft.append(list1);
+				const list2 = document.createElement("li");
+				list2.setAttribute("id", "list2");
+				list2.classList.add("listX");
+				list2.innerHTML = "<p>Gagnez des niveaux et des récompenses</p>";
+				listSideLeft.append(list2);
+				const list3 = document.createElement("li");
+				list3.setAttribute("id", "list3");
+				list3.classList.add("listX");
+				list3.innerHTML = "<p>Débloquez de nouvelles fonctionalités</p>";
+				listSideLeft.append(list3);
+				const list4 = document.createElement("li");
+				list4.setAttribute("id", "list4");
+				list4.classList.add("listX");
+				list4.innerHTML = "<p>Accédez à vos statistiques personnelles</p>";
+				listSideLeft.append(list4);
+				const list0 = document.createElement("li");
+				list0.setAttribute("id", "list0");
+				list0.classList.add("listX");
+				list0.innerHTML = "<p style='color:rgba(255,215,0,0.8);font-style:italic;font-weight:bolder;'>100% gratuit</p>";
+				listSideLeft.append(list0);
+
+				sideLeftDiv.append(listSideLeft);
+
+
+
+
+
+
+
+				const sideRightDiv = document.createElement("div");
 				sideRightDiv.setAttribute("id", "sideRightDiv");
-				sideRightDiv.innerHTML = "<p class='titleSideDiv'>Créez votre compte !</p>";
+				sideRightDiv.innerHTML = "<p id='titleSideDivRight' class='titleSideDiv'>Règles du site<span id='sideCrossRight'>&#x2715;</span></p>";
+				sideRightDiv.append(document.createElement("br"));
+
+				const listSideRight = document.createElement("ul");
+				listSideRight.setAttribute("id", "listSideRight");
+
+
+				const list1b = document.createElement("li");
+				list1b.setAttribute("id", "list1b");
+				list1b.classList.add("listX");
+				list1b.innerHTML = "<p>Jauge Win Streak</p>";
+				listSideRight.append(list1b);
+				const list2b = document.createElement("li");
+				list2b.setAttribute("id", "list2b");
+				list2b.classList.add("listX");
+				list2b.innerHTML = "<p>Side Bets</p>";
+				listSideRight.append(list2b);
+				const list3b = document.createElement("li");
+				list3b.setAttribute("id", "list3b");
+				list3b.classList.add("listX");
+				list3b.innerHTML = "<p>Mélange: sous 60 cartes</p>";
+				listSideRight.append(list3b);
+				const list4b = document.createElement("li");
+				list4b.setAttribute("id", "list4b");
+				list4b.classList.add("listX");
+				list4b.innerHTML = "<p>Double down</p>";
+				listSideRight.append(list4b);
+				const list0b = document.createElement("li");
+				list0b.setAttribute("id", "list0b");
+				list0b.classList.add("listX");
+				list0b.innerHTML = "<p>Assurance</p>";
+				listSideRight.append(list0b);
+
+				sideRightDiv.append(listSideRight);
+
+
+
+
+
 
 
 				document.getElementById("body").append(sideRightDiv);
 				document.getElementById("body").append(sideLeftDiv);
+
+
+
+				// Pour l'instant: cross met juste un fadeOut puis remove et no way back (pas de collapsed)
+				document.getElementById("sideCrossRight").addEventListener("click", function() {
+					document.getElementById("listSideRight").classList.add("fadeOut2");
+					setTimeout(function() {
+						document.getElementById("titleSideDivRight").classList.add("fadeOut2");
+					}, 250)
+					setTimeout(function() {
+						document.getElementById("sideRightDiv").classList.add("fadeOut2");
+					}, 500)
+				})
+				document.getElementById("sideCrossLeft").addEventListener("click", function() {
+					document.getElementById("listSideLeft").classList.add("fadeOut2");
+					setTimeout(function() {
+						document.getElementById("titleSideDivLeft").classList.add("fadeOut2");
+					}, 250)
+					setTimeout(function() {
+						document.getElementById("sideLeftDiv").classList.add("fadeOut2");
+					}, 500)
+				})
 			}
 			else {
 				// Affichage normal (mobile)
@@ -553,22 +670,7 @@
 		</script>
 		<!-- FIN EMULATEUR -->
 
-		<script>
-		if (emulateurOn) {
-			<?php 
-				if (isset($_SESSION['username'])) :
-			?>
-					document.getElementById("iframePC").style.boxShadow = "rgba(0, 255, 234, 0.4) 0px 0px 60px 4px";
 
-			<?php 
-				else : 
-			?>
-					document.getElementById("iframePC").style.boxShadow = "rgba(239, 59, 46, 0.5) 0px 0px 60px 4px";
-			<?php 
-				endif;
-			?>
-		}
-	</script>
 
 
 

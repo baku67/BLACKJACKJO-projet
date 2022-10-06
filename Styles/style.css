@@ -310,40 +310,99 @@ input:-webkit-autofill{
 
 #sideLeftDiv {
 	position: absolute;
+	height: 40%;
+	width: 20%;
 
-	left: 15%;
+	left: 12%;
 	transform: translateX(-25%);
+	transform: translate(-25%, -50%);
 
 	top: 50%;
+
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	background: radial-gradient(circle, rgba(239, 59, 46, 0.3) 0%, rgba(189, 189, 189, 0) 90%);
+	background: radial-gradient(circle, rgba(239, 59, 46, 0.05) 5%, rgba(189, 189, 189, 0) 65%);
 }
 
 #sideRightDiv {
 	position: absolute;
+	height: 40%;
+	width: 20%;
+
 
 	/*  positionning spécifique car title long: (1024p/1440p friendly)*/
 	right: 12%;
-	transform: translateX(35%);
+	/* transform: translateX(35%); */
+	transform: translate(35%, -50%);
 	/* Fin */
 
 	top: 50%;
+
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	background: radial-gradient(circle, rgba(239, 59, 46, 0.3) 0%, rgba(189, 189, 189, 0) 90%);
+	background: radial-gradient(circle, rgba(239, 59, 46, 0.05) 5%, rgba(189, 189, 189, 0) 65%);
 }
 
 .titleSideDiv {
-	font-size: 3.0em;
-	color: rgba(197, 197, 197, 0.9);
+	font-size: 2.6em;
+	text-align: center;
+	color: rgba(197, 197, 197, 0.85);
 
+	margin-bottom: 30px;
 }
 
 
+#listSideLeft {
+	color: rgba(197, 197, 197, 0.6);
+	font-size: 2em;
+	line-height: 3em;
+	text-align: center;
+	/* list-style: url('/media/examples/rocket.svg'); */
+	list-style: none;
+}
+#listSideRight {
+	color: rgba(197, 197, 197, 0.6);
+	font-size: 2em;
+	line-height: 3em;
+	text-align: center;
+	/* list-style: url('/media/examples/rocket.svg'); */
+	list-style: none;
+}
 
+#listX {
+	text-align: center;
+}
 
+#sideCrossLeft {
+	position:absolute; 
+	right:-10px; 
+	top:3px; 
+	opacity:0.3; 
+	cursor:pointer; 
+	transition: all 0.3s;
+	/* color:rgba(239, 59, 46, 1); */
+	font-size:80%;
+}
+#sideCrossRight {
+	position:absolute; 
+	right:40px; 
+	top:3px; 
+	opacity:0.3; 
+	cursor:pointer; 
+	transition: all 0.3s;
+	/* color:rgba(239, 59, 46, 1); */
+	font-size:80%;
+}
+#sideCrossRight:hover {
+	color:rgba(239, 59, 46, 1);
+	opacity: 0.9;
+}
+#sideCrossLeft:hover {
+	color:rgba(239, 59, 46, 1);
+	opacity: 0.9;
+}
 
-
-
+/* .fadeOutSide {
+	animation:
+} */
 
 
 
@@ -1527,6 +1586,7 @@ button, input[type="submit"], input[type="reset"] {
 
 #header {
 	height: 28vh;
+	margin-bottom: 1.5em;
 
 	/* Pour les footerBox shadow result en dessous des cards */
 	z-index: -1;
@@ -1606,6 +1666,29 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 
+#resizeImg {
+	position: absolute;
+	bottom: -2%;
+	right: -1%;
+
+	height: 45px;
+	width: 45px;
+}
+
+#iframeWrapper {
+	margin-right: auto; /* 1 */
+	margin-left:  auto; /* 1 */
+
+	width: 760px;
+	height: 1500px;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+
+	resize: horizontal;
+}
+
+
 
 #traitTitleSlide {
 	position: relative;
@@ -1621,6 +1704,8 @@ button, input[type="submit"], input[type="reset"] {
 
 	bottom: 7px;
 	background-color: var(--traitTitle-bgcolorFlash);
+
+	box-shadow: rgb(5 2 39) 2px 1px;
 }
 @keyframes traitTitleSlide {
 	0% {
@@ -2370,10 +2455,14 @@ h2 {
 
 
 #iframePC {
+	/* Ancienne values (avant Wrapper pour resize) */
 	width: 760px;
-	height: 1500px;
-
 	position: absolute;
+	height: 1500px;
+	/* width: 100%;
+	height: 100%;
+	position: relative; */
+
 	right: 50%;
 	top: 50%;
 	transform: translate(50%, -50%);
@@ -2386,6 +2475,20 @@ h2 {
 
 	box-shadow: rgba(0, 255, 234, 0.4) 0px 0px 60px 4px;
 	/* box-shadow: rgba(239, 59, 46, 1) 0px 0px 25px 4px; */
+
+	resize: horizontal;
+	overflow: auto;
+}
+#iframePC::-webkit-resizer {
+    border: 2px solid yellow;
+	background-image: url(http://i.imgur.com/hQZDwHs.png);
+    /* background: blue; */
+    box-shadow: 0 0 2px 5px red;
+    /* outline: 2px dashed green; */
+
+    /*size does not work it seems*/    
+    width: 50px;
+    height: 50px;
 }
 
 .imgSimpl1 {

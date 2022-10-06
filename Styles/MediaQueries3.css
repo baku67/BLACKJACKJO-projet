@@ -1,4 +1,6 @@
-@media screen and (max-width:770px) and (min-width: 481px){
+/* @media screen and (max-width:770px) and (min-width: 481px){ */
+@media screen and (max-width:1440px) and (min-width: 481px){
+
 
     /*  TABLETTE: rajouter les tokenValue en dur au comme sur phone */
 
@@ -326,7 +328,15 @@
 
 
 
-
+    #cardAnim {
+        width: 6em !important;
+        left:5.6%;
+        bottom:44.2%;
+    }
+    #imgStreak {
+        top: 18.0% !important;
+        left: 40.5%;
+    }
 
 
 

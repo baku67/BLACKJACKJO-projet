@@ -342,6 +342,7 @@
           document.getElementById('classementDiv').classList.add("is-blurred");
           document.getElementById('connectedLine').classList.add("is-blurred");
           document.getElementById('jaugeContainerMaster').classList.add("is-blurred");
+          document.getElementById('deconnexionImg').classList.add("is-blurred");    
         }
       }
 
@@ -371,6 +372,7 @@
           document.getElementById('classementDiv').classList.remove("is-blurred");
           document.getElementById('connectedLine').classList.remove("is-blurred");
           document.getElementById('jaugeContainerMaster').classList.remove("is-blurred");
+          document.getElementById('deconnexionImg').classList.remove("is-blurred");    
         }
       })
       // Fin dailyReward
@@ -1228,6 +1230,7 @@
             document.getElementById('container1').classList.remove("is-blurred");
             document.getElementById('connectionContainer').classList.remove("is-blurred");
             document.getElementById('jaugeContainerMaster').classList.remove("is-blurred");    
+            document.getElementById('deconnexionImg').classList.remove("is-blurred");    
           })
 
           if (ingame == true) {
@@ -1259,6 +1262,8 @@
               document.getElementById('container1').classList.remove("is-blurred");
               document.getElementById('connectionContainer').classList.remove("is-blurred");
               document.getElementById('jaugeContainerMaster').classList.remove("is-blurred");
+              document.getElementById('deconnexionImg').classList.remove("is-blurred");    
+
 
               loadHistoriqueOnglet();
             })

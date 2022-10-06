@@ -1,5 +1,7 @@
 Cards simplistes: Si Roi/Reine/Joker ajouter couronne gold petite au dessus du symbole (couronne roi en mode enfant, couronne reine d'angleterre, toque de bouffon)
 
+Jai mis la propriété Resize: horieontal sur l'iframePC (à voir, bouton phone/tablet/pc/personalisé ?), 
+
 Changement du bg des cards NOIR SIMPLISTE = adapter les icon famille
 
 Proc Bet: adapter les cardsSimplistes

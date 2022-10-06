@@ -243,7 +243,8 @@
         padding: 20px 40px;
     }
 	#title2 {
-        font-size: 9.8vh;
+        /* font-size: 9.8vh; */
+		font-size: 9.3vh;
     }
 	#jouer {
         font-size: 1.5em;
