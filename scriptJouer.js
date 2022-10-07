@@ -294,7 +294,10 @@
 
 
 
-
+      if (parseInt(document.getElementById("lvlText").innerText) >= 20 ) {
+        document.getElementById("starLvl").style.background = "radial-gradient(circle, rgb(255, 55, 250) 25%, rgba(189, 189, 189, 0) 77%)";
+        document.getElementById("lvlText").style.color = "rgb(135 38 132)";
+      }
 
 
 

@@ -8,7 +8,7 @@
     $exp = 0;
 
     $lvl = 1;
-    $expNeeded = 200;
+    $expNeeded = 225;
 
 
     $result = mysqli_query($db,"SELECT exp FROM users WHERE username = '".$_SESSION['username']."' ");
@@ -30,11 +30,12 @@
     
                 $exp = ($exp - $expNeeded);
     
-                if ( $lvl < 30 ) {
-                    $expNeeded = ($expNeeded * 1.12);
+                if ( $lvl < 20 ) {
+                    $expNeeded = ($expNeeded * 1.20);
                 }
                 else {
-                    $expNeeded = ($expNeeded * 1.3);
+                    // Lvl 20: plu d'augmentation de nbr d'xp pour lvlUp
+                    // $expNeeded = ($expNeeded * 1.3);
                     // Lvl Max: ajouter un reward
                 }
             }
