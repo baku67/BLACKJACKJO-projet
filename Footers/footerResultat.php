@@ -2,10 +2,26 @@
     if (isConnected == false) {
         document.getElementById("gainExp").style.color = "grey";
         document.getElementById("gainExp").style.opacity = "0.7";
+
+        document.getElementById("gainExpBet").style.color = "grey";
+        document.getElementById("gainExpBet").style.opacity = "0.7";
     }
 </script>
+
+
 <p id="gainExp"></p>
+<p id="gainExpBet"></p>
+<p id="expProgress"><?php include('../getExpProgress.php'); ?></p>
+
 <!-- Jauge XP miniature ? -->
+<!-- <div id="jaugeExp" class="jaugeExp jaugeExpProgress">
+    <span id="dataExpProgress" data-progress=""></span>
+</div> -->
+
+<!-- Exemple Jauge (streak ici) -->
+<!-- <div id="jaugeContainer" class="jaugeContainer jaugeProgress">
+    <span id="dataProgress" data-progress=""></span>
+</div> -->
 
 
 <div id="footerResultatContainer">

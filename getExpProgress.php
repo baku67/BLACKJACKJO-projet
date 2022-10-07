@@ -47,9 +47,16 @@
 
         
     }
+
+    // $number = (abs($restExp-$expNeeded)/(($restExp + $expNeeded)/2))*100;
+    // $percentage = number_format((float)$number, 2, '.', '');
+
+    $percentage = intval(ceil(($restExp/$expNeeded)*100));
     
 
-    echo($lvl);
+
+    // echo(ceil($restExp). " / " . ceil($expNeeded));
+    echo($percentage . "%");
 
     mysqli_close($db);
 
