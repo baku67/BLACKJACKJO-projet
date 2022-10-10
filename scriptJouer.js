@@ -669,17 +669,17 @@
 
           case "mixedPair":
             gainPairBet = misePairLocked * 6;
-            gainXpPairBet = 25 + (misePairLocked * 2.5);
+            gainXpPairBet = 5 + (misePairLocked * 3.5);
           break;
 
           case "coloredPair": 
             gainPairBet = misePairLocked * 12;
-            gainXpPairBet = 75 + (misePairLocked * 3);
+            gainXpPairBet = 15 + (misePairLocked * 7);
           break;
 
           case "perfectPair": 
             gainPairBet = misePairLocked * 25;
-            gainXpPairBet = 125 + (misePairLocked * 4);
+            gainXpPairBet = 30 + (misePairLocked * 14);
           break;
         }
 
@@ -851,27 +851,27 @@
 
           case "Flush":
             gain213Bet = mise213Locked * 5;
-            gainXp213Bet = 25 + (mise213Locked * 2.5);
+            gainXp213Bet = 10 + (mise213Locked * 5);
           break;
 
           case "Straight": 
             gain213Bet = mise213Locked * 10;
-            gainXp213Bet = 50 + (mise213Locked * 2.75);
+            gainXp213Bet = 20 + (mise213Locked * 7.5);
           break;
 
           case "Three of a kind": 
             gain213Bet = mise213Locked * 30;
-            gainXp213Bet = 100 + (mise213Locked * 3);
+            gainXp213Bet = 30 + (mise213Locked * 10);
           break;
 
           case "Straight Flush": 
             gain213Bet = mise213Locked * 40;
-            gainXp213Bet = 125 + (mise213Locked * 3.5);
+            gainXp213Bet = 50 + (mise213Locked * 17.5);
           break;
 
           case "Suited Trips": 
             gain213Bet = mise213Locked * 100;
-            gainXp213Bet = 175 + (mise213Locked * 4);
+            gainXp213Bet = 75 + (mise213Locked * 25);
           break;
 
         }
@@ -1073,6 +1073,21 @@
         }
         
         
+
+        // document.getElementById("deconnexionLink").addEventListener("click", function() {
+        //   if (ingame == true) {
+        //     alert("ici");
+        //     document.getElementById("deconnexionLink").setAttribute("href", "");
+        //   }
+        //   else {
+        //     document.getElementById("deconnexionLink").setAttribute("href", "index.php?logout='1'");
+        //   }
+        // })
+
+
+
+
+
 
 
 

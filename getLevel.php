@@ -5,16 +5,18 @@
     session_start();
 
 
-    $exp = 0;
-
-    $lvl = 1;
-    $expNeeded = 325;
 
 
     $result = mysqli_query($db,"SELECT exp FROM users WHERE username = '".$_SESSION['username']."' ");
 
 
     while($row = mysqli_fetch_array($result)) {
+
+        $exp = 0;
+
+        $lvl = 1;
+        $expNeeded = 350;
+    
 
         if ($row['exp'] !== null) {
             $exp = $row['exp'];
@@ -26,17 +28,19 @@
             if ($exp >= $expNeeded) {
     
                 $lvl = ($lvl + 1);
-                $finalLvl += 1;
     
                 $exp = ($exp - $expNeeded);
     
                 if ( $lvl < 20 ) {
-                    $expNeeded = ($expNeeded * 1.20);
+                    $expNeeded = ($expNeeded * 1.15);
+                }
+                else if ( $lvl < 100 ) {
+                    $expNeeded = $expNeeded;
                 }
                 else {
-                    // Lvl 20: plu d'augmentation de nbr d'xp pour lvlUp
-                    // $expNeeded = ($expNeeded * 1.3);
-                    // Lvl Max: ajouter un reward
+                    $expNeeded = $expNeeded;
+                    
+                    // Bloquer le lvl a 100 mais continuer les rewards
                 }
             }
             else {
