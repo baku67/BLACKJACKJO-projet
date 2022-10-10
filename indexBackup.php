@@ -7,12 +7,12 @@
 
 <html lang="fr">
 	<head>
-		<title id="title">BlackJack Jo'</title>
-		<link rel="icon" href="Images/favicon3.png">
+		<title id="title">BlackJack Jo' - Jeu de blackjack en ligne 100% gratuit</title>
+		<link rel="icon" href="Images/faviconRedim.png">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
 		<meta charset="UTF-8">
 		<meta name="theme-color" content="rgba(17, 19, 31, 0.8)">
-		<meta name="description" content="BlackJack en ligne sans argent réel">
+		<meta name="description" content="Jouez au BlackJack en ligne et sans argent réel! 100% Gratuit. Inscrivez-vous pour garder vos gains!">
 		<meta name="author" content="Basile Kuntz">
 		<meta name="keywords" content="blackjack, casino, jeu, gratuit, cartes, croupier, carte">
 		<link rel="stylesheet" href="Styles/style.css" id="stylesheet_1">
@@ -95,7 +95,7 @@
 		<div id="dailyRewardDiv" style="display:none; opacity:0; position:absolute; left:100%; border-radius:10px; box-shadow: 0px 9px 0px rgba(0, 0, 0, 0.9); width:54%; height:9%; padding:2% 4% 4% 4%; font-weight:400; top:50%; left:50%; transform:translate(-50%, -50%); z-index:2; background-color:rgba(239, 59, 46, 1); text-align:center; font-size:1.9em; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color:rgb(17 19 31); border:3px solid black;">Daily Reward: <br><p id="amountDailyReward"><i class="fa-solid fa-meteor fa-beat" style="position:fixed; left:10%; bottom:13%; color:#11131f; font-size:1.7em; opacity:0.9;"></i> +100</p></div>
 		
 		<!-- Modal confirmation leave Game -->
-		<div id="modalLeave">Si vous quittez la partie maintenant, vos mises seront perdues. <span style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:5px; text-decoration-color: rgba(17, 19, 31, 0.5);">Continuer ?<span><br><br><div style="display:inline;"><button id="confirm">Oui</button><button id="cancel">Annuler</button></div></div>
+		<div id="modalLeave">Si vous quittez la partie maintenant, vos mises seront perdues. <span style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:5px; text-decoration-color: rgba(17, 19, 31, 0.5);">Continuer ?<span><br><br><div style="display:inline;"><button id="confirm"><i class="fa-solid fa-triangle-exclamation"></i> Oui</button><button id="cancel">Annuler</button></div></div>
 
 
 		<!-- Fin -->

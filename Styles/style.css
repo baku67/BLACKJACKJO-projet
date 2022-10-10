@@ -2678,7 +2678,7 @@ h2 {
 	padding: 8px 26px;
 	border-radius: 4px;
 
-	transition: all 0.4s;
+	transition: all 0.3s;
 }
 #confirm:hover {
 	background-color: rgba(17, 19, 31, 0.5);
@@ -2693,7 +2693,7 @@ h2 {
 	padding: 8px 26px;
 	border-radius: 4px;
 
-	transition: all 0.4s;
+	transition: all 0.3s;
 }
 #cancel:hover {
 	background-color: rgba(17, 19, 31, 0.5);
