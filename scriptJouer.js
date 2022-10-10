@@ -1258,7 +1258,16 @@
 
             document.getElementById('footer').classList.remove("is-blurred");
             document.getElementById('header').classList.remove("is-blurred");
-            document.getElementById('container1').classList.remove("is-blurred");
+            // document.getElementById('container1').style.opacity = "1";
+            document.getElementById("deckContainer").classList.remove("is-blurred");
+            document.getElementById("cardAnim").classList.remove("is-blurred");
+            document.getElementById("parametresPartieDiv").classList.remove("is-blurred");
+            // document.getElementById("handContainer").classList.remove("is-blurred");
+            document.getElementById("joueur").classList.remove("is-blurred");
+            document.getElementById("croupier").classList.remove("is-blurred");
+            document.getElementById("scoreJoueur").classList.remove("is-blurred");
+            document.getElementById("scoreCroupier").classList.remove("is-blurred");
+
             document.getElementById('connectionContainer').classList.remove("is-blurred");
             document.getElementById('jaugeContainerMaster').classList.remove("is-blurred");    
             document.getElementById('deconnexionImg').classList.remove("is-blurred");    
@@ -1271,7 +1280,17 @@
 
             document.getElementById('footer').classList.add("is-blurred");
             document.getElementById('header').classList.add("is-blurred");
-            document.getElementById('container1').classList.add("is-blurred");
+            // document.getElementById('container1').style.opacity = "0";
+            document.getElementById("deckContainer").classList.add("is-blurred");
+            document.getElementById("cardAnim").classList.add("is-blurred");
+            document.getElementById("parametresPartieDiv").classList.add("is-blurred");
+            // document.getElementById("handContainer").classList.add("is-blurred");
+            document.getElementById("joueur").classList.add("is-blurred");
+            document.getElementById("croupier").classList.add("is-blurred");
+            document.getElementById("scoreJoueur").classList.add("is-blurred");
+            document.getElementById("scoreCroupier").classList.add("is-blurred");
+
+
             document.getElementById('connectionContainer').classList.add("is-blurred");
             document.getElementById('jaugeContainerMaster').classList.add("is-blurred");
 
@@ -1290,7 +1309,17 @@
   
               document.getElementById('footer').classList.remove("is-blurred");
               document.getElementById('header').classList.remove("is-blurred");
-              document.getElementById('container1').classList.remove("is-blurred");
+              // document.getElementById('container1').style.opacity = "1";
+              document.getElementById("deckContainer").classList.remove("is-blurred");
+              document.getElementById("cardAnim").classList.remove("is-blurred");
+              document.getElementById("parametresPartieDiv").classList.remove("is-blurred");
+              // document.getElementById("handContainer").classList.remove("is-blurred");
+              document.getElementById("joueur").classList.remove("is-blurred");
+              document.getElementById("croupier").classList.remove("is-blurred");
+              document.getElementById("scoreJoueur").classList.remove("is-blurred");
+              document.getElementById("scoreCroupier").classList.remove("is-blurred");
+  
+  
               document.getElementById('connectionContainer').classList.remove("is-blurred");
               document.getElementById('jaugeContainerMaster').classList.remove("is-blurred");
               document.getElementById('deconnexionImg').classList.remove("is-blurred");    

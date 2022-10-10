@@ -32,7 +32,7 @@
 
 
 
-<div class="background JouerContainer">
+<div id ="handContainer" class="background JouerContainer">
 
         <?php  if (!isset($_SESSION['username'])) : ?>
                 <!-- ReStyle creditInvite: juste mettre le cred inline avec conn/insc  -->
