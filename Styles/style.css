@@ -3973,11 +3973,13 @@ p {
 	/* position: relative;
 	top: 4px; */
 	margin-top: 10px;
-	color: rgba(223, 204, 204, 0.9);
+	/* color: rgba(223, 204, 204, 0.9); */
+	color: rgb(240 248 255 / 90%);
 
 	position: relative;
 	/* top: 47px; */
-	top: 20px;
+	/* top: 20px; */
+	top: 5px;
 	font-size: 3.5em;
 	/* background-color: #415657; */
 	z-index: 1;
@@ -4005,7 +4007,9 @@ p {
 	left: 50%;
 	transform: translateX(-50%);
 
-	color: rgba(223, 204, 204, 0.9);
+	/* color: rgba(223, 204, 204, 0.9); */
+	color: rgb(240 248 255 / 90%);
+
 
 	transition: font-size 0.3s 0.5s, text-shadow 0.3s 0.5s, color 0.3s 0.5s;
 

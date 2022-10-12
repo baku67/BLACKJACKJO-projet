@@ -1943,7 +1943,7 @@
 
 
         if (bet == "pair") {
-          sideBet1.style.borderColor = "rgba(0, 255, 234, 0.8)"; // cian
+          sideBet1.style.borderColor = "rgba(0, 255, 234, 0.9)"; // cian
           sideBet1.style.backgroundColor = "rgba(0, 255, 234, 0.1)"; // cian
           sideBet1.style.boxShadow = "-0px 0px 50px 5px rgba(0, 255, 234, 0.4)";
           if (darkModeBool) {sideBet1.style.borderWidth = "3px";}
@@ -1956,7 +1956,7 @@
           sideBet2.style.borderWidth = "3px 3px 7px 3px";
           sideBet2.style.transform = "translateY(0px)";
 
-          sideBet1Title.style.color = "rgba(0, 255, 234, 0.8)";
+          sideBet1Title.style.color = "rgba(0, 255, 234, 0.9)";
           sideBet2Title.style.color = "var(--color-sideBet2Title)";
 
           // Les opacity dynamique selon toggleBet ne marchent plus a cause de l'anim forwards fadeInMiseEnCours (effet cool)
@@ -5045,7 +5045,7 @@
                     // document.getElementById("scoreJoueur").style.border = "1px solid rgba(255,1,49,0.5)";                  
                     // Fin Perdu
 
-                    document.getElementById("scoreCroupier").style.fontSize = "3.7em";
+                    document.getElementById("scoreCroupier").style.fontSize = "3.6em";
                     document.getElementById("scoreCroupier").style.textShadow = "rgb(224 5 241) 3px 3px 2px";
 
 
@@ -5266,7 +5266,7 @@
                       // document.getElementById("scoreCroupier").style.border = "1px solid rgba(255,1,49,0.5)";
                       // document.getElementById("scoreJoueur").style.border = "1px solid rgb(0 255 234 / 70%)";
 
-                      document.getElementById("scoreJoueur").style.fontSize = "3.7em";
+                      document.getElementById("scoreJoueur").style.fontSize = "3.6em";
                       document.getElementById("scoreJoueur").style.textShadow = "rgb(224 5 241) 3px 3px 2px";
 
 
@@ -5469,7 +5469,7 @@
                       // document.getElementById("scoreCroupier").style.border = "1px solid rgba(255,1,49,0.5)";
                       // document.getElementById("scoreJoueur").style.border = "1px solid rgb(0 255 234 / 70%)";
 
-                      document.getElementById("scoreJoueur").style.fontSize = "3.7em";
+                      document.getElementById("scoreJoueur").style.fontSize = "3.6em";
                       document.getElementById("scoreJoueur").style.textShadow = "rgb(224 5 241) 3px 3px 2px";
   
                       
@@ -7815,7 +7815,7 @@
                   // document.getElementById("scoreJoueur").style.border = "1px solid rgba(255,1,49,0.5)";                  
                   // Fin Perdu
 
-                  document.getElementById("scoreCroupier").style.fontSize = "3.7em";
+                  document.getElementById("scoreCroupier").style.fontSize = "3.6em";
                   document.getElementById("scoreCroupier").style.textShadow = "rgb(224 5 241) 3px 3px 2px";
 
 
@@ -7994,7 +7994,10 @@
                 document.getElementById("scoreJoueur").style.color = "rgba(254,101,250,1)";
 
                 document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)";
-                document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)";
+
+                document.getElementById("scoreJoueur").style.fontSize = "3.6em";
+                document.getElementById("scoreJoueur").style.textShadow = "rgba(0, 255, 234, 1) 3px 3px 2px";
+
 
                 // document.getElementById("scoreCroupier").style.border = "1px solid rgba(255,1,49,0.5)";
                 // document.getElementById("scoreJoueur").style.border = "1px solid rgba(254, 101, 250, 0.85)";

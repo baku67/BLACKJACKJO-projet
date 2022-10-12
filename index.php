@@ -801,7 +801,7 @@
 					// Fonctionne que lors du rafraischissment de l'indexParent, (le message s'envoi pas lors de la co dans l'iframe)
 					
 					// alert("co");
-					document.getElementById("iframePC").style.boxShadow = "rgba(0, 255, 234, 0.4) 0px 0px 60px 4px";
+					document.getElementById("iframePC").style.boxShadow = "rgba(0, 255, 234, 0.5) 0px 0px 60px 4px";
 
 				}
 			};
