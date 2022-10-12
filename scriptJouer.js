@@ -1099,7 +1099,7 @@
             // }
             var temp0 = document.querySelectorAll("#joueur .imgSimplNbr");
             temp0.forEach(element => {
-              element.style.color = "rgba(0, 255, 234, 0.7)";
+              element.style.color = "rgba(0, 255, 234, 0.9)";
             });
 
             var temp1 = document.querySelectorAll("#joueur .imgSimplSuit");
@@ -1121,7 +1121,7 @@
 
             var temp2 = document.querySelectorAll("#croupier .imgSimplNbrCroupier");
             temp2.forEach(element => {
-              element.style.color = "rgba(0, 255, 234, 0.7)";
+              element.style.color = "rgba(0, 255, 234, 0.9)";
             });
 
             var temp3 = document.querySelectorAll("#croupier .imgSimplSuitCroupier");
@@ -4722,16 +4722,16 @@
               setTimeout(function() {
                 document.getElementById("scoreCroupier").style.color = "rgb(0 255 234 / 100%)";
                 document.getElementById("scoreCroupier").style.textShadow = "1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, -1px -1px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, -1px 0px 0 #000000, 0px -1px 0 #000000";
-                document.getElementById("scoreCroupier").style.border = "3px solid rgb(0 255 234 / 70%)";
+                // document.getElementById("scoreCroupier").style.border = "3px solid rgb(0 255 234 / 70%)";
                 // Glow reste bleu
               }, 400);
             }
             else if (scoreTotalCroupier > 21) {
               setTimeout(function() {
-                document.getElementById("scoreCroupier").style.backgroundColor = "rgb(160 13 27)"
+                // document.getElementById("scoreCroupier").style.backgroundColor = "rgb(160 13 27)"
                 document.getElementById("scoreCroupier").style.color = "rgba(239,230,230, 1)"
                 document.getElementById("scoreCroupier").style.textShadow = "1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, -1px -1px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, -1px 0px 0 #000000, 0px -1px 0 #000000";
-                document.getElementById("scoreCroupier").style.border = "3px solid rgba(130,14,39, 1)";
+                // document.getElementById("scoreCroupier").style.border = "3px solid rgba(130,14,39, 1)";
                 // Glow repasse a rouge (bustCroupier):
                 handBust("croupier"); 
               }, 400);
@@ -4822,6 +4822,7 @@
           addCardCroupierRecursive();
 
             
+          
           function addCardCroupierRecursive() {
             if ( removed == false) {
               removed = true;
@@ -5030,19 +5031,22 @@
                     document.getElementById("cardAnim").remove();
                     document.getElementById("parametresPartieDiv").remove();
 
-                    document.getElementById("scoreJoueur").style.backgroundColor = "rgb(160 13 27)";
+                    // document.getElementById("scoreJoueur").style.backgroundColor = "rgb(160 13 27)";
 
                     document.getElementById("scoreCroupier").style.color = "rgb(0 255 234 / 100%)";
-                    document.getElementById("scoreJoueur").style.color = "rgba(239,230,230,1)";
+                    document.getElementById("scoreJoueur").style.color = "rgba(239, 59, 46, 1)";
 
                     document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)";
                     document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)";
 
-                    document.getElementById("scoreCroupier").style.border = "1px solid rgb(0 255 234 / 70%)";
-                    document.getElementById("scoreJoueur").style.border = "1px solid rgba(255,1,49,0.5)";                  
+
+
+                    // document.getElementById("scoreCroupier").style.border = "1px solid rgb(0 255 234 / 70%)";
+                    // document.getElementById("scoreJoueur").style.border = "1px solid rgba(255,1,49,0.5)";                  
                     // Fin Perdu
 
-
+                    document.getElementById("scoreCroupier").style.fontSize = "4em";
+                    document.getElementById("scoreCroupier").style.textShadow = "rgb(224 5 241) 3px 3px 2px";
 
 
 
@@ -5251,16 +5255,19 @@
                       document.getElementById("cardAnim").remove();
                       document.getElementById("parametresPartieDiv").remove();
     
-                      document.getElementById("scoreCroupier").style.backgroundColor = "rgb(160 13 27)";
+                      // document.getElementById("scoreCroupier").style.backgroundColor = "rgb(160 13 27)";
 
-                      document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)";
+                      document.getElementById("scoreCroupier").style.color = "rgba(239, 59, 46, 1)";
                       document.getElementById("scoreJoueur").style.color = "rgb(0 255 234 / 100%)";
 
                       document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)";
                       document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)";
 
-                      document.getElementById("scoreCroupier").style.border = "1px solid rgba(255,1,49,0.5)";
-                      document.getElementById("scoreJoueur").style.border = "1px solid rgb(0 255 234 / 70%)";
+                      // document.getElementById("scoreCroupier").style.border = "1px solid rgba(255,1,49,0.5)";
+                      // document.getElementById("scoreJoueur").style.border = "1px solid rgb(0 255 234 / 70%)";
+
+                      document.getElementById("scoreJoueur").style.fontSize = "4em";
+                      document.getElementById("scoreJoueur").style.textShadow = "rgb(224 5 241) 3px 3px 2px";
 
 
                       // Séparateur
@@ -5451,16 +5458,19 @@
                       document.getElementById("cardAnim").remove();
                       document.getElementById("parametresPartieDiv").remove();
     
-                      document.getElementById("scoreCroupier").style.backgroundColor = "rgb(160 13 27)";
+                      // document.getElementById("scoreCroupier").style.backgroundColor = "rgb(160 13 27)";
   
-                      document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)";
+                      document.getElementById("scoreCroupier").style.color = "rgba(239, 59, 46, 1)";
                       document.getElementById("scoreJoueur").style.color = "rgb(0 255 234 / 100%)";
   
                       document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)";
                       document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)";
   
-                      document.getElementById("scoreCroupier").style.border = "1px solid rgba(255,1,49,0.5)";
-                      document.getElementById("scoreJoueur").style.border = "1px solid rgb(0 255 234 / 70%)";
+                      // document.getElementById("scoreCroupier").style.border = "1px solid rgba(255,1,49,0.5)";
+                      // document.getElementById("scoreJoueur").style.border = "1px solid rgb(0 255 234 / 70%)";
+
+                      document.getElementById("scoreJoueur").style.fontSize = "4em";
+                      document.getElementById("scoreJoueur").style.textShadow = "rgb(224 5 241) 3px 3px 2px";
   
                       
                       // Séparateur
@@ -5638,14 +5648,14 @@
 
 
 
-                    document.getElementById("scoreCroupier").style.color = "rgb(61,61,61)";
-                    document.getElementById("scoreJoueur").style.color = "rgb(61,61,61)";
+                    document.getElementById("scoreCroupier").style.color = "rgb(243 229 2)";
+                    document.getElementById("scoreJoueur").style.color = "rgb(243 229 2)";
 
                     document.getElementById("scoreCroupier").style.textShadow = "#0d0d0d 0px 0px 1px";
                     document.getElementById("scoreJoueur").style.textShadow = "#0d0d0d 0px 0px 1px";
 
-                    document.getElementById("scoreCroupier").style.backgroundColor = "rgb(249 217 42)";
-                    document.getElementById("scoreJoueur").style.backgroundColor = "rgb(249 217 42)"; 
+                    // document.getElementById("scoreCroupier").style.backgroundColor = "rgb(249 217 42)";
+                    // document.getElementById("scoreJoueur").style.backgroundColor = "rgb(249 217 42)"; 
 
                     
                     // Séparateur
@@ -6199,7 +6209,7 @@
           var imgSimplNbr = document.createElement("p");
           imgSimplNbr.setAttribute("class", "imgSimplNbrCroupier");
           if (toggleCardSimplist && shadow) {
-            imgSimplNbr.style.color = "rgb(0 255 234 / 70%)";
+            imgSimplNbr.style.color = "rgb(0 255 234 / 90%)";
           }
 
 
@@ -6303,7 +6313,7 @@
             }
             else if ((scoreTotalCroupier + 10) < 21) {
               if (nbrCardsCroupier > 1) {
-                document.getElementById('scoreCroupier').innerHTML = scoreTotalCroupier + "&nbsp;/&nbsp;" + (scoreTotalCroupier + 10);
+                document.getElementById('scoreCroupier').innerHTML = scoreTotalCroupier + "&nbsp;<span style='opacity:0.3;'>/</span>&nbsp;" + (scoreTotalCroupier + 10);
                 scoreTotalCroupier += 10;
               }
               else {
@@ -6577,7 +6587,7 @@
               // ici Le check21horsBJ() est exécuté (appelé plus bas, conditions similaires)
             }
             else if ((scoreTotalJoueur + 10) < 21) {
-              document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur + "&nbsp/&nbsp;" + (scoreTotalJoueur + 10);
+              document.getElementById('scoreJoueur').innerHTML = scoreTotalJoueur + "&nbsp<span style='opacity:0.3;'>/</span>&nbsp;" + (scoreTotalJoueur + 10);
               // et scoreJoueur (la variable) = scoreJoueur + 10 ??
               scoreJoueur += 10;
             }
@@ -7786,10 +7796,10 @@
                   // document.getElementById("deckContainer").classList.add("fadeOut");
 
                   //*** Perdu BURST 
-                  document.getElementById("scoreJoueur").style.backgroundColor = "rgb(160 13 27)"
+                  // document.getElementById("scoreJoueur").style.backgroundColor = "rgb(160 13 27)"
                   document.getElementById("scoreJoueur").style.color = "rgba(239,230,230, 1)"
                   document.getElementById("scoreJoueur").style.textShadow = "1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, -1px -1px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, -1px 0px 0 #000000, 0px -1px 0 #000000";
-                  document.getElementById("scoreJoueur").style.border = "3px solid rgba(130,14,39, 1)";
+                  // document.getElementById("scoreJoueur").style.border = "3px solid rgba(130,14,39, 1)";
                   // Fin Perdu BURST
 
 
@@ -7961,7 +7971,7 @@
                 document.getElementById("parametresPartieDiv").remove();
 
                 //*** Perdu BURST 
-                document.getElementById("scoreCroupier").style.backgroundColor = "rgb(160 13 27)";
+                // document.getElementById("scoreCroupier").style.backgroundColor = "rgb(160 13 27)";
 
                 document.getElementById("scoreCroupier").style.color = "rgba(239,230,230,1)";
                 document.getElementById("scoreJoueur").style.color = "rgba(254,101,250,1)";
@@ -7969,8 +7979,8 @@
                 document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)";
                 document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)";
 
-                document.getElementById("scoreCroupier").style.border = "1px solid rgba(255,1,49,0.5)";
-                document.getElementById("scoreJoueur").style.border = "1px solid rgba(254, 101, 250, 0.85)";
+                // document.getElementById("scoreCroupier").style.border = "1px solid rgba(255,1,49,0.5)";
+                // document.getElementById("scoreJoueur").style.border = "1px solid rgba(254, 101, 250, 0.85)";
 
                 document.getElementById('scoreJoueur').innerHTML = (scoreTotalJoueur + 10);
                 // Fin Perdu BURST

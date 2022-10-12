@@ -598,9 +598,23 @@
 
 				listSideLeft.append(subscribeButton);
 
+
+				const subscribeButton2 = document.createElement("li");
+				subscribeButton2.setAttribute("id", "subscribeButton2");
+				subscribeButton2.innerHTML = "<p id='subscribText2'>Se connecter</p>";
+
+				const flecheSubscribe2 = document.createElement("img");
+				flecheSubscribe2.setAttribute("id", "flecheSubscribe2");
+				subscribeButton2.prepend(flecheSubscribe2);
+
+				listSideLeft.append(subscribeButton2);
+
+
+
 				sideLeftDiv.append(listSideLeft);
 
 
+				
 
 
 
@@ -665,6 +679,16 @@
 				
 
 
+				const subscribeModal2 = document.createElement("div");
+				subscribeModal2.setAttribute("id", "subscribeModal2");
+				// subscribeModal.innerHTML = "<p>TEST</p><br><p>TEST</p><br><p>TEST</p><br>";
+				// subscribeModal.style.fontSize = "1.8em";
+				// subscribeModal.style.transform = "scale(0.85)";
+				subscribeModal2.style.cssText = "font-size:1.65em; transform:scale(0.9) translate(10px, -75px); opacity: 0;";
+
+				subscribeModal2.innerHTML = '<form class="w3-container" action="connexion.php" method="post"><div class="w3-section"><label><b class="modalText">Identifiant</b></label><input class="w3-input w3-border w3-margin-bottom fixBoxSizing maSauce" type="text" placeholder="Entrer un identifiant" name="username" required><label><b class="modalText">Mot de passe</b></label><input class="w3-input w3-border fixBoxSizing w3-margin-bottom maSauce" type="password" placeholder="Entrer un mot de passe" name="password" required><button class="w3-button w3-block w3-blue w3-section w3-padding maSauceSubmit" type="submit" value="connexion" name="connexion">Go !</button></div></form><div class="w3-container w3-padding-16 w3-light-grey"></div>';
+
+
 
 				document.getElementById("subscribeButton").addEventListener("click", function() {
 					document.getElementById("flecheSubscribe").classList.add("flecheSubscribeAnim");
@@ -676,6 +700,20 @@
 
 							document.getElementById("sideLeftDiv").append(subscribeModal);
 							document.getElementById("subscribeModal").classList.add("fadeIn4");
+						}, 500)
+					}, 250)
+				})
+
+				document.getElementById("subscribeButton2").addEventListener("click", function() {
+					document.getElementById("flecheSubscribe2").classList.add("flecheSubscribeAnim");
+					document.getElementById("subscribeButton2").classList.add("subscribeButtonActiv");
+					setTimeout(function() {
+						document.getElementById("listSideLeft").classList.add("fadeOut3");
+						setTimeout(function() {
+							document.getElementById("listSideLeft").remove();
+
+							document.getElementById("sideLeftDiv").append(subscribeModal2);
+							document.getElementById("subscribeModal2").classList.add("fadeIn4");
 						}, 500)
 					}, 250)
 				})

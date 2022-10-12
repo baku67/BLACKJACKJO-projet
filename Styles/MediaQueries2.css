@@ -444,12 +444,13 @@
 	}
 
 	#scoreCroupier {
-		top: 10px;
-		font-size:2em;
+		/* top: 10px; */
+		font-size:3em;
 	}
 	#scoreJoueur {
 		bottom: 450px;
-		font-size:2em;
+		/* font-size:2em; */
+		font-size: 3em;
 
 	}
 	#joueur {

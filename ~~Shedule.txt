@@ -1,3 +1,7 @@
+Sur l'emulateur PC: enlever les elements de l'indexBackup (iframe) pour les mettre dans le site parent et les agrandir (jaugeStreak, connectedLine, Credits, toggles, deco)
+
+C:\Users\basil\OneDrive\Bureau\opera_d5RKC29zjD.png (juste pour big win et wasted) laisser Bust, rework Push et BJ
+
 Cards simplistes: Si Roi/Reine/Joker ajouter couronne gold petite au dessus du symbole (couronne roi en mode enfant, couronne reine d'angleterre, toque de bouffon)
 
 Sous la sideDiv Créer un compte, ajouter un bouton "C'est parti" avec l'effet et la fleche du PréviousMise !

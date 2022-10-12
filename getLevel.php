@@ -26,7 +26,7 @@
 
         while ($exp > 0) {
             if ($exp >= $expNeeded) {
-    
+                
                 $lvl = ($lvl + 1);
     
                 $exp = ($exp - $expNeeded);
