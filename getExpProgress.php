@@ -60,7 +60,8 @@
 
 
     // echo(ceil($restExp). " / " . ceil($expNeeded));
-    echo($percentage . "%");
+    // echo($percentage . "%");
+    echo($percentage);
 
     mysqli_close($db);
 

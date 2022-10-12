@@ -54,17 +54,17 @@
 				<script type="text/javascript">
 
 					// Get.php des données User
-					var creditsConnected = <?php include('getCredits.php'); ?>; // Don't forget the extra semicolon!
-					console.log('getCredits.php: ' + creditsConnected);  
+					var creditsConnected = <?php include('getCredits.php'); ?>; 
 					
-					var toggleSpeed = <?php include('getToggleTurbo.php'); ?>; // Don't forget the extra semicolon!
-					console.log('getToggleTurbo.php: ' + toggleSpeed);
+					var toggleSpeed = <?php include('getToggleTurbo.php'); ?>; 
 
-					var toggleDMfromPhp = <?php include('getToggleDarkMode.php'); ?>; // Don't forget the extra semicolon!
-					console.log('getToggleDarkMode.php: ' + toggleDMfromPhp);
+					var toggleDMfromPhp = <?php include('getToggleDarkMode.php'); ?>; 
 
-					var toggleMutefromPhp = <?php include('getToggleMute.php'); ?>; // Don't forget the extra semicolon!
-					console.log('getToggleMute.php: ' + toggleMutefromPhp);
+					var toggleMutefromPhp = <?php include('getToggleMute.php'); ?>; 
+
+					var expProgressVarPhp = <?php include('getExpProgress.php'); ?>;
+					// var expProgressVar = expProgressVarPhp.toString().slice(0, -1);
+					var streakFromPhp = '<?php include('getStreak.php'); ?>';
 
 				</script>
 		<?php
@@ -246,7 +246,7 @@
 
 				<script type="text/javascript">
 					if (isConnected == true) {
-						let streakFromPhp = '<?php include('getStreak.php'); ?>';
+						// let streakFromPhp = '<?php include('getStreak.php'); ?>';
 						let streakPourcentage = (streakFromPhp*10).toString();
 
 						document.getElementById('dataProgress').setAttribute("data-progress", streakPourcentage);
@@ -418,7 +418,6 @@
 						<?php include('getHighScoreName.php'); ?>
 
 						&nbsp;		
-						<!-- <p style="color: #a09f39"> _ </p> -->
 						&nbsp;
 
 						<?php include('getHighScore.php'); ?>
@@ -439,7 +438,6 @@
 						<?php include('getHighScore2Name.php'); ?>
 
 						&nbsp;		
-						<!-- <p style="color: #a09f39"> _ </p> -->
 						&nbsp;
 
 						<?php include('getHighScore2.php'); ?>
@@ -460,7 +458,6 @@
 						<?php include('getHighScore3Name.php'); ?>
 
 						&nbsp;		
-						<!-- <p style="color: #a09f39"> _ </p> -->
 						&nbsp;
 
 						<?php include('getHighScore3.php'); ?>
@@ -487,19 +484,10 @@
 				<div id="collapseContent" style="display: none;">
 
 					<div id="traitLumineuxFooter" class="divider light"></div>
-					<!-- <div id="traitBlanc"></div> -->
 
-
-					<break></break>
-			
+					<break></break>	
 
 					<div id="container3">
-						<!-- <div id="scoreContainer"> -->
-							<!-- <h2 class="scoreElem" style="margin-block-end: 0em;">High-Low</h2>
-							<br>
-							<h3 id="scoreHighLow">score</h3>
-							<p class="scoreElem"><span id="scoreVar">0</span></p> -->
-						<!-- </div> -->
 					</div>
 
 				</div>
@@ -519,9 +507,6 @@
 
 			var emulateurOn;
 
-			// const iframeWrapper = document.createElement("div");
-			// iframeWrapper.setAttribute("id", "iframeWrapper");
-
 			const iframe = document.createElement("iframe");
 			iframe.setAttribute("id", "iframePC");
 			iframe.setAttribute("src", "indexBackup.php");
@@ -532,12 +517,6 @@
 				iframe.style.boxShadow = "rgba(239, 59, 46, 0.5) 0px 0px 60px 4px";
 			}
 
-			// Mauvaise idée:
-			// var resizeImg = document.createElement("img");
-			// resizeImg.setAttribute("id", "resizeImg");
-			// iframe.appendChild(resizeImg);
-
-			// iframeWrapper.append(iframe);
 
 			if (x.matches) {
 				// Affichage emulateurMobil sur PC
@@ -553,225 +532,271 @@
 				if (isConnected) {document.getElementById("iframePC").style.boxShadow = "rgba(0, 255, 234, 0.4) 0px 0px 60px 4px"}
 				else {document.getElementById("iframePC").style.boxShadow = "rgba(239, 59, 46, 0.5) 0px 0px 60px 4px"}
 
-				const sideLeftDiv = document.createElement("div");
-				sideLeftDiv.setAttribute("id", "sideLeftDiv");
-				sideLeftDiv.innerHTML = "<p id='titleSideDivLeft' class='titleSideDiv'>Créer un compte !<span id='sideCrossLeft'>&#x2715;</span></p>";
-				sideLeftDiv.append(document.createElement("br"));
-
-				const listSideLeft = document.createElement("ul");
-				listSideLeft.setAttribute("id", "listSideLeft");
 
 
-				const list1 = document.createElement("li");
-				list1.setAttribute("id", "list1");
-				list1.classList.add("listX");
-				list1.innerHTML = "<p>Sauvegardez vos gains</p>";
-				listSideLeft.append(list1);
-				const list2 = document.createElement("li");
-				list2.setAttribute("id", "list2");
-				list2.classList.add("listX");
-				list2.innerHTML = "<p>Gagnez des niveaux et des récompenses</p>";
-				listSideLeft.append(list2);
-				const list3 = document.createElement("li");
-				list3.setAttribute("id", "list3");
-				list3.classList.add("listX");
-				list3.innerHTML = "<p>Débloquez de nouvelles fonctionalités</p>";
-				listSideLeft.append(list3);
-				const list4 = document.createElement("li");
-				list4.setAttribute("id", "list4");
-				list4.classList.add("listX");
-				list4.innerHTML = "<p>Accédez à vos statistiques personnelles</p>";
-				listSideLeft.append(list4);
-				const list0 = document.createElement("li");
-				list0.setAttribute("id", "list0");
-				list0.classList.add("listX");
-				list0.innerHTML = "<p style='color:rgba(255,215,0,0.7);font-style:italic;font-weight:bolder;'>* Aucun argent réel *</p>";
-				listSideLeft.append(list0);
+				if (isConnected == false) {
+					const sideLeftDiv = document.createElement("div");
+					sideLeftDiv.setAttribute("id", "sideLeftDiv");
+					sideLeftDiv.innerHTML = "<p id='titleSideDivLeft' class='titleSideDiv'>Créer un compte !<span id='sideCrossLeft'>&#x2715;</span></p>";
+					sideLeftDiv.append(document.createElement("br"));
 
-				const subscribeButton = document.createElement("li");
-				subscribeButton.setAttribute("id", "subscribeButton");
-				subscribeButton.innerHTML = "<p id='subscribText'>C'est parti !</p>";
-
-				const flecheSubscribe = document.createElement("img");
-				flecheSubscribe.setAttribute("id", "flecheSubscribe");
-				subscribeButton.prepend(flecheSubscribe);
-
-				listSideLeft.append(subscribeButton);
+					const listSideLeft = document.createElement("ul");
+					listSideLeft.setAttribute("id", "listSideLeft");
 
 
-				const subscribeButton2 = document.createElement("li");
-				subscribeButton2.setAttribute("id", "subscribeButton2");
-				subscribeButton2.innerHTML = "<p id='subscribText2'>Se connecter</p>";
+					const list1 = document.createElement("li");
+					list1.setAttribute("id", "list1");
+					list1.classList.add("listX");
+					list1.innerHTML = "<p>Sauvegardez vos gains</p>";
+					listSideLeft.append(list1);
+					const list2 = document.createElement("li");
+					list2.setAttribute("id", "list2");
+					list2.classList.add("listX");
+					list2.innerHTML = "<p>Gagnez des niveaux et des récompenses</p>";
+					listSideLeft.append(list2);
+					const list3 = document.createElement("li");
+					list3.setAttribute("id", "list3");
+					list3.classList.add("listX");
+					list3.innerHTML = "<p>Débloquez de nouvelles fonctionalités</p>";
+					listSideLeft.append(list3);
+					const list4 = document.createElement("li");
+					list4.setAttribute("id", "list4");
+					list4.classList.add("listX");
+					list4.innerHTML = "<p>Accédez à vos statistiques personnelles</p>";
+					listSideLeft.append(list4);
+					const list0 = document.createElement("li");
+					list0.setAttribute("id", "list0");
+					list0.classList.add("listX");
+					list0.innerHTML = "<p style='color:rgba(255,215,0,0.7);font-style:italic;font-weight:bolder;'>* Aucun argent réel *</p>";
+					listSideLeft.append(list0);
 
-				const flecheSubscribe2 = document.createElement("img");
-				flecheSubscribe2.setAttribute("id", "flecheSubscribe2");
-				subscribeButton2.prepend(flecheSubscribe2);
+					const subscribeButton = document.createElement("li");
+					subscribeButton.setAttribute("id", "subscribeButton");
+					subscribeButton.innerHTML = "<p id='subscribText'>C'est parti !</p>";
 
-				listSideLeft.append(subscribeButton2);
+					const flecheSubscribe = document.createElement("img");
+					flecheSubscribe.setAttribute("id", "flecheSubscribe");
+					subscribeButton.prepend(flecheSubscribe);
+
+					listSideLeft.append(subscribeButton);
 
 
+					const subscribeButton2 = document.createElement("li");
+					subscribeButton2.setAttribute("id", "subscribeButton2");
+					subscribeButton2.innerHTML = "<p id='subscribText2'>Se connecter</p>";
 
-				sideLeftDiv.append(listSideLeft);
+					const flecheSubscribe2 = document.createElement("img");
+					flecheSubscribe2.setAttribute("id", "flecheSubscribe2");
+					subscribeButton2.prepend(flecheSubscribe2);
 
-
-				
+					listSideLeft.append(subscribeButton2);
 
 
 
-
-
-				const sideRightDiv = document.createElement("div");
-				sideRightDiv.setAttribute("id", "sideRightDiv");
-				sideRightDiv.innerHTML = "<p id='titleSideDivRight' class='titleSideDiv'>Règles du site<span id='sideCrossRight'>&#x2715;</span></p>";
-				sideRightDiv.append(document.createElement("br"));
-
-				const listSideRight = document.createElement("ul");
-				listSideRight.setAttribute("id", "listSideRight");
-
-
-				const list1b = document.createElement("li");
-				list1b.setAttribute("id", "list1b");
-				list1b.classList.add("listX");
-				list1b.innerHTML = "<p>Jauge Win Streak</p>";
-				listSideRight.append(list1b);
-				const list2b = document.createElement("li");
-				list2b.setAttribute("id", "list2b");
-				list2b.classList.add("listX");
-				list2b.innerHTML = "<p>Side Bets</p>";
-				listSideRight.append(list2b);
-				const list3b = document.createElement("li");
-				list3b.setAttribute("id", "list3b");
-				list3b.classList.add("listX");
-				list3b.innerHTML = "<p>Mélange: sous 60 cartes</p>";
-				listSideRight.append(list3b);
-				const list4b = document.createElement("li");
-				list4b.setAttribute("id", "list4b");
-				list4b.classList.add("listX");
-				list4b.innerHTML = "<p>Double down</p>";
-				listSideRight.append(list4b);
-				const list0b = document.createElement("li");
-				list0b.setAttribute("id", "list0b");
-				list0b.classList.add("listX");
-				list0b.innerHTML = "<p>Assurance</p>";
-				listSideRight.append(list0b);
-
-				sideRightDiv.append(listSideRight);
+					sideLeftDiv.append(listSideLeft);
 
 
 
 
+					const sideRightDiv = document.createElement("div");
+					sideRightDiv.setAttribute("id", "sideRightDiv");
+					sideRightDiv.innerHTML = "<p id='titleSideDivRight' class='titleSideDiv'>Règles du site<span id='sideCrossRight'>&#x2715;</span></p>";
+					sideRightDiv.append(document.createElement("br"));
+
+					const listSideRight = document.createElement("ul");
+					listSideRight.setAttribute("id", "listSideRight");
+
+
+					const list1b = document.createElement("li");
+					list1b.setAttribute("id", "list1b");
+					list1b.classList.add("listX");
+					list1b.innerHTML = "<p>Jauge Win Streak</p>";
+					listSideRight.append(list1b);
+					const list2b = document.createElement("li");
+					list2b.setAttribute("id", "list2b");
+					list2b.classList.add("listX");
+					list2b.innerHTML = "<p>Side Bets</p>";
+					listSideRight.append(list2b);
+					const list3b = document.createElement("li");
+					list3b.setAttribute("id", "list3b");
+					list3b.classList.add("listX");
+					list3b.innerHTML = "<p>Mélange: sous 60 cartes</p>";
+					listSideRight.append(list3b);
+					const list4b = document.createElement("li");
+					list4b.setAttribute("id", "list4b");
+					list4b.classList.add("listX");
+					list4b.innerHTML = "<p>Double down</p>";
+					listSideRight.append(list4b);
+					const list0b = document.createElement("li");
+					list0b.setAttribute("id", "list0b");
+					list0b.classList.add("listX");
+					list0b.innerHTML = "<p>Assurance</p>";
+					listSideRight.append(list0b);
+
+					sideRightDiv.append(listSideRight);
 
 
 
-				document.getElementById("body").append(sideRightDiv);
-				document.getElementById("body").append(sideLeftDiv);
 
-
-				// Anim subscribe button:
-				const subscribeModal = document.createElement("div");
-				subscribeModal.setAttribute("id", "subscribeModal");
-				// subscribeModal.innerHTML = "<p>TEST</p><br><p>TEST</p><br><p>TEST</p><br>";
-				// subscribeModal.style.fontSize = "1.8em";
-				// subscribeModal.style.transform = "scale(0.85)";
-				subscribeModal.style.cssText = "font-size:1.65em; transform:scale(0.9) translate(10px, -75px); opacity: 0;";
-
-				subscribeModal.innerHTML = '<form class="w3-container" action="inscription.php" method="post"><div class="w3-section"><label><b class="modalText">E-mail</b></label><input class="w3-input w3-border fixBoxSizing w3-margin-bottom maSauce" type="" placeholder="Entrez votre adresse mail" name="mail" required><label><b class="modalText">Identifiant</b></label><input class="w3-input w3-border w3-margin-bottom fixBoxSizing maSauce" type="text" placeholder="Entrer un identifiant" name="username" required><label><b class="modalText">Mot de passe</b></label><input class="w3-input w3-border fixBoxSizing w3-margin-bottom maSauce" type="password" placeholder="Entrer un mot de passe" name="password" required><label><b class="modalText">Confirmation</b></label><input class="w3-input w3-border fixBoxSizing maSauce" style="margin-bottom:75px;" type="password" placeholder="Réécrivez le mot de passe" name="password2" required><button class="w3-button w3-block w3-blue w3-section w3-padding maSauceSubmit" type="submit" value="S\'inscrire">Go !</button></div></form><div class="w3-container w3-padding-16 w3-light-grey"></div>';
-				
-
-
-				const subscribeModal2 = document.createElement("div");
-				subscribeModal2.setAttribute("id", "subscribeModal2");
-				// subscribeModal.innerHTML = "<p>TEST</p><br><p>TEST</p><br><p>TEST</p><br>";
-				// subscribeModal.style.fontSize = "1.8em";
-				// subscribeModal.style.transform = "scale(0.85)";
-				subscribeModal2.style.cssText = "font-size:1.65em; transform:scale(0.9) translate(10px, -75px); opacity: 0;";
-
-				subscribeModal2.innerHTML = '<form class="w3-container" action="connexion.php" method="post"><div class="w3-section"><label><b class="modalText">Identifiant</b></label><input class="w3-input w3-border w3-margin-bottom fixBoxSizing maSauce" type="text" placeholder="Entrer un identifiant" name="username" required><label><b class="modalText">Mot de passe</b></label><input class="w3-input w3-border fixBoxSizing w3-margin-bottom maSauce" type="password" placeholder="Entrer un mot de passe" name="password" required><button class="w3-button w3-block w3-blue w3-section w3-padding maSauceSubmit" type="submit" value="connexion" name="connexion">Go !</button></div></form><div class="w3-container w3-padding-16 w3-light-grey"></div>';
+					document.getElementById("body").append(sideRightDiv);
+					document.getElementById("body").append(sideLeftDiv);
 
 
 
-				document.getElementById("subscribeButton").addEventListener("click", function() {
-					document.getElementById("flecheSubscribe").classList.add("flecheSubscribeAnim");
-					document.getElementById("subscribeButton").classList.add("subscribeButtonActiv");
-					setTimeout(function() {
-						document.getElementById("listSideLeft").classList.add("fadeOut3");
+					// Anim subscribe button:
+					const subscribeModal = document.createElement("div");
+					subscribeModal.setAttribute("id", "subscribeModal");
+					subscribeModal.style.cssText = "font-size:1.65em; transform:scale(0.9) translate(10px, -75px); opacity: 0;";
+
+					subscribeModal.innerHTML = '<form class="w3-container" action="inscription.php" method="post"><div class="w3-section"><label><b class="modalText">E-mail</b></label><input class="w3-input w3-border fixBoxSizing w3-margin-bottom maSauce" type="" placeholder="Entrez votre adresse mail" name="mail" required><label><b class="modalText">Identifiant</b></label><input class="w3-input w3-border w3-margin-bottom fixBoxSizing maSauce" type="text" placeholder="Entrer un identifiant" name="username" required><label><b class="modalText">Mot de passe</b></label><input class="w3-input w3-border fixBoxSizing w3-margin-bottom maSauce" type="password" placeholder="Entrer un mot de passe" name="password" required><label><b class="modalText">Confirmation</b></label><input class="w3-input w3-border fixBoxSizing maSauce" style="margin-bottom:75px;" type="password" placeholder="Réécrivez le mot de passe" name="password2" required><button class="w3-button w3-block w3-blue w3-section w3-padding maSauceSubmit" type="submit" value="S\'inscrire">Go !</button></div></form><div class="w3-container w3-padding-16 w3-light-grey"></div>';
+					
+
+
+					const subscribeModal2 = document.createElement("div");
+					subscribeModal2.setAttribute("id", "subscribeModal2");
+					subscribeModal2.style.cssText = "font-size:1.65em; transform:scale(0.9) translate(10px, -75px); opacity: 0;";
+
+					subscribeModal2.innerHTML = '<form class="w3-container" action="connexion.php" method="post"><div class="w3-section"><label><b class="modalText">Identifiant</b></label><input class="w3-input w3-border w3-margin-bottom fixBoxSizing maSauce" type="text" placeholder="Entrer un identifiant" name="username" required><label><b class="modalText">Mot de passe</b></label><input class="w3-input w3-border fixBoxSizing w3-margin-bottom maSauce" type="password" placeholder="Entrer un mot de passe" name="password" required><button class="w3-button w3-block w3-blue w3-section w3-padding maSauceSubmit" type="submit" value="connexion" name="connexion">Go !</button></div></form><div class="w3-container w3-padding-16 w3-light-grey"></div>';
+
+
+
+					document.getElementById("subscribeButton").addEventListener("click", function() {
+						document.getElementById("flecheSubscribe").classList.add("flecheSubscribeAnim");
+						document.getElementById("subscribeButton").classList.add("subscribeButtonActiv");
 						setTimeout(function() {
-							document.getElementById("listSideLeft").remove();
+							document.getElementById("listSideLeft").classList.add("fadeOut3");
+							setTimeout(function() {
+								document.getElementById("listSideLeft").remove();
 
-							document.getElementById("sideLeftDiv").append(subscribeModal);
-							document.getElementById("subscribeModal").classList.add("fadeIn4");
-						}, 500)
-					}, 250)
-				})
+								document.getElementById("sideLeftDiv").append(subscribeModal);
+								document.getElementById("subscribeModal").classList.add("fadeIn4");
+							}, 500)
+						}, 250)
+					})
 
-				document.getElementById("subscribeButton2").addEventListener("click", function() {
-					document.getElementById("flecheSubscribe2").classList.add("flecheSubscribeAnim");
-					document.getElementById("subscribeButton2").classList.add("subscribeButtonActiv");
-					setTimeout(function() {
-						document.getElementById("listSideLeft").classList.add("fadeOut3");
+					document.getElementById("subscribeButton2").addEventListener("click", function() {
+						document.getElementById("flecheSubscribe2").classList.add("flecheSubscribeAnim");
+						document.getElementById("subscribeButton2").classList.add("subscribeButtonActiv");
 						setTimeout(function() {
-							document.getElementById("listSideLeft").remove();
+							document.getElementById("listSideLeft").classList.add("fadeOut3");
+							setTimeout(function() {
+								document.getElementById("listSideLeft").remove();
 
-							document.getElementById("sideLeftDiv").append(subscribeModal2);
-							document.getElementById("subscribeModal2").classList.add("fadeIn4");
-						}, 500)
-					}, 250)
-				})
+								document.getElementById("sideLeftDiv").append(subscribeModal2);
+								document.getElementById("subscribeModal2").classList.add("fadeIn4");
+							}, 500)
+						}, 250)
+					})
 
 
-				// Pour l'instant: cross met juste un fadeOut puis remove et no way back (pas de collapsed)
-				document.getElementById("sideCrossRight").addEventListener("click", function() {
-					document.getElementById("listSideRight").classList.add("fadeOut2");
-					setTimeout(function() {
-						document.getElementById("titleSideDivRight").classList.add("fadeOut2");
-					}, 250)
-					setTimeout(function() {
-						document.getElementById("sideRightDiv").classList.add("fadeOut2");
-					}, 500)
-				})
-				document.getElementById("sideCrossLeft").addEventListener("click", function() {
-					if (document.getElementById("listSideLeft") !== null) {
-						document.getElementById("listSideLeft").classList.add("fadeOut2");
+					// Pour l'instant: cross met juste un fadeOut puis remove et no way back (pas de collapsed)
+					document.getElementById("sideCrossRight").addEventListener("click", function() {
+						document.getElementById("listSideRight").classList.add("fadeOut2");
 						setTimeout(function() {
-							document.getElementById("titleSideDivLeft").classList.add("fadeOut2");
+							document.getElementById("titleSideDivRight").classList.add("fadeOut2");
 						}, 250)
 						setTimeout(function() {
-							document.getElementById("sideLeftDiv").classList.add("fadeOut2");
+							document.getElementById("sideRightDiv").classList.add("fadeOut2");
 						}, 500)
-					}
-					else {
-						document.getElementById("subscribeModal").classList.add("fadeOut3");
-						setTimeout(function() {
-							document.getElementById("subscribeModal").remove();
-							document.getElementById("titleSideDivLeft").classList.add("fadeOut2");
-						}, 300)
-						setTimeout(function() {
-							document.getElementById("sideLeftDiv").classList.add("fadeOut2");
-						}, 500)
-					}
+					})
+					document.getElementById("sideCrossLeft").addEventListener("click", function() {
+						if (document.getElementById("listSideLeft") !== null) {
+							document.getElementById("listSideLeft").classList.add("fadeOut2");
+							setTimeout(function() {
+								document.getElementById("titleSideDivLeft").classList.add("fadeOut2");
+							}, 250)
+							setTimeout(function() {
+								document.getElementById("sideLeftDiv").classList.add("fadeOut2");
+							}, 500)
+						}
+						else {
+							document.getElementById("subscribeModal").classList.add("fadeOut3");
+							setTimeout(function() {
+								document.getElementById("subscribeModal").remove();
+								document.getElementById("titleSideDivLeft").classList.add("fadeOut2");
+							}, 300)
+							setTimeout(function() {
+								document.getElementById("sideLeftDiv").classList.add("fadeOut2");
+							}, 500)
+						}
+					})
+				}
+				// Affichage des sideDiv quand connecté (jaugeStreak, xp, ptit historique, deco, toggle, etc...)
+				else {
+
+					var experienceDiv = document.createElement("div");
+					experienceDiv.setAttribute("id", "experienceDiv");
+
+					var experienceTitle = document.createElement("p");
+					experienceTitle.setAttribute("id", "experienceTitle");
+					experienceTitle.innerHTML = "Progression";
+
+					var experienceNbr = document.createElement("p");
+					experienceNbr.setAttribute("id", "experienceNbr");
+					experienceNbr.innerHTML = "<p><span id='expIcone'>EXP</span>&nbsp;&nbsp;" + expProgressVarPhp + " %</p>";
+
+
+
+
+					// ATTENTION Pour l'instant ce jauge Streak seert aussi au jauge EXP
+					var jaugeContainerMaxPC = document.createElement("div");
+					jaugeContainerMaxPC.setAttribute('id', 'jaugeContainerMaxPC');
+					jaugeContainerMaxPC.classList.add("jaugeContainer2", "jaugeProgress");
+
+					var dataProgressMax = document.createElement("span");
+					dataProgressMax.setAttribute("id", "dataProgressMax");
+
+					let streakPourcentage = (streakFromPhp*10).toString();
+					dataProgressMax.setAttribute("data-progress", streakPourcentage);
+
+					jaugeContainerMaxPC.append(dataProgressMax);
+
 					
-				})
+						
 
 
-				// Ici append l'iframe ou ajouter le src seulement si user click sur Oui ou OK etc
-				// var ytIframe = document.createElement("div");
-				// ytIframe.setAttribute("id", "ytIframe");
-				// ytIframe.innerHTML = '<p id="titleSideDivYt" class="titleSideDiv">Youtube Player<span id="sideCrossYt">&#x2715;</span></p><br><iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com" frameborder="0"/>';
-				
-				// document.getElementById("body").append(ytIframe);
 
-				// document.getElementById("sideCrossYt").addEventListener("click", function() {
-				// 	document.getElementById("ytplayer").classList.add("fadeOut2");
-				// 	setTimeout(function() {
-				// 		document.getElementById("titleSideDivYt").classList.add("fadeOut2");
-				// 	}, 250)
-				// 	setTimeout(function() {
-				// 		document.getElementById("ytIframe").classList.add("fadeOut2");
-				// 	}, 500)
-				// })
-				
+					experienceDiv.append(experienceTitle);
+					experienceDiv.append(document.createElement("br"));
+					experienceDiv.append(experienceNbr);
+
+					// Append JaugeMax EXP
+					experienceDiv.append(streakEmulNbr);
+					experienceDiv.append(document.createElement("br"));
+					experienceDiv.append(jaugeContainerMaxPC);
 
 
+							
+
+
+
+					var streakDiv = document.createElement("div");
+					streakDiv.setAttribute("id", "streakDiv");
+
+					var streakTitle = document.createElement("p");
+					streakTitle.setAttribute("id", "streakTitle");
+					streakTitle.innerHTML = "Streak";
+
+					var streakEmulNbr = document.createElement("p");
+					streakEmulNbr.setAttribute("id", "streakEmulNbr");
+					streakEmulNbr.innerHTML = "<img id='imgFireStreakPC' src='Images/fire_maxPurple.png'>" + streakFromPhp;
+
+
+					streakDiv.append(streakTitle);
+					streakDiv.append(document.createElement("br"));
+					streakDiv.append(streakEmulNbr);
+
+					// Append JaugeMax Streak
+					streakDiv.append(document.createElement("br"));
+					streakDiv.append(jaugeContainerMaxPC);
+
+
+
+
+					document.getElementById("body").append(experienceDiv);
+					document.getElementById("body").append(streakDiv);
+
+				}
 
 
 				// Ajouter un "A propos du dev" redirect Portfolio
@@ -793,7 +818,9 @@
 
 
 
-		<script>
+
+
+		<!-- <script>
 
 			window.onmessage = function(e) {
 				if (e.data == 'hello') {
@@ -805,7 +832,7 @@
 
 				}
 			};
-		</script>
+		</script> -->
 
 
 

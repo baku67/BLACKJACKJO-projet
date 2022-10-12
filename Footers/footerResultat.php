@@ -11,7 +11,7 @@
 
 <p id="gainExp"></p>
 <p id="gainExpBet"></p>
-<p id="expProgress"><?php include('../getExpProgress.php'); ?></p>
+<p id="expProgress"><?php include('../getExpProgress.php'); ?>&nbsp;%</p>
 
 <!-- Jauge XP miniature ? -->
 <!-- <div id="jaugeExp" class="jaugeExp jaugeExpProgress">

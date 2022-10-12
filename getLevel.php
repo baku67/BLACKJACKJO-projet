@@ -34,19 +34,21 @@
                 if ( $lvl < 20 ) {
                     $expNeeded = ($expNeeded * 1.15);
                 }
-                else if ( $lvl < 100 ) {
+                else if ( $lvl < 99 ) {
                     $expNeeded = $expNeeded;
                 }
-                else {
+                else if ( $lvl == 99 ) {
                     $expNeeded = $expNeeded;
-                    
-                    // Bloquer le lvl a 100 mais continuer les rewards
                 }
             }
             else {
                 $restExp = $exp;
                 $exp = 0;            
             }
+        }
+
+        if ($lvl > 99) {
+            $lvl = 99;
         }
 
         
