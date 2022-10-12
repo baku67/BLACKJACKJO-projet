@@ -1575,6 +1575,7 @@ button, input[type="submit"], input[type="reset"] {
 
 	position: relative;
 	top: 3px;
+	opacity: 0.9;
 }
 #expIcone {
 	letter-spacing:-2px;

@@ -72,13 +72,6 @@
 			var username="<?php echo $_SESSION['username']; ?>";
 		</script>
 
-		<script>
-			if (isConnected) {
-				window.top.postMessage('hello', '*');
-			}
-		</script>
-
-
 
 	</head>
 

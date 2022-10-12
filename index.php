@@ -733,7 +733,7 @@
 
 					var experienceNbr = document.createElement("p");
 					experienceNbr.setAttribute("id", "experienceNbr");
-					experienceNbr.innerHTML = "<p><span id='expIcone'>EXP</span>&nbsp;&nbsp;" + expProgressVarPhp + " %</p>";
+					experienceNbr.innerHTML = "<p><span id='expIcone'>EXP</span>&nbsp;&nbsp;" + expProgressVarPhp + " <span style='font-size:70%; position:relative; bottom:7px;'>%</span></p>";
 
 
 
@@ -818,21 +818,6 @@
 
 
 
-
-
-		<!-- <script>
-
-			window.onmessage = function(e) {
-				if (e.data == 'hello') {
-
-					// Fonctionne que lors du rafraischissment de l'indexParent, (le message s'envoi pas lors de la co dans l'iframe)
-					
-					// alert("co");
-					document.getElementById("iframePC").style.boxShadow = "rgba(0, 255, 234, 0.5) 0px 0px 60px 4px";
-
-				}
-			};
-		</script> -->
 
 
 
