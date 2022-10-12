@@ -801,7 +801,7 @@ input:-webkit-autofill{
 	/* background-color: rgba(239, 59, 46, 0.1); */
 	background: radial-gradient(circle, rgba(239,59,46,0.3) 0%, rgba(189,189,189,0) 90%);
 
-	border-radius: 9px;
+	/* border-radius: 4px; */
 
 	transition: all 0.2s ease;
 
@@ -809,7 +809,7 @@ input:-webkit-autofill{
 }
 
 #subscribeButton:hover {
-	border-radius: 0px;
+	/* border-radius: 0px; */
 	background: radial-gradient(circle, rgba(0, 255, 234, 0.2) 0%, rgba(189,189,189,0) 90%);
 	border-color: rgba(0, 255, 234, 0.7);
 	color:#00e7fe;
@@ -860,7 +860,7 @@ input:-webkit-autofill{
 	/* background-color: rgba(239, 59, 46, 0.1); */
 	background: radial-gradient(circle, rgba(239,59,46,0.3) 0%, rgba(189,189,189,0) 90%);
 
-	border-radius: 4px;
+	/* border-radius: 4px; */
 
 	transition: all 0.2s ease;
 
@@ -868,7 +868,7 @@ input:-webkit-autofill{
 }
 
 #subscribeButton2:hover {
-	border-radius: 0px;
+	/* border-radius: 0px; */
 	background: radial-gradient(circle, rgba(0, 255, 234, 0.2) 0%, rgba(189,189,189,0) 90%);
 	border-color: rgba(0, 255, 234, 0.7);
 	color:#00e7fe;
@@ -3985,6 +3985,7 @@ p {
 	font-style: italic;
 	font-weight: bold;
 
+	transition: font-size 0.3s 0.5s, text-shadow 0.3s 0.5s, color 0.3s 0.5s;
 }
 #scoreJoueur {
 	/* position: relative;
@@ -4005,6 +4006,9 @@ p {
 	transform: translateX(-50%);
 
 	color: rgba(223, 204, 204, 0.9);
+
+	transition: font-size 0.3s 0.5s, text-shadow 0.3s 0.5s, color 0.3s 0.5s;
+
 }
 
 #chipsContainer {

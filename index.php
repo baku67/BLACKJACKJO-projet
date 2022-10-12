@@ -12,7 +12,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
 		<meta charset="UTF-8">
 		<meta name="theme-color" content="rgba(17, 19, 31, 0.8)">
-		<meta name="description" content="Jouez au BlackJack en ligne et sans argent réel! 100% Gratuit. Inscrivez-vous pour garder vos gains!">
+		<meta name="description" content="Jouez au BlackJack en ligne et sans argent réel!  - 100% Gratuit - Inscrivez-vous pour garder vos gains et débloquer de nouvelles fonctionalités!">
 		<meta name="author" content="Basile Kuntz">
 		<meta name="keywords" content="blackjack, casino, jeu, gratuit, cartes, croupier, carte">
 		<link rel="stylesheet" href="Styles/style.css" id="stylesheet_1">
