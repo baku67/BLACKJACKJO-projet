@@ -11,7 +11,15 @@
 
 <p id="gainExp"></p>
 <p id="gainExpBet"></p>
-<p id="expProgress"><?php include('../getExpProgress.php'); ?>&nbsp;%</p>
+<p id="expProgress"></p>
+<script>
+    setTimeout(function() {
+        $.get("getExpProgress.php", function(data) {
+            document.getElementById("expProgress").innerHTML = data + "&nbsp;%";
+        });
+    }, 500)
+
+</script>
 
 <!-- Jauge XP miniature ? -->
 <!-- <div id="jaugeExp" class="jaugeExp jaugeExpProgress">

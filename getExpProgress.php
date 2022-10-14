@@ -15,7 +15,7 @@
         $exp = 0;
 
         $lvl = 1;
-        $expNeeded = 350;
+        $expNeeded = 375;
     
 
         if ($row['exp'] !== null) {
@@ -32,7 +32,7 @@
                 $exp = ($exp - $expNeeded);
     
                 if ( $lvl < 20 ) {
-                    $expNeeded = ($expNeeded * 1.15);
+                    $expNeeded = ($expNeeded * 1.10);
                 }
                 else if ( $lvl < 100 ) {
                     $expNeeded = $expNeeded;

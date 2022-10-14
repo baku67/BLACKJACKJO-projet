@@ -30,6 +30,7 @@
 		
 		<!-- <script src="dist/long-press.min.js"></script> -->
 		<script src="https://kit.fontawesome.com/698848973e.js" crossorigin="anonymous"></script>
+		<!-- <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script> -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
@@ -65,6 +66,8 @@
 					var expProgressVarPhp = <?php include('getExpProgress.php'); ?>;
 					// var expProgressVar = expProgressVarPhp.toString().slice(0, -1);
 					var streakFromPhp = '<?php include('getStreak.php'); ?>';
+					var streakFromPhpInt = parseInt(streakFromPhp);
+					var levelPhp = <?php include('getLevel.php'); ?>;
 
 				</script>
 		<?php
@@ -73,6 +76,8 @@
 
 		<script>
 			var username="<?php echo $_SESSION['username']; ?>";
+
+			var username2 = username.charAt(0).toUpperCase() + username.slice(1);
 		</script>
 
 
@@ -510,16 +515,61 @@
 			const iframe = document.createElement("iframe");
 			iframe.setAttribute("id", "iframePC");
 			iframe.setAttribute("src", "indexBackup.php");
-			if (isConnected) {
-				iframe.style.boxShadow = "rgba(0, 255, 234, 0.4) 0px 0px 60px 4px";
-			}
-			else {
-				iframe.style.boxShadow = "rgba(239, 59, 46, 0.5) 0px 0px 60px 4px";
-			}
 
 
 			if (x.matches) {
 				// Affichage emulateurMobil sur PC
+
+
+
+
+				function refreshJaugesPC() {
+
+					$.get("getExpProgress.php", function(data) {
+						document.getElementById("dataProgressExpMax").setAttribute("data-progressExp", data);
+					});
+					$.get("getStreak.php", function(data) {
+						document.getElementById("dataProgressMax").setAttribute("data-progress2", (data * 10));
+					});
+
+					setTimeout(function() {
+
+						$(".jaugeContainer2 span").each(function () {
+							$(this).animate(
+								{
+									width: $(this).attr("data-progress2") + "%",
+								},
+								500
+							);
+							$(this).text($(this).attr("data-progress2") + "%");
+						});
+					}, 500)
+
+					setTimeout(function() {
+
+						$(".jaugeContainerExp span").each(function () {
+							$(this).animate(
+								{
+									width: $(this).attr("data-progressExp") + "%",
+								},
+								500
+							);
+							$(this).text($(this).attr("data-progressExp") + "%");
+						});
+					}, 500)
+				}
+
+
+				function refreshLvl() {
+					$.get("getLevel.php", function(data) {
+						document.getElementById("lvlNbrPc").innerHTML = data;
+					});
+				}
+
+
+
+
+
 
 				// Pas de script dans l'index (vide ici)
 				var script = document.createElement('script');
@@ -529,10 +579,8 @@
 				document.body.innerHTML = "";
 				document.getElementById("body").append(iframe);
 				emulateurOn = true;
-				if (isConnected) {document.getElementById("iframePC").style.boxShadow = "rgba(0, 255, 234, 0.4) 0px 0px 60px 4px"}
-				else {document.getElementById("iframePC").style.boxShadow = "rgba(239, 59, 46, 0.5) 0px 0px 60px 4px"}
-
-
+				if (isConnected) {document.getElementById("iframePC").style.boxShadow = "rgb(240 248 255 / 20%) 0px 0px 100px 4px"}
+				else {document.getElementById("iframePC").style.boxShadow = "rgba(239, 59, 46, 0.4) 0px 0px 80px 4px"}
 
 				if (isConnected == false) {
 					const sideLeftDiv = document.createElement("div");
@@ -724,6 +772,36 @@
 				// Affichage des sideDiv quand connecté (jaugeStreak, xp, ptit historique, deco, toggle, etc...)
 				else {
 
+					var identifiantDiv = document.createElement("div");
+					identifiantDiv.setAttribute("id", "identifiantDiv");
+					identifiantDiv.style.display = "inline-flex";
+					identifiantDiv.innerHTML = "<i class='fas fa-user-alt' id='userIconPc'></i><p>&nbsp;&nbsp;&nbsp;" + username2 + "</p>";
+					// icone user bonhomme coupé + nom
+
+					var creditsDiv = document.createElement("div");
+					creditsDiv.setAttribute("id", "creditsDiv");
+
+					var creditsDivTitle = document.createElement("p");
+					creditsDivTitle.setAttribute("id", "creditsDivTitle");
+					creditsDivTitle.innerHTML = "Crédits";
+
+					var creditsDivLine = document.createElement("div");
+					creditsDivLine.style.display = "inline-flex";
+					creditsDivLine.innerHTML = "<p id='creditsPC'>" + creditsConnected + " </p> <img src='Images/souBarre.png' style='width:110px; height:110px; opacity:0.85;'>";
+
+					creditsDiv.append(creditsDivTitle);
+					creditsDiv.append(creditsDivLine);
+
+
+					// creditsDiv.innerHTML = "<p id='creditsPC'>" + creditsConnected + " </p> <img src='Images/souBarre.png' style='width:85px;height:85px;'>";
+					// lvl
+
+					var levelPCDiv = document.createElement("div");
+					levelPCDiv.setAttribute("id", "levelPCDiv");
+					levelPCDiv.innerHTML = "<img><p><span id='lvlLabelPc'>LVL</span> &nbsp;&nbsp;<span id='lvlNbrPc'>" + levelPhp + "</span></p>";
+					// lvl
+
+
 					var experienceDiv = document.createElement("div");
 					experienceDiv.setAttribute("id", "experienceDiv");
 
@@ -733,37 +811,65 @@
 
 					var experienceNbr = document.createElement("p");
 					experienceNbr.setAttribute("id", "experienceNbr");
-					experienceNbr.innerHTML = "<p><span id='expIcone'>EXP</span>&nbsp;&nbsp;" + expProgressVarPhp + " <span style='font-size:70%; position:relative; bottom:7px;'>%</span></p>";
+					// experienceNbr.innerHTML = "<p><span id='expIcone'>EXP</span>&nbsp;&nbsp;" + expProgressVarPhp + " <span style='font-size:70%; position:relative; bottom:7px;'>%</span></p>";
+					experienceNbr.innerHTML = "<p style='text-align:left;'><span id='xpPercentagePC'>" + expProgressVarPhp + "</span><span style='font-size:70%; position:relative; bottom:7px;'>%</span></p>";
 
 
 
 
-					// ATTENTION Pour l'instant ce jauge Streak seert aussi au jauge EXP
+					// Jauge Streak
 					var jaugeContainerMaxPC = document.createElement("div");
 					jaugeContainerMaxPC.setAttribute('id', 'jaugeContainerMaxPC');
-					jaugeContainerMaxPC.classList.add("jaugeContainer2", "jaugeProgress");
+					jaugeContainerMaxPC.classList.add("jaugeContainer2", "jaugeProgress2");
 
 					var dataProgressMax = document.createElement("span");
 					dataProgressMax.setAttribute("id", "dataProgressMax");
 
 					let streakPourcentage = (streakFromPhp*10).toString();
-					dataProgressMax.setAttribute("data-progress", streakPourcentage);
+					dataProgressMax.setAttribute("data-progress2", streakPourcentage);
 
 					jaugeContainerMaxPC.append(dataProgressMax);
 
+
+					// Jauge Exp
+					var jaugeContainerExpMaxPC = document.createElement("div");
+					jaugeContainerExpMaxPC.setAttribute('id', 'jaugeContainerExpMaxPC');
+					jaugeContainerExpMaxPC.classList.add("jaugeContainerExp", "jaugeProgressExp");
+
+					var dataProgressExpMax = document.createElement("span");
+					dataProgressExpMax.setAttribute("id", "dataProgressExpMax");
 					
-						
+					let expPourcentage = expProgressVarPhp;
+					dataProgressExpMax.setAttribute("data-progressExp", expPourcentage);
+
+					jaugeContainerExpMaxPC.append(dataProgressExpMax);
 
 
 
-					experienceDiv.append(experienceTitle);
+
+					experienceDiv.append(identifiantDiv);
+
 					experienceDiv.append(document.createElement("br"));
+
+					experienceDiv.append(levelPCDiv);
+
+					experienceDiv.append(document.createElement("br"));
+					experienceDiv.append(document.createElement("br"));
+
+
+
+					// experienceDiv.append(experienceTitle);
+					// experienceDiv.append(document.createElement("br"));
 					experienceDiv.append(experienceNbr);
 
-					// Append JaugeMax EXP
-					experienceDiv.append(streakEmulNbr);
 					experienceDiv.append(document.createElement("br"));
-					experienceDiv.append(jaugeContainerMaxPC);
+					experienceDiv.append(jaugeContainerExpMaxPC);
+
+
+
+					experienceDiv.append(creditsDiv);
+
+
 
 
 							
@@ -790,12 +896,25 @@
 					streakDiv.append(document.createElement("br"));
 					streakDiv.append(jaugeContainerMaxPC);
 
+					streakDiv.append(document.createElement("br"));
+					streakDiv.append(document.createElement("br"));
+
+
+
+
+
 
 
 
 					document.getElementById("body").append(experienceDiv);
 					document.getElementById("body").append(streakDiv);
 
+					refreshJaugesPC();
+
+					
+					
+
+					
 				}
 
 
@@ -812,6 +931,99 @@
 
 				emulateurOn = false;
 			}
+
+
+			window.onmessage = function(e) {
+
+				if (JSON.parse(e.data)[0] == 'procMise') {
+					document.getElementById("creditsPC").innerHTML = JSON.parse(e.data)[1];
+				}
+
+				if (JSON.parse(e.data)[0] == 'procRelance') {
+					document.body.style.boxShadow = "";
+					document.getElementById("iframePC").style.boxShadow = "rgb(240 248 255 / 20%) 0px 0px 100px 4px";
+				}
+
+				setTimeout(function() {
+					if (JSON.parse(e.data)[0] == 'procWin') {
+						streakFromPhpInt += 1;
+						if (streakFromPhpInt > 10) {
+							streakFromPhpInt = 10;
+						}
+						document.body.style.boxShadow = "inset 0 0 90px rgb(0 248 224 / 18%)";
+						document.getElementById("iframePC").style.boxShadow = "rgb(0 255 234 / 20%) 0px 0px 100px 4px";
+						document.getElementById("streakEmulNbr").classList.add("fadeOut22");
+						setTimeout(function() {
+							document.getElementById("streakEmulNbr").innerHTML = "<img id='imgFireStreakPC' src='Images/fire_maxPurple.png'>" + streakFromPhpInt;
+							document.getElementById("streakEmulNbr").classList.remove("fadeOut22");
+							document.getElementById("streakEmulNbr").classList.add("fadeIn22");
+						}, 550)
+						refreshCreditsExpPC();
+						refreshJaugesPC();
+						refreshLvl();
+					}
+					else if (JSON.parse(e.data)[0] == 'procLose') {
+						streakFromPhpInt -= 2;
+						if (streakFromPhpInt < 0) {
+							streakFromPhpInt = 0;
+						}
+						document.body.style.boxShadow = "inset 0 0 90px rgb(248 33 0 / 30%)";
+						document.getElementById("iframePC").style.boxShadow = "rgba(239, 59, 46, 0.6) 0px 0px 60px 4px";
+						document.getElementById("streakEmulNbr").classList.add("fadeOut22");
+						setTimeout(function() {
+							document.getElementById("streakEmulNbr").innerHTML = "<img id='imgFireStreakPC' src='Images/fire_maxPurple.png'>" + streakFromPhpInt;
+							document.getElementById("streakEmulNbr").classList.remove("fadeOut22");
+							document.getElementById("streakEmulNbr").classList.add("fadeIn22");
+						}, 550)
+						refreshCreditsExpPC();
+						refreshJaugesPC();
+						refreshLvl();
+					}
+					else if (JSON.parse(e.data)[0] == 'procPush') {
+						document.body.style.boxShadow = "inset 0 0 90px rgb(248 219 0 / 18%)";
+						document.getElementById("streakEmulNbr").innerHTML = "<img id='imgFireStreakPC' src='Images/fire_maxPurple.png'>" + streakFromPhpInt;
+						document.getElementById("iframePC").style.boxShadow = "rgb(248 219 0 / 50%) 0px 0px 60px 4px";
+
+						refreshCreditsExpPC();
+						refreshJaugesPC();
+						refreshLvl();
+					}
+					else if (JSON.parse(e.data)[0] == 'procBJ') {
+						streakFromPhpInt += 1;
+						document.body.style.boxShadow = "inset 0 0 90px rgb(248 0 196 / 20%)";
+						document.getElementById("iframePC").style.boxShadow = "rgb(248 0 196 / 50%) 0px 0px 60px 4px";
+
+						document.getElementById("streakEmulNbr").classList.add("fadeOut22");
+						setTimeout(function() {
+							document.getElementById("streakEmulNbr").innerHTML = "<img id='imgFireStreakPC' src='Images/fire_maxPurple.png'>" + streakFromPhpInt;
+							document.getElementById("streakEmulNbr").classList.remove("fadeOut22");
+							document.getElementById("streakEmulNbr").classList.add("fadeIn22");
+						}, 550)
+						refreshCreditsExpPC();
+						refreshJaugesPC();
+						refreshLvl();
+					}
+
+
+					function refreshCreditsExpPC() {
+						document.getElementById("creditsPC").classList.add("fadeOut22");
+						setTimeout(function() {
+							document.getElementById("creditsPC").innerHTML = JSON.parse(e.data)[1];
+							document.getElementById("creditsPC").classList.remove("fadeOut22");
+							document.getElementById("creditsPC").classList.add("fadeIn22");
+						}, 550)
+
+						$.get("getExpProgress.php", function(data) {
+							// experienceNbr.innerHTML = "<p><span id='expIcone'>EXP</span>&nbsp;&nbsp;" + data + " <span style='font-size:70%; position:relative; bottom:7px;'>%</span></p>";
+							experienceNbr.innerHTML = "<p style='text-align:left;'><span style='xpPercentagePC'>" + data + "</span><span style='font-size:70%; position:relative; bottom:7px;'>%</span></p>";
+						});
+						// experienceNbr.innerHTML = "<p><span id='expIcone'>EXP</span>&nbsp;&nbsp;" + expProgressVarPhp + " <span style='font-size:70%; position:relative; bottom:7px;'>%</span></p>";
+					}
+
+
+				}, 100)
+				
+			};
 
 		</script>
 		<!-- FIN EMULATEUR -->

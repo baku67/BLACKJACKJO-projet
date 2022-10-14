@@ -1315,7 +1315,22 @@ input:-webkit-autofill{
 	border-right: 0.5px solid rgba(0,0,0,1);
 	color: rgba(255,255,255,0);
 
-	animation: boxShadowJauge 1.5s infinite ease;
+	height: 48px;
+
+
+	/* animation: boxShadowJauge 1.5s infinite ease; */
+
+	/* box-shadow: 0 -1px 4px #fff, 0 -2px 10px #ff0, 0 -5px 20px #ff8000, 0 -4px 20px #f00; */
+}
+
+#dataProgressExpMax {
+	border-right: 0.5px solid rgba(0,0,0,1);
+	color: rgba(255,255,255,0);
+
+	height: 48px;
+
+
+	/* animation: boxShadowJauge 1.5s infinite ease; */
 
 	/* box-shadow: 0 -1px 4px #fff, 0 -2px 10px #ff0, 0 -5px 20px #ff8000, 0 -4px 20px #f00; */
 }
@@ -1491,7 +1506,13 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 
-
+#lvlNbrPc {
+	font-size: 2em;
+}
+#lvlLabelPc {
+	font-size: 1.5em;
+	opacity: 0.7;
+}
 
 
 
@@ -1504,10 +1525,13 @@ button, input[type="submit"], input[type="reset"] {
 	transform: translateX(-25%);
 	transform: translate(-25%, -50%);
 
-	top: 50%;
+	top: 40%;
 
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	background: radial-gradient(circle, rgba(239, 59, 46, 0.05) 5%, rgba(189, 189, 189, 0) 65%);
+
+	opacity: 0;
+	animation: fadeIn2 0.5s 1.5s ease forwards;
 }
 #experienceTitle {
 	color: rgba(18, 205, 250, 0.45);
@@ -1519,13 +1543,24 @@ button, input[type="submit"], input[type="reset"] {
 	list-style: none;
 }
 #experienceNbr {
-	color: rgb(18 205 250 / 80%);
+	/* color: rgb(18 205 250 / 80%);
 	font-size: 7em;
 	font-weight: bold;
 	opacity: 0.9;
 	text-align: center;
-	/* list-style: url('/media/examples/rocket.svg'); */
+	list-style: none; */
+
+	position: relative;
+	top: 100px;
+	color: rgb(18 205 250 / 100%);
+	font-size: 8em;
+	font-weight: bold;
+	opacity: 1;
+	text-align: center;
 	list-style: none;
+	z-index: 10;
+
+	text-shadow: 2px 1px black;
 }
 
 
@@ -1543,10 +1578,14 @@ button, input[type="submit"], input[type="reset"] {
 	transform: translate(35%, -50%);
 	/* Fin */
 
-	top: 50%;
+	/* top: 50%; */
+	top: 43%;
 
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	background: radial-gradient(circle, rgba(239, 59, 46, 0.05) 5%, rgba(189, 189, 189, 0) 65%);
+
+	opacity: 0;
+	animation: fadeIn2 0.5s 1.5s ease forwards;
 }
 #streakTitle {
 	color: rgba(250, 18, 227, 0.45);
@@ -1559,7 +1598,7 @@ button, input[type="submit"], input[type="reset"] {
 }
 #streakEmulNbr {
 	color: rgb(250 18 227 / 80%);
-	font-size: 7em;
+	font-size: 6em;
 	font-weight: bold;
 	opacity: 0.9;
 	text-align: center;
@@ -1570,18 +1609,20 @@ button, input[type="submit"], input[type="reset"] {
 
 #imgFireStreakPC {
 	height: 100px;
-	width: 100px;
+	width: 85px;
 	margin-right: 42px;
 
 	position: relative;
 	top: 3px;
-	opacity: 0.9;
+	opacity: 0.8;
 }
 #expIcone {
 	letter-spacing:-2px;
 	font-size: 70%;
     position: relative;
     bottom: 6px;
+
+	opacity: 0.75;
 }
 
 
@@ -1638,10 +1679,83 @@ button, input[type="submit"], input[type="reset"] {
 
 
 
+#identifiantDiv {
+	display: inline-flex;
+    text-align: center;
+    margin: auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 4em;
+    font-weight: bold;
+    color: aquamarine;
+
+	/* margin-bottom: 15px; */
+
+	line-height: 1.4em;
+}
+
+#userIconPc {
+	position:relative;
+	bottom:8px;
+	opacity:0.75;
+
+	writing-mode: vertical-rl;
+}
 
 
+#levelPCDiv {
+	display: inline-flex;
+    text-align: center;
+    margin: auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3.3em;
+    font-weight: bold;
+    color: aquamarine;
+
+	margin-bottom: 50px;
+}
 
 
+#creditsDiv{
+	/* display: inline-flex; */
+    text-align: center;
+    margin: auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    /* font-size: 4.5em;
+    font-weight: bold; */
+    /* color: aquamarine; */
+	/* color: #cb2626; */
+
+	/* margin-top: 100px; */
+
+	/* font-family: "Holtwood One SC", serif; */
+
+}
+
+#creditsDivTitle {
+	/* font-size: 80%; */
+	opacity: 0.7;
+	font-size: 2.5em;
+	line-height: 2.4em;
+	color: #cb2626;
+	
+	font-weight: bold;
+
+}
+
+
+#creditsPC {
+	color: #cb2626;
+	font-size: 4.5em;	
+	font-weight: bold;
+	font-family: "Holtwood One SC", serif;
+	letter-spacing: 3px;
+}
 
 
 
@@ -1665,6 +1779,17 @@ button, input[type="submit"], input[type="reset"] {
 		opacity: 0;
 	}
 }
+.fadeOut22 {
+	animation: fadeOut2 0.35s forwards ease !important;
+}
+@keyframes fadeOut22 {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
 .fadeOut3 {
 	animation: fadeOut3 0.32s 0s forwards ease !important;
 }
@@ -1681,6 +1806,17 @@ button, input[type="submit"], input[type="reset"] {
 	animation: fadeIn2 0.5s 0.5s forwards ease !important;
 }
 @keyframes fadeIn2 {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+.fadeIn22 {
+	animation: fadeIn2 0.35s forwards ease !important;
+}
+@keyframes fadeIn22 {
 	from {
 		opacity: 0;
 	}
@@ -2663,7 +2799,29 @@ button, input[type="submit"], input[type="reset"] {
 	transform: scale(1.2,1);
 }
 
+.jaugeContainerExp {
+	overflow: hidden;
 
+	position: relative;
+	/* bottom: -20px; */
+
+	/* width: 50%; */
+	/* height: 6px; */
+	width: 85%;
+	height: 50px;
+
+
+	margin: 0 auto;
+
+	margin-bottom: 160px;
+
+	left: 10px;
+
+	border-radius: 6px; 
+
+	/* background: var(--bgColor-jaugeVide); */
+	background: rgb(59 35 59);
+}
 
 .jaugeContainer2 {
 	overflow: hidden;
@@ -2674,10 +2832,12 @@ button, input[type="submit"], input[type="reset"] {
 	/* width: 50%; */
 	/* height: 6px; */
 	width: 85%;
-	height: 21px;
+	height: 50px;
 
 
 	margin: 0 auto;
+
+	margin-bottom: 160px;
 
 	left: 10px;
 
@@ -2712,6 +2872,14 @@ button, input[type="submit"], input[type="reset"] {
 .jaugeProgress span {
 	/* background-color: #ef3b2e; */
 	background-color: var(--bgColor-jaugePleine);
+}
+.jaugeProgress2 span {
+	/* background-color: #ef3b2e; */
+	background-color: rgba(250, 18, 227, 0.7);
+}
+.jaugeProgressExp span {
+	/* background-color: #ef3b2e; */
+	background-color: rgba(18, 157, 250, 0.6);
 }
 /* Label pourcentage jauge */
 /* #jaugeContainer span {
@@ -2971,7 +3139,8 @@ h2 {
 	/* Ancienne values (avant Wrapper pour resize) */
 	width: 750px;
 	position: absolute;
-	height: 1500px;
+	/* height: 1500px; */
+	height: 92%;
 	/* width: 100%;
 	height: 100%;
 	position: relative; */
@@ -2986,8 +3155,9 @@ h2 {
 	padding: 5px 5px;
 	background-color: rgb(17, 19, 31);
 
-	box-shadow: rgba(0, 255, 234, 0.4) 0px 0px 60px 4px;
-	/* box-shadow: rgba(239, 59, 46, 1) 0px 0px 25px 4px; */
+	/* Ancien (cian:) */
+	/* box-shadow: rgba(0, 255, 234, 0.4) 0px 0px 60px 4px; */
+	box-shadow: rgb(240 248 255 / 20%) 0px 0px 100px 4px;
 
 	resize: horizontal;
 	overflow: auto;
@@ -3139,6 +3309,8 @@ body {
 
 	margin: 0px;
 	height: 100%;
+
+	transition: box-shadow 0.6s  ease;
 
 
 	zoom: 0.53;

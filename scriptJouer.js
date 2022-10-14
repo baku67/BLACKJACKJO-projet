@@ -171,7 +171,9 @@
 
       if (isConnected == true && toggleDMfromPhp == true) {
 
-        document.querySelector('#deconnexionImg').src = "../Images/deconnexion_darkMode.png";
+        if (document.querySelector('#deconnexionImg') !== null) {
+          document.querySelector('#deconnexionImg').src = "../Images/deconnexion_darkMode.png";
+        }
 
         let body = document.querySelector('body');
         body.dataset.theme = "dark";
@@ -243,18 +245,20 @@
 
 
 
-      if (isConnected == false) {
-        document.getElementById("connectionContainer").style.marginRight = "0px";
-
-        refreshAnimJauge();
-      }
-      else {
-        document.getElementById("connectionContainer").style.marginRight = "55px";
-        document.getElementById("imgStreak").style.top = "20.3%";
-        
-
-        refreshAnimJauge();
-        
+      if (document.getElementById("connectionContainer") !== null ) {
+        if (isConnected == false) {
+          document.getElementById("connectionContainer").style.marginRight = "0px";
+  
+          refreshAnimJauge();
+        }
+        else {
+          document.getElementById("connectionContainer").style.marginRight = "55px";
+          document.getElementById("imgStreak").style.top = "20.3%";
+          
+  
+          refreshAnimJauge();
+          
+        }  
       }
 
 
@@ -623,7 +627,7 @@
 
       // Activation Crédits Brut mode invité (hors partie)
       // ******************************** *
-      if (isConnected == true) {
+      if ((isConnected == true) && (document.getElementById("creditsConnected") !== null)) {
         console.log('isConnected: ' + isConnected);
         //
         document.getElementById("creditsConnected").innerHTML = creditsConnected;
@@ -2948,6 +2952,8 @@
 
         $("#relancer").click(function(){
 
+          window.top.postMessage(JSON.stringify(['procRelance']), '*');
+
           asCroupier = false;
           asCroupier2 = false;
 
@@ -3838,7 +3844,6 @@
 
 
       
-
       // Lock de la mise
       function miseLock() {
 
@@ -4052,7 +4057,12 @@
               console.log("MISES ENVOYEES");
             }
           });
+
+
+          // credits PC apres refresh mise
+          window.top.postMessage(JSON.stringify(['procMise', credits]), '*');
     
+
           document.getElementById("miseEnCours").classList.add("fadeOut");
 
           document.getElementById("boutonMiser").disabled = true;
@@ -4302,7 +4312,9 @@
                     // Ajout de l'indice x2 sous miseLocked ou a coté de mise ?
                     // let x2Icon = document.createElement("span");
                     // x2Icon.setAttribute("id", "x2Icon");
-                    document.getElementById("miseTitle").innerHTML = "Mise <span style='color:rgb(241, 205, 92); font-family:Calibri !important; font-weight:bold;'>x2</span>"
+                    document.getElementById("miseTitle").innerHTML = "Mise <span style='color:rgb(241, 205, 92); font-family:Calibri !important; font-weight:bold;'>x2</span>";
+
+                    window.top.postMessage(JSON.stringify(['procMise', credits]), '*');
 
                     setTimeout(function() {
                       double();
@@ -4643,8 +4655,9 @@
                   // Ajout de l'indice x2 sous miseLocked ou a coté de mise ?
                   // let x2Icon = document.createElement("span");
                   // x2Icon.setAttribute("id", "x2Icon");
-                  document.getElementById("miseTitle").innerHTML = "Mise <span style='color:rgb(241, 205, 92); font-family:Calibri !important; font-weight:bold;'>x2</span>"
+                  document.getElementById("miseTitle").innerHTML = "Mise <span style='color:rgb(241, 205, 92); font-family:Calibri !important; font-weight:bold;'>x2</span>";
                   
+                  window.top.postMessage(JSON.stringify(['procMise', credits]), '*');
 
                   setTimeout(function() {
                     double();
@@ -5024,7 +5037,10 @@
 
                     expDB(20);
 
-                    refreshLvl();              
+                    refreshLvl();   
+                    
+                    // window.top.postMessage(JSON.stringify(['procLose', 1]), '*');
+
 
 
                     document.getElementById("deckContainer").remove();
@@ -5243,6 +5259,8 @@
 
                         refreshLvl();
 
+                        // window.top.postMessage(JSON.stringify(['procWin', 1]), '*');
+
                         // function: (en partant de la mise vers le gains réel)
                         var miseLockedMultiplied = miseLocked * 2;
 
@@ -5448,7 +5466,9 @@
 
                       expDB(100);
 
-                      refreshLvl();                      
+                      refreshLvl();  
+                      
+                      // window.top.postMessage(JSON.stringify(['procWin', 1]), '*');
                       
                       var miseLockedMultiplied = miseLocked * 2;
 
@@ -5638,6 +5658,7 @@
 
                     refreshLvl();
 
+                    // window.top.postMessage(JSON.stringify(['procPush', 1]), '*');
 
                     document.getElementById("miseResultat").classList.add("addColorToResultatYellow");
                       // Fin résultat Gains
@@ -5686,7 +5707,6 @@
                   }
                 });
   
-
 
               }
             }, 1300);
@@ -7621,13 +7641,23 @@
           //   "Crédits après refresh: " + (credits + gainFront + gainPairBet + gain213Bet) + "."
           // );
 
-          if ((WinLose == "WIN") || (WinLose == "BJ") ) {
+          if (WinLose == "WIN") {
             document.getElementById("creditsConnected").classList.add("refreshCreditAnim");
             document.getElementById("creditsConnected").innerHTML = (credits + gainFront + gainPairBet + gain213Bet);
+
+            window.top.postMessage(JSON.stringify(['procWin', (credits + gainFront + gainPairBet + gain213Bet)]), '*');
+          }
+          else if (WinLose == "BJ") {
+            document.getElementById("creditsConnected").classList.add("refreshCreditAnim");
+            document.getElementById("creditsConnected").innerHTML = (credits + gainFront + gainPairBet + gain213Bet);
+
+            window.top.postMessage(JSON.stringify(['procBJ', (credits + gainFront + gainPairBet + gain213Bet)]), '*');
           }
           else if (WinLose == "PUSH") {
             // Refresh credit front sans anim
             document.getElementById("creditsConnected").innerHTML = (credits + gainFront + gainPairBet + gain213Bet);
+
+            window.top.postMessage(JSON.stringify(['procPush', (credits + gainFront + gainPairBet + gain213Bet)]), '*');
           }
           else {
             // Refresh Credits front meme si lose, si il ya des gain SideBets:
@@ -7635,6 +7665,8 @@
               document.getElementById("creditsConnected").classList.add("refreshCreditAnimBJ");
               document.getElementById("creditsConnected").innerHTML = (credits + gainPairBet + gain213Bet);
             }
+
+            window.top.postMessage(JSON.stringify(['procLose', (credits + gainFront + gainPairBet + gain213Bet)]), '*');
           }
           
 
@@ -7673,6 +7705,8 @@
           if ((WinLose == "WIN") || (WinLose == "BJ")) {
             document.getElementById("credits").innerHTML = "<i class='fa-solid fa-star'></i> Invité &nbsp;&nbsp;<span id=\"creditsInvite\">" + (credits + gainFront + gainPairBet + gain213Bet) + "</span>" + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
             document.getElementById("creditsInvite").classList.add("refreshCreditAnimInvite");
+
+            window.top.postMessage(JSON.stringify(['procWin', (credits + gainFront + gainPairBet + gain213Bet)]), '*');
           } 
           else if (WinLose == "PUSH") {
             // Refresh credit front sans anim
@@ -7682,6 +7716,8 @@
             else {
               document.getElementById("creditsInvite").innerHTML = (credits + gainFront + gainPairBet + gain213Bet);
             }
+
+            window.top.postMessage(JSON.stringify(['procPush', (credits + gainFront + gainPairBet + gain213Bet)]), '*');
           }
           else {
             // Refresh Credits front meme si lose, si il ya des gain SideBets:
@@ -7689,6 +7725,8 @@
               document.getElementById("credits").innerHTML = "<i class='fa-solid fa-star'></i> Invité &nbsp;&nbsp;<span id=\"creditsInvite\">" + (credits + gainPairBet + gain213Bet) + "</span>" + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";;
               document.getElementById("creditsInvite").classList.add("refreshCreditAnimInvite");
             }
+
+            window.top.postMessage(JSON.stringify(['procLose', (credits + gainFront + gainPairBet + gain213Bet)]), '*');
           }
 
 
@@ -7787,6 +7825,8 @@
                       expDB(20);
 
                       refreshLvl();
+
+                      // window.top.postMessage(JSON.stringify(['procLose', 1]), '*');
                       
                     // Fin résultat Gains
 
@@ -7976,6 +8016,8 @@
                   expDB(250);
 
                   refreshLvl();
+
+                  // window.top.postMessage(JSON.stringify(['procBJ', 1]), '*');
 
                   // Fin résultat Gains
 

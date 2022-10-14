@@ -2,6 +2,8 @@
 
     include('config.php');
 
+    session_start();
+
 
     $result = mysqli_query($db,"SELECT streak FROM users WHERE username = '".$_SESSION['username']."' ");
     while($row = mysqli_fetch_array($result))
