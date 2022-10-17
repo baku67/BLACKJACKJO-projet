@@ -1178,6 +1178,41 @@
         }
 
 
+
+        function expMobileFooter() {
+          if (document.getElementById("iframePC") == null) {
+            if (emulateurOn == false) {
+
+              var jaugeContainerExp = document.createElement("div");
+              jaugeContainerExp.setAttribute('id', 'jaugeContainerExp');
+              jaugeContainerExp.classList.add("jaugeContainerExpMini", "jaugeProgressExp");
+
+              var dataProgressExp = document.createElement("span");
+              dataProgressExp.setAttribute("id", "dataProgressExp");
+              
+              $.get("getExpProgress.php", function(data) {
+                  dataProgressExp.setAttribute("data-progressExp", data);
+              });
+
+              jaugeContainerExp.append(dataProgressExp);
+              document.getElementById("container3").append(jaugeContainerExp);
+
+              setTimeout(function() {
+                  $(".jaugeContainerExpMini span").each(function () {
+                      $(this).animate(
+                          {
+                              width: $(this).attr("data-progressExp") + "%",
+                          },
+                          500
+                      );
+                      $(this).text($(this).attr("data-progressExp") + "%");
+                  });
+              }, 500)
+            }
+          }
+        }
+
+
         function handBust(hand) {
           if (hand == "joueur") {
             var handJoueur = document.getElementById("joueur").childNodes;
@@ -4986,7 +5021,7 @@
                       document.getElementById("gainExpBet").style.opacity = "0.8";
                     }  
 
-                    // document.getElementById("expProgress").innerHTML = "<?php include('../getExpProgress.php'); ?>";
+                    expMobileFooter();
 
                     // Mise lockée
                     document.getElementById("miseLockedFooter").innerHTML = miseLocked;
@@ -5206,7 +5241,7 @@
                           document.getElementById("gainExpBet").style.opacity = "0.8";
                         }
 
-                        // document.getElementById("expProgress").innerHTML = "<?php include('../getExpProgress.php'); ?>";
+                        expMobileFooter();
 
                         // Mise lockée
                         document.getElementById("miseLockedFooter").innerHTML = miseLocked;
@@ -5416,7 +5451,7 @@
                         document.getElementById("gainExpBet").style.opacity = "0.8";
                       }    
 
-                      // document.getElementById("expProgress").innerHTML = "<?php include('../getExpProgress.php'); ?>";
+                      expMobileFooter();
 
                       // Mise lockée
                       document.getElementById("miseLockedFooter").innerHTML = miseLocked;
@@ -5612,7 +5647,7 @@
                       document.getElementById("gainExpBet").style.opacity = "0.8";
                     } 
                     
-                    // document.getElementById("expProgress").innerHTML = "<?php include('../getExpProgress.php'); ?>";
+                    expMobileFooter();
 
                     // Mise lockée
                     document.getElementById("miseLockedFooter").innerHTML = miseLocked;
@@ -7774,7 +7809,7 @@
                       document.getElementById("gainExpBet").style.opacity = "0.8";
                     }
   
-                    // document.getElementById("expProgress").innerHTML = "<?php include('../getExpProgress.php'); ?>";
+                    expMobileFooter();
 
                     // Mise lockée
                     document.getElementById("miseLockedFooter").innerHTML = miseLocked;
@@ -7965,7 +8000,7 @@
                     document.getElementById("gainExpBet").style.opacity = "0.8";
                   }
 
-                  // document.getElementById("expProgress").innerHTML = "<?php include('../getExpProgress.php'); ?>";
+                  expMobileFooter();
 
                   // Mise lockée
                   document.getElementById("miseLockedFooter").innerHTML = miseLocked;

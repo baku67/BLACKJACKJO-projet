@@ -935,93 +935,97 @@
 
 			window.onmessage = function(e) {
 
-				if (JSON.parse(e.data)[0] == 'procMise') {
-					document.getElementById("creditsPC").innerHTML = JSON.parse(e.data)[1];
-				}
+				if (emulateurOn) {
 
-				if (JSON.parse(e.data)[0] == 'procRelance') {
-					document.body.style.boxShadow = "";
-					document.getElementById("iframePC").style.boxShadow = "rgb(240 248 255 / 20%) 0px 0px 100px 4px";
-				}
+					if (JSON.parse(e.data)[0] == 'procMise') {
+						document.getElementById("creditsPC").innerHTML = JSON.parse(e.data)[1];
+					}
 
-				setTimeout(function() {
-					if (JSON.parse(e.data)[0] == 'procWin') {
-						streakFromPhpInt += 1;
-						if (streakFromPhpInt > 10) {
-							streakFromPhpInt = 10;
+					if (JSON.parse(e.data)[0] == 'procRelance') {
+						document.body.style.boxShadow = "";
+						document.getElementById("iframePC").style.boxShadow = "rgb(240 248 255 / 20%) 0px 0px 100px 4px";
+					}
+
+					setTimeout(function() {
+						if (JSON.parse(e.data)[0] == 'procWin') {
+							streakFromPhpInt += 1;
+							if (streakFromPhpInt > 10) {
+								streakFromPhpInt = 10;
+							}
+							document.body.style.boxShadow = "inset 0 0 90px rgb(0 248 224 / 18%)";
+							document.getElementById("iframePC").style.boxShadow = "rgb(0 255 234 / 20%) 0px 0px 100px 4px";
+							document.getElementById("streakEmulNbr").classList.add("fadeOut22");
+							setTimeout(function() {
+								document.getElementById("streakEmulNbr").innerHTML = "<img id='imgFireStreakPC' src='Images/fire_maxPurple.png'>" + streakFromPhpInt;
+								document.getElementById("streakEmulNbr").classList.remove("fadeOut22");
+								document.getElementById("streakEmulNbr").classList.add("fadeIn22");
+							}, 550)
+							refreshCreditsExpPC();
+							refreshJaugesPC();
+							refreshLvl();
 						}
-						document.body.style.boxShadow = "inset 0 0 90px rgb(0 248 224 / 18%)";
-						document.getElementById("iframePC").style.boxShadow = "rgb(0 255 234 / 20%) 0px 0px 100px 4px";
-						document.getElementById("streakEmulNbr").classList.add("fadeOut22");
-						setTimeout(function() {
-							document.getElementById("streakEmulNbr").innerHTML = "<img id='imgFireStreakPC' src='Images/fire_maxPurple.png'>" + streakFromPhpInt;
-							document.getElementById("streakEmulNbr").classList.remove("fadeOut22");
-							document.getElementById("streakEmulNbr").classList.add("fadeIn22");
-						}, 550)
-						refreshCreditsExpPC();
-						refreshJaugesPC();
-						refreshLvl();
-					}
-					else if (JSON.parse(e.data)[0] == 'procLose') {
-						streakFromPhpInt -= 2;
-						if (streakFromPhpInt < 0) {
-							streakFromPhpInt = 0;
+						else if (JSON.parse(e.data)[0] == 'procLose') {
+							streakFromPhpInt -= 2;
+							if (streakFromPhpInt < 0) {
+								streakFromPhpInt = 0;
+							}
+							document.body.style.boxShadow = "inset 0 0 90px rgb(248 33 0 / 30%)";
+							document.getElementById("iframePC").style.boxShadow = "rgba(239, 59, 46, 0.6) 0px 0px 60px 4px";
+							document.getElementById("streakEmulNbr").classList.add("fadeOut22");
+							setTimeout(function() {
+								document.getElementById("streakEmulNbr").innerHTML = "<img id='imgFireStreakPC' src='Images/fire_maxPurple.png'>" + streakFromPhpInt;
+								document.getElementById("streakEmulNbr").classList.remove("fadeOut22");
+								document.getElementById("streakEmulNbr").classList.add("fadeIn22");
+							}, 550)
+							refreshCreditsExpPC();
+							refreshJaugesPC();
+							refreshLvl();
 						}
-						document.body.style.boxShadow = "inset 0 0 90px rgb(248 33 0 / 30%)";
-						document.getElementById("iframePC").style.boxShadow = "rgba(239, 59, 46, 0.6) 0px 0px 60px 4px";
-						document.getElementById("streakEmulNbr").classList.add("fadeOut22");
-						setTimeout(function() {
+						else if (JSON.parse(e.data)[0] == 'procPush') {
+							document.body.style.boxShadow = "inset 0 0 90px rgb(248 219 0 / 18%)";
 							document.getElementById("streakEmulNbr").innerHTML = "<img id='imgFireStreakPC' src='Images/fire_maxPurple.png'>" + streakFromPhpInt;
-							document.getElementById("streakEmulNbr").classList.remove("fadeOut22");
-							document.getElementById("streakEmulNbr").classList.add("fadeIn22");
-						}, 550)
-						refreshCreditsExpPC();
-						refreshJaugesPC();
-						refreshLvl();
-					}
-					else if (JSON.parse(e.data)[0] == 'procPush') {
-						document.body.style.boxShadow = "inset 0 0 90px rgb(248 219 0 / 18%)";
-						document.getElementById("streakEmulNbr").innerHTML = "<img id='imgFireStreakPC' src='Images/fire_maxPurple.png'>" + streakFromPhpInt;
-						document.getElementById("iframePC").style.boxShadow = "rgb(248 219 0 / 50%) 0px 0px 60px 4px";
+							document.getElementById("iframePC").style.boxShadow = "rgb(248 219 0 / 50%) 0px 0px 60px 4px";
 
-						refreshCreditsExpPC();
-						refreshJaugesPC();
-						refreshLvl();
-					}
-					else if (JSON.parse(e.data)[0] == 'procBJ') {
-						streakFromPhpInt += 1;
-						document.body.style.boxShadow = "inset 0 0 90px rgb(248 0 196 / 20%)";
-						document.getElementById("iframePC").style.boxShadow = "rgb(248 0 196 / 50%) 0px 0px 60px 4px";
+							refreshCreditsExpPC();
+							refreshJaugesPC();
+							refreshLvl();
+						}
+						else if (JSON.parse(e.data)[0] == 'procBJ') {
+							streakFromPhpInt += 1;
+							document.body.style.boxShadow = "inset 0 0 90px rgb(248 0 196 / 20%)";
+							document.getElementById("iframePC").style.boxShadow = "rgb(248 0 196 / 50%) 0px 0px 60px 4px";
 
-						document.getElementById("streakEmulNbr").classList.add("fadeOut22");
-						setTimeout(function() {
-							document.getElementById("streakEmulNbr").innerHTML = "<img id='imgFireStreakPC' src='Images/fire_maxPurple.png'>" + streakFromPhpInt;
-							document.getElementById("streakEmulNbr").classList.remove("fadeOut22");
-							document.getElementById("streakEmulNbr").classList.add("fadeIn22");
-						}, 550)
-						refreshCreditsExpPC();
-						refreshJaugesPC();
-						refreshLvl();
-					}
+							document.getElementById("streakEmulNbr").classList.add("fadeOut22");
+							setTimeout(function() {
+								document.getElementById("streakEmulNbr").innerHTML = "<img id='imgFireStreakPC' src='Images/fire_maxPurple.png'>" + streakFromPhpInt;
+								document.getElementById("streakEmulNbr").classList.remove("fadeOut22");
+								document.getElementById("streakEmulNbr").classList.add("fadeIn22");
+							}, 550)
+							refreshCreditsExpPC();
+							refreshJaugesPC();
+							refreshLvl();
+						}
 
 
-					function refreshCreditsExpPC() {
-						document.getElementById("creditsPC").classList.add("fadeOut22");
-						setTimeout(function() {
-							document.getElementById("creditsPC").innerHTML = JSON.parse(e.data)[1];
-							document.getElementById("creditsPC").classList.remove("fadeOut22");
-							document.getElementById("creditsPC").classList.add("fadeIn22");
-						}, 550)
+						function refreshCreditsExpPC() {
+							document.getElementById("creditsPC").classList.add("fadeOut22");
+							setTimeout(function() {
+								document.getElementById("creditsPC").innerHTML = JSON.parse(e.data)[1];
+								document.getElementById("creditsPC").classList.remove("fadeOut22");
+								document.getElementById("creditsPC").classList.add("fadeIn22");
+							}, 550)
 
-						$.get("getExpProgress.php", function(data) {
-							// experienceNbr.innerHTML = "<p><span id='expIcone'>EXP</span>&nbsp;&nbsp;" + data + " <span style='font-size:70%; position:relative; bottom:7px;'>%</span></p>";
-							experienceNbr.innerHTML = "<p style='text-align:left;'><span style='xpPercentagePC'>" + data + "</span><span style='font-size:70%; position:relative; bottom:7px;'>%</span></p>";
-						});
-						// experienceNbr.innerHTML = "<p><span id='expIcone'>EXP</span>&nbsp;&nbsp;" + expProgressVarPhp + " <span style='font-size:70%; position:relative; bottom:7px;'>%</span></p>";
-					}
+							$.get("getExpProgress.php", function(data) {
+								// experienceNbr.innerHTML = "<p><span id='expIcone'>EXP</span>&nbsp;&nbsp;" + data + " <span style='font-size:70%; position:relative; bottom:7px;'>%</span></p>";
+								experienceNbr.innerHTML = "<p style='text-align:left;'><span style='xpPercentagePC'>" + data + "</span><span style='font-size:70%; position:relative; bottom:7px;'>%</span></p>";
+							});
+							// experienceNbr.innerHTML = "<p><span id='expIcone'>EXP</span>&nbsp;&nbsp;" + expProgressVarPhp + " <span style='font-size:70%; position:relative; bottom:7px;'>%</span></p>";
+						}
 
 
-				}, 100)
+					}, 100)
+
+				}
 				
 			};
 
