@@ -336,14 +336,23 @@
 
 
 
-
-
+      
+      // if (isConnected) {
+      //   $.get("getDailyProcBool.php", function(data) {
+      //     if (data == 1) {
+      //       window.top.postMessage(JSON.stringify(['dailyRewardProcPC']), '*');  
+      //     }
+      //   })
+      // }
 
 
       // Front du dailyReward
-      if ((isConnected == true) && (document.getElementById("dailyRewardBool") != null)) {
+      if (isConnected == true) {
         // Bool switché onPurpose pour tester
-        if (document.getElementById("dailyRewardBool").innerText == "1") {
+        if (dailyProcBool == "1") {
+
+          window.top.postMessage(JSON.stringify(['dailyRewardProcPC']), '*');  
+
 
           setTimeout(function() {
             document.getElementById("dailyRewardDiv").style.display = "block";

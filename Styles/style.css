@@ -1566,7 +1566,7 @@ button, input[type="submit"], input[type="reset"] {
 	list-style: none; */
 
 	position: relative;
-	top: 100px;
+	/* top: 100px; */
 	color: rgb(18 205 250 / 100%);
 	font-size: 8em;
 	font-weight: bold;
@@ -1594,7 +1594,7 @@ button, input[type="submit"], input[type="reset"] {
 	/* Fin */
 
 	/* top: 50%; */
-	top: 43%;
+	top: 38%;
 
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	background: radial-gradient(circle, rgba(239, 59, 46, 0.05) 5%, rgba(189, 189, 189, 0) 65%);
@@ -1730,7 +1730,7 @@ button, input[type="submit"], input[type="reset"] {
     font-weight: bold;
     color: aquamarine;
 
-	margin-bottom: 50px;
+	/* margin-bottom: 50px; */
 }
 
 
@@ -2858,6 +2858,7 @@ button, input[type="submit"], input[type="reset"] {
 	margin-bottom: 160px;
 
 	left: 10px;
+	bottom: 80px;
 
 	border-radius: 6px; 
 

@@ -32,7 +32,7 @@
                 $exp = ($exp - $expNeeded);
     
                 if ( $lvl < 20 ) {
-                    $expNeeded = ($expNeeded * 1.10);
+                    $expNeeded = ($expNeeded * 1.07);
                 }
                 else if ( $lvl < 99 ) {
                     $expNeeded = $expNeeded;

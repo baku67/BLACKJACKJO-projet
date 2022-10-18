@@ -69,6 +69,8 @@
 					var streakFromPhpInt = parseInt(streakFromPhp);
 					var levelPhp = <?php include('getLevel.php'); ?>;
 
+					var dailyProcBool = <?php include("getDailyProcBool.php"); ?>;
+
 				</script>
 		<?php
 			endif;
@@ -117,7 +119,7 @@
 
 
 		<!-- dailyProc -->
-		<div id="dailyRewardBool" style="position:absolute; opacity:0; width:0; height:0; font-size:0px;"><?php include("getDailyProcBool.php");?></div>
+		<!-- <div id="dailyRewardBool" style="position:absolute; opacity:0; width:0; height:0; font-size:0px;"><?php include("getDailyProcBool.php");?></div> -->
 		<!-- Fin -->
 
 		<!-- Modal dailyReward -->
@@ -853,8 +855,8 @@
 
 					experienceDiv.append(levelPCDiv);
 
-					experienceDiv.append(document.createElement("br"));
-					experienceDiv.append(document.createElement("br"));
+					// experienceDiv.append(document.createElement("br"));
+					// experienceDiv.append(document.createElement("br"));
 
 
 
@@ -862,7 +864,7 @@
 					// experienceDiv.append(document.createElement("br"));
 					experienceDiv.append(experienceNbr);
 
-					experienceDiv.append(document.createElement("br"));
+					// experienceDiv.append(document.createElement("br"));
 					experienceDiv.append(jaugeContainerExpMaxPC);
 
 
@@ -936,6 +938,10 @@
 			window.onmessage = function(e) {
 
 				if (emulateurOn) {
+
+					if (JSON.parse(e.data)[0] == 'dailyRewardProcPC') {
+						alert("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+					}
 
 					if (JSON.parse(e.data)[0] == 'procMise') {
 						document.getElementById("creditsPC").innerHTML = JSON.parse(e.data)[1];

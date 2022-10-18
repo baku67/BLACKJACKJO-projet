@@ -63,6 +63,13 @@
 					var toggleMutefromPhp = <?php include('getToggleMute.php'); ?>; // Don't forget the extra semicolon!
 					console.log('getToggleMute.php: ' + toggleMutefromPhp);
 
+					var dailyProcBool = <?php include("getDailyProcBool.php"); ?>;
+					if (dailyProcBool == "1") {
+						window.top.postMessage(JSON.stringify(['dailyRewardProcPC']), '*');  
+					}
+
+
+
 				</script>
 		<?php
 			endif;
@@ -81,7 +88,7 @@
 	<body id="body" data-theme="dark">
 
 		<!-- Zone de var Php non confidentiel, non affiché -->
-		<div id="dailyRewardBool" style="position:absolute; opacity:0; width:0; height:0; font-size:0px;"><?php include("getDailyProcBool.php");?></div>
+		<!-- <div id="dailyRewardBool" style="position:absolute; opacity:0; width:0; height:0; font-size:0px;"><?php include("getDailyProcBool.php");?></div> -->
 		<!-- Fin -->
 
 		<!-- Modal dailyReward -->
