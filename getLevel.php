@@ -15,7 +15,7 @@
         $exp = 0;
 
         $lvl = 1;
-        $expNeeded = 375;
+        $expNeeded = 350;
     
 
         if ($row['exp'] !== null) {

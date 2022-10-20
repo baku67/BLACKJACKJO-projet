@@ -14,6 +14,8 @@
 
       // var emulateurOn = false;
 
+      var lvlBeforeResult;
+
       var audioCardSound = new Audio("Audio/addCardSound.mp3");
       audioCardSound.volume = 0.4;
 
@@ -284,6 +286,17 @@
       }
 
 
+      function gainLvlUp(newLvl) {
+        if (newLvl < 20) {
+          alert('test proc lvlUP < lvl 20');
+          // Déblocage ? BDD
+          // rewardCreditsFront + BDD
+        }
+        else {
+          alert('test proc lvlUP > lvl 20');
+          // rewardCreditsFront + BDD
+        }
+      }
 
 
 
@@ -294,6 +307,11 @@
             success: function(data) {
               if (document.getElementById("lvlText") !== null ) {
                 document.getElementById("lvlText").innerHTML = parseInt(data);
+
+                if (lvlBeforeResult != data) {
+                  // alert('test proc lvlUP');
+                  gainLvlUp(data);
+                }
               }
             }
           })  
@@ -351,6 +369,7 @@
         // Bool switché onPurpose pour tester
         if (dailyProcBool == "1") {
 
+          alert("test proc (mobile OK)");
           window.top.postMessage(JSON.stringify(['dailyRewardProcPC']), '*');  
 
 
@@ -2410,6 +2429,10 @@
         // JQUERY JAX : load Partie
         $("#newGame").click(function(){
 
+            $.get("getLevel.php", function(data) {
+              lvlBeforeResult = data;
+            });
+
             if (document.getElementById("errorCo") !== null) {
               document.getElementById("errorCo").remove();
             }
@@ -2995,6 +3018,10 @@
       function relancer() {
 
         $("#relancer").click(function(){
+
+          $.get("getLevel.php", function(data) {
+            lvlBeforeResult = data;
+          });
 
           window.top.postMessage(JSON.stringify(['procRelance']), '*');
 

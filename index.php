@@ -914,9 +914,6 @@
 					refreshJaugesPC();
 
 					
-					
-
-					
 				}
 
 

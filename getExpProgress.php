@@ -15,7 +15,7 @@
         $exp = 0;
 
         $lvl = 1;
-        $expNeeded = 375;
+        $expNeeded = 350;
     
 
         if ($row['exp'] !== null) {
@@ -31,6 +31,7 @@
     
                 $exp = ($exp - $expNeeded);
     
+                // a dapter: function gainLvlUp(newLvl)  (scriptJS)
                 if ( $lvl < 20 ) {
                     $expNeeded = ($expNeeded * 1.07);
                 }

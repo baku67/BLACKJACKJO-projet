@@ -68,7 +68,7 @@
 						window.top.postMessage(JSON.stringify(['dailyRewardProcPC']), '*');  
 					}
 
-
+					var emulateurOn = true;
 
 				</script>
 		<?php
