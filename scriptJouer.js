@@ -287,16 +287,80 @@
 
 
       function gainLvlUp(newLvl) {
+
         if (newLvl < 20) {
           alert('test proc lvlUP < lvl 20');
           // Déblocage ? BDD
           // MaxMise ++ (from 100 de base to 1000)
           // rewardCreditsFront + BDD
+          document.getElementById("lvlUpRewardDiv").style.display = "block";
+          document.getElementById("lvlUpRewardDiv").classList.add('fadeInDailyReward');
         }
         else {
           alert('test proc lvlUP > lvl 20');
           // rewardCreditsFront + BDD
+
+          document.getElementById("lvlUpRewardDiv").style.display = "block";
+          document.getElementById("lvlUpRewardDiv").classList.add('fadeInDailyReward');
         }
+
+        // A voir si le gain doit s'adapter au lvl
+        // BDD:
+        var gainLvlToPhp = {};
+        gainLvlToPhp.value = (100);
+        $.ajax({
+          url: "setCredits.php",
+          method: "post",
+          data: gainLvlToPhp,
+          success: function(res) {
+          }
+        });
+
+
+        document.getElementById('footer').classList.add("is-blurred");
+        document.getElementById('header').classList.add("is-blurred");
+        document.getElementById("joueur").classList.add("is-blurred");
+        document.getElementById("croupier").classList.add("is-blurred");
+        document.getElementById("scoreJoueur").classList.add("is-blurred");
+        document.getElementById("scoreCroupier").classList.add("is-blurred");
+        document.getElementById("separateur").style.opacity = 0;
+        document.getElementById('connectionContainer').classList.add("is-blurred");
+        document.getElementById('jaugeContainerMaster').classList.add("is-blurred");
+
+
+        document.getElementById("amountLvlUpReward").addEventListener("click", function() {
+
+          if (document.getElementById("lvlUpRewardDiv").style.display == "block") {
+
+            document.getElementById('footer').classList.remove("is-blurred");
+            document.getElementById('header').classList.remove("is-blurred");
+            document.getElementById("joueur").classList.remove("is-blurred");
+            document.getElementById("croupier").classList.remove("is-blurred");
+            document.getElementById("scoreJoueur").classList.remove("is-blurred");
+            document.getElementById("scoreCroupier").classList.remove("is-blurred");
+            document.getElementById("separateur").style.opacity = 1;
+            document.getElementById('connectionContainer').classList.remove("is-blurred");
+            document.getElementById('jaugeContainerMaster').classList.remove("is-blurred");    
+    
+  
+            setTimeout(function() {
+              document.getElementById("lvlUpRewardDiv").classList.remove('fadeInDailyReward');
+              document.getElementById("lvlUpRewardDiv").classList.add('fadeOutDailyRewards');
+            }, 50)
+  
+            setTimeout(function() {
+              document.getElementById("lvlUpRewardDiv").style.display = "none";
+            }, 500)
+
+            // Gain Front: 
+            setTimeout(function() {
+              document.getElementById("creditsConnected").innerText = (parseInt(document.getElementById("creditsConnected").innerText) + 100);
+              creditsConnected += 100;
+              document.getElementById("creditsConnected").classList.add("refreshCreditAnim");
+            }, 150)
+          }
+
+        })
       }
 
 
@@ -5951,7 +6015,6 @@
           }  
         }
 
-
       }
 
 
@@ -5963,6 +6026,26 @@
 
 
       function tokensClick() {
+
+
+          // Calcul du miseMax en foncxtion du level:
+          var level = lvlBeforeResult;
+          var miseMax = 50;
+
+          // Voir pour paliers plutot ?
+          for (i=0; i<parseInt(level); i++) {
+            if (parseInt(level) < 20) {
+              miseMax += 10;
+            }
+            else if (parseInt(level) >= 20) {
+              miseMax = 500;
+            }
+          }
+
+          document.getElementById("miseMaxNbr").innerHTML = miseMax;
+
+
+
         
           document.getElementById("whiteToken").addEventListener("click", function() {
 
@@ -5971,7 +6054,7 @@
             }
 
             if (toggleSideBet == "normal") {
-              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 1) && (miseEnCours+1 <= 100)) {
+              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 1) && (miseEnCours+1 <= miseMax)) {
                 addLastTokenClickToTab(1);
                 miseEnCours += 1;
                 refreshEraseOpacity(toggleSideBet);
@@ -5982,7 +6065,7 @@
               }
             }
             else if (toggleSideBet == "pair") {
-              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 1) && (misePairEnCours+1 <= 100)) {
+              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 1) && (misePairEnCours+1 <= miseMax)) {
                 addLastTokenClickToTabPair(1);
                 misePairEnCours += 1;
                 refreshEraseOpacity(toggleSideBet);
@@ -5993,7 +6076,7 @@
               }
             }
             else if (toggleSideBet == "21+3") {
-              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 1) && (mise213EnCours+1 <= 100)) {
+              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 1) && (mise213EnCours+1 <= miseMax)) {
                 addLastTokenClickToTab213(1);
                 mise213EnCours += 1;
                 refreshEraseOpacity(toggleSideBet);
@@ -6016,7 +6099,7 @@
             }
 
             if (toggleSideBet == "normal") {
-              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 5) && (miseEnCours+5 <= 100)) {
+              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 5) && (miseEnCours+5 <= miseMax)) {
                 addLastTokenClickToTab(5);
                 miseEnCours += 5;
                 refreshEraseOpacity(toggleSideBet);
@@ -6027,7 +6110,7 @@
               }
             }
             else if (toggleSideBet == "pair") {
-              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 5) && (misePairEnCours+5 <= 100)) {
+              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 5) && (misePairEnCours+5 <= miseMax)) {
                 addLastTokenClickToTabPair(5);
                 misePairEnCours += 5;
                 refreshEraseOpacity(toggleSideBet);
@@ -6038,7 +6121,7 @@
               }
             }
             else if (toggleSideBet == "21+3") {
-              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 5) && (mise213EnCours+5 <= 100)) {
+              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 5) && (mise213EnCours+5 <= miseMax)) {
                 addLastTokenClickToTab213(5);
                 mise213EnCours += 5;
                 refreshEraseOpacity(toggleSideBet);
@@ -6061,7 +6144,7 @@
             }
 
             if (toggleSideBet == "normal") {
-              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 10) && (miseEnCours+10 <= 100)) {
+              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 10) && (miseEnCours+10 <= miseMax)) {
                 addLastTokenClickToTab(10);
                 miseEnCours += 10;
                 refreshEraseOpacity(toggleSideBet);
@@ -6072,7 +6155,7 @@
               }
             }
             else if (toggleSideBet == "pair") {
-              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 10) && (misePairEnCours+10 <= 100)) {
+              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 10) && (misePairEnCours+10 <= miseMax)) {
                 addLastTokenClickToTabPair(10);
                 misePairEnCours += 10;
                 refreshEraseOpacity(toggleSideBet);
@@ -6083,7 +6166,7 @@
               }
             }
             else if (toggleSideBet == "21+3") {
-              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 10) && (mise213EnCours+10 <= 100)) {
+              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 10) && (mise213EnCours+10 <= miseMax)) {
                 addLastTokenClickToTab213(10);
                 mise213EnCours += 10;
                 refreshEraseOpacity(toggleSideBet);
@@ -6106,7 +6189,7 @@
           }
 
           if (toggleSideBet == "normal") {
-            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 25) && (miseEnCours+25 <= 100)) {
+            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 25) && (miseEnCours+25 <= miseMax)) {
               addLastTokenClickToTab(25);
               miseEnCours += 25;
               refreshEraseOpacity(toggleSideBet);
@@ -6117,7 +6200,7 @@
             }
           }
           else if (toggleSideBet == "pair") {
-            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 25) && (misePairEnCours+25 <= 100)) {
+            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 25) && (misePairEnCours+25 <= miseMax)) {
               addLastTokenClickToTabPair(25);
               misePairEnCours += 25;
               refreshEraseOpacity(toggleSideBet);
@@ -6128,7 +6211,7 @@
             }
           }
           else if (toggleSideBet == "21+3") {
-            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 25) && (mise213EnCours+25 <= 100)) {
+            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 25) && (mise213EnCours+25 <= miseMax)) {
               addLastTokenClickToTab213(25);
               mise213EnCours += 25;
               refreshEraseOpacity(toggleSideBet);
@@ -6152,7 +6235,7 @@
           }
 
           if (toggleSideBet == "normal") {
-            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 100) && (miseEnCours+100 <= 100)) {
+            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 100) && (miseEnCours+100 <= miseMax)) {
               addLastTokenClickToTab(100);
               miseEnCours += 100;
               refreshEraseOpacity(toggleSideBet);
@@ -6163,7 +6246,7 @@
             }
           }
           else if (toggleSideBet == "pair") {
-            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 100) && (misePairEnCours+100 <= 100)) {
+            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 100) && (misePairEnCours+100 <= miseMax)) {
               addLastTokenClickToTabPair(100);
               misePairEnCours += 100;
               refreshEraseOpacity(toggleSideBet);
@@ -6174,7 +6257,7 @@
             }
           }
           else if (toggleSideBet == "21+3") {
-            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 100) && (mise213EnCours+100 <= 100)) {
+            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 100) && (mise213EnCours+100 <= miseMax)) {
               addLastTokenClickToTab213(100);
               mise213EnCours += 100;
               refreshEraseOpacity(toggleSideBet);
