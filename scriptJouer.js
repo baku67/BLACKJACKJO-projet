@@ -290,6 +290,7 @@
         if (newLvl < 20) {
           alert('test proc lvlUP < lvl 20');
           // Déblocage ? BDD
+          // MaxMise ++ (from 100 de base to 1000)
           // rewardCreditsFront + BDD
         }
         else {
@@ -6162,7 +6163,7 @@
             }
           }
           else if (toggleSideBet == "pair") {
-            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 100) && (miseEnCours+100 <= 100)) {
+            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 100) && (misePairEnCours+100 <= 100)) {
               addLastTokenClickToTabPair(100);
               misePairEnCours += 100;
               refreshEraseOpacity(toggleSideBet);
@@ -6173,7 +6174,7 @@
             }
           }
           else if (toggleSideBet == "21+3") {
-            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 100) && (miseEnCours+100 <= 100)) {
+            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 100) && (mise213EnCours+100 <= 100)) {
               addLastTokenClickToTab213(100);
               mise213EnCours += 100;
               refreshEraseOpacity(toggleSideBet);
