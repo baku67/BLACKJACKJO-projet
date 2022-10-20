@@ -5122,8 +5122,6 @@
                       document.getElementById("gainExpBet").style.opacity = "0.8";
                     }  
 
-                    expMobileFooter();
-
                     // Mise lockée
                     document.getElementById("miseLockedFooter").innerHTML = miseLocked;
                     document.getElementById("misePairLockedFooter").innerHTML = misePairLocked;
@@ -5173,7 +5171,9 @@
 
                     expDB(20);
 
-                    refreshLvl();   
+                    refreshLvl();  
+                    
+                    expMobileFooter();
                     
                     // window.top.postMessage(JSON.stringify(['procLose', 1]), '*');
 
@@ -5342,8 +5342,6 @@
                           document.getElementById("gainExpBet").style.opacity = "0.8";
                         }
 
-                        expMobileFooter();
-
                         // Mise lockée
                         document.getElementById("miseLockedFooter").innerHTML = miseLocked;
                         document.getElementById("misePairLockedFooter").innerHTML = misePairLocked;
@@ -5394,6 +5392,8 @@
                         expDB(100);
 
                         refreshLvl();
+
+                        expMobileFooter();
 
                         // window.top.postMessage(JSON.stringify(['procWin', 1]), '*');
 
@@ -5552,8 +5552,6 @@
                         document.getElementById("gainExpBet").style.opacity = "0.8";
                       }    
 
-                      expMobileFooter();
-
                       // Mise lockée
                       document.getElementById("miseLockedFooter").innerHTML = miseLocked;
                       document.getElementById("misePairLockedFooter").innerHTML = misePairLocked;
@@ -5603,6 +5601,8 @@
                       expDB(100);
 
                       refreshLvl();  
+
+                      expMobileFooter();
                       
                       // window.top.postMessage(JSON.stringify(['procWin', 1]), '*');
                       
@@ -5748,8 +5748,6 @@
                       document.getElementById("gainExpBet").style.opacity = "0.8";
                     } 
                     
-                    expMobileFooter();
-
                     // Mise lockée
                     document.getElementById("miseLockedFooter").innerHTML = miseLocked;
                     document.getElementById("misePairLockedFooter").innerHTML = misePairLocked;
@@ -5793,6 +5791,8 @@
                     expDB(50);
 
                     refreshLvl();
+
+                    expMobileFooter();
 
                     // window.top.postMessage(JSON.stringify(['procPush', 1]), '*');
 
@@ -7929,8 +7929,6 @@
                       document.getElementById("gainExpBet").style.opacity = "0.8";
                     }
   
-                    expMobileFooter();
-
                     // Mise lockée
                     document.getElementById("miseLockedFooter").innerHTML = miseLocked;
                     document.getElementById("misePairLockedFooter").innerHTML = misePairLocked;
@@ -7980,6 +7978,8 @@
                       expDB(20);
 
                       refreshLvl();
+
+                      expMobileFooter();
 
                       // window.top.postMessage(JSON.stringify(['procLose', 1]), '*');
                       
@@ -8120,8 +8120,6 @@
                     document.getElementById("gainExpBet").style.opacity = "0.8";
                   }
 
-                  expMobileFooter();
-
                   // Mise lockée
                   document.getElementById("miseLockedFooter").innerHTML = miseLocked;
                   document.getElementById("misePairLockedFooter").innerHTML = misePairLocked;
@@ -8171,6 +8169,8 @@
                   expDB(250);
 
                   refreshLvl();
+
+                  expMobileFooter();
 
                   // window.top.postMessage(JSON.stringify(['procBJ', 1]), '*');
 

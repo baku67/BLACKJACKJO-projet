@@ -16,7 +16,8 @@
 
         $lvl = 1;
         $expNeeded = 350;
-    
+        // Triche:
+        // $expNeeded = 50;    
 
         if ($row['exp'] !== null) {
             $exp = $row['exp'];
