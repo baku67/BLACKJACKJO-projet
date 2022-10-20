@@ -5971,7 +5971,7 @@
             }
 
             if (toggleSideBet == "normal") {
-              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 1) && (miseEnCours < 100)) {
+              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 1) && (miseEnCours+1 <= 100)) {
                 addLastTokenClickToTab(1);
                 miseEnCours += 1;
                 refreshEraseOpacity(toggleSideBet);
@@ -5982,7 +5982,7 @@
               }
             }
             else if (toggleSideBet == "pair") {
-              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 1) && (misePairEnCours < 100)) {
+              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 1) && (misePairEnCours+1 <= 100)) {
                 addLastTokenClickToTabPair(1);
                 misePairEnCours += 1;
                 refreshEraseOpacity(toggleSideBet);
@@ -5993,7 +5993,7 @@
               }
             }
             else if (toggleSideBet == "21+3") {
-              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 1) && (mise213EnCours < 100)) {
+              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 1) && (mise213EnCours+1 <= 100)) {
                 addLastTokenClickToTab213(1);
                 mise213EnCours += 1;
                 refreshEraseOpacity(toggleSideBet);
@@ -6016,7 +6016,7 @@
             }
 
             if (toggleSideBet == "normal") {
-              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 5) && (miseEnCours < 100)) {
+              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 5) && (miseEnCours+5 <= 100)) {
                 addLastTokenClickToTab(5);
                 miseEnCours += 5;
                 refreshEraseOpacity(toggleSideBet);
@@ -6027,7 +6027,7 @@
               }
             }
             else if (toggleSideBet == "pair") {
-              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 5) && (misePairEnCours < 100)) {
+              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 5) && (misePairEnCours+5 <= 100)) {
                 addLastTokenClickToTabPair(5);
                 misePairEnCours += 5;
                 refreshEraseOpacity(toggleSideBet);
@@ -6038,7 +6038,7 @@
               }
             }
             else if (toggleSideBet == "21+3") {
-              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 5) && (mise213EnCours < 100)) {
+              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 5) && (mise213EnCours+5 <= 100)) {
                 addLastTokenClickToTab213(5);
                 mise213EnCours += 5;
                 refreshEraseOpacity(toggleSideBet);
@@ -6061,7 +6061,7 @@
             }
 
             if (toggleSideBet == "normal") {
-              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 10) && (miseEnCours < 100)) {
+              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 10) && (miseEnCours+10 <= 100)) {
                 addLastTokenClickToTab(10);
                 miseEnCours += 10;
                 refreshEraseOpacity(toggleSideBet);
@@ -6072,7 +6072,7 @@
               }
             }
             else if (toggleSideBet == "pair") {
-              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 10) && (misePairEnCours < 100)) {
+              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 10) && (misePairEnCours+10 <= 100)) {
                 addLastTokenClickToTabPair(10);
                 misePairEnCours += 10;
                 refreshEraseOpacity(toggleSideBet);
@@ -6083,7 +6083,7 @@
               }
             }
             else if (toggleSideBet == "21+3") {
-              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 10) && (mise213EnCours < 100)) {
+              if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 10) && (mise213EnCours+10 <= 100)) {
                 addLastTokenClickToTab213(10);
                 mise213EnCours += 10;
                 refreshEraseOpacity(toggleSideBet);
@@ -6106,7 +6106,7 @@
           }
 
           if (toggleSideBet == "normal") {
-            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 25) && (miseEnCours < 100)) {
+            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 25) && (miseEnCours+25 <= 100)) {
               addLastTokenClickToTab(25);
               miseEnCours += 25;
               refreshEraseOpacity(toggleSideBet);
@@ -6117,7 +6117,7 @@
             }
           }
           else if (toggleSideBet == "pair") {
-            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 25) && (misePairEnCours < 100)) {
+            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 25) && (misePairEnCours+25 <= 100)) {
               addLastTokenClickToTabPair(25);
               misePairEnCours += 25;
               refreshEraseOpacity(toggleSideBet);
@@ -6128,7 +6128,7 @@
             }
           }
           else if (toggleSideBet == "21+3") {
-            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 25) && (mise213EnCours < 100)) {
+            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 25) && (mise213EnCours+25 <= 100)) {
               addLastTokenClickToTab213(25);
               mise213EnCours += 25;
               refreshEraseOpacity(toggleSideBet);
