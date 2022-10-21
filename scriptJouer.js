@@ -289,7 +289,7 @@
       function gainLvlUp(newLvl) {
 
         if (newLvl < 20) {
-          alert('test proc lvlUP < lvl 20');
+          // alert('test proc lvlUP < lvl 20');
           // Déblocage ? BDD
           // MaxMise ++ (from 100 de base to 1000)
           // rewardCreditsFront + BDD
@@ -297,7 +297,7 @@
           document.getElementById("lvlUpRewardDiv").classList.add('fadeInDailyReward');
         }
         else {
-          alert('test proc lvlUP > lvl 20');
+          // alert('test proc lvlUP > lvl 20');
           // rewardCreditsFront + BDD
 
           document.getElementById("lvlUpRewardDiv").style.display = "block";
@@ -358,6 +358,27 @@
               creditsConnected += 100;
               document.getElementById("creditsConnected").classList.add("refreshCreditAnim");
             }, 150)
+
+            // Refill de l'expJauge apres lvlUp (mettre un if null pour emulateur)
+            $.get("getExpProgress.php", function(data) {
+              if (document.getElementById("data-progressExp") != null) {
+                dataProgressExp.setAttribute("data-progressExp", data);
+              }
+            });
+
+            if (document.getElementById("data-progressExp") != null) {
+              setTimeout(function() {
+                $(".jaugeContainerExpMini span").each(function () {
+                      $(this).animate(
+                          {
+                              width: $(this).attr("data-progressExp") + "%",
+                          },
+                          500
+                      );
+                      $(this).text($(this).attr("data-progressExp") + "%");
+                });
+              }, 500)
+            }
           }
 
         })
@@ -1283,9 +1304,30 @@
               var dataProgressExp = document.createElement("span");
               dataProgressExp.setAttribute("id", "dataProgressExp");
               
-              $.get("getExpProgress.php", function(data) {
-                  dataProgressExp.setAttribute("data-progressExp", data);
-              });
+
+
+              // ici check si lvl diff pour mettre l'anim de jauge vers 100%, sinon vers ExpProgress (Sauf que c'est nul en fait) OU ALORS LE REFILL DE JAUGE NEXTLVL se ait apres le click modal !!!!
+              $.ajax({
+                url: "getLevel.php",
+                success: function(data) {    
+                  if (lvlBeforeResult != data) {
+                    dataProgressExp.setAttribute("data-progressExp", 100);
+                  }
+                  else {
+                    $.get("getExpProgress.php", function(data) {
+                      dataProgressExp.setAttribute("data-progressExp", data);
+                    });
+                  }
+                }
+              }) 
+
+              // A commenter si bloc au dessus décommenté:
+              // $.get("getExpProgress.php", function(data) {
+              //     dataProgressExp.setAttribute("data-progressExp", data);
+              // });
+              //
+
+
 
               jaugeContainerExp.append(dataProgressExp);
               document.getElementById("container3").append(jaugeContainerExp);
