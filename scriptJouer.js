@@ -5079,13 +5079,31 @@
           };
 
 
-
           
 
 
 
           function resultat() {
+
+          
+            // Modifier du gainXP en fonction du streak (prendre en compte le streak apres result plutot qu'avant), si streak = 10: modifier 2.5
+            var streakXpMultiplier = 1;
+
+            $.get("getStreak.php", function(data) {
+              if (parseInt(data) == 10) {
+                streakXpMultiplier = 2.5;
+              }
+              else {
+                for (i=0; i<parseInt(data); i++) {
+                  // arrondi 1 decimale
+                  streakXpMultiplier = Math.round((streakXpMultiplier + 0.1) * 10 ) / 10;
+                }  
+              }
+            })
+
+
             setTimeout(function() {
+
               if (scoreTotalCroupier > scoreTotalJoueur && scoreTotalCroupier < 22) {
 
                 WinLose = 'LOSE';
@@ -5172,7 +5190,8 @@
                     ChoixActif = false;
                     document.getElementById("footerTitle").innerHTML = " - Gains -";
 
-                    document.getElementById("gainExp").innerText = "+" + (5 + Math.ceil(miseLocked/4)) + " XP";
+                    console.log("streakXpMultiplier: " + streakXpMultiplier + ", gainExp: " + "+" + (5 + Math.round(miseLocked/4 * streakXpMultiplier)) + " XP");
+                    document.getElementById("gainExp").innerText = "+" + (5 + Math.round(miseLocked/4 * streakXpMultiplier)) + " XP";
                     document.getElementById("gainExpBet").innerText = "+" + parseInt(gainXp213Bet + gainXpPairBet) + " XP";
 
                     if ((gainXp213Bet + gainXpPairBet) == 0 ) {
@@ -5227,8 +5246,7 @@
 
                     }, 500);
 
-                    // expDB(20);
-                    expDB(5 + Math.ceil(miseLocked/4));
+                    expDB(5 + Math.round(miseLocked/4 * streakXpMultiplier));
 
                     refreshLvl();  
                     
@@ -5393,7 +5411,8 @@
                       ChoixActif = false;
                       document.getElementById("footerTitle").innerHTML = " - Gains -";
 
-                        document.getElementById("gainExp").innerText = "+" + (25 + Math.ceil(miseLocked*1.5)) + " XP";
+                        console.log("streakXpMultiplier: " + streakXpMultiplier + ", gainExp: " + "+" + (25 + Math.round(miseLocked*1.5 * streakXpMultiplier)) + " XP");
+                        document.getElementById("gainExp").innerText = "+" + (25 + Math.round(miseLocked*1.5 * streakXpMultiplier)) + " XP";
                         document.getElementById("gainExpBet").innerText = "+" + parseInt(gainXp213Bet + gainXpPairBet) + " XP";
     
                         if ((gainXp213Bet + gainXpPairBet) == 0 ) {
@@ -5449,7 +5468,7 @@
                         }, 500);
 
                         // expDB(100);
-                        expDB(25 + Math.ceil(miseLocked*1.5));
+                        expDB(25 + Math.round(miseLocked*1.5 * streakXpMultiplier));
 
                         refreshLvl();
 
@@ -5604,7 +5623,8 @@
                       ChoixActif = false;
                       document.getElementById("footerTitle").innerHTML = " - Gains -";
 
-                      document.getElementById("gainExp").innerText = "+" + (25 + Math.ceil(miseLocked*1.5)) + " XP";
+                      console.log("streakXpMultiplier: " + streakXpMultiplier + ", gainExp: " + "+" + (25 + Math.round(miseLocked*1.5 * streakXpMultiplier)) + " XP");
+                      document.getElementById("gainExp").innerText = "+" + (25 + Math.round(miseLocked*1.5 * streakXpMultiplier)) + " XP";
                       document.getElementById("gainExpBet").innerText = "+" + parseInt(gainXp213Bet + gainXpPairBet) + " XP";
     
                       if ((gainXp213Bet + gainXpPairBet) == 0 ) {
@@ -5659,7 +5679,7 @@
                       }, 500);
 
                       // expDB(100);
-                      expDB(25 + Math.ceil(miseLocked*1.5));
+                      expDB(25 + Math.round(miseLocked*1.5 * streakXpMultiplier));
 
                       refreshLvl();  
 
@@ -5801,7 +5821,8 @@
                     ChoixActif = false;
                     document.getElementById("footerTitle").innerHTML = " - Gains -";
 
-                    document.getElementById("gainExp").innerText = "+" + (15 + Math.ceil(miseLocked/2)) + " XP";
+                    console.log("streakXpMultiplier: " + streakXpMultiplier + ", gainExp: " + "+" + (15 + Math.round(miseLocked/2 * streakXpMultiplier)) + " XP");
+                    document.getElementById("gainExp").innerText = "+" + (15 + Math.round(miseLocked/2 * streakXpMultiplier)) + " XP";
                     document.getElementById("gainExpBet").innerText = "+" + parseInt(gainXp213Bet + gainXpPairBet) + " XP";
     
                     if ((gainXp213Bet + gainXpPairBet) == 0 ) {
@@ -5850,7 +5871,7 @@
                     }, 2000);
                     
                     // expDB(50);
-                    expDB(15 + Math.ceil(miseLocked/2));
+                    expDB(15 + Math.round(miseLocked/2 * streakXpMultiplier));
 
                     refreshLvl();
 
@@ -7971,152 +7992,171 @@
           // gain = gain
           // date est pris dans la fonction historiqueDB
 
-            burstJoueur = true;
+          burstJoueur = true;
 
-            setTimeout(function() {
-              $.ajax({
-                async: false,
-                url: "Footers/footerResultat.php",
-                dataType: "html",
-                success: function(response) {
-                  $("#container3").html(response);
-                  ChoixActif = false;
-                  document.getElementById("footerTitle").innerHTML = " - Gains -";
 
-                    document.getElementById("gainExp").innerText = "+" (5 + Math.ceil(miseLocked/4)) + " XP";
-                    document.getElementById("gainExpBet").innerText = "+" + parseInt(gainXp213Bet + gainXpPairBet) + " XP";
+          // Modifier du gainXP en fonction du streak (prendre en compte le streak apres result plutot qu'avant), si streak = 10: modifier 2.5
+          var streakXpMultiplier = 1;
+
+          $.get("getStreak.php", function(data) {
+            if (parseInt(data) == 10) {
+              streakXpMultiplier = 2.5;
+            }
+            else {
+              for (i=0; i<parseInt(data); i++) {
+                // arrondi 1 decimale
+                streakXpMultiplier = Math.round((streakXpMultiplier + 0.1) * 10 ) / 10;
+              }  
+            }
+          })
+
+
+
+          setTimeout(function() {
+            $.ajax({
+              async: false,
+              url: "Footers/footerResultat.php",
+              dataType: "html",
+              success: function(response) {
+                $("#container3").html(response);
+                ChoixActif = false;
+                document.getElementById("footerTitle").innerHTML = " - Gains -";
+
+                  console.log("streakXpMultiplier: " + streakXpMultiplier + ", gainExp: " + "+" + (5 + Math.round(miseLocked/4 * streakXpMultiplier)) + " XP");
+                  document.getElementById("gainExp").innerText = "+" + (5 + Math.round(miseLocked/4 * streakXpMultiplier)) + " XP";
+                  document.getElementById("gainExpBet").innerText = "+" + parseInt(gainXp213Bet + gainXpPairBet) + " XP";
+                  
+                  if ((gainXp213Bet + gainXpPairBet) == 0 ) {
+                    document.getElementById("gainExpBet").style.color = "grey";
+                    document.getElementById("gainExpBet").style.opacity = "0.8";
+                  }
+
+                  // Mise lockée
+                  document.getElementById("miseLockedFooter").innerHTML = miseLocked;
+                  document.getElementById("misePairLockedFooter").innerHTML = misePairLocked;
+                  document.getElementById("mise213LockedFooter").innerHTML = mise213Locked;
+                  // fin
+
+                  // Résultat Gains 
+                  if ( isConnected == true) {
+                    document.getElementById("miseResultat").innerHTML = "<span id='miseResultatTxt'>" + miseLocked + '</span><img src="Images/souBarre.png" class="imagesSouResultat">';
+                    document.getElementById("misePairResultat").innerHTML = "<span id='misePairResultatTxt'>" + misePairLocked + '</span><img src="Images/souBarre.png" class="imageSouSideBets">';
+                    document.getElementById("mise213Resultat").innerHTML = "<span id='mise213ResultatTxt'>" + mise213Locked + '</span><img src="Images/souBarre.png" class="imageSouSideBets">';
+                  }
+                  else {
+                    document.getElementById("miseResultat").innerHTML = "<span id='miseResultatTxt'>" + miseLocked + '</span><img src="Images/souBlancBarre.png" class="imagesSouResultat">';
+                    document.getElementById("misePairResultat").innerHTML = "<span id='misePairResultatTxt'>" + misePairLocked + '</span><img src="Images/souBlancBarre.png" class="imageSouSideBets">';
+                    document.getElementById("mise213Resultat").innerHTML = "<span id='mise213ResultatTxt'>" + mise213Locked + '</span><img src="Images/souBlancBarre.png" class="imageSouSideBets">';
+                  }  
+                  
+                  removeSideBetsFooter();
+
+                  setTimeout( function() {
+                    DecrementGain();
+                  }, 1500);
+                  setTimeout( function() {
+                    IncrDecrGainPair(gainPairBet);
+                  }, 1750);
+                  setTimeout( function() {
+                    IncrDecrGain213(gain213Bet);
+                  }, 2000);
+
+                  // WIP gain (ajouter effet refresh CSS)
+                    setTimeout( function() {
+
+                      // gain = -miseLocked;
+                      gainHistorique = -miseLocked;
+                      gain = 0;
+                      ajoutGain(gain);
+                      ingame = false;
+
+                      winLose = -1;
+                      winLoseDB(winLose);
+
+                      majStreak(WinLose);
+
+                    }, 500)
+
+                    // expDB(20);
+                    expDB(5 + Math.round(miseLocked/4 * streakXpMultiplier));
+
+                    refreshLvl();
+
+                    expMobileFooter();
+
+                    // window.top.postMessage(JSON.stringify(['procLose', 1]), '*');
                     
-                    if ((gainXp213Bet + gainXpPairBet) == 0 ) {
-                      document.getElementById("gainExpBet").style.color = "grey";
-                      document.getElementById("gainExpBet").style.opacity = "0.8";
-                    }
-  
-                    // Mise lockée
-                    document.getElementById("miseLockedFooter").innerHTML = miseLocked;
-                    document.getElementById("misePairLockedFooter").innerHTML = misePairLocked;
-                    document.getElementById("mise213LockedFooter").innerHTML = mise213Locked;
-                    // fin
+                  // Fin résultat Gains
 
-                    // Résultat Gains 
-                    if ( isConnected == true) {
-                      document.getElementById("miseResultat").innerHTML = "<span id='miseResultatTxt'>" + miseLocked + '</span><img src="Images/souBarre.png" class="imagesSouResultat">';
-                      document.getElementById("misePairResultat").innerHTML = "<span id='misePairResultatTxt'>" + misePairLocked + '</span><img src="Images/souBarre.png" class="imageSouSideBets">';
-                      document.getElementById("mise213Resultat").innerHTML = "<span id='mise213ResultatTxt'>" + mise213Locked + '</span><img src="Images/souBarre.png" class="imageSouSideBets">';
-                    }
-                    else {
-                      document.getElementById("miseResultat").innerHTML = "<span id='miseResultatTxt'>" + miseLocked + '</span><img src="Images/souBlancBarre.png" class="imagesSouResultat">';
-                      document.getElementById("misePairResultat").innerHTML = "<span id='misePairResultatTxt'>" + misePairLocked + '</span><img src="Images/souBlancBarre.png" class="imageSouSideBets">';
-                      document.getElementById("mise213Resultat").innerHTML = "<span id='mise213ResultatTxt'>" + mise213Locked + '</span><img src="Images/souBlancBarre.png" class="imageSouSideBets">';
-                    }  
-                    
-                    removeSideBetsFooter();
+                
+                document.getElementById("deckContainer").remove();
+                document.getElementById("cardAnim").remove();
+                document.getElementById("parametresPartieDiv").remove();
+                // document.getElementById("deckContainer").classList.add("fadeOut");
 
-                    setTimeout( function() {
-                      DecrementGain();
-                    }, 1500);
-                    setTimeout( function() {
-                      IncrDecrGainPair(gainPairBet);
-                    }, 1750);
-                    setTimeout( function() {
-                      IncrDecrGain213(gain213Bet);
-                    }, 2000);
+                //*** Perdu BURST 
+                // document.getElementById("scoreJoueur").style.backgroundColor = "rgb(160 13 27)"
+                // document.getElementById("scoreJoueur").style.color = "rgba(239,230,230, 1)"
+                // document.getElementById("scoreJoueur").style.textShadow = "1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, -1px -1px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, -1px 0px 0 #000000, 0px -1px 0 #000000";
+                // document.getElementById("scoreJoueur").style.border = "3px solid rgba(130,14,39, 1)";
+                // Fin Perdu BURST
 
-                    // WIP gain (ajouter effet refresh CSS)
-                      setTimeout( function() {
+                document.getElementById("scoreCroupier").style.color = "rgb(0 255 234 / 100%)";
+                document.getElementById("scoreJoueur").style.color = "rgba(239, 59, 46, 1)";
 
-                        // gain = -miseLocked;
-                        gainHistorique = -miseLocked;
-                        gain = 0;
-                        ajoutGain(gain);
-                        ingame = false;
-
-                        winLose = -1;
-                        winLoseDB(winLose);
-
-                        majStreak(WinLose);
-
-                      }, 500)
-
-                      // expDB(20);
-                      expDB(5 + Math.ceil(miseLocked/4));
-
-                      refreshLvl();
-
-                      expMobileFooter();
-
-                      // window.top.postMessage(JSON.stringify(['procLose', 1]), '*');
-                      
-                    // Fin résultat Gains
-
-                  
-                  document.getElementById("deckContainer").remove();
-                  document.getElementById("cardAnim").remove();
-                  document.getElementById("parametresPartieDiv").remove();
-                  // document.getElementById("deckContainer").classList.add("fadeOut");
-
-                  //*** Perdu BURST 
-                  // document.getElementById("scoreJoueur").style.backgroundColor = "rgb(160 13 27)"
-                  // document.getElementById("scoreJoueur").style.color = "rgba(239,230,230, 1)"
-                  // document.getElementById("scoreJoueur").style.textShadow = "1px 1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, -1px -1px 0 #000000, 1px 0px 0 #000000, 0px 1px 0 #000000, -1px 0px 0 #000000, 0px -1px 0 #000000";
-                  // document.getElementById("scoreJoueur").style.border = "3px solid rgba(130,14,39, 1)";
-                  // Fin Perdu BURST
-
-                  document.getElementById("scoreCroupier").style.color = "rgb(0 255 234 / 100%)";
-                  document.getElementById("scoreJoueur").style.color = "rgba(239, 59, 46, 1)";
-
-                  document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)";
-                  document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)";
+                document.getElementById("scoreCroupier").style.textShadow = "0 0 2px rgba(0,0,0,1)";
+                document.getElementById("scoreJoueur").style.textShadow = "0 0 2px rgba(0,0,0,1)";
 
 
 
-                  // document.getElementById("scoreCroupier").style.border = "1px solid rgb(0 255 234 / 70%)";
-                  // document.getElementById("scoreJoueur").style.border = "1px solid rgba(255,1,49,0.5)";                  
-                  // Fin Perdu
+                // document.getElementById("scoreCroupier").style.border = "1px solid rgb(0 255 234 / 70%)";
+                // document.getElementById("scoreJoueur").style.border = "1px solid rgba(255,1,49,0.5)";                  
+                // Fin Perdu
 
-                  document.getElementById("scoreCroupier").style.fontSize = "3.6em";
-                  document.getElementById("scoreCroupier").style.textShadow = "rgb(224 5 241) 3px 3px 2px";
+                document.getElementById("scoreCroupier").style.fontSize = "3.6em";
+                document.getElementById("scoreCroupier").style.textShadow = "rgb(224 5 241) 3px 3px 2px";
 
 
 
 
-                  
-                  // Séparateur
-                  setTimeout(function() {
+                
+                // Séparateur
+                setTimeout(function() {
 
-                    if (SoundMuteBool == false) {
-                      audioExplosionBust.play();
-                    }
+                  if (SoundMuteBool == false) {
+                    audioExplosionBust.play();
+                  }
 
-                    //Apparition
-                    document.getElementById("resultatText").classList.add("resultatTextBust");
-                    if (darkModeBool == true) {
-                      document.getElementById("resultatText").classList.add("resultatTextBustDM");
-                      document.getElementById("separateur").classList.add("styleSeparateurBustDM");
-                    }
-                    else {
-                      document.getElementById("separateur").classList.add("styleSeparateurBust");
-                    }
-  
-                    // Animation scale() qui pop avec fadeIn()
-                    document.getElementById("separateur").classList.add("separateurContainerWidthAnim");
-                    document.getElementById("separateur").classList.add("fadeInResultat");
-                    document.getElementById("separateur").classList.add("scaleBoom");
-                  
-                    document.getElementById("resultatText").innerText = "BUST";
-                  }, 250);
-                  // Fin séparateur
+                  //Apparition
+                  document.getElementById("resultatText").classList.add("resultatTextBust");
+                  if (darkModeBool == true) {
+                    document.getElementById("resultatText").classList.add("resultatTextBustDM");
+                    document.getElementById("separateur").classList.add("styleSeparateurBustDM");
+                  }
+                  else {
+                    document.getElementById("separateur").classList.add("styleSeparateurBust");
+                  }
 
-                  setTimeout(function() {
-                    lancerPhaseCroupierAfterBurst();
-                  }, 500 * setTimeOutMultiplier);
+                  // Animation scale() qui pop avec fadeIn()
+                  document.getElementById("separateur").classList.add("separateurContainerWidthAnim");
+                  document.getElementById("separateur").classList.add("fadeInResultat");
+                  document.getElementById("separateur").classList.add("scaleBoom");
+                
+                  document.getElementById("resultatText").innerText = "BUST";
+                }, 250);
+                // Fin séparateur
+
+                setTimeout(function() {
+                  lancerPhaseCroupierAfterBurst();
+                }, 500 * setTimeOutMultiplier);
 
 
-                  // Bouton Rejouer
-                  relancer();
-                }
-              });
-            }, 1050);
-            return true;
+                // Bouton Rejouer
+                relancer();
+              }
+            });
+          }, 1050);
+          return true;
         }
 
         else if ((scoreTotalJoueur < 21) && (doubleBool==1)) {
@@ -8165,6 +8205,22 @@
           }
 
 
+          // Modifier du gainXP en fonction du streak (prendre en compte le streak apres result plutot qu'avant), si streak = 10: modifier 2.5
+          var streakXpMultiplier = 1;
+
+          $.get("getStreak.php", function(data) {
+            if (parseInt(data) == 10) {
+              streakXpMultiplier = 2.5;
+            }
+            else {
+              for (i=0; i<parseInt(data); i++) {
+                // arrondi 1 decimale
+                streakXpMultiplier = Math.round((streakXpMultiplier + 0.1) * 10 ) / 10;
+              }  
+            }
+          })
+
+
           setTimeout(function() {
             $.ajax({
               async: false,
@@ -8175,7 +8231,8 @@
                 ChoixActif = false;
                 document.getElementById("footerTitle").innerHTML = " - Gains -";
 
-                  document.getElementById("gainExp").innerText = "+" (75 + Math.ceil(miseLocked*2.5)) + " XP";
+                  console.log("streakXpMultiplier: " + streakXpMultiplier + ", gainExp: " + "+" + (75 + Math.round(miseLocked*2.5 * streakXpMultiplier)) + " XP");
+                  document.getElementById("gainExp").innerText = "+" + (75 + Math.round(miseLocked*2.5 * streakXpMultiplier)) + " XP";
                   document.getElementById("gainExpBet").innerText = "+" + parseInt(gainXp213Bet + gainXpPairBet) + " XP";
 
                   if ((gainXp213Bet + gainXpPairBet) == 0 ) {
@@ -8230,7 +8287,7 @@
                   }, 500)
 
                   // expDB(250);
-                  expDB(75 + Math.ceil(miseLocked*2.5));
+                  expDB(75 + Math.round(miseLocked*2.5 * streakXpMultiplier));
 
                   refreshLvl();
 

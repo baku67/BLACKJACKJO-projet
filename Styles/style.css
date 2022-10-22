@@ -4294,7 +4294,9 @@ p {
 	animation-iteration-count: 1;
 	animation-fill-mode: forwards;
 
-	padding: 17px 17px 29px 17px;
+	/* padding: 17px 17px 29px 17px; */
+	padding: 17px 10px 29px 10px;
+
 
 	/* Pour eviter decalage lors proc des sideBets plus longs? */
 	width: 120px;
