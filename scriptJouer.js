@@ -354,9 +354,11 @@
 
             // Gain Front: 
             setTimeout(function() {
-              document.getElementById("creditsConnected").innerText = (parseInt(document.getElementById("creditsConnected").innerText) + 100);
-              creditsConnected += 100;
               document.getElementById("creditsConnected").classList.add("refreshCreditAnim");
+              document.getElementById("creditsConnected").innerText = (parseInt(document.getElementById("creditsConnected").innerText) + 100);
+              // creditsConnected += 100;
+              credits += 100;
+              // document.getElementById("creditsConnected").classList.add("refreshCreditAnim");
             }, 150)
 
             // Refill de l'expJauge apres lvlUp (mettre un if null pour emulateur)
