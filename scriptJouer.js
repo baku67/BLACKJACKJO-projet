@@ -834,7 +834,7 @@
           // Proc None :/
           else if ((misePairLocked == 0) && (pairBet != "Lost")) {
             document.getElementById("misePairLockedNbrNone").innerHTML = "None &nbsp;<span style='font-size:1.3rem; color:rgba(0, 255, 234, 0.8);'>:(</span>";
-          
+
             // Surbrillance grey des 2 cards Joueur: 
             // var handJoueur = document.getElementById("joueur").childNodes;
             // for (var i=0; i < 2; i++) {
@@ -845,11 +845,18 @@
             
           }
         }, 1000)  
+
+        // Sortis du setTimeOut pour le return des var:
+        if ((pairBet == "Lost") && (misePairLocked > 0)) {
+          gainXpPairBet = 0;
+        }
+        else if ((misePairLocked == 0) && (pairBet != "Lost")) {
+          gainXpPairBet = 0;
+        }
         
+
         let arrayReturn = [gainPairBet, gainXpPairBet];
         return arrayReturn;
-
-        // return gainPairBet;
       }
 
 
@@ -1082,7 +1089,15 @@
             document.getElementById("mise213Locked").style.top = "10px";
           }
         }, 1000)
-              
+
+
+        if ((bet213 == "Lost") && (mise213Locked > 0)) {
+          gainXp213Bet = 0;
+        }
+        else if ((mise213Locked == 0) && (bet213 != "Lost")) {
+          gainXp213Bet = 0;
+        }
+    
         
         var returnArray = [gain213Bet, gainXp213Bet];
         return returnArray;
@@ -4564,6 +4579,7 @@
           // }, (7250 * (setTimeOutMultiplier+0.10)));
 
 
+
           // Check le betPair (apres les 2 premieres cardJoueur), et return le gain:
           setTimeout( function() {
 
@@ -5156,7 +5172,7 @@
                     ChoixActif = false;
                     document.getElementById("footerTitle").innerHTML = " - Gains -";
 
-                    document.getElementById("gainExp").innerText = "+20 XP";
+                    document.getElementById("gainExp").innerText = "+" + (5 + Math.ceil(miseLocked/4)) + " XP";
                     document.getElementById("gainExpBet").innerText = "+" + parseInt(gainXp213Bet + gainXpPairBet) + " XP";
 
                     if ((gainXp213Bet + gainXpPairBet) == 0 ) {
@@ -5211,7 +5227,8 @@
 
                     }, 500);
 
-                    expDB(20);
+                    // expDB(20);
+                    expDB(5 + Math.ceil(miseLocked/4));
 
                     refreshLvl();  
                     
@@ -5376,7 +5393,7 @@
                       ChoixActif = false;
                       document.getElementById("footerTitle").innerHTML = " - Gains -";
 
-                        document.getElementById("gainExp").innerText = "+100 XP";
+                        document.getElementById("gainExp").innerText = "+" + (25 + Math.ceil(miseLocked*1.5)) + " XP";
                         document.getElementById("gainExpBet").innerText = "+" + parseInt(gainXp213Bet + gainXpPairBet) + " XP";
     
                         if ((gainXp213Bet + gainXpPairBet) == 0 ) {
@@ -5431,7 +5448,8 @@
 
                         }, 500);
 
-                        expDB(100);
+                        // expDB(100);
+                        expDB(25 + Math.ceil(miseLocked*1.5));
 
                         refreshLvl();
 
@@ -5586,7 +5604,7 @@
                       ChoixActif = false;
                       document.getElementById("footerTitle").innerHTML = " - Gains -";
 
-                      document.getElementById("gainExp").innerText = "+100 XP";
+                      document.getElementById("gainExp").innerText = "+" + (25 + Math.ceil(miseLocked*1.5)) + " XP";
                       document.getElementById("gainExpBet").innerText = "+" + parseInt(gainXp213Bet + gainXpPairBet) + " XP";
     
                       if ((gainXp213Bet + gainXpPairBet) == 0 ) {
@@ -5640,7 +5658,8 @@
 
                       }, 500);
 
-                      expDB(100);
+                      // expDB(100);
+                      expDB(25 + Math.ceil(miseLocked*1.5));
 
                       refreshLvl();  
 
@@ -5782,7 +5801,7 @@
                     ChoixActif = false;
                     document.getElementById("footerTitle").innerHTML = " - Gains -";
 
-                    document.getElementById("gainExp").innerText = "+50 XP";
+                    document.getElementById("gainExp").innerText = "+" + (15 + Math.ceil(miseLocked/2)) + " XP";
                     document.getElementById("gainExpBet").innerText = "+" + parseInt(gainXp213Bet + gainXpPairBet) + " XP";
     
                     if ((gainXp213Bet + gainXpPairBet) == 0 ) {
@@ -5830,7 +5849,8 @@
                       IncrDecrGain213(gain213Bet);
                     }, 2000);
                     
-                    expDB(50);
+                    // expDB(50);
+                    expDB(15 + Math.ceil(miseLocked/2));
 
                     refreshLvl();
 
@@ -7963,7 +7983,7 @@
                   ChoixActif = false;
                   document.getElementById("footerTitle").innerHTML = " - Gains -";
 
-                    document.getElementById("gainExp").innerText = "+20 XP";
+                    document.getElementById("gainExp").innerText = "+" (5 + Math.ceil(miseLocked/4)) + " XP";
                     document.getElementById("gainExpBet").innerText = "+" + parseInt(gainXp213Bet + gainXpPairBet) + " XP";
                     
                     if ((gainXp213Bet + gainXpPairBet) == 0 ) {
@@ -8017,7 +8037,8 @@
 
                       }, 500)
 
-                      expDB(20);
+                      // expDB(20);
+                      expDB(5 + Math.ceil(miseLocked/4));
 
                       refreshLvl();
 
@@ -8154,7 +8175,7 @@
                 ChoixActif = false;
                 document.getElementById("footerTitle").innerHTML = " - Gains -";
 
-                  document.getElementById("gainExp").innerText = "+250 XP";
+                  document.getElementById("gainExp").innerText = "+" (75 + Math.ceil(miseLocked*2.5)) + " XP";
                   document.getElementById("gainExpBet").innerText = "+" + parseInt(gainXp213Bet + gainXpPairBet) + " XP";
 
                   if ((gainXp213Bet + gainXpPairBet) == 0 ) {
@@ -8208,7 +8229,8 @@
 
                   }, 500)
 
-                  expDB(250);
+                  // expDB(250);
+                  expDB(75 + Math.ceil(miseLocked*2.5));
 
                   refreshLvl();
 
