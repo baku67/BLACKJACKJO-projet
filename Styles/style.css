@@ -3191,6 +3191,17 @@ h2 {
 		left: 150%;
 	}
 }
+.animMiseMaxProcTitle {
+	animation: animMiseMaxProcShake 0.4s 1 ease, animMiseMaxProcColorTitle 0.4s ease-in-out forwards;
+}
+@keyframes animMiseMaxProcColorTitle {
+	from {
+		color: rgba(239, 59, 46, 1);
+	}
+	to {
+		color: rgb(223, 204, 204);
+	}
+}
 
 .animMiseMaxProc {
 	animation: animMiseMaxProcShake 0.4s 1 ease, animMiseMaxProcColor 0.4s ease-in-out forwards;
@@ -3220,6 +3231,11 @@ h2 {
 		font-size: 1.5em;
 	}
 }
+
+#lvlUpNbr {
+	font-weight: bold;
+}
+
 
 
 

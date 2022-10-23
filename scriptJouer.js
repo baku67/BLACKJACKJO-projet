@@ -286,8 +286,14 @@
       }
 
 
-      function gainLvlUp(newLvl) {
+      function gainLvlUp(newLvl, diffLvl) {
 
+        var temp = 0;
+        for (i=0; i<diffLvl; i++) {
+          temp += 100;
+        }
+        document.getElementById("amountLvlUpNbr").innerHTML = temp;
+        document.getElementById("lvlUpNbr").innerHTML = " x" + diffLvl;
 
         if (newLvl < 20) {
           // alert('test proc lvlUP < lvl 20');
@@ -308,7 +314,12 @@
         // A voir si le gain doit s'adapter au lvl
         // BDD:
         var gainLvlToPhp = {};
-        gainLvlToPhp.value = (100);
+        gainLvlToPhp.value = 0;
+        for (i=0; i<diffLvl; i++) {
+          gainLvlToPhp.value += 100;
+        }
+        console.log("Gain LvlUp (back)= " + gainLvlToPhp.value);
+        // gainLvlToPhp.value = 100;
         $.ajax({
           url: "setCredits.php",
           method: "post",
@@ -329,7 +340,10 @@
         document.getElementById('jaugeContainerMaster').classList.add("is-blurred");
 
         // Maj var front ici mais anim et innerHTML apres le click OK
-        credits += 100;
+        for (i=0; i<diffLvl; i++) {
+          credits += 100;
+          console.log("Gain LvlUp (front)= " + gainLvlToPhp.value);
+        }
 
         document.getElementById("amountLvlUpReward").addEventListener("click", function() {
 
@@ -409,7 +423,8 @@
                 if (lvlBeforeResult != data) {
                   // alert('test proc lvlUP');
                   console.log("(PROC gainLvlUp(" + data + ")) DIFERRENCE DE LVL: " + (data-lvlBeforeResult));
-                  gainLvlUp(data);
+                  var diffLvl = data - lvlBeforeResult;
+                  gainLvlUp(data, diffLvl);
                 }
               }
             }
@@ -6120,8 +6135,10 @@
 
       function animMiseMaxProc() {
         document.getElementById("miseMaxNbr").classList.add("animMiseMaxProc");
+        document.getElementById("miseMaxTitle").classList.add("animMiseMaxProcTitle");
         setTimeout(function() {
           document.getElementById("miseMaxNbr").classList.remove("animMiseMaxProc");
+          document.getElementById("miseMaxTitle").classList.remove("animMiseMaxProcTitle");
         }, 401)
       }
       
@@ -6369,25 +6386,62 @@
             }
           }
           else if (toggleSideBet == "pair") {
-            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 100) && (misePairEnCours+100 <= miseMax)) {
-              addLastTokenClickToTabPair(100);
-              misePairEnCours += 100;
-              refreshEraseOpacity(toggleSideBet);
+            if ((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 100) {
+              if (misePairEnCours+100 <= miseMax) {
+                addLastTokenClickToTabPair(100);
+                misePairEnCours += 100;
+                refreshEraseOpacity(toggleSideBet);
+  
+                refreshMisesEnCours(toggleSideBet);
+                miseBoutonStyle();
+                cssMiseEnCours();
+              }
+              else {
+                addLastTokenClickToTabPair(miseMax - misePairEnCours);
+                if (misePairEnCours != miseMax) {
+                  misePairEnCours = miseMax;
+                  refreshEraseOpacity(toggleSideBet);
+    
+                  refreshMisesEnCours(toggleSideBet);
+                  miseBoutonStyle();
+                  cssMiseEnCours();
 
-              refreshMisesEnCours(toggleSideBet);
-              miseBoutonStyle();
-              cssMiseEnCours();
+                  animMiseMaxProc();
+                }
+                else {
+                  animMiseMaxProc();
+                }
+              }
+              
             }
           }
           else if (toggleSideBet == "21+3") {
-            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 100) && (mise213EnCours+100 <= miseMax)) {
-              addLastTokenClickToTab213(100);
-              mise213EnCours += 100;
-              refreshEraseOpacity(toggleSideBet);
-
-              refreshMisesEnCours(toggleSideBet);
-              miseBoutonStyle();
-              cssMiseEnCours();
+            if ((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 100) {
+              if (mise213EnCours+100 <= miseMax) {
+                addLastTokenClickToTab213(100);
+                mise213EnCours += 100;
+                refreshEraseOpacity(toggleSideBet);
+  
+                refreshMisesEnCours(toggleSideBet);
+                miseBoutonStyle();
+                cssMiseEnCours();
+              }
+              else {
+                addLastTokenClickToTab213(100);
+                if (mise213EnCours != miseMax) {
+                  mise213EnCours += 100;
+                  refreshEraseOpacity(toggleSideBet);
+    
+                  refreshMisesEnCours(toggleSideBet);
+                  miseBoutonStyle();
+                  cssMiseEnCours();
+  
+                  animMiseMaxProc();
+                }
+                else {
+                  animMiseMaxProc();
+                }
+              }
             }
           }
 

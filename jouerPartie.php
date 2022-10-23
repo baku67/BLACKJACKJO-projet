@@ -16,7 +16,7 @@
 <img id="cardAnim" class="imgPartie fadeIn2" style="opacity:0;">
 
 <div id="parametresPartieDiv" style="text-align:center; visiblity: visible">
-    <p style="position:relative; width:100%; font-size:1.35em; opacity:0.4;">Mise max</p>
+    <p id="miseMaxTitle" style="position:relative; width:100%; font-size:1.35em; opacity:0.4;">Mise max</p>
 
     <div style="display:inline-flex;">
         <p id="miseMaxNbr" style="font-weight:bold; font-size:1.5em; opacity:0.6;">100 </p><!--<img class="imagesSou" src="Images/souBlanc.png"/>-->

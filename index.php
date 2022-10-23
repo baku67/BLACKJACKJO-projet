@@ -127,8 +127,8 @@
 		
 		<!-- Modal lvlUpReward  -->
 		<div id="lvlUpRewardDiv" style="display:none; opacity:0; position:absolute; left:100%; border-radius:10px; box-shadow: 0px 9px 0px rgba(0, 0, 0, 0.9); width:54%; height:9%; padding:2% 4% 4% 4%; font-weight:400; top:50%; left:50%; transform:translate(-50%, -50%); z-index:2; background-color:rgba(239, 59, 46, 1); text-align:center; font-size:1.9em; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color:rgb(17 19 31); border:3px solid black;">
-			Level Up!<br>
-			<p id="amountLvlUpReward"><i class="fa-solid fa-meteor fa-beat" style="position:fixed; left:10%; bottom:13%; color:#11131f; font-size:1.7em; opacity:0.9;"></i> +100</p>
+			Level Up!<span id="lvlUpNbr"></span><br>
+			<p id="amountLvlUpReward"><i class="fa-solid fa-meteor fa-beat" style="position:fixed; left:10%; bottom:13%; color:#11131f; font-size:1.7em; opacity:0.9;"></i> +<span id="amountLvlUpNbr">100</span></p>
 			<p> TEST </p>
 		</div>
 
