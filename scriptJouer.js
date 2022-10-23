@@ -288,6 +288,7 @@
 
       function gainLvlUp(newLvl) {
 
+
         if (newLvl < 20) {
           // alert('test proc lvlUP < lvl 20');
           // Déblocage ? BDD
@@ -327,9 +328,12 @@
         document.getElementById('connectionContainer').classList.add("is-blurred");
         document.getElementById('jaugeContainerMaster').classList.add("is-blurred");
 
+        // Maj var front ici mais anim et innerHTML apres le click OK
+        credits += 100;
 
         document.getElementById("amountLvlUpReward").addEventListener("click", function() {
 
+          // Proc X fois selon le nombre de lvlUp depuis last refresh (jsp pourquoi)
           if (document.getElementById("lvlUpRewardDiv").style.display == "block") {
 
             document.getElementById('footer').classList.remove("is-blurred");
@@ -350,14 +354,19 @@
   
             setTimeout(function() {
               document.getElementById("lvlUpRewardDiv").style.display = "none";
+              document.getElementById("lvlUpRewardDiv").classList.remove('fadeOutDailyRewards');
+              document.getElementById("lvlUpRewardDiv").style.display == "none";
             }, 500)
 
             // Gain Front: 
             setTimeout(function() {
               document.getElementById("creditsConnected").classList.add("refreshCreditAnim");
-              document.getElementById("creditsConnected").innerText = (parseInt(document.getElementById("creditsConnected").innerText) + 100);
+              // document.getElementById("creditsConnected").innerText = (parseInt(document.getElementById("creditsConnected").innerText) + 100);
+
+              // Déplacement de l'ajout var car le click proc selon le nombre de lvlUp depuis lastRefresh
               // creditsConnected += 100;
-              credits += 100;
+              // credits += 100;
+              document.getElementById("creditsConnected").innerText = credits;
               // document.getElementById("creditsConnected").classList.add("refreshCreditAnim");
             }, 150)
 
@@ -396,8 +405,10 @@
               if (document.getElementById("lvlText") !== null ) {
                 document.getElementById("lvlText").innerHTML = parseInt(data);
 
+                // Ici voir pour si diff lvl == 2 (*2 reward lvlUP)
                 if (lvlBeforeResult != data) {
                   // alert('test proc lvlUP');
+                  console.log("(PROC gainLvlUp(" + data + ")) DIFERRENCE DE LVL: " + (data-lvlBeforeResult));
                   gainLvlUp(data);
                 }
               }
@@ -1447,6 +1458,7 @@
 
 
         $("#historique").click(function() {
+
 
 
           // Modal Confirmation if ingame (ingame Fait), à ajouter pour Jouer et Guide aussi
@@ -6106,6 +6118,12 @@
 
 
 
+      function animMiseMaxProc() {
+        document.getElementById("miseMaxNbr").classList.add("animMiseMaxProc");
+        setTimeout(function() {
+          document.getElementById("miseMaxNbr").classList.remove("animMiseMaxProc");
+        }, 401)
+      }
       
 
 
@@ -6320,14 +6338,34 @@
           }
 
           if (toggleSideBet == "normal") {
-            if (((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 100) && (miseEnCours+100 <= miseMax)) {
-              addLastTokenClickToTab(100);
-              miseEnCours += 100;
-              refreshEraseOpacity(toggleSideBet);
+            if ((credits-miseEnCours-misePairEnCours-mise213EnCours) >= 100) {
+              if (miseEnCours+100 <= miseMax) {
+                addLastTokenClickToTab(100);
+                miseEnCours += 100;
+                refreshEraseOpacity(toggleSideBet);
+  
+                refreshMisesEnCours(toggleSideBet);
+                miseBoutonStyle();
+                cssMiseEnCours();
+              }
+              else {
+                // Fill jusqu'a miseMax 
+                addLastTokenClickToTab(miseMax - miseEnCours);
+                if (miseEnCours != miseMax) {
+                  miseEnCours = miseMax;
+                  refreshEraseOpacity(toggleSideBet);
+    
+                  refreshMisesEnCours(toggleSideBet);
+                  miseBoutonStyle();
+                  cssMiseEnCours();
 
-              refreshMisesEnCours(toggleSideBet);
-              miseBoutonStyle();
-              cssMiseEnCours();  
+                  animMiseMaxProc();
+                }
+                else {
+                  animMiseMaxProc();
+                }
+              }
+                
             }
           }
           else if (toggleSideBet == "pair") {

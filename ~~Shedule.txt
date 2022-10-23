@@ -1,5 +1,8 @@
 Sur l'emulateur PC: enlever les elements de l'indexBackup (iframe) pour les mettre dans le site parent et les agrandir (jaugeStreak, connectedLine, Credits, toggles, deco)
 
+Si click sur 100 alors que par exemple (110 de mise sur 140 miseMax): fill la mise jusqu'au max (UX)
+
+
 Level espacement/strech + letterSpacing 1px
 
 C:\Users\basil\OneDrive\Bureau\opera_d5RKC29zjD.png (juste pour big win et wasted) laisser Bust, rework Push et BJ
