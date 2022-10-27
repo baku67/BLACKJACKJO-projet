@@ -3237,6 +3237,23 @@ h2 {
 }
 
 
+#deconnexionImgPC {
+	height: 50px;
+	width: 50px;
+	content: var(--imgDeco-src);
+}
+#deconnexionLinkPC {
+	position: relative;
+	margin-left: 30px;
+	bottom: 5px;
+	text-decoration: none;
+	font-size: 1.3em;
+
+	transition: all 0.5s;
+}
+#deconnexionLinkPC:hover {
+	opacity: 0.5;
+}
 
 
 #iframePC {

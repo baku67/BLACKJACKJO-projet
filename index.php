@@ -12,7 +12,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
 		<meta charset="UTF-8">
 		<meta name="theme-color" content="rgba(17, 19, 31, 0.8)">
-		<meta name="description" content="Jouez au BlackJack en ligne et sans argent réel!  - 100% Gratuit - Inscrivez-vous pour garder vos gains et débloquer de nouvelles fonctionalités!">
+		<meta name="description" content="Jouez au BlackJack en ligne et sans argent réel!  - 100% Gratuit - Inscrivez-vous pour garder vos gains et débloquer de nouvelles fonctionnalités!">
 		<meta name="author" content="Basile Kuntz">
 		<meta name="keywords" content="blackjack, casino, jeu, gratuit, cartes, croupier, carte">
 		<link rel="stylesheet" href="Styles/style.css" id="stylesheet_1">
@@ -615,7 +615,7 @@
 					const list3 = document.createElement("li");
 					list3.setAttribute("id", "list3");
 					list3.classList.add("listX");
-					list3.innerHTML = "<p>Débloquez de nouvelles fonctionalités</p>";
+					list3.innerHTML = "<p>Débloquez de nouvelles fonctionnalités</p>";
 					listSideLeft.append(list3);
 					const list4 = document.createElement("li");
 					list4.setAttribute("id", "list4");
@@ -785,7 +785,7 @@
 					var identifiantDiv = document.createElement("div");
 					identifiantDiv.setAttribute("id", "identifiantDiv");
 					identifiantDiv.style.display = "inline-flex";
-					identifiantDiv.innerHTML = "<i class='fas fa-user-alt' id='userIconPc'></i><p>&nbsp;&nbsp;&nbsp;" + username2 + "</p>";
+					identifiantDiv.innerHTML = "<i class='fas fa-user-alt' id='userIconPc'></i><p>&nbsp;&nbsp;&nbsp;" + username2 + "</p><a href='index.php?logout=\"1\"' id='deconnexionLinkPC' style=''><img src='../Images/deconnexion_darkMode.png' alt='deconnexion' id='deconnexionImgPC' style=''></a>"
 					// icone user bonhomme coupé + nom
 
 					var creditsDiv = document.createElement("div");
