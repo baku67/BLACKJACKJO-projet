@@ -518,6 +518,7 @@
           // Ajout du reward (front qui correspond au back):
           setTimeout(function() {
             document.getElementById("creditsConnected").innerText = (parseInt(document.getElementById("creditsConnected").innerText) + 100);
+
             creditsConnected += 100;
             document.getElementById("creditsConnected").classList.add("refreshCreditAnim");
           }, 150)
@@ -533,9 +534,6 @@
         }
       })
       // Fin dailyReward
-
-
-
 
 
 
@@ -4261,11 +4259,17 @@
             document.getElementById("credits").innerHTML = "<i class='fa-solid fa-star'></i> Invité &nbsp;&nbsp;<span id=\"creditsInvite\">" + (credits - miseLocked - misePairLocked - mise213Locked) + "</span>" + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
             credits = (credits - miseLocked - misePairLocked - mise213Locked);
           }
+          // else if (isConnected == true) {
+          //   document.getElementById("creditsConnected").innerHTML = (credits - (miseLocked + misePairLocked + mise213Locked));
+          //   credits = (credits - miseLocked - misePairLocked - mise213Locked);
+          //   // Anim creditFlash rouge ?
+          // }
           else if (isConnected == true) {
-            document.getElementById("creditsConnected").innerHTML = (credits - (miseLocked + misePairLocked + mise213Locked));
-            credits = (credits - miseLocked - misePairLocked - mise213Locked);
+            document.getElementById("creditsConnected").innerHTML = (creditsConnected - (miseLocked + misePairLocked + mise213Locked));
+            creditsConnected = (creditsConnected - miseLocked - misePairLocked - mise213Locked);
             // Anim creditFlash rouge ?
           }
+
 
           // Mise BDD (A revoir si besoin des mises différenciées par bet pour historique par exemple)
           var misesToPhp = {};
@@ -5053,11 +5057,9 @@
             }
           });
 
-          var scoreTotalCroupierTemp = scoreTotalCroupier;
+          // var scoreTotalCroupierTemp = scoreTotalCroupier;
 
           addCardCroupierRecursive();
-
-            
           
           function addCardCroupierRecursive() {
             if ( removed == false) {
@@ -5070,8 +5072,7 @@
               }, 2150 * setTimeOutMultiplier)
             }
 
-            // if (asCroupier == true) )
-
+            // if (asCroupier == true) {}
             // else {
             //   if (scoreTotalCroupier < 17) {
             //     setTimeout(function() {
@@ -5090,13 +5091,14 @@
             //   }
             // }
 
-            if (scoreTotalCroupierTemp < 17) {
+
+            if (scoreTotalCroupier < 17) {
               setTimeout(function() {
                 if (firstCardRevealed == true) {
-                  scoreTotalCroupierTemp = addCardCroupier(firstCardRevealed);  
+                  scoreTotalCroupier = addCardCroupier(firstCardRevealed);  
                 }
                 else {
-                  scoreTotalCroupierTemp = addCardCroupier(firstCardRevealed);
+                  scoreTotalCroupier = addCardCroupier(firstCardRevealed);
                   firstCardRevealed = true;
                 }
                 addCardCroupierRecursive();
@@ -5105,6 +5107,26 @@
             else {
               resultat();
             }
+            // setTimeout(function() {
+            //   if (scoreTotalCroupier < 17) {
+                
+            //       if (firstCardRevealed == true) {
+            //         scoreTotalCroupier = addCardCroupier(firstCardRevealed);  
+            //       }
+            //       else {
+            //         scoreTotalCroupier = addCardCroupier(firstCardRevealed);
+            //         firstCardRevealed = true;
+            //       }
+            //       addCardCroupierRecursive();
+            //   }
+            //   else {
+            //     resultat();
+            //   }
+            //   // Pourquoi TimeOut ici?
+            // }, 2150 * setTimeOutMultiplier)
+
+
+
           };
 
 
@@ -6901,7 +6923,7 @@
             }
             else if ((scoreTotalCroupier + 10) < 21) {
               if (nbrCardsCroupier > 1) {
-                document.getElementById('scoreCroupier').innerHTML = scoreTotalCroupier + "&nbsp;<span style='opacity:0.3;'>/</span>&nbsp;" + (scoreTotalCroupier + 10);
+                // document.getElementById('scoreCroupier').innerHTML = scoreTotalCroupier + "&nbsp;<span style='opacity:0.3;'>/</span>&nbsp;" + (scoreTotalCroupier + 10);
                 scoreTotalCroupier += 10;
               }
               else {
@@ -7006,20 +7028,20 @@
           decrementCompteurDeck();
         // }
 
-        // Mise a jour du score High-Low
-        if (pickedCardObject.cardValue < 7) {
-          setTimeout(function() {
-            // plus1();
-          }, 500);
-        }
-        else if (pickedCardObject.cardValue > 9) {
-          setTimeout(function() {
-            // minus1();
-          }, 500);
-        }
-        else {
-          // ScoePop quand même (ou au moins un truc, genre rafraichissement)
-        }
+        // // Mise a jour du score High-Low
+        // if (pickedCardObject.cardValue < 7) {
+        //   setTimeout(function() {
+        //     // plus1();
+        //   }, 500);
+        // }
+        // else if (pickedCardObject.cardValue > 9) {
+        //   setTimeout(function() {
+        //     // minus1();
+        //   }, 500);
+        // }
+        // else {
+        //   // ScoePop quand même (ou au moins un truc, genre rafraichissement)
+        // }
 
         return scoreTotalCroupier;
 
