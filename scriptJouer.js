@@ -51,6 +51,12 @@
 
       var WinLose = "";
 
+      var pairBet = "lost";
+      var bet213 = "lost";
+
+      var mainJoueur = [];
+      var mainCroupier = [];
+
       var nbrCardsJoueur;
       var nbrCardsCroupier;
 
@@ -411,6 +417,7 @@
 
 
 
+      
       function refreshLvl() {
         setTimeout(function() {
           $.ajax({
@@ -786,7 +793,7 @@
       // "Pair" prend en compte les 2 premieres cards Joueur (les autres osef)
       function checkPairResult() {
 
-        let pairBet = "Lost";
+        // let pairBet = "Lost";
         let gainPairBet = 0;
         let gainXpPairBet = 0;
 
@@ -889,7 +896,7 @@
 
       function check213Result() {
 
-        let bet213 = "Lost";
+        // let bet213 = "Lost";
         let gain213Bet = 0;
         let gainXp213Bet = 0;
 
@@ -2578,6 +2585,12 @@
         // JQUERY JAX : load Partie
         $("#newGame").click(function(){
 
+            pairBet = "lost";
+            bet213 = "lost";
+
+            mainJoueur = [];
+            mainCroupier = [];      
+
             if (!isConnected) {
               window.top.postMessage(JSON.stringify(['partieInvite']), '*');
             }
@@ -3171,6 +3184,12 @@
       function relancer() {
 
         $("#relancer").click(function(){
+
+          pairBet = "lost";
+          bet213 = "lost";
+
+          mainJoueur = [];
+          mainCroupier = [];    
 
           $.get("getLevel.php", function(data) {
             lvlBeforeResult = data;
@@ -6912,6 +6931,9 @@
         // Scores Total Croupier
         scoreTotalCroupier += pickedCardObject.cardValue;
 
+        // HistoriqueBDD main
+        mainCroupier.push(pickedCardObject.cardValue);
+
         setTimeout (function() {
           // Refresh FadeInAnimation Score
           var elementScore = document.getElementById("scoreCroupier");
@@ -7178,6 +7200,9 @@
         //FIN
 
         scoreTotalJoueur += pickedCardObject.cardValue;
+
+        // HsitoriqueBDD main
+        mainJoueur.push(pickedCardObject.cardValue);
 
         // MàJ score avec petit delai (et refresh CSS)
         setTimeout(function() {
@@ -7923,7 +7948,7 @@
 
 
 
-      function historiqueDB(WinLose, resultatCas, gainHistorique) {
+      function historiqueDB(WinLose, resultatCas, gainHistorique, gainProcPair, gainProc213) {
 
         // Ancienne méthode: fuseau horaire non pris en compte
         // var date = new Date().toISOString().slice(0, 19).replace('T', ' ');
@@ -7949,6 +7974,22 @@
         historiqueToPhp[4] = scoreTotalCroupier;
         historiqueToPhp[5] = doubleBool;
         historiqueToPhp[6] = date;
+
+        // gains/mises sideBets
+        historiqueToPhp[7] = gainProcPair;
+        historiqueToPhp[8] = gainProc213;
+
+        historiqueToPhp[9] = miseLocked;
+        historiqueToPhp[10] = misePairLocked;
+        historiqueToPhp[11] = mise213Locked;
+
+        // cas sideBets (var globale reinit a chaque game)
+        historiqueToPhp[12] = pairBet;
+        historiqueToPhp[13] = bet213;
+
+        historiqueToPhp[14] = mainCroupier;
+        historiqueToPhp[15] = mainJoueur;
+
         
         console.log("Array JS: [" + historiqueToPhp + "]");
 
@@ -8285,7 +8326,7 @@
           });
 
           // A replacer la ou est appelé ajoutGain();
-          historiqueDB(WinLose, resultatCas, gainHistorique);
+          historiqueDB(WinLose, resultatCas, gainHistorique, gainPairBet, gain213Bet);
         }
       }
       else if (isConnected == false) {
