@@ -551,8 +551,9 @@
 						else {
 							if (casInvite == "W") {
 								let previous = parseInt(document.getElementById("dataProgressMax").getAttribute("data-progress2"));
-								if (previous != 100)
-								document.getElementById("dataProgressMax").setAttribute("data-progress2", (previous + 10));
+								if (previous != 100) {
+									document.getElementById("dataProgressMax").setAttribute("data-progress2", (previous + 10));
+								}
 							}
 							else if (casInvite == "L") {
 								let previous = parseInt(document.getElementById("dataProgressMax").getAttribute("data-progress2"));
@@ -576,9 +577,17 @@
 								);
 								$(this).text($(this).attr("data-progress2") + "%");
 							});
-						}, 500)
 
-						setTimeout(function() {
+							$(".jaugeContainer3 span").each(function () {
+								$(this).animate(
+									{
+										width: $(this).attr("data-progress2") + "%",
+									},
+									500
+								);
+								$(this).text($(this).attr("data-progress2") + "%");
+							});
+					
 
 							$(".jaugeContainerExp span").each(function () {
 								$(this).animate(
