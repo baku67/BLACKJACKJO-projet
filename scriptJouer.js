@@ -1336,7 +1336,7 @@
 
         function expMobileFooter() {
           if (document.getElementById("iframePC") == null) {
-            if (emulateurOn == false) {
+            // if (emulateurOn == false) {
 
               var jaugeContainerExp = document.createElement("div");
               jaugeContainerExp.setAttribute('id', 'jaugeContainerExp');
@@ -1384,7 +1384,7 @@
                       $(this).text($(this).attr("data-progressExp") + "%");
                   });
               }, 500)
-            }
+            // }
           }
         }
 
@@ -2577,6 +2577,10 @@
 
         // JQUERY JAX : load Partie
         $("#newGame").click(function(){
+
+            if (!isConnected) {
+              window.top.postMessage(JSON.stringify(['partieInvite']), '*');
+            }
 
             $.get("getLevel.php", function(data) {
               lvlBeforeResult = data;
@@ -4259,16 +4263,17 @@
             document.getElementById("credits").innerHTML = "<i class='fa-solid fa-star'></i> Invité &nbsp;&nbsp;<span id=\"creditsInvite\">" + (credits - miseLocked - misePairLocked - mise213Locked) + "</span>" + "&nbsp;<img src='Images/souBlancBarre.png' class=\"imageSouDeco\">";
             credits = (credits - miseLocked - misePairLocked - mise213Locked);
           }
-          // else if (isConnected == true) {
-          //   document.getElementById("creditsConnected").innerHTML = (credits - (miseLocked + misePairLocked + mise213Locked));
-          //   credits = (credits - miseLocked - misePairLocked - mise213Locked);
-          //   // Anim creditFlash rouge ?
-          // }
           else if (isConnected == true) {
-            document.getElementById("creditsConnected").innerHTML = (creditsConnected - (miseLocked + misePairLocked + mise213Locked));
-            creditsConnected = (creditsConnected - miseLocked - misePairLocked - mise213Locked);
+            document.getElementById("creditsConnected").innerHTML = (credits - (miseLocked + misePairLocked + mise213Locked));
+            credits = (credits - miseLocked - misePairLocked - mise213Locked);
             // Anim creditFlash rouge ?
           }
+          // fix bug CreditsFront apres premier dailyReward apres inscription qui revent à -100 apres le miseLock (oui), mais ducoup apres miselock c'est nimp:
+          // else if (isConnected == true) {
+          //   document.getElementById("creditsConnected").innerHTML = (creditsConnected - (miseLocked + misePairLocked + mise213Locked));
+          //   creditsConnected = (creditsConnected - miseLocked - misePairLocked - mise213Locked);
+          //   // Anim creditFlash rouge ?
+          // }
 
 
           // Mise BDD (A revoir si besoin des mises différenciées par bet pour historique par exemple)
@@ -5037,6 +5042,7 @@
           // Pour bien centré si i y a 1 seul bet (mais bon)
         }
       }
+
 
 
 
@@ -6902,6 +6908,7 @@
         }
 
 
+
         // Scores Total Croupier
         scoreTotalCroupier += pickedCardObject.cardValue;
 
@@ -6912,7 +6919,7 @@
           void elementScore.offsetWidth;
           elementScore.classList.add("scores");
 
-          //WIP AS 
+          //WIP AS (deja si multiple AS, le proc +10 pop a chaque AS tiré)
           if (asCroupier == true) {
             if (scoreTotalCroupier + 10 > 21) {
               document.getElementById('scoreCroupier').innerHTML = scoreTotalCroupier;

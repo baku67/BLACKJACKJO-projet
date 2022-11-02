@@ -42,6 +42,9 @@
 					isConnected = false; 
 					console.log('estPasConnecté');  
 					var toggleSpeed = false;
+					var streakFromPhpInt = 0;
+					var creditsConnected = 100;
+
 				</script>
 
 		<?php
@@ -67,6 +70,7 @@
 					// var expProgressVar = expProgressVarPhp.toString().slice(0, -1);
 					var streakFromPhp = '<?php include('getStreak.php'); ?>';
 					var streakFromPhpInt = parseInt(streakFromPhp);
+
 					var levelPhp = <?php include('getLevel.php'); ?>;
 
 					var dailyProcBool = <?php include("getDailyProcBool.php"); ?>;
@@ -533,47 +537,69 @@
 
 
 
-				function refreshJaugesPC() {
+				function refreshJaugesPC(casInvite) {
 
-					$.get("getExpProgress.php", function(data) {
-						document.getElementById("dataProgressExpMax").setAttribute("data-progressExp", data);
-					});
-					$.get("getStreak.php", function(data) {
-						document.getElementById("dataProgressMax").setAttribute("data-progress2", (data * 10));
-					});
+						if (isConnected) {
+							$.get("getExpProgress.php", function(data) {
+								document.getElementById("dataProgressExpMax").setAttribute("data-progressExp", data);
+							});
+							$.get("getStreak.php", function(data) {
+								document.getElementById("dataProgressMax").setAttribute("data-progress2", (data * 10));
+							});
+						}
+						// TEST Invite jauge Streak
+						else {
+							if (casInvite == "W") {
+								let previous = parseInt(document.getElementById("dataProgressMax").getAttribute("data-progress2"));
+								if (previous != 100)
+								document.getElementById("dataProgressMax").setAttribute("data-progress2", (previous + 10));
+							}
+							else if (casInvite == "L") {
+								let previous = parseInt(document.getElementById("dataProgressMax").getAttribute("data-progress2"));
+								if (previous > 10) {
+									document.getElementById("dataProgressMax").setAttribute("data-progress2", (previous - 20));
+								}
+								else if (previous <= 10) {
+									document.getElementById("dataProgressMax").setAttribute("data-progress2", 0);
+								}
+							}
+						}
 
-					setTimeout(function() {
+						setTimeout(function() {
 
-						$(".jaugeContainer2 span").each(function () {
-							$(this).animate(
-								{
-									width: $(this).attr("data-progress2") + "%",
-								},
-								500
-							);
-							$(this).text($(this).attr("data-progress2") + "%");
-						});
-					}, 500)
+							$(".jaugeContainer2 span").each(function () {
+								$(this).animate(
+									{
+										width: $(this).attr("data-progress2") + "%",
+									},
+									500
+								);
+								$(this).text($(this).attr("data-progress2") + "%");
+							});
+						}, 500)
 
-					setTimeout(function() {
+						setTimeout(function() {
 
-						$(".jaugeContainerExp span").each(function () {
-							$(this).animate(
-								{
-									width: $(this).attr("data-progressExp") + "%",
-								},
-								500
-							);
-							$(this).text($(this).attr("data-progressExp") + "%");
-						});
-					}, 500)
-				}
+							$(".jaugeContainerExp span").each(function () {
+								$(this).animate(
+									{
+										width: $(this).attr("data-progressExp") + "%",
+									},
+									500
+								);
+								$(this).text($(this).attr("data-progressExp") + "%");
+							});
+						}, 500)
+
+					}
 
 
 				function refreshLvl() {
-					$.get("getLevel.php", function(data) {
-						document.getElementById("lvlNbrPc").innerHTML = data;
-					});
+					if (isConnected) {
+						$.get("getLevel.php", function(data) {
+							document.getElementById("lvlNbrPc").innerHTML = data;
+						});
+					}
 				}
 
 
@@ -778,6 +804,8 @@
 							}, 500)
 						}
 					})
+
+					
 				}
 				// Affichage des sideDiv quand connecté (jaugeStreak, xp, ptit historique, deco, toggle, etc...)
 				else {
@@ -944,6 +972,76 @@
 
 				if (emulateurOn) {
 
+					if (JSON.parse(e.data)[0] == 'partieInvite') {
+						// document.getElementById("sideRightDiv").remove();
+
+						// Side STREAK Invite
+						var streakDiv = document.createElement("div");
+						streakDiv.setAttribute("id", "streakDivInvite");
+
+						var streakTitle = document.createElement("p");
+						streakTitle.setAttribute("id", "streakTitle");
+						streakTitle.innerHTML = "Streak";
+
+						var streakEmulNbr = document.createElement("p");
+						streakEmulNbr.setAttribute("id", "streakEmulNbr");
+						streakEmulNbr.innerHTML = "<img id='imgFireStreakPC' src='Images/fire_maxPurple.png'>" + 0;
+
+
+						streakDiv.append(streakTitle);
+						streakDiv.append(document.createElement("br"));
+						streakDiv.append(streakEmulNbr);
+
+						var jaugeContainerMaxPC = document.createElement("div");
+						jaugeContainerMaxPC.setAttribute('id', 'jaugeContainerMaxPC');
+						jaugeContainerMaxPC.classList.add("jaugeContainer2", "jaugeProgress2");
+
+						var dataProgressMax = document.createElement("span");
+						dataProgressMax.setAttribute("id", "dataProgressMax");
+
+						let streakPourcentage = (streakFromPhpInt*10).toString();
+						dataProgressMax.setAttribute("data-progress2", streakPourcentage);
+
+						jaugeContainerMaxPC.append(dataProgressMax);
+
+
+						// Append JaugeMax Streak
+						streakDiv.append(document.createElement("br"));
+						streakDiv.append(jaugeContainerMaxPC);
+
+						streakDiv.append(document.createElement("br"));
+						streakDiv.append(document.createElement("br"));
+
+						// document.getElementById("sideRightDiv").innerHTML = "";
+						// document.getElementById("body").append(streakDiv);
+
+						// refreshJaugesPC();
+
+						// Side CREDITS Invite
+						var creditsDiv = document.createElement("div");
+						creditsDiv.setAttribute("id", "creditsDiv");
+
+						var creditsDivTitle = document.createElement("p");
+						creditsDivTitle.setAttribute("id", "creditsDivTitle");
+						creditsDivTitle.innerHTML = "Crédits";
+
+						var creditsDivLine = document.createElement("div");
+						creditsDivLine.style.display = "inline-flex";
+						creditsDivLine.innerHTML = "<p id='creditsPC'>" + creditsConnected + " </p> <img src='Images/souBarre.png' style='width:110px; height:110px; opacity:0.85;'>";
+
+						creditsDiv.append(creditsDivTitle);
+						creditsDiv.append(creditsDivLine);
+
+
+						document.getElementById("sideRightDiv").innerHTML = "";
+						document.getElementById("sideRightDiv").append(streakDiv);
+
+
+						document.getElementById("sideRightDiv").append(document.createElement("br"));
+						document.getElementById("sideRightDiv").append(creditsDiv);
+					}
+
+					// Fix ça:
 					if (JSON.parse(e.data)[0] == 'dailyRewardProcPC') {
 						alert("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 					}
@@ -959,9 +1057,11 @@
 
 					setTimeout(function() {
 						if (JSON.parse(e.data)[0] == 'procWin') {
-							streakFromPhpInt += 1;
-							if (streakFromPhpInt > 10) {
+							if (streakFromPhpInt >= 10) {
 								streakFromPhpInt = 10;
+							}
+							else {
+								streakFromPhpInt += 1;
 							}
 							document.body.style.boxShadow = "inset 0 0 90px rgb(0 248 224 / 18%)";
 							document.getElementById("iframePC").style.boxShadow = "rgb(0 255 234 / 20%) 0px 0px 100px 4px";
@@ -972,24 +1072,34 @@
 								document.getElementById("streakEmulNbr").classList.add("fadeIn22");
 							}, 550)
 							refreshCreditsExpPC();
-							refreshJaugesPC();
+							refreshJaugesPC("W");
 							refreshLvl();
 						}
 						else if (JSON.parse(e.data)[0] == 'procLose') {
-							streakFromPhpInt -= 2;
-							if (streakFromPhpInt < 0) {
-								streakFromPhpInt = 0;
-							}
+							// if (streakFromPhpInt <= 1) {
+							// 	streakFromPhpInt = 0;
+							// }
+							// else {
+							// 	streakFromPhpInt -= 2;
+							// }
 							document.body.style.boxShadow = "inset 0 0 90px rgb(248 33 0 / 30%)";
 							document.getElementById("iframePC").style.boxShadow = "rgba(239, 59, 46, 0.6) 0px 0px 60px 4px";
-							document.getElementById("streakEmulNbr").classList.add("fadeOut22");
-							setTimeout(function() {
-								document.getElementById("streakEmulNbr").innerHTML = "<img id='imgFireStreakPC' src='Images/fire_maxPurple.png'>" + streakFromPhpInt;
-								document.getElementById("streakEmulNbr").classList.remove("fadeOut22");
-								document.getElementById("streakEmulNbr").classList.add("fadeIn22");
-							}, 550)
+							if (streakFromPhpInt != 0) {
+								if (streakFromPhpInt <= 1) {
+									streakFromPhpInt = 0;
+								}
+								else {
+									streakFromPhpInt -= 2;
+								}
+								document.getElementById("streakEmulNbr").classList.add("fadeOut22");
+								setTimeout(function() {
+									document.getElementById("streakEmulNbr").innerHTML = "<img id='imgFireStreakPC' src='Images/fire_maxPurple.png'>" + streakFromPhpInt;
+									document.getElementById("streakEmulNbr").classList.remove("fadeOut22");
+									document.getElementById("streakEmulNbr").classList.add("fadeIn22");
+								}, 550)
+							}
 							refreshCreditsExpPC();
-							refreshJaugesPC();
+							refreshJaugesPC("L");
 							refreshLvl();
 						}
 						else if (JSON.parse(e.data)[0] == 'procPush') {
@@ -1002,7 +1112,12 @@
 							refreshLvl();
 						}
 						else if (JSON.parse(e.data)[0] == 'procBJ') {
-							streakFromPhpInt += 1;
+							if (streakFromPhpInt >= 10) {
+								streakFromPhpInt = 10;
+							}
+							else {
+								streakFromPhpInt += 1;
+							}
 							document.body.style.boxShadow = "inset 0 0 90px rgb(248 0 196 / 20%)";
 							document.getElementById("iframePC").style.boxShadow = "rgb(248 0 196 / 50%) 0px 0px 60px 4px";
 
@@ -1013,24 +1128,34 @@
 								document.getElementById("streakEmulNbr").classList.add("fadeIn22");
 							}, 550)
 							refreshCreditsExpPC();
-							refreshJaugesPC();
+							refreshJaugesPC("W");
 							refreshLvl();
 						}
 
 
 						function refreshCreditsExpPC() {
-							document.getElementById("creditsPC").classList.add("fadeOut22");
-							setTimeout(function() {
-								document.getElementById("creditsPC").innerHTML = JSON.parse(e.data)[1];
-								document.getElementById("creditsPC").classList.remove("fadeOut22");
-								document.getElementById("creditsPC").classList.add("fadeIn22");
-							}, 550)
+							if (isConnected) {
+								document.getElementById("creditsPC").classList.add("fadeOut22");
+								setTimeout(function() {
+									document.getElementById("creditsPC").innerHTML = JSON.parse(e.data)[1];
+									document.getElementById("creditsPC").classList.remove("fadeOut22");
+									document.getElementById("creditsPC").classList.add("fadeIn22");
+								}, 550)
 
-							$.get("getExpProgress.php", function(data) {
-								// experienceNbr.innerHTML = "<p><span id='expIcone'>EXP</span>&nbsp;&nbsp;" + data + " <span style='font-size:70%; position:relative; bottom:7px;'>%</span></p>";
-								experienceNbr.innerHTML = "<p style='text-align:left;'><span style='xpPercentagePC'>" + data + "</span><span style='font-size:70%; position:relative; bottom:7px;'>%</span></p>";
-							});
-							// experienceNbr.innerHTML = "<p><span id='expIcone'>EXP</span>&nbsp;&nbsp;" + expProgressVarPhp + " <span style='font-size:70%; position:relative; bottom:7px;'>%</span></p>";
+								$.get("getExpProgress.php", function(data) {
+									// experienceNbr.innerHTML = "<p><span id='expIcone'>EXP</span>&nbsp;&nbsp;" + data + " <span style='font-size:70%; position:relative; bottom:7px;'>%</span></p>";
+									experienceNbr.innerHTML = "<p style='text-align:left;'><span style='xpPercentagePC'>" + data + "</span><span style='font-size:70%; position:relative; bottom:7px;'>%</span></p>";
+								});
+								// experienceNbr.innerHTML = "<p><span id='expIcone'>EXP</span>&nbsp;&nbsp;" + expProgressVarPhp + " <span style='font-size:70%; position:relative; bottom:7px;'>%</span></p>";
+							}
+							else {
+								document.getElementById("creditsPC").classList.add("fadeOut22");
+								setTimeout(function() {
+									document.getElementById("creditsPC").innerHTML = JSON.parse(e.data)[1];
+									document.getElementById("creditsPC").classList.remove("fadeOut22");
+									document.getElementById("creditsPC").classList.add("fadeIn22");
+								}, 550)
+							}
 						}
 
 
