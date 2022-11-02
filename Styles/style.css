@@ -1579,6 +1579,16 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 
+#sideRightDivTitle {
+	opacity: 0;
+	color: aquamarine;
+	font-size: 4em;
+	text-align: center;
+	font-weight: bold;
+	margin-bottom: 8vh;
+
+	animation: fadeIn2 0.5s 1.2s ease forwards;
+}
 
 
 #streakDiv {
@@ -1600,14 +1610,14 @@ button, input[type="submit"], input[type="reset"] {
 	background: radial-gradient(circle, rgb(201 46 239 / 10%) 5%, rgba(189, 189, 189, 0) 65%);
 
 	opacity: 0;
-	animation: fadeIn2 0.5s 1.5s ease forwards;
+	animation: fadeIn2 0.5s 1.2s ease forwards;
 }
 #streakDivInvite {
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	background: radial-gradient(circle, rgb(201 46 239 / 10%) 5%, rgba(189, 189, 189, 0) 65%);
 
 	opacity: 0;
-	animation: fadeIn2 0.5s 1.5s ease forwards;
+	animation: fadeIn2 0.5s 1.2s ease forwards;
 }
 #streakTitle {
 	color: rgba(250, 18, 227, 0.45);
@@ -2890,6 +2900,29 @@ button, input[type="submit"], input[type="reset"] {
 	margin: 0 auto;
 
 	margin-bottom: 160px;
+
+	left: 10px;
+
+	border-radius: 6px; 
+
+	/* background: var(--bgColor-jaugeVide); */
+	background: rgb(59 35 59);
+}
+.jaugeContainer3 {
+	overflow: hidden;
+
+	position: relative;
+	/* bottom: -20px; */
+
+	/* width: 50%; */
+	/* height: 6px; */
+	width: 85%;
+	height: 50px;
+
+
+	margin: 0 auto;
+
+	margin-bottom: 110px;
 
 	left: 10px;
 

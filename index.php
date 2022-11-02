@@ -973,7 +973,16 @@
 				if (emulateurOn) {
 
 					if (JSON.parse(e.data)[0] == 'partieInvite') {
-						// document.getElementById("sideRightDiv").remove();
+
+						setTimeout(function() {
+							var iframe = document.getElementById("iframePC");
+							iframe.contentWindow.document.getElementById("credits").innerHTML = "";
+						}, 1500)
+
+						// Titre
+						var sideRightDivTitle = document.createElement("p");
+						sideRightDivTitle.setAttribute("id", "sideRightDivTitle");
+						sideRightDivTitle.innerText = "- Invité -";
 
 						// Side STREAK Invite
 						var streakDiv = document.createElement("div");
@@ -994,7 +1003,7 @@
 
 						var jaugeContainerMaxPC = document.createElement("div");
 						jaugeContainerMaxPC.setAttribute('id', 'jaugeContainerMaxPC');
-						jaugeContainerMaxPC.classList.add("jaugeContainer2", "jaugeProgress2");
+						jaugeContainerMaxPC.classList.add("jaugeContainer3", "jaugeProgress2");
 
 						var dataProgressMax = document.createElement("span");
 						dataProgressMax.setAttribute("id", "dataProgressMax");
@@ -1004,7 +1013,6 @@
 
 						jaugeContainerMaxPC.append(dataProgressMax);
 
-
 						// Append JaugeMax Streak
 						streakDiv.append(document.createElement("br"));
 						streakDiv.append(jaugeContainerMaxPC);
@@ -1012,10 +1020,6 @@
 						streakDiv.append(document.createElement("br"));
 						streakDiv.append(document.createElement("br"));
 
-						// document.getElementById("sideRightDiv").innerHTML = "";
-						// document.getElementById("body").append(streakDiv);
-
-						// refreshJaugesPC();
 
 						// Side CREDITS Invite
 						var creditsDiv = document.createElement("div");
@@ -1033,11 +1037,13 @@
 						creditsDiv.append(creditsDivLine);
 
 
+
 						document.getElementById("sideRightDiv").innerHTML = "";
-						document.getElementById("sideRightDiv").append(streakDiv);
 
-
+						document.getElementById("sideRightDiv").append(sideRightDivTitle);
 						document.getElementById("sideRightDiv").append(document.createElement("br"));
+						document.getElementById("sideRightDiv").append(streakDiv);
+						// document.getElementById("sideRightDiv").append(document.createElement("br"));
 						document.getElementById("sideRightDiv").append(creditsDiv);
 					}
 
