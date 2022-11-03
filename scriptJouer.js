@@ -51,8 +51,8 @@
 
       var WinLose = "";
 
-      var pairBet = "lost";
-      var bet213 = "lost";
+      var pairBet = "Lost";
+      var bet213 = "Lost";
 
       var mainJoueur = [];
       var mainCroupier = [];
@@ -430,7 +430,8 @@
                 if (lvlBeforeResult != data) {
                   // alert('test proc lvlUP');
                   console.log("(PROC gainLvlUp(" + data + ")) DIFERRENCE DE LVL: " + (data-lvlBeforeResult));
-                  var diffLvl = data - lvlBeforeResult;
+                  // var diffLvl = data - lvlBeforeResult;
+                  let diffLvl = 1;
                   gainLvlUp(data, diffLvl);
                 }
               }
@@ -936,6 +937,25 @@
                 bet213 = "Straight"; // 3 cartes de suite
               }
             }
+            else {
+              if (((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily) && (cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[2].cardFamily)) && ((cartesSortiesPartie[0].cardName == cartesSortiesPartie[1].cardName) && (cartesSortiesPartie[0].cardName == cartesSortiesPartie[2].cardName))) {
+                bet213 = "Suited Trips"; // 3 cartes de la meme FAMILLE et meme NOMS
+              }
+              else {
+                // Attention, marche que si 3+ decks !
+                if ((cartesSortiesPartie[0].cardName == cartesSortiesPartie[1].cardName) && (cartesSortiesPartie[0].cardName == cartesSortiesPartie[2].cardName)) {
+                  bet213 = "Three of a kind"; // Brelan (3 cartes memes NOMS)
+                }
+                else {
+                  if ((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily) && ( cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[2].cardFamily)) {
+                    bet213 = "Flush" // 3 cartes meme FAMILLE
+                  }
+                  // else {
+                  //   bet213 = "Lost"; 
+                  // }
+                }
+              }
+            }
         }
         else if (((Math.abs(cartesSortiesPartie[1].cardOrdre - cartesSortiesPartie[2].cardOrdre) == 1) &&
         (((Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[1].cardOrdre) == 1) && (Math.abs(cartesSortiesPartie[0].cardOrdre - cartesSortiesPartie[2].cardOrdre) != 1)) ||
@@ -952,6 +972,25 @@
               }
               else {
                 bet213 = "Straight"; // 3 cartes de suite
+              }
+            }
+            else {
+              if (((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily) && (cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[2].cardFamily)) && ((cartesSortiesPartie[0].cardName == cartesSortiesPartie[1].cardName) && (cartesSortiesPartie[0].cardName == cartesSortiesPartie[2].cardName))) {
+                bet213 = "Suited Trips"; // 3 cartes de la meme FAMILLE et meme NOMS
+              }
+              else {
+                // Attention, marche que si 3+ decks !
+                if ((cartesSortiesPartie[0].cardName == cartesSortiesPartie[1].cardName) && (cartesSortiesPartie[0].cardName == cartesSortiesPartie[2].cardName)) {
+                  bet213 = "Three of a kind"; // Brelan (3 cartes memes NOMS)
+                }
+                else {
+                  if ((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily) && ( cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[2].cardFamily)) {
+                    bet213 = "Flush" // 3 cartes meme FAMILLE
+                  }
+                  // else {
+                  //   bet213 = "Lost"; 
+                  // }
+                }
               }
             }
         }
@@ -973,9 +1012,26 @@
                 bet213 = "Straight"; // 3 cartes de suite
               }
             }
+            else {
+              if (((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily) && (cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[2].cardFamily)) && ((cartesSortiesPartie[0].cardName == cartesSortiesPartie[1].cardName) && (cartesSortiesPartie[0].cardName == cartesSortiesPartie[2].cardName))) {
+                bet213 = "Suited Trips"; // 3 cartes de la meme FAMILLE et meme NOMS
+              }
+              else {
+                // Attention, marche que si 3+ decks !
+                if ((cartesSortiesPartie[0].cardName == cartesSortiesPartie[1].cardName) && (cartesSortiesPartie[0].cardName == cartesSortiesPartie[2].cardName)) {
+                  bet213 = "Three of a kind"; // Brelan (3 cartes memes NOMS)
+                }
+                else {
+                  if ((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily) && ( cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[2].cardFamily)) {
+                    bet213 = "Flush" // 3 cartes meme FAMILLE
+                  }
+                  // else {
+                  //   bet213 = "Lost"; 
+                  // }
+                }
+              }
+            }
         }
-
-        
         else {
           if (((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily) && (cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[2].cardFamily)) && ((cartesSortiesPartie[0].cardName == cartesSortiesPartie[1].cardName) && (cartesSortiesPartie[0].cardName == cartesSortiesPartie[2].cardName))) {
             bet213 = "Suited Trips"; // 3 cartes de la meme FAMILLE et meme NOMS
@@ -989,9 +1045,9 @@
               if ((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily) && ( cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[2].cardFamily)) {
                 bet213 = "Flush" // 3 cartes meme FAMILLE
               }
-              else {
-                bet213 = "Lost"; 
-              }
+              // else {
+              //   bet213 = "Lost"; 
+              // }
             }
           }
         }
@@ -2585,8 +2641,8 @@
         // JQUERY JAX : load Partie
         $("#newGame").click(function(){
 
-            pairBet = "lost";
-            bet213 = "lost";
+            pairBet = "Lost";
+            bet213 = "Lost";
 
             mainJoueur = [];
             mainCroupier = [];      
@@ -3185,8 +3241,8 @@
 
         $("#relancer").click(function(){
 
-          pairBet = "lost";
-          bet213 = "lost";
+          pairBet = "Lost";
+          bet213 = "Lost";
 
           mainJoueur = [];
           mainCroupier = [];    
@@ -7984,8 +8040,11 @@
         historiqueToPhp[11] = mise213Locked;
 
         // cas sideBets (var globale reinit a chaque game)
+        // historiqueToPhp[12] = pairBet;
+        // historiqueToPhp[13] = bet213;
         historiqueToPhp[12] = pairBet;
         historiqueToPhp[13] = bet213;
+
 
         historiqueToPhp[14] = mainCroupier;
         historiqueToPhp[15] = mainJoueur;
@@ -8020,43 +8079,59 @@
 
 
 
-      function historiqueInvite(WinLose, resultatCas, gainHistorique) {
+      // function historiqueInvite(WinLose, resultatCas, gainHistorique, gainProcPair, gainProc213) {
 
-        // Ancienne méthode: fuseau horaire non pris en compte
-        // var date = new Date().toISOString().slice(0, 19).replace('T', ' ');
+      //   // Ancienne méthode: fuseau horaire non pris en compte
+      //   // var date = new Date().toISOString().slice(0, 19).replace('T', ' ');
         
-        // Formattage du toLocalString (yyyy/mm/dd -> dd-mm-yyyy  + hh:mm:ss) date pour SQL DATETIME
-        var date = new Date().toLocaleString().replace("/", "-").replace("/", "-").replace(",", "");
-          var dd = date.slice(0, 2);
-          var mm = date.slice(3, 5);
-          var yyyy = date.slice(6, 10);
-          var hh = date.slice(11, 13);
-          var mi = date.slice(14, 16);
-          var ss = date.slice(17, 19);
-        date = yyyy + '-' + mm + '-' + dd + ' ' + hh + ':' + mi + ':' + ss;
+      //   // Formattage du toLocalString (yyyy/mm/dd -> dd-mm-yyyy  + hh:mm:ss) date pour SQL DATETIME
+      //   var date = new Date().toLocaleString().replace("/", "-").replace("/", "-").replace(",", "");
+      //     var dd = date.slice(0, 2);
+      //     var mm = date.slice(3, 5);
+      //     var yyyy = date.slice(6, 10);
+      //     var hh = date.slice(11, 13);
+      //     var mi = date.slice(14, 16);
+      //     var ss = date.slice(17, 19);
+      //   date = yyyy + '-' + mm + '-' + dd + ' ' + hh + ':' + mi + ':' + ss;
 
-        // Array déclaré dans le newGame 
-        var historiqueInviteLine = [];
-        historiqueInviteLine[0] = WinLose;
-        historiqueInviteLine[1] = resultatCas;
-        historiqueInviteLine[2] = gainHistorique;
-        historiqueInviteLine[3] = scoreTotalJoueur;
-        historiqueInviteLine[4] = scoreTotalCroupier;
-        historiqueInviteLine[5] = doubleBool;
-        historiqueInviteLine[6] = date;
+      //   // Array déclaré dans le newGame 
+      //   var historiqueInviteLine = [];
+      //   historiqueInviteLine[0] = WinLose;
+      //   historiqueInviteLine[1] = resultatCas;
+      //   historiqueInviteLine[2] = gainHistorique;
+      //   historiqueInviteLine[3] = scoreTotalJoueur;
+      //   historiqueInviteLine[4] = scoreTotalCroupier;
+      //   historiqueInviteLine[5] = doubleBool;
+      //   historiqueInviteLine[6] = date;
 
-        historiqueInviteArray.push(historiqueInviteLine);
+      //   // gains/mises sideBets
+      //   historiqueInviteLine[7] = gainProcPair;
+      //   historiqueInviteLine[8] = gainProc213;
 
-        // Stockage de l'array: https://stackoverflow.com/questions/40200350/keep-data-after-page-refresh
-        // if (typeof(Storage) !== "undefined") {
-        //   localStorage.setItem("historiqueInviteArrayStored", historiqueInviteArray);
-        // } else {
-        //   // Sorry! No Web Storage support
-        // }
+      //   historiqueInviteLine[9] = miseLocked;
+      //   historiqueInviteLine[10] = misePairLocked;
+      //   historiqueInviteLine[11] = mise213Locked;
 
-        console.log("Array JS Line: [" + historiqueInviteLine + "]");
-        console.log("Array JS Total: [" + historiqueInviteArray + "]");
-      }
+      //   // cas sideBets (var globale reinit a chaque game)
+      //   historiqueInviteLine[12] = pairBet;
+      //   historiqueInviteLine[13] = bet213;
+
+      //   historiqueInviteLine[14] = mainCroupier;
+      //   historiqueInviteLine[15] = mainJoueur;
+        
+
+      //   historiqueInviteArray.push(historiqueInviteLine);
+
+      //   // Stockage de l'array: https://stackoverflow.com/questions/40200350/keep-data-after-page-refresh
+      //   // if (typeof(Storage) !== "undefined") {
+      //   //   localStorage.setItem("historiqueInviteArrayStored", historiqueInviteArray);
+      //   // } else {
+      //   //   // Sorry! No Web Storage support
+      //   // }
+
+      //   console.log("Array JS Line: [" + historiqueInviteLine + "]");
+      //   console.log("Array JS Total: [" + historiqueInviteArray + "]");
+      // }
 
 
 
@@ -8369,9 +8444,9 @@
 
           credits = (credits + gainFront + gainPairBet + gain213Bet);
 
-          historiqueInvite(WinLose, resultatCas, gainHistorique);
+          // historiqueInvite(WinLose, resultatCas, gainHistorique, gainPairBet, gain213Bet);
 
-          historiqueDB(WinLose, resultatCas, gainHistorique);
+          historiqueDB(WinLose, resultatCas, gainHistorique, gainPairBet, gain213Bet);
         }
       }
       
