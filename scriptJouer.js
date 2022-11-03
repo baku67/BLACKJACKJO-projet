@@ -946,10 +946,8 @@
                 if ((cartesSortiesPartie[0].cardName == cartesSortiesPartie[1].cardName) && (cartesSortiesPartie[0].cardName == cartesSortiesPartie[2].cardName)) {
                   bet213 = "Three of a kind"; // Brelan (3 cartes memes NOMS)
                 }
-                else {
-                  if ((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily) && ( cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[2].cardFamily)) {
+                else if ((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily) && ( cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[2].cardFamily)) {
                     bet213 = "Flush" // 3 cartes meme FAMILLE
-                  }
                   // else {
                   //   bet213 = "Lost"; 
                   // }
@@ -983,10 +981,8 @@
                 if ((cartesSortiesPartie[0].cardName == cartesSortiesPartie[1].cardName) && (cartesSortiesPartie[0].cardName == cartesSortiesPartie[2].cardName)) {
                   bet213 = "Three of a kind"; // Brelan (3 cartes memes NOMS)
                 }
-                else {
-                  if ((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily) && ( cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[2].cardFamily)) {
+                else if ((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily) && ( cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[2].cardFamily)) {
                     bet213 = "Flush" // 3 cartes meme FAMILLE
-                  }
                   // else {
                   //   bet213 = "Lost"; 
                   // }
@@ -1021,10 +1017,9 @@
                 if ((cartesSortiesPartie[0].cardName == cartesSortiesPartie[1].cardName) && (cartesSortiesPartie[0].cardName == cartesSortiesPartie[2].cardName)) {
                   bet213 = "Three of a kind"; // Brelan (3 cartes memes NOMS)
                 }
-                else {
-                  if ((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily) && ( cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[2].cardFamily)) {
+                else if ((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily) && ( cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[2].cardFamily)) {
                     bet213 = "Flush" // 3 cartes meme FAMILLE
-                  }
+                  
                   // else {
                   //   bet213 = "Lost"; 
                   // }
@@ -1041,10 +1036,8 @@
             if ((cartesSortiesPartie[0].cardName == cartesSortiesPartie[1].cardName) && (cartesSortiesPartie[0].cardName == cartesSortiesPartie[2].cardName)) {
               bet213 = "Three of a kind"; // Brelan (3 cartes memes NOMS)
             }
-            else {
-              if ((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily) && ( cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[2].cardFamily)) {
+            else if ((cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[1].cardFamily) && ( cartesSortiesPartie[0].cardFamily == cartesSortiesPartie[2].cardFamily)) {
                 bet213 = "Flush" // 3 cartes meme FAMILLE
-              }
               // else {
               //   bet213 = "Lost"; 
               // }

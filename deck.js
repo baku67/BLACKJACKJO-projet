@@ -1,6 +1,219 @@
 
   let cards = [
 
+    // Set pour dernier test (flush hors suit/threeOfKind):  *voir melange() pour set de test proc SideBets combinés
+    // C3d = {
+    //   cardImageURL: "cartes\\3H.png",
+    //   cardValue: 3,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "3",
+    //   cardOrdre: 3
+    // },
+    // C3d = {
+    //   cardImageURL: "cartes\\3H.png",
+    //   cardValue: 3,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "3",
+    //   cardOrdre: 3
+    // },
+    // C3d = {
+    //   cardImageURL: "cartes\\3H.png",
+    //   cardValue: 3,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "3",
+    //   cardOrdre: 3
+    // },
+    // C3d = {
+    //   cardImageURL: "cartes\\3H.png",
+    //   cardValue: 3,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "3",
+    //   cardOrdre: 3
+    // },
+    // C3d = {
+    //   cardImageURL: "cartes\\3H.png",
+    //   cardValue: 3,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "3",
+    //   cardOrdre: 3
+    // },
+    // C3d = {
+    //   cardImageURL: "cartes\\3H.png",
+    //   cardValue: 3,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "3",
+    //   cardOrdre: 3
+    // },
+    // C3d = {
+    //   cardImageURL: "cartes\\3H.png",
+    //   cardValue: 3,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "3",
+    //   cardOrdre: 3
+    // },
+    // C3d = {
+    //   cardImageURL: "cartes\\3H.png",
+    //   cardValue: 3,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "3",
+    //   cardOrdre: 3
+    // },
+    // C3d = {
+    //   cardImageURL: "cartes\\3H.png",
+    //   cardValue: 3,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "3",
+    //   cardOrdre: 3
+    // },
+    // C3d = {
+    //   cardImageURL: "cartes\\3H.png",
+    //   cardValue: 3,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "3",
+    //   cardOrdre: 3
+    // },
+    // C3d = {
+    //   cardImageURL: "cartes\\3H.png",
+    //   cardValue: 3,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "3",
+    //   cardOrdre: 3
+    // },
+    // C3d = {
+    //   cardImageURL: "cartes\\3H.png",
+    //   cardValue: 3,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "3",
+    //   cardOrdre: 3
+    // },
+    // C2d = {
+    //   cardImageURL: "cartes\\7H.png",
+    //   cardValue: 7,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "7",
+    //   cardOrdre: 7
+    // },
+    // C2d = {
+    //   cardImageURL: "cartes\\7H.png",
+    //   cardValue: 7,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "7",
+    //   cardOrdre: 7
+    // },
+    // C2d = {
+    //   cardImageURL: "cartes\\7H.png",
+    //   cardValue: 7,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "7",
+    //   cardOrdre: 7
+    // },
+    // C2d = {
+    //   cardImageURL: "cartes\\7H.png",
+    //   cardValue: 7,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "7",
+    //   cardOrdre: 7
+    // },
+    // C2d = {
+    //   cardImageURL: "cartes\\7H.png",
+    //   cardValue: 7,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "7",
+    //   cardOrdre: 7
+    // },
+    // C2d = {
+    //   cardImageURL: "cartes\\7H.png",
+    //   cardValue: 7,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "7",
+    //   cardOrdre: 7
+    // },
+    // C2d = {
+    //   cardImageURL: "cartes\\7H.png",
+    //   cardValue: 7,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "7",
+    //   cardOrdre: 7
+    // },
+    // C4d = {
+    //   cardImageURL: "cartes\\10H.png",
+    //   cardValue: 10,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "10",
+    //   cardOrdre: 10
+    // },
+    // C4d = {
+    //   cardImageURL: "cartes\\10H.png",
+    //   cardValue: 10,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "10",
+    //   cardOrdre: 10
+    // },
+    // C4d = {
+    //   cardImageURL: "cartes\\10H.png",
+    //   cardValue: 10,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "10",
+    //   cardOrdre: 10
+    // },
+    // C4d = {
+    //   cardImageURL: "cartes\\10H.png",
+    //   cardValue: 10,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "10",
+    //   cardOrdre: 10
+    // },
+    // C4d = {
+    //   cardImageURL: "cartes\\10H.png",
+    //   cardValue: 10,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "10",
+    //   cardOrdre: 10
+    // },
+    // C4d = {
+    //   cardImageURL: "cartes\\10H.png",
+    //   cardValue: 10,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "10",
+    //   cardOrdre: 10
+    // },
+    // C4d = {
+    //   cardImageURL: "cartes\\10H.png",
+    //   cardValue: 10,
+    //   cardFamily: "heart",
+    //   cardColor: "red",
+    //   cardName: "10",
+    //   cardOrdre: 10
+    // },
+    // Fin set de Test 
+
+
+
     // 1er Deck
     C2a = {
       cardImageURL: "cartes\\2S.png",
@@ -1108,6 +1321,219 @@
   function melangeDeck(darkModeBool) {
 
     cards = [
+
+      // Bon set de Test pour proc SideBets combinés (suite de coeur, ducoup pas de color pris en compte)
+      // C3d = {
+      //   cardImageURL: "cartes\\3H.png",
+      //   cardValue: 3,
+      //   cardFamily: "heart",
+      //   cardColor: "red",
+      //   cardName: "3",
+      //   cardOrdre: 3
+      // },
+      // C3d = {
+      //   cardImageURL: "cartes\\3H.png",
+      //   cardValue: 3,
+      //   cardFamily: "heart",
+      //   cardColor: "red",
+      //   cardName: "3",
+      //   cardOrdre: 3
+      // },
+      // C3d = {
+      //   cardImageURL: "cartes\\3H.png",
+      //   cardValue: 3,
+      //   cardFamily: "heart",
+      //   cardColor: "red",
+      //   cardName: "3",
+      //   cardOrdre: 3
+      // },
+      // C3d = {
+      //   cardImageURL: "cartes\\3H.png",
+      //   cardValue: 3,
+      //   cardFamily: "heart",
+      //   cardColor: "red",
+      //   cardName: "3",
+      //   cardOrdre: 3
+      // },
+      // C3d = {
+      //   cardImageURL: "cartes\\3H.png",
+      //   cardValue: 3,
+      //   cardFamily: "heart",
+      //   cardColor: "red",
+      //   cardName: "3",
+      //   cardOrdre: 3
+      // },
+      // C3d = {
+      //   cardImageURL: "cartes\\3H.png",
+      //   cardValue: 3,
+      //   cardFamily: "heart",
+      //   cardColor: "red",
+      //   cardName: "3",
+      //   cardOrdre: 3
+      // },
+      // C3d = {
+      //   cardImageURL: "cartes\\3H.png",
+      //   cardValue: 3,
+      //   cardFamily: "heart",
+      //   cardColor: "red",
+      //   cardName: "3",
+      //   cardOrdre: 3
+      // },
+      // C3d = {
+      //   cardImageURL: "cartes\\3H.png",
+      //   cardValue: 3,
+      //   cardFamily: "heart",
+      //   cardColor: "red",
+      //   cardName: "3",
+      //   cardOrdre: 3
+      // },
+      // C3d = {
+      //   cardImageURL: "cartes\\3H.png",
+      //   cardValue: 3,
+      //   cardFamily: "heart",
+      //   cardColor: "red",
+      //   cardName: "3",
+      //   cardOrdre: 3
+      // },
+      // C3d = {
+      //   cardImageURL: "cartes\\3H.png",
+      //   cardValue: 3,
+      //   cardFamily: "heart",
+      //   cardColor: "red",
+      //   cardName: "3",
+      //   cardOrdre: 3
+      // },
+      // C3d = {
+      //   cardImageURL: "cartes\\3H.png",
+      //   cardValue: 3,
+      //   cardFamily: "heart",
+      //   cardColor: "red",
+      //   cardName: "3",
+      //   cardOrdre: 3
+      // },
+      // C3d = {
+      //   cardImageURL: "cartes\\3H.png",
+      //   cardValue: 3,
+      //   cardFamily: "heart",
+      //   cardColor: "red",
+      //   cardName: "3",
+      //   cardOrdre: 3
+      // },
+      // C2d = {
+      //   cardImageURL: "cartes\\2H.png",
+      //   cardValue: 2,
+      //   cardFamily: "heart",
+      //   cardColor: "red",
+      //   cardName: "2",
+      //   cardOrdre: 2
+      // },
+      // C2d = {
+      //   cardImageURL: "cartes\\2H.png",
+      //   cardValue: 2,
+      //   cardFamily: "heart",
+      //   cardColor: "red",
+      //   cardName: "2",
+      //   cardOrdre: 2
+      // },
+      // C2d = {
+      //   cardImageURL: "cartes\\2H.png",
+      //   cardValue: 2,
+      //   cardFamily: "heart",
+      //   cardColor: "red",
+      //   cardName: "2",
+      //   cardOrdre: 2
+      // },
+      // C2d = {
+      //   cardImageURL: "cartes\\2H.png",
+      //   cardValue: 2,
+      //   cardFamily: "heart",
+      //   cardColor: "red",
+      //   cardName: "2",
+      //   cardOrdre: 2
+      // },
+      // C2d = {
+      //   cardImageURL: "cartes\\2H.png",
+      //   cardValue: 2,
+      //   cardFamily: "heart",
+      //   cardColor: "red",
+      //   cardName: "2",
+      //   cardOrdre: 2
+      // },
+      // C2d = {
+      //   cardImageURL: "cartes\\2H.png",
+      //   cardValue: 2,
+      //   cardFamily: "heart",
+      //   cardColor: "red",
+      //   cardName: "2",
+      //   cardOrdre: 2
+      // },
+      // C2d = {
+      //   cardImageURL: "cartes\\2H.png",
+      //   cardValue: 2,
+      //   cardFamily: "heart",
+      //   cardColor: "red",
+      //   cardName: "2",
+      //   cardOrdre: 2
+      // },
+      // C4d = {
+      //   cardImageURL: "cartes\\4H.png",
+      //   cardValue: 4,
+      //   cardFamily: "heart",
+      //   cardColor: "red",
+      //   cardName: "4",
+      //   cardOrdre: 4
+      // },
+      // C4d = {
+      //   cardImageURL: "cartes\\4H.png",
+      //   cardValue: 4,
+      //   cardFamily: "heart",
+      //   cardColor: "red",
+      //   cardName: "4",
+      //   cardOrdre: 4
+      // },
+      // C4d = {
+      //   cardImageURL: "cartes\\4H.png",
+      //   cardValue: 4,
+      //   cardFamily: "heart",
+      //   cardColor: "red",
+      //   cardName: "4",
+      //   cardOrdre: 4
+      // },
+      // C4d = {
+      //   cardImageURL: "cartes\\4H.png",
+      //   cardValue: 4,
+      //   cardFamily: "heart",
+      //   cardColor: "red",
+      //   cardName: "4",
+      //   cardOrdre: 4
+      // },
+      // C4d = {
+      //   cardImageURL: "cartes\\4H.png",
+      //   cardValue: 4,
+      //   cardFamily: "heart",
+      //   cardColor: "red",
+      //   cardName: "4",
+      //   cardOrdre: 4
+      // },
+      // C4d = {
+      //   cardImageURL: "cartes\\4H.png",
+      //   cardValue: 4,
+      //   cardFamily: "heart",
+      //   cardColor: "red",
+      //   cardName: "4",
+      //   cardOrdre: 4
+      // },
+      // C4d = {
+      //   cardImageURL: "cartes\\4H.png",
+      //   cardValue: 4,
+      //   cardFamily: "heart",
+      //   cardColor: "red",
+      //   cardName: "4",
+      //   cardOrdre: 4
+      // },
+      // Fin set de Test proc SideBets
+
+
       // 1er Deck
       C2a = {
         cardImageURL: "cartes\\2S.png",
@@ -1952,6 +2378,10 @@
         cardName: "as",
         cardOrdre: 14
       },
+
+
+
+
       // TRICHE TEST AS (attention virgule)
       // C1e = {
       //   cardImageURL: "cartes\\AS.png",
