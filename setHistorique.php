@@ -28,8 +28,8 @@
     $PairBet = $vArray[12];
     $bet213 = $vArray[13];
 
-    $mainJoueur = implode(",", $vArray[14]);
-    $mainCroupier = implode(",", $vArray[15]);
+    $mainCroupier = implode(",", $vArray[14]);
+    $mainJoueur = implode(",", $vArray[15]);
 
 
     $query = "INSERT INTO historique (username, winLose, resultatCas, gain, scoreJoueur, scoreCroupier, doubleBool, date, gainPairBet, gain213Bet, pairBet, bet213, misePairBet, mise213Bet, mise, mainJoueur, mainCroupier) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";

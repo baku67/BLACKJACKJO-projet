@@ -699,7 +699,7 @@ input:-webkit-autofill{
 
 	border-radius: 9px;
 
-	transition: border-color 0.5s ease, background-color 0.5s ease, box-shadow 0.5s ease;
+	transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 #sideBet2 {
 	user-select: none;
@@ -723,7 +723,7 @@ input:-webkit-autofill{
 
 	border-radius: 9px;
 
-	transition: border-color 0.5s ease, background-color 0.5s ease, box-shadow 0.5s ease;
+	transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 
@@ -733,7 +733,7 @@ input:-webkit-autofill{
 	font-family: " Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 	color: var(--color-sideBet1Title);
 
-	transition: color 0.5s ease;
+	transition: color 0.3s ease;
 }
 
 #sideBet2Title {
@@ -742,7 +742,7 @@ input:-webkit-autofill{
 	font-family: " Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 	color: var(--color-sideBet2Title);
 
-	transition: color 0.5s ease;
+	transition: color 0.3s ease;
 }
 
 #sideBet1Mise {

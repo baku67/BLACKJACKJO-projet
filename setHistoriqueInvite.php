@@ -28,8 +28,8 @@
     $PairBet = $vArray[12];
     $bet213 = $vArray[13];
 
-    $mainJoueur = implode(",", $vArray[14]);
-    $mainCroupier = implode(",", $vArray[15]);
+    $mainCroupier = implode(",", $vArray[14]);
+    $mainJoueur = implode(",", $vArray[15]);
 
 
 
