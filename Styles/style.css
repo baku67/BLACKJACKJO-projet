@@ -2,6 +2,22 @@
 	--bg-color: rgb(17 19 31);
 	--bg-url: url("../Images/backgroundMix2-compressed5.png");
 
+	--borderColor-previousBetsDiv: rgba(255,255,255,0.7);
+	--color-previousBetsTitle: rgb(254 230 228 / 90%);
+	--backgroundGradient-previousBetsDiv: radial-gradient(circle, rgb(46 169 239 / 35%) 0%, rgba(189, 189, 189, 0) 90%);
+	--opacity-flechePreviousBets: 0.4;
+	--color-misePairLockedNbrNone: rgba(139, 139, 139, 0.85);
+	--color-sideBetsTitle: #d8e2eb;
+	--color-miseTitle: #d8e2eb;
+
+	--borderColor-imgSimpl1: 4px solid rgb(0 0 0 / 90%);
+	--blackgroundColor-imgSimpl1: rgb(222 254 255);
+
+	--color-chiffreCard: rgb(32 40 41);
+
+	--color-imgSimplNbrRed: rgba(239, 59, 46, 1);
+	--color-imgSimplNbrBlack: rgb(22, 27, 27);
+
 	--borderColor-sideBet1: rgba(255,255,255,0.7);
 	--borderColor-sideBet2: rgba(255,255,255,0.7);
 	--color-sideBet1Title: rgba(255,255,255,0.7);
@@ -89,6 +105,22 @@
 [data-theme="light"] {
 	--bg-color: rgb(17 19 31);
 	--bg-url: url("../Images/backgroundMix2-compressed5.png");
+
+	--borderColor-previousBetsDiv: rgba(255,255,255,0.7);
+	--color-previousBetsTitle: rgb(254 230 228 / 90%);
+	--backgroundGradient-previousBetsDiv: radial-gradient(circle, rgb(46 169 239 / 35%) 0%, rgba(189, 189, 189, 0) 90%);
+	--opacity-flechePreviousBets: 0.4;
+	--color-misePairLockedNbrNone: rgba(139, 139, 139, 0.85);
+	--color-sideBetsTitle: #d8e2eb;
+	--color-miseTitle: #d8e2eb;
+
+	--borderColor-imgSimpl1: 4px solid rgb(0 0 0 / 90%);
+	--blackgroundColor-imgSimpl1: rgb(222 254 255);
+
+	--color-chiffreCard: rgb(32 40 41);
+
+	--color-imgSimplNbrRed: rgba(239, 59, 46, 1);
+	--color-imgSimplNbrBlack: rgb(22, 27, 27);
 
 	--borderColor-sideBet1: rgba(255,255,255,0.7);
 	--borderColor-sideBet2: rgba(255,255,255,0.7);
@@ -178,6 +210,22 @@
 [data-theme="dark"] {
 	--bg-color: rgb(17 19 31);
 	--bg-url: url();
+
+	--borderColor-previousBetsDiv: rgba(239, 59, 46, 1);
+	--color-previousBetsTitle: rgb(251 168 162 / 90%);
+	--backgroundGradient-previousBetsDiv: radial-gradient(circle, rgba(239,59,46,0.3) 0%, rgba(189,189,189,0) 90%);
+	--opacity-flechePreviousBets: 0.2;
+	--color-misePairLockedNbrNone: rgba(139, 139, 139, 0.5);
+	--color-sideBetsTitle: rgb(223, 204, 204) !important;
+	--color-miseTitle: rgb(223, 204, 204) !important;
+
+	--borderColor-imgSimpl1: 4px solid rgba(239, 59, 46, 0.9);
+	--blackgroundColor-imgSimpl1: rgb(18 21 41);
+
+	--color-chiffreCard: rgba(239, 59, 46, 1);
+
+	--color-imgSimplNbrRed: rgba(239, 59, 46, 1);
+	--color-imgSimplNbrBlack: rgba(239, 59, 46, 1);
 
 	--borderColor-sideBet1: rgba(239, 59, 46, 1);
 	--borderColor-sideBet2: rgba(239, 59, 46, 1);
@@ -643,6 +691,8 @@ input:-webkit-autofill{
 
 	/* Anim */
 	opacity: 0;
+
+	color: var(--color-miseTitle);
 }
 .miseTitleAnim {
 	animation: miseTitleFadeIn 0.3s 0.5s forwards ease;
@@ -664,6 +714,8 @@ input:-webkit-autofill{
 	letter-spacing:1px;
 	opacity:0.8;
 	font-family: 'Kavoon';
+
+	color: var(--color-sideBetsTitle);
 }
 
 
@@ -917,17 +969,21 @@ input:-webkit-autofill{
 	/* Effet bouton relief:  */
 	/* border-width: 0px 3px 7px; */
 
-	border-color: rgba(239, 59, 46, 1);
+	/* border-color: rgba(239, 59, 46, 1); */
+	border-color: var(--borderColor-previousBetsDiv);
+
 	border-style: solid;
 
 	text-align: center;
 
 	/* background-color: rgba(239, 59, 46, 0.1); */
-	background: radial-gradient(circle, rgba(239,59,46,0.3) 0%, rgba(189,189,189,0) 90%);
+	/* background: radial-gradient(circle, rgba(239,59,46,0.3) 0%, rgba(189,189,189,0) 90%); */
+	background: var(--backgroundGradient-previousBetsDiv);
+
 
 	border-radius: 5px;
 
-	transition: border-color 0.3s ease, background-color 0.3s ease;
+	transition: border-color 0.3s ease, background 0.3s ease;
 
 	animation: fadeIn2 0.3s forwards ease;
 }
@@ -944,7 +1000,9 @@ input:-webkit-autofill{
 	font-style: italic;
 	letter-spacing: 2px;
 	font-size:1.4em;
-	color:rgb(251 168 162 / 90%);
+	/* color:rgb(251 168 162 / 90%); */
+	color: var(--color-previousBetsTitle);
+
 	margin-top:5px;
 }
 
@@ -1117,7 +1175,8 @@ input:-webkit-autofill{
 	/* left: -14%; */
 	left: 1%;
 	top: 12%;
-	opacity: 0.20;
+	/* opacity: 0.20; */
+	opacity: var(--opacity-flechePreviousBets);
 	height: 55px;
 	width: 65px;
 	content: url("../Images/arrowPreviousVignette.png");
@@ -1973,7 +2032,9 @@ button, input[type="submit"], input[type="reset"] {
 	letter-spacing: 2px;
 }
 #misePairLockedNbrNone {
-	color: rgba(139, 139, 139, 0.5);
+	/* color: rgba(139, 139, 139, 0.5); */
+	color: var(--color-misePairLockedNbrNone);
+
 	font-size: 1.3rem;
 	font-family: "Kavoon";
 }
@@ -1986,7 +2047,7 @@ button, input[type="submit"], input[type="reset"] {
 	letter-spacing: 2px;
 }
 #mise213LockedNbrNone {
-	color: rgba(139, 139, 139, 0.5);
+	color: var(--color-misePairLockedNbrNone);
 	font-size: 1.3rem;
 	font-family: "Kavoon";
 }
@@ -3347,19 +3408,18 @@ h2 {
 
 	margin: 0 7px;
 
-	border: 4px solid rgba(239, 59, 46, 0.9);
 	border-radius: 9px;
 
-	/*  Ancienne couleur: = bg */
-	/* background-color: rgb(17 19 31); */
-	/* Entre deux */
-	/* background-color: rgb(10 12 23); */
-	background-color: rgb(18 21 41);
+	/* border: 4px solid rgba(239, 59, 46, 0.9); */
+	border: var(--borderColor-imgSimpl1);
+
+	/* background-color: rgb(18 21 41); */
+	background-color: var(--blackgroundColor-imgSimpl1);
+
 
 
 
 	transition: all 0.45s;
-
 	/* Ecrase le margin effetHand */
 	/* margin: auto 6px; */
 }
@@ -3372,9 +3432,24 @@ h2 {
 	font-size: 3.2em;
 	position: relative;
 	top: 5%;
-	color: rgba(239, 59, 46, 1);
+
+	/* color: rgba(239, 59, 46, 1); */
+	/* color: var(--color-chiffreCard); */
+
+
 	font-family: 'Lobster', cursive;
+
+	transition: color 0.4s;
 }
+.imgSimplNbrRed {
+	color: var(--color-imgSimplNbrRed) !important;
+	transition: color 0.4s;
+}
+.imgSimplNbrBlack {
+	color: var(--color-imgSimplNbrBlack) !important;
+	transition: color 0.4s;
+}
+
 .imgSimplNbrCroupier {
 	font-size: 3.2em;
 	position: relative;
@@ -4413,7 +4488,7 @@ p {
 	text-align: center;
 	height: 2px;
 	margin: 0px auto;
-	background: -webkit-linear-gradient(left, #11131f 0%, rgba(255, 255, 255, 0.8) 50%, #11131f 100%);
+	background: -webkit-linear-gradient(left, rgba(17, 19, 31, 0) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(17, 19, 31, 0) 100%);
 	margin-bottom: 0.4em;
 }
 #traitSouligneMise {
@@ -4422,7 +4497,7 @@ p {
 	text-align: center;
 	height: 2px;
 	margin: 0px auto;
-	background: -webkit-linear-gradient(left, #11131f 0%, rgba(255, 255, 255, 0.8) 50%, #11131f 100%);
+	background: -webkit-linear-gradient(left, rgba(17, 19, 31, 0) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(17, 19, 31, 0) 100%);
 	margin-bottom: 0em;
 	/* Anim */
 	opacity: 0;

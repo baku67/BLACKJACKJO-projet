@@ -1315,7 +1315,11 @@
             var temp0 = document.querySelectorAll("#joueur .imgSimplNbr");
             temp0.forEach(element => {
               element.style.color = "rgba(0, 255, 234, 0.9)";
+              if (darkModeBool == false) {
+                element.style.textShadow = "1px 1px 0 rgba(0,0,0,0.6), 1px -1px 0 rgba(0,0,0,0.6), -1px 1px 0 rgba(0,0,0,0.6), -1px -1px 0 rgba(0,0,0,0.6), 1px 0px 0 rgba(0,0,0,0.6), 0px 1px 0 rgba(0,0,0,0.6), -1px 0px 0 rgba(0,0,0,0.6), 0px -1px 0 rgba(0,0,0,0.6)";
+              }
             });
+
 
             var temp1 = document.querySelectorAll("#joueur .imgSimplSuit");
             temp1.forEach(element => {
@@ -1337,6 +1341,9 @@
             var temp2 = document.querySelectorAll("#croupier .imgSimplNbrCroupier");
             temp2.forEach(element => {
               element.style.color = "rgba(0, 255, 234, 0.9)";
+              if (darkModeBool == false) {
+                element.style.textShadow = "1px 1px 0 rgba(0,0,0,0.6), 1px -1px 0 rgba(0,0,0,0.6), -1px 1px 0 rgba(0,0,0,0.6), -1px -1px 0 rgba(0,0,0,0.6), 1px 0px 0 rgba(0,0,0,0.6), 0px 1px 0 rgba(0,0,0,0.6), -1px 0px 0 rgba(0,0,0,0.6), 0px -1px 0 rgba(0,0,0,0.6)";
+              }
             });
 
             var temp3 = document.querySelectorAll("#croupier .imgSimplSuitCroupier");
@@ -3621,8 +3628,11 @@
 
                   // Changement du state dark/light
                   if (this.dataset.mode == "dark") {
+
                     this.dataset.mode = "light";
                     darkModeBool = true;
+
+
 
                     document.querySelector('meta[name="theme-color"]').setAttribute("content", "#11131f");
 
@@ -3637,7 +3647,9 @@
                       document.getElementById('backgroundToggleImage').src = "../Images/moon_darkMode.png";
                     }
 
-                    document.querySelector('#deconnexionImg').src = "../Images/deconnexion_darkMode.png";
+                    if (document.querySelector('#deconnexionImg') !== null) {
+                      document.querySelector('#deconnexionImg').src = "../Images/deconnexion_darkMode.png";
+                    }
 
                     cards.forEach(element => {
                       element.cardImageURL = element.cardImageURL.substring(0, 9) + "_darkMode.png";
@@ -3678,7 +3690,9 @@
                       document.getElementById('backgroundToggleImage').src = "../Images/moonGrey.png";
                     }
 
-                    document.querySelector('#deconnexionImg').src = "../Images/deconnexion.png";
+                    if (document.querySelector('#deconnexionImg') !== null) {
+                      document.querySelector('#deconnexionImg').src = "../Images/deconnexion.png";
+                    }
 
                     cards.forEach(element => {
                       element.cardImageURL = element.cardImageURL.substring(0, 9) + ".png";
@@ -6870,6 +6884,7 @@
         // var img = document.createElement('img');
         // Pick l'objet et le stock dans une VAR
         let pickedCardObject = cards[Math.floor(Math.random()*cards.length)];
+
         if (toggleCardSimplist == false) {
           var img = document.createElement('img');
           img.src = pickedCardObject.cardImageURL;
@@ -6891,6 +6906,12 @@
 
           var imgSimplNbr = document.createElement("p");
           imgSimplNbr.setAttribute("class", "imgSimplNbrCroupier");
+          if ((pickedCardObject.cardFamily == "heart") || (pickedCardObject.cardFamily == "diamond")) {
+            imgSimplNbr.classList.add("class", "imgSimplNbrRed");
+          }
+          else {
+            imgSimplNbr.classList.add("class", "imgSimplNbrBlack");
+          }
           if (toggleCardSimplist && shadow) {
             imgSimplNbr.style.color = "rgb(0 255 234 / 90%)";
           }
@@ -6943,11 +6964,23 @@
             imgSimplSuit.src = "Images/" + pickedCardObject.cardFamily + "WinPair.png";
           }
 
+          // Difference de style card Rouge/Noir
           if ((pickedCardObject.cardFamily == "heart") || (pickedCardObject.cardFamily == "diamond")) {
-            // imgSimpl.style.backgroundColor = "rgb(66 11 20)";
-            imgSimpl.style.backgroundColor = "rgb(44 11 16)";
+
+            imgSimpl.style.backgroundColor = "var(--blackgroundColor-imgSimpl1)";
             
+            if (darkModeBool == false) {
+              // red
+              imgSimplNbr.style.color = "rgb(203, 38, 38)";
+            }
           }
+          else {
+            if (darkModeBool == false) {
+              // black
+              imgSimplNbr.style.color = "rgb(40 53 56)";
+            }
+          }
+
 
           var br = document.createElement("br");
           imgSimpl.append(imgSimplSuit);
@@ -7179,6 +7212,13 @@
 
           var imgSimplNbr = document.createElement("span");
           imgSimplNbr.setAttribute("class", "imgSimplNbr");
+          if ((pickedCardObject.cardFamily == "heart") || (pickedCardObject.cardFamily == "diamond")) {
+            imgSimplNbr.classList.add("class", "imgSimplNbrRed");
+          }
+          else {
+            imgSimplNbr.classList.add("class", "imgSimplNbrBlack");
+          }
+
           imgSimplNbr.innerHTML = pickedCardObject.cardValue;
 
           var crown = document.createElement("img");
@@ -7222,8 +7262,20 @@
           imgSimplSuit.src = "Images/" + pickedCardObject.cardFamily + ".png";
 
           if ((pickedCardObject.cardFamily == "heart") || (pickedCardObject.cardFamily == "diamond")) {
-            // imgSimpl.style.backgroundColor = "rgb(66 11 20)";
-            imgSimpl.style.backgroundColor = "rgb(44 11 16)";
+
+            imgSimpl.style.backgroundColor = "var(--blackgroundColor-imgSimpl1)";
+
+            // Chiffres different rouge/noir seulement en DM/LM
+            if (darkModeBool == false) {
+              // red
+              imgSimplNbr.style.color = "rgb(203, 38, 38)";
+            }
+          }
+          else {
+            if (darkModeBool == false) {
+              // black
+              imgSimplNbr.style.color = "rgb(40 53 56)";
+            }
           }
 
           var br = document.createElement("br");
