@@ -1058,7 +1058,7 @@
 
 					// Fix ça:
 					if (JSON.parse(e.data)[0] == 'dailyRewardProcPC') {
-						alert("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+						// alert("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 					}
 
 					if (JSON.parse(e.data)[0] == 'procMise') {
