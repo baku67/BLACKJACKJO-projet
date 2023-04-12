@@ -20,7 +20,8 @@
 	}
 	#header {
 		/*  A la base il n'y avait pas de height  */
-		height: 32vh;
+		/* height: 32vh; */
+		height: fit-content;
 	}
 
 	#cardAnim {
