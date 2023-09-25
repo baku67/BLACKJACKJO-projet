@@ -491,7 +491,6 @@
         // Bool switché onPurpose pour tester
         if (dailyProcBool == "1") {
 
-          // alert("test proc (mobile OK)");
           window.top.postMessage(JSON.stringify(['dailyRewardProcPC']), '*');  
 
 
