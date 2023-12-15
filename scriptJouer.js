@@ -2402,6 +2402,10 @@
       function sideBetListeners() {
 
         document.getElementById("sideBet1").addEventListener("click", function() {
+
+          // TEST debug chrome
+          console.log("*** TEST debug chrome")
+
           if (toggleSideBet != "pair") {
             toggleSideBet = "pair";
             refreshSideBetsToggle(toggleSideBet);
@@ -2415,6 +2419,10 @@
         })
 
         document.getElementById("sideBet2").addEventListener("click", function() {
+
+          // TEST debug chrome
+          console.log("*** TEST debug chrome")
+
           if (toggleSideBet != "21+3") {
             toggleSideBet = "21+3";
             refreshSideBetsToggle(toggleSideBet); 
@@ -6773,7 +6781,7 @@
               else {
                 if (mise213EnCours != miseMax) {
                   addLastTokenClickToTab213(100);
-                  mise213EnCours += 100;
+                  mise213EnCours = miseMax;
                   refreshEraseOpacity(toggleSideBet);
     
                   refreshMisesEnCours(toggleSideBet);

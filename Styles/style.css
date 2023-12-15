@@ -5276,6 +5276,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#33686c",endCo
 #footer {
 	/* Pour les footerBox shadow result en dessous des cards */
 	z-index: -1;
+	/* FIX CHROME boutons */
+	z-index: 9999;
 
 	box-sizing: border-box;
 	position: fixed;
