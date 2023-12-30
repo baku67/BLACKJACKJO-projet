@@ -5271,7 +5271,7 @@
                     document.getElementById("toggleHandDiv").style.boxShadow = "0px -1px black";
                   }
 
-                  document.getElementById("footer").style.zIndex = "-1";
+                  // document.getElementById("footer").style.zIndex = "-1";
                   document.getElementById("header").style.zIndex = "-1";
                   document.getElementById("footer").style.boxShadow = "0px -3px 42vh 30px rgba(239, 59, 46, 0.9)";
                   document.getElementById("header").style.boxShadow = "0px 3px 42vh 30px rgba(0, 255, 234, 0.55)";
@@ -5483,7 +5483,7 @@
                     document.getElementById("toggleHandDiv").style.boxShadow = "0px -1px black";
                   }
 
-                  document.getElementById("footer").style.zIndex = "-1";
+                  // document.getElementById("footer").style.zIndex = "-1";
                   document.getElementById("header").style.zIndex = "-1";
                   document.getElementById("footer").style.boxShadow = "0px -3px 42vh 30px rgba(0, 255, 234, 0.55)";
                   document.getElementById("header").style.boxShadow = "0px 3px 42vh 30px rgba(239, 59, 46, 0.9)";
@@ -5698,7 +5698,7 @@
                     document.getElementById("toggleHandDiv").style.boxShadow = "0px -1px black";
                   }
 
-                  document.getElementById("footer").style.zIndex = "-1";
+                  // document.getElementById("footer").style.zIndex = "-1";
                   document.getElementById("header").style.zIndex = "-1";
                   document.getElementById("footer").style.boxShadow = "0px -3px 42vh 30px rgba(0, 255, 234, 0.55)";
                   document.getElementById("header").style.boxShadow = "0px 3px 42vh 30px rgba(239, 59, 46, 0.9)";
@@ -5909,7 +5909,7 @@
                     document.getElementById("toggleHandDiv").style.boxShadow = "0px -1px black";
                   }
 
-                  document.getElementById("footer").style.zIndex = "-1";
+                  // document.getElementById("footer").style.zIndex = "-1";
                   document.getElementById("header").style.zIndex = "-1";
                   document.getElementById("footer").style.boxShadow = "0px -3px 42vh 30px rgba(164, 167, 0, 0.8)";
                   document.getElementById("header").style.boxShadow = "0px 3px 42vh 30px rgba(164, 167, 0, 0.8)";
@@ -7850,7 +7850,7 @@
                 document.getElementById("toggleHandDiv").style.boxShadow = "0px -1px black";
               }
 
-              document.getElementById("footer").style.zIndex = "-1";
+              // document.getElementById("footer").style.zIndex = "-1";
               document.getElementById("header").style.zIndex = "-1";
               document.getElementById("footer").style.boxShadow = "0px -3px 42vh 30px rgba(239, 59, 46, 0.9)";
               document.getElementById("header").style.boxShadow = "0px 3px 42vh 30px rgba(0, 255, 234, 0.55)";
@@ -7948,7 +7948,7 @@
                 document.getElementById("toggleHandDiv").style.boxShadow = "0px -1px black";
               }
 
-              document.getElementById("footer").style.zIndex = "-1";
+              // document.getElementById("footer").style.zIndex = "-1";
               document.getElementById("header").style.zIndex = "-1";
               document.getElementById("footer").style.boxShadow = "0px -3px 42vh 30px rgba(255, 55, 250, 0.9)";
               document.getElementById("header").style.boxShadow = "0px 3px 42vh 30px rgba(239, 59, 46, 0.9)";  
