@@ -495,7 +495,7 @@
 			<div id="footer">
 				
 				<div style="display:inline-flex;">
-					<h3 id="footerTitle">  Comment jouer ...  </h3>
+					<h3 id="footerTitle"> BlackjackJo </h3>
 					<button type="button" id="collapsible"><img src="Images/arrowDownWhitePng.png" id="arrowPng" style="height:0.8em;"></button>
 				</div>
 
