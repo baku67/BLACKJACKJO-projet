@@ -380,13 +380,13 @@
 					if (!isset($_SESSION['username'])) : 
 				?>
 						<button id="newGame" class="module-border-wrap">
-							<a id="newGameLink" href="#" style="text-decoration: none;">Partie rapide !</a>
+							<a id="newGameLink" href="#" style="text-decoration: none;">Partie rapide</a>
 						</button>
 				<?php 
 					elseif (isset($_SESSION['username'])) : 
 				?>
 						<button id="newGame" class="module-border-wrap">
-							<a id="newGameLink" href="#" style="text-decoration: none;">Nouvelle Partie !</a>
+							<a id="newGameLink" href="#" style="text-decoration: none;">Nouvelle Partie</a>
 						</button>
 				<?php 
 					endif 
