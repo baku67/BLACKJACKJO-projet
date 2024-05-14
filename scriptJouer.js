@@ -3162,7 +3162,7 @@
                       $("#container3").html(response);
 
                       // TEST vert lors mise
-                      document.getElementById("footer").style.boxShadow = "-0px -3px 11vh 5px rgba(239, 59, 46, 0.6)";
+                      document.getElementById("footer").style.boxShadow = "#19ddbc 0px -3px 7vh 0px";
                       // document.getElementById("footer").style.boxShadow = "-0px -3px 50px 5px rgba(246, 251, 17, 0.5)";
                       document.getElementById("header").style.boxShadow = "";
 
@@ -3766,7 +3766,7 @@
                   checkTokenGrised();
 
                   // TEST vert lors mise
-                  document.getElementById("footer").style.boxShadow = "-0px -3px 11vh 5px rgba(239, 59, 46, 0.6)";
+                  document.getElementById("footer").style.boxShadow = "#19ddbc 0px -3px 7vh 0px";
                   // document.getElementById("footer").style.boxShadow = "-0px -3px 50px 5px rgba(246, 251, 17, 0.5)";
                   document.getElementById("header").style.boxShadow = "";
 

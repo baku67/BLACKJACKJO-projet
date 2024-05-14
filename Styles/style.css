@@ -1330,6 +1330,7 @@ input:-webkit-autofill{
 
 #credits {
 	font-size: 1.5em;
+	color: rgba(0, 255, 234, 1) !important;
 }
 #creditsInvite {
 	font-size: 1em;
@@ -1545,6 +1546,8 @@ input:-webkit-autofill{
 	/* top: 17%;  */
 	top: 32vh;
 	width: 30px;
+
+	filter: hue-rotate(172deg);
 }
 
 
@@ -2224,7 +2227,7 @@ button, input[type="submit"], input[type="reset"] {
 
 #header {
 	height: 28vh;
-	margin-bottom: 1.5em;
+	margin-bottom:0.5em;
 
 	/* Pour les footerBox shadow result en dessous des cards */
 	z-index: -1;
@@ -2989,7 +2992,6 @@ button, input[type="submit"], input[type="reset"] {
 
 	border-radius: 6px; 
 
-	/* background: var(--bgColor-jaugeVide); */
 	background: rgb(59 35 59);
 }
 
@@ -2998,10 +3000,7 @@ button, input[type="submit"], input[type="reset"] {
 	overflow: hidden;
 
 	position: relative;
-	/* bottom: -20px; */
 
-	/* width: 50%; */
-	/* height: 6px; */
 	width: 15%;
 	height: 10px;
 
@@ -3010,39 +3009,25 @@ button, input[type="submit"], input[type="reset"] {
 
 	left: 10px;
 
-	border-radius: 6px; /* border-radius marche sans border  */
+	border-radius: 6px; 
 
-	/* background: rgb(80, 71, 64); */
 	background: var(--bgColor-jaugeVide);
 }
 .jaugeProgress span {
-	/* background-color: #ef3b2e; */
-	background-color: var(--bgColor-jaugePleine);
+
+	background-color: var(--bgColorFlash-jaugePleine);
 }
 .jaugeProgress2 span {
-	/* background-color: #ef3b2e; */
 	background-color: rgba(250, 18, 227, 0.7);
 }
 .jaugeProgressExp span {
-	/* background-color: #ef3b2e; */
 	background-color: rgba(18, 157, 250, 0.6);
 }
-/* Label pourcentage jauge */
-/* #jaugeContainer span {
-	height: 100%;
-	display: block;
-	width: 0;
-	color: white;
-	line-height: 4px;
-	position: absolute;
-	text-align: end;
-	padding-right: 5px;
-} */
+
 
 #streakNumber  {
 	position: absolute;
 	left: 42%;
-	/* top: 18.5%;  */
 	top: 36vh;
 
 
@@ -3937,7 +3922,14 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 
 
 	height: 5px;
-	background-color: var(--color-miserAlert);
+	/* background-color: var(--color-miserAlert); */
+	background: rgb(239,59,46);
+	background: -moz-linear-gradient(90deg, rgba(239,59,46,1) 15%, rgba(0,255,234,1) 70%);
+	background: -webkit-linear-gradient(90deg, rgba(239,59,46,1) 15%, rgba(0,255,234,1) 70%);
+	background: linear-gradient(90deg, rgba(239,59,46,1) 15%, rgba(0,255,234,1) 70%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ef3b2e",endColorstr="#00ffea",GradientType=1);
+
+
 	/* width: 22%; */
 	/*  Mettre plutot une valeur dure correspondant à la longueur de l'alert (qui bouge pas?)  */
 	width: 7%;
@@ -4013,7 +4005,8 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 
 #phaseMiserAlert{
 	font-size: 5.5em;
-	color: var(--color-miserAlert);
+	/* color: var(--color-miserAlert); */
+	color: var(--color-titleFlash);
 	font-style: italic;
 
 	font-weight: bold;
@@ -4127,7 +4120,8 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 
 #phaseChoixAlert{
 	font-size: 4.5em;
-	color: var(--color-miserAlert);
+	/* color: var(--color-miserAlert); */
+	color:rgba(0, 255, 234, 1);
 	font-style: italic;
 
 	font-weight: bold;
@@ -4219,7 +4213,14 @@ mais "transition: all xs" c'est pour tout ce qu'il y a dans le machin:hover{*};
 
 
 	height: 5px;
-	background-color: var(--color-miserAlert);
+	/* background-color: var(--color-miserAlert); */
+	background: rgb(239,59,46);
+	background: -moz-linear-gradient(90deg, rgba(239,59,46,1) 15%, rgba(0,255,234,1) 70%);
+	background: -webkit-linear-gradient(90deg, rgba(239,59,46,1) 15%, rgba(0,255,234,1) 70%);
+	background: linear-gradient(90deg, rgba(239,59,46,1) 15%, rgba(0,255,234,1) 70%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ef3b2e",endColorstr="#00ffea",GradientType=1);
+
+
 	width: 7%;
 	border-radius: 1px;
 

@@ -59,7 +59,14 @@
 	
 	
 		height: 5px;
-		background-color: var(--color-miserAlert);
+		/* background-color: var(--color-miserAlert); */
+		background: rgb(239,59,46);
+		background: -moz-linear-gradient(90deg, rgba(239,59,46,1) 15%, rgba(0,255,234,1) 70%);
+		background: -webkit-linear-gradient(90deg, rgba(239,59,46,1) 15%, rgba(0,255,234,1) 70%);
+		background: linear-gradient(90deg, rgba(239,59,46,1) 15%, rgba(0,255,234,1) 70%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ef3b2e",endColorstr="#00ffea",GradientType=1);
+
+
 		width: 22%;
 		/*  Mettre plutot une valeur dure correspondant à la longueur de l'alert (qui bouge pas?)  */
 		/* width: 6%; */
@@ -101,7 +108,14 @@
 	
 	
 		height: 5px;
-		background-color: var(--color-miserAlert);
+		/* background-color: var(--color-miserAlert); */
+		background: rgb(239,59,46);
+		background: -moz-linear-gradient(90deg, rgba(239,59,46,1) 15%, rgba(0,255,234,1) 70%);
+		background: -webkit-linear-gradient(90deg, rgba(239,59,46,1) 15%, rgba(0,255,234,1) 70%);
+		background: linear-gradient(90deg, rgba(239,59,46,1) 15%, rgba(0,255,234,1) 70%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ef3b2e",endColorstr="#00ffea",GradientType=1);
+
+		
 		width: 22%;
 		border-radius: 1px;
 	
